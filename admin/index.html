@@ -4,24 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel Administrativo | data2comms</title>
-  <!-- Script de identidade do Netlify/Decap -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Inclui o Decap CMS -->
+  <!-- Inclui apenas o Decap CMS puro, sem travas -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  
-  <script>
-    // Correção de rota para funcionar perfeitamente dentro da subpasta do GitHub Pages
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/data2commsfinal/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>

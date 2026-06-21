@@ -82,7 +82,6 @@
     </header>
 
     <main>
-        <!-- Breadcrumb / Voltar -->
         <section class="border-b-editorial px-6 py-4 flex justify-between items-center bg-paper">
             <a href="servicos.html" class="font-mono text-[11px] uppercase tracking-widest hover:text-electricBlue flex items-center gap-2 transition-colors">
                 &#8592; Voltar para Serviços
@@ -90,7 +89,6 @@
             <div class="font-mono text-[11px] uppercase tracking-widest text-concrete">SVC_02</div>
         </section>
 
-        <!-- Hero do Serviço -->
         <section class="flex flex-col lg:flex-row border-b-editorial bg-white">
             <div class="w-full lg:w-7/12 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
                 <h1 class="reveal-up font-display text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">Assessoria de imprensa orientada por dados</h1>
@@ -102,7 +100,6 @@
             </div>
         </section>
 
-        <!-- Conteúdo Principal -->
         <section class="flex flex-col lg:flex-row border-b-editorial items-start">
             <div class="w-full lg:w-7/12 border-b-editorial lg:border-b-0 lg:border-r-editorial bg-white">
                 <div class="p-6 md:p-12 lg:p-16 border-b-editorial overflow-hidden">
@@ -121,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Formulário de Contato -->
             <div class="w-full lg:w-5/12 bg-paper relative lg:sticky lg:top-[114px]">
                 <div class="p-6 md:p-12 lg:p-16">
                     <p class="font-mono text-[11px] uppercase tracking-widest text-ink mb-6 flex items-center gap-2"><span class="w-1.5 h-1.5 bg-electricBlue inline-block"></span> Solicitar proposta</p>
@@ -216,7 +212,7 @@
             document.querySelectorAll('.reveal-up').forEach(el => scrollObserver.observe(el));
         }
 
-        // Google Sheets Integration
+        // Integração com Google Sheets
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
         
         const form = document.getElementById('serviceForm');
@@ -257,7 +253,10 @@
                 });
         });
 
-        window.onload = () => { setupScrollAnimations(); };
+        // Inicia as animações no load da página
+        if (typeof setupScrollAnimations === 'function') {
+            window.onload = () => { setupScrollAnimations(); };
+        }
     </script>
 </body>
 </html>

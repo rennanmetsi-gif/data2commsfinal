@@ -1,11 +1,10 @@
 title: data2comms
-description: Agência de PR, pesquisa, imprensa e inteligência cultural.
-url: ""
+description: Agência de PR, pesquisa, imprensa e inteligência.
+url: "https://rennanmetsi-gif.github.io"
 baseurl: "/data2commsfinal"
-permalink: /blog/:title/
+permalink: /post/:title/
 markdown: kramdown
 
-collections_dir: .
 exclude:
   - README.md
   - Gemfile

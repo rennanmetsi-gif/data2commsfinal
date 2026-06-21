@@ -1,12 +1,9 @@
 title: data2comms
-description: Agência de PR, pesquisa, imprensa e inteligência cultural.
+description: Agência de PR, pesquisa, imprensa e inteligência.
 url: ""
-baseurl: ""
+baseurl: "/data2commsfinal"
 permalink: /blog/:title/
 markdown: kramdown
-
-# Se o repositório estiver em subpasta (ex: github.com/usuario/data2comms),
-# ajuste baseurl para "/data2comms" (com barra inicial, sem barra final).
 
 collections_dir: .
 exclude:

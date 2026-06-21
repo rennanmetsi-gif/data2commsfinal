@@ -5,15 +5,8 @@ permalink: /blog.html
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    ---
-layout: null
----
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TAGS DE SEO OTIMIZADAS PARA O BLOG -->
     <title>Publicações | data2comms - PR, Imprensa e Reputação</title>
     <meta name="description" content="Análises, estudos e reflexões da data2comms sobre como transformar pesquisa e dados em narrativa, relações públicas e presença qualificada na mídia.">
     <meta property="og:title" content="Publicações | data2comms - PR, Imprensa e Reputação">
@@ -21,13 +14,10 @@ layout: null
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
 
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -73,7 +63,6 @@ layout: null
 </head>
 <body class="font-sans overflow-x-hidden bg-paper">
 
-    <!-- CABEÇALHO ESTILO REVISTA DIGITAL -->
     <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
         <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
             <a href="index.html" class="block w-[180px] md:w-[220px]" aria-label="Voltar para a Home">
@@ -90,7 +79,6 @@ layout: null
                 <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
                 <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Serviços</a>
                 
-                <!-- PUBLICAÇÕES (Ativo) -->
                 <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Publicações</a>
                 
                 <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
@@ -108,7 +96,6 @@ layout: null
     </header>
 
     <main>
-        <!-- Hero Blog -->
         <section class="flex flex-col lg:flex-row border-b-editorial bg-white">
             <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
                 <p class="reveal-up font-mono text-[11px] uppercase tracking-widest text-ink mb-6">Repositório // Blog</p>
@@ -122,7 +109,6 @@ layout: null
             </div>
         </section>
 
-        <!-- Filtros do Blog -->
         <section class="border-b-editorial bg-paper sticky top-[154px] md:top-[124px] z-30 overflow-x-auto hide-scrollbar">
             <div class="flex px-6 md:px-12 lg:px-16 py-4 gap-8 font-mono text-[11px] uppercase tracking-widest whitespace-nowrap text-ink/50" id="blog-filters">
                 <button data-filter="todos" class="filter-btn text-ink border-ink hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Todos</button>
@@ -130,135 +116,4 @@ layout: null
                 <button data-filter="beleza" class="filter-btn border-transparent hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Beleza</button>
                 <button data-filter="saude" class="filter-btn border-transparent hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Saúde</button>
                 <button data-filter="tecnologia" class="filter-btn border-transparent hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Tecnologia</button>
-                <button data-filter="comportamento" class="filter-btn border-transparent hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Comportamento</button>
-            </div>
-        </section>
-
-        <!-- Grid de Artigos -->
-        <section class="min-h-[60vh] bg-white">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y-editorial md:divide-y-0 md:divide-x-editorial border-b-editorial" id="blog-grid">
-                
-                {% for post in site.posts %}
-                <a href="{{ site.baseurl }}{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card reveal-up group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial lg:border-b-0 cursor-pointer block">
-                    <div class="w-full img-square border-b-editorial overflow-hidden bg-concrete relative">
-                        <div class="absolute inset-0 w-full h-full bg-ink mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity z-10"></div>
-                        {% if post.image %}
-                        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
-                        {% endif %}
-                    </div>
-                    <div class="p-6 md:p-8 flex-grow flex flex-col">
-                        <div class="flex justify-between items-center mb-6 font-mono text-[10px] uppercase tracking-widest border-b border-ink/20 group-hover:border-paper/20 pb-3 text-concrete">
-                            <span>{{ post.category }}</span><span>{{ post.date | date: "%d %b" }}</span>
-                        </div>
-                        <h3 class="font-display text-2xl lg:text-3xl uppercase tracking-tight leading-none mb-4 group-hover:text-acidLime transition-colors line-clamp-3 break-words">{{ post.title }}</h3>
-                        <p class="font-sans text-sm md:text-base opacity-80 mt-auto leading-relaxed line-clamp-3 break-words">{{ post.summary }}</p>
-                    </div>
-                </a>
-                {% endfor %}
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-paper py-12 px-6 md:px-12 lg:px-16 border-b-editorial">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 lg:col-span-2 flex flex-col justify-between">
-                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="h-5 mb-8 filter grayscale contrast-200 self-start">
-                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, assessoria de imprensa e pesquisa orientados por dados.</p>
-            </div>
-            <div>
-                <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4">
-                    <li><a href="index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
-                    <li><a href="sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
-                    <li><a href="servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
-                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
-                    <li><a href="contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
-                </ul>
-            </div>
-            <div>
-                 <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4 text-concrete">
-                    <li class="py-1">contato@data2comms.com.br</li>
-                    <li class="py-1">São Paulo, SP</li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="border-t-editorial pt-8 flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-ink">
-            <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
-            <div class="flex gap-4 mt-6 md:mt-0 text-concrete"><span>Made for Data & Narrative</span></div>
-        </div>
-    </footer>
-
-    <script>
-        // Animações de Scroll
-        let scrollObserver;
-        function setupScrollAnimations() {
-            const options = { root: null, rootMargin: '0px', threshold: 0.15 };
-            if (scrollObserver) scrollObserver.disconnect();
-            scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } 
-                    else { entry.target.classList.remove('is-visible'); }
-                });
-            }, options);
-            document.querySelectorAll('.reveal-up, .reveal-wipe').forEach(el => scrollObserver.observe(el));
-        }
-
-        // Sistema de Filtros Inteligente
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const activeCat = urlParams.get('cat');
-            
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articles = document.querySelectorAll('.article-card');
-
-            function filterArticles(category) {
-                const catLower = category.toLowerCase();
-                
-                // Atualiza visual dos botões
-                filterBtns.forEach(btn => {
-                    if (btn.dataset.filter === catLower) {
-                        btn.classList.add('text-ink', 'border-ink');
-                        btn.classList.remove('border-transparent', 'text-ink/50');
-                    } else {
-                        btn.classList.remove('text-ink', 'border-ink');
-                        btn.classList.add('border-transparent', 'text-ink/50');
-                    }
-                });
-
-                // Mostra/esconde artigos
-                articles.forEach(card => {
-                    if (catLower === 'todos' || card.dataset.category === catLower) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                // Reinicia as animações para os cards recém-mostrados
-                setTimeout(() => {
-                    document.querySelectorAll('.article-card').forEach(el => el.classList.remove('is-visible'));
-                    setupScrollAnimations();
-                }, 50);
-            }
-
-            // Atribui evento de clique aos botões de filtro
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const cat = e.currentTarget.dataset.filter;
-                    // Atualiza a URL sem recarregar a página para manter histórico bonito
-                    window.history.pushState({}, '', `blog.html${cat === 'todos' ? '' : '?cat=' + cat}`);
-                    filterArticles(cat);
-                });
-            });
-
-            // Aplica filtro inicial baseado na URL
-            if (activeCat) {
-                filterArticles(activeCat);
-            } else {
-                filterArticles('todos');
-            }
-        });
-    </script>
-</body>
-</html>
+                <button data-filter="comportamento" class="filter-

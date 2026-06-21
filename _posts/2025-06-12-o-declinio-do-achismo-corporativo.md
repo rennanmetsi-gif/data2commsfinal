@@ -1,14 +1,15 @@
 ---
-layout: post
-title: "O declínio do achismo corporativo"
+title: O declínio do achismo corporativo
 date: 2025-06-12
-category: comportamento
-image: "https://images.unsplash.com/photo-1499714608240-22fc6ad53cb2?q=80&w=1600&auto=format&fit=crop"
-read_time: "4 MIN"
-summary: "Como lideranças estão sendo forçadas a substituir a intuição por mapas de evidência antes de se exporem publicamente."
+category: Comportamento
+image: https://images.unsplash.com/photo-1499714608240-22fc6ad53cb2?q=80&w=1600&auto=format&fit=crop
+reading_time: 3 min
+summary: Como lideranças estão sendo forçadas a substituir a intuição por mapas de evidência antes de se exporem publicamente.
+layout: post
+read_time: 4 MIN
 ---
 
-Em ambientes informacionais ruidosos, a intuição deixou de ser uma ferramenta confiável para profissionais de comunicação. A pressão por visibilidade muitas vezes empurra marcas para o *"fazer por fazer"*, gerando um volume de informações que não encontra ressonância no público.
+Em ambientes informacionais ruidosos, a intuição deixou de ser uma ferramenta confiável para profissionais de comunicação. A pressão por visibilidade muitas vezes empurra marcas para o _"fazer por fazer"_, gerando um volume de informações que não encontra ressonância no público.
 
 Muitas empresas investem em campanhas, releases e influência sem uma pergunta estratégica clara. O resultado é o que chamamos de **"ruído cego"**: você até é visto, mas ninguém lembra o que você disse e nenhuma autoridade real é construída no longo prazo.
 

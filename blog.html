@@ -132,7 +132,7 @@ layout: null
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y-editorial md:divide-y-0 md:divide-x-editorial border-b-editorial" id="blog-grid">
                 
                 {% for post in site.posts %}
-                <a href="{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card reveal-up group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial lg:border-b-0 cursor-pointer block">
+                <a href="{{ site.baseurl }}{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card reveal-up group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial lg:border-b-0 cursor-pointer block">
                     <div class="w-full img-square border-b-editorial overflow-hidden bg-concrete relative">
                         <div class="absolute inset-0 w-full h-full bg-ink mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity z-10"></div>
                         {% if post.image %}

@@ -72,7 +72,6 @@ permalink: /
         
         <div class="w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
             <nav class="flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative">
-                <!-- INÍCIO (Ativo na Home) -->
                 <a href="index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Início</a>
                 
                 <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
@@ -110,17 +109,16 @@ permalink: /
                     <a href="servicos.html" class="bg-paper text-ink px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors block">Ver Serviços</a>
                 </div>
             </div>
-           <div class="w-full lg:w-2/5 h-[40vh] lg:h-auto bg-concrete relative overflow-hidden">
-    <div class="reveal-wipe absolute inset-0 w-full h-full bg-concrete">
-        <!-- Vídeo do Vimeo em Loop e Autoplay Perfeito (Estilo GIF) -->
-        <iframe src="https://player.vimeo.com/video/1203294019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
-                frameborder="0" 
-                allow="autoplay; fullscreen" 
-                class="w-full h-full object-cover pointer-events-none scale-[1.02]">
-        </iframe>
-    </div>
-    <div class="absolute bottom-4 left-4 bg-paper px-3 py-2 font-mono text-[10px] uppercase border border-ink z-10">Fig. 01 / Vídeo Manifesto</div>
-</div>
+            <div class="w-full lg:w-2/5 h-[40vh] lg:h-auto bg-concrete relative overflow-hidden">
+                <div class="reveal-wipe absolute inset-0 w-full h-full bg-concrete flex items-center justify-center">
+                    <iframe src="https://player.vimeo.com/video/1203294019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen" 
+                            class="absolute min-w-full min-h-full w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[1.02]">
+                    </iframe>
+                </div>
+                <div class="absolute bottom-4 left-4 bg-paper px-3 py-2 font-mono text-[10px] uppercase border border-ink z-10">Fig. 01 / Vídeo Manifesto</div>
+            </div>
         </section>
 
         <div class="border-b-editorial bg-ink text-paper overflow-hidden flex whitespace-nowrap py-3 font-mono text-[11px] uppercase tracking-widest">
@@ -171,7 +169,7 @@ permalink: /
             </div>
             <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 flex flex-col justify-center bg-ink text-paper overflow-hidden">
                 <h2 class="reveal-up font-display text-4xl lg:text-5xl uppercase mb-8 leading-[0.9] tracking-tighter text-acidLime">Substituímos achismo por método.</h2>
-                <p class="reveal-up delay-100 font-sans text-xl leading-relaxed opacity-90">Nosso trabalho começa antes da divulgação. Mapeamos conversations, dados, públicos e percepções editoriais.</p>
+                <p class="reveal-up delay-100 font-sans text-xl leading-relaxed opacity-90">Nosso trabalho começa antes da divulgação. Mapeamos conversas, dados, públicos e percepções editoriais.</p>
             </div>
         </section>
     </main>
@@ -216,7 +214,11 @@ permalink: /
             }, options);
             document.querySelectorAll('.reveal-up, .reveal-wipe').forEach(el => scrollObserver.observe(el));
         }
-        window.onload = () => { setupScrollAnimations(); };
+        
+        // Ativa a página assim que a estrutura HTML estiver pronta, sem travar esperando o streaming do Vimeo!
+        document.addEventListener('DOMContentLoaded', () => { 
+            setupScrollAnimations(); 
+        });
     </script>
 </body>
 </html>

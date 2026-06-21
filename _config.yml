@@ -1,14 +1,25 @@
-title: data2comms
-description: Agência de PR, pesquisa, imprensa e inteligência cultural.
-url: "https://rennanmetsi-gif.github.io"
-baseurl: "/data2commsfinal"
-permalink: /post/:title/
-markdown: kramdown
+backend:
+  name: github
+  repo: rennanmetsi-gif/data2commsfinal
+  branch: main
+  site_domain: rennanmetsi-gif.github.io
+  base_url: https://api.netlify.com # Usa o gateway público para autenticar
+
+media_folder: "assets/img/blog"
+public_folder: "/assets/img/blog"
 collections_dir: .
 
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+collections:
+  - name: "posts"
+    label: "Publicações"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Moda", "Beleza", "Saúde", "Tecnologia", "Comportamento"] }
+      - { label: "Imagem de Capa", name: "image", widget: "image" }
+      - { label: "Tempo de Leitura", name: "reading_time", widget: "string", default: "5 MIN" }
+      - { label: "Resumo", name: "summary", widget: "string" }
+      - { label: "Corpo do Texto", name: "body", widget: "markdown" }

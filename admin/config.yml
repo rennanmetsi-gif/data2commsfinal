@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: SEU_USUARIO/SEU_REPOSITORIO  # Substitua pelo seu repositório (ex: data2comms/site)
+  repo: rennanmetsi-gif/data2commsfinal
   branch: main
 
 # Se estiver usando Netlify como proxy de autenticação, descomente:

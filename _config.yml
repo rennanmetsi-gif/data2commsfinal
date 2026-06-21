@@ -4,7 +4,15 @@ url: https://rennanmetsi-gif.github.io
 baseurl: /data2commsfinal
 permalink: /post/:title/
 markdown: kramdown
-collections_dir: .
+future: true
+timezone: America/Sao_Paulo
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 exclude:
   - README.md

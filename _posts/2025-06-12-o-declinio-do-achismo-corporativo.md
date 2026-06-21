@@ -1,6 +1,6 @@
 ---
 title: O declínio do achismo corporativo
-date: 2025-06-12
+date: 2025-06-11T00:00
 category: Comportamento
 image: https://images.unsplash.com/photo-1499714608240-22fc6ad53cb2?q=80&w=1600&auto=format&fit=crop
 reading_time: 3 min

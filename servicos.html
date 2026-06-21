@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | data2comms - PR, Pesquisa e Imprensa</title>
+    <meta name="description" content="Conheça os serviços da data2comms: Pesquisa aplicada, PR, Assessoria de Imprensa orientada por dados, Media Training e PR Intelligence.">
+    <meta property="og:title" content="Serviços | data2comms - PR, Pesquisa e Imprensa">
+    <meta property="og:description" content="Conheça os serviços da data2comms: Pesquisa aplicada, PR, Assessoria de Imprensa orientada por dados, Media Training e PR Intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', signalPink: '#FF3CA7', acidLime: '#D6FF00', signalRed: '#FF2D20', concrete: '#A6A6A6', },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'], },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+        ::selection { background-color: #D6FF00; color: #0A0A0A; }
+        .border-editorial { border-color: #0A0A0A; }
+        .border-t-editorial { border-top: 1px solid #0A0A0A; }
+        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
+        .border-r-editorial { border-right: 1px solid #0A0A0A; }
+        .border-l-editorial { border-left: 1px solid #0A0A0A; }
+        .divide-y-editorial > :not([hidden]) ~ :not([hidden]) { border-top-width: 1px; border-color: #0A0A0A; }
+        .divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 0px; }
+        @media (min-width: 1024px) { .lg\:divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 1px; border-color: #0A0A0A; border-top-width: 0; } }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hover-invert:hover { background-color: #0A0A0A; color: #F2F0EB; }
+        .hover-acid:hover { background-color: #D6FF00; color: #0A0A0A; }
+        .reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .break-words { overflow-wrap: break-word; word-break: break-word; }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+
+    <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
+        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
+            <a href="index.html" class="block w-[180px] md:w-[220px]" aria-label="Voltar para a Home">
+                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="w-full h-auto object-contain">
+            </a>
+            <span class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-ink/60 md:border-l md:border-ink/30 md:pl-6 text-center">
+                Estratégia de PR, Imprensa e Dados.
+            </span>
+        </div>
+        
+        <div class="w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
+            <nav class="flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative">
+                <!-- Início normal -->
+                <a href="index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Início</a>
+                
+                <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
+                
+                <!-- SERVIÇOS (Ativo) -->
+                <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Serviços</a>
+                
+                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-semibold">Publicações</a>
+                <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
+                <a href="blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
+                <a href="blog.html?cat=saude" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Saúde</a>
+                <a href="blog.html?cat=tecnologia" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Tecnologia</a>
+                <a href="blog.html?cat=comportamento" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Comportamento</a>
+            </nav>
+            <div class="w-full lg:w-auto lg:border-l-editorial flex-shrink-0">
+                <a href="contato.html" class="bg-ink text-paper px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors cursor-pointer">
+                    Fale com a data2comms
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="p-6 md:p-12 lg:p-16 border-b-editorial flex flex-col justify-between items-start gap-8 bg-white overflow-hidden">
+            <div class="max-w-4xl">
+                <p class="reveal-up font-mono text-[11px] uppercase tracking-widest text-ink mb-6">Index // Serviços</p>
+                <h1 class="reveal-up delay-100 font-display text-5xl md:text-7xl lg:text-[6rem] uppercase tracking-tighter leading-[0.9] mb-8">Do diagnóstico à circulação pública.</h1>
+                <p class="reveal-up delay-200 font-sans text-xl max-w-2xl leading-relaxed text-ink/80">Cada serviço da data2comms foi pensado para resolver uma etapa crítica da comunicação. Atuamos de forma modular ou integrada.</p>
+                
+                <div class="reveal-up delay-300 mt-10">
+                    <a href="contato.html" class="inline-block bg-ink text-paper px-8 py-5 font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors border border-ink">
+                        Quero falar com um especialista
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="divide-y-editorial flex flex-col border-b-editorial bg-white">
+            <a href="servico-pesquisa.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_01</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">Pesquisa aplicada à comunicação</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Pesquisa, dados e leitura de contexto para orientar decisões de comunicação, reputação, PR e imprensa.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-assessoria.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_02</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">Assessoria de imprensa orientada por dados</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Estratégia editorial, relacionamento com jornalistas, pautas, releases, entrevistas e clipping.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-pr.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_03</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">PR e relações públicas</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Construção de reputação, presença pública, posicionamento, stakeholders e campanhas de PR.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-pesquisa-pr.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_04</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">Pesquisa proprietária para PR</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Estudos e levantamentos criados para gerar pautas, narrativas, autoridade e relevância pública.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-intelligence.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_05</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">PR Intelligence</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Inteligência aplicada para definir mensagens, oportunidades, riscos, territórios e caminhos de circulação.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-media-training.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_06</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">Media training e porta-vozes</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Preparação de lideranças e especialistas para imprensa, entrevistas, eventos e comunicação pública.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+            <a href="servico-estudos.html" class="reveal-up group flex flex-col md:flex-row cursor-pointer hover:bg-acidLime transition-colors w-full block">
+                <div class="w-full md:w-[150px] p-6 flex items-start border-b-editorial md:border-b-0 md:border-r-editorial">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-ink">SVC_07</span>
+                </div>
+                <div class="w-full p-6 md:p-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div class="max-w-3xl">
+                        <h3 class="font-display text-3xl md:text-4xl uppercase tracking-tighter mb-3 text-ink">Estudos proprietários e campanhas de PR</h3>
+                        <p class="font-sans text-[17px] text-ink/70 group-hover:text-ink">Projetos completos que conectam pesquisa, narrativa, imprensa e ativação pública.</p>
+                    </div>
+                    <div class="font-mono text-[11px] uppercase tracking-widest text-ink flex items-center gap-2 whitespace-nowrap border-b border-transparent group-hover:border-ink pb-1 flex-shrink-0">
+                        Ver Serviço <span class="group-hover:translate-x-1 transition-transform">&#8594;</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-paper py-12 px-6 md:px-12 lg:px-16 border-b-editorial">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 lg:col-span-2 flex flex-col justify-between">
+                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="h-5 mb-8 filter grayscale contrast-200 self-start">
+                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, assessoria de imprensa e pesquisa orientados por dados.</p>
+            </div>
+            <div>
+                <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4">
+                    <li><a href="index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
+                    <li><a href="sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
+                    <li><a href="servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
+                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
+                    <li><a href="contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                 <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4 text-concrete">
+                    <li class="py-1">contato@data2comms.com.br</li>
+                    <li class="py-1">São Paulo, SP</li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="border-t-editorial pt-8 flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-ink">
+            <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
+            <div class="flex gap-4 mt-6 md:mt-0 text-concrete"><span>Made for Data & Narrative</span></div>
+        </div>
+    </footer>
+
+    <script>
+        let scrollObserver;
+        function setupScrollAnimations() {
+            const options = { root: null, rootMargin: '0px', threshold: 0.15 };
+            scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } 
+                    else { entry.target.classList.remove('is-visible'); }
+                });
+            }, options);
+            document.querySelectorAll('.reveal-up').forEach(el => scrollObserver.observe(el));
+        }
+        window.onload = () => { setupScrollAnimations(); };
+    </script>
+</body>
+</html>

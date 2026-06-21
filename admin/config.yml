@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: SEU_USUARIO/SEU_REPOSITORIO  # Substitua pelo seu repositório (ex: data2comms/site)
+  branch: main
+
+# Se estiver usando Netlify como proxy de autenticação, descomente:
+# site_domain: SEU_SITE.netlify.app
+
+media_folder: "assets/images/posts"
+public_folder: "/assets/images/posts"
+
+collections:
+  - name: "posts"
+    label: "Publicações"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "Título"
+        name: "title"
+        widget: "string"
+      - label: "Data"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Moda", value: "moda" }
+          - { label: "Beleza", value: "beleza" }
+          - { label: "Saúde", value: "saude" }
+          - { label: "Tecnologia", value: "tecnologia" }
+          - { label: "Comportamento", value: "comportamento" }
+      - label: "Imagem de Capa"
+        name: "image"
+        widget: "image"
+        required: false
+      - label: "Tempo de Leitura"
+        name: "read_time"
+        widget: "string"
+        default: "4 MIN"
+      - label: "Resumo"
+        name: "summary"
+        widget: "text"
+      - label: "Corpo do Texto"
+        name: "body"
+        widget: "markdown"

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS | data2comms</title>
+    <!-- 
+        NOTA SOBRE AUTENTICAÇÃO:
+        
+        Para GitHub Pages, o Netlify Identity NÃO funciona diretamente.
+        A solução recomendada é usar o backend "github" do Decap CMS,
+        que autentica via OAuth do GitHub.
+        
+        Para isso funcionar, você precisa de um servidor OAuth intermediário.
+        Opções viáveis:
+        
+        1. Usar o Netlify como proxy de autenticação (mesmo hospedando no GitHub Pages):
+           - Crie um site no Netlify apontando para o mesmo repositório
+           - Ative o Netlify Identity no painel do Netlify
+           - Use o Netlify apenas para autenticação, o site continua no GitHub Pages
+        
+        2. Usar um OAuth provider externo:
+           - Deploy de um micro-serviço OAuth (ex: https://github.com/vencax/netlify-cms-github-oauth-provider)
+           - Configure o base_url no config.yml
+        
+        3. Usar o modo "editorial_workflow: false" com autenticação local:
+           - Para uso pessoal/time pequeno, funciona com token pessoal do GitHub
+           
+        A configuração abaixo usa o backend "github" que é o mais compatível
+        com GitHub Pages. Basta configurar o OAuth conforme opção escolhida.
+    -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+</body>
+</html>

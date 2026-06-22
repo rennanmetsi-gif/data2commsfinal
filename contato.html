@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -26,78 +29,83 @@
         .blink { animation: blink 1s step-end infinite; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C3ZTDYFHLT');
+</script>
 </head>
 <body class="font-sans overflow-x-hidden bg-paper">
 
-    <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
-        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
-            <a href="index.html" class="block w-[180px] md:w-[220px]">
-                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="w-full h-auto object-contain">
-            </a>
-            <span class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-ink/60 md:border-l md:border-ink/30 md:pl-6 text-center">Estratégia de PR, Imprensa e Dados.</span>
-        </div>
-        
-        <div class="w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
-            <nav class="flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative">
-                <a href="index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Início</a>
-                <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
-                <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Serviços</a>
-                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-semibold">Publicações</a>
-                <a href="clientes.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-concrete hover-invert transition-colors">Clientes</a>
-            </nav>
-            <div class="w-full lg:w-auto lg:border-l-editorial flex-shrink-0">
-                <a href="contato.html" class="bg-acidLime text-ink font-bold px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest transition-colors border-b border-ink lg:border-none">Fale com a data2comms</a>
-            </div>
-        </div>
-    </header>
+    {% include header.html %}
 
     <main>
-        <section class="flex flex-col lg:flex-row min-h-[85vh] border-b-editorial">
-            <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial flex flex-col justify-between bg-white overflow-hidden">
+        <section class="flex flex-col lg:flex-row border-b-editorial bg-paper">
+            <div class="w-full lg:w-7/12 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
+                <p class="font-mono text-[11px] uppercase tracking-widest text-ink mb-6">Contato // data2comms</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-[6rem] uppercase tracking-tighter leading-[0.9] mb-8">Vamos conversar sobre seu desafio de comunicação?</h1>
+                <p class="font-sans text-2xl text-ink max-w-3xl leading-relaxed">Conte o que sua marca, instituição ou liderança precisa comunicar. Nossa equipe fará uma primeira leitura do cenário.</p>
+            </div>
+            <div class="w-full lg:w-5/12 p-6 md:p-12 lg:p-16 flex flex-col justify-between bg-ink text-paper overflow-hidden">
                 <div>
-                    <h1 class="font-display text-5xl md:text-7xl lg:text-[6rem] uppercase tracking-tighter leading-[0.85] mb-8">Vamos conversar sobre seu desafio de comunicação?</h1>
-                    <p class="font-sans text-xl max-w-md leading-relaxed text-ink/80">Conte o que sua marca, instituição ou liderança precisa comunicar.</p>
+                    <p class="font-mono text-[11px] uppercase tracking-widest text-paper/60 mb-8">Canal direto</p>
+                    <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-tight text-acidLime">Comunicação com precisão começa por uma boa pergunta.</h2>
                 </div>
-                <div class="mt-16 font-mono text-[11px] uppercase tracking-widest space-y-4 border-t-editorial pt-8 text-ink/70">
-                    <p>contato@data2comms.com</p>
+                <div class="mt-16 font-mono text-[11px] uppercase tracking-widest space-y-4 border-t border-paper/30 pt-8 text-paper/80">
+                    <a href="mailto:contato@data2comms.com.br" class="inline-block hover:text-acidLime transition-colors">contato@data2comms.com.br</a>
                     <p>São Paulo, SP</p>
                 </div>
             </div>
+        </section>
 
-            <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 bg-paper">
+        <section class="flex flex-col lg:flex-row border-b-editorial bg-white">
+            <div class="w-full lg:w-5/12 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
+                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete mb-8">Antes de enviar</p>
+                <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-tight mb-8">Alguns sinais ajudam a orientar a conversa.</h2>
+                <ul class="divide-y border-t border-b border-ink font-sans text-base leading-relaxed">
+                    <li class="py-5">Qual decisão de comunicação precisa ser tomada?</li>
+                    <li class="py-5">Que público ou território reputacional está em jogo?</li>
+                    <li class="py-5">Existe uma pesquisa, pauta ou momento público envolvido?</li>
+                </ul>
+            </div>
+
+            <div class="w-full lg:w-7/12 p-6 md:p-12 lg:p-16 bg-paper">
                 <h2 class="font-display text-3xl uppercase mb-8 tracking-tighter">Fale com a data2comms</h2>
                 
                 <form id="contactForm" name="contactForm" class="space-y-8 max-w-lg font-sans text-sm">
                     <div class="border-b border-ink/30 pb-2">
                         <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Nome completo *</label>
-                        <input type="text" name="nome" required class="w-full bg-transparent outline-none py-1 text-ink">
+                        <input type="text" name="nome" required class="w-full min-h-[44px] bg-transparent outline-none py-1 text-ink">
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="border-b border-ink/30 pb-2">
                             <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Empresa *</label>
-                            <input type="text" name="empresa" required class="w-full bg-transparent outline-none py-1 text-ink">
+                            <input type="text" name="empresa" required class="w-full min-h-[44px] bg-transparent outline-none py-1 text-ink">
                         </div>
                         <div class="border-b border-ink/30 pb-2">
                             <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Cargo</label>
-                            <input type="text" name="cargo" class="w-full bg-transparent outline-none py-1 text-ink">
+                            <input type="text" name="cargo" class="w-full min-h-[44px] bg-transparent outline-none py-1 text-ink">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="border-b border-ink/30 pb-2">
                             <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">E-mail corporativo *</label>
-                            <input type="email" name="email" required class="w-full bg-transparent outline-none py-1 text-ink">
+                            <input type="email" name="email" required class="w-full min-h-[44px] bg-transparent outline-none py-1 text-ink">
                         </div>
                         <div class="border-b border-ink/30 pb-2">
                             <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Telefone</label>
-                            <input type="tel" name="telefone" class="w-full bg-transparent outline-none py-1 text-ink">
+                            <input type="tel" name="telefone" class="w-full min-h-[44px] bg-transparent outline-none py-1 text-ink">
                         </div>
                     </div>
 
                     <div class="border-b border-ink/30 pb-2">
                         <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Qual serviço você procura?</label>
-                        <select name="servico" class="w-full bg-transparent outline-none cursor-pointer appearance-none py-2 text-ink">
+                        <select name="servico" class="w-full min-h-[44px] bg-transparent outline-none cursor-pointer appearance-none py-2 text-ink">
                             <option value="" disabled selected>Selecione uma opção...</option>
                             <option value="pesquisa">Pesquisa aplicada à comunicação</option>
                             <option value="assessoria">Assessoria de imprensa</option>
@@ -109,7 +117,7 @@
 
                     <div class="border-b border-ink/30 pb-2">
                         <label class="block font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-2">Qual é o principal desafio hoje? *</label>
-                        <textarea name="desafio" rows="4" required class="w-full bg-transparent outline-none resize-none py-1 text-ink"></textarea>
+                        <textarea name="desafio" rows="4" required class="w-full min-h-[112px] bg-transparent outline-none resize-none py-1 text-ink"></textarea>
                     </div>
 
                     <button type="submit" id="btn-contact" class="w-full bg-ink text-paper py-5 min-h-[50px] font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors border border-ink">
@@ -123,6 +131,8 @@
             </div>
         </section>
     </main>
+
+    {% include footer.html %}
 
     <script>
         // COLOQUE O SEU LINK DO GOOGLE SHEETS AQUI ABAIXO:

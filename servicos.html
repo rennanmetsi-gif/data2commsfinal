@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -48,43 +51,18 @@
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .break-words { overflow-wrap: break-word; word-break: break-word; }
     </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C3ZTDYFHLT');
+</script>
 </head>
 <body class="font-sans overflow-x-hidden bg-paper">
 
-    <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
-        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
-            <a href="index.html" class="block w-[180px] md:w-[220px]" aria-label="Voltar para a Home">
-                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="w-full h-auto object-contain">
-            </a>
-            <span class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-ink/60 md:border-l md:border-ink/30 md:pl-6 text-center">
-                Estratégia de PR, Imprensa e Dados.
-            </span>
-        </div>
-        
-        <div class="w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
-            <nav class="flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative">
-                <!-- Início normal -->
-                <a href="index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Início</a>
-                
-                <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
-                
-                <!-- SERVIÇOS (Ativo) -->
-                <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Serviços</a>
-                
-                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-semibold">Publicações</a>
-                <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
-                <a href="blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
-                <a href="blog.html?cat=saude" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Saúde</a>
-                <a href="blog.html?cat=tecnologia" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Tecnologia</a>
-                <a href="blog.html?cat=comportamento" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Comportamento</a>
-            </nav>
-            <div class="w-full lg:w-auto lg:border-l-editorial flex-shrink-0">
-                <a href="contato.html" class="bg-ink text-paper px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors cursor-pointer">
-                    Fale com a data2comms
-                </a>
-            </div>
-        </div>
-    </header>
+    {% include header.html %}
 
     <main>
         <section class="p-6 md:p-12 lg:p-16 border-b-editorial flex flex-col justify-between items-start gap-8 bg-white overflow-hidden">
@@ -203,34 +181,7 @@
         </div>
     </main>
 
-    <footer class="bg-paper py-12 px-6 md:px-12 lg:px-16 border-b-editorial">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 lg:col-span-2 flex flex-col justify-between">
-                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="h-5 mb-8 filter grayscale contrast-200 self-start">
-                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, assessoria de imprensa e pesquisa orientados por dados.</p>
-            </div>
-            <div>
-                <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4">
-                    <li><a href="index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
-                    <li><a href="sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
-                    <li><a href="servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
-                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
-                    <li><a href="contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
-                </ul>
-            </div>
-            <div>
-                 <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4 text-concrete">
-                    <li class="py-1">contato@data2comms.com.br</li>
-                    <li class="py-1">São Paulo, SP</li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="border-t-editorial pt-8 flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-ink">
-            <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
-            <div class="flex gap-4 mt-6 md:mt-0 text-concrete"><span>Made for Data & Narrative</span></div>
-        </div>
-    </footer>
+    {% include footer.html %}
 
     <script>
         let scrollObserver;

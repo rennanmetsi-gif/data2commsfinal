@@ -57,6 +57,8 @@ permalink: /
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .break-words { overflow-wrap: break-word; word-break: break-word; }
     </style>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script defer src="/assets/js/site.js"></script>
 </head>
 <body class="font-sans overflow-x-hidden">
 
@@ -76,7 +78,7 @@ permalink: /
                 <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
                 <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Serviços</a>
                 
-                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-semibold">Publicações</a>
+                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-semibold">Inteligência</a>
                 <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
                 <a href="blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
                 <a href="blog.html?cat=saude" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Saúde</a>
@@ -92,25 +94,25 @@ permalink: /
     </header>
 
     <main>
-        <section class="border-b-editorial flex flex-col lg:flex-row items-stretch">
-            <div class="w-full lg:w-3/5 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial flex flex-col justify-center">
-                <p class="reveal-up font-mono text-ink uppercase tracking-widest text-[11px] mb-8 flex items-center gap-2">
+        <section class="home-hero border-b-editorial flex flex-col lg:flex-row items-stretch">
+            <div class="w-full lg:w-2/3 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial flex flex-col justify-center">
+                <p class="reveal-up font-mono text-ink uppercase tracking-widest text-[11px] mb-5 flex items-center gap-2">
                     <span class="w-1.5 h-1.5 bg-ink inline-block"></span> data2comms // Estratégia
                 </p>
-                <h1 class="reveal-up delay-100 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[0.85] tracking-tighter mb-8 uppercase text-ink">
-                    PR, assessoria de imprensa &amp; pesquisa <br/> orientados por dados.
+                <h1 class="reveal-up delay-100 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[0.85] tracking-tighter mb-6 uppercase text-ink">
+                    Transformamos pesquisa e dados em narrativas capazes de gerar imprensa, reputação e movimento público.
                 </h1>
-                <p class="reveal-up delay-200 font-sans text-xl md:text-2xl max-w-2xl text-ink mb-12 leading-relaxed">
-                    Transformamos pesquisa, dados e leitura humana em narrativas capazes de gerar imprensa, reputação e movimento público.
+                <p class="hero-support reveal-up delay-200 font-sans text-xl md:text-2xl max-w-2xl text-ink mb-8 leading-relaxed">
+                    Ajudamos marcas, instituições e lideranças a tomarem decisões de comunicação com precisão, substituindo o achismo por método.
                 </p>
                 <div class="reveal-up delay-300 flex flex-col sm:flex-row gap-0 border border-ink w-fit">
-                    <a href="contato.html" class="bg-ink text-paper px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors border-b sm:border-b-0 sm:border-r border-ink block">Iniciar Projeto</a>
-                    <a href="servicos.html" class="bg-paper text-ink px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors block">Ver Serviços</a>
+                    <a href="contato.html" class="bg-ink text-paper px-8 py-5 min-w-[220px] text-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors border-b sm:border-b-0 sm:border-r border-ink block">Agendar conversa estratégica</a>
+                    <a href="servicos.html" class="bg-paper text-ink px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors block">Conhecer soluções</a>
                 </div>
             </div>
             
             <!-- COLUNA DO VÍDEO EXPANDIDA - CINZA REMOVIDO COM PREENCHIMENTO COMPLETO -->
-            <div class="w-full lg:w-2/5 h-[45vh] lg:h-auto bg-concrete relative overflow-hidden">
+            <div class="w-full lg:w-1/3 h-[45vh] lg:h-auto bg-concrete relative overflow-hidden">
                 <!-- O player agora expande para 250% de largura e fica centralizado de forma absoluta, cortando as sobras cinzas -->
                 <iframe src="https://player.vimeo.com/video/1203294019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
                         frameborder="0" 
@@ -132,10 +134,54 @@ permalink: /
             </div>
         </div>
 
+        <section class="border-b-editorial bg-white overflow-hidden" aria-labelledby="metodo-title">
+            <div class="p-6 md:p-12 lg:px-16 lg:py-14 flex flex-col lg:flex-row justify-between gap-8">
+                <div class="max-w-3xl">
+                    <p class="reveal-up font-mono text-[11px] uppercase tracking-widest text-electricBlue mb-5">Método proprietário // 04 etapas</p>
+                    <h2 id="metodo-title" class="reveal-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-[0.92]">Do excesso de informação ao movimento público.</h2>
+                </div>
+                <p class="reveal-up delay-200 max-w-xl lg:max-w-sm font-sans text-lg leading-relaxed text-ink/70 lg:self-end">Investigamos o contexto, identificamos evidências relevantes e construímos uma narrativa capaz de circular com credibilidade.</p>
+            </div>
+            <div class="method-grid">
+                <article class="method-step reveal-up">
+                    <div class="method-index"><span>01</span><span>Entrada</span></div>
+                    <div class="method-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M3 9h8M3 16h17M3 23h12M23 9h6M24 23h5"/><circle cx="21" cy="9" r="2"/><circle cx="18" cy="23" r="2"/></svg>
+                    </div>
+                    <h3>Ruído</h3>
+                    <p>Mapeamos conversas, dados, percepções e tensões que cercam a organização e seu mercado.</p>
+                </article>
+                <article class="method-step reveal-up delay-100">
+                    <div class="method-index"><span>02</span><span>Leitura</span></div>
+                    <div class="method-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10"/><path d="m23 23 6 6M11 17l3 3 7-8"/></svg>
+                    </div>
+                    <h3>Sinal</h3>
+                    <p>Separamos evidência de opinião para encontrar a pergunta, o dado e o território com potência pública.</p>
+                </article>
+                <article class="method-step reveal-up delay-200">
+                    <div class="method-index"><span>03</span><span>Estratégia</span></div>
+                    <div class="method-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><path d="M5 6h22v15H14l-6 5v-5H5zM10 12h12M10 16h8"/></svg>
+                    </div>
+                    <h3>Narrativa</h3>
+                    <p>Transformamos inteligência em mensagens, pautas e argumentos relevantes para públicos estratégicos.</p>
+                </article>
+                <article class="method-step reveal-up delay-300">
+                    <div class="method-index"><span>04</span><span>Circulação</span></div>
+                    <div class="method-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="3"/><circle cx="16" cy="16" r="8"/><path d="M16 3a13 13 0 1 1-9.2 3.8"/></svg>
+                    </div>
+                    <h3>Movimento público</h3>
+                    <p>Ativamos imprensa, lideranças e canais para gerar reputação, autoridade e presença qualificada.</p>
+                </article>
+            </div>
+        </section>
+
         <section class="border-b-editorial bg-paper overflow-hidden">
             <div class="p-6 md:p-12 lg:px-16 border-b-editorial flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                 <div class="reveal-up">
-                    <h2 class="font-display text-4xl lg:text-5xl uppercase tracking-tighter leading-none">Publicações Proprietárias</h2>
+                    <h2 class="font-display text-4xl lg:text-5xl uppercase tracking-tighter leading-none">Inteligência Proprietária</h2>
                     <p class="font-mono text-[11px] uppercase tracking-widest mt-4 text-ink/70">Pesquisas, análises e leituras de contexto cultural.</p>
                 </div>
                 <a href="blog.html" class="reveal-up delay-100 font-mono text-[11px] uppercase tracking-widest text-ink hover:text-electricBlue border-b border-ink pb-1 transition-colors group flex items-center gap-2">
@@ -146,11 +192,12 @@ permalink: /
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y-editorial lg:divide-y-0 lg:divide-x-editorial">
                 {% for post in site.posts limit:4 %}
                 <a href="{{ site.baseurl }}{{ post.url }}" class="reveal-up group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial md:border-b-0 block">
-                    <div class="w-full img-square border-b-editorial overflow-hidden bg-concrete relative">
-                        <div class="absolute inset-0 w-full h-full bg-ink mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity z-10"></div>
-                        {% if post.image %}
-                        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
-                        {% endif %}
+                    <div class="editorial-cover" data-category="{{ post.category | downcase }}" role="img" aria-label="Capa editorial do estudo {{ post.title }}">
+                        <div class="flex justify-between gap-4">
+                            <span class="editorial-cover-kicker">data2comms // Intelligence</span>
+                            <span class="editorial-cover-number">0{{ forloop.index }}</span>
+                        </div>
+                        <strong class="editorial-cover-title">{{ post.title }}</strong>
                     </div>
                     <div class="p-6 md:p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-center mb-6 font-mono text-[10px] uppercase tracking-widest border-b border-ink/20 group-hover:border-paper/20 pb-3 text-concrete">
@@ -187,7 +234,7 @@ permalink: /
                     <li><a href="index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
                     <li><a href="sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
                     <li><a href="servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
-                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
+                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Inteligência</a></li>
                     <li><a href="contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
                 </ul>
             </div>

@@ -29,6 +29,8 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script defer src="/assets/js/site.js"></script>
 </head>
 <body class="font-sans overflow-x-hidden flex flex-col min-h-screen">
 
@@ -47,7 +49,7 @@
                 <a href="{{ site.baseurl }}/index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium border-r border-ink">Início</a>
                 <a href="{{ site.baseurl }}/sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium border-r border-ink">Sobre</a>
                 <a href="{{ site.baseurl }}/servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium border-r border-ink">Serviços</a>
-                <a href="{{ site.baseurl }}/blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink border-r border-ink">Publicações</a>
+                <a href="{{ site.baseurl }}/blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink border-r border-ink">Inteligência</a>
                 <a href="{{ site.baseurl }}/blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors border-r border-ink">Moda</a>
                 <a href="{{ site.baseurl }}/blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors border-r border-ink">Beleza</a>
                 <a href="{{ site.baseurl }}/blog.html?cat=saude" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors border-r border-ink">Saúde</a>
@@ -58,20 +60,20 @@
     </header>
 
     <main class="flex-grow">
-        <div class="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] bg-concrete relative overflow-hidden border-b-editorial">
-            {% if page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover">
-            {% endif %}
-        </div>
+        <section class="report-hero" aria-labelledby="report-title">
+            <div class="report-hero-label">data2comms // Inteligência // {{ page.category }}</div>
+            <h1 id="report-title" class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] max-w-5xl">
+                {{ page.title }}
+            </h1>
+            <div class="report-hero-meta flex flex-wrap justify-between gap-4">
+                <span>{{ page.date | date: "%d %b %Y" }}</span>
+                <span>{{ page.read_time }}</span>
+            </div>
+        </section>
 
-        <article class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+        <article class="post-reading mx-auto px-6 py-12 md:py-20">
             <header class="mb-12 md:mb-16 border-b border-ink/20 pb-12">
-                <p class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-concrete mb-6">
-                    {{ page.category }} // {{ page.date | date: "%d %b %Y" }}
-                </p>
-                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-[0.9] mb-8 text-ink">
-                    {{ page.title }}
-                </h1>
+                <a href="{{ site.baseurl }}/blog.html" class="inline-flex items-center gap-2 mb-8 font-mono text-[10px] uppercase tracking-widest border-b border-ink pb-1 hover:text-electricBlue">&#8592; Voltar para Inteligência</a>
                 <p class="font-sans text-xl md:text-2xl leading-relaxed text-ink/80">
                     {{ page.summary }}
                 </p>
@@ -80,6 +82,13 @@
             <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline hover:prose-a:text-ink prose-blockquote:border-l-4 prose-blockquote:border-ink prose-blockquote:pl-6 prose-blockquote:font-display prose-blockquote:text-2xl prose-blockquote:uppercase prose-blockquote:not-italic prose-blockquote:text-ink prose-strong:font-semibold prose-table:border-collapse prose-table:w-full prose-th:border prose-th:border-ink prose-th:p-3 prose-th:bg-ink prose-th:text-paper prose-td:border prose-td:border-ink prose-td:p-3">
                 {{ content }}
             </div>
+
+            <aside class="mt-16 border border-ink bg-ink text-paper p-6 md:p-10" aria-label="Conversa estratégica">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime mb-5">Transformar leitura em decisão</p>
+                <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none mb-5">Este tema atravessa o desafio da sua organização?</h2>
+                <p class="font-sans text-base md:text-lg leading-relaxed opacity-80 mb-8">A data2comms conecta pesquisa, estratégia narrativa e circulação pública em projetos sob medida.</p>
+                <a href="{{ site.baseurl }}/contato.html" class="inline-flex min-h-[48px] items-center bg-acidLime text-ink border border-paper px-6 py-3 font-mono text-[10px] uppercase tracking-widest hover:bg-paper">Conversar com a data2comms &#8594;</a>
+            </aside>
         </article>
     </main>
 
@@ -94,7 +103,7 @@
                     <li><a href="{{ site.baseurl }}/index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
                     <li><a href="{{ site.baseurl }}/sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
                     <li><a href="{{ site.baseurl }}/servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
-                    <li><a href="{{ site.baseurl }}/blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
+                    <li><a href="{{ site.baseurl }}/blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Inteligência</a></li>
                     <li><a href="{{ site.baseurl }}/contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
                 </ul>
             </div>

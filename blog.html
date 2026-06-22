@@ -8,9 +8,9 @@ permalink: /blog.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TAGS DE SEO OTIMIZADAS PARA O BLOG -->
-    <title>Publicações | data2comms - PR, Imprensa e Reputação</title>
+    <title>Inteligência | data2comms - PR, Imprensa e Reputação</title>
     <meta name="description" content="Análises, estudos e reflexões da data2comms sobre como transformar pesquisa e dados em narrativa, relações públicas e presença qualificada na mídia.">
-    <meta property="og:title" content="Publicações | data2comms - PR, Imprensa e Reputação">
+    <meta property="og:title" content="Inteligência | data2comms - PR, Imprensa e Reputação">
     <meta property="og:description" content="Análises, estudos e reflexões da data2comms sobre como transformar pesquisa e dados em narrativa, relações públicas e presença qualificada na mídia.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -56,6 +56,8 @@ permalink: /blog.html
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .break-words { overflow-wrap: break-word; word-break: break-word; }
     </style>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script defer src="/assets/js/site.js"></script>
 </head>
 <body class="font-sans overflow-x-hidden bg-paper">
 
@@ -75,7 +77,7 @@ permalink: /blog.html
                 <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
                 <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Serviços</a>
                 
-                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Publicações</a>
+                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Inteligência</a>
                 
                 <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
                 <a href="blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
@@ -94,18 +96,16 @@ permalink: /blog.html
     <main>
         <section class="flex flex-col lg:flex-row border-b-editorial bg-white">
             <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
-                <p class="font-mono text-[11px] uppercase tracking-widest text-ink mb-6">Repositório // Blog</p>
-                <h1 class="font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">Dados, imprensa, reputação e comunicação.</h1>
-                <p class="font-sans text-xl leading-relaxed text-ink/80">Análises, estudos e reflexões sobre como transformar pesquisa e dados em narrativa, PR e presença pública qualificada.</p>
+                <p class="font-mono text-[11px] uppercase tracking-widest text-electricBlue mb-6">Repositório // Inteligência</p>
+                <h1 class="font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">Estudos para decidir comunicação com menos achismo.</h1>
+                <p class="font-sans text-xl leading-relaxed text-ink/80">Pesquisas, análises e sinais públicos para transformar contexto em narrativa, reputação e direção estratégica.</p>
             </div>
-            <div class="w-full lg:w-1/2 h-[30vh] lg:h-auto bg-concrete relative overflow-hidden">
-                <div class="absolute inset-0 w-full h-full bg-concrete">
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop&grayscale=true" alt="Jornalismo de Dados" class="w-full h-full object-cover">
-                </div>
+            <div class="intelligence-visual w-full lg:w-1/2 lg:h-auto" role="img" aria-label="Visual analítico abstrato baseado no sistema de marca data2comms">
+                <span>Dados → leitura de contexto → decisão pública</span>
             </div>
         </section>
 
-        <section class="border-b-editorial bg-paper sticky top-[154px] md:top-[124px] z-30 overflow-x-auto hide-scrollbar">
+        <section class="intelligence-filters border-b-editorial bg-paper sticky top-0 z-30 overflow-x-auto hide-scrollbar">
             <div class="flex px-6 md:px-12 lg:px-16 py-4 gap-8 font-mono text-[11px] uppercase tracking-widest whitespace-nowrap text-ink/50" id="blog-filters">
                 <button data-filter="todos" class="filter-btn text-ink border-ink hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Todos</button>
                 <button data-filter="moda" class="filter-btn border-transparent hover:text-ink transition-colors border-b pb-1 py-2 cursor-pointer">Moda</button>
@@ -116,27 +116,48 @@ permalink: /blog.html
             </div>
         </section>
 
-        <section class="min-h-[60vh] bg-white">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y-editorial md:divide-y-0 md:divide-x-editorial border-b-editorial" id="blog-grid">
-                
-                {% for post in site.posts %}
-                <a href="{{ site.baseurl }}{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial lg:border-b-0 cursor-pointer block">
-                    <div class="w-full img-square border-b-editorial overflow-hidden bg-concrete relative">
-                        <div class="absolute inset-0 w-full h-full bg-ink mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity z-10"></div>
-                        {% if post.image %}
-                        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
-                        {% endif %}
+        <section class="min-h-[60vh] bg-white" id="blog-grid">
+            <div class="intelligence-section-label">
+                <span>Estudos proprietários</span>
+                <span>Seleção de maior profundidade</span>
+            </div>
+            <div class="report-grid">
+                {% for post in site.posts limit:3 %}
+                <a href="{{ site.baseurl }}{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial cursor-pointer block">
+                    <div class="editorial-cover" data-category="{{ post.category | downcase }}" role="img" aria-label="Capa editorial do estudo {{ post.title }}">
+                        <div class="flex justify-between gap-4">
+                            <span class="editorial-cover-kicker">Estudo // data2comms</span>
+                            <span class="editorial-cover-number">0{{ forloop.index }}</span>
+                        </div>
+                        <strong class="editorial-cover-title">{{ post.title }}</strong>
                     </div>
                     <div class="p-6 md:p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-center mb-6 font-mono text-[10px] uppercase tracking-widest border-b border-ink/20 group-hover:border-paper/20 pb-3 text-concrete">
-                            <span>{{ post.category }}</span><span>{{ post.date | date: "%d %b" }}</span>
+                            <span>{{ post.category }}</span><span>{{ post.read_time }}</span>
                         </div>
-                        <h3 class="font-display text-2xl lg:text-3xl uppercase tracking-tight leading-none mb-4 group-hover:text-acidLime transition-colors line-clamp-3 break-words">{{ post.title }}</h3>
+                        <h2 class="font-display text-2xl lg:text-3xl uppercase tracking-tight leading-none mb-4 group-hover:text-acidLime transition-colors line-clamp-3 break-words">{{ post.title }}</h2>
                         <p class="font-sans text-sm md:text-base opacity-80 mt-auto leading-relaxed line-clamp-3 break-words">{{ post.summary }}</p>
                     </div>
                 </a>
                 {% endfor %}
+            </div>
 
+            <div class="intelligence-section-label">
+                <span>Sinais públicos</span>
+                <span>Leituras rápidas de contexto</span>
+            </div>
+            <div class="signal-grid">
+                {% for post in site.posts offset:3 %}
+                <a href="{{ site.baseurl }}{{ post.url }}" data-category="{{ post.category | downcase }}" class="article-card signal-card group">
+                    <div class="signal-card-meta">
+                        <span>{{ post.category }}</span>
+                        <span>{{ post.read_time }}</span>
+                    </div>
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.summary }}</p>
+                    <span class="signal-card-link">Ler análise &#8594;</span>
+                </a>
+                {% endfor %}
             </div>
         </section>
     </main>
@@ -152,7 +173,7 @@ permalink: /blog.html
                     <li><a href="index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
                     <li><a href="sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
                     <li><a href="servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
-                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
+                    <li><a href="blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Inteligência</a></li>
                     <li><a href="contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
                 </ul>
             </div>
@@ -191,7 +212,7 @@ permalink: /blog.html
 
                 articles.forEach(card => {
                     if (catLower === 'todos' || card.dataset.category === catLower) {
-                        card.style.display = 'flex';
+                        card.style.display = '';
                     } else {
                         card.style.display = 'none';
                     }

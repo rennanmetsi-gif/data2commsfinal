@@ -92,7 +92,6 @@ permalink: /
     </header>
 
     <main>
-        <!-- SEÇÃO HERO TOTALMENTE ESTABILIZADA E RESPONSIVA -->
         <section class="border-b-editorial flex flex-col lg:flex-row items-stretch">
             <div class="w-full lg:w-3/5 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial flex flex-col justify-center">
                 <p class="reveal-up font-mono text-ink uppercase tracking-widest text-[11px] mb-8 flex items-center gap-2">
@@ -110,13 +109,14 @@ permalink: /
                 </div>
             </div>
             
-            <!-- COLUNA DO VÍDEO ORGÂNICA - SEM LOOPINGS E SEM CONFLITOS DE ALTURA -->
+            <!-- COLUNA DO VÍDEO EXPANDIDA - CINZA REMOVIDO COM PREENCHIMENTO COMPLETO -->
             <div class="w-full lg:w-2/5 h-[45vh] lg:h-auto bg-concrete relative overflow-hidden">
+                <!-- O player agora expande para 250% de largura e fica centralizado de forma absoluta, cortando as sobras cinzas -->
                 <iframe src="https://player.vimeo.com/video/1203294019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin"
-                        class="absolute inset-0 w-full h-full pointer-events-none scale-[1.02]" 
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250%] h-[105%] max-w-none pointer-events-none" 
                         title="Vídeo Manifesto data2comms">
                 </iframe>
                 <div class="absolute bottom-4 left-4 bg-paper px-3 py-2 font-mono text-[10px] uppercase border border-ink z-10">Fig. 01 / Vídeo Manifesto</div>

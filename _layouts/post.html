@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     
-    <!-- Plugin de Tipografia (mantido apenas para formatar subtítulos e tabelas) -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
         tailwind.config = {
@@ -33,7 +32,6 @@
 </head>
 <body class="font-sans overflow-x-hidden flex flex-col min-h-screen">
 
-    <!-- CABEÇALHO -->
     <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
         <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
             <a href="{{ site.baseurl }}/index.html" class="block w-[180px] md:w-[220px]" aria-label="Voltar para a Home">
@@ -60,14 +58,12 @@
     </header>
 
     <main class="flex-grow">
-        <!-- CAPA DA PUBLICAÇÃO CRUA E DIRETA -->
         <div class="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] bg-concrete relative overflow-hidden border-b-editorial">
             {% if page.image %}
             <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover">
             {% endif %}
         </div>
 
-        <!-- CABEÇALHO DO TEXTO -->
         <article class="max-w-4xl mx-auto px-6 py-12 md:py-20">
             <header class="mb-12 md:mb-16 border-b border-ink/20 pb-12">
                 <p class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest text-concrete mb-6">
@@ -81,22 +77,37 @@
                 </p>
             </header>
 
-            <!-- CORPO DO TEXTO (Markdown renderizado sem classes de animação invisível) -->
             <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline hover:prose-a:text-ink prose-blockquote:border-l-4 prose-blockquote:border-ink prose-blockquote:pl-6 prose-blockquote:font-display prose-blockquote:text-2xl prose-blockquote:uppercase prose-blockquote:not-italic prose-blockquote:text-ink prose-strong:font-semibold prose-table:border-collapse prose-table:w-full prose-th:border prose-th:border-ink prose-th:p-3 prose-th:bg-ink prose-th:text-paper prose-td:border prose-td:border-ink prose-td:p-3">
                 {{ content }}
             </div>
         </article>
     </main>
 
-    <!-- RODAPÉ COMPLETO -->
     <footer class="bg-paper py-12 px-6 md:px-12 lg:px-16 border-t border-ink">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 lg:col-span-2 flex flex-col justify-between">
                 <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="h-5 mb-8 filter grayscale contrast-200 self-start">
+                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, assessoria de imprensa e pesquisa orientados por dados.</p>
+            </div>
+            <div>
+                <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4">
+                    <li><a href="{{ site.baseurl }}/index.html" class="hover:text-ink text-concrete transition-colors py-1 block">Início</a></li>
+                    <li><a href="{{ site.baseurl }}/sobre.html" class="hover:text-ink text-concrete transition-colors py-1 block">Sobre</a></li>
+                    <li><a href="{{ site.baseurl }}/servicos.html" class="hover:text-ink text-concrete transition-colors py-1 block">Serviços</a></li>
+                    <li><a href="{{ site.baseurl }}/blog.html" class="hover:text-ink text-concrete transition-colors py-1 block">Publicações</a></li>
+                    <li><a href="{{ site.baseurl }}/contato.html" class="hover:text-ink text-concrete transition-colors py-1 block">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                 <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4 text-concrete">
+                    <li class="py-1">contato@data2comms.com.br</li>
+                    <li class="py-1">São Paulo, SP</li>
+                </ul>
             </div>
         </div>
         <div class="border-t border-ink pt-8 flex flex-col md:flex-row justify-between items-center font-mono text-[10px] uppercase tracking-widest text-ink">
             <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
+            <div class="flex gap-4 mt-6 md:mt-0 text-concrete"><span>Made for Data & Narrative</span></div>
         </div>
     </footer>
 </body>

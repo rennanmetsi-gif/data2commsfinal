@@ -20,3 +20,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+
+plugins:
+  - jekyll-sitemap

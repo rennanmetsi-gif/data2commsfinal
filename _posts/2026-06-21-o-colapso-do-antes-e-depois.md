@@ -2,7 +2,7 @@
 layout: post
 title: "O colapso do antes e depois: a crise da evidência visual no mercado de saúde e beleza"
 date: 2026-06-21 23:30:00 -0300
-category: "Saúde"
+category: "saude"
 image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200&auto=format&fit=crop"
 read_time: "7 MIN READ"
 summary: "Imagens de transformação estética perderam a inocência porque filtros, inteligência artificial e a medicalização da aparência tornaram a prova fotográfica uma métrica instável e sob vigilância global."

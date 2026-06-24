@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -69,34 +70,30 @@
 </head>
 <body class="font-sans overflow-x-hidden bg-white">
 
-    <!-- CABEÇALHO ESTILO REVISTA DIGITAL -->
-    <header class="sticky top-0 w-full z-50 flex flex-col bg-paper">
-        <div class="w-full flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 px-6 py-8 border-b-editorial">
-            <a href="index.html" class="block w-[180px] md:w-[220px]" aria-label="Voltar para a Home">
+    <header class="site-header sticky top-0 w-full z-50 flex flex-col bg-ink">
+        <div class="site-brandbar w-full flex flex-row items-center justify-between md:justify-center gap-3 md:gap-6 px-6 py-8 border-b">
+            <a href="index.html" class="block w-[150px] md:w-[220px] flex-shrink-0" aria-label="Voltar para a Home">
                 <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="w-full h-auto object-contain">
             </a>
-            <span class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-ink/60 md:border-l md:border-ink/30 md:pl-6 text-center">
-                Estratégia de PR, Imprensa e Dados.
+            <span class="site-brandbar-tagline font-mono text-[8px] md:text-[11px] uppercase tracking-widest text-paper/70 md:border-l md:border-paper/30 md:pl-6 text-right md:text-center">
+                Estratégia de PR, influência, imprensa e dados.
             </span>
         </div>
         
-        <div class="w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
-            <nav class="flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative">
+        <div class="site-navigation w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
+            <nav class="site-primary-nav flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative" aria-label="Navegação principal">
                 <a href="index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Início</a>
                 <a href="sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Sobre</a>
                 <a href="servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-medium">Serviços</a>
-                
-                <!-- PUBLICAÇÕES (Ativo) -->
-                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-paper hover-invert transition-colors font-bold bg-ink">Publicações</a>
-                
-                <a href="blog.html?cat=moda" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
-                <a href="blog.html?cat=beleza" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
-                <a href="blog.html?cat=saude" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Saúde</a>
-                <a href="blog.html?cat=tecnologia" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Tecnologia</a>
-                <a href="blog.html?cat=comportamento" class="px-4 h-[50px] flex justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Comportamento</a>
+                <a href="blog.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest text-ink hover-invert transition-colors font-bold bg-acidLime">Publicações</a>
+                <a href="blog.html?cat=moda" class="hidden lg:flex px-4 h-[50px] justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Moda</a>
+                <a href="blog.html?cat=beleza" class="hidden lg:flex px-4 h-[50px] justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Beleza</a>
+                <a href="blog.html?cat=saude" class="hidden lg:flex px-4 h-[50px] justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Saúde</a>
+                <a href="blog.html?cat=tecnologia" class="hidden lg:flex px-4 h-[50px] justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Tecnologia</a>
+                <a href="blog.html?cat=comportamento" class="hidden lg:flex px-4 h-[50px] justify-center items-center font-mono text-[10px] uppercase tracking-widest text-ink/70 hover-invert transition-colors">Comportamento</a>
             </nav>
             <div class="w-full lg:w-auto lg:border-l-editorial flex-shrink-0">
-                <a href="contato.html" class="bg-ink text-paper px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors cursor-pointer">
+                <a href="contato.html" class="site-contact-cta px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest transition-colors cursor-pointer border-b border-ink lg:border-none">
                     Fale com a data2comms
                 </a>
             </div>
@@ -153,11 +150,11 @@
                 </p>
                 
                 <blockquote>
-                    "Não acreditamos em influência sem reputação. Não acreditamos em dados sem interpretação. Marcas fortes sustentam conversas relevantes."
+                    "Não acreditamos em influência sem estratégia. Não acreditamos em dados sem interpretação. Marcas fortes sustentam conversas relevantes."
                 </blockquote>
                 
                 <p>
-                    Quando a decisão de comunicação é pautada por mapas de evidência, o risco diminui e o potencial de engajamento público real (aquele que converte em reputação) aumenta de forma exponencial. Isso muda a regra do jogo: não se trata mais de gritar mais alto, mas de falar com a precisão de um cirurgião.
+                    Quando a decisão de comunicação é pautada por mapas de evidência, o risco diminui e o potencial de engajamento público real aumenta de forma exponencial. Isso muda a regra do jogo: não se trata mais de gritar mais alto, mas de ocupar um território com precisão.
                 </p>
             </div>
 
@@ -176,7 +173,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 lg:col-span-2 flex flex-col justify-between">
                 <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="h-5 mb-8 filter grayscale contrast-200 self-start">
-                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, assessoria de imprensa e pesquisa orientados por dados.</p>
+                <p class="font-mono text-[11px] uppercase tracking-widest text-concrete max-w-sm leading-relaxed">PR, influência, imprensa e pesquisa orientados por dados.</p>
             </div>
             <div>
                 <ul class="font-mono text-[10px] uppercase tracking-widest space-y-4">

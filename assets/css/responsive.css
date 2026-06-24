@@ -1,0 +1,223 @@
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+:root {
+    --brand-lime: #D6FF00;
+    --brand-ink: #0A0A0A;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+div {
+    min-width: 0;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.site-brandbar {
+    background: var(--brand-ink);
+    border-top: 4px solid var(--brand-lime);
+    border-bottom-color: rgba(242, 240, 235, 0.28);
+}
+
+.site-contact-cta,
+.brand-cta,
+#btn-service,
+#btn-contact {
+    background: var(--brand-lime) !important;
+    color: var(--brand-ink) !important;
+    font-weight: 600;
+}
+
+.site-contact-cta:hover,
+.brand-cta:hover,
+#btn-service:hover,
+#btn-contact:hover {
+    background: var(--brand-ink) !important;
+    color: #F2F0EB !important;
+}
+
+.site-primary-nav > a.bg-ink,
+.site-primary-nav > a.bg-acidLime {
+    background: var(--brand-lime) !important;
+    color: var(--brand-ink) !important;
+}
+
+.site-footer {
+    border-top: 8px solid var(--brand-lime);
+}
+
+.site-footer a:hover {
+    background: var(--brand-lime);
+    color: var(--brand-ink) !important;
+}
+
+.brand-kicker {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--brand-ink);
+    background: var(--brand-lime);
+    color: var(--brand-ink) !important;
+}
+
+.brand-dot {
+    background: var(--brand-ink) !important;
+}
+
+.brand-highlight {
+    background-image: linear-gradient(transparent 78%, var(--brand-lime) 0);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.brand-label,
+.service-code,
+.service-page-code {
+    background: var(--brand-lime) !important;
+    color: var(--brand-ink) !important;
+}
+
+.brand-section-rule {
+    border-left: 8px solid var(--brand-lime);
+    padding-left: 1rem;
+}
+
+.brand-link {
+    border-color: var(--brand-lime) !important;
+    text-decoration-color: var(--brand-lime);
+    text-decoration-thickness: 3px;
+}
+
+.brand-link:hover {
+    background: var(--brand-lime);
+    color: var(--brand-ink) !important;
+}
+
+.filter-btn.text-ink.border-ink {
+    border-color: var(--brand-ink) !important;
+    background: var(--brand-lime);
+    color: var(--brand-ink) !important;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.prose blockquote {
+    border-left-color: var(--brand-lime) !important;
+}
+
+.prose a {
+    text-decoration-color: var(--brand-lime) !important;
+    text-decoration-thickness: 3px !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--brand-lime);
+    outline-offset: 3px;
+}
+
+.article-content,
+.prose {
+    overflow-wrap: anywhere;
+}
+
+.prose a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.prose pre,
+.prose table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.home-marquee {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.home-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: data2comms-marquee 32s linear infinite;
+    will-change: transform;
+}
+
+.home-marquee-copy {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+@keyframes data2comms-marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-marquee-track {
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header {
+        position: relative !important;
+    }
+
+    .site-brandbar {
+        padding: 1rem !important;
+        gap: 1rem;
+    }
+
+    .site-brandbar-tagline {
+        max-width: 12rem;
+        line-height: 1.35;
+    }
+
+    .site-primary-nav > a {
+        flex: 1 0 auto;
+        min-height: 48px;
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+    }
+
+    .brand-highlight {
+        background-image: linear-gradient(transparent 84%, var(--brand-lime) 0);
+    }
+
+    .site-contact-cta {
+        min-height: 48px;
+    }
+
+    .blog-filterbar {
+        top: 0 !important;
+    }
+
+    h1 {
+        overflow-wrap: break-word;
+    }
+}

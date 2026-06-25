@@ -73,7 +73,7 @@ O "memorial" oferecido pelas ferramentas das empresas funciona, essencialmente, 
 
 A herança digital não se restringe à dimensão existencial ou afetiva dos indivíduos. Empresas, negócios digitais e marcas consolidadas também experimentam o processo de falecimento e inatividade dentro das redes de comunicação. Quando uma operação comercial se encerra de maneira abrupta, o seu encerramento operacional não coincide com o seu desaparecimento simbólico no ambiente conectado. O fenômeno origina o conceito de marca fantasma, ou *ghost brand*, caracterizada pela permanência de vitrines abandonadas, canais sem postagens, perfis abandonados em plataformas de avaliações e sites inativos expostos aos motores de busca globais<sup>25</sup>.
 
-A pegada digital residual de empresas extintas gera implicações para a reputação de seus investidores, fundadores e parceiros de negócios comerciais. As principais ameaças derivadas dessa inatividade sistemática incluem:
+A pegada digital residual de empresas extintas gera implicações para a imagem de seus investidores, fundadores e parceiros comerciais. As principais ameaças derivadas dessa inatividade sistemática incluem:
 
 - **Vulnerabilidades em sistemas corporativos:** Contas administrativas e acessos inativos em plataformas corporativas de tecnologia, sistemas de relacionamento de clientes (CRMs) e repositórios de nuvem não auditados funcionam como vetores de infiltração cibernética, as chamadas identidades fantasmas, utilizadas por atacantes para sequestro de dados e fraudes operacionais<sup>25</sup>.
 
@@ -81,7 +81,7 @@ A pegada digital residual de empresas extintas gera implicações para a reputa�
 
 - **A creator economy e o patrimônio pós-morte:** Para influenciadores, canais e produtores digitais, as contas inativas em plataformas como YouTube e Substack continuam a acumular tráfego residual e a gerar fluxos financeiros de publicidade<sup>6</sup>. Sem um inventário estruturado e a definição de fiduciários digitais específicos, o faturamento fica retido de maneira indefinida pelas empresas administradoras de tecnologia devido à impossibilidade de alteração burocrática dos dados de pagamento<sup>6</sup>.
 
-As marcas e as empresas deixam vitrines inativas, enquanto os profissionais independentes deixam históricos de carreira obsoletos e domínios que podem ser adquiridos por cibercriminosos para a distribuição de golpes. A gestão da inatividade digital tornou-se como um pilar essencial para a proteção do patrimônio e da integridade reputacional das organizações.
+As marcas e as empresas deixam vitrines inativas, enquanto os profissionais independentes deixam históricos de carreira obsoletos e domínios que podem ser adquiridos por cibercriminosos para a distribuição de golpes. A gestão da inatividade digital tornou-se como um pilar essencial para a proteção do patrimônio e da integridade institucional das organizações.
 
 ### riscos e contradições: o impasse jurídico entre a privacidade e a sucessão
 

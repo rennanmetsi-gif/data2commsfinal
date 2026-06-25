@@ -44,7 +44,7 @@ A disputa real, portanto, não é entre marcas que "veem" esse mercado e marcas 
 
 A implicação direta para qualquer time de marketing, comunicação ou inteligência de mercado é que o consumo popular exige o mesmo nível de pesquisa qualitativa dedicado a qualquer público de alto valor - não menos, por suposta simplicidade, e não genericamente mais, por suposta exotização. Isso significa investir em escuta direta, pesquisa regionalizada (dado que favelas e periferias têm hábitos de consumo distintos entre si, não apenas em relação ao público de renda mais alta) e social listening qualificado antes de definir território de marca, embalagem ou linguagem de campanha. A própria fundadora da NÓS argumenta que regionalizar campanhas, em vez de tratar "favela" como categoria única, é o caminho mais direto para captar a demanda já existente por marcas que hoje têm distribuição ou comunicação mal estruturada nesses territórios<sup>7</sup>.
 
-Para áreas de comunicação e reputação, a régua de risco também muda: comunicação dirigida a esse público que soe paternalista, caricata ou didática em excesso tende a gerar o mesmo tipo de rejeição que qualquer comunicação condescendente provocaria em qualquer outro segmento - só que com histórico mais longo de desconfiança acumulada por décadas de invisibilidade de mercado.
+Para áreas de comunicação e percepção pública, a régua de risco também muda: comunicação dirigida a esse público que soe paternalista, caricata ou didática em excesso tende a gerar o mesmo tipo de rejeição que qualquer comunicação condescendente provocaria em qualquer outro segmento - só que com histórico mais longo de desconfiança acumulada por décadas de invisibilidade de mercado.
 
 ### os riscos que a tendência carrega
 

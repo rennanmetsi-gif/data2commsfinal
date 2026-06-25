@@ -7,12 +7,22 @@ markdown: kramdown
 future: true
 timezone: America/Sao_Paulo
 
+collections:
+  metodo:
+    output: true
+    permalink: /metodo/:name/
+
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "metodo"
+    values:
+      layout: "metodo"
 
 exclude:
   - README.md

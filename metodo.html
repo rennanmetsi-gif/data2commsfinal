@@ -1,0 +1,80 @@
+---
+layout: null
+permalink: /metodo/
+---
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método | data2comms</title>
+    <meta name="description" content="Métodos, aplicações e bastidores da data2comms em data search, desk research, earned media, influência e PR orientado por dados.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', signalPink: '#FF3CA7', acidLime: '#D6FF00', signalRed: '#FF2D20', concrete: '#A6A6A6' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+        ::selection { background-color: #D6FF00; color: #0A0A0A; }
+        .border-editorial { border-color: #0A0A0A; }
+        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
+        .border-r-editorial { border-right: 1px solid #0A0A0A; }
+        .hover-invert:hover { background-color: #0A0A0A; color: #F2F0EB; }
+        .hover-acid:hover { background-color: #D6FF00; color: #0A0A0A; }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C3ZTDYFHLT');
+    </script>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+    {% include header.html %}
+
+    <main>
+        <section class="grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
+            <div class="lg:col-span-8 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial">
+                <p class="brand-kicker font-mono text-[11px] uppercase tracking-widest mb-8">Método // data2comms</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-[7rem] uppercase tracking-tighter leading-[0.84] mb-10">Como dados viram pauta, território e decisão.</h1>
+            </div>
+            <div class="lg:col-span-4 p-6 md:p-12 lg:p-16 bg-ink text-paper flex items-end">
+                <p class="font-sans text-xl md:text-2xl leading-relaxed">Aplicações de data search, desk research, análise cultural, Python, big data, earned media e PR Intelligence em desafios reais de comunicação.</p>
+            </div>
+        </section>
+
+        <section class="border-b-editorial bg-acidLime px-6 py-5 md:px-12 lg:px-16">
+            <p class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest">Pesquisa aplicada // inteligência de mídia // influência // imprensa // campanhas data driven</p>
+        </section>
+
+        {% assign method_posts = site.metodo | sort: "date" | reverse %}
+        <section class="method-grid bg-white">
+            {% for post in method_posts %}
+            <a href="{{ site.baseurl }}{{ post.url }}" class="method-card group p-6 md:p-10 flex flex-col min-h-[360px] border-b-editorial hover:bg-ink hover:text-paper transition-colors">
+                <div class="flex justify-between gap-4 font-mono text-[10px] uppercase tracking-widest mb-16 text-ink/60 group-hover:text-paper/60">
+                    <span>{{ post.service_area }}</span>
+                    <span>{{ post.read_time }}</span>
+                </div>
+                <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none mb-6 group-hover:text-acidLime">{{ post.title }}</h2>
+                <p class="font-sans text-base leading-relaxed opacity-80 mt-auto">{{ post.excerpt }}</p>
+                <span class="font-mono text-[10px] uppercase tracking-widest mt-8 border-t border-current pt-4">Ler aplicação &#8594;</span>
+            </a>
+            {% endfor %}
+        </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html>

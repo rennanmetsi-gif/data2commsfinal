@@ -24,7 +24,7 @@ jobs:
 
       - name: Aplicar commit do site
         run: |
-          test "$(sha256sum .github/site.patch.b64 | cut -d' ' -f1)" = "73f48dbe5f2c5a24c8571f52d62359dbd0f7cbf933576574123c45c7fe194f47"
+          test "$(sha256sum .github/site.patch.b64 | cut -d' ' -f1)" = "2f50d36c3571f491856def02d5904c20cbf5fbf7ab57c1aaeab661fd70d268b1"
           base64 --decode .github/site.patch.b64 | gzip -dc > /tmp/data2comms.patch
           git am /tmp/data2comms.patch
 

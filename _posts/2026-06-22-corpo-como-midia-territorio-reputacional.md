@@ -1,10 +1,10 @@
 ---
-title: "Moda, luxo e beleza: o corpo como mídia e território reputacional"
+title: "Moda, luxo e beleza: o corpo como mídia e território simbólico"
 date: 2026-06-22 10:00:00 -0300
 category: beleza
 image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1200"
 read_time: "14 MIN READ"
-summary: "O corpo virou interface de comunicação, capital simbólico e ativo reputacional. Moda, luxo e beleza agora disputam a própria superfície biológica."
+summary: "O corpo virou interface de comunicação, capital simbólico e ativo cultural. Moda, luxo e beleza agora disputam a própria superfície biológica."
 ---
 A arquitetura social da contemporaneidade estabeleceu o corpo humano como a interface primordial de comunicação entre o indivíduo e o espaço público. Muito além da sua dimensão puramente biológica ou funcional, a fisicalidade humana foi transmutada num suporte mediático, um canal onde se inscrevem códigos de estatuto, disciplina, pertencimento de classe e adesão a normas estéticas ditadas pela interseção dos mercados de moda, luxo e bem-estar. A aparência física opera como um idioma silencioso que precede a fala, comunicando valores morais e econômicos antes mesmo de qualquer interação verbal<sup>1</sup>.
 
@@ -12,7 +12,7 @@ A arquitetura social da contemporaneidade estabeleceu o corpo humano como a inte
 
 A teoria da comunicação já postulava que toda a interação começa e termina no corpo, sendo este o meio primário de ligação com o mundo<sup>2</sup>. No entanto, a convergência entre as tecnologias digitais, a medicina estética e a indústria do consumo reconfigurou esta premissa. O corpo deixou de ser apenas um emissor de sinais naturais para se converter num visor de alta performance, projetado, editado e consumido como uma mercadoria de luxo. A indumentária e a cosmética tradicionais cederam protagonismo à própria epiderme e à estrutura óssea, que agora assumem o papel de vestuário definitivo<sup>4</sup>.
 
-A análise desta dinâmica exige uma aproximação estratificada, partindo das bases teóricas do capital físico, avançando pelas implicações das tecnologias de monitorização individual, avaliando o impacto algorítmico na percepção da autoimagem e dissecando as zonas de tensão ética e reputacional que cercam o mercado da beleza. O corpo tornou-se, assim, um território de disputas semióticas e financeiras, onde o desejo cultural de perfeição colide frequentemente com limites éticos e riscos biológicos.
+A análise desta dinâmica exige uma aproximação estratificada, partindo das bases teóricas do capital físico, avançando pelas implicações das tecnologias de monitorização individual, avaliando o impacto algorítmico na percepção da autoimagem e dissecando as zonas de tensão ética e de confiança que cercam o mercado da beleza. O corpo tornou-se, assim, um território de disputas semióticas e financeiras, onde o desejo cultural de perfeição colide frequentemente com limites éticos e riscos biológicos.
 
 ### o corpo como capital físico e o mercado da distinção
 

@@ -37,7 +37,7 @@ A análise crítica condena o uso de expressões como "conteúdo viral" ou "meca
 
 ### o que mudou nas forças de transformação cultural e tecnológica
 
-A consolidação da cultura participativa foi impulsionada pela popularização de ferramentas de produção digital e pela expansão de redes sociais baseadas na lógica da Web 2.0. O fã de música, historicamente rotulado como um consumidor passivo ou um colecionador excêntrico, transformou-se no elemento estratégico primordial para a validação e circulação de qualquer lançamento fonográfico. O termo fandom passou a designar estruturas organizacionais informais de enorme complexidade, capazes de pautar algoritmos de recomendação, coordenar campanhas globais e redefinir a reputação de artistas.
+A consolidação da cultura participativa foi impulsionada pela popularização de ferramentas de produção digital e pela expansão de redes sociais baseadas na lógica da Web 2.0. O fã de música, historicamente rotulado como um consumidor passivo ou um colecionador excêntrico, transformou-se no elemento estratégico primordial para a validação e circulação de qualquer lançamento fonográfico. O termo fandom passou a designar estruturas organizacionais informais de enorme complexidade, capazes de pautar algoritmos de recomendação, coordenar campanhas globais e redefinir a imagem pública de artistas.
 
 Esse novo cenário de influência e consumo estrutura-se em canais interligados:
 
@@ -120,7 +120,7 @@ A inteligência de comunicação corporativa deve compreender que as marcas não
 
 ### riscos e contradições: o fracasso da imposição acústica no metrô de são paulo
 
-A tentativa de impor de maneira forçada um bem cultural a uma audiência cativa sem compreender as regras de convivência social e o comportamento individual resulta em atritos estruturais e severos prejuízos reputacionais. O maior exemplo dessa dissonância no contexto da infraestrutura urbana de trânsito ocorreu na cidade de São Paulo, através do projeto experimental denominado "Metrô+Música".
+A tentativa de impor de maneira forçada um bem cultural a uma audiência cativa sem compreender as regras de convivência social e o comportamento individual resulta em atritos estruturais e severa perda de confiança. O maior exemplo dessa dissonância no contexto da infraestrutura urbana de trânsito ocorreu na cidade de São Paulo, através do projeto experimental denominado "Metrô+Música".
 
 Idealizado na gestão do então governador Márcio França, sob o comando do secretário dos Transportes Metropolitanos, Clodoaldo Pelissioni, o projeto teve início na sexta-feira, 6 de julho de 2018, em seis estações experimentais: Sé, São Bento, Palmeiras-Barra Funda, Corinthians-Itaquera, Paraíso e Vila Madalena. Na terça-feira, 10 de julho de 2018, a transmissão foi expandida para todas as 55 estações pertencentes às linhas 1-Azul, 2-Verde e 3-Vermelha, além de passar a funcionar no interior dos trens.
 
@@ -176,6 +176,6 @@ A elucidação dessas lacunas exige que os profissionais de comunicação desenv
 
 A transição dos modelos corporativos tradicionais para redes comunitárias de afinidade modificou irrevogavelmente a estrutura de circulação de bens de consumo e produtos culturais. O sucesso comercial sustentado da indústria da música mundial, expresso no faturamento histórico registrado nos relatórios de mercado de 2024 e 2025, atesta a validade de uma abordagem que reconhece a soberania da audiência e abdica do controle estático de distribuição em favor da circulação coletiva.
 
-Inversamente, as iniciativas estatais malsucedidas de sonorização forçada nos trens de São Paulo expõem os limites e os prejuízos reputacionais de ignorar a autonomia e as preferências de fones de ouvido dos cidadãos em suas percursos quotidianas. Na contemporaneidade, a atenção de um público não é um ativo fixo que pode ser conquistado através da mera intrusão ou da ocupação física coercitiva de espaços.
+Inversamente, as iniciativas estatais malsucedidas de sonorização forçada nos trens de São Paulo expõem os limites e o desgaste público provocado por ignorar a autonomia e as preferências de fones de ouvido dos cidadãos em suas percursos quotidianas. Na contemporaneidade, a atenção de um público não é um ativo fixo que pode ser conquistado através da mera intrusão ou da ocupação física coercitiva de espaços.
 
-A construção de relevância corporativa e reputação institucional requer das empresas e gestores públicos a compreensão de que as audiências não são receptores passivos, mas sim os agentes ativos que determinam o valor social de qualquer mensagem comercial.
+A construção de relevância e autoridade institucional requer das empresas e gestores públicos a compreensão de que as audiências não são receptores passivos, mas sim os agentes ativos que determinam o valor social de qualquer mensagem comercial.

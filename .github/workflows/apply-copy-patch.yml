@@ -1,0 +1,45 @@
+name: Aplicar revisão de linguagem
+
+on:
+  push:
+    branches:
+      - codex/revisao-confianca-percepcao
+
+permissions:
+  contents: write
+
+jobs:
+  apply-build-and-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Git
+        run: |
+          git config user.name "data2comms automation"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Aplicar revisão
+        run: |
+          test "$(sha256sum .github/copy.patch.b64 | cut -d' ' -f1)" = "90b7b4d3d7c36dd407312ec4dd0c4e20610921bdf483d3d4ec17ed738f488848"
+          base64 --decode .github/copy.patch.b64 | gzip -dc > /tmp/copy.patch
+          git am /tmp/copy.patch
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+
+      - name: Validar build Jekyll
+        run: |
+          bundle config set path /tmp/vendor/bundle
+          bundle install --jobs 4 --retry 3
+          JEKYLL_ENV=production bundle exec jekyll build --trace
+
+      - name: Limpar e publicar branch
+        run: |
+          rm -rf _site .github/copy.patch.b64 .github/workflows/apply-copy-patch.yml
+          git add -A
+          git commit -m "Remove publicador temporário [copy-ready]"
+          git push origin HEAD:codex/revisao-confianca-percepcao

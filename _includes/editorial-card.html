@@ -1,0 +1,16 @@
+<a href="{{ site.baseurl }}{{ post.url }}" class="article-card group flex flex-col h-full hover:bg-ink hover:text-paper transition-colors border-b-editorial cursor-pointer">
+    <div class="w-full img-square border-b-editorial overflow-hidden bg-concrete relative">
+        <div class="absolute inset-0 w-full h-full bg-ink mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity z-10"></div>
+        {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
+        {% endif %}
+    </div>
+    <div class="p-6 md:p-8 flex-grow flex flex-col">
+        <div class="flex justify-between items-center mb-6 font-mono text-[10px] uppercase tracking-widest border-b border-ink/20 group-hover:border-paper/20 pb-3 text-concrete">
+            <span>{{ post.category }}</span>
+            <span>{{ post.date | date: "%d.%m.%Y" }}</span>
+        </div>
+        <h2 class="font-display text-2xl lg:text-3xl uppercase tracking-tight leading-none mb-4 group-hover:text-acidLime transition-colors line-clamp-3 break-words">{{ post.title }}</h2>
+        <p class="font-sans text-sm md:text-base opacity-80 mt-auto leading-relaxed line-clamp-3 break-words">{{ post.summary }}</p>
+    </div>
+</a>

@@ -16,8 +16,44 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Categoria", name: "category", widget: "select", options: ["Moda", "Beleza", "Saúde", "Tecnologia", "Comportamento"] }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Moda", value: "moda" }
+          - { label: "Beleza", value: "beleza" }
+          - { label: "Saúde", value: "saude" }
+          - { label: "Tecnologia", value: "tecnologia" }
+          - { label: "Comportamento", value: "comportamento" }
       - { label: "Imagem de Capa", name: "image", widget: "image" }
-      - { label: "Tempo de Leitura", name: "reading_time", widget: "string", default: "5 MIN" }
+      - { label: "Tempo de Leitura", name: "read_time", widget: "string", default: "5 MIN READ" }
       - { label: "Resumo", name: "summary", widget: "string" }
+      - { label: "Corpo do Texto", name: "body", widget: "markdown" }
+
+  - name: "metodo"
+    label: "Método"
+    folder: "_metodo"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Imagem de Capa", name: "image", widget: "image", required: false }
+      - { label: "Tempo de Leitura", name: "read_time", widget: "string", default: "5 MIN READ" }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
+      - { label: "Autor", name: "author", widget: "string", default: "data2comms" }
+      - label: "Área de Serviço"
+        name: "service_area"
+        widget: "select"
+        options:
+          - "Assessoria de imprensa orientada por dados"
+          - "PR Intelligence"
+          - "Pesquisa proprietária"
+          - "Desk research"
+          - "Earned media"
+          - "Influência orientada por dados"
+          - "Data search"
+          - "Media training"
+          - "Análise de massa"
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Corpo do Texto", name: "body", widget: "markdown" }

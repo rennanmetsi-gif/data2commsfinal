@@ -15,7 +15,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', concrete: '#A6A6A6' },
+                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', acidLime: '#D6FF00', concrete: '#A6A6A6' },
                     fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] }
                 }
             }
@@ -44,6 +44,11 @@
     {% include header.html %}
 
     <main class="flex-grow">
+        <section class="border-b-editorial px-6 py-4 md:px-12 lg:px-16 flex flex-wrap justify-between items-center gap-3 bg-paper">
+            <a href="{{ site.baseurl }}/publicacoes/" class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest hover:text-electricBlue transition-colors">&#8592; Publicações</a>
+            <a href="{{ site.baseurl }}/{{ page.category }}/" class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest border-b border-ink hover:bg-acidLime transition-colors">{{ page.category }}</a>
+        </section>
+
         <div class="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] bg-concrete relative overflow-hidden border-b-editorial">
             {% if page.image %}
             <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover">

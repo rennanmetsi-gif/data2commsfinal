@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Arquivo visual de dados</title>
+  <desc id="desc">Composição abstrata com grades, sinais, blocos de cor e fragmentos tipográficos.</desc>
+  <rect width="1200" height="900" fill="#0A0A0A"/>
+  <g stroke="#F2F0EB" stroke-opacity=".18" stroke-width="1">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200M0 630h1200M0 720h1200M0 810h1200"/>
+    <path d="M100 0v900M200 0v900M300 0v900M400 0v900M500 0v900M600 0v900M700 0v900M800 0v900M900 0v900M1000 0v900M1100 0v900"/>
+  </g>
+  <g fill="none" stroke="#D6FF00">
+    <path d="M76 680C180 515 267 718 365 544s192-12 296-168 218 22 374-193" stroke-width="7"/>
+    <circle cx="365" cy="544" r="20" stroke-width="6"/>
+    <circle cx="661" cy="376" r="20" stroke-width="6"/>
+  </g>
+  <g fill="#F2F0EB">
+    <rect x="74" y="74" width="440" height="34"/>
+    <rect x="74" y="126" width="286" height="12" opacity=".55"/>
+    <rect x="74" y="152" width="344" height="12" opacity=".35"/>
+    <rect x="742" y="644" width="388" height="116"/>
+  </g>
+  <g fill="#2A5BFF">
+    <rect x="702" y="74" width="428" height="242"/>
+    <rect x="74" y="738" width="218" height="72"/>
+  </g>
+  <g fill="#FF3CA7">
+    <rect x="522" y="212" width="104" height="104"/>
+    <rect x="990" y="394" width="140" height="26"/>
+  </g>
+  <g fill="#D6FF00">
+    <rect x="548" y="74" width="58" height="58"/>
+    <rect x="864" y="526" width="266" height="22"/>
+    <rect x="742" y="782" width="388" height="28"/>
+  </g>
+  <g fill="#0A0A0A" font-family="monospace" font-size="22" letter-spacing="5">
+    <text x="770" y="705">SIGNAL / ARCHIVE</text>
+    <text x="770" y="739">DATA / CULTURE</text>
+  </g>
+  <g fill="#F2F0EB" font-family="monospace" font-size="18" letter-spacing="4" opacity=".8">
+    <text x="724" y="110">INDEX_001</text>
+    <text x="724" y="145">MASS_ANALYSIS</text>
+    <text x="724" y="180">CULTURAL_SIGNAL</text>
+    <text x="724" y="215">DATA_SEARCH</text>
+  </g>
+  <g stroke="#F2F0EB" stroke-width="12" opacity=".8">
+    <path d="M450 416h174M450 452h126M450 488h210"/>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Método data2comms</title>
+    <meta name="description" content="{{ page.excerpt }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', acidLime: '#D6FF00', concrete: '#A6A6A6' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+        ::selection { background-color: #D6FF00; color: #0A0A0A; }
+        .border-editorial { border-color: #0A0A0A; }
+        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
+        .hover-invert:hover { background-color: #0A0A0A; color: #F2F0EB; }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C3ZTDYFHLT');
+    </script>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+    {% include header.html %}
+
+    <main>
+        <article>
+            <section class="border-b-editorial px-6 py-4 md:px-12 lg:px-16 bg-paper">
+                <a href="{{ site.baseurl }}/metodo/" class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest hover:text-electricBlue transition-colors">&#8592; Método</a>
+            </section>
+            <header class="grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
+                <div class="lg:col-span-8 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r border-ink">
+                    <p class="brand-kicker font-mono text-[10px] uppercase tracking-widest mb-8">{{ page.service_area }}</p>
+                    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] mb-10">{{ page.title }}</h1>
+                    <p class="font-sans text-xl md:text-2xl leading-relaxed text-ink/80">{{ page.excerpt }}</p>
+                </div>
+                <div class="lg:col-span-4 bg-ink text-paper p-6 md:p-12 lg:p-16 flex flex-col justify-between">
+                    <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime">Método // Aplicação</p>
+                    <div class="font-mono text-[10px] uppercase tracking-widest space-y-3 mt-16">
+                        <p>{{ page.date | date: "%d.%m.%Y" }}</p>
+                        <p>{{ page.read_time }}</p>
+                        <p>{{ page.author }}</p>
+                    </div>
+                </div>
+            </header>
+
+            {% if page.image %}
+            <div class="w-full h-[36vh] md:h-[52vh] border-b-editorial overflow-hidden bg-concrete">
+                <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover grayscale">
+            </div>
+            {% endif %}
+
+            <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+                <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline prose-strong:font-semibold prose-blockquote:border-l-4 prose-blockquote:border-acidLime prose-blockquote:pl-6 prose-blockquote:not-italic">
+                    {{ content }}
+                </div>
+                {% if page.tags %}
+                <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">
+                    {% for tag in page.tags %}
+                    <span class="px-3 py-2 bg-acidLime font-mono text-[10px] uppercase tracking-widest">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </article>
+    </main>
+
+    {% include footer.html %}
+</body>
+</html>

@@ -3,17 +3,13 @@
 {% if current_url == '/servicos.html' or current_url contains '/servico-' %}
     {% assign services_active = true %}
 {% endif %}
-{% assign publications_active = false %}
-{% if current_url == '/publicacoes/' or current_url == '/blog.html' or current_url contains '/post/' or page.layout == 'post' %}
-    {% assign publications_active = true %}
+{% assign editorial_active = false %}
+{% if current_url == '/editorial/' or current_url == '/publicacoes/' or current_url contains '/post/' or page.layout == 'post' or page.layout == 'category' %}
+    {% assign editorial_active = true %}
 {% endif %}
-{% assign editorias_active = false %}
-{% if page.layout == 'category' or current_url == '/moda/' or current_url == '/beleza/' or current_url == '/saude/' or current_url == '/tecnologia/' or current_url == '/comportamento/' %}
-    {% assign editorias_active = true %}
-{% endif %}
-{% assign metodo_active = false %}
-{% if current_url == '/metodo/' or current_url contains '/metodo/' or page.layout == 'metodo' %}
-    {% assign metodo_active = true %}
+{% assign blog_active = false %}
+{% if current_url == '/blog/' or current_url == '/metodo/' or current_url contains '/blog/' or page.layout == 'blog' %}
+    {% assign blog_active = true %}
 {% endif %}
 
 <header class="site-header sticky top-0 w-full z-50 flex flex-col bg-ink">
@@ -29,20 +25,8 @@
     <div class="site-navigation w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
         <nav class="site-primary-nav flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative" aria-label="Navegação principal">
             <a href="{{ site.baseurl }}/index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if current_url == '/' or current_url == '/index.html' %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Início</a>
-            <a href="{{ site.baseurl }}/publicacoes/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if publications_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-semibold{% endif %}">Publicações</a>
-            <details class="site-editorias {% if editorias_active %}is-active{% endif %}">
-                <summary class="px-5 h-[50px] flex justify-center items-center gap-2 font-mono text-[11px] uppercase tracking-widest cursor-pointer transition-colors {% if editorias_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">
-                    Editorias <span aria-hidden="true">+</span>
-                </summary>
-                <div class="site-editorias-menu" aria-label="Editorias">
-                    <a href="{{ site.baseurl }}/moda/">Moda</a>
-                    <a href="{{ site.baseurl }}/beleza/">Beleza</a>
-                    <a href="{{ site.baseurl }}/saude/">Saúde</a>
-                    <a href="{{ site.baseurl }}/tecnologia/">Tecnologia</a>
-                    <a href="{{ site.baseurl }}/comportamento/">Comportamento</a>
-                </div>
-            </details>
-            <a href="{{ site.baseurl }}/metodo/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if metodo_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Método</a>
+            <a href="{{ site.baseurl }}/editorial/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if editorial_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-semibold{% endif %}">Editorial</a>
+            <a href="{{ site.baseurl }}/blog/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if blog_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Blog</a>
             <a href="{{ site.baseurl }}/servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if services_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Serviços</a>
             <a href="{{ site.baseurl }}/sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if current_url == '/sobre.html' %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Sobre</a>
         </nav>
@@ -52,4 +36,15 @@
             </a>
         </div>
     </div>
+
+    <nav class="site-editorial-nav bg-paper border-b-editorial overflow-x-auto hide-scrollbar" aria-label="Editorias do Editorial">
+        <div class="site-editorial-nav-inner">
+            <span class="site-editorial-nav-label">Editorias</span>
+            <a href="{{ site.baseurl }}/moda/" {% if current_url == '/moda/' %}aria-current="page"{% endif %}>Moda</a>
+            <a href="{{ site.baseurl }}/beleza/" {% if current_url == '/beleza/' %}aria-current="page"{% endif %}>Beleza</a>
+            <a href="{{ site.baseurl }}/saude/" {% if current_url == '/saude/' %}aria-current="page"{% endif %}>Saúde</a>
+            <a href="{{ site.baseurl }}/tecnologia/" {% if current_url == '/tecnologia/' %}aria-current="page"{% endif %}>Tecnologia</a>
+            <a href="{{ site.baseurl }}/comportamento/" {% if current_url == '/comportamento/' %}aria-current="page"{% endif %}>Comportamento</a>
+        </div>
+    </nav>
 </header>

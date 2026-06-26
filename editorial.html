@@ -1,0 +1,108 @@
+---
+layout: null
+permalink: /editorial/
+---
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial | data2comms - Moda, Beleza, Saúde, Tecnologia e Comportamento</title>
+    <meta name="description" content="Editorial da data2comms sobre moda, beleza, saúde, tecnologia e comportamento analisados por dados.">
+    <meta property="og:title" content="Editorial | data2comms">
+    <meta property="og:description" content="Análises editoriais da data2comms sobre moda, beleza, saúde, tecnologia e comportamento vistos por dados.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', signalPink: '#FF3CA7', acidLime: '#D6FF00', signalRed: '#FF2D20', concrete: '#A6A6A6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+        ::selection { background-color: #D6FF00; color: #0A0A0A; }
+        .border-editorial { border-color: #0A0A0A; }
+        .border-t-editorial { border-top: 1px solid #0A0A0A; }
+        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
+        .border-r-editorial { border-right: 1px solid #0A0A0A; }
+        .border-l-editorial { border-left: 1px solid #0A0A0A; }
+        .divide-y-editorial > :not([hidden]) ~ :not([hidden]) { border-top-width: 1px; border-color: #0A0A0A; }
+        .divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 0px; }
+        @media (min-width: 1024px) { .lg\:divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 1px; border-color: #0A0A0A; border-top-width: 0; } }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hover-invert:hover { background-color: #0A0A0A; color: #F2F0EB; }
+        .hover-acid:hover { background-color: #D6FF00; color: #0A0A0A; }
+        .img-square { aspect-ratio: 1 / 1; object-fit: cover; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .break-words { overflow-wrap: break-word; word-break: break-word; }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C3ZTDYFHLT');
+</script>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+
+    {% include header.html %}
+
+    <main>
+        <section class="flex flex-col lg:flex-row border-b-editorial bg-white">
+            <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
+                <p class="brand-kicker font-mono text-[11px] uppercase tracking-widest text-ink mb-6">Arquivo // Editorial</p>
+                <h1 class="font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">Dados para interpretar mercados e cultura.</h1>
+                <p class="font-sans text-xl leading-relaxed text-ink/80">Análises editoriais sobre moda, beleza, saúde, tecnologia e comportamento, com pesquisa, sinais culturais e leitura aplicada de mercado.</p>
+            </div>
+            <div class="publicacoes-visual w-full lg:w-1/2 h-[42vh] lg:h-auto bg-ink relative overflow-hidden">
+                <img src="/assets/img/publicacoes-data-archive.svg" alt="Composição abstrata de arquivo, sinais e dados" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute bottom-5 left-5 bg-acidLime text-ink border border-ink px-3 py-2 font-mono text-[10px] uppercase tracking-widest">Arquivo visual // 001</div>
+            </div>
+        </section>
+
+        <section class="blog-filterbar border-b-editorial bg-paper overflow-x-auto hide-scrollbar">
+            <div class="flex px-6 md:px-12 lg:px-16 py-4 gap-3 font-mono text-[11px] uppercase tracking-widest whitespace-nowrap">
+                <span class="px-4 py-3 bg-ink text-paper">Todas</span>
+                <a href="/moda/" class="px-4 py-3 border border-ink hover:bg-acidLime transition-colors">Moda</a>
+                <a href="/beleza/" class="px-4 py-3 border border-ink hover:bg-acidLime transition-colors">Beleza</a>
+                <a href="/saude/" class="px-4 py-3 border border-ink hover:bg-acidLime transition-colors">Saúde</a>
+                <a href="/tecnologia/" class="px-4 py-3 border border-ink hover:bg-acidLime transition-colors">Tecnologia</a>
+                <a href="/comportamento/" class="px-4 py-3 border border-ink hover:bg-acidLime transition-colors">Comportamento</a>
+            </div>
+        </section>
+
+        <section class="min-h-[60vh] bg-white">
+            <div class="editorial-grid" id="blog-grid">
+                {% for post in site.posts %}
+                    {% include editorial-card.html %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+
+</body>
+</html>

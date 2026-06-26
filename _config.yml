@@ -8,9 +8,9 @@ future: true
 timezone: America/Sao_Paulo
 
 collections:
-  metodo:
+  blog:
     output: true
-    permalink: /metodo/:name/
+    permalink: /blog/:name/
 
 defaults:
   - scope:
@@ -20,9 +20,9 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "metodo"
+      type: "blog"
     values:
-      layout: "metodo"
+      layout: "blog"
 
 exclude:
   - README.md

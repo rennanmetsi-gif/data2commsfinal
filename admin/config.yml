@@ -9,7 +9,7 @@ public_folder: "/assets/img/blog"
 
 collections:
   - name: "posts"
-    label: "Publicações"
+    label: "Editorial"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -30,9 +30,9 @@ collections:
       - { label: "Resumo", name: "summary", widget: "string" }
       - { label: "Corpo do Texto", name: "body", widget: "markdown" }
 
-  - name: "metodo"
-    label: "Método"
-    folder: "_metodo"
+  - name: "blog"
+    label: "Blog"
+    folder: "_blog"
     create: true
     slug: "{{slug}}"
     fields:

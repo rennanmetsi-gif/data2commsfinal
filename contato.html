@@ -141,7 +141,6 @@ permalink: /contato.html
     {% include footer.html %}
 
     <script>
-        // COLOQUE O SEU LINK DO GOOGLE SHEETS AQUI ABAIXO:
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec'; 
         
         const form = document.forms['contactForm'];
@@ -153,13 +152,6 @@ permalink: /contato.html
             const originalText = btn.innerText;
             btn.innerText = "ENVIANDO SINAL...";
             btn.classList.add('opacity-50', 'cursor-not-allowed');
-
-            if(!scriptURL || scriptURL === 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec') {
-                alert("Você esqueceu de colar a URL do Google Sheets no código!");
-                btn.innerText = originalText;
-                btn.classList.remove('opacity-50', 'cursor-not-allowed');
-                return;
-            }
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {

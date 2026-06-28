@@ -100,6 +100,11 @@
                     {% capture seo_rank_boost_html %}{{ seo_rank_boost | markdownify }}{% endcapture %}
                     {{ seo_rank_boost_html | replace: 'CTA estratégico', 'Como a Data2Comms pode ajudar' | replace: 'Próximo passo recomendado', 'Como aplicar a estratégia' | replace: 'CTA:', '' }}
                     {% endif %}
+                    {% assign seo_rank_boost_2 = site.data.blog_rank_boost_2[expansion_key] %}
+                    {% if seo_rank_boost_2 %}
+                    {% capture seo_rank_boost_2_html %}{{ seo_rank_boost_2 | markdownify }}{% endcapture %}
+                    {{ seo_rank_boost_2_html | replace: 'CTA estratégico', 'Como a Data2Comms pode ajudar' | replace: 'Próximo passo recomendado', 'Como aplicar a estratégia' | replace: 'CTA:', '' }}
+                    {% endif %}
                 </div>
                 {% if page.tags %}
                 <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">

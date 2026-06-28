@@ -77,6 +77,10 @@
                     {% if seo_deepening %}
                     {{ seo_deepening | markdownify }}
                     {% endif %}
+                    {% assign seo_conversion = site.data.blog_conversion[expansion_key] %}
+                    {% if seo_conversion %}
+                    {{ seo_conversion | markdownify }}
+                    {% endif %}
                 </div>
                 {% if page.tags %}
                 <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">

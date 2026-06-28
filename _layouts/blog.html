@@ -81,6 +81,10 @@
                     {% if seo_conversion %}
                     {{ seo_conversion | markdownify }}
                     {% endif %}
+                    {% assign seo_tail = site.data.blog_tail[expansion_key] %}
+                    {% if seo_tail %}
+                    {{ seo_tail | markdownify }}
+                    {% endif %}
                 </div>
                 {% if page.tags %}
                 <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">

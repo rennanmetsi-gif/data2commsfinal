@@ -68,6 +68,11 @@
             <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
                 <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline prose-strong:font-semibold prose-blockquote:border-l-4 prose-blockquote:border-acidLime prose-blockquote:pl-6 prose-blockquote:not-italic">
                     {{ content }}
+                    {% assign expansion_key = page.path | split: '/' | last | replace: '.md', '' %}
+                    {% assign seo_expansion = site.data.blog_expansions[expansion_key] %}
+                    {% if seo_expansion %}
+                    {{ seo_expansion | markdownify }}
+                    {% endif %}
                 </div>
                 {% if page.tags %}
                 <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">

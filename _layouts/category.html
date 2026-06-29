@@ -45,12 +45,12 @@
 
     <main>
         <section class="category-hero grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
-            <div class="lg:col-span-7 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial bg-paper">
+            <div class="category-hero-panel lg:col-span-7 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial bg-paper">
                 <p class="brand-kicker font-mono text-[11px] uppercase tracking-widest mb-8">Editoria // {{ page.category_slug }}</p>
-                <h1 class="font-display text-6xl md:text-8xl lg:text-[8rem] uppercase tracking-tighter leading-[0.82] mb-10">{{ page.title }}</h1>
+                <h1 class="category-hero-title font-display uppercase mb-10">{{ page.title }}</h1>
                 <h2 class="font-display text-2xl md:text-4xl uppercase tracking-tighter leading-tight max-w-3xl">{{ page.subtitle }}</h2>
             </div>
-            <div class="lg:col-span-5 p-6 md:p-12 lg:p-16 bg-ink text-paper flex flex-col justify-between">
+            <div class="category-hero-panel lg:col-span-5 p-6 md:p-12 lg:p-16 bg-ink text-paper flex flex-col justify-between">
                 <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime mb-16">Leitura de mercado // sinais culturais</p>
                 <p class="font-sans text-xl md:text-2xl leading-relaxed">{{ page.intro }}</p>
             </div>

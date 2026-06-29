@@ -134,15 +134,21 @@ video {
     --signal-grid-y: 0px;
     --signal-core-x: 0px;
     --signal-core-y: 0px;
-    background: var(--brand-ink);
+    background:
+        radial-gradient(circle at var(--signal-light-x, 22%) var(--signal-light-y, 46%), rgba(214, 255, 0, 0.18), transparent 26%),
+        linear-gradient(110deg, rgba(214, 255, 0, 0.14), transparent 28%),
+        var(--brand-ink);
     color: #F2F0EB;
     isolation: isolate;
 }
 
 .home-signal-grid,
 .home-signal-scan,
+.home-signal-radar,
+.home-signal-pulse,
 .home-signal-core,
-.home-signal-paths {
+.home-signal-paths,
+.home-signal-particles {
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -168,7 +174,39 @@ video {
     width: 34%;
     background: linear-gradient(90deg, transparent, rgba(214, 255, 0, 0.16), transparent);
     transform: translateX(-120%);
-    animation: home-signal-scan 7s linear infinite;
+    animation: home-signal-scan 5.5s linear infinite;
+    mix-blend-mode: screen;
+}
+
+.home-signal-radar {
+    inset: 12%;
+    border: 1px solid rgba(214, 255, 0, 0.22);
+    background:
+        conic-gradient(from 0deg, transparent 0deg, rgba(214, 255, 0, 0.18) 34deg, transparent 72deg),
+        radial-gradient(circle, transparent 0 18%, rgba(242, 240, 235, 0.08) 18.4% 18.8%, transparent 19.2% 38%, rgba(242, 240, 235, 0.08) 38.4% 38.8%, transparent 39.2%);
+    transform: translate3d(var(--signal-core-x), var(--signal-core-y), 0) rotate(0deg);
+    animation: home-signal-radar 10s linear infinite;
+    opacity: 0.78;
+}
+
+.home-signal-pulse {
+    display: grid;
+    place-items: center;
+}
+
+.home-signal-pulse::before,
+.home-signal-pulse::after {
+    content: "";
+    position: absolute;
+    width: min(42%, 300px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(214, 255, 0, 0.38);
+    border-radius: 999px;
+    animation: home-signal-pulse 3.4s ease-out infinite;
+}
+
+.home-signal-pulse::after {
+    animation-delay: 1.6s;
 }
 
 .home-signal-core {
@@ -183,29 +221,40 @@ video {
     aspect-ratio: 1;
     border: 1px solid rgba(242, 240, 235, 0.32);
     transform: rotate(var(--signal-rotation, 0deg)) scale(var(--signal-scale, 1));
+    animation: home-signal-core 12s linear infinite;
 }
 
 .home-signal-core span:nth-child(1) {
     --signal-rotation: 0deg;
+    --signal-rotation-end: 360deg;
     --signal-scale: 0.72;
+    animation-duration: 13s;
 }
 
 .home-signal-core span:nth-child(2) {
     --signal-rotation: 18deg;
+    --signal-rotation-end: 378deg;
     --signal-scale: 0.94;
+    animation-direction: reverse;
+    animation-duration: 17s;
 }
 
 .home-signal-core span:nth-child(3) {
     --signal-rotation: 45deg;
+    --signal-rotation-end: 405deg;
     --signal-scale: 1.18;
     border-color: rgba(214, 255, 0, 0.42);
+    animation-duration: 21s;
 }
 
 .home-signal-path {
     position: absolute;
     height: 1px;
-    background: rgba(214, 255, 0, 0.7);
+    background: linear-gradient(90deg, transparent, rgba(214, 255, 0, 0.92), transparent);
     transform-origin: left center;
+    background-size: 220% 100%;
+    animation: home-signal-flow 2.6s linear infinite;
+    opacity: 0.86;
 }
 
 .path-a {
@@ -220,6 +269,7 @@ video {
     left: 12%;
     width: 60%;
     transform: rotate(-12deg);
+    animation-delay: -0.7s;
 }
 
 .path-c {
@@ -227,6 +277,7 @@ video {
     left: 42%;
     width: 42%;
     transform: rotate(38deg);
+    animation-delay: -1.2s;
 }
 
 .path-d {
@@ -234,6 +285,31 @@ video {
     left: 32%;
     width: 48%;
     transform: rotate(-31deg);
+    animation-delay: -1.8s;
+}
+
+.home-signal-particles span {
+    position: absolute;
+    width: 0.45rem;
+    height: 0.45rem;
+    border: 1px solid var(--brand-lime);
+    background: var(--brand-lime);
+    box-shadow: 0 0 18px rgba(214, 255, 0, 0.5);
+    opacity: 0.86;
+    animation: home-signal-particle 5.8s ease-in-out infinite;
+}
+
+.home-signal-particles span:nth-child(1) { top: 18%; left: 42%; animation-delay: 0s; }
+.home-signal-particles span:nth-child(2) { top: 24%; left: 72%; animation-delay: -0.9s; }
+.home-signal-particles span:nth-child(3) { top: 42%; left: 24%; animation-delay: -1.8s; }
+.home-signal-particles span:nth-child(4) { top: 52%; left: 60%; animation-delay: -2.7s; }
+.home-signal-particles span:nth-child(5) { top: 68%; left: 76%; animation-delay: -3.6s; }
+.home-signal-particles span:nth-child(6) { top: 78%; left: 36%; animation-delay: -4.5s; }
+.home-signal-particles span:nth-child(7) { top: 36%; left: 84%; animation-delay: -5.1s; }
+.home-signal-particles span:nth-child(8) { top: 62%; left: 18%; animation-delay: -5.8s; }
+
+.home-intelligence-panel.is-cycling .home-signal-node.is-active {
+    box-shadow: 0 0 0 1px var(--brand-lime), 0 0 34px rgba(214, 255, 0, 0.35);
 }
 
 .home-signal-node {
@@ -315,6 +391,20 @@ video {
     border: 1px solid rgba(214, 255, 0, 0.88);
     background: rgba(10, 10, 10, 0.9);
     padding: 1rem;
+    overflow: hidden;
+}
+
+.home-signal-readout::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(214, 255, 0, 0.18), transparent);
+    transform: translateX(-120%);
+    animation: home-signal-readout 3.4s ease-in-out infinite;
+}
+
+.home-signal-readout > * {
+    position: relative;
 }
 
 .home-signal-readout strong {
@@ -322,6 +412,30 @@ video {
     font-size: clamp(2rem, 4vw, 3.25rem);
     line-height: 0.85;
     letter-spacing: 0;
+}
+
+.home-marquee-acid {
+    border-top: 1px solid var(--brand-ink);
+    background: var(--brand-lime) !important;
+    color: var(--brand-ink) !important;
+}
+
+.home-marquee-acid .home-marquee-track {
+    animation-duration: 18s;
+}
+
+.home-marquee-acid .home-marquee-copy,
+.home-marquee-acid .text-acidLime {
+    color: var(--brand-ink) !important;
+}
+
+.home-marquee-acid .text-acidLime {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-ink);
+    color: var(--brand-lime) !important;
+    padding: 0.1rem 0.35rem;
 }
 
 .home-clients-grid {
@@ -346,6 +460,8 @@ video {
     max-width: min(10.5rem, 78%);
     max-height: 4.2rem;
     object-fit: contain;
+    opacity: 0.92;
+    transition: filter 180ms ease, opacity 180ms ease, transform 180ms ease;
 }
 
 .home-client-logo .logo-white {
@@ -354,6 +470,15 @@ video {
 
 .home-client-logo .logo-native {
     filter: grayscale(1) contrast(1.08);
+}
+
+.home-client-logo:hover img {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.home-client-logo .logo-bic {
+    max-height: 3.3rem;
 }
 
 .home-client-type {
@@ -497,12 +622,69 @@ textarea:focus-visible {
     }
 }
 
+@keyframes home-signal-radar {
+    to {
+        transform: translate3d(var(--signal-core-x), var(--signal-core-y), 0) rotate(360deg);
+    }
+}
+
+@keyframes home-signal-pulse {
+    0% {
+        opacity: 0.55;
+        transform: scale(0.45);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.9);
+    }
+}
+
+@keyframes home-signal-core {
+    to {
+        transform: rotate(var(--signal-rotation-end, 360deg)) scale(var(--signal-scale, 1));
+    }
+}
+
+@keyframes home-signal-flow {
+    to {
+        background-position: -220% 0;
+    }
+}
+
+@keyframes home-signal-particle {
+    0%,
+    100% {
+        opacity: 0.18;
+        transform: translate3d(0, 0, 0) scale(0.72);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translate3d(16px, -22px, 0) scale(1);
+    }
+}
+
+@keyframes home-signal-readout {
+    58%,
+    100% {
+        transform: translateX(130%);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .home-marquee-track {
         animation-play-state: paused;
     }
 
-    .home-signal-scan {
+    .home-signal-scan,
+    .home-signal-radar,
+    .home-signal-pulse::before,
+    .home-signal-pulse::after,
+    .home-signal-core span,
+    .home-signal-path,
+    .home-signal-particles span,
+    .home-signal-readout::before {
         animation: none;
     }
 }

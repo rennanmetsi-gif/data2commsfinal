@@ -92,6 +92,8 @@ permalink: /
             <div class="home-intelligence-panel w-full lg:w-2/5 h-[55vh] min-h-[480px] lg:h-auto relative overflow-hidden" aria-label="Mapa interativo de sinais da data2comms">
                 <div class="home-signal-grid" aria-hidden="true"></div>
                 <div class="home-signal-scan" aria-hidden="true"></div>
+                <div class="home-signal-radar" aria-hidden="true"></div>
+                <div class="home-signal-pulse" aria-hidden="true"></div>
                 <div class="home-signal-core" aria-hidden="true">
                     <span></span>
                     <span></span>
@@ -102,6 +104,16 @@ permalink: /
                     <span class="home-signal-path path-b"></span>
                     <span class="home-signal-path path-c"></span>
                     <span class="home-signal-path path-d"></span>
+                </div>
+                <div class="home-signal-particles" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
                 <button class="home-signal-node node-data is-active" type="button" data-signal="Dados">Dados</button>
                 <button class="home-signal-node node-culture" type="button" data-signal="Cultura">Cultura</button>
@@ -115,7 +127,7 @@ permalink: /
             </div>
         </section>
 
-        <div class="home-marquee border-b-editorial bg-ink text-paper py-3 font-mono text-[11px] uppercase tracking-widest">
+        <div class="home-marquee home-marquee-acid border-b-editorial bg-acidLime text-ink py-3 font-mono text-[11px] uppercase tracking-widest">
             <div class="home-marquee-track">
                 <div class="home-marquee-copy">
                     <span class="mx-4 text-acidLime">+++</span> PUBLIC RELATIONS <span class="mx-4 text-acidLime">+++</span> INFLUENCE INTELLIGENCE <span class="mx-4 text-acidLime">+++</span> CREATOR STRATEGY <span class="mx-4 text-acidLime">+++</span> DATA-DRIVEN CAMPAIGNS <span class="mx-4 text-acidLime">+++</span> RESEARCH &amp; INSIGHTS
@@ -133,7 +145,7 @@ permalink: /
             </div>
             <div class="home-clients-grid">
                 <div class="home-client-logo">
-                    <img src="https://www.bryter-global.com/hubfs/galderma-logo-white.svg" alt="Galderma" loading="lazy" referrerpolicy="no-referrer" class="logo-native">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Galderma_newer_logo.svg/1280px-Galderma_newer_logo.svg.png" alt="Galderma" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
                 </div>
                 <div class="home-client-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logo_of_Red_bull.svg" alt="Red Bull" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
@@ -146,7 +158,7 @@ permalink: /
                     <img src="https://static.wixstatic.com/media/c63664_8355eb8eafca45d4916c625e91c965a7~mv2.png/v1/fill/w_980%2Ch_980%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/LOGO%20PR%20PRETA.png" alt="Peça Rara Brechó" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
                 </div>
                 <div class="home-client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Bic_logo.svg" alt="BIC" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/bic-2-logo-black-and-white.png" alt="BIC" loading="lazy" referrerpolicy="no-referrer" class="logo-white logo-bic">
                 </div>
                 <div class="home-client-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/SPFW_logo.png" alt="SPFW" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
@@ -239,17 +251,34 @@ permalink: /
                 panel.style.setProperty('--signal-grid-y', `${y * -0.018}px`);
                 panel.style.setProperty('--signal-core-x', `${x * 0.026}px`);
                 panel.style.setProperty('--signal-core-y', `${y * 0.026}px`);
+                panel.style.setProperty('--signal-light-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+                panel.style.setProperty('--signal-light-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
             });
 
+            let activeIndex = 0;
+            let holdUntil = 0;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const activate = (node, manual = false) => {
+                activeIndex = Math.max(0, nodes.indexOf(node));
+                nodes.forEach(item => item.classList.toggle('is-active', item === node));
+                if (readout) readout.textContent = node.dataset.signal;
+                if (manual) holdUntil = Date.now() + 4200;
+            };
+
             nodes.forEach(node => {
-                const activate = () => {
-                    nodes.forEach(item => item.classList.toggle('is-active', item === node));
-                    if (readout) readout.textContent = node.dataset.signal;
-                };
-                node.addEventListener('mouseenter', activate);
-                node.addEventListener('focus', activate);
-                node.addEventListener('click', activate);
+                node.addEventListener('mouseenter', () => activate(node, true));
+                node.addEventListener('focus', () => activate(node, true));
+                node.addEventListener('click', () => activate(node, true));
             });
+
+            if (!prefersReducedMotion && nodes.length > 1) {
+                panel.classList.add('is-cycling');
+                window.setInterval(() => {
+                    if (Date.now() < holdUntil) return;
+                    activeIndex = (activeIndex + 1) % nodes.length;
+                    activate(nodes[activeIndex]);
+                }, 2300);
+            }
         }
     </script>
 </body>

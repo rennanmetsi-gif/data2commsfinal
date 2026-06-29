@@ -2,8 +2,8 @@
 title: "Assessoria para podcast: como transformar episódios em autoridade, audiência e imprensa"
 date: 2026-06-29 10:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "28 MIN READ"
-excerpt: "Guia completo de assessoria para podcast: posicionamento, convidados, imprensa, SEO, cortes, distribuição, autoridade de apresentadores e crescimento orgânico."
+read_time: "3 MIN READ"
+excerpt: "Podcasts viram ativos de autoridade quando episódios, convidados e cortes alimentam uma presença editorial consistente."
 author: "data2comms"
 service_area: "Media PR"
 tags:
@@ -76,6 +76,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

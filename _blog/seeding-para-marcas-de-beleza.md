@@ -2,8 +2,8 @@
 title: "Seeding para marcas de beleza: como transformar gifting em prova social e autoridade"
 date: 2026-06-28 11:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "22 MIN READ"
-excerpt: "Estratégia de seeding para beleza: lista de creators, press kit, gifting, relacionamento, mensuração, PR e busca orgânica."
+read_time: "5 MIN READ"
+excerpt: "Seeding em beleza só vira reputação quando o envio tem curadoria, contexto, narrativa de produto e leitura de comunidade."
 author: "data2comms"
 service_area: "Influência orientada por dados"
 tags:

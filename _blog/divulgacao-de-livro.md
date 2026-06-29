@@ -2,8 +2,8 @@
 title: "Divulgação de livro: como transformar lançamento em autoridade, imprensa e venda contínua"
 date: 2026-06-29 10:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "29 MIN READ"
-excerpt: "Guia completo de divulgação de livro: PR literário, entrevistas, imprensa, SEO, autoridade do autor, eventos, comunidades e venda depois do lançamento."
+read_time: "4 MIN READ"
+excerpt: "Livro não vive só da semana de lançamento. Comunicação editorial transforma obra, autor e tema em conversa duradoura."
 author: "data2comms"
 service_area: "Culture PR"
 tags:
@@ -76,6 +76,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

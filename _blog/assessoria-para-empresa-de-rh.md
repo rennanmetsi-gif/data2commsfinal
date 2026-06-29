@@ -2,8 +2,8 @@
 title: "Assessoria para empresa de RH: como virar fonte sobre trabalho, carreira e gestão"
 date: 2026-06-29 09:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "28 MIN READ"
-excerpt: "Guia completo de assessoria para empresa de RH: imprensa, SEO, dados proprietários, thought leadership, employer branding e autoridade em trabalho."
+read_time: "4 MIN READ"
+excerpt: "Empresas de RH ganham relevância quando transformam dados sobre trabalho, carreira e gestão em leitura pública de mercado."
 author: "data2comms"
 service_area: "Corporate PR"
 tags:
@@ -80,6 +80,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

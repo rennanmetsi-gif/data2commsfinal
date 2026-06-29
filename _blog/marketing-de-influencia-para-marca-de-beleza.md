@@ -2,8 +2,8 @@
 title: "Marketing de influência para marca de beleza: como escolher creators com dados e reputação"
 date: 2026-06-28 11:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "23 MIN READ"
-excerpt: "Guia de marketing de influência para beleza: escolha de creators, risco reputacional, briefing, seeding, mensuração, PR e SEO."
+read_time: "5 MIN READ"
+excerpt: "Influência em beleza funciona quando creator fit, reputação e leitura de comunidade pesam mais do que alcance bruto."
 author: "data2comms"
 service_area: "Influência orientada por dados"
 tags:

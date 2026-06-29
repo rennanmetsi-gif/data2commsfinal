@@ -2,8 +2,8 @@
 title: "Assessoria para restaurante: como ganhar imprensa local, creators e fluxo qualificado"
 date: 2026-06-28 11:40:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "22 MIN READ"
-excerpt: "Guia de assessoria de imprensa para restaurantes: abertura, reputação local, creators gastronômicos, imprensa, SEO local e experiência."
+read_time: "5 MIN READ"
+excerpt: "Restaurantes constroem reputação quando experiência, imprensa local, creators e busca trabalham a mesma promessa."
 author: "data2comms"
 service_area: "Earned media"
 tags:

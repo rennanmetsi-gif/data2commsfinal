@@ -2,8 +2,8 @@
 title: "PR para martech: como transformar software de marketing em autoridade e demanda"
 date: 2026-06-29 09:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "28 MIN READ"
-excerpt: "Guia completo de PR para martech: narrativa de categoria, imprensa B2B, SEO, dados proprietários, cases e conteúdo para decisores de marketing."
+read_time: "4 MIN READ"
+excerpt: "Por que martechs precisam traduzir tecnologia em tese de mercado, confiança e autoridade para decisores de marketing."
 author: "data2comms"
 service_area: "B2B PR"
 tags:
@@ -74,6 +74,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

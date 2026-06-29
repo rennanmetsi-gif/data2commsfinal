@@ -2,8 +2,8 @@
 title: "PR para foodtech: como explicar inovação alimentar e ganhar confiança"
 date: 2026-06-28 11:50:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "23 MIN READ"
-excerpt: "Guia de PR para foodtechs: narrativa de inovação, dados de consumo, imprensa, varejo, sustentabilidade, creators, SEO e reputação."
+read_time: "4 MIN READ"
+excerpt: "Foodtechs precisam traduzir inovação alimentar em confiança, prova e contexto para consumidores, varejo e investidores."
 author: "data2comms"
 service_area: "Pesquisa proprietária"
 tags:

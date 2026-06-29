@@ -2,8 +2,8 @@
 title: "PR para edtech: como provar impacto educacional e ganhar autoridade"
 date: 2026-06-28 12:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "23 MIN READ"
-excerpt: "Guia de PR para edtechs: impacto educacional, dados proprietários, imprensa, SEO, B2B, escolas, cursos e autoridade institucional."
+read_time: "3 MIN READ"
+excerpt: "Edtechs ganham confiança quando conseguem provar impacto educacional com narrativa clara, dados e autoridade de especialistas."
 author: "data2comms"
 service_area: "PR Intelligence"
 tags:

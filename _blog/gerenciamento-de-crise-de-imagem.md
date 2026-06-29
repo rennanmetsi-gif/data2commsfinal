@@ -2,7 +2,7 @@
 title: "Gerenciamento de crise de imagem: o que fazer nas primeiras horas"
 date: 2026-06-27 20:57:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "9 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Passo a passo de comunicação para crise de imagem: diagnóstico, nota oficial, Q&A, porta-voz, monitoramento e reparação."
 author: "data2comms"
 service_area: "Media training"
@@ -30,6 +30,6 @@ O Q&A interno prepara atendimento, liderança, social media, comercial e porta-v
 
 A Data2Comms organiza comitê de crise, mensagens-chave, nota oficial, Q&A, orientação para porta-vozes e monitoramento.
 
-**CTA:** acione a Data2Comms para organizar resposta, mensagens e monitoramento antes que a crise seja definida por terceiros.
+A Data2Comms organiza organizar resposta, mensagens e monitoramento antes que a crise seja definida por terceiros.
 
 Leia também: [assessoria de imprensa para clínicas](/blog/assessoria-de-imprensa-para-clinicas/) e [agência de PR B2B](/blog/agencia-de-pr-b2b/).

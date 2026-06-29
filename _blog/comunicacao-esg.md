@@ -2,8 +2,8 @@
 title: "Comunicação ESG: como falar de sustentabilidade com prova e evitar discurso vazio"
 date: 2026-06-28 12:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "24 MIN READ"
-excerpt: "Guia de comunicação ESG: narrativa, dados, relatório de impacto, PR, reputação, greenwashing, SEO e autoridade institucional."
+read_time: "4 MIN READ"
+excerpt: "Comunicação ESG exige evidência, linguagem proporcional e clareza sobre limites para construir confiança sem greenwashing."
 author: "data2comms"
 service_area: "Pesquisa proprietária"
 tags:

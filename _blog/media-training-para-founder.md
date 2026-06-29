@@ -2,7 +2,7 @@
 title: "Media training para founder: como preparar fundadores para imprensa, investidores e crise"
 date: 2026-06-28 09:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
+read_time: "7 MIN READ"
 excerpt: "Guia de media training para founders: mensagens-chave, entrevistas, rodada de investimento, Q&A, crise, imprensa e posicionamento executivo."
 author: "data2comms"
 service_area: "Media training"

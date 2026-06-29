@@ -2,7 +2,7 @@
 title: "Quanto custa assessoria de imprensa? Como avaliar preço, escopo e retorno"
 date: 2026-06-27 20:59:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "9 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Entenda os fatores que definem o custo de assessoria de imprensa: objetivo, escopo, senioridade, rotina, crise, lançamento e mensuração."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"
@@ -28,6 +28,6 @@ O retainer mensal faz sentido quando a empresa precisa construir reputação de 
 
 A Data2Comms recomenda começar por diagnóstico. Avaliamos objetivo, maturidade de marca, demanda de busca, ativos existentes, porta-vozes, riscos e oportunidades de pauta.
 
-**CTA:** peça uma avaliação da Data2Comms para entender o escopo ideal antes de comparar preço.
+A Data2Comms pode avaliar o cenário e ajudar a entender o escopo ideal antes de comparar preço.
 
 Leia também: [agência de PR B2B](/blog/agencia-de-pr-b2b/) e [gerenciamento de crise de imagem](/blog/gerenciamento-de-crise-de-imagem/).

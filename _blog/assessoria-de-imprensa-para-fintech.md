@@ -2,8 +2,8 @@
 title: "Assessoria de imprensa para fintech: como construir confiança em um setor regulado"
 date: 2026-06-28 09:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
-excerpt: "Guia completo de PR para fintechs: confiança, educação financeira, dados proprietários, porta-vozes, imprensa de negócios e autoridade orgânica."
+read_time: "8 MIN READ"
+excerpt: "Fintechs constroem confiança quando traduzem risco, educação financeira, dados e inovação em reputação pública compreensível."
 author: "data2comms"
 service_area: "PR Intelligence"
 tags:

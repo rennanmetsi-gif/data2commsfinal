@@ -2,7 +2,7 @@
 title: "Assessoria de imprensa para startup: como ganhar credibilidade antes da escala"
 date: 2026-06-27 20:50:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "8 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Entenda quando uma startup precisa de assessoria de imprensa, quais pautas fazem sentido e como transformar produto, fundador e dados em reputação real."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"
@@ -28,6 +28,6 @@ O melhor momento não é necessariamente depois da rodada. Muitas startups chega
 
 A Data2Comms estrutura esse trabalho a partir de um diagnóstico de busca, reputação e imprensa. O objetivo é transformar tese de mercado em visibilidade qualificada, com conteúdo que ajude vendas, investimento e autoridade orgânica.
 
-**CTA:** peça um diagnóstico da Data2Comms para transformar sua tese de mercado em pauta, autoridade e demanda qualificada.
+A Data2Comms pode diagnosticar o cenário e ajudar a transformar sua tese de mercado em pauta, autoridade e demanda qualificada.
 
 Leia também: [PR para SaaS B2B](/blog/pr-para-saas-b2b/) e [quanto custa assessoria de imprensa](/blog/quanto-custa-assessoria-de-imprensa/).

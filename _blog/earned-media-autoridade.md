@@ -2,7 +2,7 @@
 title: "Earned media e construção de autoridade"
 date: 2026-06-23 09:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "5 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Como pesquisa proprietária, inteligência de mídia e leitura editorial aumentam a relevância pública de uma pauta."
 author: "data2comms"
 service_area: "Earned media"

@@ -2,7 +2,7 @@
 title: "Pesquisa proprietária para imprensa: como criar dados que viram pauta, SEO e autoridade"
 date: 2026-06-28 09:50:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "19 MIN READ"
+read_time: "8 MIN READ"
 excerpt: "Guia para transformar pesquisa proprietária em imprensa, backlinks, conteúdo SEO, relatório executivo e autoridade de marca."
 author: "data2comms"
 service_area: "Pesquisa proprietária"

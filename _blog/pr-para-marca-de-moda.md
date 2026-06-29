@@ -2,8 +2,8 @@
 title: "PR para marca de moda: como sair da bolha e virar referência cultural"
 date: 2026-06-28 11:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "22 MIN READ"
-excerpt: "Como marcas de moda podem usar PR, narrativa, collabs, creators, imprensa especializada, SEO e dados culturais para crescer com autoridade."
+read_time: "5 MIN READ"
+excerpt: "Como marcas de moda podem sair da bolha quando têm território cultural, narrativa própria e sinais consistentes de reputação."
 author: "data2comms"
 service_area: "Earned media"
 tags:

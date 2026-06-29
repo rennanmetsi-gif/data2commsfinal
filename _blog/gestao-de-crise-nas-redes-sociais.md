@@ -2,7 +2,7 @@
 title: "Gestão de crise nas redes sociais: como responder sem aumentar o dano"
 date: 2026-06-28 10:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
+read_time: "6 MIN READ"
 excerpt: "Guia de gestão de crise nas redes sociais: diagnóstico, matriz de resposta, nota, social listening, influenciadores, imprensa e recuperação."
 author: "data2comms"
 service_area: "Media training"

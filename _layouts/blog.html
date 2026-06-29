@@ -69,18 +69,6 @@
                 <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline prose-strong:font-semibold prose-blockquote:border-l-4 prose-blockquote:border-acidLime prose-blockquote:pl-6 prose-blockquote:not-italic">
                     {% capture article_content %}{{ content }}{% endcapture %}
                     {{ article_content | replace: '<strong>CTA:</strong> fale com a Data2Comms para ', 'A Data2Comms ajuda a ' | replace: '<strong>CTA:</strong> peça um diagnóstico da Data2Comms para ', 'A Data2Comms pode ajudar a ' | replace: '<strong>CTA:</strong> peça uma avaliação da Data2Comms para ', 'A Data2Comms pode avaliar o cenário e ajudar a ' | replace: '<strong>CTA:</strong> converse com a Data2Comms para ', 'A Data2Comms pode ajudar a ' | replace: '<strong>CTA:</strong> acione a Data2Comms para ', 'A Data2Comms apoia a marca a ' | replace: '<strong>CTA:</strong> ', '' | replace: 'CTA:', '' }}
-                    {% assign expansion_key = page.path | split: '/' | last | replace: '.md', '' %}
-                    {% assign seo_sources = "blog_expansions|blog_deepening|blog_conversion|blog_tail|blog_action|blog_rank_boost|blog_rank_boost_2|blog_rank_boost_3|blog_rank_boost_4|blog_rank_boost_5|blog_rank_boost_6|blog_rank_boost_7|blog_rank_boost_8|blog_rank_boost_9|blog_batch3_boost_a|blog_batch3_boost_b|blog_batch3_boost_c|blog_batch3_boost_d|blog_batch3_boost_e|blog_batch3_boost_f|blog_batch3_boost_g" | split: "|" %}
-                    {% for seo_source in seo_sources %}
-                    {% assign seo_source_data = site.data[seo_source] %}
-                    {% if seo_source_data %}
-                    {% assign seo_block = seo_source_data[expansion_key] %}
-                    {% if seo_block %}
-                    {% capture seo_block_html %}{{ seo_block | markdownify }}{% endcapture %}
-                    {{ seo_block_html | replace: 'CTA estratégico', 'Como a Data2Comms pode ajudar' | replace: 'Próximo passo recomendado', 'Como aplicar a estratégia' | replace: 'CTA:', '' }}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
                 </div>
                 {% if page.tags %}
                 <div class="mt-16 pt-8 border-t border-ink flex flex-wrap gap-2">

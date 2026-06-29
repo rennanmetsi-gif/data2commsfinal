@@ -2,7 +2,7 @@
 title: "Assessoria de imprensa beleza: como gerar desejo com autoridade e prova social"
 date: 2026-06-27 20:52:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "8 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Como marcas de beleza podem usar assessoria de imprensa, creators, seeding e conteúdo educativo para construir reputação e demanda."
 author: "data2comms"
 service_area: "Influência orientada por dados"
@@ -28,6 +28,6 @@ Consumidores comparam ingredientes, procuram resenhas, observam reputação e de
 
 A Data2Comms combina PR, conteúdo, seeding e inteligência de busca para desenhar campanhas que unem desejo, evidência e distribuição editorial.
 
-**CTA:** converse com a Data2Comms para desenhar uma estratégia de beleza com imprensa, creators e mensuração.
+A Data2Comms pode ajudar a desenhar uma estratégia de beleza com imprensa, creators e mensuração.
 
 Leia também: [assessoria de imprensa para alimentos](/blog/assessoria-de-imprensa-para-alimentos/) e [SEO integrado com relações públicas](/blog/seo-integrado-com-relacoes-publicas/).

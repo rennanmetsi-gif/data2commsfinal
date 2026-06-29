@@ -2,7 +2,7 @@
 title: "LinkedIn para CEO e ghostwriting executivo: como construir autoridade sem parecer genérico"
 date: 2026-06-28 10:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
+read_time: "7 MIN READ"
 excerpt: "Estratégia de LinkedIn para CEO, ghostwriting executivo, thought leadership, artigos assinados, imprensa e autoridade B2B."
 author: "data2comms"
 service_area: "PR Intelligence"

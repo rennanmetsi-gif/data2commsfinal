@@ -2,7 +2,7 @@
 title: "Agência de PR B2B: como escolher uma parceira para venda complexa"
 date: 2026-06-27 20:56:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "8 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Saiba o que uma agência de PR B2B deve entregar: narrativa, imprensa de negócios, conteúdo executivo, cases, dados e reputação."
 author: "data2comms"
 service_area: "PR Intelligence"
@@ -30,6 +30,6 @@ Dados tornam a empresa menos opinativa e mais noticiável. Uma pesquisa com deci
 
 A Data2Comms une relações públicas, pesquisa proprietária, conteúdo executivo e inteligência de busca para apoiar venda complexa.
 
-**CTA:** peça um diagnóstico da Data2Comms para entender como PR, conteúdo e dados podem apoiar sua venda B2B.
+A Data2Comms pode diagnosticar o cenário e ajudar a entender como PR, conteúdo e dados podem apoiar sua venda B2B.
 
 Leia também: [PR para SaaS B2B](/blog/pr-para-saas-b2b/) e [SEO integrado com relações públicas](/blog/seo-integrado-com-relacoes-publicas/).

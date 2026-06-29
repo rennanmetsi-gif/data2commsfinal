@@ -2,8 +2,8 @@
 title: "Assessoria para ONG: como aumentar visibilidade, doações e confiança pública"
 date: 2026-06-28 12:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "23 MIN READ"
-excerpt: "Guia de assessoria de imprensa para ONGs: causa, storytelling, relatório de impacto, imprensa, doações, SEO e reputação institucional."
+read_time: "3 MIN READ"
+excerpt: "ONGs precisam de comunicação que una causa, transparência, impacto e caminhos claros de participação pública."
 author: "data2comms"
 service_area: "Earned media"
 tags:

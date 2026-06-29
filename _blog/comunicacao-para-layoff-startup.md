@@ -2,8 +2,8 @@
 title: "Comunicação para layoff em startup: como reduzir dano reputacional com clareza"
 date: 2026-06-29 09:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "29 MIN READ"
-excerpt: "Guia completo de comunicação para layoff em startup: narrativa, comunicação interna, nota externa, imprensa, LinkedIn, Q&A e reputação pós-corte."
+read_time: "4 MIN READ"
+excerpt: "Layoff é um evento reputacional. Veja como startups podem comunicar cortes com responsabilidade, clareza e menor dano público."
 author: "data2comms"
 service_area: "Crisis Comms"
 tags:
@@ -80,6 +80,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

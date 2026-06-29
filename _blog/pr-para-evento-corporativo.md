@@ -2,8 +2,8 @@
 title: "PR para evento corporativo: como atrair público, patrocinadores e imprensa qualificada"
 date: 2026-06-29 09:50:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "28 MIN READ"
-excerpt: "Guia completo de PR para evento corporativo: narrativa, imprensa, palestrantes, patrocinadores, SEO, conteúdo e cobertura antes, durante e depois."
+read_time: "4 MIN READ"
+excerpt: "Eventos corporativos precisam de tese editorial, não apenas agenda. PR ajuda a transformar palco em reputação e demanda qualificada."
 author: "data2comms"
 service_area: "Event PR"
 tags:
@@ -76,6 +76,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

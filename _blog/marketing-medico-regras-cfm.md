@@ -2,7 +2,7 @@
 title: "Marketing médico e regras do CFM: como divulgar com segurança e autoridade"
 date: 2026-06-28 10:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "19 MIN READ"
+read_time: "6 MIN READ"
 excerpt: "Guia de comunicação médica com foco em regras do CFM, PR para médicos, conteúdo educativo, SEO local, imprensa e reputação."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"

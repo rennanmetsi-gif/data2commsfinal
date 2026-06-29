@@ -2,8 +2,8 @@
 title: "Assessoria para festival: como transformar programação em acontecimento cultural"
 date: 2026-06-29 10:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "28 MIN READ"
-excerpt: "Guia completo de assessoria para festival: imprensa cultural, creators, agenda local, patrocinadores, venda de ingressos, reputação e cobertura."
+read_time: "3 MIN READ"
+excerpt: "Festivais ganham força quando a comunicação transforma programação em território cultural, serviço claro e valor para patrocinadores."
 author: "data2comms"
 service_area: "Culture PR"
 tags:
@@ -76,6 +76,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

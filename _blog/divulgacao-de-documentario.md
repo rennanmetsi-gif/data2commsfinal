@@ -2,8 +2,8 @@
 title: "Divulgação de documentário: como transformar filme em debate público e audiência"
 date: 2026-06-29 10:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "29 MIN READ"
-excerpt: "Guia completo de divulgação de documentário: imprensa cultural, especialistas, causas, festivais, SEO, debates, sessões e reputação do tema."
+read_time: "3 MIN READ"
+excerpt: "Um documentário forte precisa ser comunicado como obra, tema público e oportunidade de debate, não só como estreia audiovisual."
 author: "data2comms"
 service_area: "Culture PR"
 tags:
@@ -76,6 +76,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

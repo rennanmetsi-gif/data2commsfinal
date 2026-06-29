@@ -2,8 +2,8 @@
 title: "Divulgação de curso online: como captar alunos com autoridade, PR e SEO"
 date: 2026-06-28 12:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "23 MIN READ"
-excerpt: "Estratégia completa para divulgação de curso online: autoridade, imprensa, SEO, lançamento, prova, conteúdo educacional e conversão."
+read_time: "4 MIN READ"
+excerpt: "Cursos online vendem melhor quando autoridade, método, prova e conteúdo educativo reduzem desconfiança antes da matrícula."
 author: "data2comms"
 service_area: "Conteúdo de autoridade"
 tags:

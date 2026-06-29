@@ -2,7 +2,7 @@
 title: "Análise de massa aplicada a PR Intelligence"
 date: 2026-06-22 09:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "7 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Como grandes volumes de texto, cobertura e sinais digitais podem revelar padrões de mídia, comportamento e influência."
 author: "data2comms"
 service_area: "PR Intelligence"

@@ -2,8 +2,8 @@
 title: "Relatório de mercado para imprensa: como criar dados que viram pauta, links e autoridade"
 date: 2026-06-29 09:40:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "30 MIN READ"
-excerpt: "Guia completo sobre relatório de mercado para imprensa: pesquisa proprietária, metodologia, narrativa de dados, SEO, backlinks e distribuição editorial."
+read_time: "4 MIN READ"
+excerpt: "Relatórios de mercado funcionam quando transformam dados próprios em leitura relevante, imprensa qualificada e autoridade orgânica."
 author: "data2comms"
 service_area: "Data PR"
 tags:
@@ -80,6 +80,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

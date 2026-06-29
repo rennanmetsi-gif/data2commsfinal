@@ -2,7 +2,7 @@
 title: "Assessoria de imprensa para healthtech: autoridade sem oportunismo na saúde digital"
 date: 2026-06-28 09:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
+read_time: "7 MIN READ"
 excerpt: "Como healthtechs podem usar PR, conteúdo técnico, dados proprietários e SEO para ganhar confiança em saúde digital sem promessas frágeis."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"

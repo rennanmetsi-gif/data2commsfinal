@@ -2,7 +2,7 @@
 title: "PR para empresa de IA: como sair do hype e provar aplicação real"
 date: 2026-06-28 09:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "18 MIN READ"
+read_time: "8 MIN READ"
 excerpt: "Estratégia de PR para empresas de inteligência artificial: narrativa, casos reais, dados, riscos, porta-vozes e SEO para autoridade."
 author: "data2comms"
 service_area: "PR Intelligence"

@@ -2,7 +2,7 @@
 title: "Pacotes de assessoria de imprensa: como comparar escopo, preço e resultado"
 date: 2026-06-28 10:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "19 MIN READ"
+read_time: "7 MIN READ"
 excerpt: "Guia de pacotes de assessoria de imprensa: mensal, pontual, lançamento, crise, Digital PR, conteúdo, preço, entregáveis e KPIs."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"

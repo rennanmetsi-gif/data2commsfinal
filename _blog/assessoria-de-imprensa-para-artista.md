@@ -2,7 +2,7 @@
 title: "Assessoria de imprensa para artista: como transformar lançamento em narrativa cultural"
 date: 2026-06-27 20:55:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "8 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Guia de PR para artistas independentes: release, press kit, entrevistas, agenda cultural, storytelling e relação com imprensa."
 author: "data2comms"
 service_area: "Earned media"
@@ -28,6 +28,6 @@ Muitos artistas procuram assessoria perto demais do lançamento. O ideal é plan
 
 A Data2Comms estrutura lançamentos culturais como narrativa e estratégia, conectando obra, imprensa, SEO e presença pública.
 
-**CTA:** fale com a Data2Comms para organizar seu lançamento como história, pauta e presença cultural.
+A Data2Comms pode ajudar a organizar seu lançamento como história, pauta e presença cultural.
 
 Leia também: [gerenciamento de crise de imagem](/blog/gerenciamento-de-crise-de-imagem/) e [quanto custa assessoria de imprensa](/blog/quanto-custa-assessoria-de-imprensa/).

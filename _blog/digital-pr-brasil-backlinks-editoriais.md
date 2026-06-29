@@ -2,7 +2,7 @@
 title: "Digital PR Brasil: como conquistar backlinks editoriais sem comprar links"
 date: 2026-06-28 09:40:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "19 MIN READ"
+read_time: "8 MIN READ"
 excerpt: "Guia de Digital PR no Brasil: backlinks editoriais, pesquisa proprietária, pautas jornalísticas, SEO, autoridade de domínio e mensuração."
 author: "data2comms"
 service_area: "Data search"

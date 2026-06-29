@@ -2,7 +2,7 @@
 title: "Data search para comunicação: da pergunta ao território"
 date: 2026-06-24 09:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "6 MIN READ"
+read_time: "3 MIN READ"
 excerpt: "Um processo de pesquisa que organiza fontes, padrões de busca, sinais culturais e evidências de mercado antes da definição de uma narrativa."
 author: "data2comms"
 service_area: "Data search"

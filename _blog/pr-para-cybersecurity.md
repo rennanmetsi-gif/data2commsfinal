@@ -2,8 +2,8 @@
 title: "PR para cybersecurity: como construir autoridade em risco digital sem alarmismo"
 date: 2026-06-29 09:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
-read_time: "29 MIN READ"
-excerpt: "Guia completo de PR para cybersecurity: confiança, dados de ameaça, imprensa, SEO, porta-vozes técnicos, crise e conteúdo para decisores."
+read_time: "4 MIN READ"
+excerpt: "Como empresas de cybersecurity podem construir confiança pública com dados, clareza técnica e comunicação proporcional ao risco."
 author: "data2comms"
 service_area: "Tech PR"
 tags:
@@ -80,6 +80,10 @@ deep_dive: |-
 ---
 {{ page.long_intro }}
 
-{% include seo-playbook-post.md %}
+{{ page.market_context }}
+
+{{ page.narrative_angle }}
 
 {{ page.deep_dive }}
+
+{{ page.data2comms_fit }}

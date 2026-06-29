@@ -89,17 +89,29 @@ permalink: /
                 </div>
             </div>
             
-            <!-- COLUNA DO VÍDEO EXPANDIDA - CINZA REMOVIDO COM PREENCHIMENTO COMPLETO -->
-            <div class="w-full lg:w-2/5 h-[45vh] lg:h-auto bg-concrete relative overflow-hidden">
-                <!-- O player agora expande para 250% de largura e fica centralizado de forma absoluta, cortando as sobras cinzas -->
-                <iframe src="https://player.vimeo.com/video/1203294019?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;background=1" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250%] h-[105%] max-w-none pointer-events-none" 
-                        title="Vídeo Manifesto data2comms">
-                </iframe>
-                <div class="brand-label absolute bottom-4 left-4 bg-paper px-3 py-2 font-mono text-[10px] uppercase border border-ink z-10">Fig. 01 / Vídeo Manifesto</div>
+            <div class="home-intelligence-panel w-full lg:w-2/5 h-[55vh] min-h-[480px] lg:h-auto relative overflow-hidden" aria-label="Mapa interativo de sinais da data2comms">
+                <div class="home-signal-grid" aria-hidden="true"></div>
+                <div class="home-signal-scan" aria-hidden="true"></div>
+                <div class="home-signal-core" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="home-signal-paths" aria-hidden="true">
+                    <span class="home-signal-path path-a"></span>
+                    <span class="home-signal-path path-b"></span>
+                    <span class="home-signal-path path-c"></span>
+                    <span class="home-signal-path path-d"></span>
+                </div>
+                <button class="home-signal-node node-data is-active" type="button" data-signal="Dados">Dados</button>
+                <button class="home-signal-node node-culture" type="button" data-signal="Cultura">Cultura</button>
+                <button class="home-signal-node node-press" type="button" data-signal="Imprensa">Imprensa</button>
+                <button class="home-signal-node node-influence" type="button" data-signal="Influência">Influência</button>
+                <button class="home-signal-node node-reputation" type="button" data-signal="Reputação">Reputação</button>
+                <div class="home-signal-readout">
+                    <span class="font-mono text-[10px] uppercase tracking-widest">Fig. 01 / Signal map</span>
+                    <strong class="font-display uppercase" data-home-signal-readout>Dados</strong>
+                </div>
             </div>
         </section>
 
@@ -113,6 +125,40 @@ permalink: /
                 </div>
             </div>
         </div>
+
+        <section class="home-clients border-b-editorial bg-ink text-paper">
+            <div class="home-clients-header px-6 py-6 md:px-12 lg:px-16 border-b border-paper/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <p class="font-mono text-[11px] uppercase tracking-widest text-acidLime">Marcas que já confiaram na data2comms</p>
+                <p class="font-mono text-[10px] uppercase tracking-widest text-paper/50">Clientes, projetos e colaborações</p>
+            </div>
+            <div class="home-clients-grid">
+                <div class="home-client-logo">
+                    <img src="https://www.bryter-global.com/hubfs/galderma-logo-white.svg" alt="Galderma" loading="lazy" referrerpolicy="no-referrer" class="logo-native">
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logo_of_Red_bull.svg" alt="Red Bull" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                </div>
+                <div class="home-client-logo home-client-type" aria-label="Virada Cultural 2026">
+                    <span>Virada Cultural</span>
+                    <strong>2026</strong>
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://static.wixstatic.com/media/c63664_8355eb8eafca45d4916c625e91c965a7~mv2.png/v1/fill/w_980%2Ch_980%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/LOGO%20PR%20PRETA.png" alt="Peça Rara Brechó" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Bic_logo.svg" alt="BIC" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/SPFW_logo.png" alt="SPFW" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://logodownload.org/wp-content/uploads/2026/03/ze-delivery-logo.png" alt="Zé Delivery" loading="lazy" referrerpolicy="no-referrer" class="logo-native">
+                </div>
+                <div class="home-client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Ambev_logo.svg" alt="Ambev" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
+                </div>
+            </div>
+        </section>
 
         <section class="border-b-editorial bg-paper overflow-hidden">
             <div class="p-6 md:p-12 lg:px-16 border-b-editorial flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
@@ -175,7 +221,36 @@ permalink: /
         
         document.addEventListener('DOMContentLoaded', () => { 
             setupScrollAnimations(); 
+            setupHomeSignalMap();
         });
+
+        function setupHomeSignalMap() {
+            const panel = document.querySelector('.home-intelligence-panel');
+            if (!panel) return;
+
+            const readout = panel.querySelector('[data-home-signal-readout]');
+            const nodes = [...panel.querySelectorAll('.home-signal-node')];
+
+            panel.addEventListener('pointermove', event => {
+                const rect = panel.getBoundingClientRect();
+                const x = event.clientX - rect.left - rect.width / 2;
+                const y = event.clientY - rect.top - rect.height / 2;
+                panel.style.setProperty('--signal-grid-x', `${x * -0.018}px`);
+                panel.style.setProperty('--signal-grid-y', `${y * -0.018}px`);
+                panel.style.setProperty('--signal-core-x', `${x * 0.026}px`);
+                panel.style.setProperty('--signal-core-y', `${y * 0.026}px`);
+            });
+
+            nodes.forEach(node => {
+                const activate = () => {
+                    nodes.forEach(item => item.classList.toggle('is-active', item === node));
+                    if (readout) readout.textContent = node.dataset.signal;
+                };
+                node.addEventListener('mouseenter', activate);
+                node.addEventListener('focus', activate);
+                node.addEventListener('click', activate);
+            });
+        }
     </script>
 </body>
 </html>

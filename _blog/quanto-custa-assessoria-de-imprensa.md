@@ -1,9 +1,10 @@
 ---
+
 title: "Quanto custa assessoria de imprensa? Como avaliar preço, escopo e retorno"
 date: 2026-06-27 20:59:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "3 MIN READ"
-excerpt: "Entenda os fatores que definem o custo de assessoria de imprensa: objetivo, escopo, senioridade, rotina, crise, lançamento e mensuração."
+excerpt: "O custo de assessoria de imprensa depende do problema reputacional: lancamento, autoridade continua, crise, dados ou Digital PR."
 author: "data2comms"
 service_area: "Assessoria de imprensa orientada por dados"
 tags:
@@ -12,22 +13,18 @@ tags:
   - "pacotes de assessoria de imprensa"
   - "contratar assessoria de imprensa"
 ---
-A pergunta "quanto custa assessoria de imprensa?" raramente é só sobre preço. Ela aparece quando a empresa está perto de decidir, mas ainda precisa entender escopo, entregáveis, risco e retorno. O problema é que comparar assessorias apenas pelo valor mensal costuma levar a escolhas ruins. PR pode ser simples, estratégico, pontual, contínuo, técnico, regional, nacional, orientado a crise ou integrado a SEO. Cada modelo exige uma estrutura diferente.
+A pergunta "quanto custa assessoria de imprensa?" aparece quando a empresa esta perto de decidir, mas ainda nao sabe comparar escopo. O risco e olhar apenas o valor mensal. PR pode ser divulgacao pontual, reputacao continua, gestao de crise, Digital PR, pesquisa proprietaria, media training ou posicionamento executivo. Cada necessidade exige outra estrutura.
 
-Em vez de procurar um número único, a melhor pergunta é: qual resultado reputacional a empresa precisa construir agora? Uma marca que quer divulgar um lançamento tem uma necessidade. Uma startup que busca credibilidade antes de rodada tem outra. Uma empresa em crise precisa de resposta rápida. Uma consultoria B2B precisa de autoridade contínua.
+O preco deveria partir de uma pergunta anterior: que risco ou oportunidade a comunicacao precisa resolver agora? Uma startup antes de rodada tem uma dor. Uma clinica que precisa de confianca local tem outra. Uma marca em crise tem urgencia diferente. Uma empresa B2B que quer autoridade precisa de consistencia.
 
-## O que influencia o preço da assessoria de imprensa
+## Escopo vale mais do que pacote
 
-O primeiro fator é objetivo. Lançamento pontual, retainer mensal, posicionamento executivo, gestão de crise, Digital PR e pesquisa proprietária demandam escopos diferentes. O segundo fator é complexidade do setor. Saúde, tecnologia, financeiro, jurídico e B2B exigem mais profundidade técnica, revisão e preparo de porta-voz.
+Retainer mensal faz sentido quando reputacao precisa ser construída ao longo do tempo. Projeto pontual funciona para lancamento, evento, estudo ou campanha. Consultoria ajuda quando a empresa precisa primeiro organizar tese, mensagens, riscos e prioridades.
 
-O terceiro fator é senioridade. Uma operação com estratégia, pauta, relacionamento, escrita executiva e mensuração não custa o mesmo que um disparo básico de release. O quarto fator é intensidade: número de porta-vozes, volume de pautas, quantidade de conteúdos, eventos, monitoramento, atendimento à imprensa e produção de dados.
+A Data2Comms recomenda diagnostico antes de proposta fechada. Avaliamos maturidade de marca, busca, ativos, porta-vozes, riscos, oportunidades de pauta e uso comercial da reputacao. O resultado e um escopo que faz sentido para o momento da empresa, nao uma lista generica de entregaveis.
 
-## Retainer, projeto ou consultoria
+Tambem vale observar o custo de nao fazer. Uma empresa sem narrativa perde oportunidades de imprensa. Uma marca sem prova depende mais de midia paga. Uma lideranca despreparada aumenta risco em entrevista. Uma crise sem plano custa mais do que preparacao. Preco deve ser comparado com o valor reputacional que esta em jogo.
 
-O retainer mensal faz sentido quando a empresa precisa construir reputação de forma contínua. Projeto pontual funciona para lançamento, evento, rodada, produto ou campanha com prazo definido. Consultoria é indicada quando a empresa quer diagnóstico, plano e direcionamento antes de contratar execução recorrente.
+Por isso, uma proposta boa deve explicar escolhas. Por que imprensa agora? Por que pesquisa? Por que LinkedIn executivo? Por que monitoramento? Quando o escopo mostra raciocinio, o preco deixa de ser um numero solto e vira investimento em reputacao mensuravel.
 
-A Data2Comms recomenda começar por diagnóstico. Avaliamos objetivo, maturidade de marca, demanda de busca, ativos existentes, porta-vozes, riscos e oportunidades de pauta.
-
-A Data2Comms pode avaliar o cenário e ajudar a entender o escopo ideal antes de comparar preço.
-
-Leia também: [agência de PR B2B](/blog/agencia-de-pr-b2b/) e [gerenciamento de crise de imagem](/blog/gerenciamento-de-crise-de-imagem/).
+Leia tambem: [pacotes de assessoria de imprensa](/blog/pacotes-de-assessoria-de-imprensa/) e [agencia de PR B2B](/blog/agencia-de-pr-b2b/).

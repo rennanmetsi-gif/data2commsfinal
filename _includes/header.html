@@ -33,6 +33,16 @@
                 <a href="{{ site.baseurl }}/servicos.html" class="{% if services_active %}is-active{% endif %}">Serviços</a>
                 <a href="{{ site.baseurl }}/sobre.html" class="{% if current_url == '/sobre.html' %}is-active{% endif %}">Sobre</a>
             </nav>
+            <nav class="site-editorial-nav" aria-label="Editorias do Editorial">
+                <div class="site-editorial-nav-inner">
+                    <span class="site-editorial-nav-label">Editorias</span>
+                    <a href="{{ site.baseurl }}/moda/" {% if current_url == '/moda/' %}aria-current="page"{% endif %}>Moda</a>
+                    <a href="{{ site.baseurl }}/beleza/" {% if current_url == '/beleza/' %}aria-current="page"{% endif %}>Beleza</a>
+                    <a href="{{ site.baseurl }}/saude/" {% if current_url == '/saude/' %}aria-current="page"{% endif %}>Saúde</a>
+                    <a href="{{ site.baseurl }}/tecnologia/" {% if current_url == '/tecnologia/' %}aria-current="page"{% endif %}>Tecnologia</a>
+                    <a href="{{ site.baseurl }}/comportamento/" {% if current_url == '/comportamento/' %}aria-current="page"{% endif %}>Comportamento</a>
+                </div>
+            </nav>
             <div class="site-contact-slot">
                 <a href="{{ site.baseurl }}/contato.html" class="site-contact-cta {% if current_url == '/contato.html' %}is-active{% endif %}">
                     Fale com a data2comms
@@ -40,15 +50,4 @@
             </div>
         </div>
     </div>
-
-    <nav class="site-editorial-nav" aria-label="Editorias do Editorial">
-        <div class="site-editorial-nav-inner">
-            <span class="site-editorial-nav-label">Editorias</span>
-            <a href="{{ site.baseurl }}/moda/" {% if current_url == '/moda/' %}aria-current="page"{% endif %}>Moda</a>
-            <a href="{{ site.baseurl }}/beleza/" {% if current_url == '/beleza/' %}aria-current="page"{% endif %}>Beleza</a>
-            <a href="{{ site.baseurl }}/saude/" {% if current_url == '/saude/' %}aria-current="page"{% endif %}>Saúde</a>
-            <a href="{{ site.baseurl }}/tecnologia/" {% if current_url == '/tecnologia/' %}aria-current="page"{% endif %}>Tecnologia</a>
-            <a href="{{ site.baseurl }}/comportamento/" {% if current_url == '/comportamento/' %}aria-current="page"{% endif %}>Comportamento</a>
-        </div>
-    </nav>
 </header>

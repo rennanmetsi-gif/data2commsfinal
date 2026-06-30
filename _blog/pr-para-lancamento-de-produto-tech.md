@@ -16,7 +16,7 @@ PR para lançamento de produto tech exige uma pergunta que muitas empresas pulam
 
 O lançamento de produto tech costuma falhar quando a comunicação fica presa na linguagem de produto. A empresa fala de funcionalidades, arquitetura, velocidade, IA, automação, integração e performance. O público quer saber outra coisa: que problema ficou mais simples, que custo foi reduzido, que trabalho deixou de ser manual, que experiência melhorou e que prova existe.
 
-Para o cliente final da Data2Comms, PR não é só distribuição de release. É tradução estratégica entre produto, mercado, imprensa, busca e venda.
+Para uma empresa de tecnologia, PR não é só distribuição de release. É tradução estratégica entre produto, mercado, imprensa, busca e venda.
 
 ## A novidade precisa ser entendida fora do roadmap
 

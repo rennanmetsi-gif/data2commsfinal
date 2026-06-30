@@ -45,7 +45,7 @@ metrics:
   - "menções em veículos com recorte correto dos dados"
   - "tráfego orgânico e referenciado para a página do estudo"
   - "rankings para termos de pesquisa, tendência e categoria"
-  - "downloads, leads ou reuniões influenciadas pelo relatório"
+  - "downloads, reuniões ou oportunidades influenciadas pelo relatório"
   - "uso do estudo por vendas, liderança, eventos e relações institucionais"
 market_context: |-
   Relatórios de mercado ganharam importância porque empresas precisam de assunto próprio. Em vez de pedir espaço para falar de si mesmas, marcas podem publicar dados que ajudam jornalistas, clientes e parceiros a entender uma mudança. O relatório vira ponte entre PR, SEO, conteúdo e vendas. Mas ele só funciona quando tem pergunta boa, metodologia clara e interpretação relevante.

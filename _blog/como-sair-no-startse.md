@@ -16,7 +16,7 @@ Quando uma startup pesquisa como sair no StartSe, normalmente não está procura
 
 O erro é tratar o veículo como destino final. Sair no StartSe, na Exame, no PEGN ou em qualquer mídia de negócios não resolve reputação se a startup não tem uma tese clara. A cobertura precisa ser consequência de um contexto: um problema relevante, um produto com aplicação real, um mercado em movimento, um founder capaz de explicar a oportunidade e algum sinal de tração.
 
-Para o ICP da Data2Comms, a questão não é "como convencer um jornalista". É como organizar a própria empresa para ser compreendida por quem decide, investe, compra, contrata ou indica.
+Para uma startup que busca reputação, a questão não é "como convencer um jornalista". É como organizar a própria empresa para ser compreendida por quem decide, investe, compra, contrata ou indica.
 
 ## A pauta começa antes do pitch
 

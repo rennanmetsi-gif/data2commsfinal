@@ -32,7 +32,7 @@ proof_assets:
   - "press release com ângulo de mercado e não apenas anúncio de data"
   - "kit de imprensa com dados, porta-vozes, credenciais, imagens e contatos"
   - "plano de conteúdo para antes, durante e depois, incluindo LinkedIn, blog, newsletter e imprensa"
-  - "relatório de resultados para patrocinadores com alcance, mídia, tráfego, leads e conteúdo gerado"
+  - "relatório de resultados para patrocinadores com alcance, mídia, tráfego, oportunidades e conteúdo gerado"
 channels:
   - "imprensa de negócios"
   - "veículos setoriais"
@@ -45,7 +45,7 @@ metrics:
   - "cobertura em imprensa e veículos setoriais antes e depois do evento"
   - "backlinks para página do evento, programação ou relatório"
   - "engajamento de palestrantes, patrocinadores e executivos no LinkedIn"
-  - "leads ou oportunidades geradas por conteúdo do evento"
+  - "reuniões ou oportunidades geradas por conteúdo do evento"
   - "satisfação de patrocinadores e capacidade de vender edições futuras"
 market_context: |-
   Eventos corporativos competem por atenção em um calendário saturado. Webinar, congresso, summit, fórum, encontro fechado, evento de relacionamento e lançamento B2B só ganham tração quando têm tese clara. O mercado não precisa de mais uma agenda de painéis; precisa de um motivo para prestar atenção. PR ajuda a transformar o evento em conversa de setor.

@@ -72,7 +72,7 @@ deep_dive: |-
 
   ## Conteúdo preventivo como ativo comercial
 
-  Segurança digital vende melhor quando o mercado entende o risco antes da urgência. Guias sobre cultura de segurança, checklist para empresas, explicadores sobre vazamento, artigos sobre governança e relatórios setoriais ajudam a educar decisores. Esse conteúdo também reduz o custo da conversa comercial: o lead chega mais informado e com maior percepção de necessidade.
+  Segurança digital vende melhor quando o mercado entende o risco antes da urgência. Guias sobre cultura de segurança, checklist para empresas, explicadores sobre vazamento, artigos sobre governança e relatórios setoriais ajudam a educar decisores. Esse conteúdo também melhora a conversa comercial: o decisor chega mais informado e com maior percepção de necessidade.
 
   O conteúdo preventivo deve ser segmentado por público. Uma empresa pequena quer saber por onde começar. Uma instituição financeira quer falar de fraude, compliance e reputação. Uma healthtech se preocupa com dados sensíveis. Uma indústria pode se preocupar com continuidade operacional. Uma escola pode precisar proteger alunos e responsáveis. Quanto mais específico o recorte, maior a chance de ranquear e converter.
 

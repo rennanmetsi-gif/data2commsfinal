@@ -46,7 +46,7 @@ metrics:
   - "tráfego orgânico qualificado vindo de termos ligados a marketing, tecnologia e software B2B"
   - "uso de matérias, artigos e estudos pelo time comercial em propostas e follow-ups"
   - "convites para eventos, webinars, podcasts e entrevistas com porta-vozes"
-  - "leads influenciados por conteúdo, imprensa, relatório ou case"
+  - "oportunidades influenciadas por conteúdo, imprensa, relatório ou case"
 market_context: |-
   Em martech, o problema não é apenas visibilidade. O problema é ser entendido. Muitas empresas vendem soluções poderosas, mas explicam a oferta como se o comprador já dominasse a arquitetura técnica. O decisor de marketing quer saber se a ferramenta resolve um problema de aquisição, conversão, retenção, atribuição, produtividade ou inteligência comercial. Ele não compra um dashboard; compra uma forma mais segura de decidir. Ele não compra automação; compra escala com menos desperdício.
 narrative_angle: |-

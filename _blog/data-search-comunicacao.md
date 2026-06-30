@@ -14,7 +14,7 @@ tags:
 ---
 Toda estratégia de comunicação deveria começar por uma pergunta simples: o que o mercado já está buscando? Antes de preencher briefing, defender campanha ou escolher pauta, vale observar como clientes, jornalistas, investidores, pacientes, consumidores e decisores nomeiam suas dúvidas.
 
-Data search para comunicação usa busca como sinal de demanda, medo, curiosidade e intenção comercial. Uma palavra-chave não é apenas volume. Ela pode revelar uma dor que ainda não virou lead, uma objeção que o time comercial escuta, uma crise latente, uma oportunidade editorial ou um território em que a marca ainda não tem autoridade.
+Data search para comunicação usa busca como sinal de demanda, medo, curiosidade e intenção comercial. Uma palavra-chave não é apenas volume. Ela pode revelar uma dor que ainda não apareceu na conversa comercial, uma objeção que o time de vendas escuta, uma crise latente, uma oportunidade editorial ou um território em que a marca ainda não tem autoridade.
 
 ## Busca também é cultura
 

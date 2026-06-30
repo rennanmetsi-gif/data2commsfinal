@@ -12,7 +12,7 @@ tags:
   - "relatório de mercado para imprensa"
   - "thought leadership B2B"
 ---
-Produção de white paper não deveria ser sinônimo de PDF longo para capturar leads frios. Em B2B, um bom white paper é um ativo de autoridade. Ele organiza uma pergunta relevante, sustenta um ponto de vista e entrega informação útil para quem decide.
+Produção de white paper não deveria ser sinônimo de PDF longo usado como isca comercial. Em B2B, um bom white paper é um ativo de autoridade. Ele organiza uma pergunta relevante, sustenta um ponto de vista e entrega informação útil para quem decide.
 
 O problema é que muitos materiais viram catálogo disfarçado. Começam prometendo análise e terminam vendendo produto. Decisores percebem. A imprensa ignora. O time comercial usa pouco. O conteúdo envelhece rápido.
 
@@ -56,6 +56,6 @@ Também é importante pensar na landing page. O título, o resumo, os bullets e 
 
 A Data2Comms ajuda empresas B2B com definição de tema, pesquisa, entrevistas, análise de dados, redação, narrativa executiva, PR, SEO e plano de distribuição.
 
-Produção de white paper é mais forte quando o material não serve apenas para gerar lead. Serve para provar que a empresa entende uma decisão difícil melhor do que o mercado.
+Produção de white paper é mais forte quando o material não serve apenas para coletar contatos. Serve para provar que a empresa entende uma decisão difícil melhor do que o mercado.
 
 Leia também: [thought leadership B2B](/blog/thought-leadership-b2b/), [relatório de mercado para imprensa](/blog/relatorio-de-mercado-para-imprensa/) e [pesquisa proprietária para imprensa](/blog/pesquisa-proprietaria-para-imprensa/).

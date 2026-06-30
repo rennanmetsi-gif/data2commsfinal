@@ -43,7 +43,7 @@ channels:
 metrics:
   - "menções qualificadas em pautas sobre carreira, gestão, liderança, vagas, salários e futuro do trabalho"
   - "tráfego orgânico para páginas de serviço e estudos de mercado"
-  - "downloads de relatórios, inscrições em webinars e leads influenciados por conteúdo"
+  - "downloads de relatórios, inscrições em webinars e oportunidades influenciadas por conteúdo"
   - "convites para entrevistas, colunas, eventos e podcasts de negócios"
   - "crescimento de busca de marca associada a RH, carreira e gestão"
   - "uso de estudos e matérias pelo time comercial em conversas com empresas"

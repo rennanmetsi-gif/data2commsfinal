@@ -36,7 +36,7 @@ A credibilidade vem da proporção. Uma empresa pode dizer "em nossa base" quand
 
 ## Pesquisa deve servir PR, SEO e venda
 
-Um estudo tech bem desenhado nasce com distribuição em mente. O que vira manchete? O que vira gráfico? Que página receberá backlinks? Que termos de busca a pesquisa ajuda a ocupar? Que porta-voz vai comentar? Que material o time comercial poderá enviar para leads?
+Um estudo tech bem desenhado nasce com distribuição em mente. O que vira manchete? O que vira gráfico? Que página receberá backlinks? Que termos de busca a pesquisa ajuda a ocupar? Que porta-voz vai comentar? Que material o time comercial poderá enviar para possíveis clientes, parceiros ou decisores?
 
 O mesmo estudo pode gerar diferentes ativos: release para imprensa, página pilar, artigo de founder, post de LinkedIn, webinar, apresentação para investidores, newsletter, pauta para podcast e conteúdo evergreen.
 

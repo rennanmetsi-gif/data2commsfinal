@@ -16,7 +16,7 @@ Pesquisar como sair no Pequenas Empresas & Grandes Negócios costuma revelar uma
 
 Mas PEGN não é mural de divulgação. Uma empresa não vira pauta só porque abriu, lançou produto ou quer vender mais. A história precisa ajudar o leitor a entender um movimento de mercado, uma decisão de negócio, um desafio operacional, uma mudança de consumo ou uma trajetória empreendedora com aprendizado concreto.
 
-Para o cliente final da Data2Comms, a pergunta certa não é "como mandar release para PEGN?". É: que parte da minha empresa já tem força suficiente para ser lida como caso de negócio?
+A pergunta certa não é "como mandar release para PEGN?". É: que parte da empresa já tem força suficiente para ser lida como caso de negócio?
 
 ## Case bom tem conflito, não só sucesso
 

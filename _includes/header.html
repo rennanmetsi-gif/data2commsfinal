@@ -13,31 +13,35 @@
 {% endif %}
 
 <header class="site-header sticky top-0 w-full z-50 flex flex-col bg-ink">
-    <div class="site-brandbar w-full flex flex-row items-center justify-between md:justify-center gap-3 md:gap-6 px-6 py-8 border-b">
-        <a href="{{ site.baseurl }}/index.html" class="block w-[150px] md:w-[220px] flex-shrink-0" aria-label="Voltar para a Home">
-            <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo" class="w-full h-auto object-contain">
-        </a>
-        <span class="site-brandbar-tagline font-mono text-[8px] md:text-[11px] uppercase tracking-widest text-paper/70 md:border-l md:border-paper/30 md:pl-6 text-right md:text-center">
-            Estratégia de PR, influência, imprensa e dados.
-        </span>
-    </div>
-
-    <div class="site-navigation w-full flex flex-col lg:flex-row justify-between items-stretch border-b-editorial bg-white">
-        <nav class="site-primary-nav flex w-full overflow-x-auto hide-scrollbar whitespace-nowrap divide-x-editorial border-b-editorial lg:border-b-0 relative" aria-label="Navegação principal">
-            <a href="{{ site.baseurl }}/index.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if current_url == '/' or current_url == '/index.html' %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Início</a>
-            <a href="{{ site.baseurl }}/editorial/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if editorial_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-semibold{% endif %}">Editorial</a>
-            <a href="{{ site.baseurl }}/blog/" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if blog_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Blog</a>
-            <a href="{{ site.baseurl }}/servicos.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if services_active %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Serviços</a>
-            <a href="{{ site.baseurl }}/sobre.html" class="px-5 h-[50px] flex justify-center items-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors {% if current_url == '/sobre.html' %}text-ink font-bold bg-acidLime{% else %}text-ink font-medium{% endif %}">Sobre</a>
-        </nav>
-        <div class="w-full lg:w-auto lg:border-l-editorial flex-shrink-0">
-            <a href="{{ site.baseurl }}/contato.html" class="site-contact-cta px-10 h-[50px] w-full flex items-center justify-center font-mono text-[11px] uppercase tracking-widest transition-colors cursor-pointer border-b border-ink lg:border-none {% if current_url == '/contato.html' %}bg-acidLime text-ink font-bold{% else %}bg-ink text-paper hover-acid{% endif %}">
-                Fale com a data2comms
+    <div class="site-brandbar">
+        <div class="site-brandbar-inner">
+            <a href="{{ site.baseurl }}/index.html" class="site-logo-link" aria-label="Voltar para a Home">
+                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo">
             </a>
+            <span class="site-brandbar-tagline">
+                Estratégia de PR, influência, imprensa e dados.
+            </span>
         </div>
     </div>
 
-    <nav class="site-editorial-nav bg-paper border-b-editorial overflow-x-auto hide-scrollbar" aria-label="Editorias do Editorial">
+    <div class="site-navigation">
+        <div class="site-navigation-inner">
+            <nav class="site-primary-nav" aria-label="Navegação principal">
+                <a href="{{ site.baseurl }}/index.html" class="{% if current_url == '/' or current_url == '/index.html' %}is-active{% endif %}">Início</a>
+                <a href="{{ site.baseurl }}/editorial/" class="{% if editorial_active %}is-active{% endif %}">Editorial</a>
+                <a href="{{ site.baseurl }}/blog/" class="{% if blog_active %}is-active{% endif %}">Blog</a>
+                <a href="{{ site.baseurl }}/servicos.html" class="{% if services_active %}is-active{% endif %}">Serviços</a>
+                <a href="{{ site.baseurl }}/sobre.html" class="{% if current_url == '/sobre.html' %}is-active{% endif %}">Sobre</a>
+            </nav>
+            <div class="site-contact-slot">
+                <a href="{{ site.baseurl }}/contato.html" class="site-contact-cta {% if current_url == '/contato.html' %}is-active{% endif %}">
+                    Fale com a data2comms
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="site-editorial-nav" aria-label="Editorias do Editorial">
         <div class="site-editorial-nav-inner">
             <span class="site-editorial-nav-label">Editorias</span>
             <a href="{{ site.baseurl }}/moda/" {% if current_url == '/moda/' %}aria-current="page"{% endif %}>Moda</a>

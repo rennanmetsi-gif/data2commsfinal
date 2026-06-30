@@ -30,7 +30,114 @@ video {
 .site-brandbar {
     background: var(--brand-ink);
     border-top: 4px solid var(--brand-lime);
-    border-bottom-color: rgba(242, 240, 235, 0.28);
+    border-bottom: 1px solid rgba(242, 240, 235, 0.24);
+}
+
+.site-brandbar-inner,
+.site-navigation-inner,
+.site-editorial-nav-inner {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+}
+
+.site-brandbar-inner {
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.75rem;
+    padding: 0 2rem;
+}
+
+.site-logo-link {
+    display: block;
+    width: clamp(178px, 16vw, 252px);
+    flex: 0 0 auto;
+}
+
+.site-logo-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.site-brandbar-tagline {
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+    padding-left: 1.4rem;
+    border-left: 1px solid rgba(242, 240, 235, 0.34);
+    color: rgba(242, 240, 235, 0.72);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.site-navigation {
+    background: #F8F7F2;
+    border-bottom: 1px solid var(--brand-ink);
+}
+
+.site-navigation-inner {
+    display: flex;
+    min-height: 56px;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0 2rem;
+    gap: 1.25rem;
+}
+
+.site-primary-nav {
+    display: flex;
+    width: auto;
+    flex: 0 1 auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    border-left: 1px solid var(--brand-ink);
+}
+
+.site-primary-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.site-primary-nav > a,
+.site-contact-cta {
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-primary-nav > a {
+    min-width: 7.5rem;
+    padding: 0 1.2rem;
+    border-right: 1px solid var(--brand-ink);
+    color: var(--brand-ink);
+}
+
+.site-primary-nav > a:hover,
+.site-primary-nav > a.is-active {
+    background: var(--brand-lime);
+    color: var(--brand-ink);
+}
+
+.site-contact-slot {
+    flex: 0 0 auto;
+    border-right: 1px solid var(--brand-ink);
+    border-left: 1px solid var(--brand-ink);
 }
 
 .site-contact-cta,
@@ -50,31 +157,36 @@ video {
     color: #F2F0EB !important;
 }
 
-.site-primary-nav > a.bg-ink,
-.site-primary-nav > a.bg-acidLime {
-    background: var(--brand-lime) !important;
-    color: var(--brand-ink) !important;
-}
-
-.site-primary-nav {
-    justify-content: center;
+.site-contact-cta {
+    min-width: 18rem;
+    padding: 0 1.7rem;
 }
 
 .site-editorial-nav-inner {
     display: flex;
     align-items: stretch;
-    justify-content: center;
-    width: max-content;
-    min-width: 100%;
+    justify-content: flex-start;
+    padding: 0 2rem;
+}
+
+.site-editorial-nav {
+    overflow-x: auto;
+    background: var(--brand-ink);
+    border-bottom: 1px solid var(--brand-ink);
+    scrollbar-width: none;
+}
+
+.site-editorial-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .site-editorial-nav a,
 .site-editorial-nav-label {
     display: flex;
-    min-height: 36px;
+    min-height: 42px;
     align-items: center;
     justify-content: center;
-    padding: 0.55rem 1.15rem;
+    padding: 0.62rem 1.12rem;
     border-right: 1px solid var(--brand-ink);
     color: var(--brand-ink);
     font-family: "IBM Plex Mono", monospace;
@@ -83,10 +195,15 @@ video {
     text-transform: uppercase;
 }
 
+.site-editorial-nav a {
+    background: #F8F7F2;
+}
+
 .site-editorial-nav-label {
     background: var(--brand-ink);
     color: #F2F0EB;
     font-weight: 600;
+    border-left: 1px solid var(--brand-ink);
 }
 
 .site-editorial-nav a:hover,
@@ -710,22 +827,8 @@ textarea:focus-visible {
 }
 
 @media (min-width: 1024px) {
-    .site-navigation {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-        align-items: stretch;
-    }
-
     .site-primary-nav {
-        grid-column: 2;
-        width: auto !important;
-        border-left: 1px solid var(--brand-ink);
-    }
-
-    .site-navigation > div {
-        grid-column: 3;
-        justify-self: end;
-        width: auto !important;
+        overflow: visible;
     }
 
     .category-hero-title {
@@ -736,10 +839,6 @@ textarea:focus-visible {
         min-height: 42rem;
     }
 
-    .site-primary-nav {
-        overflow: visible !important;
-    }
-
     .editorial-grid,
     .blog-institutional-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -747,14 +846,23 @@ textarea:focus-visible {
 }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
+    .site-brandbar-inner,
+    .site-navigation-inner,
+    .site-editorial-nav-inner {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
     .site-primary-nav > a {
-        padding-right: 0.85rem !important;
-        padding-left: 0.85rem !important;
+        min-width: 6.6rem;
+        padding-right: 0.78rem;
+        padding-left: 0.78rem;
     }
 
     .site-contact-cta {
-        padding-right: 1.5rem !important;
-        padding-left: 1.5rem !important;
+        min-width: 15.5rem;
+        padding-right: 1.3rem;
+        padding-left: 1.3rem;
     }
 }
 
@@ -781,36 +889,80 @@ textarea:focus-visible {
         position: relative !important;
     }
 
-    .site-brandbar {
-        padding: 1rem !important;
-        gap: 1rem;
+    .site-brandbar-inner {
+        min-height: 74px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem 1rem;
+        text-align: center;
+    }
+
+    .site-logo-link {
+        width: min(190px, 68vw);
     }
 
     .site-brandbar-tagline {
-        max-width: 12rem;
+        min-height: 0;
+        max-width: 22rem;
+        padding-top: 0.5rem;
+        padding-left: 0;
+        border-top: 1px solid rgba(242, 240, 235, 0.24);
+        border-left: 0;
+        font-size: 0.52rem;
         line-height: 1.35;
+        white-space: normal;
+    }
+
+    .site-navigation-inner {
+        flex-direction: column;
+        min-height: 0;
+        gap: 0;
+        padding: 0;
     }
 
     .site-primary-nav {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         overflow: visible !important;
         white-space: normal !important;
+        border-left: 0;
     }
 
     .site-primary-nav > a {
         width: 100%;
         min-width: 0;
         border-bottom: 1px solid var(--brand-ink);
+        border-right: 1px solid var(--brand-ink);
     }
 
     .site-primary-nav > a {
         flex: none;
-        min-height: 48px;
+        min-height: 46px;
         padding-right: 0.45rem !important;
         padding-left: 0.45rem !important;
         text-align: center;
-        font-size: 0.625rem !important;
+        font-size: 0.54rem !important;
+        letter-spacing: 0.12em;
+    }
+
+    .site-contact-slot {
+        width: 100%;
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .site-contact-cta {
+        width: 100%;
+        min-width: 0;
+        min-height: 48px;
+    }
+
+    .site-editorial-nav-inner {
+        width: max-content;
+        min-width: 100%;
+        padding: 0;
     }
 
     .site-editorial-nav a,
@@ -822,10 +974,6 @@ textarea:focus-visible {
 
     .brand-highlight {
         background-image: linear-gradient(transparent 84%, var(--brand-lime) 0);
-    }
-
-    .site-contact-cta {
-        min-height: 48px;
     }
 
     .home-signal-node {

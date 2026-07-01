@@ -1,5 +1,5 @@
 ---
-title: "Lançamento de produto beleza: como gerar desejo sem perder confiança"
+title: "Lançamento de produto de beleza: como gerar desejo sem perder confiança"
 date: 2026-06-29 14:41:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "5 MIN READ"

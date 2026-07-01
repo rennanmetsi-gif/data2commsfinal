@@ -1,5 +1,5 @@
 ---
-title: "Agência de comunicação moda beleza: como elevar percepção sem perder desejo, prova e contexto"
+title: "Agência de comunicação de moda e beleza: como elevar percepção sem perder desejo, prova e contexto"
 date: 2026-06-30 11:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "7 MIN READ"

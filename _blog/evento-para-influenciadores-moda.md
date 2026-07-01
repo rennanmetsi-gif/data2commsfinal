@@ -1,5 +1,5 @@
 ---
-title: "Evento para influenciadores moda: como criar experiência que gera conteúdo e reputação"
+title: "Evento para influenciadores de moda: como criar experiência que gera conteúdo e reputação"
 date: 2026-06-30 13:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

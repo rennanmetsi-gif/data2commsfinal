@@ -1,5 +1,5 @@
 ---
-title: "Lançamento de coleção moda: como transformar drop em narrativa, desejo e imprensa"
+title: "Lançamento de coleção de moda: como transformar drop em narrativa, desejo e imprensa"
 date: 2026-06-30 13:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

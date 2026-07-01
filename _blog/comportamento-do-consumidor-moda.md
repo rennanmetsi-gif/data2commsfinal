@@ -1,5 +1,5 @@
 ---
-title: "Comportamento do consumidor moda: como ler desejo, preço e reputação antes da coleção"
+title: "Comportamento do consumidor de moda: como ler desejo, preço e reputação antes da coleção"
 date: 2026-07-01 10:30:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

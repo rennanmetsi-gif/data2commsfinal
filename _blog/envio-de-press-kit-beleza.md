@@ -1,5 +1,5 @@
 ---
-title: "Envio de press kit beleza: experiência sensorial, prova e segurança na mesma entrega"
+title: "Envio de press kit de beleza: experiência sensorial, prova e segurança na mesma entrega"
 date: 2026-06-30 11:35:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "7 MIN READ"

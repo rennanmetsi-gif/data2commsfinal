@@ -1,5 +1,5 @@
 ---
-title: "Press day moda beleza: como criar experiência editorial para imprensa e creators"
+title: "Press day de moda e beleza: como criar experiência editorial para imprensa e creators"
 date: 2026-06-30 13:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

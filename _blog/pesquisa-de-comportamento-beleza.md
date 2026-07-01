@@ -1,5 +1,5 @@
 ---
-title: "Pesquisa de comportamento beleza: dados próprios para reputação, produto e imprensa"
+title: "Pesquisa de comportamento em beleza: dados próprios para reputação, produto e imprensa"
 date: 2026-06-30 15:10:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

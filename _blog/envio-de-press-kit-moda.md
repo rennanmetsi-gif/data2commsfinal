@@ -1,5 +1,5 @@
 ---
-title: "Envio de press kit moda: como transformar produto, coleção e repertório em conversa editorial"
+title: "Envio de press kit de moda: como transformar produto, coleção e repertório em conversa editorial"
 date: 2026-06-30 11:40:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "7 MIN READ"

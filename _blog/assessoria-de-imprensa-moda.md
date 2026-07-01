@@ -1,5 +1,5 @@
 ---
-title: "Assessoria de imprensa moda: como construir desejo, reputação e busca orgânica"
+title: "Assessoria de imprensa para marcas de moda: como construir desejo, reputação e busca orgânica"
 date: 2026-06-28 11:00:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "6 MIN READ"

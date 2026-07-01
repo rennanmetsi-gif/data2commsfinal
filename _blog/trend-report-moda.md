@@ -1,5 +1,5 @@
 ---
-title: "Trend report moda: como transformar sinais culturais em decisão de marca"
+title: "Trend report de moda: como transformar sinais culturais em decisão de marca"
 date: 2026-06-30 15:20:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "20 MIN READ"

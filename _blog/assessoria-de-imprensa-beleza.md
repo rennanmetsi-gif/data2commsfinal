@@ -1,6 +1,6 @@
 ---
 
-title: "Assessoria de imprensa beleza: como gerar desejo com autoridade e prova social"
+title: "Assessoria de imprensa para marcas de beleza: como gerar desejo com autoridade e prova social"
 date: 2026-06-27 20:52:00 -0300
 image: "/assets/img/publicacoes-data-archive.svg"
 read_time: "3 MIN READ"

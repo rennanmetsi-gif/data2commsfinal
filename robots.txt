@@ -1,20 +1,3 @@
-# robots.txt for data2comms
-# Public content is available for search engines and AI answer engines.
-
-User-agent: GPTBot
-User-agent: ChatGPT-User
-User-agent: OAI-SearchBot
-User-agent: Googlebot
-User-agent: Google-Extended
-User-agent: PerplexityBot
-User-agent: ClaudeBot
-User-agent: Claude-User
-User-agent: Applebot
-User-agent: Bingbot
-User-agent: DuckDuckBot
-Allow: /
-Disallow: /admin/
-
 User-agent: *
 Allow: /
 Disallow: /admin/

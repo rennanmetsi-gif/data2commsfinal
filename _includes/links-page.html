@@ -52,7 +52,7 @@
     <div class="section" id="presencial">Presencial</div>
     <div class="filter-row">
       <label for="state-filter">Filtrar por estado</label>
-      <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado">
+      <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" onchange="window.filterPresencial && window.filterPresencial(this.value)" oninput="window.filterPresencial && window.filterPresencial(this.value)">
         <option value="todos">Todos os estados</option>
         <option value="SP">São Paulo</option>
         <option value="PE">Pernambuco</option>
@@ -101,20 +101,29 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const filter = document.getElementById('state-filter');
-        if (!filter) return;
-        const cards = document.querySelectorAll('#presencial-events [data-state], #student-agenda [data-state]');
-        function applyStateFilter() {
-          const selected = filter.value;
+      (function () {
+        function runFilter(selected) {
+          var cards = document.querySelectorAll('#presencial-events [data-state], #student-agenda [data-state]');
           cards.forEach(function (card) {
-            const show = selected === 'todos' || card.getAttribute('data-state') === selected;
+            var show = selected === 'todos' || card.getAttribute('data-state') === selected;
             card.classList.toggle('is-hidden', !show);
+            card.style.display = show ? '' : 'none';
           });
         }
-        filter.addEventListener('change', applyStateFilter);
-        applyStateFilter();
-      });
+        window.filterPresencial = runFilter;
+        function initFilter() {
+          var filter = document.getElementById('state-filter');
+          if (!filter) return;
+          runFilter(filter.value || 'todos');
+          filter.addEventListener('change', function () { runFilter(filter.value); });
+          filter.addEventListener('input', function () { runFilter(filter.value); });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initFilter);
+        } else {
+          initFilter();
+        }
+      })();
     </script>
     <footer><span>data2comms</span><span>comunicação com precisão</span></footer>
   </main>

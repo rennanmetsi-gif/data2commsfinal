@@ -25,7 +25,7 @@
     .featured .tag{color:var(--lime)}
     .featured strong{display:block;font:700 24px/1 'Space Grotesk',sans-serif;text-transform:uppercase;letter-spacing:-.04em;margin:9px 0}
     .featured small{font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.09em}
-    .section{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid var(--ink);padding-top:12px;margin:34px 0 12px}
+    .jump-links{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 6px}.jump-links a{border:1px solid var(--ink);border-radius:999px;padding:9px 12px;color:var(--ink);text-decoration:none;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}.jump-links a:hover{background:var(--ink);color:var(--paper)}.section{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid var(--ink);padding-top:12px;margin:34px 0 12px;scroll-margin-top:20px}
     .links{display:grid;gap:10px}.link{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--ink);padding:15px 18px;color:var(--ink);text-decoration:none;background:transparent;font-weight:700;font-size:15px;transition:.18s}.link:hover{background:var(--ink);color:var(--paper);transform:translateX(4px)}.link-copy{display:flex;flex-direction:column;gap:6px;min-width:0}.link-meta{display:inline-flex;align-self:flex-start;border:1px solid currentColor;border-radius:999px;padding:4px 8px;font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.link strong{font:700 15px/1.25 Inter,Arial,sans-serif}.arrow{font:18px 'IBM Plex Mono',monospace;flex:0 0 auto}
     footer{border-top:1px solid var(--ink);margin-top:42px;padding-top:14px;display:flex;justify-content:space-between;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
     @media(max-width:480px){.wrap{padding-top:28px}.top{margin-bottom:34px}.intro{font-size:16px}.link{font-size:14px}}
@@ -38,17 +38,19 @@
     <h1>Organize.<br><em>Mobilize.</em><br>Vote 13.</h1>
     <p class="intro">Central de mobilização pró-Lula para organizar ações digitais e presenciais em defesa da democracia.</p>
 
-    <div class="section">Ações e ferramentas</div>
+    <nav class="jump-links" aria-label="Navegação da mobilização"><a href="#digital">Mobilização digital</a><a href="#presencial">Mobilização presencial</a></nav>
+
+    <div class="section" id="digital">Mobilização digital</div>
     <div class="links">
-      <a class="link" href="https://youtube.com/live/DtlQigD4UoA" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">YouTube · ao vivo</span><strong>Amanhã, 8/10, às 19h — IA para automatizar processos de vira-voto</strong></span><span class="arrow">↗</span></a>
       <a class="link" href="https://whatsapp.com/channel/0029VbCbRfD7tkj88k3soZ0Y" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Exército do Lula / grupo do Janones — ação coordenada</strong></span><span class="arrow">↗</span></a>
       <a class="link" href="https://t.me/viravotocanal" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Telegram · canal</span><strong>Vira Voto — mobilização coordenada em rede</strong></span><span class="arrow">↗</span></a>
       <a class="link" href="https://whatsapp.com/channel/0029VaZFDSo8qJ01Vr2NNr1e" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Erika Hilton — mobilização sobre a escala 6×1</strong></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://www.diretorio13.com" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Site · vídeos</span><strong>Diretório 13 — vídeos do Lula para TikTok, Kwai, WhatsApp e Stories</strong></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://www.diretorio13.com" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Site · acervo de vídeos</span><strong>Acervo de vídeos do Diretório 13 — materiais do Lula para TikTok, Kwai, WhatsApp e Stories</strong></span><span class="arrow">↗</span></a>
     </div>
 
-    <div class="section">Mobilizações presenciais</div>
-    <div class="links">
+    <div class="section" id="presencial">Mobilização presencial</div>
+    <div class="links">      <a class="link" href="https://youtube.com/live/DtlQigD4UoA" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">YouTube · ao vivo</span><strong>Amanhã, 8/10, às 19h — IA para automatizar processos de vira-voto</strong></span><span class="arrow">↗</span></a>
+
       <a class="link" href="https://www.instagram.com/p/DeK7fgqlGEJ/?stkn=MXN0Ymo1ZXM5bTV0aA==" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Instagram · ato presencial</span><strong>8/10, 18h30 — Praça Roosevelt · Boulos, Erika Hilton, Luciene Cavalcante, Natalia Boulos e Sônia Guajajara</strong></span><span class="arrow">↗</span></a>
       <a class="link" href="https://www.instagram.com/p/DeINmetxfFl/?stkn=MWtjdDdhdWxkazZsdg==" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Instagram · marcha</span><strong>11/10, 11h — MASP · Marcha pela Democracia</strong></span><span class="arrow">↗</span></a>
     </div>

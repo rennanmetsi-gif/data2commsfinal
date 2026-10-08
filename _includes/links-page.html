@@ -29,6 +29,34 @@
     .links{display:grid;gap:10px}.link{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--ink);padding:15px 18px;color:var(--ink);text-decoration:none;background:transparent;font-weight:700;font-size:15px;transition:.18s}.link:hover{background:var(--ink);color:var(--paper);transform:translateX(4px)}.link-copy{display:flex;flex-direction:column;gap:6px;min-width:0}.link-meta{display:inline-flex;align-self:flex-start;border:1px solid currentColor;border-radius:999px;padding:4px 8px;font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.link strong{font:700 15px/1.25 Inter,Arial,sans-serif}.arrow{font:18px 'IBM Plex Mono',monospace;flex:0 0 auto}
     footer{border-top:1px solid var(--ink);margin-top:42px;padding-top:14px;display:flex;justify-content:space-between;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
     @media(max-width:480px){.wrap{padding-top:28px}.top{margin-bottom:34px}.intro{font-size:16px}.link{font-size:14px}}
+
+    /* Color blocks keep the two fronts distinct without changing link behavior. */
+    .intro{margin-bottom:20px}
+    .jump-label{margin-top:20px}
+    .jump-links a[href="#digital"]{background:#fff7df}
+    .jump-links a[href="#presencial"]{background:#f9d9dc}
+    .jump-links a:hover,.jump-links a:focus-visible{background:var(--ink);color:#fff}
+    .color-section{padding:18px;border-radius:18px;margin-top:24px;scroll-margin-top:16px}
+    .digital-section{background:#f6eacb;border:1px solid #e2d4b0}
+    .presencial-section{background:#f7dfe1;border:1px solid #e8bfc4}
+    .color-section .section{display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;padding:0;margin:0 0 16px;font:700 25px/1.1 'Space Grotesk',sans-serif;text-transform:none;letter-spacing:-.04em}
+    .color-section .section span{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+    .presencial-section .section{color:#8f1118}
+    .color-section .links{gap:8px}
+    .color-section .link{background:#fffdf9;border:1px solid #00000018;border-radius:11px;padding:13px 14px;gap:12px;box-shadow:0 2px 0 #00000005}
+    .color-section .link strong{font-size:14px;line-height:1.4}
+    .color-section .link-meta{border:0;background:#eeeae3;color:#514940;letter-spacing:.04em;line-height:1.4}
+    .presencial-section .link-meta{background:#f9e9eb;color:#852735}
+    .color-section .arrow{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#f1ede6;color:#514940}
+    .presencial-section .arrow{background:#f9e9eb;color:#852735}
+    .color-section .link:hover{background:#fff;transform:translateY(-2px);color:var(--ink);box-shadow:0 5px 12px #0000000c}
+    .color-section .link:focus-visible,.state-filter:focus-visible{outline:3px solid #8f1118;outline-offset:3px}
+    .color-section .link:active{transform:translateY(1px);box-shadow:none}
+    .subsection{flex-wrap:wrap;font-size:11px;letter-spacing:.03em;border-top:1px solid #8f111826;padding-top:14px}
+    .filter-row{flex-wrap:wrap}
+    .state-filter{min-height:42px;max-width:100%;border-color:#a85562;color:#6f1826}
+    @media(max-width:480px){.color-section{padding:14px;margin-top:20px}.top{margin-bottom:24px}.color-section .link{padding:12px}.color-section .section{font-size:23px}.filter-row{gap:8px}}
+    @media(prefers-reduced-motion:reduce){.link,.jump-links a{transition:none!important;transform:none!important}}
   </style>
 </head>
 <body>
@@ -39,7 +67,8 @@
 
     <p class="jump-label">Escolha uma frente</p><nav class="jump-links" aria-label="Navegação"><a href="#digital">Digital</a><a href="#presencial">Presencial</a></nav>
 
-    <div class="section" id="digital">Digital</div>
+    <section class="color-section digital-section" id="digital" aria-labelledby="digital-title">
+    <h2 class="section" id="digital-title">Digital <span>Nas redes</span></h2>
     <div class="links">
       <a class="link" href="https://whatsapp.com/channel/0029VbCbRfD7tkj88k3soZ0Y" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Exército do Lula / grupo do Janones — mais de 2 milhões de usuários e ação coordenada</strong></span><span class="arrow">↗</span></a>
       <a class="link" href="https://t.me/viravotocanal" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Telegram · canal</span><strong>Vira Voto — mobilização coordenada em rede</strong></span><span class="arrow">↗</span></a>
@@ -50,7 +79,9 @@
       <a class="link" href="https://www.ondedapraconversar.com.br/" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Site · dados eleitorais</span><strong>Onde Dá Pra Conversar — cruze dados e encontre regiões prioritárias</strong></span><span class="arrow">↗</span></a>
     </div>
 
-    <div class="section" id="presencial">Presencial</div>
+    </section>
+    <section class="color-section presencial-section" id="presencial" aria-labelledby="presencial-title">
+    <h2 class="section" id="presencial-title">Presencial <span>Nas ruas</span></h2>
     <div class="filter-row">
       <label for="state-filter">Filtrar por estado</label>
       <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" onchange="window.filterPresencial && window.filterPresencial(this.value)" oninput="window.filterPresencial && window.filterPresencial(this.value)">
@@ -100,6 +131,8 @@
       <a class="link" data-state="BR" href="https://midianinja.org/apos-ato-na-uff-estudantes-convocam-mais-de-40-mobilizacoes-por-lula-em-universidades-do-pais/" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Brasil · agenda nacional</span><strong>7–13/10 — mais de 40 mobilizações universitárias; confira cidades, horários e locais</strong></span><span class="arrow">↗</span></a>
       <a class="link" data-state="BR" href="https://www.adunicamp.org.br/destaque/adunicamp-stu-e-dce-intensificam-agenda-de-mobilizacao-para-o-segundo-turno/" target="_blank" rel="noopener"><span class="link-copy"><span class="link-meta">Brasil · educação · em construção</span><strong>15, 18 e 20/10 — ocupação digital, ato nacional da educação e ocupação de escolas/universidades</strong></span><span class="arrow">↗</span></a>
     </div>
+
+    </section>
 
     <script>
       (function () {

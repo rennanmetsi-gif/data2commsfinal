@@ -87,21 +87,21 @@
       <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" onchange="window.filterPresencial && window.filterPresencial(this.value)" oninput="window.filterPresencial && window.filterPresencial(this.value)">
         <option value="todos">Todos os estados</option>
         <option value="SP">São Paulo</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PR">Paraná</option>
+
+
         <option value="DF">Distrito Federal</option>
         <option value="RS">Rio Grande do Sul</option>
-        <option value="AM">Amazonas</option>
+
         <option value="MG">Minas Gerais</option>
         <option value="BA">Bahia</option>
-        <option value="MA">Maranhão</option>
-        <option value="PA">Pará</option>
+
+
         <option value="RJ">Rio de Janeiro</option>
         <option value="RN">Rio Grande do Norte</option>
-        <option value="AL">Alagoas</option>
+
         <option value="PI">Piauí</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
+
+
         <option value="BR">Agenda nacional</option>
       </select>   </div>
 
@@ -148,7 +148,15 @@
         function initFilter() {
           var filter = document.getElementById('state-filter');
           if (!filter) return;
-          runFilter(filter.value || 'todos');
+          var available = {};
+          document.querySelectorAll('#presencial-events [data-state], #student-agenda [data-state]').forEach(function (card) {
+            available[card.getAttribute('data-state')] = true;
+          });
+          Array.from(filter.options).forEach(function (option) {
+            if (option.value !== 'todos' && !available[option.value]) option.remove();
+          });
+          if (!filter.value) filter.value = 'todos';
+          runFilter(filter.value);
           filter.addEventListener('change', function () { runFilter(filter.value); });
           filter.addEventListener('input', function () { runFilter(filter.value); });
         }

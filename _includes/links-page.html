@@ -116,14 +116,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @keyframes submit-glow{0%,100%{box-shadow:0 7px 0 #711023,0 13px 28px #7c102f38,inset 0 1px 0 #ffffff66}50%{box-shadow:0 7px 0 #711023,0 13px 38px 8px #ff416d88,inset 0 1px 0 #ffffffa0}}
 .submit-event-cta{animation:submit-glow 2.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.submit-event-cta{animation:none}}
-/* A chamada acompanha apenas a seção de atos, sem tomar a tela do celular. */
-.presencial-section.is-enhanced{padding-bottom:88px}
-.presencial-section.is-enhanced .submit-event-cta{position:fixed;z-index:20;left:50%;bottom:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:min(420px,calc(100% - 28px));margin:0;padding:13px 18px;border-radius:999px;text-align:center;transform:translateX(-50%);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;animation:none}
-.presencial-section.is-enhanced .submit-event-cta.is-floating{visibility:visible;opacity:1;pointer-events:auto;animation:submit-glow 2.4s ease-in-out infinite}
-.presencial-section.is-enhanced .submit-event-cta span{font-size:clamp(15px,4vw,18px);line-height:1.2;letter-spacing:-.015em}
+/* Chamada flutuante da seção presencial, com destaque e respiro no celular. */
+.presencial-section.is-enhanced{padding-bottom:112px}
+@keyframes submit-float{0%,65%,100%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}72%{transform:translateX(-50%) translateY(-9px);box-shadow:0 7px 0 #08652e,0 18px 42px 9px #36e17aab,inset 0 1px 0 #fff}79%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}}
+.presencial-section.is-enhanced .submit-event-cta{position:fixed;z-index:20;left:50%;bottom:32px;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 28px));margin:0;padding:16px 18px;border:2px solid #b4ffd0;border-radius:999px;background:linear-gradient(135deg,#20d766 0%,#0ba847 55%,#087b39 100%);color:#fff;box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80;text-shadow:0 1px 2px #065b2d99;text-align:center;transform:translateX(-50%);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s ease,filter .2s ease;animation:none}
+.presencial-section.is-enhanced .submit-event-cta.is-floating{visibility:visible;opacity:1;pointer-events:auto;animation:submit-float 4.5s ease-in-out infinite}
+.presencial-section.is-enhanced .submit-event-cta span{font-size:clamp(17px,4.8vw,20px);line-height:1.2;letter-spacing:-.015em}
 .presencial-section.is-enhanced .submit-event-cta small{display:none}
-.presencial-section.is-enhanced .submit-event-cta.is-floating:hover{transform:translate(-50%,-2px)}
-.presencial-section.is-enhanced .submit-event-cta.is-floating:active{transform:translate(-50%,2px)}
+.presencial-section.is-enhanced .submit-event-cta.is-floating:hover{filter:brightness(1.12)}
+.presencial-section.is-enhanced .submit-event-cta.is-floating:active{filter:brightness(.95)}
+@media(max-width:600px){.presencial-section.is-enhanced{padding-bottom:126px}.presencial-section.is-enhanced .submit-event-cta{bottom:38px;bottom:calc(38px + env(safe-area-inset-bottom));width:calc(100% - 36px);padding:17px 16px}}
 @media(prefers-reduced-motion:reduce){.presencial-section.is-enhanced .submit-event-cta.is-floating{animation:none;transition:none}}
 .event-dialog{width:min(690px,calc(100% - 24px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:auto}.event-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}
 .event-dialog[open]{z-index:100}.event-dialog.is-fallback[open]{position:fixed;top:12px;left:12px;right:12px;margin:auto;max-height:calc(100vh - 24px)}

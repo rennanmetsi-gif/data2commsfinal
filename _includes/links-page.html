@@ -44,6 +44,7 @@ h1 em{font-style:normal;color:var(--red)}.intro{font-size:13px;margin:0 0 16px;c
 a.link:hover{border-color:#bd173677;box-shadow:0 5px 12px #75182a15;transform:translateY(-2px)}
 a.link:active{transform:scale(.985);box-shadow:none}
 a:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,dialog:focus-visible{outline:3px solid #ffcc57;outline-offset:3px}
 .filter-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
 .filter-row label{font:600 10px 'IBM Plex Mono',monospace}.state-filter{font:600 12px Inter,Arial,sans-serif;background:#fffefa;color:#6f1826;border:1px solid #a85562;border-radius:10px;min-height:42px;padding:8px 12px;max-width:100%;cursor:pointer}
 .subsection{font:700 11px 'Space Grotesk',sans-serif;display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;margin:14px 0 8px}.subsection span{font-weight:400;color:#765c61;font-size:10px}
@@ -108,6 +109,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .event-card .event-month{font:800 11px/1.15 'IBM Plex Mono',monospace;letter-spacing:.09em}
 .presencial-section .event-card .arrow{align-self:center;width:27px;height:27px}
 .presencial-section .event-card .event-no-date{display:none}
+.submit-event-cta{width:100%;margin:22px 0 2px;padding:22px 18px;border:1px solid #ff617d;border-radius:16px;background:linear-gradient(135deg,#ef1845 0%,#bd1736 48%,#8f1028 100%);color:#fff;box-shadow:0 7px 0 #711023,0 13px 28px #7c102f38,inset 0 1px 0 #ffffff66;cursor:pointer;text-align:left;transition:transform .16s,box-shadow .16s,filter .16s}
+.submit-event-cta span{display:block;font:800 clamp(25px,7vw,36px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-transform:uppercase}.submit-event-cta small{display:block;margin-top:8px;font:600 12px/1.4 Inter,Arial,sans-serif;color:#fff4f6}.submit-event-cta:hover{filter:saturate(1.14) brightness(1.05);transform:translateY(-2px);box-shadow:0 9px 0 #711023,0 16px 32px #7c102f45,inset 0 1px 0 #ffffff75}.submit-event-cta:active{transform:translateY(5px);box-shadow:0 2px 0 #711023,0 7px 16px #7c102f33}
+.event-dialog{width:min(690px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:auto}.event-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}
+.event-dialog-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 20px 16px;background:#bd1736;color:#fff}.event-dialog-head h2{margin:0;font:800 clamp(25px,6vw,34px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-transform:uppercase}.event-dialog-head p{margin:7px 0 0;max-width:520px;font:500 12px/1.45 Inter,Arial,sans-serif;color:#ffe8ed}.dialog-close{flex:0 0 auto;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#ffffff18;color:#fff;font:26px/1 Inter,Arial,sans-serif;cursor:pointer}.dialog-body{padding:20px}.form-progress{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:#806a70;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em}.form-progress-bar{flex:1;height:6px;border-radius:999px;background:#eadde0;overflow:hidden}.form-progress-bar span{display:block;width:25%;height:100%;border-radius:inherit;background:#bd1736;transition:width .2s}.event-form{display:block}.form-step{display:grid;grid-template-columns:1fr 1fr;gap:15px}.step-heading{grid-column:1/-1;margin-bottom:2px}.step-kicker{display:block;margin-bottom:5px;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#bd1736}.step-heading h3{margin:0;font:800 25px/1.08 'Space Grotesk',sans-serif;letter-spacing:-.035em;color:#3b2029}.step-heading p{margin:8px 0 0;font:400 13px/1.5 Inter,Arial,sans-serif;color:#69545b}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#49232e}.form-field label span{font:500 11px Inter,Arial,sans-serif;color:#806a70}.form-field input,.form-field select,.form-field textarea{width:100%;min-height:48px;border:1px solid #cbaab2;border-radius:10px;background:#fff;color:#2e1b21;padding:11px 12px;font:500 15px/1.35 Inter,Arial,sans-serif}.form-field textarea{min-height:150px;resize:vertical}.form-help{margin:0;font:400 11px/1.45 Inter,Arial,sans-serif;color:#755d64}.step-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:5px}.step-next,.form-submit{min-height:50px;padding:12px 22px;border:0;border-radius:10px;background:#bd1736;color:#fff;font:800 15px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 4px 0 #7f1027}.step-back{min-height:48px;padding:10px 14px;border:1px solid #c9b4ba;border-radius:10px;background:#fff;color:#5a3b45;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}.form-submit:disabled{cursor:wait;opacity:.65}.validation-note{grid-column:1/-1;padding:15px;border:1px solid #e1bd81;border-radius:12px;background:#fff5dc;color:#5b3b19;font:500 13px/1.5 Inter,Arial,sans-serif}.validation-note strong{font-family:'Space Grotesk',sans-serif}.evidence-choices{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:11px}.evidence-choice{min-height:145px;padding:16px;border:2px solid #d9bdc4;border-radius:14px;background:#fff;text-align:left;color:#3d222b;cursor:pointer;transition:border-color .16s,transform .16s,box-shadow .16s}.evidence-choice:hover{border-color:#bd1736;transform:translateY(-2px);box-shadow:0 5px 0 #bd17361f}.evidence-choice strong{display:block;margin-bottom:7px;font:800 18px/1.15 'Space Grotesk',sans-serif;color:#8f1933}.evidence-choice span{display:block;font:400 12px/1.48 Inter,Arial,sans-serif;color:#665158}.skip-evidence{border:0;background:transparent;color:#72535d;text-decoration:underline;font:600 12px/1.4 Inter,Arial,sans-serif;cursor:pointer}.form-error{grid-column:1/-1;margin:12px 0 0;font:600 12px/1.35 Inter,Arial,sans-serif;color:#a00}.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.submission-success{padding:8px 0 2px}.submission-success h3{margin:0 0 10px;font:800 28px/1.05 'Space Grotesk',sans-serif;color:#89152e;letter-spacing:-.035em}.submission-success p{margin:0 0 12px;font:500 14px/1.55 Inter,Arial,sans-serif;color:#503b42}.submission-success .dialog-done{min-height:48px;padding:10px 20px;border:0;border-radius:10px;background:#291d22;color:#fff;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}
+.skip-evidence{grid-column:1/-1;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;width:100%;padding:14px 15px;border:1px dashed #b88445;border-radius:14px;background:linear-gradient(120deg,#fff8e8,#fffdf7);color:#482f24;text-decoration:none;text-align:left;box-shadow:0 3px 0 #d9b78355;transition:transform .16s,border-color .16s,box-shadow .16s}.skip-evidence:hover{border-color:#9c5d20;transform:translateY(-2px);box-shadow:0 5px 0 #d9b78366,0 9px 20px #8f5c1b16}.skip-evidence-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f2dfb8;color:#7c491d;font:800 21px/1 'Space Grotesk',sans-serif}.skip-evidence-copy strong{display:block;margin-bottom:3px;font:800 15px/1.2 'Space Grotesk',sans-serif}.skip-evidence-copy span{display:block;font:500 11px/1.4 Inter,Arial,sans-serif;color:#735a4d}.skip-evidence-arrow{font:800 23px/1 'Space Grotesk',sans-serif;color:#9a5b22}
 @media(max-width:540px){
  .presencial-section .filter-row{display:flex;flex-direction:column;align-items:stretch}
  .presencial-section .state-filter{width:100%;max-width:none;min-width:0}
@@ -118,6 +124,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .event-state{font-size:12px}
  .presencial-section .event-card strong.event-location{font-size:15px}
  .presencial-section .event-card .arrow{width:22px;height:22px;font-size:14px}
+ .form-step{grid-template-columns:1fr}.step-heading,.form-field.full,.step-actions,.validation-note,.evidence-choices,.form-error{grid-column:auto}.evidence-choices{grid-template-columns:1fr}.evidence-choice{min-height:0}.dialog-body{padding:16px}.event-dialog-head{padding:17px 16px 14px}
 }
 @media(max-width:360px){
  .presencial-section .link.event-card{gap:8px}
@@ -287,7 +294,61 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <a class="link" data-state="BR" href="https://www.une.org.br/noticias/une-lanca-campanha-estudantes-com-lula-para-derrotar-a-extrema-direita" target="_blank" rel="noopener"><span class="card-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2m-8 3h2"/></svg></span><span class="link-copy"><span class="link-meta">BR · Agenda estudantil · programação nacional</span><strong>9–24/10 — calendário da UNE</strong><span class="link-description">Veja no calendário da UNE as datas, cidades e pontos de encontro de cada mobilização.</span></span><span class="arrow">↗</span></a>
       <a class="link" data-state="BR" href="https://midianinja.org/apos-ato-na-uff-estudantes-convocam-mais-de-40-mobilizacoes-por-lula-em-universidades-do-pais/" target="_blank" rel="noopener"><span class="card-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2m-8 3h2"/></svg></span><span class="link-copy"><span class="link-meta">BR · Agenda estudantil · universidades</span><strong>Até 13/10 — agenda dos campi</strong><span class="link-description">Confira na publicação a programação de assembleias e atos de cada universidade.</span></span><span class="arrow">↗</span></a>
     </div>
+    <button class="submit-event-cta" id="open-event-form" type="button">
+      <span>Submeta seu ato</span>
+      <small>Envie uma mobilização presencial para validação e inclusão na agenda.</small>
+    </button>
     </section>
+
+    <dialog class="event-dialog" id="event-dialog" aria-labelledby="event-dialog-title">
+      <div class="event-dialog-head">
+        <div><h2 id="event-dialog-title">Submeta seu ato</h2><p>Compartilhe os dados da mobilização. Antes de publicar, nossa equipe verifica as informações com fontes e lideranças locais.</p></div>
+        <button class="dialog-close" type="button" aria-label="Fechar formulário">×</button>
+      </div>
+      <div class="dialog-body">
+        <div class="form-progress" id="form-progress"><span id="form-progress-label">Etapa 1 de 4</span><span class="form-progress-bar" aria-hidden="true"><span id="form-progress-fill"></span></span></div>
+        <form class="event-form" id="event-form">
+          <section class="form-step" data-step="1">
+            <div class="step-heading"><span class="step-kicker">Informações essenciais</span><h3>Onde e quando será o ato?</h3><p>Preencha os dados que as pessoas precisam para encontrar a mobilização.</p></div>
+            <div class="form-field full"><label for="event-local">Local do evento / ponto de encontro</label><input id="event-local" name="local" autocomplete="street-address" required placeholder="Ex.: Praça da Estação, em frente ao coreto"></div>
+            <div class="form-field"><label for="event-city">Cidade</label><input id="event-city" name="cidade" autocomplete="address-level2" required></div>
+            <div class="form-field"><label for="event-state">Estado</label><select id="event-state" name="estado" autocomplete="address-level1" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+            <div class="form-field"><label for="event-date">Data</label><input id="event-date" name="data" type="date" required></div>
+            <div class="form-field"><label for="event-time">Horário</label><input id="event-time" name="horario" type="time" required></div>
+            <div class="step-actions"><span></span><button class="step-next" type="button" data-next="2">Continuar</button></div>
+          </section>
+          <section class="form-step" data-step="2" hidden>
+            <div class="step-heading"><span class="step-kicker">Conte um pouco mais</span><h3>Há algum detalhe importante?</h3><p>Esta etapa é opcional. Você pode explicar o tipo de atividade, percurso, organização ou qualquer orientação útil.</p></div>
+            <div class="form-field full"><label for="event-description">Descrição <span>(opcional)</span></label><textarea id="event-description" name="descricao" placeholder="Ex.: caminhada com saída às 15h, atividade cultural e concentração no local a partir das 14h30."></textarea></div>
+            <div class="step-actions"><button class="step-back" type="button" data-back="1">Voltar</button><button class="step-next" type="button" data-next="3">Continuar</button></div>
+          </section>
+          <section class="form-step" data-step="3" hidden>
+            <div class="step-heading"><span class="step-kicker">Ajude na validação</span><h3>Você tem uma fonte da divulgação?</h3><p>Uma informação externa facilita o trabalho da nossa equipe para confirmar que a mobilização existe e ajuda a dar mais segurança a quem pretende participar.</p></div>
+            <div class="validation-note"><strong>Esta etapa é opcional.</strong> Se você não tiver a publicação em mãos agora, pode enviar mesmo assim. Nossa equipe procurará outras formas de validar o evento.</div>
+            <div class="evidence-choices" aria-label="Escolha como enviar a divulgação">
+              <button class="evidence-choice" type="button" data-evidence="link"><strong>Link da publicação</strong><span>Pode ser um post no Instagram ou Facebook, uma página da organização, uma notícia ou outro endereço público sobre o ato.</span></button>
+              <button class="evidence-choice" type="button" data-evidence="image"><strong>Imagem da divulgação</strong><span>Pode ser uma captura de tela, card, cartaz ou foto do convite que divulga a mobilização.</span></button>
+            </div>
+            <button class="skip-evidence" type="button" id="skip-evidence"><span class="skip-evidence-icon" aria-hidden="true">✓</span><span class="skip-evidence-copy"><strong>Não tenho a divulgação agora</strong><span>Tudo bem — envie assim mesmo. Nossa equipe buscará outras fontes para validar o ato.</span></span><span class="skip-evidence-arrow" aria-hidden="true">→</span></button>
+            <div class="step-actions"><button class="step-back" type="button" data-back="2">Voltar</button><span></span></div>
+          </section>
+          <section class="form-step" data-step="4" hidden>
+            <div class="step-heading"><span class="step-kicker">Última etapa</span><h3 id="evidence-title">Envie a divulgação</h3><p id="evidence-intro"></p></div>
+            <div class="form-field full" id="link-evidence" hidden><label for="event-link">Link da publicação</label><input id="event-link" name="link" type="url" inputmode="url" placeholder="https://"><p class="form-help">Cole o endereço completo da publicação, notícia ou página da organização.</p></div>
+            <div class="form-field full" id="image-evidence" hidden><label for="event-image">Imagem da divulgação</label><input id="event-image" name="imagem" type="file" accept="image/jpeg,image/png,image/webp"><p class="form-help">Envie uma captura de tela, card, cartaz ou foto do convite. Formatos JPG, PNG ou WebP, com até 3 MB.</p></div>
+            <div class="step-actions"><button class="step-back" type="button" data-back="3">Voltar</button><button class="form-submit" type="submit">Enviar para validação</button></div>
+          </section>
+          <div class="form-trap" aria-hidden="true"><label for="event-website">Não preencha</label><input id="event-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+        </form>
+        <div class="submission-success" id="submission-success" role="status" tabindex="-1" hidden>
+          <h3>Muito obrigado!</h3>
+          <p>Recebemos sua contribuição e iremos validar as informações antes de incluir o evento na agenda.</p>
+          <p>Como são mobilizações presenciais, nossa equipe confere a convocação com publicações e lideranças locais. Esse cuidado ajuda a garantir que o evento seja legítimo e mais seguro para quem participa.</p>
+          <button class="dialog-done" type="button">Concluir</button>
+        </div>
+      </div>
+    </dialog>
 
     
     <script>
@@ -445,6 +506,139 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       window.filterPresencial=filterCards;
       filter.addEventListener('change',function(){filterCards(filter.value);});
       filterCards(filter.value||'todos');
+
+      var dialog=document.getElementById('event-dialog');
+      var openForm=document.getElementById('open-event-form');
+      var eventForm=document.getElementById('event-form');
+      var success=document.getElementById('submission-success');
+      var formError=document.getElementById('form-error');
+      var submitButton=eventForm.querySelector('.form-submit');
+      var progress=document.getElementById('form-progress');
+      var progressLabel=document.getElementById('form-progress-label');
+      var progressFill=document.getElementById('form-progress-fill');
+      var steps=Array.from(eventForm.querySelectorAll('.form-step'));
+      var evidenceChoice='';
+      var formEndpoint='https://script.google.com/macros/s/AKfycbxUjbCOkfUMVK_M8cT7YQL97em4VAhxqUQGp9wVtG3NF81XSVPSDltKBgYPJ9EkLV92/exec';
+      function closeDialog(){dialog.close();}
+      function showStep(number){
+        steps.forEach(function(step){step.hidden=Number(step.dataset.step)!==number;});
+        progressLabel.textContent='Etapa '+number+' de 4';
+        progressFill.style.width=(number*25)+'%';
+        formError.hidden=true;
+        dialog.scrollTop=0;
+        var active=eventForm.querySelector('[data-step="'+number+'"]');
+        var focusable=active.querySelector('input:not([hidden]),textarea,select,button');
+        if(focusable)focusable.focus();
+      }
+      function validateStep(stepNumber){
+        var step=eventForm.querySelector('[data-step="'+stepNumber+'"]');
+        var invalid=Array.from(step.querySelectorAll('input,select,textarea')).find(function(field){return !field.checkValidity();});
+        if(invalid){invalid.reportValidity();return false;}
+        return true;
+      }
+      openForm.addEventListener('click',function(){
+        eventForm.hidden=false;
+        success.hidden=true;
+        progress.hidden=false;
+        formError.hidden=true;
+        dialog.showModal();
+        showStep(1);
+      });
+      dialog.querySelector('.dialog-close').addEventListener('click',closeDialog);
+      dialog.querySelector('.dialog-done').addEventListener('click',closeDialog);
+      dialog.addEventListener('click',function(event){if(event.target===dialog)closeDialog();});
+      eventForm.querySelectorAll('[data-next]').forEach(function(button){
+        button.addEventListener('click',function(){
+          var current=Number(button.closest('.form-step').dataset.step);
+          if(validateStep(current))showStep(Number(button.dataset.next));
+        });
+      });
+      eventForm.querySelectorAll('[data-back]').forEach(function(button){
+        button.addEventListener('click',function(){showStep(Number(button.dataset.back));});
+      });
+      eventForm.querySelectorAll('[data-evidence]').forEach(function(button){
+        button.addEventListener('click',function(){
+          evidenceChoice=button.dataset.evidence;
+          var linkField=document.getElementById('event-link');
+          var imageField=document.getElementById('event-image');
+          var isLink=evidenceChoice==='link';
+          document.getElementById('link-evidence').hidden=!isLink;
+          document.getElementById('image-evidence').hidden=isLink;
+          document.getElementById('evidence-title').textContent=isLink?'Envie o link da publicação':'Envie a imagem da divulgação';
+          document.getElementById('evidence-intro').textContent=isLink?'Cole o endereço da publicação que divulga ou confirma o ato.':'Selecione a imagem que divulga ou confirma o ato.';
+          linkField.required=isLink;
+          imageField.required=!isLink;
+          if(isLink)imageField.value='';else linkField.value='';
+          showStep(4);
+        });
+      });
+      document.getElementById('skip-evidence').addEventListener('click',function(){
+        evidenceChoice='';
+        document.getElementById('event-link').required=false;
+        document.getElementById('event-link').value='';
+        document.getElementById('event-image').required=false;
+        document.getElementById('event-image').value='';
+        eventForm.requestSubmit();
+      });
+      eventForm.addEventListener('submit',async function(event){
+        event.preventDefault();
+        if(!eventForm.reportValidity())return;
+        if(formEndpoint.indexOf('__')===0){
+          formError.textContent='O formulário ainda está sendo conectado. Tente novamente em instantes.';
+          formError.hidden=false;
+          return;
+        }
+        var image=document.getElementById('event-image').files[0];
+        var allowedImages=['image/jpeg','image/png','image/webp'];
+        if(image&&allowedImages.indexOf(image.type)===-1){
+          formError.textContent='Envie a imagem em JPG, PNG ou WebP.';
+          formError.hidden=false;
+          return;
+        }
+        if(image&&image.size>3*1024*1024){
+          formError.textContent='A imagem deve ter no máximo 3 MB.';
+          formError.hidden=false;
+          return;
+        }
+        submitButton.disabled=true;
+        submitButton.textContent='Enviando…';
+        formError.hidden=true;
+        var params=new URLSearchParams();
+        new FormData(eventForm).forEach(function(value,key){if(!(value instanceof File))params.append(key,value);});
+        if(image){
+          try{
+            var imageData=await new Promise(function(resolve,reject){
+              var reader=new FileReader();
+              reader.onload=function(){resolve(String(reader.result).split(',')[1]);};
+              reader.onerror=reject;
+              reader.readAsDataURL(image);
+            });
+          }catch(error){
+            submitButton.disabled=false;
+            submitButton.textContent='Enviar para validação';
+            formError.textContent='Não foi possível ler a imagem. Escolha outro arquivo e tente novamente.';
+            formError.hidden=false;
+            return;
+          }
+          params.append('imageData',imageData);
+          params.append('imageName',image.name);
+          params.append('imageType',image.type);
+        }
+        fetch(formEndpoint,{method:'POST',body:params,mode:'no-cors'})
+          .then(function(){
+            eventForm.reset();
+            evidenceChoice='';
+            eventForm.hidden=true;
+            progress.hidden=true;
+            success.hidden=false;
+            success.focus();
+          })
+          .catch(function(){
+            formError.textContent='Não foi possível enviar agora. Verifique sua conexão e tente novamente.';
+            formError.hidden=false;
+          })
+          .finally(function(){submitButton.disabled=false;submitButton.textContent='Enviar para validação';});
+      });
     })();
     </script>
     <footer><span>data2comms</span><span>comunicação com precisão</span></footer>

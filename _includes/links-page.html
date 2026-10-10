@@ -41,8 +41,8 @@ h1 em{font-style:normal;color:var(--red)}.intro{font-size:13px;margin:0 0 16px;c
 .icon-whatsapp{background:#dbf4e3;color:#126c3d}.icon-telegram{background:#deeffb;color:#146997}
 .icon-video{background:#ffe0e4;color:#b51c24}.icon-folder{background:#ffeec0;color:#80600b}
 .icon-map{background:#e1eee6;color:#286044}.icon-calendar{background:#fae5ea;color:#972f43}.icon-info{background:#e8e4f5;color:#625080}
-.link:hover{border-color:#bd173677;box-shadow:0 5px 12px #75182a15;transform:translateY(-2px)}
-.link:active{transform:scale(.985);box-shadow:none}
+a.link:hover{border-color:#bd173677;box-shadow:0 5px 12px #75182a15;transform:translateY(-2px)}
+a.link:active{transform:scale(.985);box-shadow:none}
 a:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 .filter-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
 .filter-row label{font:600 10px 'IBM Plex Mono',monospace}.state-filter{font:600 12px Inter,Arial,sans-serif;background:#fffefa;color:#6f1826;border:1px solid #a85562;border-radius:10px;min-height:42px;padding:8px 12px;max-width:100%;cursor:pointer}
@@ -72,8 +72,8 @@ body{background:radial-gradient(ellipse at 0 0,#ffdce4 0,transparent 42%),#f8f3e
 .link-copy{position:relative}
 .card-icon{border-radius:14px;box-shadow:inset 0 1px 0 #fff9,0 3px 0 #00000009;transition:transform .2s}
 .arrow{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#f8e4e9;font-size:17px}
-.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
-@media(hover:hover){.link:hover{transform:translateY(-3px);box-shadow:0 6px 0 #bd173622;border-color:#bd1736}.link:hover .card-icon{transform:rotate(-5deg) scale(1.06)}.link:hover .arrow{background:#bd1736;color:#fff}}
+a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
+@media(hover:hover){a.link:hover{transform:translateY(-3px);box-shadow:0 6px 0 #bd173622;border-color:#bd1736}a.link:hover .card-icon{transform:rotate(-5deg) scale(1.06)}a.link:hover .arrow{background:#bd1736;color:#fff}}
 @media(min-width:640px){.color-section .section{margin:-16px -16px 14px;padding:16px 20px}}
 @media(prefers-reduced-motion:no-preference){@keyframes section-arrive{from{opacity:.8;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.color-section:target{animation:section-arrive .35s ease}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -122,7 +122,7 @@ body{background:radial-gradient(ellipse at 0 0,#ffdce4 0,transparent 42%),#f8f3e
     <h2 class="section" id="presencial-title">Presencial <span>Nas ruas</span></h2>
     <div class="filter-row">
       <label for="state-filter">Filtrar por estado</label>
-      <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" onchange="window.filterPresencial && window.filterPresencial(this.value)" oninput="window.filterPresencial && window.filterPresencial(this.value)">
+      <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" >
 <option value="todos">Todos os estados</option>
 <option value="AM">Amazonas</option>
 <option value="BA">Bahia</option>
@@ -241,23 +241,61 @@ body{background:radial-gradient(ellipse at 0 0,#ffdce4 0,transparent 42%),#f8f3e
         requestAnimationFrame(function(){updateNavigation();scheduled=false;});
       },{passive:true});
       updateNavigation();
+      var filter=document.getElementById('state-filter');
+      var stateNames={
+        AC:'Acre',AL:'Alagoas',AP:'Amapá',AM:'Amazonas',BA:'Bahia',
+        CE:'Ceará',DF:'Distrito Federal',ES:'Espírito Santo',GO:'Goiás',
+        MA:'Maranhão',MT:'Mato Grosso',MS:'Mato Grosso do Sul',MG:'Minas Gerais',
+        PA:'Pará',PB:'Paraíba',PR:'Paraná',PE:'Pernambuco',PI:'Piauí',
+        RJ:'Rio de Janeiro',RN:'Rio Grande do Norte',RS:'Rio Grande do Sul',
+        RO:'Rondônia',RR:'Roraima',SC:'Santa Catarina',SP:'São Paulo',
+        SE:'Sergipe',TO:'Tocantins',BR:'Agenda nacional'
+      };
+      // O menu é gerado a partir dos eventos; novos estados aparecem sem edição manual.
+      var totals={};
+      ['presencial-events','student-agenda'].forEach(function(id){
+        var list=document.getElementById(id);
+        if(!list)return;
+        list.querySelectorAll('[data-state]').forEach(function(card){
+          var state=card.dataset.state;
+          totals[state]=(totals[state]||0)+1;
+        });
+      });
+      Array.from(filter.options).forEach(function(option){
+        if(option.value!=='todos')option.remove();
+      });
+      Object.keys(totals).sort(function(a,b){
+        if(a==='BR')return 1;
+        if(b==='BR')return -1;
+        return (stateNames[a]||a).localeCompare(stateNames[b]||b,'pt-BR');
+      }).forEach(function(state){
+        var option=document.createElement('option');
+        option.value=state;
+        option.textContent=(stateNames[state]||state)+' ('+totals[state]+')';
+        filter.appendChild(option);
+      });
+      var overall=Object.keys(totals).reduce(function(n,k){return n+totals[k]},0);
+      filter.options[0].textContent='Todos os estados ('+overall+')';
       function filterCards(selected){
+        if(selected!=='todos'&&!totals[selected]){
+          selected='todos';
+          filter.value='todos';
+        }
         ['presencial-events','student-agenda'].forEach(function(id){
-          var list=document.getElementById(id);var visible=0;
+          var list=document.getElementById(id);
+          if(!list)return;
+          var visible=0;
           list.querySelectorAll('[data-state]').forEach(function(card){
             var show=selected==='todos'||card.dataset.state===selected;
-            card.hidden=!show;card.classList.toggle('is-hidden',!show);
+            card.hidden=!show;
+            card.classList.toggle('is-hidden',!show);
             if(show)visible++;
           });
           list.hidden=visible===0;
-          list.previousElementSibling.hidden=visible===0;
+          if(list.previousElementSibling)list.previousElementSibling.hidden=visible===0;
         });
       }
       window.filterPresencial=filterCards;
-      var filter=document.getElementById('state-filter');
-      var available={};
-      document.querySelectorAll('[data-state]').forEach(function(card){available[card.dataset.state]=true;});
-      Array.from(filter.options).forEach(function(option){if(option.value!=='todos'&&!available[option.value])option.remove();});
       filter.addEventListener('change',function(){filterCards(filter.value);});
       filterCards(filter.value||'todos');
     })();

@@ -87,6 +87,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .filter-row{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:12px 14px;gap:10px;margin:0 0 14px}
 .presencial-section .filter-row label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432;letter-spacing:-.01em}
 .presencial-section .state-filter{min-height:48px;min-width:230px;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
+.presencial-section .city-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:-3px 0 15px}
+.presencial-section .city-filter[hidden]{display:none}
+.presencial-section .city-filter label{display:block;margin-bottom:9px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
+.presencial-section .city-filter input{width:100%;min-height:46px;padding:10px 13px;border:2px solid #bd173650;border-radius:10px;background:#fff;color:#431722;font:600 15px/1.2 Inter,Arial,sans-serif}
+.presencial-section .city-filter input:focus-visible,.presencial-section .city-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
+.presencial-section .city-options{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;max-height:188px;overflow-y:auto;overscroll-behavior:contain;margin-top:12px;padding:2px 4px 4px 2px}
+.presencial-section .city-options button{min-height:36px;padding:7px 12px;border:1px solid #cfabb6;border-radius:999px;background:#fff6f8;color:#542633;font:700 12px/1.2 Inter,Arial,sans-serif;cursor:pointer}
+.presencial-section .city-options button:hover{background:#fbe0e7}
+.presencial-section .city-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff}
+.presencial-section .city-filter-hint{margin:10px 1px 0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
 .presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
 .presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
 .presencial-section .links{gap:11px}
@@ -214,6 +224,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 <option value="SP">São Paulo</option>
 <option value="SE">Sergipe</option>
 <option value="BR">Agenda nacional</option></select>
+    </div>
+    <div class="city-filter" id="city-filter-panel" hidden>
+      <label for="city-search">Filtrar por cidade</label>
+      <input id="city-search" type="search" inputmode="search" autocomplete="off" placeholder="Digite o nome da cidade" aria-controls="city-options">
+      <div class="city-options" id="city-options" aria-label="Cidades disponíveis"></div>
+      <p class="city-filter-hint" id="city-filter-hint">Escolha uma cidade ou continue rolando para ver todos os atos do estado.</p>
     </div>
     <div class="subsection">Atos e mobilizações <span>Agenda por data e estado · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
     <div class="links" id="presencial-events">
@@ -773,6 +789,19 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         SE:'Sergipe',TO:'Tocantins',BR:'Agenda nacional'
       };
 
+      function cityKey(value){
+        return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR').replace(/[^a-z0-9]+/g,' ').trim();
+      }
+      function canonicalCity(value){
+        var name=String(value||'').trim().replace(/\s+/g,' ');
+        var aliases={
+          'franca':'Franca','belem':'Belém','satarem':'Santarém','paraupebas':'Parauapebas',
+          'parnaiba':'Parnaíba','itaiba':'Itaíba','coite':'Conceição do Coité',
+          'conceicao doi coite':'Conceição do Coité','santa barbara d oeste':"Santa Bárbara d'Oeste",
+          'santa barbara do oeste':"Santa Bárbara d'Oeste"
+        };
+        return aliases[cityKey(name)]||name;
+      }
       // Melhora automaticamente novos cards, sem alterar o conteúdo original das fontes.
       function enhanceAgendaCards(){
         var months=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
@@ -791,7 +820,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             var parts=meta.textContent.split('·').map(function(t){return t.trim();});
             var stateCode=card.dataset.state;
             var fullState=stateNames[stateCode]||stateCode;
-            var city=parts[1]||fullState;
+            var city=canonicalCity(parts[1]||fullState);
+            if(stateCode!=='BR'&&!/^(agenda estudantil|vários municípios|salvador e interior)$/i.test(city))card.dataset.city=city;
             var type=parts.slice(2).join(' · ')||'Mobilização';
             var text=heading.textContent.trim();
             var match=text.match(/(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?\/(\d{1,2})/);
@@ -902,17 +932,70 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       });
       var overall=Object.keys(totals).reduce(function(n,k){return n+totals[k]},0);
       filter.options[0].textContent='Todos os estados ('+overall+')';
+      var cityPanel=document.getElementById('city-filter-panel');
+      var citySearch=document.getElementById('city-search');
+      var cityOptions=document.getElementById('city-options');
+      var cityHint=document.getElementById('city-filter-hint');
+      var selectedCity='';
+      function availableCities(state){
+        var counts={};
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.querySelectorAll('[data-state]').forEach(function(card){
+            if(card.dataset.state===state&&!card.classList.contains('is-expired')&&card.dataset.city){
+              var city=card.dataset.city;
+              counts[city]=(counts[city]||0)+1;
+            }
+          });
+        });
+        return Object.keys(counts).sort(function(a,b){return a.localeCompare(b,'pt-BR');}).map(function(name){return {name:name,count:counts[name]};});
+      }
+      function renderCityOptions(){
+        var state=filter.value;
+        cityPanel.hidden=state==='todos'||state==='BR';
+        if(cityPanel.hidden)return;
+        var query=cityKey(citySearch.value);
+        var cities=availableCities(state);
+        cityOptions.replaceChildren();
+        function addOption(label,value,pressed){
+          var button=document.createElement('button');
+          button.type='button';
+          button.textContent=label;
+          button.setAttribute('aria-pressed',String(pressed));
+          button.addEventListener('click',function(){
+            selectedCity=value;
+            citySearch.value='';
+            filterCards(filter.value);
+            renderCityOptions();
+          });
+          cityOptions.appendChild(button);
+        }
+        if(!query)addOption('Todas as cidades', '', !selectedCity);
+        cities.filter(function(item){return cityKey(item.name).includes(query);}).forEach(function(item){
+          addOption(item.name+' ('+item.count+')',item.name,selectedCity===item.name);
+        });
+        if(!cityOptions.childElementCount){
+          var empty=document.createElement('span');
+          empty.textContent='Nenhuma cidade encontrada neste estado.';
+          cityOptions.appendChild(empty);
+        }
+        cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver o estado inteiro.':'Escolha uma cidade ou continue rolando para ver todos os atos do estado.';
+      }
       function filterCards(selected){
         if(selected!=='todos'&&!totals[selected]){
           selected='todos';
           filter.value='todos';
+          selectedCity='';
         }
         ['presencial-events','student-agenda'].forEach(function(id){
           var list=document.getElementById(id);
           if(!list)return;
           var visible=0;
           list.querySelectorAll('[data-state]').forEach(function(card){
-            var show=!card.classList.contains('is-expired')&&(selected==='todos'||card.dataset.state===selected);
+            var stateMatches=selected==='todos'||card.dataset.state===selected;
+            var cityMatches=!selectedCity||card.dataset.city===selectedCity;
+            var show=!card.classList.contains('is-expired')&&stateMatches&&cityMatches;
             card.hidden=!show;
             card.classList.toggle('is-hidden',!show);
             if(show)visible++;
@@ -922,7 +1005,19 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         });
       }
       window.filterPresencial=filterCards;
-      filter.addEventListener('change',function(){filterCards(filter.value);});
+      filter.addEventListener('change',function(){
+        selectedCity='';
+        citySearch.value='';
+        renderCityOptions();
+        filterCards(filter.value);
+      });
+      citySearch.addEventListener('input',renderCityOptions);
+      citySearch.addEventListener('keydown',function(event){
+        if(event.key!=='Enter')return;
+        var first=cityOptions.querySelector('button');
+        if(first){event.preventDefault();first.click();}
+      });
+      renderCityOptions();
       filterCards(filter.value||'todos');
       function refreshAgenda(){
         updateTimeStatus();
@@ -938,6 +1033,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           if(option.value==='todos')option.textContent='Todos os estados ('+Object.keys(totals).reduce(function(n,k){return n+totals[k]},0)+')';
           else option.textContent=(stateNames[option.value]||option.value)+' ('+(totals[option.value]||0)+')';
         });
+        if(selectedCity&&!availableCities(filter.value).some(function(item){return item.name===selectedCity;}))selectedCity='';
+        renderCityOptions();
         filterCards(filter.value||'todos');
       }
       window.setInterval(refreshAgenda,60000);

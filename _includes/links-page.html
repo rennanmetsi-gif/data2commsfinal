@@ -81,6 +81,49 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .jump-links a{min-width:0;padding:8px 6px;gap:5px;text-align:center}
 .jump-links a[href="#ferramentas"]{flex:1.45;font-size:12px;line-height:1.15}
 @media(min-width:640px){.resources-section>.links{grid-template-columns:1fr 1fr}.resources-section .link{align-items:flex-start}}
+
+/* Agenda presencial: leitura rápida, hierarquia e acessibilidade no celular. */
+.presencial-section .filter-row{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:12px 14px;gap:10px;margin:0 0 14px}
+.presencial-section .filter-row label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432;letter-spacing:-.01em}
+.presencial-section .state-filter{min-height:48px;min-width:230px;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
+.presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
+.presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
+.presencial-section .links{gap:11px}
+.presencial-section .link.event-card{align-items:flex-start;gap:13px;padding:15px 14px;border:1px solid #caa6b0;border-left:4px solid #bd1736;border-radius:15px;box-shadow:0 3px 0 #451a2720;background:#fffefa}
+.presencial-section .event-card .link-copy{gap:7px;min-width:0}
+.presencial-section .event-card .event-topline{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.presencial-section .event-card .event-state{display:inline-flex;align-items:baseline;gap:7px;max-width:100%;background:#bd1736;color:white;padding:6px 10px;border-radius:7px;font:800 12px/1.15 'Space Grotesk',sans-serif;letter-spacing:.012em}
+.presencial-section .event-card .event-state-code{font:600 10px/1.1 'IBM Plex Mono',monospace;color:#fff0f3;opacity:.9}
+.presencial-section .event-card .event-category{font:600 11px/1.35 Inter,Arial,sans-serif;color:#744f5b;letter-spacing:0;text-transform:none}
+.presencial-section .event-card .event-city{display:block;color:#401f2b;font:800 clamp(17px,4.6vw,20px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-.028em;overflow-wrap:anywhere}
+.presencial-section .event-card .event-time{display:inline-flex;align-items:center;gap:5px;width:fit-content;background:#fff0cf;color:#6d380c;border:1px solid #edcf8a;border-radius:7px;padding:5px 9px;font:800 13px/1.2 'IBM Plex Mono',monospace}
+.presencial-section .event-card .event-time svg{width:15px;height:15px;flex-shrink:0}
+.presencial-section .event-card strong.event-location{display:flex;align-items:flex-start;gap:6px;font:700 16px/1.32 'Space Grotesk',sans-serif;color:#2e1b21;letter-spacing:-.015em;overflow-wrap:anywhere}
+.presencial-section .event-card .event-location-icon{display:inline-flex;flex:0 0 16px;margin-top:2px;color:#bd1736}
+.presencial-section .event-card .event-location-icon svg{width:16px;height:16px}
+.presencial-section .event-card .link-description{font:400 13px/1.48 Inter,Arial,sans-serif;color:#58434b}
+.presencial-section .event-card .card-icon.event-date-badge{flex:0 0 60px;width:60px;min-height:73px;height:auto;padding:7px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:#fbe4e9;border:1px solid #e6b4c0;border-radius:10px;color:#991c39;box-shadow:none}
+.presencial-section .event-card .event-day{font:800 27px/1 'Space Grotesk',sans-serif;letter-spacing:-.065em}
+.presencial-section .event-card .event-day.is-range{font-size:18px;letter-spacing:-.055em}
+.presencial-section .event-card .event-month{font:800 11px/1.15 'IBM Plex Mono',monospace;letter-spacing:.09em}
+.presencial-section .event-card .arrow{align-self:center;width:27px;height:27px}
+.presencial-section .event-card .event-no-date{display:none}
+@media(max-width:540px){
+ .presencial-section .filter-row{display:flex;flex-direction:column;align-items:stretch}
+ .presencial-section .state-filter{width:100%;max-width:none;min-width:0}
+ .presencial-section .link.event-card{padding:13px 10px;gap:10px}
+ .presencial-section .event-card .card-icon.event-date-badge{flex-basis:53px;width:53px;min-height:67px}
+ .presencial-section .event-card .event-day{font-size:25px}
+ .presencial-section .event-card .event-day.is-range{font-size:16px}
+ .presencial-section .event-card .event-state{font-size:12px}
+ .presencial-section .event-card strong.event-location{font-size:15px}
+ .presencial-section .event-card .arrow{width:22px;height:22px;font-size:14px}
+}
+@media(max-width:360px){
+ .presencial-section .link.event-card{gap:8px}
+ .presencial-section .event-card .card-icon.event-date-badge{flex-basis:48px;width:48px}
+ .presencial-section .event-card .event-state{padding:5px 7px}
+}
 </style>
 </head>
 <body>
@@ -250,6 +293,85 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         RO:'Rondônia',RR:'Roraima',SC:'Santa Catarina',SP:'São Paulo',
         SE:'Sergipe',TO:'Tocantins',BR:'Agenda nacional'
       };
+
+      // Melhora automaticamente novos cards, sem alterar o conteúdo original das fontes.
+      function enhanceAgendaCards(){
+        var months=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+        var clockIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+        var pinIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.querySelectorAll('[data-state]').forEach(function(card){
+            if(card.classList.contains('event-card'))return;
+            var copy=card.querySelector('.link-copy');
+            var meta=copy&&copy.querySelector('.link-meta');
+            var heading=copy&&copy.querySelector('strong');
+            var tile=card.querySelector('.card-icon');
+            if(!meta||!heading||!tile)return;
+            var parts=meta.textContent.split('·').map(function(t){return t.trim();});
+            var stateCode=card.dataset.state;
+            var fullState=stateNames[stateCode]||stateCode;
+            var city=parts[1]||fullState;
+            var type=parts.slice(2).join(' · ')||'Mobilização';
+            var text=heading.textContent.trim();
+            var match=text.match(/(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?\/(\d{1,2})/);
+            var when=text.match(/\b\d{1,2}h(?:\d{2})?(?:\s*[–-]\s*\d{1,2}h(?:\d{2})?)?\b/);
+            var main=text.split(' — ').slice(1).join(' — ').trim()||text;
+            main=main.replace(/^\d{1,2}h(?:\d{2})?(?:\s*[–-]\s*\d{1,2}h(?:\d{2})?)?\s*—\s*/,'');
+            card.classList.add('event-card');
+            if(match){
+              var day=match[1]+(match[2]?'–'+match[2]:'');
+              var mon=months[Number(match[3])-1]||match[3];
+              tile.classList.add('event-date-badge');
+              tile.setAttribute('aria-label','Data: '+day+' de '+mon);
+              tile.textContent='';
+              var dayEl=document.createElement('span');
+              dayEl.className='event-day'+(match[2]?' is-range':'');
+              dayEl.textContent=day;
+              var monthEl=document.createElement('span');
+              monthEl.className='event-month';
+              monthEl.textContent=mon;
+              tile.appendChild(dayEl);
+              tile.appendChild(monthEl);
+            }
+            var top=document.createElement('span');
+            top.className='event-topline';
+            var state=document.createElement('span');
+            state.className='event-state';
+            state.textContent=fullState;
+            var stateAbbr=document.createElement('span');
+            stateAbbr.className='event-state-code';
+            stateAbbr.textContent=stateCode==='BR'?'BR':stateCode;
+            state.appendChild(stateAbbr);
+            top.appendChild(state);
+            copy.insertBefore(top,meta);
+            meta.className='link-meta event-category';
+            meta.textContent=type;
+            top.appendChild(meta);
+            var cityEl=document.createElement('span');
+            cityEl.className='event-city';
+            cityEl.textContent=city;
+            copy.insertBefore(cityEl,heading);
+            if(when){
+              var time=document.createElement('span');
+              time.className='event-time';
+              time.setAttribute('aria-label','Horário: '+when[0]);
+              time.innerHTML=clockIcon;
+              time.appendChild(document.createTextNode(when[0]));
+              copy.insertBefore(time,heading);
+            }
+            heading.classList.add('event-location');
+            heading.textContent=main;
+            var pin=document.createElement('span');
+            pin.className='event-location-icon';
+            pin.setAttribute('aria-hidden','true');
+            pin.innerHTML=pinIcon;
+            heading.insertBefore(pin,heading.firstChild);
+          });
+        });
+      }
+      enhanceAgendaCards();
       // O menu é gerado a partir dos eventos; novos estados aparecem sem edição manual.
       var totals={};
       ['presencial-events','student-agenda'].forEach(function(id){

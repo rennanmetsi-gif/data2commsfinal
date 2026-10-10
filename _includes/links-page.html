@@ -313,7 +313,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             <div class="form-field full"><label for="event-local">Local do evento / ponto de encontro</label><input id="event-local" name="local" autocomplete="street-address" required placeholder="Ex.: Praça da Estação, em frente ao coreto"></div>
             <div class="form-field"><label for="event-city">Cidade</label><input id="event-city" name="cidade" autocomplete="address-level2" required></div>
             <div class="form-field"><label for="event-state">Estado</label><select id="event-state" name="estado" autocomplete="address-level1" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
-            <div class="form-field"><label for="event-date">Data</label><input id="event-date" name="data" type="date" required></div>
+            <div class="form-field"><label for="event-date">Data</label><select id="event-date" name="data" required><option value="">Selecione o dia</option><option value="2026-10-10">10 de outubro</option><option value="2026-10-11">11 de outubro</option><option value="2026-10-12">12 de outubro</option><option value="2026-10-13">13 de outubro</option><option value="2026-10-14">14 de outubro</option><option value="2026-10-15">15 de outubro</option><option value="2026-10-16">16 de outubro</option><option value="2026-10-17">17 de outubro</option><option value="2026-10-18">18 de outubro</option><option value="2026-10-19">19 de outubro</option><option value="2026-10-20">20 de outubro</option><option value="2026-10-21">21 de outubro</option><option value="2026-10-22">22 de outubro</option><option value="2026-10-23">23 de outubro</option><option value="2026-10-24">24 de outubro</option><option value="2026-10-25">25 de outubro · eleição</option></select><p class="form-help">Mobilizações de 10 a 25 de outubro de 2026.</p></div>
             <div class="form-field"><label for="event-time">Horário</label><input id="event-time" name="horario" type="time" required></div>
             <div class="step-actions"><span></span><button class="step-next" type="button" data-next="2">Continuar</button></div>
           </section>
@@ -334,7 +334,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           </section>
           <section class="form-step" data-step="4" hidden>
             <div class="step-heading"><span class="step-kicker">Última etapa</span><h3 id="evidence-title">Envie a divulgação</h3><p id="evidence-intro"></p></div>
-            <div class="form-field full" id="link-evidence" hidden><label for="event-link">Link da publicação</label><input id="event-link" name="link" type="url" inputmode="url" placeholder="https://"><p class="form-help">Cole o endereço completo da publicação, notícia ou página da organização.</p></div>
+            <div class="form-field full" id="link-evidence" hidden><label for="event-link">Link da publicação</label><input id="event-link" name="link" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="Ex.: instagram.com/publicacao"><p class="form-help">Pode escrever só o endereço, como instagram.com/… ou site.com.br. Não precisa incluir http:// ou https://.</p></div>
             <div class="form-field full" id="image-evidence" hidden><label for="event-image">Imagem da divulgação</label><input id="event-image" name="imagem" type="file" accept="image/jpeg,image/png,image/webp"><p class="form-help">Envie uma captura de tela, card, cartaz ou foto do convite. Formatos JPG, PNG ou WebP, com até 3 MB.</p></div>
             <div class="step-actions"><button class="step-back" type="button" data-back="3">Voltar</button><button class="form-submit" type="submit">Enviar para validação</button></div>
           </section>
@@ -603,6 +603,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         submitButton.disabled=true;
         submitButton.textContent='Enviando…';
         formError.hidden=true;
+        var linkInput=document.getElementById('event-link');
+        var rawLink=linkInput.value.trim();
+        if(rawLink&&!/^[a-z][a-z0-9+.-]*:\/\//i.test(rawLink))linkInput.value='https://'+rawLink.replace(/^\/+/, '');
         var params=new URLSearchParams();
         new FormData(eventForm).forEach(function(value,key){if(!(value instanceof File))params.append(key,value);});
         if(image){

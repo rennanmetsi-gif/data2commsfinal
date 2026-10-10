@@ -97,6 +97,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .city-options button:hover{background:#fbe0e7}
 .presencial-section .city-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff}
 .presencial-section .city-filter-hint{margin:10px 1px 0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
+.presencial-section .date-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:0 0 15px}
+.presencial-section .date-filter-label{display:block;margin-bottom:10px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
+.presencial-section .date-options{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 2px 7px;scroll-snap-type:x proximity}
+.presencial-section .date-options button{flex:0 0 auto;min-width:44px;min-height:42px;padding:8px 11px;border:1px solid #cfabb6;border-radius:10px;background:#fff6f8;color:#542633;font:800 13px/1 'IBM Plex Mono',monospace;cursor:pointer;scroll-snap-align:start}
+.presencial-section .date-options button:first-child{min-width:68px;font-family:Inter,Arial,sans-serif}
+.presencial-section .date-options button:hover{background:#fbe0e7}
+.presencial-section .date-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff;box-shadow:0 3px 0 #086b34}
+.presencial-section .date-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
+.presencial-section .filter-empty{margin:0 0 15px;padding:13px 14px;border:1px dashed #b88445;border-radius:12px;background:#fff8e8;color:#634638;font:600 13px/1.45 Inter,Arial,sans-serif}
 .presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
 .presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
 .presencial-section .links{gap:11px}
@@ -231,6 +240,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <div class="city-options" id="city-options" aria-label="Cidades disponíveis"></div>
       <p class="city-filter-hint" id="city-filter-hint">Escolha uma cidade ou continue rolando para ver todos os atos do estado.</p>
     </div>
+    <div class="date-filter" aria-labelledby="date-filter-label">
+      <span class="date-filter-label" id="date-filter-label">Filtrar por dia</span>
+      <div class="date-options" id="date-options" aria-label="Dias disponíveis"></div>
+    </div>
+    <p class="filter-empty" id="filter-empty" hidden>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</p>
     <div class="subsection">Atos e mobilizações <span>Agenda por data e estado · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
     <div class="links" id="presencial-events">
       <a class="link" data-state="BA" href="https://www.instagram.com/p/DeMjT7gu8uP/?stkn=aTY2ZTd2ZDBlNDNn" target="_blank" rel="noopener"><span class="card-icon icon-calendar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2m-8 3h2"/></svg></span><span class="link-copy"><span class="link-meta">BA · Salvador · mobilização</span><strong>10/10, 5h30 — FAROL DA BARRA</strong><span class="link-description">CAMINHADA DA MILITÂNCIA. Endereço: Largo do Farol da Barra, s/n, Barra, Salvador.</span></span><span class="arrow">↗</span></a>
@@ -827,6 +841,10 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             var text=heading.textContent.trim();
             var match=text.match(/(\d{1,2})(?:\s*[–-]\s*(\d{1,2}))?\/(\d{1,2})/);
             var when=text.match(/\b\d{1,2}h(?:\d{2})?(?:\s*[–-]\s*\d{1,2}h(?:\d{2})?)?\b/);
+            if(match){
+              card.dataset.filterStartDate='2026-'+String(match[3]).padStart(2,'0')+'-'+String(match[1]).padStart(2,'0');
+              card.dataset.filterEndDate=match[2]?'2026-'+String(match[3]).padStart(2,'0')+'-'+String(match[2]).padStart(2,'0'):card.dataset.filterStartDate;
+            }
             if(match&&!match[2]){
               card.dataset.startDate='2026-'+String(match[3]).padStart(2,'0')+'-'+String(match[1]).padStart(2,'0');
               if(when){var clock=when[0].match(/^(\d{1,2})h(\d{2})?/);if(clock)card.dataset.startMinute=Number(clock[1])*60+Number(clock[2]||0);}
@@ -937,7 +955,30 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var citySearch=document.getElementById('city-search');
       var cityOptions=document.getElementById('city-options');
       var cityHint=document.getElementById('city-filter-hint');
+      var dateOptions=document.getElementById('date-options');
+      var filterEmpty=document.getElementById('filter-empty');
       var selectedCity='';
+      var selectedDate='';
+      function renderDateOptions(){
+        dateOptions.replaceChildren();
+        function addDateOption(label,value){
+          var button=document.createElement('button');
+          button.type='button';
+          button.textContent=label;
+          button.setAttribute('aria-pressed',String(selectedDate===value));
+          button.setAttribute('aria-label',value?'Filtrar atos do dia '+label+' de outubro':'Mostrar atos de todos os dias');
+          button.addEventListener('click',function(){
+            selectedDate=value;
+            renderDateOptions();
+            filterCards(filter.value);
+          });
+          dateOptions.appendChild(button);
+        }
+        addDateOption('Todos','');
+        for(var day=10;day<=25;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
+        var active=dateOptions.querySelector('[aria-pressed="true"]');
+        if(active)active.scrollIntoView({block:'nearest',inline:'nearest'});
+      }
       function availableCities(state){
         var counts={};
         ['presencial-events','student-agenda'].forEach(function(id){
@@ -989,6 +1030,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           filter.value='todos';
           selectedCity='';
         }
+        var totalVisible=0;
         ['presencial-events','student-agenda'].forEach(function(id){
           var list=document.getElementById(id);
           if(!list)return;
@@ -996,14 +1038,18 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           list.querySelectorAll('[data-state]').forEach(function(card){
             var stateMatches=selected==='todos'||card.dataset.state===selected;
             var cityMatches=!selectedCity||card.dataset.city===selectedCity;
-            var show=!card.classList.contains('is-expired')&&stateMatches&&cityMatches;
+            var dateStart=card.dataset.filterStartDate||'';
+            var dateEnd=card.dataset.filterEndDate||dateStart;
+            var dateMatches=!selectedDate||(dateStart&&selectedDate>=dateStart&&selectedDate<=dateEnd);
+            var show=!card.classList.contains('is-expired')&&stateMatches&&cityMatches&&dateMatches;
             card.hidden=!show;
             card.classList.toggle('is-hidden',!show);
-            if(show)visible++;
+            if(show){visible++;totalVisible++;}
           });
           list.hidden=visible===0;
           if(list.previousElementSibling)list.previousElementSibling.hidden=visible===0;
         });
+        filterEmpty.hidden=totalVisible!==0;
       }
       window.filterPresencial=filterCards;
       filter.addEventListener('change',function(){
@@ -1019,6 +1065,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(first){event.preventDefault();first.click();}
       });
       renderCityOptions();
+      renderDateOptions();
       filterCards(filter.value||'todos');
       function refreshAgenda(){
         updateTimeStatus();

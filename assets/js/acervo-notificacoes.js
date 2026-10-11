@@ -21,6 +21,7 @@
   var locationPanel = document.getElementById('noti-locations');
   var statePanel = document.getElementById('noti-states');
   var status = document.getElementById('noti-status');
+  var disableButton = document.getElementById('noti-disable');
   var badge = document.getElementById('noti-count');
   var newsPanel = document.getElementById('noti-news');
   var newsList = document.getElementById('noti-news-list');
@@ -130,6 +131,7 @@
     launch.querySelector('.noti-launch-state').textContent = enabled && 'Notification' in window && Notification.permission === 'granted' ? 'Avisos ativados' : enabled ? 'Preferências salvas' : 'Escolher novidades';
   }
   function openDialog() {
+    disableButton.hidden = !(prefs && prefs.enabled);
     checkboxes.forEach(function (c) { c.checked = !!(prefs && prefs.topics && prefs.topics.indexOf(c.value) >= 0); });
     statePanel.querySelectorAll('input').forEach(function (input) {
       input.checked = !!(prefs && prefs.states && prefs.states.indexOf(input.value) >= 0);
@@ -195,6 +197,7 @@
     checkboxes.forEach(function(c) { c.checked = false; });
     statePanel.querySelectorAll('input').forEach(function(c) { c.checked = false; });
     toggleLocation(); renderAlerts(); updateLaunch();
+    disableButton.hidden = true;
     status.textContent = 'Avisos desta página desativados. A permissão geral do navegador pode ser revogada nas configurações do site.';
   }
   function sendBrowserAlert(newOnes) {

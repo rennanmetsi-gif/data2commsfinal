@@ -1,3 +1,9 @@
+# Leitores de prévia de links do Instagram, Facebook e Messenger
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
 User-agent: *
 Allow: /
 Disallow: /admin/

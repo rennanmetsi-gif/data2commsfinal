@@ -25,6 +25,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="/acervo-manifest.webmanifest">
+  <meta name="theme-color" content="#bd1736">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Acervo Lula">
   <link href="/assets/css/acervo-notificacoes.css" rel="stylesheet">
   <style>
 :root{--ink:#23191b;--paper:#f7f3ec;--pink:#bd1736;--red:#bd1736}
@@ -217,11 +221,23 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section.is-enhanced .submit-event-cta > span{font-size:clamp(16px,4.8vw,19px);line-height:1.12}
  .share-cta.share-dock-enabled{width:calc(100% - 36px)}
 }
+
+/* Sininho discreto no cabeçalho, sem banners nem sobreposição. */
+.top-tools{display:flex;align-items:center;gap:12px}
+.top .top-tools{color:var(--red)}
+.noti-top-button{position:relative;flex:0 0 41px;width:41px;height:41px;min-height:41px;padding:9px;border:1px solid #dcb3bd;border-radius:11px;background:#fffefa;color:#98213b;display:grid;place-items:center;box-shadow:0 2px 0 #96203912}
+.noti-top-button:hover{background:#ffe9ee}
+.noti-top-button svg{width:21px;height:21px}
+.noti-top-button .noti-count{position:absolute;top:-6px;right:-6px;min-width:19px;height:19px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.evidence-requirement{display:grid;gap:10px}
+.evidence-requirement p{margin:0;font:500 13px/1.5 Inter,Arial,sans-serif}
+@media(max-width:440px){.top-tools{gap:6px}.top-context{display:none}.noti-top-button{width:40px;height:40px;flex-basis:40px}}
 </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="top"><div class="mark">Acervo <span>Lula</span></div><div>Lula 13 · Democracia</div></div>
+    <div class="top"><div class="mark">Acervo <span>Lula</span></div><div class="top-tools"><span class="top-context">Lula 13 · Democracia</span><button id="noti-open" class="noti-open noti-top-button" type="button" aria-label="Abrir central de notificações" title="Novidades e notificações"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span class="noti-launch-state sr-only">Escolher novidades</span><span id="noti-count" class="noti-count" hidden></span></button></div></div>
     <h1>Lula 13: <em>em defesa da democracia.</em></h1>
     <p class="intro">Curadoria de mobilizações por <a href="https://www.instagram.com/historialgbtqia_/" target="_blank" rel="noopener noreferrer">@historialgbtqia_</a> e <a href="/home-antiga/">Agência Data2Comms</a>.</p>
 
@@ -236,14 +252,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         </details>
       </div>
       <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
-    </div>
-
-    <div class="noti-launch" aria-label="Central de notificações do Acervo Lula">
-      <div class="noti-launch-copy">
-        <strong>🔔 Quer saber quando chegar conteúdo novo?</strong>
-        <small>Escolha vídeos, grupos, ferramentas e atos na sua região.</small>
-      </div>
-      <button id="noti-open" class="noti-open" type="button">🔔 <span class="noti-launch-state">Escolher novidades</span> <span id="noti-count" class="noti-count" hidden></span></button>
     </div>
 
     <p class="jump-label">Escolha uma frente</p><nav class="jump-links" aria-label="Navegação"><a href="#digital">Digital</a><a href="#ferramentas">Ferramentas e acervos</a><a href="#presencial">Presencial</a></nav>
@@ -832,7 +840,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         <button class="dialog-close" type="button" aria-label="Fechar formulário">×</button>
       </div>
       <div class="dialog-body">
-        <div class="form-progress" id="form-progress"><span id="form-progress-label">Etapa 1 de 4</span><span class="form-progress-bar" aria-hidden="true"><span id="form-progress-fill"></span></span></div>
+        <div class="form-progress" id="form-progress"><span id="form-progress-label">Etapa 1 de 3</span><span class="form-progress-bar" aria-hidden="true"><span id="form-progress-fill"></span></span></div>
         <form class="event-form" id="event-form">
           <section class="form-step" data-step="1">
             <div class="step-heading"><span class="step-kicker">Informações essenciais</span><h3>Onde e quando será o ato?</h3><p>Preencha os dados que as pessoas precisam para encontrar a mobilização.</p></div>
@@ -849,20 +857,21 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             <div class="step-actions"><button class="step-back" type="button" data-back="1">Voltar</button><button class="step-next" type="button" data-next="3">Continuar</button></div>
           </section>
           <section class="form-step" data-step="3" hidden>
-            <div class="step-heading"><span class="step-kicker">Ajude na validação</span><h3>Você tem uma fonte da divulgação?</h3><p>Uma informação externa facilita o trabalho da nossa equipe para confirmar que a mobilização existe e ajuda a dar mais segurança a quem pretende participar.</p></div>
-            <div class="validation-note"><strong>Esta etapa é opcional.</strong> Se você não tiver a publicação em mãos agora, pode enviar mesmo assim. Nossa equipe procurará outras formas de validar o evento.</div>
-            <div class="evidence-choices" aria-label="Escolha como enviar a divulgação">
-              <button class="evidence-choice" type="button" data-evidence="link"><strong>Link da publicação</strong><span>Pode ser um post no Instagram ou Facebook, uma página da organização, uma notícia ou outro endereço público sobre o ato.</span></button>
-              <button class="evidence-choice" type="button" data-evidence="image"><strong>Imagem da divulgação</strong><span>Pode ser uma captura de tela, card, cartaz ou foto do convite que divulga a mobilização.</span></button>
+            <div class="step-heading">
+              <span class="step-kicker">🔗 Última etapa · obrigatória</span>
+              <h3>Link oficial da mobilização</h3>
+              <p>Precisamos de uma publicação que divulgue este ato.</p>
             </div>
-            <button class="skip-evidence" type="button" id="skip-evidence"><span class="skip-evidence-icon" aria-hidden="true">✓</span><span class="skip-evidence-copy"><strong>Não tenho a divulgação agora</strong><span>Tudo bem — envie assim mesmo. Nossa equipe buscará outras fontes para validar o ato.</span></span><span class="skip-evidence-arrow" aria-hidden="true">→</span></button>
-            <div class="step-actions"><button class="step-back" type="button" data-back="2">Voltar</button><span></span></div>
-          </section>
-          <section class="form-step" data-step="4" hidden>
-            <div class="step-heading"><span class="step-kicker">Última etapa</span><h3 id="evidence-title">Envie a divulgação</h3><p id="evidence-intro"></p></div>
-            <div class="form-field full" id="link-evidence" hidden><label for="event-link">Link da publicação</label><input id="event-link" name="link" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="Ex.: instagram.com/publicacao"><p class="form-help">Pode escrever só o endereço, como instagram.com/… ou site.com.br. Não precisa incluir http:// ou https://.</p></div>
-            <div class="form-field full" id="image-evidence" hidden><label for="event-image">Imagem da divulgação</label><input id="event-image" name="imagem" type="file" accept="image/jpeg,image/png,image/webp"><p class="form-help">Envie uma captura de tela, card, cartaz ou foto do convite. Formatos JPG, PNG ou WebP, com até 3 MB.</p></div>
-            <div class="step-actions"><button class="step-back" type="button" data-back="3">Voltar</button><button class="form-submit" type="submit">Enviar para validação</button></div>
+            <div class="validation-note evidence-requirement" role="note">
+              <p>📣 <strong>Envie um link:</strong> post ou card oficial no Instagram, página da organização ou notícia da imprensa.</p>
+              <p>🛡️ <strong>Segurança:</strong> a fonte permite conferir a origem e a divulgação do ato antes de publicá-lo, ajudando na rastreabilidade.</p>
+            </div>
+            <div class="form-field full" id="link-evidence">
+              <label for="event-link">Link da divulgação <span>(obrigatório)</span></label>
+              <input id="event-link" name="link" type="url" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" required placeholder="https://www.instagram.com/p/..." aria-describedby="event-link-help">
+              <p class="form-help" id="event-link-help">Cole o endereço público da publicação sobre o ato.</p>
+            </div>
+            <div class="step-actions"><button class="step-back" type="button" data-back="2">Voltar</button><button class="form-submit" type="submit">Enviar para validação</button></div>
           </section>
           <div class="form-trap" aria-hidden="true"><label for="event-website">Não preencha</label><input id="event-website" name="website" tabindex="-1" autocomplete="off"></div>
           <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -1225,7 +1234,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var progressLabel=document.getElementById('form-progress-label');
       var progressFill=document.getElementById('form-progress-fill');
       var steps=Array.from(eventForm.querySelectorAll('.form-step'));
-      var evidenceChoice='';
       var formEndpoint='https://script.google.com/macros/s/AKfycbxUjbCOkfUMVK_M8cT7YQL97em4VAhxqUQGp9wVtG3NF81XSVPSDltKBgYPJ9EkLV92/exec';
       function closeDialog(){
         if(typeof dialog.close==='function')dialog.close();
@@ -1233,8 +1241,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       }
       function showStep(number){
         steps.forEach(function(step){step.hidden=Number(step.dataset.step)!==number;});
-        progressLabel.textContent='Etapa '+number+' de 4';
-        progressFill.style.width=(number*25)+'%';
+        progressLabel.textContent='Etapa '+number+' de 3';
+        progressFill.style.width=(number*100/3)+'%';
         formError.hidden=true;
         dialog.scrollTop=0;
         var active=eventForm.querySelector('[data-step="'+number+'"]');
@@ -1268,82 +1276,39 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       eventForm.querySelectorAll('[data-back]').forEach(function(button){
         button.addEventListener('click',function(){showStep(Number(button.dataset.back));});
       });
-      eventForm.querySelectorAll('[data-evidence]').forEach(function(button){
-        button.addEventListener('click',function(){
-          evidenceChoice=button.dataset.evidence;
-          var linkField=document.getElementById('event-link');
-          var imageField=document.getElementById('event-image');
-          var isLink=evidenceChoice==='link';
-          document.getElementById('link-evidence').hidden=!isLink;
-          document.getElementById('image-evidence').hidden=isLink;
-          document.getElementById('evidence-title').textContent=isLink?'Envie o link da publicação':'Envie a imagem da divulgação';
-          document.getElementById('evidence-intro').textContent=isLink?'Cole o endereço da publicação que divulga ou confirma o ato.':'Selecione a imagem que divulga ou confirma o ato.';
-          linkField.required=isLink;
-          imageField.required=!isLink;
-          if(isLink)imageField.value='';else linkField.value='';
-          showStep(4);
-        });
-      });
-      document.getElementById('skip-evidence').addEventListener('click',function(){
-        evidenceChoice='';
-        document.getElementById('event-link').required=false;
-        document.getElementById('event-link').value='';
-        document.getElementById('event-image').required=false;
-        document.getElementById('event-image').value='';
-        if(typeof eventForm.requestSubmit==='function')eventForm.requestSubmit();
-        else submitButton.click();
-      });
+      var eventLink=document.getElementById('event-link');
+      function normalizeEventLink(){
+        var raw=eventLink.value.trim();
+        eventLink.setCustomValidity('');
+        if(!raw)return;
+        if(!/^[a-z][a-z0-9+.-]*:\/\//i.test(raw))raw='https://'+raw.replace(/^\/+/, '');
+        try{
+          var url=new URL(raw);
+          if(!/^https?:$/.test(url.protocol)||!url.hostname.includes('.')||/\s/.test(raw))throw new Error('Invalid URL');
+          eventLink.value=url.href;
+        }catch(error){
+          eventLink.setCustomValidity('Informe um link público válido da mobilização (Instagram, organização ou imprensa).');
+        }
+      }
+      eventLink.addEventListener('blur',normalizeEventLink);
+      eventLink.addEventListener('input',function(){eventLink.setCustomValidity('');});
       eventForm.addEventListener('submit',async function(event){
         event.preventDefault();
+        normalizeEventLink();
         if(!eventForm.reportValidity())return;
         if(formEndpoint.indexOf('__')===0){
           formError.textContent='O formulário ainda está sendo conectado. Tente novamente em instantes.';
           formError.hidden=false;
           return;
         }
-        var image=document.getElementById('event-image').files[0];
-        var allowedImages=['image/jpeg','image/png','image/webp'];
-        if(image&&allowedImages.indexOf(image.type)===-1){
-          formError.textContent='Envie a imagem em JPG, PNG ou WebP.';
-          formError.hidden=false;
-          return;
-        }
-        if(image&&image.size>3*1024*1024){
-          formError.textContent='A imagem deve ter no máximo 3 MB.';
-          formError.hidden=false;
-          return;
-        }
         submitButton.disabled=true;
         submitButton.textContent='Enviando…';
         formError.hidden=true;
-        var linkInput=document.getElementById('event-link');
-        var rawLink=linkInput.value.trim();
-        if(rawLink&&!/^[a-z][a-z0-9+.-]*:\/\//i.test(rawLink))linkInput.value='https://'+rawLink.replace(/^\/+/, '');
         var params=new URLSearchParams();
         new FormData(eventForm).forEach(function(value,key){if(!(value instanceof File))params.append(key,value);});
-        if(image){
-          try{
-            var imageData=await new Promise(function(resolve,reject){
-              var reader=new FileReader();
-              reader.onload=function(){resolve(String(reader.result).split(',')[1]);};
-              reader.onerror=reject;
-              reader.readAsDataURL(image);
-            });
-          }catch(error){
-            submitButton.disabled=false;
-            submitButton.textContent='Enviar para validação';
-            formError.textContent='Não foi possível ler a imagem. Escolha outro arquivo e tente novamente.';
-            formError.hidden=false;
-            return;
-          }
-          params.append('imageData',imageData);
-          params.append('imageName',image.name);
-          params.append('imageType',image.type);
-        }
         fetch(formEndpoint,{method:'POST',body:params,mode:'no-cors'})
           .then(function(){
             eventForm.reset();
-            evidenceChoice='';
             eventForm.hidden=true;
             progress.hidden=true;
             success.hidden=false;

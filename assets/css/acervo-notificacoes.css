@@ -1,0 +1,45 @@
+/* Central de notificações do Acervo Lula — preserva o estilo editorial existente. */
+.noti-launch{display:flex;align-items:center;justify-content:space-between;gap:13px;padding:12px 14px;margin:0 0 18px;background:#fffefa;border:1px solid #e1c5cb;border-radius:13px;box-shadow:0 2px 0 #34202609}
+.noti-launch-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.noti-launch-copy strong{font:800 14px/1.25 'Space Grotesk',sans-serif}
+.noti-launch-copy small{font:400 11px/1.4 Inter,Arial,sans-serif;color:#795b64}
+.noti-open{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:42px;flex-shrink:0;padding:9px 12px;background:#291d22;border:0;border-radius:9px;color:#fff;font:700 12px/1.2 Inter,Arial,sans-serif;cursor:pointer}
+.noti-open:hover{background:#bd1736}.noti-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 4px;border-radius:20px;background:#ffc857;color:#291d22;font-size:11px}
+.noti-has-news{border-color:#bd1736;box-shadow:0 0 0 2px #bd173617}
+.noti-dialog{width:min(650px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:17px;background:#fffefa;color:#312025;box-shadow:0 22px 75px #2e152477;overflow:auto}
+.noti-dialog::backdrop{background:#24151bb5;backdrop-filter:blur(3px)}
+.noti-dialog[open]{z-index:210}
+.noti-dialog.noti-dialog-fallback[open]{position:fixed;top:12px;left:12px;right:12px;bottom:auto;margin:auto}
+.noti-dialog-head{position:sticky;top:0;z-index:4;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:18px 20px 15px;background:#bd1736;color:#fff}
+.noti-dialog-head h2{margin:0;font:800 clamp(22px,5vw,29px)/1.05 'Space Grotesk',sans-serif;letter-spacing:-.035em}
+.noti-dialog-head p{font:500 12px/1.45 Inter,Arial,sans-serif;color:#ffe7eb;margin:5px 0 0}
+.noti-dialog-close{flex-shrink:0;display:grid;place-items:center;width:37px;height:37px;border:1px solid #ffffff70;border-radius:50%;background:#ffffff15;color:#fff;font:25px Inter,Arial,sans-serif;cursor:pointer}
+.noti-body{padding:20px}
+.noti-kicker{font:800 10px/1.4 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#99243c;margin:0 0 10px}
+.noti-option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 15px}
+.noti-option{display:flex;align-items:center;gap:10px;min-height:55px;padding:11px 12px;background:#fbf4f0;border:1px solid #dccbd0;border-radius:10px;font:700 13px/1.3 'Space Grotesk',sans-serif;cursor:pointer}
+.noti-option input{width:19px;height:19px;margin:0;accent-color:#bd1736;flex:none}
+.noti-section{border-top:1px solid #e5d5d8;padding:15px 0}
+.noti-section h3{font:800 17px/1.15 'Space Grotesk',sans-serif;margin:0 0 8px}
+.noti-small{font:400 12px/1.5 Inter,Arial,sans-serif;color:#715a63;margin:6px 0 10px}
+.noti-details{border:1px solid #e0ced2;border-radius:10px;background:#fff;margin-top:9px;overflow:hidden}
+.noti-details summary{padding:12px 13px;font:700 13px/1.3 'Space Grotesk',sans-serif;cursor:pointer}
+.noti-details[open] summary{border-bottom:1px solid #eadde0}
+.noti-location-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;max-height:190px;overflow:auto;padding:9px}
+.noti-location-choice{display:flex;align-items:center;gap:6px;min-height:34px;padding:6px;border-radius:6px;background:#faf7f4;font:500 11px/1.3 Inter,Arial,sans-serif;cursor:pointer}
+.noti-location-choice input{flex:none;width:15px;height:15px;accent-color:#bd1736}
+.noti-city-search{display:block;width:calc(100% - 20px);margin:10px;border:1px solid #c6adb5;border-radius:8px;padding:10px;font:500 13px Inter,Arial,sans-serif}
+.noti-browser{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:8px}
+.noti-secondary{border:1px solid #bfa4ae;border-radius:9px;background:#fff;color:#7f233e;padding:10px 13px;min-height:42px;font:700 12px Inter,Arial,sans-serif;cursor:pointer}
+.noti-secondary:disabled{cursor:default;opacity:.7}
+.noti-actions{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-top:18px}
+.noti-save{border:0;border-radius:10px;background:#bd1736;color:#fff;padding:12px 20px;min-height:48px;font:800 14px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #7a142c}
+.noti-disable{border:0;background:transparent;text-decoration:underline;color:#84636c;font:600 12px Inter,Arial,sans-serif;cursor:pointer;padding:10px 3px}
+.noti-status{margin:10px 0 0;color:#8c263e;font:600 12px/1.45 Inter,Arial,sans-serif}
+.noti-news{border:1px solid #e4c9cf;padding:12px 13px;border-radius:11px;background:#fff6f0;margin:2px 0 15px}
+.noti-news h3{font:800 15px 'Space Grotesk',sans-serif;margin:0 0 8px}
+.noti-news ul{padding-left:20px;margin:0 0 8px;max-height:150px;overflow:auto}
+.noti-news li{font:500 12px/1.5 Inter,Arial,sans-serif;margin-bottom:4px}
+.noti-news a{color:#9e1f3f}
+@media(max-width:480px){.noti-launch{flex-wrap:wrap}.noti-open{flex:1}.noti-option-grid{grid-template-columns:1fr}.noti-location-grid{grid-template-columns:1fr}.noti-dialog-head,.noti-body{padding:15px}}
+@media(prefers-reduced-motion:reduce){.noti-launch,.noti-open{transition:none}}

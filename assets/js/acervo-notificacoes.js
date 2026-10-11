@@ -126,70 +126,107 @@
   function toggleLocation() {
     locationPanel.hidden = !checkboxes.some(function (c) { return c.value === 'mobilizacoes' && c.checked; });
   }
-  function updateLaunch() {
-    var enabled = prefs && prefs.enabled;
-    launch.querySelector('.noti-launch-state').textContent = enabled && 'Notification' in window && Notification.permission === 'granted' ? 'Avisos ativados' : enabled ? 'Preferências salvas' : 'Escolher novidades';
+  function permissionStatus(){
+    if(!window.isSecureContext || !('Notification' in window) || typeof Notification.requestPermission!=='function')return 'unsupported';
+    return Notification.permission;
   }
-  function openDialog() {
-    disableButton.hidden = !(prefs && prefs.enabled);
-    checkboxes.forEach(function (c) { c.checked = !!(prefs && prefs.topics && prefs.topics.indexOf(c.value) >= 0); });
-    statePanel.querySelectorAll('input').forEach(function (input) {
-      input.checked = !!(prefs && prefs.states && prefs.states.indexOf(input.value) >= 0);
+  function updateLaunch(){
+    var permission=permissionStatus();
+    var enabled=!!(prefs && prefs.enabled);
+    var text=enabled && permission==='granted' ? 'Notificações autorizadas' : enabled ? 'Preferências salvas' : 'Escolher novidades';
+    var state=launch.querySelector('.noti-launch-state');
+    if(state)state.textContent=text;
+    launch.setAttribute('aria-label','Abrir central de notificações. '+text);
+    launch.title=enabled && permission==='granted' ? 'Ver novidades e ajustar interesses' : 'Ativar notificações e consultar novidades';
+    launch.classList.toggle('noti-is-authorized',enabled && permission==='granted');
+  }
+  function openDialog(){
+    disableButton.hidden=!(prefs && prefs.enabled);
+    checkboxes.forEach(function(c){c.checked=!!(prefs && prefs.topics && prefs.topics.indexOf(c.value)>=0);});
+    statePanel.querySelectorAll('input').forEach(function(input){
+      input.checked=!!(prefs && prefs.states && prefs.states.indexOf(input.value)>=0);
     });
-    toggleLocation(); renderAlerts();
-    status.textContent = '';
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else { dialog.setAttribute('open',''); dialog.classList.add('noti-dialog-fallback'); }
+    toggleLocation();
+    renderAlerts();
+    status.textContent='';
+    var permission=permissionStatus();
+    var activate=document.getElementById('noti-activate');
+    activate.textContent=permission==='granted' ? '✓ Atualizar preferências' : '🔔 Ativar notificações';
+    if(permission==='denied'){
+      status.textContent='Notificações bloqueadas. Autorize nas configurações deste site no navegador.';
+    }else if(permission==='unsupported'){
+      var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+      status.textContent=ios
+        ? 'No iPhone: toque em Compartilhar → Adicionar à Tela de Início. Abra o site pelo ícone e tente novamente.'
+        : 'Este navegador não permite solicitar notificações aqui. Use HTTPS e abra a página fora de abas incorporadas.';
+    }
+    if(typeof dialog.showModal==='function')dialog.showModal();
+    else{dialog.setAttribute('open','');dialog.classList.add('noti-dialog-fallback');}
     document.getElementById('noti-dialog-title').focus();
   }
-  function closeDialog() {
-    if (typeof dialog.close === 'function' && dialog.open) dialog.close();
-    else { dialog.removeAttribute('open'); dialog.classList.remove('noti-dialog-fallback'); }
+  function closeDialog(){
+    if(typeof dialog.close==='function'&&dialog.open)dialog.close();
+    else{dialog.removeAttribute('open');dialog.classList.remove('noti-dialog-fallback');}
   }
-  function activateNotifications() {
-    var updated = readPrefsFromForm();
-    if (!updated.topics.length) {
-      status.textContent = 'Escolha ao menos um tipo de novidade.';
+  function activateNotifications(){
+    var updated=readPrefsFromForm();
+    if(!updated.topics.length){
+      status.textContent='Escolha ao menos um tipo de novidade.';
       return;
     }
-    if (!saveJSON(STORAGE_KEY, updated)) return;
-    prefs = updated;
-    currentCards = collectCards(document);
-    saveJSON(SNAP_KEY, currentCards.map(function(c) { return c.id; }));
-    saveJSON(ALERTS_KEY, []);
-    renderAlerts();
-    closeDialog(); // Fecha a central antes de chamar o aviso nativo, ainda no clique do visitante.
-    updateLaunch();
-    var hint = launch.closest('.noti-launch').querySelector('.noti-launch-copy small');
-    if (!window.isSecureContext || !('Notification' in window) || !('serviceWorker' in navigator)) {
-      hint.textContent = 'Preferências salvas. Avisos do navegador indisponíveis aqui.';
-      return;
-    }
-    function finishPermission(permission) {
+    var permission=permissionStatus();
+    if(permission==='default' && 'serviceWorker' in navigator && window.top===window.self){
+      // A solicitação ocorre imediatamente no clique, sem aguardar Promises,
+      // fetch, registro do SW ou outros trabalhos assíncronos.
+      closeDialog();
+      var request;
+      try{
+        request=Notification.requestPermission();
+      }catch(error){
+        if(typeof dialog.showModal==='function'&&!dialog.open)dialog.showModal();
+        status.textContent='O navegador não abriu a autorização. Verifique permissões e abra o site diretamente.';
+      }
+      if(!saveJSON(STORAGE_KEY,updated))return;
+      prefs=updated;
+      saveJSON(SNAP_KEY,currentCards.map(function(c){return c.id;}));
+      saveJSON(ALERTS_KEY,[]);
+      renderAlerts();
       updateLaunch();
-      if (permission === 'granted') {
-        hint.textContent = 'Avisos ativados com o site aberto.';
-        navigator.serviceWorker.register('/acervo-notificacoes-sw.js', {scope:'/'})
-          .catch(function() {hint.textContent='Preferências salvas. Não foi possível preparar os avisos.';});
-      } else if (permission === 'denied') {
-        hint.textContent = 'Permissão bloqueada. Libere nas configurações do navegador.';
-      } else {
-        hint.textContent = 'Preferências salvas. Você pode permitir avisos depois.';
-      }
-    }
-    if (Notification.permission === 'default') {
-      try {
-        var result = Notification.requestPermission();
-        if (result && typeof result.then === 'function') result.then(finishPermission).catch(function() {
-          hint.textContent='Preferências salvas. Não foi possível pedir permissão.';
+      if(request&&typeof request.then==='function'){
+        request.then(function(result){
+          updateLaunch();
+          if(result==='granted'){
+            navigator.serviceWorker.register('/acervo-notificacoes-sw.js',{scope:'/'})
+              .catch(function(){/* A central mantém as atualizações locais. */});
+          }
+        }).catch(function(){
+          updateLaunch();
         });
-        else if (typeof result === 'string') finishPermission(result);
-      } catch (error) {
-        hint.textContent = 'Preferências salvas. Não foi possível pedir permissão.';
       }
-    } else {
-      finishPermission(Notification.permission);
+      return;
     }
+    // Permissão anterior é respeitada: nunca pedimos autorização novamente.
+    if(!saveJSON(STORAGE_KEY,updated))return;
+    prefs=updated;
+    saveJSON(SNAP_KEY,currentCards.map(function(c){return c.id;}));
+    saveJSON(ALERTS_KEY,[]);
+    renderAlerts();
+    updateLaunch();
+    if(permission==='granted'){
+      closeDialog();
+      if('serviceWorker' in navigator)
+        navigator.serviceWorker.register('/acervo-notificacoes-sw.js',{scope:'/'})
+          .catch(function(){/* A central mantém as atualizações locais. */});
+      return;
+    }
+    var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+    status.textContent=permission==='denied'
+      ? 'O navegador já bloqueou os avisos. Altere a permissão nas configurações deste site.'
+      : ios
+        ? 'No iPhone: Compartilhar → Adicionar à Tela de Início. Depois abra o Acervo Lula pelo ícone.'
+        : window.top!==window.self
+          ? 'Abra o site diretamente em outra aba para pedir permissão.'
+          : 'As preferências foram salvas, mas este navegador não permite abrir a autorização aqui.';
   }
   function disablePreferences() {
     prefs = null;

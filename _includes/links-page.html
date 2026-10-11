@@ -3,6 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  (function(){
+    // Respeita links com âncora e o histórico de Voltar; novas visitas abrem no topo.
+    if(window.location.hash)return;
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(nav&&nav.type==='back_forward')return;
+    try{history.scrollRestoration='manual';}catch(e){}
+    function resetInitialScroll(){
+      if(window.location.hash)return;
+      document.documentElement.style.scrollBehavior='auto';
+      window.scrollTo(0,0);
+      document.documentElement.style.removeProperty('scroll-behavior');
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',resetInitialScroll,{once:true});
+    else resetInitialScroll();
+    window.addEventListener('pageshow',function(event){if(!event.persisted)resetInitialScroll();},{once:true});
+  })();
+  </script>
+
   <title>Lula 13: em defesa da democracia | Acervo Lula</title>
   <meta name="description" content="Acervo Lula reúne grupos de ação digital, vídeos, ferramentas e agenda de mobilizações presenciais pelo Brasil em defesa de Lula 13 e da democracia.">
   <meta property="og:title" content="Lula 13: em defesa da democracia | Acervo Lula">
@@ -233,6 +252,31 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .evidence-requirement{display:grid;gap:10px}
 .evidence-requirement p{margin:0;font:500 13px/1.5 Inter,Arial,sans-serif}
 @media(max-width:440px){.top-tools{gap:6px}.top-context{display:none}.noti-top-button{width:40px;height:40px;flex-basis:40px}}
+ 
+/* Leitura mais confortável em Digital e Ferramentas, mantendo compacta a agenda presencial. */
+#digital .links,#ferramentas .links{gap:10px}
+#digital .link,#ferramentas .link{gap:12px;align-items:flex-start;padding:13px 12px;border:1px solid #3b203222;min-height:74px}
+#digital .link-copy,#ferramentas .link-copy{gap:5px}
+#digital .link-meta,#ferramentas .link-meta{font:700 11px/1.35 'IBM Plex Mono',monospace;letter-spacing:0;color:#66515a;overflow-wrap:anywhere}
+#digital .link strong,#ferramentas .link strong{font:750 16px/1.3 'Space Grotesk',sans-serif;letter-spacing:-.015em;overflow-wrap:break-word}
+#digital .link-description,#ferramentas .link-description{font:500 13.5px/1.47 Inter,Arial,sans-serif;color:#493c43}
+#digital .card-icon,#ferramentas .card-icon{flex:0 0 52px;width:52px;height:52px;border-radius:13px}
+#digital .card-icon svg,#ferramentas .card-icon svg{width:33px;height:33px}
+#ferramentas .resource-emoji{display:grid;place-items:center;font-size:29px;line-height:1;background:#fff3f8}
+#ferramentas .pet-resource .link{padding-bottom:43px}
+#ferramentas .pet-creator{font:700 12px/1.4 Inter,Arial,sans-serif;left:78px;color:#88273b}
+#digital .section span,#ferramentas .section span{font-size:11px;line-height:1.2}
+#digital .arrow,#ferramentas .arrow{flex-basis:27px}
+.event-dialog .form-field input,.event-dialog .form-field select,.event-dialog .form-field textarea{font-size:16px}
+@media(min-width:640px){
+  #digital .link strong,#ferramentas .link strong{font-size:15.5px}
+}
+@media(max-width:360px){
+  #digital .link,#ferramentas .link{padding:11px 10px;gap:9px}
+  #digital .card-icon,#ferramentas .card-icon{flex-basis:47px;width:47px;height:47px}
+  #digital .link strong,#ferramentas .link strong{font-size:15px}
+  #digital .link-description,#ferramentas .link-description{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -259,10 +303,10 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <section class="color-section digital-section" id="digital" aria-labelledby="digital-title">
     <h2 class="section" id="digital-title">Digital <span>Nas redes</span></h2>
     <div class="links">
-      <a class="link" href="https://whatsapp.com/channel/0029VbCbRfD7tkj88k3soZ0Y" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Exército do Lula 13 · Janones</strong><span class="link-description">Mais de 2 milhões de usuários em ações coletivas para ampliar a mensagem de Lula, virar votos para o 13, expor as podridões de Flávio Bolsonaro e combater narrativas da extrema-direita neste segundo turno.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://whatsapp.com/channel/0029VaZFDSo8qJ01Vr2NNr1e" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Erika Hilton · pressão pelo fim da 6×1</strong><span class="link-description">Ações coletivas para expor como Flávio e o PL se posicionam e votam sobre a escala 6×1 no Senado, cobrar publicamente e contra-atacar as narrativas da extrema-direita neste segundo turno. Assim, fortalecer ainda mais a mobilização por Lula 13.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://whatsapp.com/channel/0029VaDH1GU7DAWpJTrCXH39" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Canal do Lula</strong><span class="link-description">Canal oficial de WhatsApp, em contato com a coordenação da campanha.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://t.me/viravotocanal" target="_blank" rel="noopener"><span class="card-icon icon-telegram" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 10 18-7-4 18-6-6-4 3 1-6Z"/><path d="m8 12 9-5-6 8"/></svg></span><span class="link-copy"><span class="link-meta">Telegram · canal</span><strong>Vira Voto · Lula 13</strong><span class="link-description">Participe das ações coletivas para conversar sobre propostas e conquistar apoio a Lula.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://whatsapp.com/channel/0029VbCbRfD7tkj88k3soZ0Y" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Exército do Lula 13 · Janones</strong><span class="link-description">Canal de mobilização, conteúdos e ações coletivas nas redes.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://whatsapp.com/channel/0029VaZFDSo8qJ01Vr2NNr1e" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Erika Hilton · pressão pelo fim da 6×1</strong><span class="link-description">Acompanhe ações e mobilizações pelo fim da escala 6×1.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://whatsapp.com/channel/0029VaDH1GU7DAWpJTrCXH39" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.5 7.5c-.8 1.5 0 3.5 1.5 5s3.5 2.3 5 1.5l.5-1.5-2-1-1 1c-1.2-.5-2-1.3-2.5-2.5l1-1-1-2Z"/></svg></span><span class="link-copy"><span class="link-meta">WhatsApp · canal</span><strong>Canal do Lula</strong><span class="link-description">Canal de WhatsApp da campanha de Lula.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://t.me/viravotocanal" target="_blank" rel="noopener"><span class="card-icon icon-telegram" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 10 18-7-4 18-6-6-4 3 1-6Z"/><path d="m8 12 9-5-6 8"/></svg></span><span class="link-copy"><span class="link-meta">Telegram · canal</span><strong>Vira Voto · Lula 13</strong><span class="link-description">Entre nos grupos para conversar e participar das mobilizações.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://youtube.com/live/DtlQigD4UoA" target="_blank" rel="noopener"><span class="card-icon icon-video" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">YouTube · aula gravada</span><strong>Trava Hacker · aula gravada sobre IA para automatizar processos de vira-voto</strong></span><span class="arrow">↗</span></a>
       
       
@@ -274,15 +318,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <section class="color-section resources-section" id="ferramentas" aria-labelledby="ferramentas-title">
     <h2 class="section" id="ferramentas-title">Ferramentas e acervos</h2>
     <div class="links">
-      <a class="link" href="https://dapravirar.vercel.app" target="_blank" rel="noopener"><span class="card-icon icon-map" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Z"/><path d="M9 3v16m6-14v16"/></svg></span><span class="link-copy"><span class="link-meta">Site · mapa</span><strong>Dá pra virar · mapa interativo pró-Lula</strong></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://acervodavitoria.pages.dev/" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Site · acervo de conteúdo</span><strong>Acervo da Vitória</strong><span class="link-description">Materiais de oposição a Flávio Bolsonaro, com foco em sua trajetória política, para consultar e compartilhar.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://fura-bolha.com/" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Site · vídeos e materiais virais</span><strong>Fura Bolha</strong><span class="link-description">Vídeos e materiais virais atualizados em tempo real pra Lula 13.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://drive.google.com/drive/folders/1LbYfXCnnI7-APqRltwTfp7GbAxsdbCnz" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Drive · acervo de conteúdo</span><strong>Drive da Bagaceira · Lula 13</strong><span class="link-description">Conteúdos no estilo “tia do Zap” para compartilhar no WhatsApp, Kwai, Instagram e Facebook e virar voto para o 13. Curadoria: @dinamichi.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://drive.google.com/drive/folders/10W8M-WoU6c-Mv1gZdleaQkvItZtnCe4U" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Google Drive · vídeos curtos</span><strong>Vídeos curtos para virar #13</strong><span class="link-description">Acervo de vídeos curtos para compartilhar nas redes e aplicativos de mensagem.</span></span><span class="arrow">↗</span></a>
-      <div class="pet-resource"><a class="link" href="https://drive.google.com/drive/folders/1w_PO_4PSpB7miXX5iV3Wr8_dd3hfBgdH" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Google Drive · Pets Vira Voto</span><strong>#13 · Pets Vira Voto — cachorros e gatinhos para virar voto</strong><span class="link-description">Engaje com pets e fure a bolha do algoritmo. Vídeos de cachorros e gatos gerados por IA para compartilhar, gerar engajamento e alcançar novas pessoas.</span></span><span class="arrow">↗</span></a><a class="pet-creator" href="https://www.instagram.com/octaviotavars/" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram de Octávio Tavares, criador do conteúdo">Criação por @octaviotavars ↗</a></div>
-      <a class="link" href="https://drive.google.com/drive/u/0/folders/1hoiko3oNzxgtyeY_CBnK3agEcXIb490S" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Google Drive · PDF educativo</span><strong>Como virar votos? · PDF educativo</strong><span class="link-description">Material educativo com orientações para conversar e virar votos.</span></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://www.diretorio13.com" target="_blank" rel="noopener"><span class="card-icon icon-folder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 7V5h6l2 2h10v13H3Z"/><path d="m10 11 5 3-5 3Z"/></svg></span><span class="link-copy"><span class="link-meta">Site · acervo de vídeos</span><strong>Acervo de vídeos do Diretório 13 — materiais do Lula para TikTok, Kwai, WhatsApp e Stories</strong></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://www.ondedapraconversar.com.br/" target="_blank" rel="noopener"><span class="card-icon icon-map" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Z"/><path d="M9 3v16m6-14v16"/></svg></span><span class="link-copy"><span class="link-meta">Site · dados eleitorais</span><strong>Onde Dá Pra Conversar · dados eleitorais</strong><span class="link-description">Consulte e cruze resultados eleitorais, abstenções, votos brancos e nulos para entender o cenário da sua cidade ou região.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://dapravirar.vercel.app" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🗺️</span><span class="link-copy"><span class="link-meta">Site · mapa</span><strong>Dá pra virar · mapa interativo pró-Lula</strong></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://acervodavitoria.pages.dev/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🗂️</span><span class="link-copy"><span class="link-meta">Site · acervo de conteúdo</span><strong>Acervo da Vitória</strong><span class="link-description">Materiais sobre a trajetória política de Flávio Bolsonaro.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://fura-bolha.com/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">⚡</span><span class="link-copy"><span class="link-meta">Site · vídeos e materiais virais</span><strong>Fura Bolha</strong><span class="link-description">Vídeos e materiais virais atualizados para compartilhar.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://drive.google.com/drive/folders/1LbYfXCnnI7-APqRltwTfp7GbAxsdbCnz" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📱</span><span class="link-copy"><span class="link-meta">Drive · acervo de conteúdo</span><strong>Drive da Bagaceira · Lula 13</strong><span class="link-description">Memes e conteúdos para WhatsApp, Kwai e Instagram. Curadoria: @dinamichi.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://drive.google.com/drive/folders/10W8M-WoU6c-Mv1gZdleaQkvItZtnCe4U" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🎬</span><span class="link-copy"><span class="link-meta">Google Drive · vídeos curtos</span><strong>Vídeos curtos para virar #13</strong><span class="link-description">Vídeos curtos prontos para compartilhar nas redes.</span></span><span class="arrow">↗</span></a>
+      <div class="pet-resource"><a class="link" href="https://drive.google.com/drive/folders/1w_PO_4PSpB7miXX5iV3Wr8_dd3hfBgdH" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🐾</span><span class="link-copy"><span class="link-meta">Google Drive · Pets Vira Voto</span><strong>#13 · Pets Vira Voto — cachorros e gatinhos para virar voto</strong><span class="link-description">Vídeos de cachorros e gatos criados com IA para compartilhar.</span></span><span class="arrow">↗</span></a><a class="pet-creator" href="https://www.instagram.com/octaviotavars/" target="_blank" rel="noopener noreferrer" aria-label="Ver Instagram de Octávio Tavares, criador do conteúdo">Criação por @octaviotavars ↗</a></div>
+      <a class="link" href="https://drive.google.com/drive/u/0/folders/1hoiko3oNzxgtyeY_CBnK3agEcXIb490S" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📄</span><span class="link-copy"><span class="link-meta">Google Drive · PDF educativo</span><strong>Como virar votos? · PDF educativo</strong><span class="link-description">Guia educativo com orientações para conversar sobre propostas.</span></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://www.diretorio13.com" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🎞️</span><span class="link-copy"><span class="link-meta">Site · acervo de vídeos</span><strong>Acervo de vídeos do Diretório 13 — materiais do Lula para TikTok, Kwai, WhatsApp e Stories</strong></span><span class="arrow">↗</span></a>
+      <a class="link" href="https://www.ondedapraconversar.com.br/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📊</span><span class="link-copy"><span class="link-meta">Site · dados eleitorais</span><strong>Onde Dá Pra Conversar · dados eleitorais</strong><span class="link-description">Consulte dados eleitorais, abstenções e resultados por cidade ou região.</span></span><span class="arrow">↗</span></a>
     </div>
     </section>
     <section class="color-section presencial-section" id="presencial" aria-labelledby="presencial-title">
@@ -848,7 +892,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             <div class="form-field"><label for="event-city">Cidade</label><input id="event-city" name="cidade" autocomplete="address-level2" required></div>
             <div class="form-field"><label for="event-state">Estado</label><select id="event-state" name="estado" autocomplete="address-level1" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
             <div class="form-field"><label for="event-date">Data</label><select id="event-date" name="data" required><option value="">Selecione o dia</option><option value="2026-10-10">10 de outubro</option><option value="2026-10-11">11 de outubro</option><option value="2026-10-12">12 de outubro</option><option value="2026-10-13">13 de outubro</option><option value="2026-10-14">14 de outubro</option><option value="2026-10-15">15 de outubro</option><option value="2026-10-16">16 de outubro</option><option value="2026-10-17">17 de outubro</option><option value="2026-10-18">18 de outubro</option><option value="2026-10-19">19 de outubro</option><option value="2026-10-20">20 de outubro</option><option value="2026-10-21">21 de outubro</option><option value="2026-10-22">22 de outubro</option><option value="2026-10-23">23 de outubro</option><option value="2026-10-24">24 de outubro</option><option value="2026-10-25">25 de outubro · eleição</option></select><p class="form-help">Mobilizações de 10 a 25 de outubro de 2026.</p></div>
-            <div class="form-field"><label for="event-time">Horário</label><input id="event-time" name="horario" type="time" required></div>
+            <div class="form-field"><label for="event-time">Horário</label><input id="event-time" name="horario" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="done" required pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="Ex.: 14:30" maxlength="5" aria-describedby="event-time-hint"><p class="form-help" id="event-time-hint">Digite a hora e os minutos. Ex.: 9:30 ou 14:30.</p></div>
             <div class="step-actions"><span></span><button class="step-next" type="button" data-next="2">Continuar</button></div>
           </section>
           <section class="form-step" data-step="2" hidden>
@@ -859,12 +903,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           <section class="form-step" data-step="3" hidden>
             <div class="step-heading">
               <span class="step-kicker">🔗 Última etapa · obrigatória</span>
-              <h3>Link oficial da mobilização</h3>
-              <p>Precisamos de uma publicação que divulgue este ato.</p>
+              <h3>Link de divulgação do ato</h3>
+              <p>Envie uma publicação que mostre a convocação deste evento.</p>
             </div>
             <div class="validation-note evidence-requirement" role="note">
-              <p>📣 <strong>Envie um link:</strong> post ou card oficial no Instagram, página da organização ou notícia da imprensa.</p>
-              <p>🛡️ <strong>Segurança:</strong> a fonte permite conferir a origem e a divulgação do ato antes de publicá-lo, ajudando na rastreabilidade.</p>
+              <p>🔗 <strong>O que enviar?</strong> Post do Instagram, card ou cartaz divulgado online, página da mobilização ou notícia de imprensa.</p>
+              <p>🛡️ <strong>Por quê?</strong> Para verificar a veracidade do ato, identificar a origem da convocação e evitar eventos falsos ou armadilhas. Isso ajuda a proteger quem pretende participar.</p>
             </div>
             <div class="form-field full" id="link-evidence">
               <label for="event-link">Link da divulgação <span>(obrigatório)</span></label>
@@ -1113,7 +1157,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         addDateOption('Todos','');
         for(var day=10;day<=25;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
         var active=dateOptions.querySelector('[aria-pressed="true"]');
-        if(active)active.scrollIntoView({block:'nearest',inline:'nearest'});
+        if(active){
+          // Centraliza somente a faixa horizontal de datas — não rola a página inteira.
+          var rowRect=dateOptions.getBoundingClientRect();
+          var itemRect=active.getBoundingClientRect();
+          dateOptions.scrollLeft+=itemRect.left-rowRect.left-(dateOptions.clientWidth-active.clientWidth)/2;
+        }
       }
       function availableCities(state){
         var counts={};
@@ -1249,7 +1298,18 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         var focusable=active.querySelector('input:not([hidden]),textarea,select,button');
         if(focusable)focusable.focus();
       }
+      var timeField=document.getElementById('event-time');
+      function normalizeEventTime(){
+        var raw=timeField.value.trim().toLowerCase().replace(/\s/g,'').replace(/[h.]/g,':');
+        if(/^\d{3,4}$/.test(raw))raw=raw.slice(0,-2)+':'+raw.slice(-2);
+        var parts=raw.match(/^(\d{1,2}):(\d{2})$/);
+        if(parts&&Number(parts[1])<24&&Number(parts[2])<60)
+          timeField.value=parts[1].padStart(2,'0')+':'+parts[2];
+      }
+      timeField.addEventListener('blur',normalizeEventTime);
+      timeField.addEventListener('change',normalizeEventTime);
       function validateStep(stepNumber){
+        if(stepNumber===1)normalizeEventTime();
         var step=eventForm.querySelector('[data-step="'+stepNumber+'"]');
         var invalid=Array.from(step.querySelectorAll('input,select,textarea')).find(function(field){return !field.checkValidity();});
         if(invalid){invalid.reportValidity();return false;}
@@ -1295,6 +1355,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       eventForm.addEventListener('submit',async function(event){
         event.preventDefault();
         normalizeEventLink();
+        normalizeEventTime();
         if(!eventForm.reportValidity())return;
         if(formEndpoint.indexOf('__')===0){
           formError.textContent='O formulário ainda está sendo conectado. Tente novamente em instantes.';

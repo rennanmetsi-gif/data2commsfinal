@@ -1,0 +1,11 @@
+{
+  "name": "Acervo Lula",
+  "short_name": "Acervo Lula",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#bd1736",
+  "description": "Mobilizações, grupos e materiais do Acervo Lula."
+}

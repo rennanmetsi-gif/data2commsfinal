@@ -208,6 +208,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .share-cta.share-dock-enabled .share-more summary::-webkit-details-marker{display:none}
 .share-cta.share-dock-enabled .share-more-menu{position:absolute;right:0;bottom:calc(100% + 14px);display:flex;flex-direction:column;gap:8px;min-width:168px;padding:9px;border:1px solid #dec3ca;border-radius:12px;background:#fffefa;box-shadow:0 8px 25px #3f1b2a33}
 .share-cta.share-dock-enabled .share-more-menu .share-whatsapp,.share-cta.share-dock-enabled .share-more-menu .share-copy{flex:auto;width:100%;font:700 12px Inter,Arial,sans-serif;white-space:nowrap}
+.share-cta.share-dock-enabled .share-more:not([open]) .share-more-menu{display:none}
 .share-cta.share-dock-enabled .share-status:not(:empty){padding:6px 10px;margin:5px 0 0;border-radius:8px;background:#fffefa;text-align:center}
 .submit-event-cta > .event-cta-line-one,.submit-event-cta > .event-cta-line-two{display:inline}
 @media(max-width:600px){
@@ -820,7 +821,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         </div>
         <div class="noti-actions">
           <button id="noti-activate" class="noti-activate" type="button">🔔 Ativar notificações</button>
-          <button id="noti-disable" class="noti-disable" type="button">Desativar avisos</button>
+          <button id="noti-disable" class="noti-disable" type="button" hidden>Desativar avisos</button>
         </div>
         <p class="noti-status" id="noti-status" role="status" aria-live="polite"></p>
       </div>

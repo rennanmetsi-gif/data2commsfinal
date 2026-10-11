@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="/assets/css/acervo-notificacoes.css" rel="stylesheet">
   <style>
 :root{--ink:#23191b;--paper:#f7f3ec;--pink:#bd1736;--red:#bd1736}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}
@@ -210,6 +211,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         <button class="share-copy" id="share-copy-link" type="button">Copiar link</button>
       </div>
       <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="noti-launch" aria-label="Central de notificações do Acervo Lula">
+      <div class="noti-launch-copy">
+        <strong>🔔 Quer saber quando chegar conteúdo novo?</strong>
+        <small>Escolha vídeos, grupos, ferramentas e atos na sua região.</small>
+      </div>
+      <button id="noti-open" class="noti-open" type="button">🔔 <span class="noti-launch-state">Escolher novidades</span> <span id="noti-count" class="noti-count" hidden></span></button>
     </div>
 
     <p class="jump-label">Escolha uma frente</p><nav class="jump-links" aria-label="Navegação"><a href="#digital">Digital</a><a href="#ferramentas">Ferramentas e acervos</a><a href="#presencial">Presencial</a></nav>
@@ -760,6 +769,56 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </div>
     </section>
 
+
+    <dialog class="noti-dialog" id="noti-dialog" aria-labelledby="noti-dialog-title">
+      <div class="noti-dialog-head">
+        <div>
+          <h2 id="noti-dialog-title" tabindex="-1">Central de notificações</h2>
+          <p>Escolha as novidades que você quer acompanhar.</p>
+        </div>
+        <button type="button" class="noti-dialog-close" id="noti-close" aria-label="Fechar central de notificações">×</button>
+      </div>
+      <div class="noti-body">
+        <div class="noti-news" id="noti-news" hidden>
+          <h3>Novidades desde sua última visita</h3>
+          <ul id="noti-news-list"></ul>
+          <button class="noti-secondary" type="button" id="noti-clear-news">Marcar como lidas</button>
+        </div>
+        <p class="noti-kicker">Quero receber avisos sobre</p>
+        <div class="noti-option-grid">
+          <label class="noti-option"><input type="checkbox" name="noti-topic" value="videos"> 🎬 Novos vídeos</label>
+          <label class="noti-option"><input type="checkbox" name="noti-topic" value="grupos"> 💬 Novos grupos</label>
+          <label class="noti-option"><input type="checkbox" name="noti-topic" value="ferramentas"> 🧰 Novas ferramentas e acervos</label>
+          <label class="noti-option"><input type="checkbox" name="noti-topic" value="mobilizacoes"> 📍 Novos atos presenciais</label>
+        </div>
+        <div id="noti-locations" class="noti-section" hidden>
+          <h3>Em quais lugares?</h3>
+          <p class="noti-small">Escolha estados e, se quiser, cidades. Sem selecionar nenhum, você acompanha mobilizações em todo o Brasil.</p>
+          <details class="noti-details">
+            <summary>Selecionar estados</summary>
+            <div id="noti-states" class="noti-location-grid"></div>
+          </details>
+          <details class="noti-details">
+            <summary>Selecionar cidades</summary>
+            <input id="noti-city-search" class="noti-city-search" type="search" placeholder="Buscar cidade" aria-label="Buscar cidades para notificações">
+            <div id="noti-cities" class="noti-location-grid"></div>
+          </details>
+          <p class="noti-small">Se nenhuma cidade for marcada, os avisos abrangem todas as cidades dos estados selecionados. A lista de cidades cresce com as novas mobilizações.</p>
+        </div>
+        <div class="noti-section">
+          <h3>Avisos no navegador</h3>
+          <p class="noti-small">Suas escolhas ficam salvas neste dispositivo. A central identifica novas publicações quando você visita o site e verifica atualizações enquanto ele está aberto.</p>
+          <div class="noti-browser"><button class="noti-secondary" id="noti-enable-browser" type="button">Permitir avisos do navegador</button></div>
+          <p class="noti-small" id="noti-permission-note"></p>
+          <p class="noti-small"><strong>Importante:</strong> avisos com o navegador fechado só estarão disponíveis depois que conectarmos um serviço de envio de notificações push.</p>
+        </div>
+        <div class="noti-actions">
+          <button id="noti-disable" class="noti-disable" type="button">Desativar avisos</button>
+          <button id="noti-save" class="noti-save" type="button">Salvar preferências</button>
+        </div>
+        <p class="noti-status" id="noti-status" role="status" aria-live="polite"></p>
+      </div>
+    </dialog>
     <dialog class="event-dialog" id="event-dialog" aria-labelledby="event-dialog-title">
       <div class="event-dialog-head">
         <div><h2 id="event-dialog-title">Submeta seu ato</h2><p>Compartilhe os dados da mobilização. Antes de publicar, nossa equipe verifica as informações com fontes e lideranças locais.</p></div>
@@ -1311,5 +1370,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </script>
     <footer><span>Acervo Lula</span><span>Curadoria · <a href="/home-antiga/">Agência Data2Comms</a></span></footer>
   </main>
+  <script src="/assets/js/acervo-notificacoes.js" defer></script>
 </body>
 </html>

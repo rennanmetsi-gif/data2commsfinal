@@ -195,6 +195,27 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .card-icon.event-date-badge{flex-basis:48px;width:48px}
  .presencial-section .event-card .event-state{padding:5px 7px}
 }
+
+/* Compartilhar fica flutuante sem encobrir a chamada para cadastrar um ato. */
+.share-cta.share-dock-enabled{position:fixed;z-index:19;left:50%;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 32px));margin:0;padding:0;border:0;border-radius:999px;background:transparent;box-shadow:none;transform:translate(-50%,12px);opacity:0;visibility:hidden;pointer-events:none;transition:bottom .15s ease,transform .2s ease,opacity .2s ease,visibility .2s ease}
+.share-cta.share-dock-enabled.is-visible{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto}
+.share-cta.share-dock-enabled .share-actions{display:flex;align-items:stretch;gap:5px;padding:5px;border:2px solid #e4b6c1;border-radius:17px;background:#fffefa;box-shadow:0 5px 0 #91283e39,0 12px 26px #5c1a2c39}
+.share-cta.share-dock-enabled .share-primary{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:58px;padding:8px 10px;border:0;border-radius:11px;background:linear-gradient(115deg,#ce2143,#a20f2d);color:#fff;cursor:pointer;text-align:center}
+.share-cta.share-dock-enabled .share-title{font:800 clamp(13px,3.6vw,15px)/1.15 'Space Grotesk',sans-serif}
+.share-cta.share-dock-enabled .share-subtitle{font:600 clamp(11px,3.1vw,13px)/1.22 Inter,Arial,sans-serif}
+.share-cta.share-dock-enabled .share-more{position:relative;flex:0 0 auto;align-self:center}
+.share-cta.share-dock-enabled .share-more summary{display:grid;place-items:center;min-width:42px;min-height:48px;padding:0 8px;border:1px solid #e4d4d8;border-radius:10px;background:#f9eaed;color:#802039;font:800 24px/1 'Space Grotesk',sans-serif;cursor:pointer;list-style:none}
+.share-cta.share-dock-enabled .share-more summary::-webkit-details-marker{display:none}
+.share-cta.share-dock-enabled .share-more-menu{position:absolute;right:0;bottom:calc(100% + 14px);display:flex;flex-direction:column;gap:8px;min-width:168px;padding:9px;border:1px solid #dec3ca;border-radius:12px;background:#fffefa;box-shadow:0 8px 25px #3f1b2a33}
+.share-cta.share-dock-enabled .share-more-menu .share-whatsapp,.share-cta.share-dock-enabled .share-more-menu .share-copy{flex:auto;width:100%;font:700 12px Inter,Arial,sans-serif;white-space:nowrap}
+.share-cta.share-dock-enabled .share-status:not(:empty){padding:6px 10px;margin:5px 0 0;border-radius:8px;background:#fffefa;text-align:center}
+.submit-event-cta > .event-cta-line-one,.submit-event-cta > .event-cta-line-two{display:inline}
+@media(max-width:600px){
+ .presencial-section.is-enhanced .submit-event-cta > .event-cta-line-one,.presencial-section.is-enhanced .submit-event-cta > .event-cta-line-two{display:block}
+ .presencial-section.is-enhanced .submit-event-cta{padding:12px 14px;border-radius:20px}
+ .presencial-section.is-enhanced .submit-event-cta > span{font-size:clamp(16px,4.8vw,19px);line-height:1.12}
+ .share-cta.share-dock-enabled{width:calc(100% - 36px)}
+}
 </style>
 </head>
 <body>
@@ -203,12 +224,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <h1>Lula 13: <em>em defesa da democracia.</em></h1>
     <p class="intro">Curadoria de mobilizações por <a href="https://www.instagram.com/historialgbtqia_/" target="_blank" rel="noopener noreferrer">@historialgbtqia_</a> e <a href="/home-antiga/">Agência Data2Comms</a>.</p>
 
-    <div class="share-cta" aria-label="Compartilhe o Acervo Lula">
-      <p class="share-prompt">Tudo em um só lugar. Compartilhe o Acervo Lula!</p>
+    <div class="share-cta" id="share-dock" aria-label="Compartilhe o Acervo Lula">
       <div class="share-actions">
-        <button class="share-primary" id="share-acervo" type="button">↗ Compartilhar</button>
-        <a class="share-whatsapp" id="share-whatsapp" href="https://wa.me/?text=Aqui%20voc%C3%AA%20encontra%20tudo%20para%20virar%20voto%20para%20Lula%2013!%20O%20Acervo%20Lula%20re%C3%BAne%20mobiliza%C3%A7%C3%A3o%20digital%20e%20presencial%2C%20grupos%20de%20a%C3%A7%C3%A3o%2C%20ferramentas%2C%20v%C3%ADdeos%20e%20bancos%20de%20v%C3%ADdeos%20%E2%80%94%20tudo%20em%20um%20s%C3%B3%20lugar.%0A%0Ahttps%3A%2F%2Fdata2comms.com.br%2F" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-        <button class="share-copy" id="share-copy-link" type="button">Copiar link</button>
+        <button class="share-primary" id="share-acervo" type="button"><span class="share-title">Gostou do Acervo Lula?</span><span class="share-subtitle">Compartilhe e ajude a mobilização ↗</span></button>
+        <details class="share-more"><summary aria-label="Outras opções de compartilhamento" title="Outras opções de compartilhamento">⋯</summary>
+          <div class="share-more-menu">
+            <a class="share-whatsapp" id="share-whatsapp" href="https://wa.me/?text=Acervo%20Lula" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+            <button class="share-copy" id="share-copy-link" type="button">Copiar link</button>
+          </div>
+        </details>
       </div>
       <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
     </div>
@@ -255,7 +279,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <section class="color-section presencial-section" id="presencial" aria-labelledby="presencial-title">
     <h2 class="section" id="presencial-title">Presencial <span>Nas ruas</span></h2>
     <button class="submit-event-cta" id="open-event-form" type="button">
-      <span>Não encontrou seu ato? Envie aqui</span>
+      <span class="event-cta-line-one">Não encontrou seu ato?</span> <span class="event-cta-line-two">Envie aqui</span>
       <small>Clique e envie as informações do ato na sua região. Vamos validar antes de publicar.</small>
     </button>
     <div class="filter-row">
@@ -792,29 +816,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           <label class="noti-option"><input type="checkbox" name="noti-topic" value="mobilizacoes"> 📍 Novos atos presenciais</label>
         </div>
         <div id="noti-locations" class="noti-section" hidden>
-          <h3>Em quais lugares?</h3>
-          <p class="noti-small">Escolha estados e, se quiser, cidades. Sem selecionar nenhum, você acompanha mobilizações em todo o Brasil.</p>
-          <details class="noti-details">
-            <summary>Selecionar estados</summary>
-            <div id="noti-states" class="noti-location-grid"></div>
-          </details>
-          <details class="noti-details">
-            <summary>Selecionar cidades</summary>
-            <input id="noti-city-search" class="noti-city-search" type="search" placeholder="Buscar cidade" aria-label="Buscar cidades para notificações">
-            <div id="noti-cities" class="noti-location-grid"></div>
-          </details>
-          <p class="noti-small">Se nenhuma cidade for marcada, os avisos abrangem todas as cidades dos estados selecionados. A lista de cidades cresce com as novas mobilizações.</p>
-        </div>
-        <div class="noti-section">
-          <h3>Avisos no navegador</h3>
-          <p class="noti-small">Suas escolhas ficam salvas neste dispositivo. A central identifica novas publicações quando você visita o site e verifica atualizações enquanto ele está aberto.</p>
-          <div class="noti-browser"><button class="noti-secondary" id="noti-enable-browser" type="button">Permitir avisos do navegador</button></div>
-          <p class="noti-small" id="noti-permission-note"></p>
-          <p class="noti-small"><strong>Importante:</strong> avisos com o navegador fechado só estarão disponíveis depois que conectarmos um serviço de envio de notificações push.</p>
+          <details class="noti-details"><summary>Estados (opcional)</summary><div id="noti-states" class="noti-location-grid"></div></details>
         </div>
         <div class="noti-actions">
+          <button id="noti-activate" class="noti-activate" type="button">🔔 Ativar notificações</button>
           <button id="noti-disable" class="noti-disable" type="button">Desativar avisos</button>
-          <button id="noti-save" class="noti-save" type="button">Salvar preferências</button>
         </div>
         <p class="noti-status" id="noti-status" role="status" aria-live="polite"></p>
       </div>
@@ -891,13 +897,24 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       updateNavigation();
       var presencialSection=document.getElementById('presencial');
       var floatingCta=document.getElementById('open-event-form');
+      var shareDock=document.getElementById('share-dock');
       presencialSection.classList.add('is-enhanced');
+      if(shareDock)shareDock.classList.add('share-dock-enabled');
       function updateFloatingCta(){
         var rect=presencialSection.getBoundingClientRect();
         var show=rect.top<=Math.min(160,window.innerHeight*.3)&&rect.bottom>window.innerHeight-10;
         floatingCta.classList.toggle('is-floating',show);
         floatingCta.tabIndex=show?0:-1;
         floatingCta.setAttribute('aria-hidden',show?'false':'true');
+        if(shareDock){
+          shareDock.classList.toggle('is-visible',window.scrollY>150);
+          if(show){
+            // Distância de 16px acima do CTA de mobilizações, adaptável à altura em cada tela.
+            shareDock.style.bottom=Math.ceil(window.innerHeight-floatingCta.getBoundingClientRect().top+16)+'px';
+          }else{
+            shareDock.style.bottom='';
+          }
+        }
       }
       window.addEventListener('scroll',updateFloatingCta,{passive:true});
       window.addEventListener('resize',updateFloatingCta);

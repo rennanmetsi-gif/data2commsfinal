@@ -20,18 +20,12 @@
   var checkboxes = Array.prototype.slice.call(dialog.querySelectorAll('[name="noti-topic"]'));
   var locationPanel = document.getElementById('noti-locations');
   var statePanel = document.getElementById('noti-states');
-  var cityPanel = document.getElementById('noti-cities');
-  var citySearch = document.getElementById('noti-city-search');
   var status = document.getElementById('noti-status');
-  var permissionInfo = document.getElementById('noti-permission-note');
-  var enableBrowser = document.getElementById('noti-enable-browser');
   var badge = document.getElementById('noti-count');
   var newsPanel = document.getElementById('noti-news');
   var newsList = document.getElementById('noti-news-list');
   var prefs = readJSON(STORAGE_KEY, null);
-  var selectedCities = [];
   var currentCards = collectCards(document);
-  var availableCities = availableCityOptions(currentCards);
   var checkBusy = false;
 
   function readJSON(key, fallback) {
@@ -83,15 +77,6 @@
         };
       }).filter(Boolean);
   }
-  function availableCityOptions(cards) {
-    var unique = {};
-    cards.forEach(function (card) {
-      if (card.uf && card.city) unique[card.uf + '|' + normalize(card.city)] = {uf:card.uf,city:card.city};
-    });
-    return Object.keys(unique).map(function (k) { return unique[k]; }).sort(function (a,b) {
-      return a.city.localeCompare(b.city,'pt-BR') || a.uf.localeCompare(b.uf);
-    });
-  }
   function prefTopics() {
     return checkboxes.filter(function (c) { return c.checked; }).map(function (c) { return c.value; });
   }
@@ -99,13 +84,12 @@
     return Array.prototype.slice.call(statePanel.querySelectorAll('input:checked')).map(function (c) { return c.value; });
   }
   function readPrefsFromForm() {
-    return {enabled:true,topics:prefTopics(),states:stateChoices(),cities:selectedCities.slice(),savedAt:Date.now()};
+    return {enabled:true,topics:prefTopics(),states:stateChoices(),cities:[],savedAt:Date.now()};
   }
   function matches(card, userPrefs) {
     if (!userPrefs || !userPrefs.enabled || userPrefs.topics.indexOf(card.topic) < 0) return false;
     if (card.topic !== 'mobilizacoes') return true;
     if (userPrefs.states.length && userPrefs.states.indexOf(card.uf) < 0) return false;
-    if (userPrefs.cities.length && userPrefs.cities.indexOf(card.uf + '|' + normalize(card.city)) < 0) return false;
     return true;
   }
   function renderStates() {
@@ -121,44 +105,6 @@
       label.appendChild(document.createTextNode(' ' + uf + ' · ' + stateNames[uf]));
       statePanel.appendChild(label);
     });
-    statePanel.addEventListener('change', function () {
-      var states = stateChoices();
-      selectedCities = selectedCities.filter(function (code) { return !states.length || states.indexOf(code.split('|')[0]) >= 0; });
-      renderCities();
-    });
-  }
-  function renderCities() {
-    var states = stateChoices();
-    var q = normalize(citySearch.value);
-    cityPanel.textContent = '';
-    var count = 0;
-    var frag = document.createDocumentFragment();
-    availableCities.forEach(function (entry) {
-      if (states.length && states.indexOf(entry.uf) < 0) return;
-      var code = entry.uf + '|' + normalize(entry.city);
-      if (q && normalize(entry.city + ' ' + entry.uf).indexOf(q) < 0) return;
-      count++;
-      var label = document.createElement('label');
-      label.className = 'noti-location-choice';
-      var input = document.createElement('input');
-      input.type = 'checkbox';
-      input.value = code;
-      input.checked = selectedCities.indexOf(code) >= 0;
-      input.addEventListener('change', function () {
-        if (input.checked && selectedCities.indexOf(code) < 0) selectedCities.push(code);
-        if (!input.checked) selectedCities = selectedCities.filter(function (item) { return item !== code; });
-      });
-      label.appendChild(input);
-      label.appendChild(document.createTextNode(' ' + entry.city + ' · ' + entry.uf));
-      frag.appendChild(label);
-    });
-    cityPanel.appendChild(frag);
-    if (!count) {
-      var empty = document.createElement('p');
-      empty.className = 'noti-small';
-      empty.textContent = 'Nenhuma cidade encontrada nesta lista. Selecione o estado para receber os novos atos da região.';
-      cityPanel.appendChild(empty);
-    }
   }
   function renderAlerts() {
     var alerts = readJSON(ALERTS_KEY, []);
@@ -179,29 +125,16 @@
   function toggleLocation() {
     locationPanel.hidden = !checkboxes.some(function (c) { return c.value === 'mobilizacoes' && c.checked; });
   }
-  function updatePermission() {
-    var supported = !!(window.isSecureContext && 'Notification' in window && 'serviceWorker' in navigator);
-    var state = supported ? Notification.permission : 'unsupported';
-    enableBrowser.disabled = !supported || state === 'denied' || state === 'granted';
-    enableBrowser.textContent = state === 'granted' ? 'Avisos do navegador ativados ✓'
-      : state === 'denied' ? 'Avisos bloqueados pelo navegador'
-      : state === 'unsupported' ? 'Navegador não compatível' : 'Permitir avisos do navegador';
-    permissionInfo.textContent = state === 'denied' ? 'O navegador bloqueou avisos. Para permitir novamente, altere as permissões nas configurações do site.'
-      : state === 'granted' ? 'Permissão concedida. Os avisos automáticos funcionam enquanto este site está aberto.'
-      : 'Você também pode ativar avisos do navegador. Por enquanto eles funcionam com a página aberta.';
-  }
   function updateLaunch() {
     var enabled = prefs && prefs.enabled;
-    launch.querySelector('.noti-launch-state').textContent = enabled ? 'Preferências salvas' : 'Escolher novidades';
+    launch.querySelector('.noti-launch-state').textContent = enabled && 'Notification' in window && Notification.permission === 'granted' ? 'Avisos ativados' : enabled ? 'Preferências salvas' : 'Escolher novidades';
   }
   function openDialog() {
     checkboxes.forEach(function (c) { c.checked = !!(prefs && prefs.topics && prefs.topics.indexOf(c.value) >= 0); });
     statePanel.querySelectorAll('input').forEach(function (input) {
       input.checked = !!(prefs && prefs.states && prefs.states.indexOf(input.value) >= 0);
     });
-    selectedCities = (prefs && prefs.cities ? prefs.cities : []).slice();
-    citySearch.value = '';
-    toggleLocation(); renderCities(); updatePermission(); renderAlerts();
+    toggleLocation(); renderAlerts();
     status.textContent = '';
     if (typeof dialog.showModal === 'function') dialog.showModal();
     else { dialog.setAttribute('open',''); dialog.classList.add('noti-dialog-fallback'); }
@@ -211,10 +144,10 @@
     if (typeof dialog.close === 'function' && dialog.open) dialog.close();
     else { dialog.removeAttribute('open'); dialog.classList.remove('noti-dialog-fallback'); }
   }
-  function savePreferences() {
+  function activateNotifications() {
     var updated = readPrefsFromForm();
     if (!updated.topics.length) {
-      status.textContent = 'Selecione ao menos um tipo de novidade.';
+      status.textContent = 'Escolha ao menos um tipo de novidade.';
       return;
     }
     if (!saveJSON(STORAGE_KEY, updated)) return;
@@ -222,15 +155,46 @@
     currentCards = collectCards(document);
     saveJSON(SNAP_KEY, currentCards.map(function(c) { return c.id; }));
     saveJSON(ALERTS_KEY, []);
-    updateLaunch(); renderAlerts();
-    status.textContent = 'Preferências salvas neste dispositivo. Confira a central quando voltar ao site.';
+    renderAlerts();
+    closeDialog(); // Fecha a central antes de chamar o aviso nativo, ainda no clique do visitante.
+    updateLaunch();
+    var hint = launch.closest('.noti-launch').querySelector('.noti-launch-copy small');
+    if (!window.isSecureContext || !('Notification' in window) || !('serviceWorker' in navigator)) {
+      hint.textContent = 'Preferências salvas. Avisos do navegador indisponíveis aqui.';
+      return;
+    }
+    function finishPermission(permission) {
+      updateLaunch();
+      if (permission === 'granted') {
+        hint.textContent = 'Avisos ativados com o site aberto.';
+        navigator.serviceWorker.register('/acervo-notificacoes-sw.js', {scope:'/'})
+          .catch(function() {hint.textContent='Preferências salvas. Não foi possível preparar os avisos.';});
+      } else if (permission === 'denied') {
+        hint.textContent = 'Permissão bloqueada. Libere nas configurações do navegador.';
+      } else {
+        hint.textContent = 'Preferências salvas. Você pode permitir avisos depois.';
+      }
+    }
+    if (Notification.permission === 'default') {
+      try {
+        var result = Notification.requestPermission();
+        if (result && typeof result.then === 'function') result.then(finishPermission).catch(function() {
+          hint.textContent='Preferências salvas. Não foi possível pedir permissão.';
+        });
+        else if (typeof result === 'string') finishPermission(result);
+      } catch (error) {
+        hint.textContent = 'Preferências salvas. Não foi possível pedir permissão.';
+      }
+    } else {
+      finishPermission(Notification.permission);
+    }
   }
   function disablePreferences() {
     prefs = null;
     removeJSON(STORAGE_KEY); removeJSON(SNAP_KEY); removeJSON(ALERTS_KEY);
-    selectedCities = []; checkboxes.forEach(function(c) { c.checked = false; });
+    checkboxes.forEach(function(c) { c.checked = false; });
     statePanel.querySelectorAll('input').forEach(function(c) { c.checked = false; });
-    toggleLocation(); renderCities(); renderAlerts(); updateLaunch();
+    toggleLocation(); renderAlerts(); updateLaunch();
     status.textContent = 'Avisos desta página desativados. A permissão geral do navegador pode ser revogada nas configurações do site.';
   }
   function sendBrowserAlert(newOnes) {
@@ -271,14 +235,12 @@
         var parsed = new DOMParser().parseFromString(html,'text/html');
         var cards = collectCards(parsed);
         if (cards.length < 10) return;
-        availableCities = availableCityOptions(cards);
         handleNewCards(cards);
       }).catch(function() { /* Falha de rede não desativa preferências. */ })
       .finally(function() { checkBusy = false; });
   }
 
   renderStates();
-  renderCities();
   updateLaunch();
   renderAlerts();
   if (prefs && prefs.enabled) handleNewCards(currentCards);
@@ -287,21 +249,10 @@
   document.getElementById('noti-close').addEventListener('click', closeDialog);
   dialog.addEventListener('click', function(event) { if (event.target === dialog) closeDialog(); });
   checkboxes.forEach(function(c) { c.addEventListener('change', toggleLocation); });
-  citySearch.addEventListener('input', renderCities);
-  document.getElementById('noti-save').addEventListener('click', savePreferences);
+  document.getElementById('noti-activate').addEventListener('click', activateNotifications);
   document.getElementById('noti-disable').addEventListener('click', disablePreferences);
   document.getElementById('noti-clear-news').addEventListener('click', function() {
     saveJSON(ALERTS_KEY, []); renderAlerts(); launch.classList.remove('noti-has-news');
-  });
-  enableBrowser.addEventListener('click', function () {
-    if (!window.isSecureContext || !('Notification' in window)) { updatePermission(); return; }
-    Notification.requestPermission().then(function() {
-      updatePermission();
-      if (Notification.permission === 'granted' && 'serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/acervo-notificacoes-sw.js',{scope:'/'})
-          .catch(function() { permissionInfo.textContent = 'Permissão concedida, mas o serviço de avisos não pôde ser preparado.'; });
-      }
-    }).catch(updatePermission);
   });
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'visible') pollUpdates();

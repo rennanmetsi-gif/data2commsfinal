@@ -1354,6 +1354,164 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </script>
     <footer><span>Acervo Lula</span><span>Curadoria · <a href="/home-antiga/">Agência Data2Comms</a></span></footer>
   </main>
+  <script id="acervo-analytics-events-v1">
+  (function(){
+    'use strict';
+    var sent={},form={open:false,success:false,lastStep:0,startedAt:0,submitAttempted:false};
+    function track(name,params){
+      if(typeof window.gtag!=='function')return;
+      window.gtag('event',name,Object.assign({site_area:'acervo_lula'},params||{}));
+    }
+    function text(el,selector){var node=el&&el.querySelector(selector);return node?node.textContent.trim().replace(/\s+/g,' '):'';}
+    function host(href){try{return new URL(href,location.href).hostname;}catch(e){return '';}}
+    function visibleCards(){return document.querySelectorAll('#presencial-events .link:not([hidden]),#student-agenda .link:not([hidden])').length;}
+    function filledFields(){return Array.from(document.querySelectorAll('#event-form input:not(.form-trap input),#event-form select,#event-form textarea')).filter(function(el){return el.id!=='event-website'&&String(el.value||'').trim();}).length;}
+    function activeStep(){var step=document.querySelector('#event-form .form-step:not([hidden])');return step?Number(step.dataset.step):form.lastStep||1;}
+    function abandon(reason){
+      if(!form.open||form.success||sent.form_abandon)return;
+      sent.form_abandon=true;
+      track('form_abandon',{form_name:'submit_mobilization',last_step:activeStep(),fields_completed:filledFields(),time_seconds:Math.round((Date.now()-form.startedAt)/1000),abandon_reason:reason,transport_type:'beacon'});
+    }
+
+    var sectionNames={digital:'mobilizacao_digital',videos:'videos_conteudos',ferramentas:'apps_ferramentas',presencial:'mobilizacao_presencial'};
+    if('IntersectionObserver' in window){
+      var timers=new Map();
+      var observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          var id=entry.target.id;
+          if(entry.intersectionRatio>=.5&&!sent['section_'+id]){
+            if(!timers.has(id))timers.set(id,setTimeout(function(){
+              sent['section_'+id]=true;
+              track('section_view',{section_name:sectionNames[id],section_order:['digital','videos','ferramentas','presencial'].indexOf(id)+1});
+              timers.delete(id);
+            },1000));
+          }else if(timers.has(id)){clearTimeout(timers.get(id));timers.delete(id);}
+        });
+      },{threshold:[0,.5]});
+      Object.keys(sectionNames).forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el);});
+    }
+
+    [25,50,75,90,100].forEach(function(depth){sent['scroll_'+depth]=false;});
+    function measureScroll(){
+      var max=document.documentElement.scrollHeight-innerHeight;
+      var pct=max>0?Math.round(scrollY/max*100):100;
+      [25,50,75,90,100].forEach(function(depth){
+        if(pct>=depth&&!sent['scroll_'+depth]){sent['scroll_'+depth]=true;track('scroll_depth',{percent_scrolled:depth});}
+      });
+    }
+    addEventListener('scroll',measureScroll,{passive:true});measureScroll();
+
+    document.addEventListener('click',function(event){
+      var nav=event.target.closest('.jump-links a[href^="#"]');
+      if(nav)track('section_navigation',{section_name:sectionNames[nav.getAttribute('href').slice(1)]||nav.getAttribute('href').slice(1)});
+
+      var card=event.target.closest('.color-section .link');
+      if(card){
+        var section=card.closest('.color-section'),sectionId=section&&section.id;
+        var cards=section?Array.from(section.querySelectorAll('.link')):[];
+        var params={
+          resource_name:text(card,'strong').slice(0,100),
+          resource_category:sectionNames[sectionId]||sectionId||'unknown',
+          resource_type:text(card,'.link-meta').split('·')[0].trim().toLowerCase().slice(0,40),
+          card_position:cards.indexOf(card)+1,
+          destination_domain:host(card.href)
+        };
+        if(sectionId==='presencial'){
+          params.state=card.dataset.state||'';
+          params.city=card.dataset.city||'';
+          params.event_date=card.dataset.startDate||card.dataset.filterStartDate||'';
+          track('mobilization_click',params);
+        }else if(sectionId==='digital')track('group_click',params);
+        else track('resource_click',params);
+      }
+
+      var city=event.target.closest('#city-options button');
+      if(city)setTimeout(function(){track('filter_apply',{filter_type:'city',filter_value:city.textContent.replace(/\s*\(\d+\)\s*$/,'').trim(),results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'city'});},0);
+      var date=event.target.closest('#date-options button');
+      if(date)setTimeout(function(){track('filter_apply',{filter_type:'date',filter_value:date.textContent.trim(),results_count:visibleCards()});if(date.getAttribute('aria-disabled')==='true')track('date_unavailable_view',{date_label:date.textContent.trim()});},0);
+
+      var share=event.target.closest('#share-acervo,#share-whatsapp,#share-copy-link');
+      if(share){
+        var shareMap={'share-acervo':'native','share-whatsapp':'whatsapp','share-copy-link':'copy_link'};
+        track(share.id==='share-copy-link'?'share_copy_link':share.id==='share-whatsapp'?'share_whatsapp':'share_start',{share_method:shareMap[share.id]});
+      }
+
+      if(event.target.closest('#noti-open'))track('notification_center_open');
+      if(event.target.closest('#noti-activate'))track('notification_permission_start');
+      if(event.target.closest('#noti-disable'))track('notification_preference_change',{preference:'notifications',new_state:'disabled'});
+
+      if(event.target.closest('#open-event-form')){
+        form={open:true,success:false,lastStep:1,startedAt:Date.now(),submitAttempted:false};
+        delete sent.form_abandon;
+        track('form_open',{form_name:'submit_mobilization'});
+        track('form_step_view',{form_name:'submit_mobilization',form_step:1});
+      }
+      var next=event.target.closest('#event-form [data-next]');
+      if(next)setTimeout(function(){
+        var current=Number(next.closest('.form-step').dataset.step),target=Number(next.dataset.next);
+        if(!next.closest('.form-step').hidden)return;
+        form.lastStep=target;
+        track('form_step_complete',{form_name:'submit_mobilization',form_step:current});
+        track('form_step_view',{form_name:'submit_mobilization',form_step:target});
+      },0);
+      var back=event.target.closest('#event-form [data-back]');
+      if(back){form.lastStep=Number(back.dataset.back);track('form_back',{form_name:'submit_mobilization',from_step:Number(back.closest('.form-step').dataset.step),to_step:form.lastStep});}
+    });
+
+    var stateFilter=document.getElementById('state-filter');
+    if(stateFilter)stateFilter.addEventListener('change',function(){
+      setTimeout(function(){track(stateFilter.value==='todos'?'filter_clear':'filter_apply',{filter_type:'state',filter_value:stateFilter.value,results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'state',filter_value:stateFilter.value});},0);
+    });
+
+    var eventForm=document.getElementById('event-form');
+    if(eventForm){
+      eventForm.addEventListener('invalid',function(event){track('form_validation_error',{form_name:'submit_mobilization',form_step:activeStep(),field_name:event.target.name||event.target.id||'unknown',error_type:event.target.validity.valueMissing?'required':event.target.validity.typeMismatch?'type_mismatch':event.target.validity.patternMismatch?'pattern_mismatch':'invalid'});},true);
+      eventForm.addEventListener('submit',function(){form.submitAttempted=true;track('form_submit_attempt',{form_name:'submit_mobilization',form_step:activeStep(),fields_completed:filledFields()});},true);
+    }
+    var success=document.getElementById('submission-success');
+    if(success)new MutationObserver(function(){
+      if(form.open&&!success.hidden&&!form.success){
+        form.success=true;form.open=false;
+        track('form_step_complete',{form_name:'submit_mobilization',form_step:3});
+        track('form_submit_success',{form_name:'submit_mobilization',time_seconds:Math.round((Date.now()-form.startedAt)/1000)});
+      }
+    }).observe(success,{attributes:true,attributeFilter:['hidden']});
+    var formError=document.getElementById('form-error');
+    if(formError)new MutationObserver(function(){
+      if(form.submitAttempted&&!formError.hidden&&formError.textContent.trim())track('form_submit_error',{form_name:'submit_mobilization',form_step:activeStep(),error_type:'submission'});
+    }).observe(formError,{attributes:true,childList:true,subtree:true});
+    var dialog=document.getElementById('event-dialog');
+    if(dialog)dialog.addEventListener('close',function(){abandon('dialog_closed');});
+
+    var notiStatus=document.getElementById('noti-status');
+    if(notiStatus)new MutationObserver(function(){
+      if(!notiStatus.textContent.trim())return;
+      track('notification_permission_result',{permission:typeof Notification!=='undefined'?Notification.permission:'unsupported'});
+    }).observe(notiStatus,{childList:true,subtree:true});
+
+    document.addEventListener('change',function(event){
+      if(event.target.matches('#noti-dialog input[type="checkbox"],#noti-dialog select'))track('notification_preference_change',{preference:event.target.id||event.target.name||'unknown',new_state:event.target.type==='checkbox'?(event.target.checked?'enabled':'disabled'):'changed'});
+    });
+
+    var vitals={CLS:0,LCP:0,INP:0};
+    try{
+      new PerformanceObserver(function(list){list.getEntries().forEach(function(e){if(!e.hadRecentInput)vitals.CLS+=e.value;});}).observe({type:'layout-shift',buffered:true});
+      new PerformanceObserver(function(list){var entries=list.getEntries();if(entries.length)vitals.LCP=entries[entries.length-1].startTime;}).observe({type:'largest-contentful-paint',buffered:true});
+      new PerformanceObserver(function(list){list.getEntries().forEach(function(e){if(e.duration>vitals.INP)vitals.INP=e.duration;});}).observe({type:'event',buffered:true,durationThreshold:40});
+    }catch(e){}
+    function sendVitals(){
+      if(sent.vitals)return;sent.vitals=true;
+      if(vitals.LCP)track('web_vital',{metric_name:'LCP',metric_value:Math.round(vitals.LCP),metric_rating:vitals.LCP<=2500?'good':vitals.LCP<=4000?'needs_improvement':'poor'});
+      track('web_vital',{metric_name:'CLS',metric_value:Math.round(vitals.CLS*1000),metric_rating:vitals.CLS<=.1?'good':vitals.CLS<=.25?'needs_improvement':'poor'});
+      if(vitals.INP)track('web_vital',{metric_name:'INP',metric_value:Math.round(vitals.INP),metric_rating:vitals.INP<=200?'good':vitals.INP<=500?'needs_improvement':'poor'});
+    }
+    addEventListener('error',function(event){
+      if(event.target&&event.target!==window&&event.target.src)track('resource_load_error',{resource_domain:host(event.target.src),resource_tag:event.target.tagName.toLowerCase()});
+      else track('site_error',{error_type:'javascript',error_source:event.filename?host(event.filename):'inline'});
+    },true);
+    addEventListener('pagehide',function(){abandon('page_exit');sendVitals();},{capture:true});
+  })();
+  </script>
   <script src="/assets/js/acervo-notificacoes.js" defer></script>
 </body>
 </html>

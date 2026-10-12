@@ -156,6 +156,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .date-options button{flex:0 0 auto;min-width:44px;min-height:42px;padding:8px 11px;border:1px solid #cfabb6;border-radius:10px;background:#fff6f8;color:#542633;font:800 13px/1 'IBM Plex Mono',monospace;cursor:pointer;scroll-snap-align:start}
 .presencial-section .date-options button:first-child{min-width:68px;font-family:Inter,Arial,sans-serif}
 .presencial-section .date-options button:hover{background:#fbe0e7}
+.presencial-section .date-options button.is-unavailable{border-color:#d8d0d2;background:#eee;color:#9b9295;cursor:pointer;box-shadow:none}
+.presencial-section .date-options button.is-unavailable:hover{background:#e8e4e5;color:#766d70}
 .presencial-section .date-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff;box-shadow:0 3px 0 #086b34}
 .presencial-section .date-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
 .presencial-section .filter-empty{margin:0 0 15px;padding:13px 14px;border:1px dashed #b88445;border-radius:12px;background:#fff8e8;color:#634638;font:600 13px/1.45 Inter,Arial,sans-serif}
@@ -200,6 +202,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @media(max-width:600px){.presencial-section.is-enhanced{padding-bottom:126px}.presencial-section.is-enhanced .submit-event-cta{bottom:38px;bottom:calc(38px + env(safe-area-inset-bottom));width:calc(100% - 36px);padding:17px 16px}}
 @media(prefers-reduced-motion:reduce){.presencial-section.is-enhanced .submit-event-cta.is-floating{animation:none;transition:none}}
 .event-dialog{width:min(690px,calc(100% - 24px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:auto}.event-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}
+.date-empty-dialog{width:min(430px,calc(100% - 28px));padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:hidden}.date-empty-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}.date-empty-body{padding:24px}.date-empty-body h2{margin:0 0 10px;font:800 25px/1.08 'Space Grotesk',sans-serif;color:#3b2029}.date-empty-body p{margin:0 0 18px;font:500 14px/1.5 Inter,Arial,sans-serif;color:#69545b}.date-empty-actions{display:flex;gap:10px;justify-content:flex-end}.date-empty-close{min-height:48px;padding:10px 16px;border:1px solid #c9b4ba;border-radius:10px;background:#fff;color:#5a3b45;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}.date-empty-submit{min-height:48px;padding:10px 18px;border:0;border-radius:10px;background:#0b9b4a;color:#fff;font:800 14px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 4px 0 #067335}
 .event-dialog[open]{z-index:100}.event-dialog.is-fallback[open]{position:fixed;top:12px;left:12px;right:12px;margin:auto;max-height:calc(100vh - 24px)}
 .event-dialog-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 20px 16px;background:#bd1736;color:#fff}.event-dialog-head h2{margin:0;font:800 clamp(25px,6vw,34px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-transform:uppercase}.event-dialog-head p{margin:7px 0 0;max-width:520px;font:500 12px/1.45 Inter,Arial,sans-serif;color:#ffe8ed}.dialog-close{flex:0 0 auto;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#ffffff18;color:#fff;font:26px/1 Inter,Arial,sans-serif;cursor:pointer}.dialog-body{padding:20px}.form-progress{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:#806a70;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em}.form-progress-bar{flex:1;height:6px;border-radius:999px;background:#eadde0;overflow:hidden}.form-progress-bar span{display:block;width:25%;height:100%;border-radius:inherit;background:#bd1736;transition:width .2s}.event-form{display:block}.form-step{display:grid;grid-template-columns:1fr 1fr;gap:15px}.step-heading{grid-column:1/-1;margin-bottom:2px}.step-kicker{display:block;margin-bottom:5px;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#bd1736}.step-heading h3{margin:0;font:800 25px/1.08 'Space Grotesk',sans-serif;letter-spacing:-.035em;color:#3b2029}.step-heading p{margin:8px 0 0;font:400 13px/1.5 Inter,Arial,sans-serif;color:#69545b}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#49232e}.form-field label span{font:500 11px Inter,Arial,sans-serif;color:#806a70}.form-field input,.form-field select,.form-field textarea{width:100%;min-height:48px;border:1px solid #cbaab2;border-radius:10px;background:#fff;color:#2e1b21;padding:11px 12px;font:500 15px/1.35 Inter,Arial,sans-serif}.form-field textarea{min-height:150px;resize:vertical}.form-help{margin:0;font:400 11px/1.45 Inter,Arial,sans-serif;color:#755d64}.step-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:5px}.step-next,.form-submit{min-height:50px;padding:12px 22px;border:0;border-radius:10px;background:#bd1736;color:#fff;font:800 15px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 4px 0 #7f1027}.step-back{min-height:48px;padding:10px 14px;border:1px solid #c9b4ba;border-radius:10px;background:#fff;color:#5a3b45;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}.form-submit:disabled{cursor:wait;opacity:.65}.validation-note{grid-column:1/-1;padding:15px;border:1px solid #e1bd81;border-radius:12px;background:#fff5dc;color:#5b3b19;font:500 13px/1.5 Inter,Arial,sans-serif}.validation-note strong{font-family:'Space Grotesk',sans-serif}.evidence-choices{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:11px}.evidence-choice{min-height:145px;padding:16px;border:2px solid #d9bdc4;border-radius:14px;background:#fff;text-align:left;color:#3d222b;cursor:pointer;transition:border-color .16s,transform .16s,box-shadow .16s}.evidence-choice:hover{border-color:#bd1736;transform:translateY(-2px);box-shadow:0 5px 0 #bd17361f}.evidence-choice strong{display:block;margin-bottom:7px;font:800 18px/1.15 'Space Grotesk',sans-serif;color:#8f1933}.evidence-choice span{display:block;font:400 12px/1.48 Inter,Arial,sans-serif;color:#665158}.skip-evidence{border:0;background:transparent;color:#72535d;text-decoration:underline;font:600 12px/1.4 Inter,Arial,sans-serif;cursor:pointer}.form-error{grid-column:1/-1;margin:12px 0 0;font:600 12px/1.35 Inter,Arial,sans-serif;color:#a00}.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.submission-success{padding:8px 0 2px}.submission-success h3{margin:0 0 10px;font:800 28px/1.05 'Space Grotesk',sans-serif;color:#89152e;letter-spacing:-.035em}.submission-success p{margin:0 0 12px;font:500 14px/1.55 Inter,Arial,sans-serif;color:#503b42}.submission-success .dialog-done{min-height:48px;padding:10px 20px;border:0;border-radius:10px;background:#291d22;color:#fff;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}
 .skip-evidence{grid-column:1/-1;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;width:100%;padding:14px 15px;border:1px dashed #b88445;border-radius:14px;background:linear-gradient(120deg,#fff8e8,#fffdf7);color:#482f24;text-decoration:none;text-align:left;box-shadow:0 3px 0 #d9b78355;transition:transform .16s,border-color .16s,box-shadow .16s}.skip-evidence:hover{border-color:#9c5d20;transform:translateY(-2px);box-shadow:0 5px 0 #d9b78366,0 9px 20px #8f5c1b16}.skip-evidence-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f2dfb8;color:#7c491d;font:800 21px/1 'Space Grotesk',sans-serif}.skip-evidence-copy strong{display:block;margin-bottom:3px;font:800 15px/1.2 'Space Grotesk',sans-serif}.skip-evidence-copy span{display:block;font:500 11px/1.4 Inter,Arial,sans-serif;color:#735a4d}.skip-evidence-arrow{font:800 23px/1 'Space Grotesk',sans-serif;color:#9a5b22}
@@ -730,6 +733,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         </div>
       </div>
     </dialog>
+    <dialog class="date-empty-dialog" id="date-empty-dialog" aria-labelledby="date-empty-title">
+      <div class="date-empty-body">
+        <h2 id="date-empty-title">Nenhum evento encontrado</h2>
+        <p id="date-empty-message">Não há eventos publicados para esta data e local.</p>
+        <div class="date-empty-actions">
+          <button class="date-empty-close" type="button">Fechar</button>
+          <button class="date-empty-submit" type="button">Submeter minha mobilização</button>
+        </div>
+      </div>
+    </dialog>
 
     
     <script>
@@ -956,15 +969,36 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var filterEmpty=document.getElementById('filter-empty');
       var selectedCity='';
       var selectedDate='';
+      function dateHasEvents(value){
+        if(!value)return true;
+        var found=false;
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.querySelectorAll('[data-state]').forEach(function(card){
+            if(card.classList.contains('is-expired'))return;
+            var stateMatches=filter.value==='todos'||card.dataset.state===filter.value;
+            var cityMatches=!selectedCity||card.dataset.city===selectedCity;
+            var start=card.dataset.filterStartDate||'';
+            var end=card.dataset.filterEndDate||start;
+            if(stateMatches&&cityMatches&&start&&value>=start&&value<=end)found=true;
+          });
+        });
+        return found;
+      }
       function renderDateOptions(){
         dateOptions.replaceChildren();
         function addDateOption(label,value){
           var button=document.createElement('button');
           button.type='button';
           button.textContent=label;
+          var available=dateHasEvents(value);
+          button.classList.toggle('is-unavailable',!available);
+          button.setAttribute('aria-disabled',String(!available));
           button.setAttribute('aria-pressed',String(selectedDate===value));
           button.setAttribute('aria-label',value?'Filtrar atos do dia '+label+' de outubro':'Mostrar atos de todos os dias');
           button.addEventListener('click',function(){
+            if(!available){showDateEmptyDialog();return;}
             selectedDate=value;
             renderDateOptions();
             filterCards(filter.value);
@@ -1010,6 +1044,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.addEventListener('click',function(){
             selectedCity=value;
             citySearch.value='';
+            renderDateOptions();
             filterCards(filter.value);
             renderCityOptions();
           });
@@ -1058,6 +1093,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         selectedCity='';
         citySearch.value='';
         renderCityOptions();
+        renderDateOptions();
         filterCards(filter.value);
       });
       citySearch.addEventListener('input',renderCityOptions);
@@ -1085,12 +1121,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         });
         if(selectedCity&&!availableCities(filter.value).some(function(item){return item.name===selectedCity;}))selectedCity='';
         renderCityOptions();
+        renderDateOptions();
         filterCards(filter.value||'todos');
       }
       window.setInterval(refreshAgenda,60000);
       document.addEventListener('visibilitychange',function(){if(!document.hidden)refreshAgenda();});
 
       var dialog=document.getElementById('event-dialog');
+      var dateEmptyDialog=document.getElementById('date-empty-dialog');
       var openForm=document.getElementById('open-event-form');
       var eventForm=document.getElementById('event-form');
       var success=document.getElementById('submission-success');
@@ -1101,6 +1139,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var progressFill=document.getElementById('form-progress-fill');
       var steps=Array.from(eventForm.querySelectorAll('.form-step'));
       var formEndpoint='https://script.google.com/macros/s/AKfycbxUjbCOkfUMVK_M8cT7YQL97em4VAhxqUQGp9wVtG3NF81XSVPSDltKBgYPJ9EkLV92/exec';
+      function showDateEmptyDialog(){
+        if(typeof dateEmptyDialog.showModal==='function')dateEmptyDialog.showModal();
+        else{dateEmptyDialog.classList.add('is-fallback');dateEmptyDialog.setAttribute('open','');document.body.style.overflow='hidden';}
+      }
+      function closeDateEmptyDialog(){
+        if(typeof dateEmptyDialog.close==='function')dateEmptyDialog.close();
+        else{dateEmptyDialog.removeAttribute('open');dateEmptyDialog.classList.remove('is-fallback');document.body.style.overflow='';}
+      }
       function closeDialog(){
         if(typeof dialog.close==='function')dialog.close();
         else{dialog.removeAttribute('open');dialog.classList.remove('is-fallback');document.body.style.overflow='';}
@@ -1132,7 +1178,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(invalid){invalid.reportValidity();return false;}
         return true;
       }
-      openForm.addEventListener('click',function(){
+      function openEventForm(){
         eventForm.hidden=false;
         success.hidden=true;
         progress.hidden=false;
@@ -1140,10 +1186,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(typeof dialog.showModal==='function')dialog.showModal();
         else{dialog.classList.add('is-fallback');dialog.setAttribute('open','');document.body.style.overflow='hidden';}
         showStep(1);
-      });
+      }
+      openForm.addEventListener('click',openEventForm);
       dialog.querySelector('.dialog-close').addEventListener('click',closeDialog);
       dialog.querySelector('.dialog-done').addEventListener('click',closeDialog);
       dialog.addEventListener('click',function(event){if(event.target===dialog)closeDialog();});
+      dateEmptyDialog.querySelector('.date-empty-close').addEventListener('click',closeDateEmptyDialog);
+      dateEmptyDialog.querySelector('.date-empty-submit').addEventListener('click',function(){closeDateEmptyDialog();openEventForm();});
+      dateEmptyDialog.addEventListener('click',function(event){if(event.target===dateEmptyDialog)closeDateEmptyDialog();});
       eventForm.querySelectorAll('[data-next]').forEach(function(button){
         button.addEventListener('click',function(){
           var current=Number(button.closest('.form-step').dataset.step);

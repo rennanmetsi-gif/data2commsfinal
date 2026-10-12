@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-10-12",
+  "scope": "presencial-events",
+  "rule": "manter apenas eventos com data, horário explícito, cidade/estado e local confirmado",
+  "count": 14,
+  "items": [
+    {
+      "meta": "PR · Curitiba · mobilização",
+      "date_location": "12/10, Dia todo — CIDADE DE CURITIBA",
+      "description": "DIA DE MOBILIZAÇÃO EM DEFESA DE N. SRA. APARECIDA COMO PADROEIRA DO BRASIL. Organização: Comitê Popular do Paraná.",
+      "source": "https://www.instagram.com/p/DeM-uwUnNJ2/?img_index=9&psln=Mmh2ZGRtaW0xc21m",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "DF · Ceilândia · mobilização",
+      "date_location": "13/10, 13h — A CONFIRMAR",
+      "description": "ASSEMBLEIA UNIFICADA – CAMPUS FCTS (CEILÂNDIA).",
+      "source": "https://www.instagram.com/p/DeRph6kB_XW/",
+      "reasons": [
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "SP · Sorocaba · Ato da Virada",
+      "date_location": "13/10, período da tarde — região central de Sorocaba",
+      "description": "Ato da Virada em Sorocaba, com frentes populares da região e participação anunciada de Guilherme Boulos. Ponto exato a confirmar na fonte.",
+      "source": "https://www.brasildefato.com.br/2026/10/09/estudantes-intensificam-mobilizacoes-pro-lula-nas-ruas-do-pais-veja-agenda-de-atos/",
+      "reasons": [
+        "horário não é uma hora explícita",
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "DF · Gama · mobilização",
+      "date_location": "14/10, 12h — A confirmar",
+      "description": "ASSEMBLEIA UNIFICADA – CAMPUS FCTE (GAMA).",
+      "source": "https://www.instagram.com/p/DeRph6kB_XW/",
+      "reasons": [
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "GO · Goiânia · Ato da Virada",
+      "date_location": "14/10, ao longo do dia — Praça Central de Goiânia",
+      "description": "Ato da Virada em Goiânia, de comitês populares e com participação anunciada de Guilherme Boulos. Confirme horário e ponto específico na fonte.",
+      "source": "https://www.brasildefato.com.br/2026/10/09/estudantes-intensificam-mobilizacoes-pro-lula-nas-ruas-do-pais-veja-agenda-de-atos/",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "SP · São Paulo · assembleia estudantil",
+      "date_location": "14/10, horário a definir — PUC-SP, Campus Monte Alegre",
+      "description": "Assembleia Geral dos Estudantes da PUC-SP, em Perdizes, com centros acadêmicos e coletivos pela democracia. Consulte a fonte para o horário.",
+      "source": "https://www.brasildefato.com.br/2026/10/09/estudantes-intensificam-mobilizacoes-pro-lula-nas-ruas-do-pais-veja-agenda-de-atos/",
+      "reasons": [
+        "horário a definir"
+      ]
+    },
+    {
+      "meta": "DF · Brasília · mobilização da ciência",
+      "date_location": "15/10, 17h — Local a definir",
+      "description": "Dia Nacional da Ciência Contra a Barbárie. Convocação do Comitê Popular de Luta das Servidoras e Servidores da Ciência e Tecnologia em Brasília. Confirme o endereço com a organização.",
+      "source": "https://www.instagram.com/p/DeSUfDkoJ0X/",
+      "reasons": [
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "SC · Florianópolis · Ato da Virada",
+      "date_location": "15/10, período da tarde — Centro de Florianópolis",
+      "description": "Ato da Virada em Florianópolis, com movimentos sociais de Santa Catarina e participação anunciada de Guilherme Boulos. Ponto exato a confirmar.",
+      "source": "https://www.brasildefato.com.br/2026/10/09/estudantes-intensificam-mobilizacoes-pro-lula-nas-ruas-do-pais-veja-agenda-de-atos/",
+      "reasons": [
+        "horário não é uma hora explícita",
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "SP · Ribeirão Preto · Ato da Virada",
+      "date_location": "16/10, final da tarde — área central de Ribeirão Preto",
+      "description": "Ato da Virada em Ribeirão Preto, com frentes populares do interior e participação anunciada de Guilherme Boulos. Confirme local e horário na fonte.",
+      "source": "https://www.brasildefato.com.br/2026/10/09/estudantes-intensificam-mobilizacoes-pro-lula-nas-ruas-do-pais-veja-agenda-de-atos/",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "MT · Rondonópolis · mobilização",
+      "date_location": "17/10, Dia todo — ALDEIA TADARIMANA",
+      "description": "MULHERES INDÍGENAS COM LULA – MULHERES INDÍGENAS NO CENTRO DA HISTÓRIA – BOE BORORO. Endereço: Zona Rural, Rondonópolis - MT / CEP: 78710-010. Fonte: Comitê Popular.",
+      "source": "https://comitepopular.org.br/agenda/",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "RJ · Rio de Janeiro · mobilização",
+      "date_location": "18/10, 10h — LOCAL A DEFINIR",
+      "description": "CARNALULA. Organização: CarnaLula Oficinal RJ.",
+      "source": "https://www.instagram.com/p/DeNt44UoLAP/?stkn=MTdma3oxeTkyZWQ3NQ%3D%3D",
+      "reasons": [
+        "local não confirmado"
+      ]
+    },
+    {
+      "meta": "BA · Feira de Santana · mobilização",
+      "date_location": "21/10, Dia todo — DAMUS NA ALAMEDA DOS OITIS UEFS",
+      "description": "ATO FEIRA DE SANTANA COM LULA. Organização: Conselho de Entidades de Base (CEB) da UEFS.",
+      "source": "https://www.instagram.com/p/DeRXEc3Eemd/?utm_source=ig_web_copy_link&dlrf=NTc4MTIwNjQ2YQ==",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "BA · Feira de Santana · mobilização",
+      "date_location": "22/10, Dia todo — MOBILIZAÇÃO JUNTO À ADUFS",
+      "description": "ATO FEIRA DE SANTANA COM LULA. Organização: Conselho de Entidades de Base (CEB) da UEFS.",
+      "source": "https://www.instagram.com/p/DeRXEc3Eemd/?utm_source=ig_web_copy_link&dlrf=NTc4MTIwNjQ2YQ==",
+      "reasons": [
+        "horário não é uma hora explícita"
+      ]
+    },
+    {
+      "meta": "RJ · Rio de Janeiro · mobilização",
+      "date_location": "12/10 — Praia de Copacabana, Posto 5",
+      "description": "Ato pela democracia e em apoio a Lula. Divulgação: @democracia_em_jogo.",
+      "source": "https://www.instagram.com/p/DeMrv08gBtD/",
+      "reasons": [
+        "card sem horário explícito"
+      ]
+    }
+  ]
+}

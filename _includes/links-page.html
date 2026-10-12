@@ -354,6 +354,29 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .digital-section .links > a.official-featured{grid-column:1/-1;border:2px solid #bd1736;background:#fff6e9;box-shadow:0 4px 0 #bd173626}
 .digital-section .links > a.official-featured .link-meta{color:#a7193a;font-weight:700}
 .digital-section .links > a.official-featured strong{color:#8f1330;font-size:16px}
+
+/* Grupos e Apps em dois cards por linha no celular, sem cortar descrições. */
+@media(min-width:350px){
+  #digital>.links,#ferramentas>.links{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+}
+@media(min-width:350px) and (max-width:639px){
+  #digital>.links>a.link:not(.official-featured),#ferramentas>.links>a.link{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0;padding:11px 10px 12px;min-height:0}
+  #digital>.links>a.link:not(.official-featured) .card-icon,#ferramentas>.links>a.link .card-icon{flex:0 0 40px;width:40px;height:40px;border-radius:10px}
+  #digital>.links>a.link:not(.official-featured) .card-icon svg{width:26px;height:26px}
+  #ferramentas>.links>a.link .resource-emoji{font-size:23px}
+  #digital>.links>a.link:not(.official-featured) .link-meta,#ferramentas>.links>a.link .link-meta{font-size:9px;line-height:1.35}
+  #digital>.links>a.link:not(.official-featured) strong,#ferramentas>.links>a.link strong{font-size:13.5px;line-height:1.28;overflow-wrap:anywhere}
+  #digital>.links>a.link:not(.official-featured) .link-description,#ferramentas>.links>a.link .link-description{font-size:11.5px;line-height:1.45;overflow-wrap:anywhere}
+  #digital>.links>a.link:not(.official-featured) .arrow,#ferramentas>.links>a.link .arrow{position:absolute;top:12px;right:10px;width:24px;height:24px;font-size:14px}
+}
+/* Vídeos e atos presenciais mantêm a leitura em fileira única. */
+#videos>.links{grid-template-columns:minmax(0,1fr)}
+#videos .featured-video-library{border:2px solid #277244;background:#f4fff5;box-shadow:0 3px 0 #27724422}
+#videos .video-count-label{display:inline-flex;align-self:flex-start;max-width:100%;padding:3px 7px;border-radius:5px;background:#e2f1e5;color:#215a38;font:800 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.01em}
+/* Todos os dias aparecem na grade: sem rolagem horizontal escondida. */
+.presencial-section .date-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;overflow:visible;scroll-snap-type:none;padding:2px}
+.presencial-section .date-options button,.presencial-section .date-options button:first-child{flex:none;min-width:0;min-height:44px;padding:9px 2px;scroll-snap-align:none;font-size:12px;line-height:1.1}
+@media(max-width:360px){.presencial-section .date-options{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -396,6 +419,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <section class="color-section resources-section videos-section" id="videos" aria-labelledby="videos-title">
     <h2 class="section" id="videos-title">Banco de vídeos e conteúdos</h2>
     <div class="links">
+      <a class="link featured-video-library" href="https://acervodavitoria.pages.dev/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🗂️</span><span class="link-copy"><span class="link-meta">Site · banco de vídeos</span><strong>Acervo da Vitória</strong><span class="video-count-label">+600 vídeos</span><span class="link-description">Materiais de oposição a Flávio Bolsonaro, com foco em sua trajetória política, para consultar e compartilhar.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://fura-bolha.com/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">⚡</span><span class="link-copy"><span class="link-meta">Site · vídeos e materiais virais</span><strong>Fura Bolha</strong><span class="link-description">Vídeos e materiais virais atualizados em tempo real pra Lula 13.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://drive.google.com/drive/folders/1LbYfXCnnI7-APqRltwTfp7GbAxsdbCnz" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📱</span><span class="link-copy"><span class="link-meta">Drive · acervo de conteúdo</span><strong>Drive da Bagaceira · Lula 13</strong><span class="link-description">Conteúdos no estilo “tia do Zap” para compartilhar no WhatsApp, Kwai, Instagram e Facebook e virar voto para o 13. Curadoria: @dinamichi.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://drive.google.com/drive/folders/10W8M-WoU6c-Mv1gZdleaQkvItZtnCe4U" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🎬</span><span class="link-copy"><span class="link-meta">Google Drive · vídeos curtos</span><strong>Vídeos curtos para virar #13</strong><span class="link-description">Acervo de vídeos curtos para compartilhar nas redes e aplicativos de mensagem.</span></span><span class="arrow">↗</span></a>
@@ -408,7 +432,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <h2 class="section" id="ferramentas-title">Apps e ferramentas</h2>
     <div class="links">
       <a class="link" href="https://dapravirar.vercel.app" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🗺️</span><span class="link-copy"><span class="link-meta">Site · mapa</span><strong>Dá pra virar · mapa interativo pró-Lula</strong></span><span class="arrow">↗</span></a>
-      <a class="link" href="https://acervodavitoria.pages.dev/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🗂️</span><span class="link-copy"><span class="link-meta">Site · acervo de conteúdo</span><strong>Acervo da Vitória</strong><span class="link-description">Materiais de oposição a Flávio Bolsonaro, com foco em sua trajetória política, para consultar e compartilhar.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://drive.google.com/drive/u/0/folders/1hoiko3oNzxgtyeY_CBnK3agEcXIb490S" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📄</span><span class="link-copy"><span class="link-meta">Google Drive · PDF educativo</span><strong>Como virar votos? · PDF educativo</strong><span class="link-description">Material educativo com orientações para conversar e virar votos.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://www.ondedapraconversar.com.br/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">📊</span><span class="link-copy"><span class="link-meta">Site · dados eleitorais</span><strong>Onde Dá Pra Conversar · dados eleitorais</strong><span class="link-description">Consulte e cruze resultados eleitorais, abstenções, votos brancos e nulos para entender o cenário da sua cidade ou região.</span></span><span class="arrow">↗</span></a>
       <a class="link" href="https://obrasilemjogo.com.br/" target="_blank" rel="noopener"><span class="card-icon resource-emoji" aria-hidden="true">🎯</span><span class="link-copy"><span class="link-meta">Site · comparativo com fontes</span><strong>Brasil em Jogo</strong><span class="link-description">Informações sobre os governos Lula e Bolsonaro e propostas para 2026, organizadas em 12 temas com fontes.</span></span><span class="arrow">↗</span></a>
@@ -456,7 +479,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <p class="city-filter-hint" id="city-filter-hint">Escolha uma cidade ou continue rolando para ver todos os atos do estado.</p>
     </div>
     <div class="date-filter" aria-labelledby="date-filter-label">
-      <span class="date-filter-label" id="date-filter-label">Filtrar por dia</span>
+      <span class="date-filter-label" id="date-filter-label">Filtrar por dia · outubro de 2026</span>
       <div class="date-options" id="date-options" aria-label="Dias disponíveis"></div>
     </div>
     <p class="filter-empty" id="filter-empty" hidden>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</p>
@@ -1038,13 +1061,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         }
         addDateOption('Todos','');
         for(var day=12;day<=25;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
-        var active=dateOptions.querySelector('[aria-pressed="true"]');
-        if(active){
-          // Centraliza somente a faixa horizontal de datas — não rola a página inteira.
-          var rowRect=dateOptions.getBoundingClientRect();
-          var itemRect=active.getBoundingClientRect();
-          dateOptions.scrollLeft+=itemRect.left-rowRect.left-(dateOptions.clientWidth-active.clientWidth)/2;
-        }
       }
       function availableCities(state){
         var counts={};

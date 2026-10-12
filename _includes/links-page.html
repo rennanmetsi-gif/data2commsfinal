@@ -13,8 +13,14 @@
   </script>
   <script>
   (function(){
-    // Respeita links com âncora e o histórico de Voltar; novas visitas abrem no topo.
-    if(window.location.hash)return;
+    // As âncoras do menu não devem virar o ponto inicial de visitas ou recargas.
+    // Outros hashes continuam funcionando como links profundos intencionais.
+    var sectionHashes=['#digital','#videos','#ferramentas','#presencial'];
+    if(sectionHashes.indexOf(window.location.hash)!==-1){
+      history.replaceState(null,'',window.location.pathname+window.location.search);
+    }else if(window.location.hash){
+      return;
+    }
     var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
     if(nav&&nav.type==='back_forward')return;
     try{history.scrollRestoration='manual';}catch(e){}
@@ -860,7 +866,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         var navHeight=nav.getBoundingClientRect().height;
         var topOffset=navHeight+30;
         var destination=Math.max(0,window.scrollY+target.getBoundingClientRect().top-topOffset);
-        if(window.location.hash!==link.hash)history.pushState(null,'',link.hash);
         var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({top:destination,behavior:reduced?'auto':'smooth'});
       });

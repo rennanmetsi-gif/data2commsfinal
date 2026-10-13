@@ -1263,6 +1263,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       }
       window.setInterval(refreshAgenda,60000);
       document.addEventListener('visibilitychange',function(){if(!document.hidden)refreshAgenda();});
+      // Reprocessa cards após a montagem completa da página. Isso evita que
+      // cards injetados no bloco presencial fiquem fora do molde e dos filtros.
+      window.addEventListener('load',function(){
+        enhanceAgendaCards();
+        refreshAgenda();
+      });
 
       var dialog=document.getElementById('event-dialog');
       var dateEmptyDialog=document.getElementById('date-empty-dialog');

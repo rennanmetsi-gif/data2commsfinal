@@ -100,6 +100,12 @@ h1 em{font-style:normal;color:var(--red)}.hero-subtitle{font:700 clamp(16px,3.5v
 .link-copy{display:flex;flex:1;flex-direction:column;gap:4px;min-width:0}
 .link-meta{align-self:flex-start;font:600 8px/1.4 'IBM Plex Mono',monospace;letter-spacing:.035em;text-transform:uppercase;color:#806a70}
 .link strong{font:700 14px/1.25 'Space Grotesk',sans-serif;letter-spacing:-.02em}
+.petition-ticker{width:100%;overflow:hidden;background:#bd1736;color:#fff;border-bottom:3px solid #7f1027;text-decoration:none;display:block}
+.petition-ticker:focus-visible{outline:3px solid #ffcc57;outline-offset:-3px}
+.petition-ticker-track{display:flex;width:max-content;min-height:42px;align-items:center;animation:petition-scroll 22s linear infinite}
+.petition-ticker-copy{display:inline-flex;align-items:center;gap:28px;padding:0 22px;white-space:nowrap;font:800 14px/1 'Space Grotesk',sans-serif;letter-spacing:.01em;text-transform:uppercase}
+@keyframes petition-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.petition-ticker-track{animation:none}.petition-ticker-copy{width:100%;justify-content:center;white-space:normal;text-align:center;padding:12px 18px;line-height:1.2}}
 .link-description{font:400 12px/1.4 Inter,Arial,sans-serif;color:#65565b}
 .pet-resource{position:relative;min-width:0}.pet-resource .link{padding-bottom:39px}.pet-creator{position:absolute;bottom:11px;left:72px;z-index:1;font:600 11px/1.4 Inter,Arial,sans-serif;color:#a51c3a;text-decoration:underline;text-underline-offset:2px}.pet-creator:hover{color:#77132a}
 .arrow{flex:0 0 auto;font:18px 'IBM Plex Mono',monospace;color:var(--red)}
@@ -395,6 +401,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 </style>
 </head>
 <body>
+  <a class="petition-ticker" href="https://www.change.org/p/%EF%B8%8F-pela-imparcialidade-nas-elei%C3%A7%C3%B5es-afastamento-do-ministro-kassio-nunes-marques-do-tse?recruiter=514456538&recruited_by_id=42358d50-f0b9-11e5-a148-3f6c573dcf3b&utm_source=share_petition&utm_campaign=starter_onboarding_share_personal&utm_medium=copylink&share_id=gNN7zCJHn6" target="_blank" rel="noopener noreferrer" aria-label="Assine o abaixo-assinado pela imparcialidade do TSE">
+    <span class="petition-ticker-track"><span class="petition-ticker-copy">✍️ ASSINE O ABAIXO-ASSINADO · TSE IMPARCIAL E ELEIÇÕES JUSTAS</span><span class="petition-ticker-copy" aria-hidden="true">✍️ ASSINE O ABAIXO-ASSINADO · TSE IMPARCIAL E ELEIÇÕES JUSTAS</span></span>
+  </a>
   <main class="wrap">
     <div class="top"><div class="top-brand"><div class="mark">Acervo <span>Lula</span></div><span class="top-updated">Material atualizado todos os dias</span></div><div class="top-tools"><span class="top-context">Lula 13 · Democracia</span><button id="noti-open" class="noti-open noti-top-button" type="button" aria-label="Abrir central de notificações" title="Novidades e notificações"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span class="noti-launch-state sr-only">Escolher novidades</span><span id="noti-count" class="noti-count" hidden></span></button></div></div>
     <h1>Lula 13: <em>em defesa da democracia.</em></h1>

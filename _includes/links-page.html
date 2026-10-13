@@ -972,7 +972,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           var list=document.getElementById(id);
           if(!list)return;
           list.querySelectorAll('[data-state]').forEach(function(card){
-            if(card.classList.contains('event-card'))return;
+            // Cards adicionados manualmente podem já carregar a classe visual,
+            // mas ainda precisam passar pela mesma normalização de data/cidade.
+            if(card.classList.contains('event-card')&&card.dataset.filterStartDate)return;
             var copy=card.querySelector('.link-copy');
             var meta=copy&&copy.querySelector('.link-meta');
             var heading=copy&&copy.querySelector('strong');

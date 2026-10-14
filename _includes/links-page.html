@@ -1632,6 +1632,17 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
   })();
   </script>
   <script>
+    (function(){
+      var digital=document.querySelector('#digital>.links');
+      if(!digital)return;
+      var censored=digital.querySelector('.is-censored');
+      if(censored){
+        censored.outerHTML='<a class="link official-featured" href="https://portavozdolula.com/" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true">◉</span><span class="link-copy"><span class="link-meta">Rede oficial · comunidade no WhatsApp</span><strong>Porta-Voz do Lula</strong><span class="link-description">Rede oficial de comunicação da campanha de Lula. Acesse a comunidade no WhatsApp para receber orientações, materiais e informações sobre ações coordenadas.</span></span><span class="arrow">↗</span></a>';
+      }
+      if(!digital.querySelector('[data-group="mulheres-com-lula"]')){
+        digital.insertAdjacentHTML('beforeend','<a class="link" data-group="mulheres-com-lula" href="https://chat.whatsapp.com/FzxAX21HSCQ8zGbyJ2gwHT" target="_blank" rel="noopener"><span class="card-icon icon-whatsapp" aria-hidden="true">◉</span><span class="link-copy"><span class="link-meta">WhatsApp · grupo de avisos</span><strong>Mulheres com Lula</strong><span class="link-description">Grupo de avisos com conteúdos, dicas e missões. Há também um grupo aberto para conversas e troca de materiais.</span></span><span class="arrow">↗</span></a>');
+      }
+    })();
     document.querySelectorAll('.censored-channel .censorship-ribbon').forEach(function(el){el.textContent='Censura · decisão do TSE';});
     document.querySelectorAll('.censored-channel .link-description').forEach(function(el){el.textContent='Canal sob censura por decisão do TSE; a retomada depende da regularização determinada pelo ministro.';});
   </script>

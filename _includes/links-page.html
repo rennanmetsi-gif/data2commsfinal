@@ -1010,7 +1010,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             var meta=copy&&copy.querySelector('.link-meta');
             var heading=copy&&copy.querySelector('strong');
             var tile=card.querySelector('.card-icon');
-            if(!meta||!heading||!tile)return;
+            if(!meta||!heading)return;
+            if(!tile){
+              tile=document.createElement('span');
+              tile.className='card-icon icon-calendar';
+              tile.setAttribute('aria-hidden','true');
+              card.insertBefore(tile,copy);
+            }
             var parts=meta.textContent.split('·').map(function(t){return t.trim();});
             var stateCode=card.dataset.state;
             var fullState=stateNames[stateCode]||stateCode;

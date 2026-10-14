@@ -1119,10 +1119,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       // Remove da listagem os atos já encerrados; a agenda mantém apenas datas futuras.
       (function(){
         var today=localClock().date;
-        var list=document.getElementById('presencial-events');
-        if(!list)return;
-        list.querySelectorAll('[data-state]').forEach(function(card){
-          if(card.dataset.filterEndDate&&card.dataset.filterEndDate<today)card.remove();
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.querySelectorAll('[data-state]').forEach(function(card){
+            if(card.dataset.filterEndDate&&card.dataset.filterEndDate<today)card.remove();
+          });
         });
       })();
       // O menu é gerado a partir dos eventos; novos estados aparecem sem edição manual.

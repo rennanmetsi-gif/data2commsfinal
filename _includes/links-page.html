@@ -149,6 +149,12 @@ body{background:radial-gradient(ellipse at 0 0,#ffdce4 0,transparent 42%),#f8f3e
 a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @media(hover:hover){a.link:hover{transform:translateY(-3px);box-shadow:0 6px 0 #bd173622;border-color:#bd1736}a.link:hover .card-icon{transform:rotate(-5deg) scale(1.06)}a.link:hover .arrow{background:#bd1736;color:#fff}}
 @media(min-width:640px){.color-section .section{margin:-16px -16px 14px;padding:16px 20px}}
+/* Desktop: use the available canvas for the agenda without changing mobile. */
+@media(min-width:900px){
+  .wrap{width:min(calc(100% - 48px),1120px)}
+  .presencial-section>#presencial-events{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .presencial-section>#presencial-events .event-card{min-width:0}
+}
 @media(prefers-reduced-motion:no-preference){@keyframes section-arrive{from{opacity:.8;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.color-section:target{animation:section-arrive .35s ease}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .resources-section{background:#e7dff4}.resources-section .section{background:#665080;color:#fff}

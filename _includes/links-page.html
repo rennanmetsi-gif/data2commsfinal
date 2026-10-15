@@ -2587,7 +2587,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         }else if(event.target.closest('.date-empty-close')||event.target===cityUnavailable){
           track('city_unavailable_dismiss',{state:stateFilter.value,city:cityFilter.value,dismiss_reason:'close'});
         }
-      });
+      },true);
       cityUnavailable.addEventListener('cancel',function(){track('city_unavailable_dismiss',{state:stateFilter.value,city:cityFilter.value,dismiss_reason:'escape'});});
     }
 

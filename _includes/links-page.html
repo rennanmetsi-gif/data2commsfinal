@@ -515,7 +515,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 <option value="EX">Exterior</option></select>
       <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
     </div>
-    <div class="city-filter" id="city-filter-panel" hidden>
+    <div class="city-filter" id="city-filter-panel">
       <label for="city-search">Filtrar por cidade</label>
       <input id="city-search" type="search" inputmode="search" autocomplete="off" placeholder="Digite o nome da cidade" aria-controls="city-options">
       <div class="city-options" id="city-options" aria-label="Cidades disponíveis"></div>
@@ -2027,7 +2027,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.classList.toggle('is-unavailable',!available);
           button.setAttribute('aria-disabled',String(!available));
           button.setAttribute('aria-pressed',String(selectedDate===value));
-          button.setAttribute('aria-label',value?(available?'Filtrar atos do dia '+label+' de outubro':'Nenhum ato publicado para '+label+' de outubro; abrir opções de submissão'):'Mostrar atos de todos os dias');
+          var dayLabel=value?value.slice(-2).replace(/^0/,'')+' de outubro':'';
+          button.setAttribute('aria-label',value?(available?'Filtrar atos do dia '+dayLabel:'Nenhum ato publicado para '+dayLabel+'; abrir opções de submissão'):'Mostrar atos de todos os dias');
           if(!available)button.title='Nenhum evento publicado para este dia e filtro';
           button.addEventListener('click',function(){
             if(!available){showDateEmptyDialog();return;}
@@ -2038,7 +2039,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           dateOptions.appendChild(button);
         }
         addDateOption('Todos','');
-        for(var day=15;day<=25;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
+        for(var day=15;day<=25;day++)addDateOption(String(day)+' do 10','2026-10-'+String(day).padStart(2,'0'));
       }
       function availableCities(state){
         var counts={};
@@ -2046,7 +2047,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           var list=document.getElementById(id);
           if(!list)return;
           list.querySelectorAll('[data-state]').forEach(function(card){
-            if(card.dataset.state===state&&!card.classList.contains('is-expired')&&card.dataset.city){
+            var stateMatches=state==='todos'||card.dataset.state===state;
+            if(stateMatches&&!card.classList.contains('is-expired')&&card.dataset.city){
               var city=card.dataset.city;
               counts[city]=(counts[city]||0)+1;
             }
@@ -2056,8 +2058,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       }
       function renderCityOptions(){
         var state=filter.value;
-        cityPanel.hidden=state==='todos'||state==='BR';
-        if(cityPanel.hidden)return;
         var query=cityKey(citySearch.value);
         var cities=availableCities(state);
         cityOptions.replaceChildren();
@@ -2084,7 +2084,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           empty.textContent='Nenhuma cidade encontrada neste estado.';
           cityOptions.appendChild(empty);
         }
-        cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver o estado inteiro.':'Escolha uma cidade ou continue rolando para ver todos os atos do estado.';
+        cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.');
       }
       function filterCards(selected){
         if(selected!=='todos'&&!totals[selected]){

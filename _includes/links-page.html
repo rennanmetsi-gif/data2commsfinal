@@ -432,6 +432,10 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .date-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;overflow:visible;scroll-snap-type:none;padding:2px}
 .presencial-section .date-options button,.presencial-section .date-options button:first-child{flex:none;min-width:0;min-height:44px;padding:9px 2px;scroll-snap-align:none;font-size:12px;line-height:1.1}
 @media(max-width:540px){.presencial-section .date-options{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.presencial-section .date-options button,.presencial-section .date-options button:first-child{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:58px}
+.presencial-section .date-options .date-weekday{font:700 10px/1.1 Inter,Arial,sans-serif;letter-spacing:0}
+.presencial-section .event-card .card-icon.event-date-badge{min-height:86px}
+.presencial-section .event-card .event-weekday{font:800 10px/1.1 'Space Grotesk',sans-serif;letter-spacing:0;text-transform:lowercase}
 </style>
 </head>
 <body>
@@ -1832,6 +1836,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         };
         return aliases[cityKey(name)]||name;
       }
+      function weekdayName(value,abbreviated){
+        var parts=String(value||'').split('-').map(Number);
+        if(parts.length!==3||parts.some(function(part){return !part;}))return '';
+        var day=new Date(parts[0],parts[1]-1,parts[2]).getDay();
+        return (abbreviated?['dom','seg','ter','qua','qui','sex','sáb']:['domingo','segunda','terça','quarta','quinta','sexta','sábado'])[day];
+      }
       // Melhora automaticamente novos cards, sem alterar o conteúdo original das fontes.
       function enhanceAgendaCards(){
         var months=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
@@ -1886,8 +1896,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             if(match){
               var day=match[1]+(match[2]?'–'+match[2]:'');
               var mon=months[Number(match[3])-1]||match[3];
+              var startWeekday=weekdayName(card.dataset.filterStartDate,Boolean(match[2]));
+              var endWeekday=match[2]?weekdayName(card.dataset.filterEndDate,true):'';
+              var weekdayLabel=match[2]?startWeekday+'–'+endWeekday:startWeekday;
               tile.classList.add('event-date-badge');
-              tile.setAttribute('aria-label','Data: '+day+' de '+mon);
+              tile.setAttribute('aria-label','Data: '+day+' de '+mon+', '+(match[2]?weekdayName(card.dataset.filterStartDate)+' a '+weekdayName(card.dataset.filterEndDate):weekdayLabel));
               tile.textContent='';
               var dayEl=document.createElement('span');
               dayEl.className='event-day'+(match[2]?' is-range':'');
@@ -1897,6 +1910,10 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
               monthEl.textContent=mon;
               tile.appendChild(dayEl);
               tile.appendChild(monthEl);
+              var weekdayEl=document.createElement('span');
+              weekdayEl.className='event-weekday';
+              weekdayEl.textContent=weekdayLabel;
+              tile.appendChild(weekdayEl);
             }
             var top=document.createElement('span');
             top.className='event-topline';
@@ -1957,7 +1974,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(!value)return 'Data não informada';
         var parts=value.split('-');
         var date=new Date(Number(parts[0]),Number(parts[1])-1,Number(parts[2]));
-        return date.toLocaleDateString('pt-BR',{day:'numeric',month:'long'});
+        return date.toLocaleDateString('pt-BR',{day:'numeric',month:'long'})+' · '+weekdayName(value);
       }
       function groupAgendaByDate(){
         ['presencial-events'].forEach(function(id){
@@ -2073,14 +2090,22 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         function addDateOption(label,value){
           var button=document.createElement('button');
           button.type='button';
-          button.textContent=label;
+          if(value){
+            var dateEl=document.createElement('span');
+            dateEl.textContent=label;
+            var weekdayEl=document.createElement('span');
+            weekdayEl.className='date-weekday';
+            weekdayEl.textContent=weekdayName(value);
+            button.appendChild(dateEl);
+            button.appendChild(weekdayEl);
+          }else button.textContent=label;
           button.dataset.analyticsValue=value?String(Number(value.slice(-2)))+' do 10':label;
           var available=dateHasEvents(value);
           button.classList.toggle('is-unavailable',!available);
           button.setAttribute('aria-disabled',String(!available));
           button.setAttribute('aria-pressed',String(selectedDate===value));
           var dayLabel=value?value.slice(-2).replace(/^0/,'')+' de outubro':'';
-          button.setAttribute('aria-label',value?(available?'Filtrar atos do dia '+dayLabel:'Nenhum ato publicado para '+dayLabel+'; abrir opções de submissão'):'Mostrar atos de todos os dias');
+          button.setAttribute('aria-label',value?(available?'Filtrar atos de '+weekdayName(value)+', '+dayLabel:'Nenhum ato publicado para '+weekdayName(value)+', '+dayLabel+'; abrir opções de submissão'):'Mostrar atos de todos os dias');
           if(!available)button.title='Nenhum evento publicado para este dia e filtro';
           button.addEventListener('click',function(){
             if(!available){showDateEmptyDialog();return;}

@@ -2098,6 +2098,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.type='button';
           button.textContent=label;
           if(!value)button.className='date-all';
+          button.dataset.dateFilter='true';
           button.dataset.analyticsValue=value?String(Number(value.slice(-2)))+' do 10':label;
           var available=dateHasEvents(value);
           button.classList.toggle('is-unavailable',!available);
@@ -2582,7 +2583,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         else track('resource_click',params);
       }
 
-      var date=event.target.closest('#date-options button');
+      var date=event.target.closest('[data-date-filter="true"]');
       if(date)setTimeout(function(){var value=date.dataset.analyticsValue||date.textContent.trim();track('filter_apply',{filter_type:'date',filter_value:value,results_count:visibleCards()});if(date.getAttribute('aria-disabled')==='true')track('date_unavailable_view',{date_label:value});},0);
       if(event.target.closest('#clear-filters'))setTimeout(function(){track('filter_clear',{filter_type:'all',results_count:visibleCards()});},0);
 

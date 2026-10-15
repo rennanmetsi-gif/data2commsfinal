@@ -178,9 +178,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .city-filter-hint{grid-column:1/-1;margin:0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
 .presencial-section .date-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:0 0 15px}
 .presencial-section .date-filter-label{display:block;margin-bottom:10px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
-.presencial-section .date-options{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 2px 7px;scroll-snap-type:x proximity}
-.presencial-section .date-options button{flex:0 0 auto;min-width:44px;min-height:42px;padding:8px 11px;border:1px solid #cfabb6;border-radius:10px;background:#fff6f8;color:#542633;font:800 13px/1 'IBM Plex Mono',monospace;cursor:pointer;scroll-snap-align:start}
-.presencial-section .date-options button:first-child{min-width:68px;font-family:Inter,Arial,sans-serif}
+.presencial-section .date-options{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;padding:2px}
+.presencial-section .date-options button{min-width:0;min-height:58px;padding:7px 2px;border:1px solid #cfabb6;border-radius:10px;background:#fff6f8;color:#542633;font:800 12px/1 'IBM Plex Mono',monospace;cursor:pointer}
+.presencial-section .date-options .date-all{grid-column:1/-1;justify-self:start;min-height:38px;padding:8px 14px;font-family:Inter,Arial,sans-serif}
+.presencial-section .date-options .date-day-name{text-align:center;color:#77535e;font:700 11px/1.2 'Space Grotesk',sans-serif}
+.presencial-section .date-options .date-spacer{min-height:58px;border:1px dashed #dfd0d4;border-radius:10px;background:#f8f5f3}
 .presencial-section .date-options button:hover{background:#fbe0e7}
 .presencial-section .date-options button.is-unavailable{border-color:#d8d0d2;background:#eee;color:#9b9295;cursor:pointer;box-shadow:none}
 .presencial-section .date-options button.is-unavailable:hover{background:#e8e4e5;color:#766d70}
@@ -432,12 +434,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 #videos>.links{grid-template-columns:minmax(0,1fr)}
 #videos .featured-video-library{border:2px solid #277244;background:#f4fff5;box-shadow:0 3px 0 #27724422}
 #videos .video-count-label{display:inline-flex;align-self:flex-start;max-width:100%;padding:3px 7px;border-radius:5px;background:#e2f1e5;color:#215a38;font:800 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.01em}
-/* Todos os dias aparecem na grade: sem rolagem horizontal escondida. */
-.presencial-section .date-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;overflow:visible;scroll-snap-type:none;padding:2px}
-.presencial-section .date-options button,.presencial-section .date-options button:first-child{flex:none;min-width:0;min-height:44px;padding:9px 2px;scroll-snap-align:none;font-size:12px;line-height:1.1}
-@media(max-width:540px){.presencial-section .date-options{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.presencial-section .date-options button,.presencial-section .date-options button:first-child{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:58px}
-.presencial-section .date-options .date-weekday{font:700 10px/1.1 Inter,Arial,sans-serif;letter-spacing:0}
+/* O calendário mantém sete colunas em todas as telas. */
+@media(max-width:540px){.presencial-section .date-options{gap:4px}.presencial-section .date-options button:not(.date-all){font-size:11px}.presencial-section .date-options .date-day-name{font-size:10px}}
 .presencial-section .event-card .card-icon.event-date-badge{min-height:86px}
 .presencial-section .event-card .event-weekday{font:800 10px/1.1 'Space Grotesk',sans-serif;letter-spacing:0;text-transform:lowercase}
 </style>
@@ -547,7 +545,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </div>
     <div class="date-filter" aria-labelledby="date-filter-label">
       <span class="date-filter-label" id="date-filter-label">Filtrar por dia · outubro de 2026</span>
-      <div class="date-options" id="date-options" aria-label="Dias disponíveis"></div>
+      <div class="date-options" id="date-options" aria-label="Calendário de mobilizações de outubro de 2026"></div>
     </div>
     <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
     <div class="agenda-expand" id="agenda-expand" hidden>
@@ -2098,15 +2096,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         function addDateOption(label,value){
           var button=document.createElement('button');
           button.type='button';
-          if(value){
-            var dateEl=document.createElement('span');
-            dateEl.textContent=label;
-            var weekdayEl=document.createElement('span');
-            weekdayEl.className='date-weekday';
-            weekdayEl.textContent=weekdayName(value);
-            button.appendChild(dateEl);
-            button.appendChild(weekdayEl);
-          }else button.textContent=label;
+          button.textContent=label;
+          if(!value)button.className='date-all';
           button.dataset.analyticsValue=value?String(Number(value.slice(-2)))+' do 10':label;
           var available=dateHasEvents(value);
           button.classList.toggle('is-unavailable',!available);
@@ -2124,8 +2115,27 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           });
           dateOptions.appendChild(button);
         }
-        addDateOption('Todos','');
+        addDateOption('Todos os dias','');
+        ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].forEach(function(name){
+          var heading=document.createElement('span');
+          heading.className='date-day-name';
+          heading.textContent=name;
+          dateOptions.appendChild(heading);
+        });
+        // 15/10/2026 cai numa quinta-feira; as quatro células anteriores ficam vazias.
+        for(var previous=0;previous<4;previous++){
+          var spacer=document.createElement('span');
+          spacer.className='date-spacer';
+          spacer.setAttribute('aria-hidden','true');
+          dateOptions.appendChild(spacer);
+        }
         for(var day=15;day<=25;day++)addDateOption(String(day)+'/10','2026-10-'+String(day).padStart(2,'0'));
+        for(var next=0;next<6;next++){
+          var lastSpacer=document.createElement('span');
+          lastSpacer.className='date-spacer';
+          lastSpacer.setAttribute('aria-hidden','true');
+          dateOptions.appendChild(lastSpacer);
+        }
       }
       function availableCities(state){
         var counts={};

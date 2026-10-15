@@ -193,6 +193,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .date-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
 .presencial-section .filter-summary{margin:0 0 12px;color:#684750;font:700 12px/1.35 'IBM Plex Mono',monospace;letter-spacing:.01em}
 .presencial-section .filter-empty{margin:0 0 15px;padding:13px 14px;border:1px dashed #b88445;border-radius:12px;background:#fff8e8;color:#634638;font:600 13px/1.45 Inter,Arial,sans-serif}
+.presencial-section .filter-empty-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.presencial-section .filter-empty-submit{min-height:44px;padding:9px 14px;border:0;border-radius:10px;background:#0a9d4a;color:#fff;font:800 13px/1.1 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #086b34}
+.presencial-section .filter-empty-submit:hover{background:#087f3c}
+.presencial-section .agenda-expand{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 15px;padding:11px 13px;border:1px solid #bd17364d;border-radius:12px;background:#fffefa}
+.presencial-section .agenda-expand[hidden]{display:none}
+.presencial-section .agenda-expand-status{margin:0;color:#684750;font:700 12px/1.35 'IBM Plex Mono',monospace}
+.presencial-section .agenda-expand-button{flex:0 0 auto;min-height:42px;padding:9px 13px;border:1px solid #bd1736;border-radius:10px;background:#bd1736;color:#fff;font:800 12px/1.1 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #7f1027}
+.presencial-section .agenda-expand-button:hover{background:#a91432}
 .presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
 .presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
 .presencial-section .links{gap:11px}
@@ -252,6 +260,18 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .arrow{width:22px;height:22px;font-size:14px}
  .presencial-section .event-card .event-cta{flex:0 0 auto;width:auto;min-width:max-content;padding:7px 8px;font-size:10px}
  .form-step{grid-template-columns:1fr}.step-heading,.form-field.full,.step-actions,.validation-note,.evidence-choices,.form-error{grid-column:auto}.evidence-choices{grid-template-columns:1fr}.evidence-choice{min-height:0}.dialog-body{padding:16px}.event-dialog-head{padding:17px 16px 14px}
+}
+/* Tablet: preserve a readable card grid and keep icons/actions aligned. */
+@media(min-width:541px) and (max-width:899px){
+ .wrap{width:calc(100% - 28px);max-width:760px}
+ .presencial-section>#presencial-events,.presencial-section>#student-agenda{grid-template-columns:1fr;gap:11px}
+ .presencial-section .event-card{grid-template-columns:auto minmax(0,1fr) auto;align-items:start}
+ .presencial-section .event-card .event-cta{align-self:center;min-width:104px;text-align:center}
+ .presencial-section .event-card .arrow{display:grid;place-items:center;line-height:1}
+ .jump-links{gap:7px}
+ .jump-links a{min-width:0;gap:7px;padding:9px 8px}
+ .jump-links .jump-text{white-space:normal;line-height:1.05}
+ .jump-links .jump-chevron{line-height:1}
 }
 @media(max-width:360px){
  .presencial-section .link.event-card{gap:8px}
@@ -527,7 +547,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <div class="date-options" id="date-options" aria-label="Dias disponíveis"></div>
     </div>
     <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
-    <p class="filter-empty" id="filter-empty" hidden>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</p>
+    <div class="agenda-expand" id="agenda-expand" hidden>
+      <p class="agenda-expand-status" id="agenda-expand-status" aria-live="polite"></p>
+      <button class="agenda-expand-button" id="agenda-expand-button" type="button"></button>
+    </div>
+    <div class="filter-empty" id="filter-empty" hidden>
+      <div>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</div>
+      <div class="filter-empty-actions"><button class="filter-empty-submit" id="open-event-form-empty" type="button">Submeter minha mobilização</button></div>
+    </div>
     <div class="subsection">Atos e mobilizações <span>Agenda por data e estado · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
     <div class="links" id="presencial-events">
       <!-- Coleta Instagram: lote 1 de 10 publicações, revisado em 15/10. Um card por evento. -->
@@ -1999,6 +2026,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var filterEmpty=document.getElementById('filter-empty');
       var filterSummary=document.getElementById('filter-summary');
       var clearFilters=document.getElementById('clear-filters');
+      var agendaExpand=document.getElementById('agenda-expand');
+      var agendaExpandStatus=document.getElementById('agenda-expand-status');
+      var agendaExpandButton=document.getElementById('agenda-expand-button');
+      var agendaPageSize=20;
+      var agendaExpanded=agendaPageSize;
+      var agendaEligibleCount=0;
       var selectedCity='';
       var selectedDate='';
       function dateHasEvents(value){
@@ -2034,6 +2067,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.addEventListener('click',function(){
             if(!available){showDateEmptyDialog();return;}
             selectedDate=value;
+            resetAgendaExpansion();
             renderDateOptions();
             filterCards(filter.value);
           });
@@ -2070,19 +2104,21 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.addEventListener('click',function(){
             selectedCity=value;
             citySearch.value='';
+            resetAgendaExpansion();
             renderDateOptions();
             filterCards(filter.value);
             renderCityOptions();
           });
           cityOptions.appendChild(button);
         }
-        if(!query){
+        if(!query&&state==='todos'){
           addOption('Todas as cidades', '', !selectedCity);
           var prompt=document.createElement('span');
-          prompt.textContent='Digite o nome da cidade para ver os resultados.';
+          prompt.textContent='Escolha um estado ou digite uma cidade para ver os resultados.';
           cityOptions.appendChild(prompt);
         }else{
-          cities.filter(function(item){return cityKey(item.name).includes(query);}).forEach(function(item){
+          addOption('Todas as cidades', '', !selectedCity);
+          cities.filter(function(item){return !query||cityKey(item.name).includes(query);}).forEach(function(item){
             addOption(item.name+' ('+item.count+')',item.name,selectedCity===item.name);
           });
         }
@@ -2093,30 +2129,45 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         }
         cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.');
       }
+      function resetAgendaExpansion(){agendaExpanded=agendaPageSize;}
       function filterCards(selected){
         if(selected!=='todos'&&!totals[selected]){
           selected='todos';
           filter.value='todos';
           selectedCity='';
         }
-        var totalVisible=0;
+        var eligible=[];
+        var cards=[];
         ['presencial-events','student-agenda'].forEach(function(id){
           var list=document.getElementById(id);
           if(!list)return;
-          var visible=0;
           list.querySelectorAll('[data-state]').forEach(function(card){
             var stateMatches=selected==='todos'||card.dataset.state===selected;
             var cityMatches=!selectedCity||card.dataset.city===selectedCity;
             var dateStart=card.dataset.filterStartDate||'';
             var dateEnd=card.dataset.filterEndDate||dateStart;
             var dateMatches=!selectedDate||(dateStart&&selectedDate>=dateStart&&selectedDate<=dateEnd);
-            var show=!card.classList.contains('is-expired')&&stateMatches&&cityMatches&&dateMatches;
-            card.hidden=!show;
-            card.classList.toggle('is-hidden',!show);
-            if(show){visible++;totalVisible++;}
+            var match=!card.classList.contains('is-expired')&&stateMatches&&cityMatches&&dateMatches;
+            cards.push({card:card,list:list,match:match});
+            if(match)eligible.push(card);
           });
-          list.hidden=visible===0;
-          if(list.previousElementSibling)list.previousElementSibling.hidden=visible===0;
+        });
+        var totalVisible=eligible.length;
+        agendaEligibleCount=totalVisible;
+        if(agendaExpanded>totalVisible)agendaExpanded=totalVisible||agendaPageSize;
+        var allowed=new Set(eligible.slice(0,agendaExpanded));
+        var listCounts={};
+        cards.forEach(function(item){
+          var show=item.match&&allowed.has(item.card);
+          item.card.hidden=!show;
+          item.card.classList.toggle('is-hidden',!show);
+          if(show)listCounts[item.list.id]=(listCounts[item.list.id]||0)+1;
+        });
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.hidden=!listCounts[id];
+          if(list.previousElementSibling)list.previousElementSibling.hidden=!listCounts[id];
         });
         document.querySelectorAll('.date-group-heading').forEach(function(heading){
           var visible=false;
@@ -2130,8 +2181,23 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           if(visible)heading.textContent=formatDateHeading(heading.dataset.groupDate)+' · '+count+(count===1?' mobilização':' mobilizações');
         });
         filterEmpty.hidden=totalVisible!==0;
+        var shown=Math.min(agendaExpanded,totalVisible);
         var label=totalVisible===1?'1 mobilização encontrada':totalVisible+' mobilizações encontradas';
+        if(totalVisible>agendaPageSize&&shown<totalVisible)label='Mostrando '+shown+' de '+totalVisible+' mobilizações';
         if(filterSummary)filterSummary.textContent=label;
+        if(agendaExpand){
+          var remaining=Math.max(totalVisible-shown,0);
+          agendaExpand.hidden=totalVisible<=agendaPageSize;
+          if(agendaExpandStatus)agendaExpandStatus.textContent=totalVisible?'Mostrando '+shown+' de '+totalVisible+' mobilizações':'A agenda está vazia para este filtro.';
+          if(agendaExpandButton){
+            agendaExpandButton.hidden=false;
+            if(remaining>0){
+              agendaExpandButton.textContent='Ver mais '+Math.min(agendaPageSize,remaining)+' mobilizações · faltam '+remaining;
+            }else{
+              agendaExpandButton.textContent='Voltar para '+agendaPageSize;
+            }
+          }
+        }
         if(clearFilters){
           var active=filter.value!=='todos'||Boolean(selectedCity)||Boolean(selectedDate);
           clearFilters.disabled=!active;
@@ -2140,6 +2206,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       }
       window.filterPresencial=filterCards;
       filter.addEventListener('change',function(){
+        resetAgendaExpansion();
         selectedCity='';
         citySearch.value='';
         renderCityOptions();
@@ -2149,13 +2216,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       citySearch.addEventListener('input',renderCityOptions);
       citySearch.addEventListener('keydown',function(event){
         if(event.key!=='Enter')return;
-        var first=cityOptions.querySelector('button');
+        var buttons=cityOptions.querySelectorAll('button');
+        var first=citySearch.value.trim()&&buttons.length>1?buttons[1]:buttons[0];
         if(first){event.preventDefault();first.click();}
       });
       renderCityOptions();
       renderDateOptions();
       filterCards(filter.value||'todos');
       if(clearFilters)clearFilters.addEventListener('click',function(){
+        resetAgendaExpansion();
         filter.value='todos';
         selectedCity='';
         selectedDate='';
@@ -2163,6 +2232,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         renderCityOptions();
         renderDateOptions();
         filterCards('todos');
+      });
+      if(agendaExpandButton)agendaExpandButton.addEventListener('click',function(){
+        var total=agendaEligibleCount;
+        if(agendaExpanded>=total&&total){agendaExpanded=agendaPageSize;}else{agendaExpanded+=agendaPageSize;}
+        filterCards(filter.value||'todos');
       });
       function refreshAgenda(){
         updateTimeStatus();
@@ -2198,6 +2272,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var openForm=document.getElementById('open-event-form');
       var eventForm=document.getElementById('event-form');
       var success=document.getElementById('submission-success');
+      var emptySubmit=document.getElementById('open-event-form-empty');
       var formError=document.getElementById('form-error');
       var submitButton=eventForm.querySelector('.form-submit');
       var progress=document.getElementById('form-progress');
@@ -2262,6 +2337,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         showStep(1);
       }
       openForm.addEventListener('click',openEventForm);
+      if(emptySubmit)emptySubmit.addEventListener('click',function(){openForm.click();});
       dialog.querySelector('.dialog-close').addEventListener('click',closeDialog);
       dialog.querySelector('.dialog-done').addEventListener('click',closeDialog);
       dialog.addEventListener('click',function(event){if(event.target===dialog)closeDialog();});

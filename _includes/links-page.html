@@ -177,6 +177,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .city-filter input:focus-visible,.presencial-section .city-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
 .presencial-section .city-options{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;max-height:188px;overflow-y:auto;overscroll-behavior:contain;margin-top:12px;padding:2px 4px 4px 2px}
 .presencial-section .city-options button{min-height:36px;padding:7px 12px;border:1px solid #cfabb6;border-radius:999px;background:#fff6f8;color:#542633;font:700 12px/1.2 Inter,Arial,sans-serif;cursor:pointer}
+.presencial-section .city-options>span{display:block;width:100%;padding:3px 2px;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
 .presencial-section .city-options button:hover{background:#fbe0e7}
 .presencial-section .city-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff}
 .presencial-section .city-filter-hint{margin:10px 1px 0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
@@ -516,8 +517,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
     </div>
     <div class="city-filter" id="city-filter-panel">
-      <label for="city-search">Filtrar por cidade</label>
-      <input id="city-search" type="search" inputmode="search" autocomplete="off" placeholder="Digite o nome da cidade" aria-controls="city-options">
+      <label for="city-search">Buscar por cidade</label>
+      <input id="city-search" type="search" inputmode="search" autocomplete="off" placeholder="Digite uma cidade, por exemplo São Paulo" aria-controls="city-options">
       <div class="city-options" id="city-options" aria-label="Cidades disponíveis"></div>
       <p class="city-filter-hint" id="city-filter-hint">Escolha uma cidade ou continue rolando para ver todos os atos do estado.</p>
     </div>
@@ -2075,13 +2076,19 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           });
           cityOptions.appendChild(button);
         }
-        if(!query)addOption('Todas as cidades', '', !selectedCity);
-        cities.filter(function(item){return cityKey(item.name).includes(query);}).forEach(function(item){
-          addOption(item.name+' ('+item.count+')',item.name,selectedCity===item.name);
-        });
-        if(!cityOptions.childElementCount){
+        if(!query){
+          addOption('Todas as cidades', '', !selectedCity);
+          var prompt=document.createElement('span');
+          prompt.textContent='Digite o nome da cidade para ver os resultados.';
+          cityOptions.appendChild(prompt);
+        }else{
+          cities.filter(function(item){return cityKey(item.name).includes(query);}).forEach(function(item){
+            addOption(item.name+' ('+item.count+')',item.name,selectedCity===item.name);
+          });
+        }
+        if(query&&!cityOptions.childElementCount){
           var empty=document.createElement('span');
-          empty.textContent='Nenhuma cidade encontrada neste estado.';
+          empty.textContent='Nenhuma cidade encontrada. Tente outro nome.';
           cityOptions.appendChild(empty);
         }
         cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.');

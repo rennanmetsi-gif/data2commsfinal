@@ -208,7 +208,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .event-card .event-day.is-range{font-size:18px;letter-spacing:-.055em}
 .presencial-section .event-card .event-month{font:800 11px/1.15 'IBM Plex Mono',monospace;letter-spacing:.09em}
 .presencial-section .event-card .arrow{align-self:center;width:27px;height:27px}
-.presencial-section .event-card .event-cta{width:auto;min-width:0;height:auto;padding:7px 9px;border-radius:8px;font:800 11px/1 'IBM Plex Mono',monospace;white-space:nowrap;letter-spacing:-.02em}
+.presencial-section .event-card .event-cta{flex:0 0 auto;width:auto;min-width:max-content;height:auto;padding:7px 9px;border-radius:8px;font:800 11px/1 'IBM Plex Mono',monospace;white-space:nowrap;letter-spacing:-.02em}
 .presencial-section .event-card .event-no-date{display:none}
 .event-status{align-self:flex-start;display:inline-flex;align-items:center;padding:5px 8px;border-radius:999px;background:#fff0bf;color:#784209;border:1px solid #dfbb65;font:700 10px/1.2 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.02em}
 .link.is-expired{display:none!important}
@@ -217,7 +217,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @keyframes submit-glow{0%,100%{box-shadow:0 7px 0 #711023,0 13px 28px #7c102f38,inset 0 1px 0 #ffffff66}50%{box-shadow:0 7px 0 #711023,0 13px 38px 8px #ff416d88,inset 0 1px 0 #ffffffa0}}
 .submit-event-cta{animation:submit-glow 2.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.submit-event-cta{animation:none}}
-/* Chamada flutuante da seção presencial, com destaque e respiro no celular. */
+/* Chamada da seção presencial, com destaque e respiro no celular. */
 .presencial-section.is-enhanced{padding-bottom:112px}
 @keyframes submit-float{0%,65%,100%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}72%{transform:translateX(-50%) translateY(-9px);box-shadow:0 7px 0 #08652e,0 18px 42px 9px #36e17aab,inset 0 1px 0 #fff}79%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}}
 .presencial-section.is-enhanced .submit-event-cta{position:fixed;z-index:20;left:50%;bottom:32px;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 28px));margin:0;padding:16px 18px;border:2px solid #b4ffd0;border-radius:999px;background:linear-gradient(135deg,#20d766 0%,#0ba847 55%,#087b39 100%);color:#fff;box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80;text-shadow:0 1px 2px #065b2d99;text-align:center;transform:translateX(-50%);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s ease,filter .2s ease;animation:none}
@@ -243,6 +243,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .event-state{font-size:12px}
  .presencial-section .event-card strong.event-location{font-size:15px}
  .presencial-section .event-card .arrow{width:22px;height:22px;font-size:14px}
+ .presencial-section .event-card .event-cta{flex:0 0 auto;width:auto;min-width:max-content;padding:7px 8px;font-size:10px}
  .form-step{grid-template-columns:1fr}.step-heading,.form-field.full,.step-actions,.validation-note,.evidence-choices,.form-error{grid-column:auto}.evidence-choices{grid-template-columns:1fr}.evidence-choice{min-height:0}.dialog-body{padding:16px}.event-dialog-head{padding:17px 16px 14px}
 }
 @media(max-width:360px){
@@ -251,9 +252,18 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .event-state{padding:5px 7px}
 }
 
-/* Compartilhar fica flutuante sem encobrir a chamada para cadastrar um ato. */
-.share-cta.share-dock-enabled{position:fixed;z-index:19;left:50%;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 28px));margin:0;padding:0;border:0;border-radius:999px;background:transparent;box-shadow:none;transform:translate(-50%,12px);opacity:0;visibility:hidden;pointer-events:none;transition:bottom .15s ease,transform .2s ease,opacity .2s ease,visibility .2s ease}
-.share-cta.share-dock-enabled.is-visible{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto}
+/* As ações globais permanecem no fluxo para não cobrir os cards da agenda. */
+.presencial-section.is-enhanced{padding-bottom:0}
+.presencial-section.is-enhanced .submit-event-cta{position:static;left:auto;bottom:auto;width:100%;margin:2px 0 16px;transform:none;visibility:visible;opacity:1;pointer-events:auto;animation:none}
+.presencial-section.is-enhanced .submit-event-cta.is-floating{visibility:visible;opacity:1;pointer-events:auto;animation:none;transform:none}
+@media(max-width:600px){
+ .presencial-section.is-enhanced{padding-bottom:0}
+ .presencial-section.is-enhanced .submit-event-cta{bottom:auto;width:100%;padding:15px 14px;border-radius:16px}
+}
+
+/* Compartilhar permanece no fluxo para não encobrir a agenda presencial. */
+.share-cta.share-dock-enabled{position:static;z-index:auto;left:auto;bottom:auto;width:min(460px,100%);margin:0 auto 16px;padding:0;border:0;border-radius:999px;background:transparent;box-shadow:none;transform:none;opacity:1;visibility:visible;pointer-events:auto;transition:none}
+.share-cta.share-dock-enabled.is-visible{transform:none;opacity:1;visibility:visible;pointer-events:auto}
 .share-cta.share-dock-enabled .share-actions{display:flex;align-items:stretch;gap:5px;padding:5px;border:2px solid #ffb3c2;border-radius:999px;background:linear-gradient(135deg,#df2148 0%,#bd1736 55%,#8f1028 100%);box-shadow:0 7px 0 #711023,0 13px 28px #7c102f90,inset 0 1px 0 #ffffff80;transition:filter .2s ease}
 .share-cta.share-dock-enabled .share-primary{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:62px;padding:9px 10px;border:0;border-radius:999px;background:transparent;color:#fff;cursor:pointer;text-align:center;text-shadow:0 1px 2px #64102499;transition:filter .16s ease}
 .share-cta.share-dock-enabled .share-primary:hover{filter:brightness(1.12)}
@@ -406,7 +416,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 /* Todos os dias aparecem na grade: sem rolagem horizontal escondida. */
 .presencial-section .date-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;overflow:visible;scroll-snap-type:none;padding:2px}
 .presencial-section .date-options button,.presencial-section .date-options button:first-child{flex:none;min-width:0;min-height:44px;padding:9px 2px;scroll-snap-align:none;font-size:12px;line-height:1.1}
-@media(max-width:360px){.presencial-section .date-options{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:540px){.presencial-section .date-options{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -478,7 +488,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </div>
     </section>
     <section class="color-section presencial-section" id="presencial" aria-labelledby="presencial-title">
-    <h2 class="section" id="presencial-title">Presencial <span>Nas ruas</span></h2>
+    <h2 class="section" id="presencial-title">Mobilização presencial <span>Nas ruas</span></h2>
     <button class="submit-event-cta" id="open-event-form" type="button">
       <span class="event-cta-line-one">Não encontrou seu ato?</span> <span class="event-cta-line-two">Envie aqui</span>
       <small>Clique e envie as informações do ato na sua região. Vamos validar antes de publicar.</small>
@@ -1747,19 +1757,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       presencialSection.classList.add('is-enhanced');
       if(shareDock)shareDock.classList.add('share-dock-enabled');
       function updateFloatingCta(){
-        var rect=presencialSection.getBoundingClientRect();
-        var show=rect.top<=Math.min(160,window.innerHeight*.3)&&rect.bottom>window.innerHeight-10;
-        floatingCta.classList.toggle('is-floating',show);
-        floatingCta.tabIndex=show?0:-1;
-        floatingCta.setAttribute('aria-hidden',show?'false':'true');
+        // As ações ficam no fluxo normal; continuam acessíveis sem cobrir a agenda.
+        floatingCta.classList.remove('is-floating');
+        floatingCta.tabIndex=0;
+        floatingCta.setAttribute('aria-hidden','false');
         if(shareDock){
-          shareDock.classList.toggle('is-visible',window.scrollY>150);
-          if(show){
-            // Distância de 16px acima do CTA de mobilizações, adaptável à altura em cada tela.
-            shareDock.style.bottom=Math.ceil(window.innerHeight-floatingCta.getBoundingClientRect().top+16)+'px';
-          }else{
-            shareDock.style.bottom='';
-          }
+          shareDock.classList.remove('is-visible');
+          shareDock.style.bottom='';
         }
       }
       window.addEventListener('scroll',updateFloatingCta,{passive:true});
@@ -2001,7 +2005,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           dateOptions.appendChild(button);
         }
         addDateOption('Todos','');
-        for(var day=14;day<=24;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
+        for(var day=15;day<=25;day++)addDateOption(String(day),'2026-10-'+String(day).padStart(2,'0'));
       }
       function availableCities(state){
         var counts={};
@@ -2354,9 +2358,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           destination_domain:host(card.href)
         };
         if(sectionId==='presencial'){
+          var cta=card.querySelector('.event-cta');
+          var isInstagram=/instagram\.com$/i.test(host(card.href))||/\.instagram\.com$/i.test(host(card.href));
           params.state=card.dataset.state||'';
           params.city=card.dataset.city||'';
           params.event_date=card.dataset.startDate||card.dataset.filterStartDate||'';
+          params.source_action=isInstagram?'ver_publicacao':'ver_fonte';
+          params.source_label=cta?cta.textContent.trim():(isInstagram?'Ver evento':'Ver fonte');
           track('mobilization_click',params);
         }else if(sectionId==='digital')track('group_click',params);
         else track('resource_click',params);

@@ -208,6 +208,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .event-card .event-day.is-range{font-size:18px;letter-spacing:-.055em}
 .presencial-section .event-card .event-month{font:800 11px/1.15 'IBM Plex Mono',monospace;letter-spacing:.09em}
 .presencial-section .event-card .arrow{align-self:center;width:27px;height:27px}
+.presencial-section .event-card .event-cta{width:auto;min-width:0;height:auto;padding:7px 9px;border-radius:8px;font:800 11px/1 'IBM Plex Mono',monospace;white-space:nowrap;letter-spacing:-.02em}
 .presencial-section .event-card .event-no-date{display:none}
 .event-status{align-self:flex-start;display:inline-flex;align-items:center;padding:5px 8px;border-radius:999px;background:#fff0bf;color:#784209;border:1px solid #dfbb65;font:700 10px/1.2 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.02em}
 .link.is-expired{display:none!important}
@@ -1190,6 +1191,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             var main=text.split(' — ').slice(1).join(' — ').trim()||text;
             main=main.replace(/^\d{1,2}h(?:\d{2})?(?:\s*[–-]\s*\d{1,2}h(?:\d{2})?)?\s*—\s*/,'');
             card.classList.add('event-card');
+            var cta=card.querySelector('.arrow');
+            if(cta&&card.tagName.toLowerCase()==='a'){
+              var sourceHost=card.hostname||'';
+              var isInstagram=/instagram\.com$/i.test(sourceHost)||/\.instagram\.com$/i.test(sourceHost);
+              cta.classList.add('event-cta');
+              cta.textContent=isInstagram?'Ver evento ↗':'Ver fonte ↗';
+              cta.setAttribute('aria-label',isInstagram?'Abrir publicação do evento':'Abrir fonte do evento');
+            }
             if(match){
               var day=match[1]+(match[2]?'–'+match[2]:'');
               var mon=months[Number(match[3])-1]||match[3];

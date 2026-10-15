@@ -167,6 +167,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .filter-row{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:12px 14px;gap:10px;margin:0 0 14px}
 .presencial-section .filter-row label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432;letter-spacing:-.01em}
 .presencial-section .state-filter{min-height:48px;min-width:230px;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
+.presencial-section .clear-filters{min-height:42px;padding:9px 13px;border:1px solid #bd173650;border-radius:10px;background:#fff;color:#7c1d34;font:800 12px/1.1 Inter,Arial,sans-serif;cursor:pointer}
+.presencial-section .clear-filters:hover{background:#fbe4e9}
+.presencial-section .clear-filters:disabled{border-color:#d8d0d2;background:#f1eeee;color:#9b9295;cursor:default}
 .presencial-section .city-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:-3px 0 15px}
 .presencial-section .city-filter[hidden]{display:none}
 .presencial-section .city-filter label{display:block;margin-bottom:9px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
@@ -187,10 +190,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .date-options button.is-unavailable:hover{background:#e8e4e5;color:#766d70}
 .presencial-section .date-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff;box-shadow:0 3px 0 #086b34}
 .presencial-section .date-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
+.presencial-section .filter-summary{margin:0 0 12px;color:#684750;font:700 12px/1.35 'IBM Plex Mono',monospace;letter-spacing:.01em}
 .presencial-section .filter-empty{margin:0 0 15px;padding:13px 14px;border:1px dashed #b88445;border-radius:12px;background:#fff8e8;color:#634638;font:600 13px/1.45 Inter,Arial,sans-serif}
 .presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
 .presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
 .presencial-section .links{gap:11px}
+.presencial-section .date-group-heading{grid-column:1/-1;margin:13px 2px 0;padding:8px 10px 7px;border-bottom:2px solid #d7a8b4;color:#7d2035;font:800 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.01em}
+.presencial-section .date-group-heading:first-child{margin-top:0}
 .presencial-section .link.event-card{align-items:flex-start;gap:13px;padding:15px 14px;border:1px solid #caa6b0;border-left:4px solid #bd1736;border-radius:15px;box-shadow:0 3px 0 #451a2720;background:#fffefa}
 .presencial-section .event-card .link-copy{gap:7px;min-width:0}
 .presencial-section .event-card .event-topline{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -516,6 +522,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 <option value="SE">Sergipe</option>
 <option value="BR">Agenda nacional</option>
 <option value="EX">Exterior</option></select>
+      <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
     </div>
     <div class="city-filter" id="city-filter-panel" hidden>
       <label for="city-search">Filtrar por cidade</label>
@@ -527,6 +534,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <span class="date-filter-label" id="date-filter-label">Filtrar por dia · outubro de 2026</span>
       <div class="date-options" id="date-options" aria-label="Dias disponíveis"></div>
     </div>
+    <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
     <p class="filter-empty" id="filter-empty" hidden>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</p>
     <div class="subsection">Atos e mobilizações <span>Agenda por data e estado · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
     <div class="links" id="presencial-events">
@@ -1669,7 +1677,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
             <div class="form-field full"><label for="event-local">Local do evento / ponto de encontro</label><input id="event-local" name="local" autocomplete="street-address" required placeholder="Ex.: Praça da Estação, em frente ao coreto"></div>
             <div class="form-field"><label for="event-city">Cidade</label><input id="event-city" name="cidade" autocomplete="address-level2" required></div>
             <div class="form-field"><label for="event-state">Estado ou região</label><select id="event-state" name="estado" autocomplete="address-level1" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option><option value="EX">Exterior</option></select><p class="form-help">Para mobilizações fora do Brasil, escolha “Exterior” e informe a cidade no campo ao lado.</p></div>
-            <div class="form-field"><label for="event-date">Data</label><select id="event-date" name="data" required><option value="">Selecione o dia</option><option value="2026-10-10">10 de outubro</option><option value="2026-10-11">11 de outubro</option><option value="2026-10-12">12 de outubro</option><option value="2026-10-13">13 de outubro</option><option value="2026-10-14">14 de outubro</option><option value="2026-10-15">15 de outubro</option><option value="2026-10-16">16 de outubro</option><option value="2026-10-17">17 de outubro</option><option value="2026-10-18">18 de outubro</option><option value="2026-10-19">19 de outubro</option><option value="2026-10-20">20 de outubro</option><option value="2026-10-21">21 de outubro</option><option value="2026-10-22">22 de outubro</option><option value="2026-10-23">23 de outubro</option><option value="2026-10-24">24 de outubro</option><option value="2026-10-25">25 de outubro · eleição</option></select><p class="form-help">Mobilizações de 10 a 25 de outubro de 2026.</p></div>
+            <div class="form-field"><label for="event-date">Data</label><select id="event-date" name="data" required><option value="">Selecione o dia</option><option value="2026-10-15">15 de outubro</option><option value="2026-10-16">16 de outubro</option><option value="2026-10-17">17 de outubro</option><option value="2026-10-18">18 de outubro</option><option value="2026-10-19">19 de outubro</option><option value="2026-10-20">20 de outubro</option><option value="2026-10-21">21 de outubro</option><option value="2026-10-22">22 de outubro</option><option value="2026-10-23">23 de outubro</option><option value="2026-10-24">24 de outubro</option><option value="2026-10-25">25 de outubro · eleição</option></select><p class="form-help">Mobilizações de 15 a 25 de outubro de 2026.</p></div>
             <div class="form-field"><label for="event-time">Horário</label><input id="event-time" name="horario" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="done" required pattern="([01][0-9]|2[0-3]):[0-5][0-9]" placeholder="Ex.: 19h ou 19h30" maxlength="5" aria-describedby="event-time-hint"><p class="form-help" id="event-time-hint">Ex.: 19h ou 19h30. Não precisa digitar os dois-pontos.</p></div>
             <div class="step-actions"><span></span><button class="step-next" type="button" data-next="2">Continuar</button></div>
           </section>
@@ -1902,6 +1910,31 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           return aDate.localeCompare(bDate)||(Number(a.dataset.startMinute||0)-Number(b.dataset.startMinute||0));
         }).forEach(function(card){list.appendChild(card);});
       });
+      function formatDateHeading(value){
+        if(!value)return 'Data não informada';
+        var parts=value.split('-');
+        var date=new Date(Number(parts[0]),Number(parts[1])-1,Number(parts[2]));
+        return date.toLocaleDateString('pt-BR',{day:'numeric',month:'long'});
+      }
+      function groupAgendaByDate(){
+        ['presencial-events','student-agenda'].forEach(function(id){
+          var list=document.getElementById(id);
+          if(!list)return;
+          list.querySelectorAll('.date-group-heading').forEach(function(heading){heading.remove();});
+          var lastDate='';
+          Array.from(list.querySelectorAll('[data-state]')).forEach(function(card){
+            var date=card.dataset.filterStartDate||'';
+            if(!date||date===lastDate)return;
+            var heading=document.createElement('div');
+            heading.className='date-group-heading';
+            heading.dataset.groupDate=date;
+            heading.textContent=formatDateHeading(date);
+            list.insertBefore(heading,card);
+            lastDate=date;
+          });
+        });
+      }
+      groupAgendaByDate();
       function localClock(){
         var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
         var value={};
@@ -1966,6 +1999,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       var cityHint=document.getElementById('city-filter-hint');
       var dateOptions=document.getElementById('date-options');
       var filterEmpty=document.getElementById('filter-empty');
+      var filterSummary=document.getElementById('filter-summary');
+      var clearFilters=document.getElementById('clear-filters');
       var selectedCity='';
       var selectedDate='';
       function dateHasEvents(value){
@@ -1995,7 +2030,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           button.classList.toggle('is-unavailable',!available);
           button.setAttribute('aria-disabled',String(!available));
           button.setAttribute('aria-pressed',String(selectedDate===value));
-          button.setAttribute('aria-label',value?'Filtrar atos do dia '+label+' de outubro':'Mostrar atos de todos os dias');
+          button.setAttribute('aria-label',value?(available?'Filtrar atos do dia '+label+' de outubro':'Nenhum ato publicado para '+label+' de outubro; abrir opções de submissão'):'Mostrar atos de todos os dias');
+          if(!available)button.title='Nenhum evento publicado para este dia e filtro';
           button.addEventListener('click',function(){
             if(!available){showDateEmptyDialog();return;}
             selectedDate=value;
@@ -2078,7 +2114,25 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           list.hidden=visible===0;
           if(list.previousElementSibling)list.previousElementSibling.hidden=visible===0;
         });
+        document.querySelectorAll('.date-group-heading').forEach(function(heading){
+          var visible=false;
+          var next=heading.nextElementSibling;
+          var count=0;
+          while(next&&!next.classList.contains('date-group-heading')){
+            if(!next.hidden&&next.matches('[data-state]')){visible=true;count++;}
+            next=next.nextElementSibling;
+          }
+          heading.hidden=!visible;
+          if(visible)heading.textContent=formatDateHeading(heading.dataset.groupDate)+' · '+count+(count===1?' mobilização':' mobilizações');
+        });
         filterEmpty.hidden=totalVisible!==0;
+        var label=totalVisible===1?'1 mobilização encontrada':totalVisible+' mobilizações encontradas';
+        if(filterSummary)filterSummary.textContent=label;
+        if(clearFilters){
+          var active=filter.value!=='todos'||Boolean(selectedCity)||Boolean(selectedDate);
+          clearFilters.disabled=!active;
+          clearFilters.setAttribute('aria-disabled',String(!active));
+        }
       }
       window.filterPresencial=filterCards;
       filter.addEventListener('change',function(){
@@ -2097,6 +2151,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       renderCityOptions();
       renderDateOptions();
       filterCards(filter.value||'todos');
+      if(clearFilters)clearFilters.addEventListener('click',function(){
+        filter.value='todos';
+        selectedCity='';
+        selectedDate='';
+        citySearch.value='';
+        renderCityOptions();
+        renderDateOptions();
+        filterCards('todos');
+      });
       function refreshAgenda(){
         updateTimeStatus();
         Object.keys(totals).forEach(function(state){totals[state]=0;});
@@ -2122,6 +2185,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       // cards injetados no bloco presencial fiquem fora do molde e dos filtros.
       window.addEventListener('load',function(){
         enhanceAgendaCards();
+        groupAgendaByDate();
         refreshAgenda();
       });
 
@@ -2374,6 +2438,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       if(city)setTimeout(function(){track('filter_apply',{filter_type:'city',filter_value:city.textContent.replace(/\s*\(\d+\)\s*$/,'').trim(),results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'city'});},0);
       var date=event.target.closest('#date-options button');
       if(date)setTimeout(function(){track('filter_apply',{filter_type:'date',filter_value:date.textContent.trim(),results_count:visibleCards()});if(date.getAttribute('aria-disabled')==='true')track('date_unavailable_view',{date_label:date.textContent.trim()});},0);
+      if(event.target.closest('#clear-filters'))setTimeout(function(){track('filter_clear',{filter_type:'all',results_count:visibleCards()});},0);
 
       var share=event.target.closest('#share-acervo,#share-whatsapp,#share-copy-link');
       if(share){

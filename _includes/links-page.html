@@ -555,7 +555,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <div>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</div>
       <div class="filter-empty-actions"><button class="filter-empty-submit" id="open-event-form-empty" type="button">Submeter minha mobilização</button></div>
     </div>
-    <div class="subsection">Atos e mobilizações <span>Agenda por data e estado · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
+    <div class="subsection">Mobilizações presenciais <span>Todos os eventos em uma agenda única · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
     <div class="links" id="presencial-events">
       <!-- Coleta Instagram: lote 1 de 10 publicações, revisado em 15/10. Um card por evento. -->
 
@@ -1925,8 +1925,20 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           });
         });
       }
+      // A agenda é uma só para quem está navegando. A descrição do card
+      // continua informando quando o evento é estudantil, universitário etc.
+      function mergeStudentAgenda(){
+        var main=document.getElementById('presencial-events');
+        var secondary=document.getElementById('student-agenda');
+        if(!main||!secondary)return;
+        Array.from(secondary.querySelectorAll('[data-state]')).forEach(function(card){main.appendChild(card);});
+        var heading=secondary.previousElementSibling;
+        if(heading&&heading.classList.contains('subsection'))heading.remove();
+        secondary.remove();
+      }
+      mergeStudentAgenda();
       enhanceAgendaCards();
-      ['presencial-events','student-agenda'].forEach(function(id){
+      ['presencial-events'].forEach(function(id){
         var list=document.getElementById(id);
         if(!list)return;
         Array.from(list.querySelectorAll('[data-state]')).sort(function(a,b){
@@ -1942,7 +1954,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         return date.toLocaleDateString('pt-BR',{day:'numeric',month:'long'});
       }
       function groupAgendaByDate(){
-        ['presencial-events','student-agenda'].forEach(function(id){
+        ['presencial-events'].forEach(function(id){
           var list=document.getElementById(id);
           if(!list)return;
           list.querySelectorAll('.date-group-heading').forEach(function(heading){heading.remove();});

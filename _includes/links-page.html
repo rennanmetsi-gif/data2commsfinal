@@ -165,22 +165,17 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 
 /* Agenda presencial: leitura rápida, hierarquia e acessibilidade no celular. */
 .presencial-section .filter-row{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:12px 14px;gap:10px;margin:0 0 14px}
+.presencial-section .filter-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
+.presencial-section .filter-field{min-width:0}
+.presencial-section .filter-field label{display:block;margin-bottom:8px}
 .presencial-section .filter-row label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432;letter-spacing:-.01em}
-.presencial-section .state-filter{min-height:48px;min-width:230px;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
+.presencial-section .state-filter,.presencial-section .city-select{display:block;width:100%;min-height:48px;min-width:0;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
+.presencial-section .city-select:disabled{background:#f1eeee;color:#7d7276;cursor:not-allowed}
 .presencial-section .clear-filters{min-height:42px;padding:9px 13px;border:1px solid #bd173650;border-radius:10px;background:#fff;color:#7c1d34;font:800 12px/1.1 Inter,Arial,sans-serif;cursor:pointer}
+.presencial-section .filter-row .clear-filters{grid-column:1/-1;justify-self:start}
 .presencial-section .clear-filters:hover{background:#fbe4e9}
 .presencial-section .clear-filters:disabled{border-color:#d8d0d2;background:#f1eeee;color:#9b9295;cursor:default}
-.presencial-section .city-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:-3px 0 15px}
-.presencial-section .city-filter[hidden]{display:none}
-.presencial-section .city-filter label{display:block;margin-bottom:9px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
-.presencial-section .city-filter input{width:100%;min-height:46px;padding:10px 13px;border:2px solid #bd173650;border-radius:10px;background:#fff;color:#431722;font:600 15px/1.2 Inter,Arial,sans-serif}
-.presencial-section .city-filter input:focus-visible,.presencial-section .city-options button:focus-visible{outline:3px solid #16894b;outline-offset:2px}
-.presencial-section .city-options{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;max-height:188px;overflow-y:auto;overscroll-behavior:contain;margin-top:12px;padding:2px 4px 4px 2px}
-.presencial-section .city-options button{min-height:36px;padding:7px 12px;border:1px solid #cfabb6;border-radius:999px;background:#fff6f8;color:#542633;font:700 12px/1.2 Inter,Arial,sans-serif;cursor:pointer}
-.presencial-section .city-options>span{display:block;width:100%;padding:3px 2px;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
-.presencial-section .city-options button:hover{background:#fbe0e7}
-.presencial-section .city-options button[aria-pressed="true"]{border-color:#0a8e42;background:#0a9d4a;color:#fff}
-.presencial-section .city-filter-hint{margin:10px 1px 0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
+.presencial-section .city-filter-hint{grid-column:1/-1;margin:0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
 .presencial-section .date-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:0 0 15px}
 .presencial-section .date-filter-label{display:block;margin-bottom:10px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
 .presencial-section .date-options{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 2px 7px;scroll-snap-type:x proximity}
@@ -249,7 +244,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .event-dialog-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 20px 16px;background:#bd1736;color:#fff}.event-dialog-head h2{margin:0;font:800 clamp(25px,6vw,34px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;text-transform:uppercase}.event-dialog-head p{margin:7px 0 0;max-width:520px;font:500 12px/1.45 Inter,Arial,sans-serif;color:#ffe8ed}.dialog-close{flex:0 0 auto;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#ffffff18;color:#fff;font:26px/1 Inter,Arial,sans-serif;cursor:pointer}.dialog-body{padding:20px}.form-progress{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:#806a70;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em}.form-progress-bar{flex:1;height:6px;border-radius:999px;background:#eadde0;overflow:hidden}.form-progress-bar span{display:block;width:25%;height:100%;border-radius:inherit;background:#bd1736;transition:width .2s}.event-form{display:block}.form-step{display:grid;grid-template-columns:1fr 1fr;gap:15px}.step-heading{grid-column:1/-1;margin-bottom:2px}.step-kicker{display:block;margin-bottom:5px;font:700 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#bd1736}.step-heading h3{margin:0;font:800 25px/1.08 'Space Grotesk',sans-serif;letter-spacing:-.035em;color:#3b2029}.step-heading p{margin:8px 0 0;font:400 13px/1.5 Inter,Arial,sans-serif;color:#69545b}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font:700 13px/1.25 'Space Grotesk',sans-serif;color:#49232e}.form-field label span{font:500 11px Inter,Arial,sans-serif;color:#806a70}.form-field input,.form-field select,.form-field textarea{width:100%;min-height:48px;border:1px solid #cbaab2;border-radius:10px;background:#fff;color:#2e1b21;padding:11px 12px;font:500 15px/1.35 Inter,Arial,sans-serif}.form-field textarea{min-height:150px;resize:vertical}.form-help{margin:0;font:400 11px/1.45 Inter,Arial,sans-serif;color:#755d64}.step-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:5px}.step-next,.form-submit{min-height:50px;padding:12px 22px;border:0;border-radius:10px;background:#bd1736;color:#fff;font:800 15px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 4px 0 #7f1027}.step-back{min-height:48px;padding:10px 14px;border:1px solid #c9b4ba;border-radius:10px;background:#fff;color:#5a3b45;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}.form-submit:disabled{cursor:wait;opacity:.65}.validation-note{grid-column:1/-1;padding:15px;border:1px solid #e1bd81;border-radius:12px;background:#fff5dc;color:#5b3b19;font:500 13px/1.5 Inter,Arial,sans-serif}.validation-note strong{font-family:'Space Grotesk',sans-serif}.evidence-choices{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:11px}.evidence-choice{min-height:145px;padding:16px;border:2px solid #d9bdc4;border-radius:14px;background:#fff;text-align:left;color:#3d222b;cursor:pointer;transition:border-color .16s,transform .16s,box-shadow .16s}.evidence-choice:hover{border-color:#bd1736;transform:translateY(-2px);box-shadow:0 5px 0 #bd17361f}.evidence-choice strong{display:block;margin-bottom:7px;font:800 18px/1.15 'Space Grotesk',sans-serif;color:#8f1933}.evidence-choice span{display:block;font:400 12px/1.48 Inter,Arial,sans-serif;color:#665158}.skip-evidence{border:0;background:transparent;color:#72535d;text-decoration:underline;font:600 12px/1.4 Inter,Arial,sans-serif;cursor:pointer}.form-error{grid-column:1/-1;margin:12px 0 0;font:600 12px/1.35 Inter,Arial,sans-serif;color:#a00}.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}.submission-success{padding:8px 0 2px}.submission-success h3{margin:0 0 10px;font:800 28px/1.05 'Space Grotesk',sans-serif;color:#89152e;letter-spacing:-.035em}.submission-success p{margin:0 0 12px;font:500 14px/1.55 Inter,Arial,sans-serif;color:#503b42}.submission-success .dialog-done{min-height:48px;padding:10px 20px;border:0;border-radius:10px;background:#291d22;color:#fff;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}
 .skip-evidence{grid-column:1/-1;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;width:100%;padding:14px 15px;border:1px dashed #b88445;border-radius:14px;background:linear-gradient(120deg,#fff8e8,#fffdf7);color:#482f24;text-decoration:none;text-align:left;box-shadow:0 3px 0 #d9b78355;transition:transform .16s,border-color .16s,box-shadow .16s}.skip-evidence:hover{border-color:#9c5d20;transform:translateY(-2px);box-shadow:0 5px 0 #d9b78366,0 9px 20px #8f5c1b16}.skip-evidence-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f2dfb8;color:#7c491d;font:800 21px/1 'Space Grotesk',sans-serif}.skip-evidence-copy strong{display:block;margin-bottom:3px;font:800 15px/1.2 'Space Grotesk',sans-serif}.skip-evidence-copy span{display:block;font:500 11px/1.4 Inter,Arial,sans-serif;color:#735a4d}.skip-evidence-arrow{font:800 23px/1 'Space Grotesk',sans-serif;color:#9a5b22}
 @media(max-width:540px){
- .presencial-section .filter-row{display:flex;flex-direction:column;align-items:stretch}
+ .presencial-section .filter-row{grid-template-columns:1fr;align-items:stretch}
+ .presencial-section .filter-row .clear-filters,.presencial-section .city-filter-hint{grid-column:1}
  .presencial-section .state-filter{width:100%;max-width:none;min-width:0}
  .presencial-section .link.event-card{padding:13px 10px;gap:10px}
  .presencial-section .event-card .card-icon.event-date-badge{flex-basis:53px;width:53px;min-height:67px}
@@ -512,7 +508,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <small>Clique e envie as informações do ato na sua região. Vamos validar antes de publicar.</small>
     </button>
     <div class="filter-row">
-      <label for="state-filter">Filtrar por estado</label>
+      <div class="filter-field"><label for="state-filter">Estado</label>
       <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" >
 <option value="todos">Todos os estados</option>
 <option value="AM">Amazonas</option>
@@ -533,14 +529,12 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 <option value="SP">São Paulo</option>
 <option value="SE">Sergipe</option>
 <option value="BR">Agenda nacional</option>
-<option value="EX">Exterior</option></select>
+<option value="EX">Exterior</option></select></div>
+      <div class="filter-field"><label for="city-filter">Cidade</label>
+        <select class="city-select" id="city-filter" aria-label="Filtrar mobilizações por cidade" disabled><option value="">Selecione um estado primeiro</option></select>
+      </div>
+      <p class="city-filter-hint" id="city-filter-hint">Selecione um estado para escolher uma cidade.</p>
       <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
-    </div>
-    <div class="city-filter" id="city-filter-panel">
-      <label for="city-search">Buscar por cidade</label>
-      <input id="city-search" type="search" inputmode="search" autocomplete="off" placeholder="Digite uma cidade, por exemplo São Paulo" aria-controls="city-options">
-      <div class="city-options" id="city-options" aria-label="Cidades disponíveis"></div>
-      <p class="city-filter-hint" id="city-filter-hint">Escolha uma cidade ou continue rolando para ver todos os atos do estado.</p>
     </div>
     <div class="date-filter" aria-labelledby="date-filter-label">
       <span class="date-filter-label" id="date-filter-label">Filtrar por dia · outubro de 2026</span>
@@ -552,7 +546,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <button class="agenda-expand-button" id="agenda-expand-button" type="button"></button>
     </div>
     <div class="filter-empty" id="filter-empty" hidden>
-      <div>Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</div>
+      <div id="filter-empty-message">Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.</div>
       <div class="filter-empty-actions"><button class="filter-empty-submit" id="open-event-form-empty" type="button">Submeter minha mobilização</button></div>
     </div>
     <div class="subsection">Mobilizações presenciais <span>Todos os eventos em uma agenda única · consulte a fonte ou as lideranças locais para orientações de última hora</span></div>
@@ -1745,6 +1739,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     </dialog>
 
 
+    <script src="/assets/js/acervo-municipios-ibge.js"></script>
     <script>
     (function(){
       var nav=document.querySelector('.jump-links');
@@ -2018,24 +2013,23 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       Array.from(filter.options).forEach(function(option){
         if(option.value!=='todos')option.remove();
       });
-      Object.keys(totals).sort(function(a,b){
+      Object.keys(stateNames).filter(function(state){return state!=='BR'&&state!=='EX'||Boolean(totals[state]);}).sort(function(a,b){
         if(a==='BR')return 1;
         if(b==='BR')return -1;
         return (stateNames[a]||a).localeCompare(stateNames[b]||b,'pt-BR');
       }).forEach(function(state){
         var option=document.createElement('option');
         option.value=state;
-        option.textContent=(stateNames[state]||state)+' ('+totals[state]+')';
+        option.textContent=(stateNames[state]||state)+' ('+(totals[state]||0)+')';
         filter.appendChild(option);
       });
       var overall=Object.keys(totals).reduce(function(n,k){return n+totals[k]},0);
       filter.options[0].textContent='Todos os estados ('+overall+')';
-      var cityPanel=document.getElementById('city-filter-panel');
-      var citySearch=document.getElementById('city-search');
-      var cityOptions=document.getElementById('city-options');
+      var citySelect=document.getElementById('city-filter');
       var cityHint=document.getElementById('city-filter-hint');
       var dateOptions=document.getElementById('date-options');
       var filterEmpty=document.getElementById('filter-empty');
+      var filterEmptyMessage=document.getElementById('filter-empty-message');
       var filterSummary=document.getElementById('filter-summary');
       var clearFilters=document.getElementById('clear-filters');
       var agendaExpand=document.getElementById('agenda-expand');
@@ -2069,6 +2063,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           var button=document.createElement('button');
           button.type='button';
           button.textContent=label;
+          button.dataset.analyticsValue=value?String(Number(value.slice(-2)))+' do 10':label;
           var available=dateHasEvents(value);
           button.classList.toggle('is-unavailable',!available);
           button.setAttribute('aria-disabled',String(!available));
@@ -2086,7 +2081,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           dateOptions.appendChild(button);
         }
         addDateOption('Todos','');
-        for(var day=15;day<=25;day++)addDateOption(String(day)+' do 10','2026-10-'+String(day).padStart(2,'0'));
+        for(var day=15;day<=25;day++)addDateOption(String(day)+'/10','2026-10-'+String(day).padStart(2,'0'));
       }
       function availableCities(state){
         var counts={};
@@ -2105,49 +2100,36 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       }
       function renderCityOptions(){
         var state=filter.value;
-        var query=cityKey(citySearch.value);
-        var cities=availableCities(state);
-        cityOptions.replaceChildren();
-        function addOption(label,value,pressed){
-          var button=document.createElement('button');
-          button.type='button';
-          button.textContent=label;
-          button.setAttribute('aria-pressed',String(pressed));
-          button.addEventListener('click',function(){
-            selectedCity=value;
-            citySearch.value='';
-            resetAgendaExpansion();
-            renderDateOptions();
-            filterCards(filter.value);
-            renderCityOptions();
+        var mapped=state==='todos'?[]:availableCities(state);
+        var all=(window.acervoMunicipiosPorUF||{})[state]||[];
+        var mappedKeys=new Set(mapped.map(function(item){return cityKey(item.name);}));
+        citySelect.replaceChildren();
+        var first=document.createElement('option');
+        first.value='';
+        first.textContent=state==='todos'?'Selecione um estado primeiro':'Todas as cidades de '+(stateNames[state]||state);
+        citySelect.appendChild(first);
+        citySelect.disabled=state==='todos';
+        function addGroup(label,items){
+          if(!items.length)return;
+          var group=document.createElement('optgroup');
+          group.label=label;
+          items.forEach(function(item){
+            var option=document.createElement('option');
+            option.value=item.name;
+            option.textContent=item.count?item.name+' ('+item.count+')':item.name;
+            group.appendChild(option);
           });
-          cityOptions.appendChild(button);
+          citySelect.appendChild(group);
         }
-        if(!query&&state==='todos'){
-          addOption('Todas as cidades', '', !selectedCity);
-          var prompt=document.createElement('span');
-          prompt.textContent='Escolha um estado ou digite uma cidade para ver os resultados.';
-          cityOptions.appendChild(prompt);
-        }else{
-          addOption('Todas as cidades', '', !selectedCity);
-          cities.filter(function(item){return !query||cityKey(item.name).includes(query);}).forEach(function(item){
-            addOption(item.name+' ('+item.count+')',item.name,selectedCity===item.name);
-          });
+        if(state!=='todos'){
+          addGroup('Cidades com mobilizações mapeadas',mapped);
+          addGroup('Sem mobilização mapeada · submeta seu evento',all.filter(function(name){return !mappedKeys.has(cityKey(name));}).sort(function(a,b){return a.localeCompare(b,'pt-BR');}).map(function(name){return {name:name,count:0};}));
         }
-        if(query&&!cityOptions.childElementCount){
-          var empty=document.createElement('span');
-          empty.textContent='Nenhuma cidade encontrada. Tente outro nome.';
-          cityOptions.appendChild(empty);
-        }
-        cityHint.textContent=selectedCity==='__no_city__'?'Nenhuma cidade encontrada. Você pode enviar sua mobilização mesmo assim.':(selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.'));
+        citySelect.value=selectedCity||'';
+        cityHint.textContent=state==='todos'?'Selecione um estado para escolher uma cidade.':selectedCity?(mappedKeys.has(cityKey(selectedCity))?'Mostrando mobilizações em '+selectedCity+'.':'Ainda não há mobilização mapeada em '+selectedCity+'. Você pode enviar a sua.'):'Cidades com eventos aparecem primeiro. As demais permitem cadastrar uma mobilização.';
       }
       function resetAgendaExpansion(){agendaExpanded=agendaPageSize;}
       function filterCards(selected){
-        if(selected!=='todos'&&!totals[selected]){
-          selected='todos';
-          filter.value='todos';
-          selectedCity='';
-        }
         var eligible=[];
         var cards=[];
         ['presencial-events','student-agenda'].forEach(function(id){
@@ -2193,6 +2175,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           if(visible)heading.textContent=formatDateHeading(heading.dataset.groupDate)+' · '+count+(count===1?' mobilização':' mobilizações');
         });
         filterEmpty.hidden=totalVisible!==0;
+        if(filterEmptyMessage){
+          filterEmptyMessage.textContent=selectedCity&&!(availableCities(selected).some(function(item){return cityKey(item.name)===cityKey(selectedCity);}))?'Ainda não há mobilização mapeada em '+selectedCity+', '+(stateNames[selected]||selected)+'. Submeta seu evento para validação.':'Nenhum ato encontrado com esses filtros. Tente outro dia, cidade ou estado.';
+        }
         var shown=Math.min(agendaExpanded,totalVisible);
         var label=totalVisible===1?'1 mobilização encontrada':totalVisible+' mobilizações encontradas';
         if(totalVisible>agendaPageSize&&shown<totalVisible)label='Mostrando '+shown+' de '+totalVisible+' mobilizações';
@@ -2220,25 +2205,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       filter.addEventListener('change',function(){
         resetAgendaExpansion();
         selectedCity='';
-        citySearch.value='';
         renderCityOptions();
         renderDateOptions();
         filterCards(filter.value);
       });
-      citySearch.addEventListener('input',function(){
-        var query=cityKey(citySearch.value);
-        var matches=availableCities(filter.value).filter(function(item){return !query||cityKey(item.name).includes(query);});
-        if(!query){selectedCity='';resetAgendaExpansion();}
-        else if(!matches.length){selectedCity='__no_city__';resetAgendaExpansion();}
-        else if(selectedCity==='__no_city__')selectedCity='';
+      citySelect.addEventListener('change',function(){
+        selectedCity=citySelect.value;
+        resetAgendaExpansion();
         renderCityOptions();
+        renderDateOptions();
         filterCards(filter.value);
-      });
-      citySearch.addEventListener('keydown',function(event){
-        if(event.key!=='Enter')return;
-        var buttons=cityOptions.querySelectorAll('button');
-        var first=citySearch.value.trim()&&buttons.length>1?buttons[1]:buttons[0];
-        if(first){event.preventDefault();first.click();}
       });
       renderCityOptions();
       renderDateOptions();
@@ -2248,7 +2224,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         filter.value='todos';
         selectedCity='';
         selectedDate='';
-        citySearch.value='';
         renderCityOptions();
         renderDateOptions();
         filterCards('todos');
@@ -2272,7 +2247,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           if(option.value==='todos')option.textContent='Todos os estados ('+Object.keys(totals).reduce(function(n,k){return n+totals[k]},0)+')';
           else option.textContent=(stateNames[option.value]||option.value)+' ('+(totals[option.value]||0)+')';
         });
-        if(selectedCity&&!availableCities(filter.value).some(function(item){return item.name===selectedCity;}))selectedCity='';
         renderCityOptions();
         renderDateOptions();
         filterCards(filter.value||'todos');
@@ -2534,10 +2508,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         else track('resource_click',params);
       }
 
-      var city=event.target.closest('#city-options button');
-      if(city)setTimeout(function(){track('filter_apply',{filter_type:'city',filter_value:city.textContent.replace(/\s*\(\d+\)\s*$/,'').trim(),results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'city'});},0);
       var date=event.target.closest('#date-options button');
-      if(date)setTimeout(function(){track('filter_apply',{filter_type:'date',filter_value:date.textContent.trim(),results_count:visibleCards()});if(date.getAttribute('aria-disabled')==='true')track('date_unavailable_view',{date_label:date.textContent.trim()});},0);
+      if(date)setTimeout(function(){var value=date.dataset.analyticsValue||date.textContent.trim();track('filter_apply',{filter_type:'date',filter_value:value,results_count:visibleCards()});if(date.getAttribute('aria-disabled')==='true')track('date_unavailable_view',{date_label:value});},0);
       if(event.target.closest('#clear-filters'))setTimeout(function(){track('filter_clear',{filter_type:'all',results_count:visibleCards()});},0);
 
       var share=event.target.closest('#share-acervo,#share-whatsapp,#share-copy-link');
@@ -2571,6 +2543,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     var stateFilter=document.getElementById('state-filter');
     if(stateFilter)stateFilter.addEventListener('change',function(){
       setTimeout(function(){track(stateFilter.value==='todos'?'filter_clear':'filter_apply',{filter_type:'state',filter_value:stateFilter.value,results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'state',filter_value:stateFilter.value});},0);
+    });
+    var cityFilter=document.getElementById('city-filter');
+    if(cityFilter)cityFilter.addEventListener('change',function(){
+      var value=cityFilter.value||'Todas as cidades';
+      setTimeout(function(){track('filter_apply',{filter_type:'city',filter_value:value,results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'city',filter_value:value});},0);
     });
 
     var eventForm=document.getElementById('event-form');

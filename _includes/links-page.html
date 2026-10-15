@@ -258,18 +258,9 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
  .presencial-section .event-card .event-state{padding:5px 7px}
 }
 
-/* As ações globais permanecem no fluxo para não cobrir os cards da agenda. */
-.presencial-section.is-enhanced{padding-bottom:0}
-.presencial-section.is-enhanced .submit-event-cta{position:static;left:auto;bottom:auto;width:100%;margin:2px 0 16px;transform:none;visibility:visible;opacity:1;pointer-events:auto;animation:none}
-.presencial-section.is-enhanced .submit-event-cta.is-floating{visibility:visible;opacity:1;pointer-events:auto;animation:none;transform:none}
-@media(max-width:600px){
- .presencial-section.is-enhanced{padding-bottom:0}
- .presencial-section.is-enhanced .submit-event-cta{bottom:auto;width:100%;padding:15px 14px;border-radius:16px}
-}
-
-/* Compartilhar permanece no fluxo para não encobrir a agenda presencial. */
-.share-cta.share-dock-enabled{position:static;z-index:auto;left:auto;bottom:auto;width:min(460px,100%);margin:0 auto 16px;padding:0;border:0;border-radius:999px;background:transparent;box-shadow:none;transform:none;opacity:1;visibility:visible;pointer-events:auto;transition:none}
-.share-cta.share-dock-enabled.is-visible{transform:none;opacity:1;visibility:visible;pointer-events:auto}
+/* Os dois CTAs voltam a acompanhar a navegação, com respiro calculado entre eles. */
+.share-cta.share-dock-enabled{position:fixed;z-index:19;left:50%;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 28px));margin:0;padding:0;border:0;border-radius:999px;background:transparent;box-shadow:none;transform:translate(-50%,12px);opacity:0;visibility:hidden;pointer-events:none;transition:bottom .15s ease,transform .2s ease,opacity .2s ease,visibility .2s ease}
+.share-cta.share-dock-enabled.is-visible{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto}
 .share-cta.share-dock-enabled .share-actions{display:flex;align-items:stretch;gap:5px;padding:5px;border:2px solid #ffb3c2;border-radius:999px;background:linear-gradient(135deg,#df2148 0%,#bd1736 55%,#8f1028 100%);box-shadow:0 7px 0 #711023,0 13px 28px #7c102f90,inset 0 1px 0 #ffffff80;transition:filter .2s ease}
 .share-cta.share-dock-enabled .share-primary{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:62px;padding:9px 10px;border:0;border-radius:999px;background:transparent;color:#fff;cursor:pointer;text-align:center;text-shadow:0 1px 2px #64102499;transition:filter .16s ease}
 .share-cta.share-dock-enabled .share-primary:hover{filter:brightness(1.12)}
@@ -1765,13 +1756,19 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       presencialSection.classList.add('is-enhanced');
       if(shareDock)shareDock.classList.add('share-dock-enabled');
       function updateFloatingCta(){
-        // As ações ficam no fluxo normal; continuam acessíveis sem cobrir a agenda.
-        floatingCta.classList.remove('is-floating');
-        floatingCta.tabIndex=0;
-        floatingCta.setAttribute('aria-hidden','false');
+        var rect=presencialSection.getBoundingClientRect();
+        var show=rect.top<=Math.min(160,window.innerHeight*.3)&&rect.bottom>window.innerHeight-10;
+        floatingCta.classList.toggle('is-floating',show);
+        floatingCta.tabIndex=show?0:-1;
+        floatingCta.setAttribute('aria-hidden',show?'false':'true');
         if(shareDock){
-          shareDock.classList.remove('is-visible');
-          shareDock.style.bottom='';
+          shareDock.classList.toggle('is-visible',window.scrollY>150);
+          if(show){
+            // Mantém 16px de respiro entre o botão de compartilhar e o de submissão.
+            shareDock.style.bottom=Math.ceil(window.innerHeight-floatingCta.getBoundingClientRect().top+16)+'px';
+          }else{
+            shareDock.style.bottom='';
+          }
         }
       }
       window.addEventListener('scroll',updateFloatingCta,{passive:true});

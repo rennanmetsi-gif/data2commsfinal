@@ -2139,7 +2139,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           empty.textContent='Nenhuma cidade encontrada. Tente outro nome.';
           cityOptions.appendChild(empty);
         }
-        cityHint.textContent=selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.');
+        cityHint.textContent=selectedCity==='__no_city__'?'Nenhuma cidade encontrada. Você pode enviar sua mobilização mesmo assim.':(selectedCity?'Mostrando atos em '+selectedCity+'. Selecione “Todas as cidades” para ver a agenda inteira.':(state==='todos'?'Digite uma cidade ou escolha uma das cidades encontradas na agenda.':'Digite uma cidade ou escolha uma das cidades deste estado.'));
       }
       function resetAgendaExpansion(){agendaExpanded=agendaPageSize;}
       function filterCards(selected){
@@ -2225,7 +2225,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         renderDateOptions();
         filterCards(filter.value);
       });
-      citySearch.addEventListener('input',renderCityOptions);
+      citySearch.addEventListener('input',function(){
+        var query=cityKey(citySearch.value);
+        var matches=availableCities(filter.value).filter(function(item){return !query||cityKey(item.name).includes(query);});
+        if(!query){selectedCity='';resetAgendaExpansion();}
+        else if(!matches.length){selectedCity='__no_city__';resetAgendaExpansion();}
+        else if(selectedCity==='__no_city__')selectedCity='';
+        renderCityOptions();
+        filterCards(filter.value);
+      });
       citySearch.addEventListener('keydown',function(event){
         if(event.key!=='Enter')return;
         var buttons=cityOptions.querySelectorAll('button');

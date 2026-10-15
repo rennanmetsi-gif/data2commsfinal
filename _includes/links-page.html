@@ -1738,6 +1738,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         </div>
       </div>
     </dialog>
+    <dialog class="date-empty-dialog" id="city-empty-dialog" aria-labelledby="city-empty-title" aria-describedby="city-empty-message">
+      <div class="date-empty-body">
+        <h2 id="city-empty-title">Ainda não há mobilização mapeada</h2>
+        <p id="city-empty-message"></p>
+        <div class="date-empty-actions">
+          <button class="date-empty-close" type="button">Fechar</button>
+          <button class="date-empty-submit" type="button">Submeter minha mobilização</button>
+        </div>
+      </div>
+    </dialog>
 
 
     <script src="/assets/js/acervo-municipios-ibge.js"></script>
@@ -2216,6 +2226,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         renderCityOptions();
         renderDateOptions();
         filterCards(filter.value);
+        if(selectedCity&&!availableCities(filter.value).some(function(item){return cityKey(item.name)===cityKey(selectedCity);}))showCityEmptyDialog();
       });
       renderCityOptions();
       renderDateOptions();
@@ -2264,6 +2275,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 
       var dialog=document.getElementById('event-dialog');
       var dateEmptyDialog=document.getElementById('date-empty-dialog');
+      var cityEmptyDialog=document.getElementById('city-empty-dialog');
       var openForm=document.getElementById('open-event-form');
       var eventForm=document.getElementById('event-form');
       var success=document.getElementById('submission-success');
@@ -2282,6 +2294,15 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       function closeDateEmptyDialog(){
         if(typeof dateEmptyDialog.close==='function')dateEmptyDialog.close();
         else{dateEmptyDialog.removeAttribute('open');dateEmptyDialog.classList.remove('is-fallback');document.body.style.overflow='';}
+      }
+      function showCityEmptyDialog(){
+        cityEmptyDialog.querySelector('#city-empty-message').textContent='Ainda não há mobilização mapeada em '+selectedCity+', '+(stateNames[filter.value]||filter.value)+'. Você pode submeter a sua para validação.';
+        if(typeof cityEmptyDialog.showModal==='function')cityEmptyDialog.showModal();
+        else{cityEmptyDialog.classList.add('is-fallback');cityEmptyDialog.setAttribute('open','');document.body.style.overflow='hidden';}
+      }
+      function closeCityEmptyDialog(){
+        if(typeof cityEmptyDialog.close==='function')cityEmptyDialog.close();
+        else{cityEmptyDialog.removeAttribute('open');cityEmptyDialog.classList.remove('is-fallback');document.body.style.overflow='';}
       }
       function closeDialog(){
         if(typeof dialog.close==='function')dialog.close();
@@ -2337,8 +2358,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       dialog.querySelector('.dialog-done').addEventListener('click',closeDialog);
       dialog.addEventListener('click',function(event){if(event.target===dialog)closeDialog();});
       dateEmptyDialog.querySelector('.date-empty-close').addEventListener('click',closeDateEmptyDialog);
-      dateEmptyDialog.querySelector('.date-empty-submit').addEventListener('click',function(){closeDateEmptyDialog();openEventForm();});
+      dateEmptyDialog.querySelector('.date-empty-submit').addEventListener('click',function(){closeDateEmptyDialog();openForm.click();});
       dateEmptyDialog.addEventListener('click',function(event){if(event.target===dateEmptyDialog)closeDateEmptyDialog();});
+      cityEmptyDialog.querySelector('.date-empty-close').addEventListener('click',closeCityEmptyDialog);
+      cityEmptyDialog.querySelector('.date-empty-submit').addEventListener('click',function(){closeCityEmptyDialog();openForm.click();});
+      cityEmptyDialog.addEventListener('click',function(event){if(event.target===cityEmptyDialog)closeCityEmptyDialog();});
       eventForm.querySelectorAll('[data-next]').forEach(function(button){
         button.addEventListener('click',function(){
           var current=Number(button.closest('.form-step').dataset.step);
@@ -2548,8 +2572,24 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     var cityFilter=document.getElementById('city-filter');
     if(cityFilter)cityFilter.addEventListener('change',function(){
       var value=cityFilter.value||'Todas as cidades';
-      setTimeout(function(){track('filter_apply',{filter_type:'city',filter_value:value,results_count:visibleCards()});if(!visibleCards())track('filter_no_results',{filter_type:'city',filter_value:value});},0);
+      setTimeout(function(){
+        track('filter_apply',{filter_type:'city',filter_value:value,results_count:visibleCards()});
+        if(!visibleCards())track('filter_no_results',{filter_type:'city',filter_value:value});
+        var unavailable=document.getElementById('city-empty-dialog');
+        if(unavailable&&unavailable.open)track('city_unavailable_view',{state:stateFilter.value,city:value,form_name:'submit_mobilization'});
+      },0);
     });
+    var cityUnavailable=document.getElementById('city-empty-dialog');
+    if(cityUnavailable){
+      cityUnavailable.addEventListener('click',function(event){
+        if(event.target.closest('.date-empty-submit')){
+          track('city_unavailable_submit',{state:stateFilter.value,city:cityFilter.value,form_name:'submit_mobilization'});
+        }else if(event.target.closest('.date-empty-close')||event.target===cityUnavailable){
+          track('city_unavailable_dismiss',{state:stateFilter.value,city:cityFilter.value,dismiss_reason:'close'});
+        }
+      });
+      cityUnavailable.addEventListener('cancel',function(){track('city_unavailable_dismiss',{state:stateFilter.value,city:cityFilter.value,dismiss_reason:'escape'});});
+    }
 
     var eventForm=document.getElementById('event-form');
     if(eventForm){

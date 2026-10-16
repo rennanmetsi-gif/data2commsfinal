@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={theme:{extend:{colors:{ink:'#0A0A0A',paper:'#F2F0EB',acidLime:'#D6FF00',concrete:'#A6A6A6'},fontFamily:{sans:['Inter','sans-serif'],display:['Space Grotesk','sans-serif'],mono:['IBM Plex Mono','monospace']}}}};</script>
-    <style>body{background:#F2F0EB;color:#0A0A0A;-webkit-font-smoothing:antialiased}.border-b-editorial{border-bottom:1px solid #0A0A0A}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>body{background:#F2F0EB;color:#0A0A0A;-webkit-font-smoothing:antialiased}.border-b-editorial{border-bottom:1px solid #0A0A0A}.press-content{font-size:18px;line-height:1.8;overflow-wrap:anywhere}.press-content p{margin:0 0 1.4em}.press-content h2{font-family:"Space Grotesk",sans-serif;font-size:1.65rem;font-weight:600;line-height:1.25;letter-spacing:-.025em;margin:2.4em 0 .85em}.press-content a{color:#174e46;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}.press-content a:hover{color:#000;background:#D6FF00}.press-content a:focus-visible{outline:3px solid #617500;outline-offset:4px}.press-content blockquote{border-left:4px solid #a7c700;margin:2.5em 0;padding:1.2em 1.5em;background:#fff}.press-content blockquote footer{font-size:.9rem;line-height:1.5}.press-sources{padding-left:1.2em;list-style:disc;font-size:1rem}.press-sources li{margin-bottom:1em}.press-title{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:600;line-height:1.12;letter-spacing:-.04em;max-width:1050px}.press-request{display:inline-block;font-weight:600}@media(max-width:640px){.press-content{font-size:17px}.press-content blockquote{padding:1em}.press-content h2{font-size:1.4rem}}</style>
 </head>
 <body class="font-sans overflow-x-hidden bg-paper">
     {% include header.html %}
@@ -17,18 +18,18 @@
             <header class="border-b-editorial p-6 md:p-12 lg:p-16 bg-white">
                 <a href="{{ site.baseurl }}/imprensa/" class="font-mono text-[10px] uppercase tracking-widest hover:text-concrete">&#8592; Imprensa</a>
                 <p class="font-mono text-[10px] uppercase tracking-widest text-concrete mt-12 mb-5">{{ page.category | default: "Comunicado" }} // {{ page.date | date: "%d.%m.%Y" }}</p>
-                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] max-w-5xl">{{ page.title }}</h1>
+                <h1 class="font-display press-title">{{ page.title }}</h1>
                 {% if page.description %}<p class="text-xl leading-relaxed max-w-3xl mt-8">{{ page.description }}</p>{% endif %}
-                {% if page.download_pdf or page.download_dossier %}
-                <div class="flex flex-wrap gap-3 mt-10 font-mono text-[10px] uppercase tracking-widest">
-                    {% if page.download_pdf %}<a href="{{ site.baseurl }}{{ page.download_pdf }}" download class="bg-ink text-paper px-5 py-4 hover:bg-acidLime hover:text-ink transition-colors">Baixar release em PDF</a>{% endif %}
-                    {% if page.download_dossier and page.download_dossier != "/assets/press/2026-10-16-dossie-publico-evidencias.zip" %}<a href="{{ site.baseurl }}{{ page.download_dossier }}" download class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Baixar dossiê público de evidências (ZIP)</a>{% endif %}
+                {% if page.download_docx %}
+                <div class="flex flex-wrap gap-3 mt-8 text-sm">
+                    <a href="{{ site.baseurl }}{{ page.download_docx }}" download class="bg-ink text-paper px-5 py-4 hover:bg-acidLime hover:text-ink transition-colors">Baixar release em Word (.docx)</a>
+                    <a href="mailto:{{ page.contact_email }}?subject=Solicita%C3%A7%C3%A3o%20de%20dossi%C3%AA%20%E2%80%94%20Meta" class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Solicitar dossiê por e-mail</a>
                 </div>
+                <p class="text-sm mt-4">Dossiê de evidências disponível somente mediante solicitação por e-mail.</p>
                 {% endif %}
             </header>
-            <div class="prose max-w-3xl mx-auto px-6 py-12 md:py-16 leading-relaxed">
+            <div class="press-content max-w-3xl mx-auto px-6 py-12 md:py-16 leading-relaxed">
                 {{ content }}
-                {% if page.contact_email %}<section class="not-prose border-t border-ink mt-14 pt-8 font-mono text-sm"><p class="uppercase tracking-widest text-concrete mb-3">Contato para imprensa</p><a class="underline" href="mailto:{{ page.contact_email }}">{{ page.contact_email }}</a></section>{% endif %}
             </div>
         </article>
     </main>

@@ -164,7 +164,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @media(min-width:640px){.resources-section>.links{grid-template-columns:1fr 1fr}.resources-section .link{align-items:flex-start}}
 
 /* Agenda presencial: leitura rápida, hierarquia e acessibilidade no celular. */
-.presencial-section .filter-row{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:12px 14px;gap:10px;margin:0 0 14px}
+.presencial-section .agenda-filters{margin:0 0 15px;padding:16px;border:1px solid #bd17364d;border-radius:14px;background:#fffefa}
+.presencial-section .agenda-filters-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 15px}
+.presencial-section .agenda-filters-head strong{color:#3b2029;font:800 18px/1.2 'Space Grotesk',sans-serif}
+.presencial-section .agenda-filters-head span{color:#72535b;font:500 12px/1.35 Inter,Arial,sans-serif}
+.presencial-section .filter-row{gap:10px;margin:0}
 .presencial-section .filter-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
 .presencial-section .filter-field{min-width:0}
 .presencial-section .filter-field label{display:block;margin-bottom:8px}
@@ -172,11 +176,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .state-filter,.presencial-section .city-select{display:block;width:100%;min-height:48px;min-width:0;font:700 15px/1.2 Inter,Arial,sans-serif;border:2px solid #bd173650;background:#fff;color:#431722;padding:10px 14px;border-radius:10px}
 .presencial-section .city-select:disabled{background:#f1eeee;color:#7d7276;cursor:not-allowed}
 .presencial-section .clear-filters{min-height:42px;padding:9px 13px;border:1px solid #bd173650;border-radius:10px;background:#fff;color:#7c1d34;font:800 12px/1.1 Inter,Arial,sans-serif;cursor:pointer}
-.presencial-section .filter-row .clear-filters{grid-column:1/-1;justify-self:start}
+.presencial-section .agenda-filters>.clear-filters{margin-top:14px}
 .presencial-section .clear-filters:hover{background:#fbe4e9}
 .presencial-section .clear-filters:disabled{border-color:#d8d0d2;background:#f1eeee;color:#9b9295;cursor:default}
 .presencial-section .city-filter-hint{grid-column:1/-1;margin:0;color:#72535b;font:500 12px/1.4 Inter,Arial,sans-serif}
-.presencial-section .date-filter{background:#fffefa;border:1px solid #bd173633;border-radius:14px;padding:14px;margin:0 0 15px}
+.presencial-section .date-filter{margin:16px 0 0;padding:16px 0 0;border-top:1px solid #e5cfd5}
 .presencial-section .date-filter-label{display:block;margin-bottom:10px;font:700 13px/1.25 'Space Grotesk',sans-serif;color:#532432}
 .presencial-section .date-legend{display:flex;flex-wrap:wrap;gap:6px 13px;margin:0 0 10px;color:#634e55;font:600 11px/1.3 Inter,Arial,sans-serif}
 .presencial-section .date-legend span{display:inline-flex;align-items:center;gap:5px}
@@ -199,15 +203,16 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section .filter-empty-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
 .presencial-section .filter-empty-submit{min-height:44px;padding:9px 14px;border:0;border-radius:10px;background:#0a9d4a;color:#fff;font:800 13px/1.1 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #086b34}
 .presencial-section .filter-empty-submit:hover{background:#087f3c}
-.presencial-section .agenda-expand{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 15px;padding:11px 13px;border:1px solid #bd17364d;border-radius:12px;background:#fffefa}
+.presencial-section .agenda-expand{display:grid;grid-template-columns:minmax(0,2fr) minmax(120px,1fr);align-items:center;gap:10px;width:min(100%,640px);margin:16px auto 0;padding:12px;border:1px solid #bd17364d;border-radius:12px;background:#fffefa}
 .presencial-section .agenda-expand[hidden]{display:none}
 .presencial-section .agenda-expand-status{margin:0;color:#684750;font:700 12px/1.35 'IBM Plex Mono',monospace}
-.presencial-section .agenda-expand-button{flex:0 0 auto;min-height:42px;padding:9px 13px;border:1px solid #bd1736;border-radius:10px;background:#bd1736;color:#fff;font:800 12px/1.1 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #7f1027}
+.presencial-section .agenda-expand-button{width:100%;min-height:66px;padding:12px 16px;border:1px solid #bd1736;border-radius:10px;background:#bd1736;color:#fff;font:800 18px/1.1 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 3px 0 #7f1027}
 .presencial-section .agenda-expand-button:hover{background:#a91432}
-.presencial-section .agenda-expand{justify-content:center;flex-wrap:wrap;margin:15px 0 0}
-.presencial-section .agenda-expand-button{flex:1 1 150px;max-width:230px}
-.presencial-section .agenda-expand-all{flex:1 1 150px;max-width:230px;min-height:42px;padding:9px 13px;border:1px solid #bd1736;border-radius:10px;background:#fff;color:#89152e;font:800 12px/1.1 'Space Grotesk',sans-serif;cursor:pointer}
+.presencial-section .agenda-expand-all{width:100%;min-height:50px;padding:9px 11px;border:1px solid #bd1736;border-radius:10px;background:#fff;color:#89152e;font:800 13px/1.1 'Space Grotesk',sans-serif;cursor:pointer}
 .presencial-section .agenda-expand-all:hover{background:#fff0f3}
+.presencial-section .agenda-expand.is-complete{grid-template-columns:1fr}
+.presencial-section .agenda-expand.is-complete .agenda-expand-button{max-width:350px;justify-self:center}
+@media(max-width:370px){.presencial-section .agenda-expand{grid-template-columns:minmax(0,1.5fr) minmax(105px,1fr);gap:7px}.presencial-section .agenda-expand-button{font-size:16px}}
 .presencial-section .subsection{font:700 15px/1.35 'Space Grotesk',sans-serif;margin:18px 2px 10px;gap:6px 12px}
 .presencial-section .subsection span{font:500 12px/1.45 Inter,Arial,sans-serif;color:#684750}
 .presencial-section .links{gap:11px}
@@ -240,7 +245,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .submit-event-cta{animation:submit-glow 2.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.submit-event-cta{animation:none}}
 /* Chamada da seção presencial, com destaque e respiro no celular. */
-.presencial-section.is-enhanced{padding-bottom:112px}
+.presencial-section.is-enhanced{padding-bottom:190px}
 @keyframes submit-float{0%,65%,100%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}72%{transform:translateX(-50%) translateY(-9px);box-shadow:0 7px 0 #08652e,0 18px 42px 9px #36e17aab,inset 0 1px 0 #fff}79%{transform:translateX(-50%) translateY(0);box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80}}
 .presencial-section.is-enhanced .submit-event-cta{position:fixed;z-index:20;left:50%;bottom:32px;bottom:calc(32px + env(safe-area-inset-bottom));width:min(460px,calc(100% - 28px));margin:0;padding:16px 18px;border:2px solid #b4ffd0;border-radius:999px;background:linear-gradient(135deg,#20d766 0%,#0ba847 55%,#087b39 100%);color:#fff;box-shadow:0 7px 0 #08652e,0 13px 28px #0a7d4290,inset 0 1px 0 #ffffff80;text-shadow:0 1px 2px #065b2d99;text-align:center;transform:translateX(-50%);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s ease,filter .2s ease;animation:none}
 .presencial-section.is-enhanced .submit-event-cta.is-floating{visibility:visible;opacity:1;pointer-events:auto;animation:submit-float 4.5s ease-in-out infinite}
@@ -248,7 +253,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .presencial-section.is-enhanced .submit-event-cta small{display:none}
 .presencial-section.is-enhanced .submit-event-cta.is-floating:hover{filter:brightness(1.12)}
 .presencial-section.is-enhanced .submit-event-cta.is-floating:active{filter:brightness(.95)}
-@media(max-width:600px){.presencial-section.is-enhanced{padding-bottom:126px}.presencial-section.is-enhanced .submit-event-cta{bottom:38px;bottom:calc(38px + env(safe-area-inset-bottom));width:calc(100% - 36px);padding:17px 16px}}
+@media(max-width:600px){.presencial-section.is-enhanced{padding-bottom:205px}.presencial-section.is-enhanced .submit-event-cta{bottom:38px;bottom:calc(38px + env(safe-area-inset-bottom));width:calc(100% - 36px);padding:17px 16px}}
 @media(prefers-reduced-motion:reduce){.presencial-section.is-enhanced .submit-event-cta.is-floating{animation:none;transition:none}}
 .event-dialog{width:min(690px,calc(100% - 24px));max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:auto}.event-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}
 .date-empty-dialog{width:min(430px,calc(100% - 28px));padding:0;border:0;border-radius:18px;background:#fffefa;color:#2e1b21;box-shadow:0 24px 80px #32101d66;overflow:hidden}.date-empty-dialog::backdrop{background:#24151bbb;backdrop-filter:blur(3px)}.date-empty-body{padding:24px}.date-empty-body h2{margin:0 0 10px;font:800 25px/1.08 'Space Grotesk',sans-serif;color:#3b2029}.date-empty-body p{margin:0 0 18px;font:500 14px/1.5 Inter,Arial,sans-serif;color:#69545b}.date-empty-actions{display:flex;gap:10px;justify-content:flex-end}.date-empty-close{min-height:48px;padding:10px 16px;border:1px solid #c9b4ba;border-radius:10px;background:#fff;color:#5a3b45;font:700 14px 'Space Grotesk',sans-serif;cursor:pointer}.date-empty-submit{min-height:48px;padding:10px 18px;border:0;border-radius:10px;background:#0b9b4a;color:#fff;font:800 14px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 4px 0 #067335}
@@ -257,7 +262,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .skip-evidence{grid-column:1/-1;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;width:100%;padding:14px 15px;border:1px dashed #b88445;border-radius:14px;background:linear-gradient(120deg,#fff8e8,#fffdf7);color:#482f24;text-decoration:none;text-align:left;box-shadow:0 3px 0 #d9b78355;transition:transform .16s,border-color .16s,box-shadow .16s}.skip-evidence:hover{border-color:#9c5d20;transform:translateY(-2px);box-shadow:0 5px 0 #d9b78366,0 9px 20px #8f5c1b16}.skip-evidence-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#f2dfb8;color:#7c491d;font:800 21px/1 'Space Grotesk',sans-serif}.skip-evidence-copy strong{display:block;margin-bottom:3px;font:800 15px/1.2 'Space Grotesk',sans-serif}.skip-evidence-copy span{display:block;font:500 11px/1.4 Inter,Arial,sans-serif;color:#735a4d}.skip-evidence-arrow{font:800 23px/1 'Space Grotesk',sans-serif;color:#9a5b22}
 @media(max-width:540px){
  .presencial-section .filter-row{grid-template-columns:1fr;align-items:stretch}
- .presencial-section .filter-row .clear-filters,.presencial-section .city-filter-hint{grid-column:1}
+ .presencial-section .city-filter-hint{grid-column:1}
  .presencial-section .state-filter{width:100%;max-width:none;min-width:0}
  .presencial-section .link.event-card{padding:13px 10px;gap:10px}
  .presencial-section .event-card .card-icon.event-date-badge{flex-basis:53px;width:53px;min-height:67px}
@@ -520,6 +525,8 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       <span class="event-cta-line-one">Não encontrou seu ato?</span> <span class="event-cta-line-two">Envie aqui</span>
       <small>Clique e envie as informações do ato na sua região. Vamos validar antes de publicar.</small>
     </button>
+    <div class="agenda-filters" role="group" aria-label="Filtros de mobilização presencial">
+    <div class="agenda-filters-head"><strong>Encontre mobilizações</strong><span>Escolha estado, cidade ou dia</span></div>
     <div class="filter-row">
       <div class="filter-field"><label for="state-filter">Estado</label>
       <select class="state-filter" id="state-filter" aria-label="Filtrar eventos presenciais por estado" >
@@ -547,12 +554,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         <select class="city-select" id="city-filter" aria-label="Filtrar mobilizações por cidade" disabled><option value="">Selecione um estado primeiro</option></select>
       </div>
       <p class="city-filter-hint" id="city-filter-hint">Selecione um estado para escolher uma cidade.</p>
-      <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
     </div>
     <div class="date-filter" aria-labelledby="date-filter-label">
       <span class="date-filter-label" id="date-filter-label">Filtrar por dia · outubro de 2026</span>
       <p class="date-legend"><span>Com mobilizações</span><span class="date-legend-selected">Seleção atual</span><span class="date-legend-empty">Sem eventos mapeados</span></p>
       <div class="date-options" id="date-options" aria-label="Calendário de mobilizações de outubro de 2026"></div>
+    </div>
+    <button class="clear-filters" id="clear-filters" type="button" disabled>Limpar filtros</button>
     </div>
     <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
     <div class="agenda-expand" id="agenda-expand" hidden>
@@ -1805,19 +1813,34 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       if(shareDock)shareDock.classList.add('share-dock-enabled');
       function updateFloatingCta(){
         var rect=presencialSection.getBoundingClientRect();
-        var show=rect.top<=Math.min(160,window.innerHeight*.3)&&rect.bottom>window.innerHeight-10;
-        floatingCta.classList.toggle('is-floating',show);
-        floatingCta.tabIndex=show?0:-1;
-        floatingCta.setAttribute('aria-hidden',show?'false':'true');
+        var inSection=rect.top<=Math.min(160,window.innerHeight*.3)&&rect.bottom>Math.max(160,window.innerHeight*.35);
+        // Ao chegar ao fim da seção, mantenha o botão verde dentro da área rosa.
+        floatingCta.style.bottom='';
+        if(inSection){
+          var baseBottom=parseFloat(getComputedStyle(floatingCta).bottom)||0;
+          var lift=Math.max(0,window.innerHeight-baseBottom-rect.bottom+12);
+          if(lift)floatingCta.style.bottom=(baseBottom+lift)+'px';
+        }
         if(shareDock){
-          shareDock.classList.toggle('is-visible',window.scrollY>150);
-          if(show){
+          if(inSection){
             // Mantém 16px de respiro entre o botão de compartilhar e o de submissão.
             shareDock.style.bottom=Math.ceil(window.innerHeight-floatingCta.getBoundingClientRect().top+16)+'px';
           }else{
             shareDock.style.bottom='';
           }
         }
+        var expand=document.getElementById('agenda-expand');
+        var expandRect=expand&&!expand.hidden?expand.getBoundingClientRect():null;
+        function overlaps(first,second){
+          return first&&first.top<second.bottom+12&&first.bottom>second.top-12&&first.left<second.right+12&&first.right>second.left-12;
+        }
+        // Durante a passagem do “Ver mais” pela área fixa, dê prioridade ao controle da agenda.
+        var blockSubmit=inSection&&overlaps(expandRect,floatingCta.getBoundingClientRect());
+        var show=inSection&&!blockSubmit;
+        floatingCta.classList.toggle('is-floating',show);
+        floatingCta.tabIndex=show?0:-1;
+        floatingCta.setAttribute('aria-hidden',show?'false':'true');
+        if(shareDock)shareDock.classList.toggle('is-visible',window.scrollY>150&&!blockSubmit&&!overlaps(expandRect,shareDock.getBoundingClientRect()));
       }
       window.addEventListener('scroll',updateFloatingCta,{passive:true});
       window.addEventListener('resize',updateFloatingCta);
@@ -2245,6 +2268,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(agendaExpand){
           var remaining=Math.max(totalVisible-shown,0);
           agendaExpand.hidden=totalVisible<=agendaPageSize;
+          agendaExpand.classList.toggle('is-complete',remaining===0);
           agendaExpand.dataset.totalCount=String(totalVisible);
           if(agendaExpandStatus)agendaExpandStatus.textContent=totalVisible?'Exibindo '+shown+' de '+totalVisible+' mobilizações.':'A agenda está vazia para este filtro.';
           if(agendaExpandButton){
@@ -2259,6 +2283,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           }
           if(agendaExpandAll)agendaExpandAll.hidden=remaining===0;
         }
+        updateFloatingCta();
         if(clearFilters){
           var active=filter.value!=='todos'||Boolean(selectedCity)||Boolean(selectedDate);
           clearFilters.disabled=!active;

@@ -34,25 +34,29 @@
     <style>body{background:#F2F0EB;color:#0A0A0A;-webkit-font-smoothing:antialiased}.border-b-editorial{border-bottom:1px solid #0A0A0A}.press-content{font-size:18px;line-height:1.8;overflow-wrap:anywhere}.press-content p{margin:0 0 1.4em}.press-content h2{font-family:"Space Grotesk",sans-serif;font-size:1.65rem;font-weight:600;line-height:1.25;letter-spacing:-.025em;margin:2.4em 0 .85em}.press-content a{color:#174e46;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}.press-content a:hover{color:#000;background:#D6FF00}.press-content a:focus-visible{outline:3px solid #617500;outline-offset:4px}.press-content blockquote{border-left:4px solid #a7c700;margin:2.5em 0;padding:1.2em 1.5em;background:#fff}.press-content blockquote footer{font-size:.9rem;line-height:1.5}.press-sources{padding-left:1.2em;list-style:disc;font-size:1rem}.press-sources li{margin-bottom:1em}.press-title{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:600;line-height:1.12;letter-spacing:-.04em;max-width:1050px}.press-request{display:inline-block;font-weight:600}@media(max-width:640px){.press-content{font-size:17px}.press-content blockquote{padding:1em}.press-content h2{font-size:1.4rem}}</style>
 
     <style>
-    /* Layout exclusivo das páginas de release: banner full-bleed e coluna editorial única. */
+    /* Release compacto: imagem full-width sem ocupar toda a altura da janela. */
     main > article, main > article > header { display:block; width:100%; max-width:none; min-width:0; margin:0; }
-    main > article .publication-hero { width:100%; max-width:none; margin:0; padding:0; gap:0; }
-    main > article .publication-hero__image { display:block; width:100%; max-width:none; height:auto; aspect-ratio:1672 / 941; object-fit:cover; object-position:center; }
+    main > article .publication-hero { width:100%; max-width:none; margin:0; padding:0; gap:0; min-height:0; }
+    main > article .publication-hero__image { display:block; width:100%; max-width:none; height:clamp(220px,24vw,350px); max-height:350px; aspect-ratio:auto; object-fit:cover; object-position:center 46%; }
     main > article .publication-hero__meta,
     main > article .publication-hero__title { box-sizing:border-box; width:min(100%, 1024px); margin-left:auto; margin-right:auto; }
-    main > article .publication-hero__meta { margin-top:22px; margin-bottom:12px; padding:0 24px; }
-    main > article .publication-hero__title { padding:0 24px 34px; font-size:clamp(29px,3.2vw,46px); line-height:1.16; overflow-wrap:normal; }
-    main > article .publication-intro { box-sizing:border-box; width:100%; max-width:none; padding:34px max(24px,calc((100vw - 976px)/2)) 38px; text-align:left; }
-    main > article .publication-intro .publication-deck { width:100%; max-width:none; margin:0; }
-    main > article .publication-intro .flex { justify-content:flex-start; }
-    main > article .press-content { box-sizing:border-box; width:100%; max-width:976px !important; margin:0 auto; padding:52px 24px 80px; text-align:left; }
+    main > article .publication-hero__meta { margin-top:14px; margin-bottom:7px; padding:0 24px; }
+    main > article .publication-hero__title { padding:0 24px 20px; font-size:clamp(25px,2.7vw,38px); line-height:1.13; overflow-wrap:normal; }
+    main > article .publication-intro { box-sizing:border-box; width:100%; max-width:none; padding:22px max(24px,calc((100vw - 976px)/2)) 22px; text-align:left; }
+    main > article .publication-intro .publication-deck { width:100%; max-width:none; margin:0; font-size:16px; line-height:1.5; }
+    main > article .publication-intro .flex { justify-content:flex-start; margin-top:16px; }
+    main > article .publication-intro .flex a { padding:11px 15px; }
+    main > article .publication-intro > p:last-child { margin-top:10px; }
+    main > article .press-content { box-sizing:border-box; width:100%; max-width:976px !important; margin:0 auto; padding:28px 24px 70px; text-align:left; }
     main > article .press-content p, main > article .press-content h2, main > article .press-content blockquote { text-align:left; }
     @media(max-width:640px) {
-      main > article .publication-hero__image { aspect-ratio:auto; }
-      main > article .publication-hero__meta { margin-top:20px; padding:0 20px; }
-      main > article .publication-hero__title { padding:0 20px 26px; font-size:clamp(25px,7vw,32px); }
-      main > article .publication-intro { padding:26px 20px 30px; }
-      main > article .press-content { padding:36px 20px 60px; }
+      main > article .publication-hero__image { height:210px; max-height:210px; object-position:center 46%; }
+      main > article .publication-hero__meta { margin-top:12px; margin-bottom:6px; padding:0 20px; }
+      main > article .publication-hero__title { padding:0 20px 17px; font-size:clamp(23px,6vw,28px); }
+      main > article .publication-intro { padding:18px 20px 20px; }
+      main > article .publication-intro .publication-deck { font-size:15px; line-height:1.45; }
+      main > article .publication-intro .flex { margin-top:14px; }
+      main > article .press-content { padding:26px 20px 55px; }
     }
     </style>
 </head>

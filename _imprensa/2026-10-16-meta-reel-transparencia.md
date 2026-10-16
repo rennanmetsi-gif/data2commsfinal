@@ -1,10 +1,10 @@
 ---
-title: "Meta remove vídeo e bloqueia mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
+title: "Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
 date: "2026-10-16 09:00:00 -03:00"
 category: "Release à imprensa"
 image: "/assets/press/meta-restricoes-instagram-preview.png"
 image_alt: "Ilustração de um celular com vídeo de mobilização política, cercado por símbolos da Meta, do Instagram e de restrições de conteúdo."
-social_title: "Meta remove vídeo e bloqueia mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
+social_title: "Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
 social_description: "Vídeo de mobilização popular ultrapassava 400 mil visualizações. Leia o release, as referências e como solicitar o dossiê."
 description: "Publicação divulgava o Acervo Lula, iniciativa popular e independente de apoio à candidatura de Lula e oposição a Flávio Bolsonaro (PL), sem vínculo com a campanha oficial. Vídeo ultrapassava 400 mil visualizações quando foi removido; penalidades foram revertidas após recursos, sem esclarecimentos sobre os motivos que levaram à sua aplicação."
 excerpt: "Publicação divulgava o Acervo Lula, iniciativa popular e independente de apoio à candidatura de Lula e oposição a Flávio Bolsonaro (PL), sem vínculo com a campanha oficial. Vídeo ultrapassava 400 mil visualizações quando foi removido; penalidades foram revertidas após recursos, sem esclarecimentos sobre os motivos que levaram à sua aplicação."
@@ -34,7 +34,7 @@ contact_email: "rennanmetsi@data2comms.com.br"
 
 <p>Os dados não permitem calcular quantas visualizações eventualmente deixaram de ocorrer, tampouco demonstram interferência deliberada nos sistemas de recomendação. Ainda assim, o episódio traz uma questão sobre os efeitos de penalidades posteriormente revertidas: o restabelecimento de uma publicação não significa, necessariamente, a recuperação das oportunidades de circulação durante sua indisponibilidade.</p>
 
-<h2><strong>Meta impôs bloqueio de mensagens por 30 dias</strong></h2>
+<h2><strong>Meta impôs bloqueio de mensagens inicialmente previsto para 30 dias</strong></h2>
 
 <p>Em 13 de outubro, o perfil recebeu uma segunda penalidade. Dessa vez, o Instagram restringiu o envio de mensagens diretas, com encerramento inicialmente previsto para 12 de novembro de 2026.</p>
 
@@ -44,7 +44,7 @@ contact_email: "rennanmetsi@data2comms.com.br"
 
 <p>Capturas de tela documentam tanto a aplicação quanto a reversão da penalidade. Para a administração do perfil, a sequência levanta dúvidas sobre a fundamentação e a proporcionalidade das restrições, considerando que uma punição inicialmente prevista para durar aproximadamente um mês foi cancelada após revisão no mesmo dia.</p>
 
-<h2><strong>Seguidores também relatam dificuldades para interagir</strong></h2>
+<h2><strong>Seguidores também relataram dificuldades para interagir</strong></h2>
 
 <p>Os problemas não ficaram restritos às funcionalidades utilizadas pela administração do perfil.</p>
 

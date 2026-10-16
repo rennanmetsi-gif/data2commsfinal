@@ -22,7 +22,7 @@
                 {% if page.download_pdf or page.download_dossier %}
                 <div class="flex flex-wrap gap-3 mt-10 font-mono text-[10px] uppercase tracking-widest">
                     {% if page.download_pdf %}<a href="{{ site.baseurl }}{{ page.download_pdf }}" download class="bg-ink text-paper px-5 py-4 hover:bg-acidLime hover:text-ink transition-colors">Baixar release em PDF</a>{% endif %}
-                    {% if page.download_dossier %}<a href="{{ site.baseurl }}{{ page.download_dossier }}" download class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Baixar dossiê público de evidências (ZIP)</a>{% endif %}
+                    {% if page.download_dossier and page.download_dossier != "/assets/press/2026-10-16-dossie-publico-evidencias.zip" %}<a href="{{ site.baseurl }}{{ page.download_dossier }}" download class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Baixar dossiê público de evidências (ZIP)</a>{% endif %}
                 </div>
                 {% endif %}
             </header>

@@ -24,7 +24,8 @@
         </div>
     </div>
 
-    <div class="site-navigation">
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="agency-navigation">Menu <span aria-hidden="true">＋</span></button>
+    <div class="site-navigation" id="agency-navigation">
         <div class="site-navigation-inner">
             <nav class="site-menu-rail" aria-label="Navegação do site">
                 <a href="{{ site.baseurl }}/home-antiga/" class="site-menu-item site-menu-main {% if current_url == '/home-antiga/' %}is-active{% endif %}">Início</a>
@@ -38,3 +39,15 @@
         </div>
     </div>
 </header>
+
+<script>
+(function(){
+ const header=document.querySelector('.site-header');
+ const button=header.querySelector('.site-menu-toggle');
+ header.classList.add('menu-ready');
+ function close(){header.classList.remove('menu-open');button.setAttribute('aria-expanded','false');button.querySelector('span').textContent='＋';}
+ button.addEventListener('click',function(){const open=button.getAttribute('aria-expanded')!=='true';header.classList.toggle('menu-open',open);button.setAttribute('aria-expanded',String(open));button.querySelector('span').textContent=open?'−':'＋';});
+ header.addEventListener('keydown',function(e){if(e.key==='Escape'){close();button.focus();}});
+ header.querySelectorAll('.site-menu-item').forEach(function(link){link.addEventListener('click',close);});
+})();
+</script>

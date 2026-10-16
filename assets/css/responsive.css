@@ -914,3 +914,18 @@ textarea:focus-visible {
         overflow-wrap: break-word;
     }
 }
+
+/* Agency navigation: fit the current seven links and disclose on small screens. */
+.site-menu-toggle{display:none}
+.site-menu-rail{grid-template-columns:repeat(6,minmax(0,1fr)) minmax(190px,1.8fr);min-width:0}
+.site-navigation-inner{width:100%;min-width:0}
+.site-navigation{overflow:visible}
+@media(max-width:1023px){
+ .site-menu-toggle{display:flex;width:100%;align-items:center;justify-content:space-between;min-height:52px;padding:12px 24px;background:#f8f7f2;color:#0a0a0a;border:1px solid #0a0a0a;font:600 13px/1.4 'IBM Plex Mono',monospace;text-transform:uppercase;cursor:pointer}
+ .site-menu-toggle:focus-visible{outline:3px solid #d6ff00;outline-offset:-4px}
+ .site-header.menu-ready:not(.menu-open) .site-navigation{display:none}
+ .site-menu-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));min-width:0;width:100%;min-height:0}
+ .site-menu-item{min-height:52px;padding:14px 12px;white-space:normal;font-size:11px;border-bottom:1px solid #0a0a0a}
+ .site-menu-cta{grid-column:1/-1}
+ .site-brandbar-tagline{white-space:normal}
+}

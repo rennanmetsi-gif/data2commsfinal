@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Imprensa data2comms</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#0A0A0A',paper:'#F2F0EB',acidLime:'#D6FF00',concrete:'#A6A6A6'},fontFamily:{sans:['Inter','sans-serif'],display:['Space Grotesk','sans-serif'],mono:['IBM Plex Mono','monospace']}}}};</script>
+    <style>body{background:#F2F0EB;color:#0A0A0A;-webkit-font-smoothing:antialiased}.border-b-editorial{border-bottom:1px solid #0A0A0A}</style>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+    {% include header.html %}
+    <main>
+        <article>
+            <header class="border-b-editorial p-6 md:p-12 lg:p-16 bg-white">
+                <a href="{{ site.baseurl }}/imprensa/" class="font-mono text-[10px] uppercase tracking-widest hover:text-concrete">&#8592; Imprensa</a>
+                <p class="font-mono text-[10px] uppercase tracking-widest text-concrete mt-12 mb-5">{{ page.category | default: "Comunicado" }} // {{ page.date | date: "%d.%m.%Y" }}</p>
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] max-w-5xl">{{ page.title }}</h1>
+                {% if page.description %}<p class="text-xl leading-relaxed max-w-3xl mt-8">{{ page.description }}</p>{% endif %}
+            </header>
+            <div class="prose max-w-3xl mx-auto px-6 py-12 md:py-16 leading-relaxed">{{ content }}</div>
+        </article>
+    </main>
+    {% include footer.html %}
+</body>
+</html>

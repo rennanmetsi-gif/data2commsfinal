@@ -1,0 +1,74 @@
+---
+layout: null
+permalink: /imprensa/
+---
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprensa | data2comms</title>
+    <meta name="description" content="Comunicados, notícias, pesquisas e novidades da data2comms para imprensa e parceiros.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { ink: '#0A0A0A', paper: '#F2F0EB', acidLime: '#D6FF00', concrete: '#A6A6A6' },
+            fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] }
+        } } };
+    </script>
+    <style>
+        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
+        .border-r-editorial { border-right: 1px solid #0A0A0A; }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C3ZTDYFHLT');</script>
+</head>
+<body class="font-sans overflow-x-hidden bg-paper">
+    {% include header.html %}
+    <main>
+        <section class="grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
+            <div class="lg:col-span-8 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial">
+                <p class="font-mono text-[11px] uppercase tracking-widest mb-8">Sala de imprensa // data2comms</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-[7rem] uppercase tracking-tighter leading-[0.84] mb-10">Notícias, ideias e novidades da agência.</h1>
+            </div>
+            <div class="lg:col-span-4 p-6 md:p-12 lg:p-16 bg-ink text-paper flex flex-col justify-end">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime mb-6">Para jornalistas e parceiros</p>
+                <p class="font-sans text-xl md:text-2xl leading-relaxed">Comunicados, pesquisas, projetos e informações institucionais da data2comms.</p>
+            </div>
+        </section>
+        {% assign press_items = site.imprensa | sort: "date" | reverse %}
+        {% if press_items.size > 0 %}
+        <section class="grid grid-cols-1 md:grid-cols-2 bg-white">
+            {% for item in press_items %}
+            <a href="{{ site.baseurl }}{{ item.url }}" class="group p-6 md:p-10 flex flex-col min-h-[320px] border-b-editorial hover:bg-ink hover:text-paper transition-colors">
+                <div class="flex justify-between gap-4 font-mono text-[10px] uppercase tracking-widest mb-16 text-ink/60 group-hover:text-paper/60">
+                    <span>{{ item.category | default: "Comunicado" }}</span>
+                    <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d.%m.%Y" }}</time>
+                </div>
+                <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none mb-6 group-hover:text-acidLime">{{ item.title }}</h2>
+                <p class="font-sans text-base leading-relaxed opacity-80 mt-auto">{{ item.excerpt | strip_html }}</p>
+                <span class="font-mono text-[10px] uppercase tracking-widest mt-8 border-t border-current pt-4">Ler comunicado &#8594;</span>
+            </a>
+            {% endfor %}
+        </section>
+        {% else %}
+        <section class="grid grid-cols-1 lg:grid-cols-2 border-b-editorial bg-white">
+            <div class="p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-concrete mb-6">Arquivo em atualização</p>
+                <h2 class="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9]">Em breve, novidades da agência.</h2>
+            </div>
+            <div class="p-6 md:p-12 lg:p-16 flex flex-col justify-center">
+                <p class="text-lg leading-relaxed mb-8">Este espaço reúne comunicados, pesquisas, projetos e notícias da data2comms.</p>
+                <a href="{{ site.baseurl }}/contato.html#fale-conosco" class="self-start bg-ink text-paper px-6 py-4 font-mono text-[11px] uppercase tracking-widest hover:bg-acidLime hover:text-ink transition-colors">Fale com a data2comms</a>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+    {% include footer.html %}
+</body>
+</html>

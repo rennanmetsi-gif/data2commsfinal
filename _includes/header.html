@@ -8,7 +8,7 @@
     {% assign editorial_active = true %}
 {% endif %}
 {% assign blog_active = false %}
-{% if current_url == '/blog/' or current_url == '/metodo/' or current_url contains '/blog/' or page.layout == 'blog' %}
+{% if current_url == '/blog/' or current_url == '/imprensa/' or current_url == '/metodo/' or current_url contains '/blog/' or page.layout == 'blog' %}
     {% assign blog_active = true %}
 {% endif %}
 
@@ -29,15 +29,10 @@
             <nav class="site-menu-rail" aria-label="Navegação do site">
                 <a href="{{ site.baseurl }}/home-antiga/" class="site-menu-item site-menu-main {% if current_url == '/home-antiga/' %}is-active{% endif %}">Início</a>
                 <a href="{{ site.baseurl }}/editorial/" class="site-menu-item site-menu-main {% if editorial_active %}is-active{% endif %}">Editorial</a>
-                <a href="{{ site.baseurl }}/blog/" class="site-menu-item site-menu-main {% if blog_active %}is-active{% endif %}">Blog</a>
+                <a href="{{ site.baseurl }}/blog/" class="site-menu-item site-menu-main {% if blog_active and current_url != '/imprensa/' %}is-active{% endif %}">Blog</a>
+                <a href="{{ site.baseurl }}/imprensa/" class="site-menu-item site-menu-main {% if current_url == '/imprensa/' %}is-active{% endif %}">Imprensa</a>
                 <a href="{{ site.baseurl }}/servicos.html" class="site-menu-item site-menu-main {% if services_active %}is-active{% endif %}">Serviços</a>
                 <a href="{{ site.baseurl }}/sobre.html" class="site-menu-item site-menu-main {% if current_url == '/sobre.html' %}is-active{% endif %}">Sobre</a>
-                <span class="site-menu-item site-menu-label">Editorias</span>
-                <a href="{{ site.baseurl }}/moda/" class="site-menu-item site-menu-category" {% if current_url == '/moda/' %}aria-current="page"{% endif %}>Moda</a>
-                <a href="{{ site.baseurl }}/beleza/" class="site-menu-item site-menu-category" {% if current_url == '/beleza/' %}aria-current="page"{% endif %}>Beleza</a>
-                <a href="{{ site.baseurl }}/saude/" class="site-menu-item site-menu-category" {% if current_url == '/saude/' %}aria-current="page"{% endif %}>Saúde</a>
-                <a href="{{ site.baseurl }}/tecnologia/" class="site-menu-item site-menu-category" {% if current_url == '/tecnologia/' %}aria-current="page"{% endif %}>Tecnologia</a>
-                <a href="{{ site.baseurl }}/comportamento/" class="site-menu-item site-menu-category" {% if current_url == '/comportamento/' %}aria-current="page"{% endif %}>Comportamento</a>
                 <a href="{{ site.baseurl }}/contato.html" class="site-menu-item site-menu-cta {% if current_url == '/contato.html' %}is-active{% endif %}">Fale com a data2comms</a>
             </nav>
         </div>

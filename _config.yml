@@ -11,6 +11,9 @@ collections:
   blog:
     output: true
     permalink: /blog/:name/
+  imprensa:
+    output: true
+    permalink: /imprensa/:name/
 
 defaults:
   - scope:
@@ -23,6 +26,11 @@ defaults:
       type: "blog"
     values:
       layout: "blog"
+  - scope:
+      path: ""
+      type: "imprensa"
+    values:
+      layout: "press"
 
 exclude:
   - README.md

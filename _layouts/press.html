@@ -19,8 +19,17 @@
                 <p class="font-mono text-[10px] uppercase tracking-widest text-concrete mt-12 mb-5">{{ page.category | default: "Comunicado" }} // {{ page.date | date: "%d.%m.%Y" }}</p>
                 <h1 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] max-w-5xl">{{ page.title }}</h1>
                 {% if page.description %}<p class="text-xl leading-relaxed max-w-3xl mt-8">{{ page.description }}</p>{% endif %}
+                {% if page.download_pdf or page.download_dossier %}
+                <div class="flex flex-wrap gap-3 mt-10 font-mono text-[10px] uppercase tracking-widest">
+                    {% if page.download_pdf %}<a href="{{ site.baseurl }}{{ page.download_pdf }}" download class="bg-ink text-paper px-5 py-4 hover:bg-acidLime hover:text-ink transition-colors">Baixar release em PDF</a>{% endif %}
+                    {% if page.download_dossier %}<a href="{{ site.baseurl }}{{ page.download_dossier }}" download class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Baixar dossiê público de evidências (ZIP)</a>{% endif %}
+                </div>
+                {% endif %}
             </header>
-            <div class="prose max-w-3xl mx-auto px-6 py-12 md:py-16 leading-relaxed">{{ content }}</div>
+            <div class="prose max-w-3xl mx-auto px-6 py-12 md:py-16 leading-relaxed">
+                {{ content }}
+                {% if page.contact_email %}<section class="not-prose border-t border-ink mt-14 pt-8 font-mono text-sm"><p class="uppercase tracking-widest text-concrete mb-3">Contato para imprensa</p><a class="underline" href="mailto:{{ page.contact_email }}">{{ page.contact_email }}</a></section>{% endif %}
+            </div>
         </article>
     </main>
     {% include footer.html %}

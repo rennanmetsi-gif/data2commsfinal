@@ -1,0 +1,5 @@
+<div class="publication-hero">
+    {% if page.image %}<img class="publication-hero__image" src="{{ page.image | relative_url }}" alt="" fetchpriority="high" decoding="async">{% endif %}
+    <p class="publication-hero__meta">{{ page.category | default: page.service_area | default: "Publicação" }} · {{ page.date | date: "%d.%m.%Y" }}</p>
+    <h1 class="publication-hero__title"><span>{{ page.title | escape }}</span></h1>
+</div>

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/publication-hero.css">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
         tailwind.config = {
@@ -43,27 +44,13 @@
             <section class="border-b-editorial px-6 py-4 md:px-12 lg:px-16 bg-paper">
                 <a href="{{ site.baseurl }}/blog/" class="font-mono text-[10px] md:text-[11px] uppercase tracking-widest hover:text-electricBlue transition-colors">&#8592; Blog</a>
             </section>
-            <header class="grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
-                <div class="lg:col-span-8 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r border-ink">
-                    <p class="brand-kicker font-mono text-[10px] uppercase tracking-widest mb-8">{{ page.service_area }}</p>
-                    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-[0.9] mb-10">{{ page.title }}</h1>
-                    <p class="font-sans text-xl md:text-2xl leading-relaxed text-ink/80">{{ page.excerpt }}</p>
-                </div>
-                <div class="lg:col-span-4 bg-ink text-paper p-6 md:p-12 lg:p-16 flex flex-col justify-between">
-                    <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime">Blog // data2comms</p>
-                    <div class="font-mono text-[10px] uppercase tracking-widest space-y-3 mt-16">
-                        <p>{{ page.date | date: "%d.%m.%Y" }}</p>
-                        <p>{{ page.read_time }}</p>
-                        <p>{{ page.author }}</p>
-                    </div>
+            <header>
+                {% include publication-hero.html %}
+                <div class="publication-intro">
+                    <p class="publication-deck">{{ page.excerpt }}</p>
+                    <p class="font-mono text-xs mt-6">{{ page.author }}{% if page.read_time %} · {{ page.read_time }}{% endif %}</p>
                 </div>
             </header>
-
-            {% if page.image %}
-            <div class="w-full h-[36vh] md:h-[52vh] border-b-editorial overflow-hidden bg-concrete">
-                <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover grayscale">
-            </div>
-            {% endif %}
 
             <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
                 <div class="prose prose-lg md:prose-xl max-w-none text-ink prose-p:font-sans prose-p:leading-relaxed prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tighter prose-headings:text-ink prose-a:text-electricBlue prose-a:underline prose-strong:font-semibold prose-blockquote:border-l-4 prose-blockquote:border-acidLime prose-blockquote:pl-6 prose-blockquote:not-italic">

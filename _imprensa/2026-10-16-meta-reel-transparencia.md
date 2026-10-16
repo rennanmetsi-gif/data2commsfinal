@@ -1,10 +1,10 @@
 ---
-title: "Meta remove vídeo de mobilização popular e bloqueia mensagens de perfil LGBTQIA+ no Instagram no segundo turno das eleições presidenciais"
+title: "Meta remove vídeo e bloqueia mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
 date: "2026-10-16 09:00:00 -03:00"
 category: "Release à imprensa"
 image: "/assets/press/meta-restricoes-instagram-preview.png"
 image_alt: "Ilustração de um celular com vídeo de mobilização política, cercado por símbolos da Meta, do Instagram e de restrições de conteúdo."
-social_title: "Meta remove vídeo e bloqueia mensagens de perfil LGBTQIA+ no segundo turno das eleições presidenciais"
+social_title: "Meta remove vídeo e bloqueia mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais"
 social_description: "Vídeo de mobilização popular ultrapassava 400 mil visualizações. Leia o release, as referências e como solicitar o dossiê."
 description: "Publicação divulgava o Acervo Lula, iniciativa popular e independente de apoio à candidatura de Lula e oposição a Flávio Bolsonaro (PL), sem vínculo com a campanha oficial. Vídeo ultrapassava 400 mil visualizações quando foi removido; penalidades foram revertidas após recursos, sem esclarecimentos sobre os motivos que levaram à sua aplicação."
 excerpt: "Publicação divulgava o Acervo Lula, iniciativa popular e independente de apoio à candidatura de Lula e oposição a Flávio Bolsonaro (PL), sem vínculo com a campanha oficial. Vídeo ultrapassava 400 mil visualizações quando foi removido; penalidades foram revertidas após recursos, sem esclarecimentos sobre os motivos que levaram à sua aplicação."

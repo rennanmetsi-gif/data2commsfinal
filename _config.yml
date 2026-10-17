@@ -9,7 +9,7 @@ timezone: America/Sao_Paulo
 
 collections:
   blog:
-    output: true
+    output: false
     permalink: /blog/:name/
   imprensa:
     output: true
@@ -33,6 +33,22 @@ defaults:
       layout: "press"
 
 exclude:
+  - _posts
+  - _blog
+  - editorial.html
+  - blog.html
+  - blog-legado.html
+  - publicacoes.html
+  - artigo-achismo-corporativo.html
+  - metodo.html
+  - legado-metodo-data-search.html
+  - legado-metodo-analise-massa.html
+  - legado-metodo-earned-media.html
+  - beleza.html
+  - comportamento.html
+  - moda.html
+  - saude.html
+  - tecnologia.html
   - README.md
   - Gemfile
   - Gemfile.lock

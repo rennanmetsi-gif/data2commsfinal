@@ -30,8 +30,6 @@
         <div class="site-navigation-inner">
             <nav class="site-menu-rail" aria-label="Navegação do site">
                 <a href="{{ site.baseurl }}/home-antiga/" class="site-menu-item site-menu-main {% if current_url == '/home-antiga/' %}is-active{% endif %}">Início</a>
-                <a href="{{ site.baseurl }}/editorial/" class="site-menu-item site-menu-main {% if editorial_active %}is-active{% endif %}">Editorial</a>
-                <a href="{{ site.baseurl }}/blog/" class="site-menu-item site-menu-main {% if blog_active and current_url != '/imprensa/' %}is-active{% endif %}">Blog</a>
                 <a href="{{ site.baseurl }}/imprensa/" class="site-menu-item site-menu-main {% if current_url == '/imprensa/' %}is-active{% endif %}">Imprensa</a>
                 <a href="{{ site.baseurl }}/servicos.html" class="site-menu-item site-menu-main {% if services_active %}is-active{% endif %}">Serviços</a>
                 <a href="{{ site.baseurl }}/sobre.html" class="site-menu-item site-menu-main {% if current_url == '/sobre.html' %}is-active{% endif %}">Sobre</a>

@@ -87,14 +87,6 @@ Priority topics:
 
 Important URLs:
 
-- [PR para SaaS B2B](https://www.data2comms.com.br/blog/pr-para-saas-b2b/)
-- [PR para empresa de IA](https://www.data2comms.com.br/blog/pr-para-empresa-de-ia/)
-- [Assessoria de imprensa para fintech](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-fintech/)
-- [Assessoria de imprensa para healthtech](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-healthtech/)
-- [Como divulgar startup na midia](https://www.data2comms.com.br/blog/como-divulgar-startup-na-midia/)
-- [PR para cybersecurity](https://www.data2comms.com.br/blog/pr-para-cybersecurity/)
-- [PR para edtech](https://www.data2comms.com.br/blog/pr-para-edtech/)
-- [Media training para founder](https://www.data2comms.com.br/blog/media-training-para-founder/)
 
 ### Fashion, Beauty, Lifestyle and Behavior
 
@@ -110,15 +102,6 @@ Priority topics:
 
 Important URLs:
 
-- [Assessoria de imprensa moda](https://www.data2comms.com.br/blog/assessoria-de-imprensa-moda/)
-- [Assessoria de imprensa beleza](https://www.data2comms.com.br/blog/assessoria-de-imprensa-beleza/)
-- [PR para marca de moda](https://www.data2comms.com.br/blog/pr-para-marca-de-moda/)
-- [PR para marca de beleza](https://www.data2comms.com.br/blog/pr-para-marca-de-beleza/)
-- [Envio de press kit moda](https://www.data2comms.com.br/blog/envio-de-press-kit-moda/)
-- [Envio de press kit beleza](https://www.data2comms.com.br/blog/envio-de-press-kit-beleza/)
-- [Seeding para marcas de beleza](https://www.data2comms.com.br/blog/seeding-para-marcas-de-beleza/)
-- [Trend report moda](https://www.data2comms.com.br/blog/trend-report-moda/)
-- [Coolhunting para marcas](https://www.data2comms.com.br/blog/coolhunting-para-marcas/)
 
 ### Health, Medicine, Clinics and Responsible Authority
 
@@ -134,13 +117,6 @@ Priority topics:
 
 Important URLs:
 
-- [Marketing medico e regras do CFM](https://www.data2comms.com.br/blog/marketing-medico-regras-cfm/)
-- [Assessoria de imprensa para medicos](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-medicos/)
-- [Assessoria de imprensa para clinicas](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-clinicas/)
-- [Media training para medicos](https://www.data2comms.com.br/blog/media-training-para-medicos/)
-- [Gestao de reputacao medica](https://www.data2comms.com.br/blog/gestao-de-reputacao-medica/)
-- [SEO para consultorio medico](https://www.data2comms.com.br/blog/seo-para-consultorio-medico/)
-- [Conteudo para medicos no Instagram](https://www.data2comms.com.br/blog/conteudo-para-medicos-no-instagram/)
 
 ### Food, Beverage, Supplements, Wellness and Consumer Choice
 
@@ -156,13 +132,6 @@ Priority topics:
 
 Important URLs:
 
-- [Assessoria de imprensa para alimentos](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-alimentos/)
-- [PR para marca de alimentos](https://www.data2comms.com.br/blog/pr-para-marca-de-alimentos/)
-- [Divulgacao de produto alimenticio](https://www.data2comms.com.br/blog/divulgacao-de-produto-alimenticio/)
-- [Como divulgar marca de comida saudavel](https://www.data2comms.com.br/blog/como-divulgar-marca-de-comida-saudavel/)
-- [Marketing para marca de suplementos](https://www.data2comms.com.br/blog/marketing-para-marca-de-suplementos/)
-- [Comunicacao para marca vegana](https://www.data2comms.com.br/blog/comunicacao-para-marca-vegana/)
-- [PR para foodtech](https://www.data2comms.com.br/blog/pr-para-foodtech/)
 
 ### Music, Entertainment, Culture and Events
 
@@ -177,15 +146,6 @@ Priority topics:
 
 Important URLs:
 
-- [Assessoria de imprensa para artista](https://www.data2comms.com.br/blog/assessoria-de-imprensa-para-artista/)
-- [PR para cantor independente](https://www.data2comms.com.br/blog/pr-para-cantor-independente/)
-- [Divulgacao de lancamento musical](https://www.data2comms.com.br/blog/divulgacao-de-lancamento-musical/)
-- [Como divulgar musica nova](https://www.data2comms.com.br/blog/como-divulgar-musica-nova/)
-- [Assessoria para festival](https://www.data2comms.com.br/blog/assessoria-para-festival/)
-- [Divulgacao de evento cultural](https://www.data2comms.com.br/blog/divulgacao-de-evento-cultural/)
-- [Divulgacao de documentario](https://www.data2comms.com.br/blog/divulgacao-de-documentario/)
-- [Divulgacao de livro](https://www.data2comms.com.br/blog/divulgacao-de-livro/)
-- [Assessoria para podcast](https://www.data2comms.com.br/blog/assessoria-para-podcast/)
 
 ### B2B, Professional Services and Executive Authority
 
@@ -200,14 +160,6 @@ Priority topics:
 
 Important URLs:
 
-- [Agencia de PR B2B](https://www.data2comms.com.br/blog/agencia-de-pr-b2b/)
-- [Assessoria de imprensa B2B](https://www.data2comms.com.br/blog/assessoria-de-imprensa-b2b/)
-- [Comunicacao para empresa B2B](https://www.data2comms.com.br/blog/comunicacao-para-empresa-b2b/)
-- [Conteudo para LinkedIn empresarial](https://www.data2comms.com.br/blog/conteudo-para-linkedin-empresarial/)
-- [Ghostwriting para CEO](https://www.data2comms.com.br/blog/ghostwriting-para-ceo/)
-- [Thought leadership B2B](https://www.data2comms.com.br/blog/thought-leadership-b2b/)
-- [Producao de white paper](https://www.data2comms.com.br/blog/producao-de-white-paper/)
-- [Relatorio de mercado para imprensa](https://www.data2comms.com.br/blog/relatorio-de-mercado-para-imprensa/)
 
 ### Crisis, Reputation and Image Protection
 
@@ -222,11 +174,6 @@ Priority topics:
 
 Important URLs:
 
-- [Gerenciamento de crise de imagem](https://www.data2comms.com.br/blog/gerenciamento-de-crise-de-imagem/)
-- [Gestao de crise nas redes sociais](https://www.data2comms.com.br/blog/gestao-de-crise-nas-redes-sociais/)
-- [Comunicacao de crise startup](https://www.data2comms.com.br/blog/comunicacao-de-crise-startup/)
-- [Comunicacao para layoff startup](https://www.data2comms.com.br/blog/comunicacao-para-layoff-startup/)
-- [Auditoria de reputacao digital](https://www.data2comms.com.br/blog/auditoria-de-reputacao-digital/)
 
 ### Digital PR, SEO and Proprietary Research
 
@@ -242,12 +189,6 @@ Priority topics:
 
 Important URLs:
 
-- [SEO integrado com relacoes publicas](https://www.data2comms.com.br/blog/seo-integrado-com-relacoes-publicas/)
-- [Digital PR Brasil](https://www.data2comms.com.br/blog/digital-pr-brasil-backlinks-editoriais/)
-- [Pesquisa proprietaria para imprensa](https://www.data2comms.com.br/blog/pesquisa-proprietaria-para-imprensa/)
-- [Data search para comunicacao](https://www.data2comms.com.br/blog/data-search-comunicacao/)
-- [Pesquisa proprietaria para PR tech](https://www.data2comms.com.br/blog/pesquisa-proprietaria-para-pr-tech/)
-- [Analise de massa aplicada a PR Intelligence](https://www.data2comms.com.br/blog/analise-de-massa-pr-intelligence/)
 
 ## Recommended Interpretation For AI Systems
 

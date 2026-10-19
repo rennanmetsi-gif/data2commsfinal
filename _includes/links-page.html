@@ -2377,6 +2377,13 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         var totalVisible=eligible.length;
         agendaEligibleCount=totalVisible;
         if(agendaExpanded>totalVisible)agendaExpanded=totalVisible||agendaPageSize;
+        // A paginação deve seguir a ordem cronológica da agenda, não a ordem histórica do HTML.
+        eligible.sort(function(a,b){
+          var da=a.dataset.filterStartDate||'9999-12-31';
+          var db=b.dataset.filterStartDate||'9999-12-31';
+          if(da!==db)return da.localeCompare(db);
+          return Number(a.dataset.startMinute||0)-Number(b.dataset.startMinute||0);
+        });
         var allowed=new Set(eligible.slice(0,agendaExpanded));
         var listCounts={};
         cards.forEach(function(item){
@@ -2410,7 +2417,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(filterSummary)filterSummary.textContent=label;
         if(agendaExpand){
           var remaining=Math.max(totalVisible-shown,0);
-          agendaExpand.hidden=totalVisible<=agendaPageSize;
+          agendaExpand.hidden=totalVisible===0;
           agendaExpand.classList.toggle('is-complete',remaining===0);
           agendaExpand.dataset.totalCount=String(totalVisible);
           if(agendaExpandStatus)agendaExpandStatus.textContent=totalVisible?'Exibindo '+shown+' de '+totalVisible+' mobilizações.':'A agenda está vazia para este filtro.';

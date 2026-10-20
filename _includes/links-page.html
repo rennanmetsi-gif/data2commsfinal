@@ -2481,21 +2481,30 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         if(filterSummary)filterSummary.textContent=label;
         if(agendaExpand){
           var remaining=Math.max(totalVisible-shown,0);
-          agendaExpand.hidden=totalVisible===0;
+          var canExpand=totalVisible>agendaPageSize;
+          agendaExpand.hidden=!canExpand;
           agendaExpand.classList.toggle('is-complete',remaining===0);
           agendaExpand.dataset.totalCount=String(totalVisible);
           if(agendaExpandStatus)agendaExpandStatus.textContent=totalVisible?'Exibindo '+shown+' de '+totalVisible+' mobilizações.':'A agenda está vazia para este filtro.';
           if(agendaExpandButton){
-            agendaExpandButton.hidden=false;
-            if(remaining>0){
+            if(!canExpand){
+              agendaExpandButton.hidden=true;
+            }else if(remaining>0){
+              agendaExpandButton.hidden=false;
               agendaExpandButton.textContent='Ver mais '+Math.min(agendaPageSize,remaining);
               agendaExpandButton.dataset.expandAction='more';
             }else{
-              agendaExpandButton.textContent='Mostrar só '+agendaPageSize;
+              agendaExpandButton.hidden=false;
+              agendaExpandButton.textContent='Recolher agenda (mostrar '+agendaPageSize+')';
               agendaExpandButton.dataset.expandAction='collapse';
             }
           }
-          if(agendaExpandAll)agendaExpandAll.hidden=remaining===0;
+          if(agendaExpandAll){
+            agendaExpandAll.hidden=!canExpand||remaining===0;
+            if(canExpand&&remaining>0){
+              agendaExpandAll.textContent='Expandir tudo ('+totalVisible+')';
+            }
+          }
         }
         updateFloatingCta();
         if(clearFilters){
@@ -2505,7 +2514,10 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         }
       }
       window.filterPresencial=filterCards;
+      var lastFilterState=filter.value||'todos';
       filter.addEventListener('change',function(){
+        if(lastFilterState===filter.value)return;
+        lastFilterState=filter.value;
         resetAgendaExpansion();
         selectedCity='';
         renderCityOptions();
@@ -2513,6 +2525,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         filterCards(filter.value);
       });
       citySelect.addEventListener('change',function(){
+        if(selectedCity===citySelect.value)return;
         selectedCity=citySelect.value;
         resetAgendaExpansion();
         renderCityOptions();
@@ -2526,6 +2539,7 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
       if(clearFilters)clearFilters.addEventListener('click',function(){
         resetAgendaExpansion();
         filter.value='todos';
+        lastFilterState='todos';
         selectedCity='';
         selectedDate='';
         renderCityOptions();
@@ -2533,9 +2547,18 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
         filterCards('todos');
       });
       if(agendaExpandButton)agendaExpandButton.addEventListener('click',function(){
-        var total=agendaEligibleCount;
-        if(agendaExpanded>=total&&total){agendaExpanded=agendaPageSize;}else{agendaExpanded+=agendaPageSize;}
-        filterCards(filter.value||'todos');
+        if(agendaExpandButton.dataset.expandAction==='collapse'){
+          agendaExpanded=agendaPageSize;
+          filterCards(filter.value||'todos');
+          var list=document.getElementById('presencial-events');
+          if(list){
+            var top=list.getBoundingClientRect().top+window.pageYOffset-120;
+            window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+          }
+        }else{
+          agendaExpanded+=agendaPageSize;
+          filterCards(filter.value||'todos');
+        }
       });
       if(agendaExpandAll)agendaExpandAll.addEventListener('click',function(){
         agendaExpanded=agendaEligibleCount;
@@ -2555,8 +2578,6 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
           if(option.value==='todos')option.textContent='Todos os estados ('+Object.keys(totals).reduce(function(n,k){return n+totals[k]},0)+')';
           else option.textContent=(stateNames[option.value]||option.value)+' ('+(totals[option.value]||0)+')';
         });
-        renderCityOptions();
-        renderDateOptions();
         filterCards(filter.value||'todos');
       }
       window.setInterval(refreshAgenda,60000);

@@ -432,13 +432,14 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 @media(min-width:640px){.jump-links{grid-template-columns:repeat(4,minmax(0,1fr))}.jump-links a,.jump-links a[href="#ferramentas"]{min-height:54px}}
 @media(min-width:640px) and (max-width:899px){.jump-links{grid-template-columns:repeat(2,minmax(0,1fr))}.jump-links .jump-text{white-space:normal;line-height:1.05}}
 
-/* Destaque editorial da rede oficial e apps estratégicos. */
-.digital-section .links > a.official-featured,#ferramentas .links > a.official-featured{grid-column:1/-1;border:2px solid #bd1736;background:#fff6e9;box-shadow:0 4px 0 #bd173626}
-.digital-section .links > a.official-featured .link-meta,#ferramentas .links > a.official-featured .link-meta{color:#a7193a;font-weight:700}
-.digital-section .links > a.official-featured strong,#ferramentas .links > a.official-featured strong{color:#8f1330;font-size:16px}
-.digital-section .links > a.official-featured.is-top-group{border:2px solid #990f2b;border-left:6px solid #bd1736;background:linear-gradient(145deg,#fffef9 0%,#fff2d6 100%);box-shadow:0 5px 0 #bd173633,0 10px 22px #bd173618}
-.digital-section .links > a.official-featured.is-top-group .group-top-badge{display:inline-flex;align-items:center;gap:5px;width:fit-content;padding:4px 10px;border-radius:999px;background:linear-gradient(90deg,#8f1028 0%,#bd1736 55%,#d48817 100%);color:#fff;border:1px solid #f5c969;font:800 10px/1.1 'IBM Plex Mono',monospace;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 2px 5px #bd17362b}
-.digital-section .links > a.official-featured.is-top-group strong{color:#7d0c24;font-size:18px}
+/* Destaque editorial da rede oficial e apps estratégicos (em verde/dourado de disponibilidade e ação, sem parecer erro/indisponível). */
+.digital-section .links > a.official-featured,#ferramentas .links > a.official-featured{grid-column:1/-1;border:2px solid #1b7f48;border-left:5px solid #15663a;background:linear-gradient(145deg,#ffffff 0%,#f2fcf5 100%);box-shadow:0 4px 0 #15663a24}
+.digital-section .links > a.official-featured .link-meta,#ferramentas .links > a.official-featured .link-meta{display:inline-flex;align-items:center;gap:5px;width:fit-content;padding:3px 8px;border-radius:6px;background:#e0f5e8;border:1px solid #9ddab5;color:#115e34;font-weight:800}
+.digital-section .links > a.official-featured strong,#ferramentas .links > a.official-featured strong{color:#15281e;font-size:16.5px}
+.digital-section .links > a.official-featured .arrow,#ferramentas .links > a.official-featured .arrow{background:#1b7f48;color:#fff;font-weight:800}
+.digital-section .links > a.official-featured.is-top-group{border:2px solid #15703e;border-left:6px solid #0e5830;background:linear-gradient(145deg,#ffffff 0%,#edfaf1 65%,#fff8df 100%);box-shadow:0 5px 0 #15663a2e,0 10px 22px #15663a18}
+.digital-section .links > a.official-featured.is-top-group .group-top-badge{display:inline-flex;align-items:center;gap:5px;width:fit-content;padding:4px 10px;border-radius:999px;background:linear-gradient(90deg,#0f6335 0%,#198249 55%,#c78512 100%);color:#fff;border:1px solid #f0c969;font:800 10px/1.1 'IBM Plex Mono',monospace;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 2px 5px #15663a2b}
+.digital-section .links > a.official-featured.is-top-group strong{color:#0f2e1d;font-size:18px}
 
 /* Grupos e Apps em dois cards por linha no celular, sem cortar descrições. */
 @media(min-width:350px){
@@ -456,10 +457,11 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 }
 /* Vídeos e atos presenciais mantêm a leitura em fileira única. */
 #videos>.links{grid-template-columns:minmax(0,1fr)}
-#videos .featured-video-library{border:2px solid #277244;background:#f4fff5;box-shadow:0 3px 0 #27724422}
-#videos .official-featured{border:2px solid #bd1736;background:#fff6e9;box-shadow:0 4px 0 #bd173626}
-#videos .official-featured .link-meta{color:#a7193a;font-weight:700}
-#videos .official-featured strong{color:#8f1330;font-size:16.5px}
+#videos .featured-video-library,#videos .official-featured{border:2px solid #1b7f48;border-left:5px solid #15663a;background:linear-gradient(145deg,#ffffff 0%,#f2fcf5 100%);box-shadow:0 4px 0 #15663a24}
+#videos .official-featured .link-meta,#videos .featured-video-library .link-meta{display:inline-flex;align-items:center;gap:5px;width:fit-content;padding:3px 8px;border-radius:6px;background:#e0f5e8;border:1px solid #9ddab5;color:#115e34;font-weight:800}
+#videos .official-featured strong,#videos .featured-video-library strong{color:#15281e;font-size:16.5px}
+#videos .official-featured .arrow,#videos .featured-video-library .arrow{background:#1b7f48;color:#fff;font-weight:800}
+@media(hover:hover){a.link.official-featured:hover,a.link.featured-video-library:hover{border-color:#0f5c32;box-shadow:0 6px 0 #15663a30}a.link.official-featured:hover .arrow,a.link.featured-video-library:hover .arrow{background:#0f5c32;color:#fff}}
 #videos .video-count-label{display:inline-flex;align-self:flex-start;max-width:100%;padding:3px 7px;border-radius:5px;background:#e2f1e5;color:#215a38;font:800 10px/1.3 'IBM Plex Mono',monospace;letter-spacing:.01em}
 /* O calendário mantém sete colunas em todas as telas. */
 @media(max-width:540px){.presencial-section .date-options{gap:4px}.presencial-section .date-options button:not(.date-all){font-size:11px}.presencial-section .date-options .date-day-name{font-size:10px}}

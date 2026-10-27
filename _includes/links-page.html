@@ -467,15 +467,26 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
 .victory-ticker:focus-visible{outline:3px solid #ffcc57;outline-offset:-3px}
 .victory-ticker-track{display:flex;width:max-content;min-height:44px;align-items:center;animation:petition-scroll 24s linear infinite}
 .victory-ticker-copy{display:inline-flex;align-items:center;gap:26px;padding:0 24px;white-space:nowrap;font:800 14px/1 'Space Grotesk',sans-serif;letter-spacing:.02em;text-transform:uppercase}
-.victory-hero-banner{margin:0 0 20px;padding:26px 22px;border-radius:18px;background:linear-gradient(135deg,#0a5f31 0%,#15803d 48%,#1e3a8a 100%);color:#fff;box-shadow:0 8px 0 #064021,0 16px 36px #084c2738,inset 0 1px 0 #ffffff50;position:relative;overflow:hidden}
-.victory-hero-banner::after{content:'⭐️';position:absolute;right:16px;bottom:-10px;font-size:110px;opacity:.12;pointer-events:none;line-height:1}
-.victory-kicker{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#ffffff24;border:1px solid #ffffff50;color:#fffae5;font:800 11px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
-.victory-title{font:800 clamp(24px,6vw,36px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.035em;margin:0 0 14px;color:#fff;text-shadow:0 1px 2px #042e1780}
-.victory-story{display:flex;flex-direction:column;gap:12px;font:500 14.5px/1.6 Inter,Arial,sans-serif;color:#f0fdf4;margin:0}
-.victory-story p{margin:0}
-.victory-story strong{color:#ffea79;font-weight:700}
-.victory-badges-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid #ffffff30}
-.victory-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:6px;background:#ffffff18;color:#fff;font:700 11.5px/1.2 'IBM Plex Mono',monospace}
+.victory-hero-banner{margin:0 0 22px;padding:26px 20px;border-radius:20px;background:linear-gradient(140deg,#074423 0%,#0f7139 50%,#18458b 100%);color:#fff;box-shadow:0 8px 0 #053119,0 16px 36px #06402135,inset 0 1px 0 #ffffff45;position:relative;overflow:hidden}
+.victory-hero-banner::after{content:'⭐️';position:absolute;right:14px;top:-12px;font-size:120px;opacity:.08;pointer-events:none;line-height:1}
+.victory-kicker{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#ffffff22;border:1px solid #ffffff45;color:#fffae5;font:800 11px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.victory-title{font:800 clamp(24px,5.8vw,35px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.035em;margin:0 0 16px;color:#fff;text-shadow:0 1px 2px #03211190}
+.victory-lead{font:600 16px/1.5 Inter,Arial,sans-serif;color:#f0fdf4;margin:0 0 18px;border-left:3px solid #ffea79;padding-left:14px}
+.victory-lead strong{color:#ffea79;font-weight:700}
+.victory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.victory-card-block{background:#ffffff14;border:1px solid #ffffff2b;border-radius:14px;padding:14px 15px;display:flex;flex-direction:column;gap:6px;backdrop-filter:blur(4px);box-shadow:0 3px 0 #00000015}
+.victory-card-block strong{display:inline-flex;align-items:center;gap:6px;font:800 13.5px/1.2 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#fffae5}
+.victory-card-block p{font:500 12.5px/1.48 Inter,Arial,sans-serif;color:#e8f7ee;margin:0}
+.victory-card-block strong .block-icon{font-size:16px}
+.victory-closing{background:#00000028;border:1px solid #ffffff24;border-radius:13px;padding:13px 15px;margin:0 0 16px;font:500 13px/1.55 Inter,Arial,sans-serif;color:#f0fdf4}
+.victory-closing strong{color:#ffea79;font-weight:700}
+.victory-badges-row{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid #ffffff26}
+.victory-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:8px;background:#ffffff1c;border:1px solid #ffffff30;color:#fff;font:700 11px/1.2 'IBM Plex Mono',monospace}
+@media(max-width:720px){
+  .victory-grid{grid-template-columns:1fr;gap:10px}
+  .victory-hero-banner{padding:20px 16px}
+  .victory-lead{font-size:14.5px;padding-left:11px}
+}
 .hall-section-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font:800 10.5px/1.1 'IBM Plex Mono',monospace;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
 .badge-tools{background:#ede9fe;border:1px solid #c4b5fd;color:#5b21b6}
 .badge-groups{background:#fef3c7;border:1px solid #fde68a;color:#92400e}
@@ -500,18 +511,35 @@ a.link:active{transform:translateY(2px);box-shadow:0 1px 0 #35212b15}
     <div class="top"><div class="top-brand"><div class="mark">Acervo <span>Lula</span></div><span class="top-updated">Hall da Vitória do Povo Brasileiro</span></div><div class="top-tools"><span class="top-context">Lula Eleito · Democracia Venceu</span><button id="noti-open" class="noti-open noti-top-button" type="button" aria-label="Abrir central de notificações" title="Novidades e notificações"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span class="noti-launch-state sr-only">Escolher novidades</span><span id="noti-count" class="noti-count" hidden></span></button></div></div>
     
     <section class="victory-hero-banner" aria-label="Celebração da vitória popular e memorial histórico">
-      <span class="victory-kicker">⭐️ Resultado Oficial Consagrado · 2º Turno</span>
+      <span class="victory-kicker">⭐️ Resultado Oficial Consagrado · Segundo Turno</span>
       <h2 class="victory-title">Lula foi eleito! A histórica virada do povo brasileiro que salvou o Brasil do fascismo.</h2>
-      <div class="victory-story">
-        <p>No dia 25 de outubro, as urnas confirmaram o que a força das ruas e a coragem popular construíram voto a voto: <strong>Luiz Inácio Lula da Silva foi reeleito Presidente da República</strong>, após a maior e mais impressionante virada política já registrada na história deste país desde a redemocratização.</p>
-        <p>Esta não foi apenas uma vitória eleitoral; foi a salvação nacional. <strong>Graças a você</strong>, graças aos estudantes que tomaram as salas de aula e as esquinas, às mulheres que não arredaram o pé, aos idosos que compareceram com bravura, aos trabalhadores que viraram votos em cada transporte e porta de fábrica, e aos movimentos sociais que nunca recuaram, o Brasil foi resgatado das garras do fascismo e da tentativa de captura do país pela família miliciana de Flávio Bolsonaro e seus aliados.</p>
-        <p>O <strong>Acervo Lula</strong> cumpre seu papel e transforma-se no <strong>Hall da Vitória do Povo Brasileiro</strong>: um memorial vivo e público de cada ferramenta digital criada por voluntários, cada comunidade que resistiu nas redes, cada vídeo que furou a bolha da desinformação e cada passeata, ato e carreata que encheu o Brasil de esperança.</p>
+      
+      <p class="victory-lead">No dia 25 de outubro, as urnas consagraram a vontade soberana da maioria: <strong>Luiz Inácio Lula da Silva foi reeleito Presidente da República</strong>, consolidando a virada mais impressionante e decisiva da história do país desde a redemocratização.</p>
+
+      <div class="victory-grid">
+        <div class="victory-card-block">
+          <strong><span class="block-icon">✊🏽</span> Graças a você</strong>
+          <p>Esta vitória nasceu nas ruas e nas conversas olho no olho. Foi a coragem de quem não se calou diante do medo e defendeu cada voto pela democracia.</p>
+        </div>
+        <div class="victory-card-block">
+          <strong><span class="block-icon">🎓</span> Estudantes e Juventude</strong>
+          <p>Tomaram as universidades, escolas e redes, mobilizando viradas nas periferias e quebrando as mentiras da extrema-direita com inteligência e vigor.</p>
+        </div>
+        <div class="victory-card-block">
+          <strong><span class="block-icon">👵🏽</span> Mulheres, Idosos e Povo</strong>
+          <p>Mulheres firmes na linha de frente, idosos inspirando com sua presença cívica e trabalhadores construindo a virada em cada transporte e bairro.</p>
+        </div>
       </div>
+
+      <div class="victory-closing">
+        O Brasil foi salvo do fascismo e da tentativa de captura do Estado pela família de Flávio Bolsonaro. O <strong>Acervo Lula</strong> cumpre sua missão e torna-se o <strong>Hall da Vitória do Povo Brasileiro</strong>: um memorial aberto de ferramentas, comunidades, conteúdos e atos que marcaram essa jornada.
+      </div>
+
       <div class="victory-badges-row">
         <span class="victory-pill">✊🏽 Resistência Popular</span>
         <span class="victory-pill">🗳️ A Maior Virada da História</span>
         <span class="victory-pill">🕊️ Democracia Triunfante</span>
-        <span class="victory-pill">🇧🇷 O Brasil da Esperança</span>
+        <span class="victory-pill">🇧🇷 O Brasil da Esperança Venceu</span>
       </div>
     </section>
 

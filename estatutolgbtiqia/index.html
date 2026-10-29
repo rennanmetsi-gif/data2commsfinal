@@ -1340,110 +1340,6 @@
       color: #38bdf8;
     }
 
-    /* Botão e Modal de Contribuição Técnica de Especialistas */
-    .btn-specialist {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: rgba(56, 189, 248, 0.1);
-      color: #e0f2fe;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      font-family: inherit;
-      font-size: 0.92rem;
-      font-weight: 700;
-      padding: 0.85rem 1.3rem;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.18s;
-    }
-
-    .btn-specialist:hover {
-      background: rgba(56, 189, 248, 0.18);
-      border-color: #38bdf8;
-      color: #ffffff;
-    }
-
-    .contrib-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .contrib-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-bottom: 0.95rem;
-    }
-
-    .contrib-field label {
-      font-size: 0.83rem;
-      font-weight: 700;
-      color: #1e293b;
-    }
-
-    .contrib-input,
-    .contrib-select,
-    .contrib-textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.92rem;
-      color: #0f172a;
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 0.7rem 0.9rem;
-      transition: border-color 0.15s, background 0.15s;
-    }
-
-    .contrib-input:focus,
-    .contrib-select:focus,
-    .contrib-textarea:focus {
-      outline: none;
-      background: #ffffff;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-    }
-
-    .contrib-textarea {
-      min-height: 115px;
-      resize: vertical;
-      line-height: 1.5;
-    }
-
-    .contrib-feedback {
-      display: none;
-      margin-top: 0.9rem;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .contrib-feedback.error {
-      display: block;
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      color: #b91c1c;
-    }
-
-    .contrib-feedback.success {
-      display: block;
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      color: #065f46;
-    }
-
-    .contrib-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-
     /* Bloqueio de Impressão / Save-as-PDF via Print */
     @media print {
       .top-strip, header, .floating-cta, section, footer, .modal-backdrop {
@@ -1462,9 +1358,6 @@
 
     /* Responsivo */
     @media (max-width: 850px) {
-      .contrib-form-grid {
-        grid-template-columns: 1fr;
-      }
       .matrix-row-item {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -2211,9 +2104,6 @@
           <button type="button" onclick="togglePdfFullscreen()" class="btn-lg-primary" style="background: #38bdf8; color: #0f172a; font-weight: 800; border: none; cursor: pointer;">
             <i data-lucide="maximize-2"></i> Abrir leitor em tela cheia
           </button>
-          <button type="button" onclick="openContribModal()" class="btn-specialist">
-            <i data-lucide="file-pen-line" style="width: 18px; height: 18px;"></i> Sou especialista e quero contribuir / corrigir o dossiê
-          </button>
           <button type="button" onclick="openPressModal()" class="btn-lg-secondary" style="background: #1e293b; color: #ffffff; border-color: #334155; cursor: pointer;">
             <i data-lucide="newspaper"></i> Acessar área de imprensa
           </button>
@@ -2271,71 +2161,6 @@
     </div>
   </section>
 
-  <!-- MODAL: CONTRIBUIÇÃO E CORREÇÃO POR ESPECIALISTAS -->
-  <div id="contribModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="contribModalTitle">
-    <div class="modal-window">
-      <button class="modal-close" onclick="closeContribModal()" aria-label="Fechar janela"><i data-lucide="x"></i></button>
-
-      <div style="margin-bottom: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
-        <span style="font-size: 0.76rem; font-weight: 800; color: #2563eb; text-transform: uppercase; letter-spacing: 0.1em;">Revisão Técnica Colaborativa</span>
-        <h2 id="contribModalTitle" style="font-size: 1.55rem; color: #0f172a; margin-top: 0.25rem;">Sou especialista e quero contribuir ou corrigir o dossiê</h2>
-        <p style="font-size: 0.9rem; color: #475569; margin-top: 0.35rem;">
-          Envie sua nota técnica, correção jurídica/científica, atualização legislativa ou referência bibliográfica para revisão do documento.
-        </p>
-      </div>
-
-      <form id="contribForm" onsubmit="event.preventDefault(); submitContribEmail();">
-        <div class="contrib-form-grid">
-          <div class="contrib-field" style="margin-bottom: 0;">
-            <label for="contribNome">Nome completo *</label>
-            <input type="text" id="contribNome" class="contrib-input" placeholder="Ex.: Dra. Helena Costa" required>
-          </div>
-          <div class="contrib-field" style="margin-bottom: 0;">
-            <label for="contribArea">Especialidade / instituição *</label>
-            <input type="text" id="contribArea" class="contrib-input" placeholder="Ex.: Direito Constitucional / UFBA" required>
-          </div>
-        </div>
-
-        <div class="contrib-form-grid">
-          <div class="contrib-field" style="margin-bottom: 0;">
-            <label for="contribTipo">Tipo de contribuição *</label>
-            <select id="contribTipo" class="contrib-select">
-              <option value="Correção técnica ou jurídica no dossiê">Correção técnica ou jurídica no dossiê</option>
-              <option value="Sugestão de inclusão ou melhoria legislativa">Sugestão de inclusão ou melhoria legislativa</option>
-              <option value="Atualização de PL ou jurisprudência recente">Atualização de PL ou jurisprudência recente</option>
-              <option value="Inclusão de referência científica (ABNT)">Inclusão de referência científica (ABNT)</option>
-            </select>
-          </div>
-          <div class="contrib-field" style="margin-bottom: 0;">
-            <label for="contribRef">Página ou Eixo (opcional)</label>
-            <input type="text" id="contribRef" class="contrib-input" placeholder="Ex.: Eixo 02 / Pág. 39">
-          </div>
-        </div>
-
-        <div class="contrib-field">
-          <label for="contribTexto">Detalhamento da sugestão ou correção (inclua fontes/links, se houver) *</label>
-          <textarea id="contribTexto" class="contrib-textarea" placeholder="Descreva o ponto identificado, a redação sugerida e as fontes normativas ou científicas correspondentes..." required></textarea>
-        </div>
-
-        <div class="contrib-field" style="margin-bottom: 0.5rem;">
-          <label for="contribContato">Contato para retorno (E-mail, @ ou WhatsApp) *</label>
-          <input type="text" id="contribContato" class="contrib-input" placeholder="Ex.: nome@universidade.br" required>
-        </div>
-
-        <div id="contribFeedback" class="contrib-feedback"></div>
-
-        <div class="contrib-actions">
-          <button type="submit" class="btn-lg-primary" style="padding: 0.75rem 1.3rem; font-size: 0.9rem; border: none; cursor: pointer;">
-            <i data-lucide="mail" style="width: 16px; height: 16px;"></i> Enviar por E-mail
-          </button>
-          <button type="button" onclick="copyContribOnly()" class="btn-lg-secondary" style="padding: 0.75rem 1.15rem; font-size: 0.88rem; cursor: pointer;">
-            <i data-lucide="copy" style="width: 16px; height: 16px;"></i> Copiar parecer formatado
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <!-- MODAL: ÁREA DE IMPRENSA & PRESS RELEASE -->
   <div id="pressModal" class="modal-backdrop">
     <div class="modal-window">
@@ -2385,8 +2210,7 @@
           <img src="logo_dark.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
         </a>
 
-        <div class="footer-actions" style="flex-wrap: wrap;">
-          <button onclick="openContribModal()" class="footer-btn-link">Sou especialista e quero contribuir</button>
+        <div class="footer-actions">
           <button onclick="openPressModal()" class="footer-btn-link">Área de imprensa &amp; Press release</button>
           <a href="#dossie" class="footer-btn-link">Dossiê 70 páginas</a>
           <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer" class="footer-btn-link" style="color: #38bdf8;">Votar no Senado</a>
@@ -2404,9 +2228,8 @@
 
     function syncBodyScrollLock() {
       var modalOpen = document.getElementById('pressModal').classList.contains('active');
-      var contribOpen = document.getElementById('contribModal').classList.contains('active');
       var fsOpen = document.getElementById('dossieReaderShell').classList.contains('is-fullscreen');
-      document.body.style.overflow = (modalOpen || contribOpen || fsOpen) ? 'hidden' : 'auto';
+      document.body.style.overflow = (modalOpen || fsOpen) ? 'hidden' : 'auto';
     }
 
     function openPressModal() {
@@ -2419,87 +2242,11 @@
       syncBodyScrollLock();
     }
 
-    function openContribModal() {
-      document.getElementById('contribModal').classList.add('active');
-      syncBodyScrollLock();
-    }
-
-    function closeContribModal() {
-      document.getElementById('contribModal').classList.remove('active');
-      syncBodyScrollLock();
-    }
-
     document.getElementById('pressModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closePressModal();
       }
     });
-
-    document.getElementById('contribModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeContribModal();
-      }
-    });
-
-    function buildContribPayload() {
-      var nome = (document.getElementById('contribNome').value || '').trim();
-      var area = (document.getElementById('contribArea').value || '').trim();
-      var tipo = (document.getElementById('contribTipo').value || '').trim();
-      var ref = (document.getElementById('contribRef').value || '').trim();
-      var texto = (document.getElementById('contribTexto').value || '').trim();
-      var contato = (document.getElementById('contribContato').value || '').trim();
-      var fb = document.getElementById('contribFeedback');
-
-      if (!nome || !area || !texto || !contato) {
-        fb.className = 'contrib-feedback error';
-        fb.textContent = 'Preencha nome, especialidade, detalhamento e contato.';
-        return null;
-      }
-
-      var formatted = [
-        'CONTRIBUIÇÃO TÉCNICA — DOSSIÊ ESTATUTO LGBTQIAPN+ (70 PÁGS.)',
-        '------------------------------------------------------------',
-        'Especialista: ' + nome,
-        'Área / Instituição: ' + area,
-        'Natureza: ' + tipo,
-        'Seção / Página: ' + (ref || 'Não especificada'),
-        'Contato: ' + contato,
-        '',
-        'PARECER / SUGESTÃO / CORREÇÃO:',
-        texto
-      ].join('\n');
-
-      return { nome: nome, tipo: tipo, formatted: formatted, fb: fb };
-    }
-
-    function copyTextToClipboard(str) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(str).then(function() { return true; }).catch(function() { return false; });
-      }
-      return Promise.resolve(false);
-    }
-
-    function submitContribEmail() {
-      var data = buildContribPayload();
-      if (!data) return;
-      var subject = '[Revisão Especialista — Estatuto LGBTQIAPN+] ' + data.tipo + ' — ' + data.nome;
-      var mailtoUrl = 'mailto:imprensa@historialgbtqia.org.br?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(data.formatted);
-      var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent('imprensa@historialgbtqia.org.br') + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(data.formatted);
-      copyTextToClipboard(data.formatted).then(function() {
-        data.fb.className = 'contrib-feedback success';
-        data.fb.innerHTML = 'Abrindo seu e-mail (cópia salva na área de transferência). Ou <a href="' + gmailUrl + '" target="_blank" rel="noopener noreferrer" style="color:#047857;font-weight:800;text-decoration:underline;">clique aqui para enviar via Gmail Web</a>.';
-        window.location.href = mailtoUrl;
-      });
-    }
-
-    function copyContribOnly() {
-      var data = buildContribPayload();
-      if (!data) return;
-      copyTextToClipboard(data.formatted).then(function() {
-        data.fb.className = 'contrib-feedback success';
-        data.fb.textContent = 'Parecer formatado copiado para a área de transferência.';
-      });
-    }
 
     /* =====================================================================
        INTEGRAÇÃO DO LEITOR OFICIAL MOZILLA PDF.JS (SOMENTE LEITURA)
@@ -2575,8 +2322,6 @@
         if (e.key === 'Escape') {
           if (shellEl.classList.contains('is-fullscreen')) {
             window.togglePdfFullscreen();
-          } else if (document.getElementById('contribModal').classList.contains('active')) {
-            closeContribModal();
           } else if (document.getElementById('pressModal').classList.contains('active')) {
             closePressModal();
           }

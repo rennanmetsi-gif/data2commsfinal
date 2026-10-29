@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estatuto Nacional dos Direitos LGBTQIA+ | História LGBTQIA+</title>
+  <title>Estatuto Nacional dos Direitos LGBTQIAPN+ | História LGBTQIA+</title>
   
-  <meta name="description" content="Mobilização popular oficial por 20.000 assinaturas no Senado Federal pelo Estatuto Nacional dos Direitos LGBTQIA+: casamento civil, saúde no SUS e tipificação penal.">
+  <meta name="description" content="Mobilização popular oficial por 20.000 assinaturas no Senado Federal pelo Estatuto Nacional dos Direitos LGBTQIAPN+: casamento civil, saúde no SUS e tipificação penal.">
   <link rel="canonical" href="https://acervolula.com.br/estatutolgbtiqia/">
   
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acervolula.com.br/estatutolgbtiqia/">
-  <meta property="og:title" content="Estatuto Nacional dos Direitos LGBTQIA+ | História LGBTQIA+">
-  <meta property="og:description" content="Exigimos o Estatuto LGBTQIA+ em lei federal: casamento civil, saúde no SUS, criminalização da LGBTQIAfobia e proteção contra a expulsão do lar.">
+  <meta property="og:title" content="Estatuto Nacional dos Direitos LGBTQIAPN+ | História LGBTQIA+">
+  <meta property="og:description" content="Exigimos o Estatuto LGBTQIAPN+ em lei federal: casamento civil, saúde no SUS, criminalização da LGBTQIAPN+fobia e proteção contra a expulsão do lar.">
   <meta property="og:image" content="https://acervolula.com.br/estatutolgbtiqia/logo_light.svg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Estatuto Nacional dos Direitos LGBTQIA+">
-  <meta name="twitter:description" content="Mobilização popular no Senado Federal por 20.000 apoios para aprovação do Estatuto LGBTQIA+ em lei ordinária.">
+  <meta name="twitter:title" content="Estatuto Nacional dos Direitos LGBTQIAPN+">
+  <meta name="twitter:description" content="Mobilização popular no Senado Federal por 20.000 apoios para aprovação do Estatuto LGBTQIAPN+ em lei ordinária.">
   <meta name="twitter:image" content="https://acervolula.com.br/estatutolgbtiqia/logo_light.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,6 +297,8 @@
       font-weight: 700;
       color: #1e293b;
       line-height: 1.3;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .hero-pillar-card .pillar-text span {
@@ -916,47 +918,45 @@
       font-weight: 600;
     }
 
-    /* BLOCO 4: SEÇÃO DOSSIÊ (Escura) */
+    /* BLOCO 4: SEÇÃO DOSSIÊ DE 70 PÁGINAS & LEITOR EXCLUSIVO SEM DOWNLOAD */
     .section-dossie {
       background: var(--bg-slate);
       color: #ffffff;
       border-top: 1px solid #334155;
     }
 
-    .dossie-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: center;
+    .dossie-header-box {
+      max-width: 980px;
+      margin-bottom: 2.25rem;
     }
 
-    .dossie-left h2 {
-      font-size: 2.4rem;
+    .dossie-header-box h2 {
+      font-size: clamp(1.9rem, 3.8vw, 2.55rem);
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
     }
 
-    .dossie-left p.lead-explanation {
-      font-size: 1.1rem;
+    .dossie-header-box p.lead-explanation {
+      font-size: 1.08rem;
       color: #cbd5e1;
       line-height: 1.7;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .dossie-features {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem 1.5rem;
+      margin-bottom: 1.85rem;
     }
 
     .feature-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.7rem;
-      font-size: 0.95rem;
+      gap: 0.65rem;
+      font-size: 0.93rem;
       color: #e2e8f0;
     }
 
@@ -966,24 +966,355 @@
       flex-shrink: 0;
     }
 
-    .dossie-download-card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 20px;
-      padding: 2.5rem;
-      text-align: center;
-      position: relative;
+    .dossie-top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
     }
 
-    .dossie-file-tag {
-      background: #020617;
+    .dossie-top-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .dossie-credit-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(30, 41, 59, 0.85);
       border: 1px solid #334155;
-      padding: 0.85rem;
-      border-radius: 10px;
-      font-family: monospace;
-      font-size: 0.85rem;
       color: #94a3b8;
-      margin: 1.5rem 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.55rem 0.95rem;
+      border-radius: 9999px;
+    }
+
+    /* Leitor Exclusivo In-Site (View-Only Canvas Reader) */
+    .pdf-reader-shell {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .pdf-reader-shell.is-fullscreen {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      border-radius: 0;
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    /* Barra de Atalhos Rápidos (Capítulos do Dossiê) */
+    .pdf-chapters-bar {
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #334155 transparent;
+    }
+
+    .pdf-chapters-bar::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .pdf-chapters-bar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+
+    .pdf-chapters-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      margin-right: 0.35rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pdf-chapter-pill {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.18s;
+    }
+
+    .pdf-chapter-pill:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .pdf-chapter-pill.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Toolbar Principal do Leitor */
+    .pdf-toolbar {
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+      padding: 0.7rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pdf-toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pdf-tool-btn {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #f8fafc;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 0.45rem 0.78rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s;
+    }
+
+    .pdf-tool-btn:hover:not(:disabled) {
+      background: #334155;
+      border-color: #475569;
+    }
+
+    .pdf-tool-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pdf-tool-btn.accent {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    .pdf-tool-btn.accent:hover {
+      background: #7dd3fc;
+      border-color: #7dd3fc;
+    }
+
+    .pdf-page-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 0.28rem 0.65rem;
+      border-radius: 8px;
+    }
+
+    .pdf-page-input {
+      width: 46px;
+      background: #1e293b;
+      border: 1px solid #475569;
+      border-radius: 5px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 0.18rem 0.25rem;
+      -moz-appearance: textfield;
+    }
+
+    .pdf-page-input::-webkit-outer-spin-button,
+    .pdf-page-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .pdf-lock-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #94a3b8;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid #334155;
+      padding: 0.38rem 0.72rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    /* Área de Visualização das Páginas */
+    .pdf-viewport {
+      position: relative;
+      height: 78vh;
+      min-height: 540px;
+      max-height: 860px;
+      overflow: auto;
+      background: #090d16;
+      padding: 1.5rem 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .pdf-reader-shell.is-fullscreen .pdf-viewport {
+      flex: 1;
+      height: auto;
+      max-height: none;
+      min-height: 0;
+      padding: 1.75rem 1rem;
+    }
+
+    .pdf-pages-track {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.35rem;
+      min-width: min-content;
+    }
+
+    .pdf-page-slot {
+      position: relative;
+      background: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .pdf-page-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .pdf-page-slot canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-touch-callout: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Escudo transparente anti-salvamento direto sobre o canvas */
+    .pdf-canvas-shield {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    /* Camada de links clicáveis do Sumário e das 42 referências ABNT */
+    .pdf-annot-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .pdf-link-overlay {
+      position: absolute;
+      pointer-events: auto;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      border-radius: 2px;
+      transition: background 0.15s;
+      display: block;
+      text-decoration: none;
+    }
+
+    .pdf-link-overlay:hover {
+      background: rgba(37, 99, 235, 0.14);
+      outline: 1px solid rgba(37, 99, 235, 0.35);
+    }
+
+    .pdf-page-num-pill {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      z-index: 4;
+      background: rgba(15, 23, 42, 0.72);
+      color: #f8fafc;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
+    }
+
+    .pdf-loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      min-height: 440px;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .pdf-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(56, 189, 248, 0.2);
+      border-top-color: #38bdf8;
+      border-radius: 50%;
+      animation: pdfSpin 0.8s linear infinite;
+    }
+
+    @keyframes pdfSpin {
+      to { transform: rotate(360deg); }
     }
 
     /* Modal de Imprensa */
@@ -993,7 +1324,7 @@
       inset: 0;
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(6px);
-      z-index: 2000;
+      z-index: 3500;
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
@@ -1071,17 +1402,45 @@
       color: #38bdf8;
     }
 
+    /* Bloqueio de Impressão / Save-as-PDF via Print */
+    @media print {
+      .top-strip, header, .floating-cta, section, footer, .modal-backdrop {
+        display: none !important;
+      }
+      body::before {
+        content: "Este Dossiê Técnico-Legislativo está disponível exclusivamente para leitura online oficial em acervolula.com.br/estatutolgbtiqia para garantir o acesso permanente à versão revisada e atualizada.";
+        display: block;
+        padding: 3rem 2rem;
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: center;
+        color: #0f172a;
+      }
+    }
+
     /* Responsivo */
     @media (max-width: 850px) {
       .matrix-row-item {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      .dossie-grid {
-        grid-template-columns: 1fr;
-      }
       .dossie-features {
         grid-template-columns: 1fr;
+      }
+      .pdf-toolbar {
+        padding: 0.6rem 0.75rem;
+        justify-content: center;
+      }
+      .pdf-lock-pill {
+        display: none;
+      }
+      .pdf-tool-btn span.hide-sm {
+        display: none;
+      }
+      .pdf-viewport {
+        height: 70vh;
+        min-height: 440px;
+        padding: 0.85rem 0.45rem;
       }
       .chart-bar-item {
         grid-template-columns: 1fr;
@@ -1147,7 +1506,7 @@
 
       <h1 class="hero-title">
         Nossos direitos não podem depender de decisões provisórias.<br>
-        Exigimos o <span class="highlight">Estatuto LGBTQIA+</span> em lei federal.
+        Exigimos o <span class="highlight">Estatuto LGBTQIAPN+</span> em lei federal.
       </h1>
 
       <div class="hero-lead-box">
@@ -1173,7 +1532,7 @@
             <i data-lucide="gavel" style="width: 20px; height: 20px;"></i>
           </div>
           <div class="pillar-text">
-            Crime de LGBTQIAfobia
+            Crime de LGBTQIAPN+fobia
             <span>Código Penal & fim da cura gay</span>
           </div>
         </div>
@@ -1214,7 +1573,7 @@
           <i data-lucide="vote"></i> Assinar a proposta no Senado (Gov.br)
         </a>
         <a href="#dossie" class="btn-lg-secondary">
-          <i data-lucide="file-text"></i> Conhecer o dossiê de 42 páginas
+          <i data-lucide="book-open"></i> Ler o dossiê de 70 páginas
         </a>
       </div>
 
@@ -1235,7 +1594,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 1: O PARADOXO BRASILEIRO (Fiel à Página 12 do Dossiê Técnico) -->
+  <!-- SEÇÃO 1: O PARADOXO BRASILEIRO (Fiel ao Infográfico do Dossiê Técnico) -->
   <section id="dados" class="section-dados">
     <div class="container">
       <div class="section-intro">
@@ -1246,11 +1605,11 @@
         </p>
       </div>
 
-      <!-- 4 Cards Superiores (Idênticos ao topo da Página 12 com Micro-infográficos) -->
+      <!-- 4 Cards Superiores com Micro-infográficos -->
       <div class="stats-layout">
-        <!-- Card 1: População LGBTQIA+ -->
+        <!-- Card 1: População LGBTQIAPN+ -->
         <div class="stat-card-white" style="--card-accent: #2563eb;">
-          <span class="stat-badge-category" style="--badge-color: #2563eb;">População LGBTQIA+</span>
+          <span class="stat-badge-category" style="--badge-color: #2563eb;">População LGBTQIAPN+</span>
           <div class="stat-big">19 Milhões</div>
           <div class="stat-headline">12% dos adultos no Brasil</div>
           
@@ -1265,7 +1624,7 @@
               <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
               <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
             </div>
-            <div class="ratio-caption">1 em cada 8 adultos no país é LGBTQIA+</div>
+            <div class="ratio-caption">1 em cada 8 adultos no país é LGBTQIAPN+</div>
           </div>
 
           <div class="stat-text">
@@ -1297,9 +1656,9 @@
           <div class="stat-source-box">Nature Scientific Reports (Spizzirri et al., 2021)</div>
         </div>
 
-        <!-- Card 3: Mortes Violentas LGBTQIA+ -->
+        <!-- Card 3: Mortes Violentas LGBTQIAPN+ -->
         <div class="stat-card-white" style="--card-accent: #ea580c;">
-          <span class="stat-badge-category" style="--badge-color: #ea580c;">Mortes Violentas LGBTQIA+</span>
+          <span class="stat-badge-category" style="--badge-color: #ea580c;">Mortes Violentas LGBTQIAPN+</span>
           <div class="stat-big">1 a cada 34h</div>
           <div class="stat-headline">257 mortes violentas em 2025</div>
 
@@ -1337,7 +1696,7 @@
         </div>
       </div>
 
-      <!-- Infográfico Visual de Barras (Baseado na Página 12 do Dossiê) -->
+      <!-- Infográfico Visual de Barras -->
       <div class="infographic-box">
         <div class="infographic-header">
           <h3>Dimensionamento demográfico: Subnotificação do Estado vs. Evidência Científica (% de adultos)</h3>
@@ -1348,7 +1707,7 @@
           <!-- Barra 1 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              População Adulta LGBTQIA+ Total
+              População Adulta LGBTQIAPN+ Total
               <small>Evidência Científica • Unesp / USP / Datafolha (Nature)</small>
             </div>
             <div class="chart-track">
@@ -1418,7 +1777,7 @@
           </div>
         </div>
 
-        <!-- Segundo Bloco do Gráfico da Página 12: Letalidade Violenta Monitorada -->
+        <!-- Segundo Bloco do Gráfico: Letalidade Violenta Monitorada -->
         <div style="border-top: 1px solid #e2e8f0; margin-top: 2rem; padding-top: 1.8rem;">
           <h4 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 0.35rem;">
             Letalidade Violenta Monitorada pela Sociedade Civil (Vítimas Anuais, 2024–2025)
@@ -1430,7 +1789,7 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Mortes Violentas LGBTQIA+</span>
+                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Mortes Violentas LGBTQIAPN+</span>
                 <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">GGB</span>
               </div>
               <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
@@ -1468,7 +1827,7 @@
         <span class="section-tag" style="color: #38bdf8;">A fragilidade da jurisprudência</span>
         <h2 class="section-title">A ilusão de termos direitos garantidos por lei</h2>
         <p class="section-subtitle">
-          Quase todas as conquistas fundamentais da população LGBTQIA+ dependem de interpretações judiciais ou de normas administrativas vulneráveis a revogações políticas.
+          Quase todas as conquistas fundamentais da população LGBTQIAPN+ dependem de interpretações judiciais ou de normas administrativas vulneráveis a revogações políticas.
         </p>
       </div>
 
@@ -1559,7 +1918,7 @@
         <span class="section-tag">Matriz normativa completa</span>
         <h2 class="section-title">Os 9 eixos estruturantes do Estatuto Nacional</h2>
         <p class="section-subtitle">
-          Elaborados com rigor técnico conforme a Lei Complementar nº 95/1998 para contemplar todas as dimensões de vida, dignidade e cidadania da população LGBTQIA+.
+          Elaborados com rigor técnico conforme a Lei Complementar nº 95/1998 para contemplar todas as dimensões de vida, dignidade e cidadania da população LGBTQIAPN+.
         </p>
       </div>
 
@@ -1590,7 +1949,7 @@
             </div>
           </div>
           <h3>Direito penal e segurança pública</h3>
-          <p>Tipificação autônoma dos crimes de LGBTQIA+fobia no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e preenchimento obrigatório de campos de diversidade no SINESP.</p>
+          <p>Tipificação autônoma dos crimes de LGBTQIAPN+fobia no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e preenchimento obrigatório de campos de diversidade no SINESP.</p>
           <div class="eixo-laws">
             <span class="law-badge-item">Código Penal</span>
             <span class="law-badge-item">Crimes Hediondos</span>
@@ -1607,7 +1966,7 @@
             </div>
           </div>
           <h3>Saúde integral no SUS para toda a comunidade</h3>
-          <p>Garantia em lei da Política Nacional de Saúde Integral LGBTQIA+, universalização de estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, atenção integral a toda a comunidade, capacitação curricular obrigatória e respeito ao Processo Transexualizador no SUS em lei federal.</p>
+          <p>Garantia em lei da Política Nacional de Saúde Integral LGBTQIAPN+, universalização de estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, atenção integral a toda a comunidade, capacitação curricular obrigatória e respeito ao Processo Transexualizador no SUS em lei federal.</p>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei 8.080/1990</span>
             <span class="law-badge-item">Diretrizes Curriculares</span>
@@ -1624,7 +1983,7 @@
             </div>
           </div>
           <h3>Educação e enfrentamento ao bullying escolar</h3>
-          <p>Classificação da LGBTQIA+fobia como falta disciplinar grave na LDB, punição ao bullying presencial no Código Penal, responsabilidade civil objetiva de instituições omissas e criação de índices anuais de clima escolar nas secretarias.</p>
+          <p>Classificação da LGBTQIAPN+fobia como falta disciplinar grave na LDB, punição ao bullying presencial no Código Penal, responsabilidade civil objetiva de instituições omissas e criação de índices anuais de clima escolar nas secretarias.</p>
           <div class="eixo-laws">
             <span class="law-badge-item">LDB</span>
             <span class="law-badge-item">Código Penal</span>
@@ -1707,7 +2066,7 @@
             </div>
           </div>
           <h3>Dados oficiais no Censo e governança</h3>
-          <p>Obrigatoriedade por lei federal da inclusão de perguntas sobre orientação sexual e identidade de gênero no Censo do IBGE, criação do Fundo Nacional LGBTQIA+ e cláusula de blindagem contra retrocessos por portarias.</p>
+          <p>Obrigatoriedade por lei federal da inclusão de perguntas sobre orientação sexual e identidade de gênero no Censo do IBGE, criação do Fundo Nacional LGBTQIAPN+ e cláusula de blindagem contra retrocessos por portarias.</p>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei do IBGE</span>
             <span class="law-badge-item">Orçamento Público</span>
@@ -1717,56 +2076,126 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 4: O DOSSIÊ DE 42 PÁGINAS (Seção Escura) -->
+  <!-- SEÇÃO 4: O DOSSIÊ DE 70 PÁGINAS & LEITOR EXCLUSIVO ONLINE (Seção Escura) -->
   <section id="dossie" class="section-dossie">
     <div class="container">
-      <div class="dossie-grid">
-        <div class="dossie-left">
-          <span class="section-tag" style="color: #38bdf8;">Transparência e fundamentação</span>
-          <h2>O dossiê legislativo com mais de 40 páginas</h2>
-          <p class="lead-explanation">
-            O formulário do Senado Federal impõe um limite de 700 caracteres no cadastro inicial da proposta. Por essa razão, publicamos aqui o <strong>mesmo Dossiê Técnico-Legislativo</strong> que será protocolado e anexado aos autos da Comissão de Direitos Humanos assim que atingirmos os 20.000 apoios.
-          </p>
+      <div class="dossie-header-box">
+        <span class="section-tag" style="color: #38bdf8;">Transparência e fundamentação integral</span>
+        <h2>O dossiê legislativo completo de 70 páginas</h2>
+        <p class="lead-explanation">
+          O formulário do Senado Federal impõe um limite de 700 caracteres no cadastro inicial da proposta. Por essa razão, disponibilizamos abaixo, para <strong>consulta exclusiva e sempre atualizada diretamente neste portal</strong>, o <strong>Dossiê Técnico-Legislativo oficial de 70 páginas</strong> que será anexado aos autos da Comissão de Direitos Humanos assim que atingirmos os 20.000 apoios.
+        </p>
 
-          <div class="dossie-features">
-            <div class="feature-item">
-              <i data-lucide="check-circle-2"></i>
-              <span>Articulação dogmática completa dos 9 eixos</span>
+        <div class="dossie-features">
+          <div class="feature-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Articulação dogmática completa dos 9 eixos (LC 95/1998)</span>
+          </div>
+          <div class="feature-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Controle de convencionalidade da Corte IDH (OC-24/17)</span>
+          </div>
+          <div class="feature-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>Infográficos de demografia, letalidade e violência escolar</span>
+          </div>
+          <div class="feature-item">
+            <i data-lucide="check-circle-2"></i>
+            <span>42 referências científicas e jurídicas verificadas em ABNT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dossie-top-actions">
+        <div class="dossie-top-btns">
+          <button type="button" onclick="togglePdfFullscreen()" class="btn-lg-primary" style="background: #38bdf8; color: #0f172a; font-weight: 800; border: none; cursor: pointer;">
+            <i data-lucide="maximize-2"></i> Abrir leitor em tela cheia
+          </button>
+          <button type="button" onclick="openPressModal()" class="btn-lg-secondary" style="background: #1e293b; color: #ffffff; border-color: #334155; cursor: pointer;">
+            <i data-lucide="newspaper"></i> Acessar área de imprensa
+          </button>
+        </div>
+
+        <div class="dossie-credit-chip">
+          <i data-lucide="shield-check" style="width: 16px; height: 16px; color: #38bdf8;"></i>
+          <span>Versão oficial sempre atualizada • Iniciativa: projeto História LGBTQIA+</span>
+        </div>
+      </div>
+
+      <!-- LEITOR EXCLUSIVO SEM DOWNLOAD (Renderização protegida em Canvas) -->
+      <div id="dossieReaderShell" class="pdf-reader-shell" aria-label="Leitor online do Dossiê Técnico-Legislativo de 70 páginas">
+        <!-- Barra de Navegação Rápida por Capítulos -->
+        <div class="pdf-chapters-bar" id="pdfChaptersBar">
+          <span class="pdf-chapters-label">Ir para seção:</span>
+          <button type="button" class="pdf-chapter-pill active" data-page="1" onclick="goToPdfPage(1)">Capa</button>
+          <button type="button" class="pdf-chapter-pill" data-page="2" onclick="goToPdfPage(2)">Síntese Executiva</button>
+          <button type="button" class="pdf-chapter-pill" data-page="7" onclick="goToPdfPage(7)">Sumário</button>
+          <button type="button" class="pdf-chapter-pill" data-page="11" onclick="goToPdfPage(11)">Cap. 1 • Precariedade Normativa</button>
+          <button type="button" class="pdf-chapter-pill" data-page="20" onclick="goToPdfPage(20)">Cap. 2 • Demografia &amp; Violência</button>
+          <button type="button" class="pdf-chapter-pill" data-page="24" onclick="goToPdfPage(24)">Infográfico 1</button>
+          <button type="button" class="pdf-chapter-pill" data-page="27" onclick="goToPdfPage(27)">Cap. 3 • Violência Escolar</button>
+          <button type="button" class="pdf-chapter-pill" data-page="30" onclick="goToPdfPage(30)">Infográfico 2 (86%)</button>
+          <button type="button" class="pdf-chapter-pill" data-page="37" onclick="goToPdfPage(37)">Cap. 4 • Os 9 Eixos</button>
+          <button type="button" class="pdf-chapter-pill" data-page="47" onclick="goToPdfPage(47)">Quadro de Emendas</button>
+          <button type="button" class="pdf-chapter-pill" data-page="50" onclick="goToPdfPage(50)">Cap. 5 • Textos e-Cidadania</button>
+          <button type="button" class="pdf-chapter-pill" data-page="59" onclick="goToPdfPage(59)">Glossário</button>
+          <button type="button" class="pdf-chapter-pill" data-page="61" onclick="goToPdfPage(61)">42 Referências ABNT</button>
+          <button type="button" class="pdf-chapter-pill" data-page="70" onclick="goToPdfPage(70)">Mobilização</button>
+        </div>
+
+        <!-- Barra de Controles do Leitor -->
+        <div class="pdf-toolbar">
+          <div class="pdf-toolbar-group">
+            <button type="button" id="pdfPrevBtn" class="pdf-tool-btn" onclick="stepPdfPage(-1)" title="Página anterior">
+              <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+              <span class="hide-sm">Anterior</span>
+            </button>
+
+            <div class="pdf-page-counter">
+              <span>Pág.</span>
+              <input type="number" id="pdfPageInput" class="pdf-page-input" min="1" max="70" value="1" aria-label="Número da página">
+              <span>de <strong id="pdfTotalPages">70</strong></span>
             </div>
-            <div class="feature-item">
-              <i data-lucide="check-circle-2"></i>
-              <span>Controle de convencionalidade da Corte IDH (OC-24/17)</span>
-            </div>
-            <div class="feature-item">
-              <i data-lucide="check-circle-2"></i>
-              <span>Dados epidemiológicos da Nature Scientific Reports</span>
-            </div>
-            <div class="feature-item">
-              <i data-lucide="check-circle-2"></i>
-              <span>Minuta de articulado de lei pronta para tramitação</span>
-            </div>
+
+            <button type="button" id="pdfNextBtn" class="pdf-tool-btn" onclick="stepPdfPage(1)" title="Próxima página">
+              <span class="hide-sm">Próxima</span>
+              <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+            </button>
           </div>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="dossie-estatuto-lgbtqia.pdf" download="dossie-estatuto-lgbtqia.pdf" target="_blank" class="btn-lg-primary" style="background: #38bdf8; color: #0f172a; font-weight: 800;">
-              <i data-lucide="download"></i> Baixar o dossiê completo (PDF)
-            </a>
-            <button onclick="openPressModal()" class="btn-lg-secondary" style="background: #1e293b; color: #ffffff; border-color: #334155;">
-              <i data-lucide="newspaper"></i> Acessar área de imprensa
+          <div class="pdf-toolbar-group">
+            <button type="button" id="pdfZoomOutBtn" class="pdf-tool-btn" onclick="changePdfZoom(-0.15)" title="Diminuir zoom">
+              <i data-lucide="zoom-out" style="width: 16px; height: 16px;"></i>
+            </button>
+            <button type="button" id="pdfZoomResetBtn" class="pdf-tool-btn" onclick="resetPdfZoom()" title="Ajustar à largura" style="min-width: 62px; justify-content: center;">
+              <span id="pdfZoomLabel">100%</span>
+            </button>
+            <button type="button" id="pdfZoomInBtn" class="pdf-tool-btn" onclick="changePdfZoom(0.15)" title="Aumentar zoom">
+              <i data-lucide="zoom-in" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+
+          <div class="pdf-toolbar-group">
+            <span class="pdf-lock-pill" title="Leitura online protegida para evitar circulação de cópias desatualizadas">
+              <i data-lucide="lock" style="width: 13px; height: 13px; color: #38bdf8;"></i>
+              <span>Leitura exclusiva no portal</span>
+            </span>
+
+            <button type="button" id="pdfFullscreenBtn" class="pdf-tool-btn accent" onclick="togglePdfFullscreen()">
+              <i data-lucide="maximize-2" style="width: 15px; height: 15px;"></i>
+              <span id="pdfFullscreenLabel">Tela cheia</span>
             </button>
           </div>
         </div>
 
-        <div class="dossie-download-card">
-          <div style="width: 68px; height: 68px; border-radius: 50%; background: rgba(56, 189, 248, 0.1); color: #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
-            <i data-lucide="file-check-2" style="width: 36px; height: 36px;"></i>
+        <!-- Área de Páginas Renderizadas -->
+        <div id="pdfViewport" class="pdf-viewport">
+          <div id="pdfLoadingState" class="pdf-loading-state">
+            <div class="pdf-spinner"></div>
+            <div style="font-weight: 700; font-size: 1rem; color: #f8fafc;">Carregando o Dossiê Técnico-Legislativo (70 páginas)...</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; max-width: 440px;">Preparando leitura integrada em alta definição diretamente no navegador.</div>
           </div>
-          <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.4rem;">Frente pelo Estatuto Nacional</h3>
-          <p style="color: #94a3b8; font-size: 0.92rem;">Iniciativa e autoria técnica: projeto História LGBTQIA+</p>
-          <div class="dossie-file-tag">
-            DOSSIE_TECNICO_LEGISLATIVO_42P.PDF
-          </div>
-          <p style="font-size: 0.85rem; color: #64748b;">Documento oficial para comunicadores, juristas e parlamentares.</p>
+          <div id="pdfPagesTrack" class="pdf-pages-track" style="display: none;"></div>
         </div>
       </div>
     </div>
@@ -1784,16 +2213,16 @@
 
       <div style="font-size: 0.95rem; color: #334155; line-height: 1.7;">
         <p style="margin-bottom: 1rem;">
-          <strong>Sugestão de Pauta:</strong> Mobilização popular protocola no Senado Federal proposta de criação do Estatuto Nacional dos Direitos LGBTQIA+ com dossiê técnico de mais de 40 páginas.
+          <strong>Sugestão de Pauta:</strong> Mobilização popular protocola no Senado Federal proposta de criação do Estatuto Nacional dos Direitos LGBTQIAPN+ com dossiê técnico completo de 70 páginas.
         </p>
         <p style="margin-bottom: 1rem;">
-          <strong>Resumo da Pauta:</strong> Ao contrário da percepção comum de que o casamento civil e a criminalização da LGBTQIAfobia são direitos pacificados em lei, o ordenamento jurídico brasileiro mantém tais garantias sob a vulnerabilidade de entendimentos do STF e do CNJ. A iniciativa popular do projeto <em>História LGBTQIA+</em> busca 20.000 assinaturas no Portal e-Cidadania para obrigar o Senado a tramitar o Estatuto em lei federal ordinária.
+          <strong>Resumo da Pauta:</strong> Ao contrário da percepção comum de que o casamento civil e a criminalização da LGBTQIAPN+fobia são direitos pacificados em lei, o ordenamento jurídico brasileiro mantém tais garantias sob a vulnerabilidade de entendimentos do STF e do CNJ. A iniciativa popular do projeto <em>História LGBTQIA+</em> busca 20.000 assinaturas no Portal e-Cidadania para obrigar o Senado a tramitar o Estatuto em lei federal ordinária.
         </p>
 
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0;">
           <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 1rem;">Dados e Fontes Verificadas para Matérias:</h4>
           <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: #475569;">
-            <li><strong>População:</strong> 12% dos adultos brasileiros identificam-se como LGBTQIA+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
+            <li><strong>População:</strong> 12% dos adultos brasileiros identificam-se como LGBTQIAPN+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
             <li><strong>Pessoas trans e não binárias:</strong> 1,88% dos adultos (~3 milhões de pessoas) — <em>Nature Scientific Reports (2021)</em>.</li>
             <li><strong>Letalidade:</strong> 257 mortes violentas em 2025 (uma a cada 34h) — <em>Observatório GGB (2025)</em>.</li>
             <li><strong>Assassinatos:</strong> Brasil segue pelo 18º ano consecutivo como o mais letal para pessoas trans — <em>Dossiê ANTRA (2026)</em>.</li>
@@ -1818,42 +2247,550 @@
     <div class="container">
       <div class="footer-flex">
         <a href="#" class="brand-link">
-          <img src="logo_light.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
+          <img src="logo_dark.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
         </a>
 
         <div class="footer-actions">
-          <button onclick="openPressModal()" class="footer-btn-link">Área de imprensa & Press release</button>
-          <a href="#dossie" class="footer-btn-link">Dossiê 42 páginas</a>
+          <button onclick="openPressModal()" class="footer-btn-link">Área de imprensa &amp; Press release</button>
+          <a href="#dossie" class="footer-btn-link">Dossiê 70 páginas</a>
           <a href="https://www12.senado.leg.br/ecidadania/principalideia" target="_blank" class="footer-btn-link" style="color: #38bdf8;">Votar no Senado</a>
         </div>
       </div>
 
       <div style="border-top: 1px solid #1e293b; margin-top: 2rem; padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem;">
-        <div>Frente pelo Estatuto Nacional dos Direitos LGBTQIA+ • Iniciativa popular e cidadã</div>
+        <div>Frente pelo Estatuto Nacional dos Direitos LGBTQIAPN+ • Iniciativa popular e cidadã</div>
         <div>Canal oficial da autoria: <strong>@historialgbtqia_</strong></div>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     lucide.createIcons();
 
+    function syncBodyScrollLock() {
+      var modalOpen = document.getElementById('pressModal').classList.contains('active');
+      var fsOpen = document.getElementById('dossieReaderShell').classList.contains('is-fullscreen');
+      document.body.style.overflow = (modalOpen || fsOpen) ? 'hidden' : 'auto';
+    }
+
     function openPressModal() {
       document.getElementById('pressModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
+      syncBodyScrollLock();
     }
 
     function closePressModal() {
       document.getElementById('pressModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
+      syncBodyScrollLock();
     }
 
-    // Fechar ao clicar fora
     document.getElementById('pressModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closePressModal();
       }
     });
+
+    /* =====================================================================
+       LEITOR EXCLUSIVO IN-SITE (VIEW-ONLY CANVAS READER — 70 PÁGINAS)
+       - Sem download, sem impressão, sem menu de contexto sobre páginas
+       - Revalidação automática de cache (no-cache) para atualizações futuras
+       - Virtualização de Canvas (LRU máx 12 ativos) para fluidez em iOS/Android
+       - Sumário navegável e 42 links científicos/jurídicos ABNT clicáveis
+       ===================================================================== */
+    (function() {
+      var PDF_URL = 'dossie-oficial.pdf';
+      var MAX_ACTIVE_CANVASES = 12;
+      var CHAPTER_STOPS = [1, 2, 7, 11, 20, 24, 27, 30, 37, 47, 50, 59, 61, 70];
+
+      var shellEl = document.getElementById('dossieReaderShell');
+      var viewportEl = document.getElementById('pdfViewport');
+      var trackEl = document.getElementById('pdfPagesTrack');
+      var loadingEl = document.getElementById('pdfLoadingState');
+      var pageInputEl = document.getElementById('pdfPageInput');
+      var totalPagesEl = document.getElementById('pdfTotalPages');
+      var prevBtnEl = document.getElementById('pdfPrevBtn');
+      var nextBtnEl = document.getElementById('pdfNextBtn');
+      var zoomLabelEl = document.getElementById('pdfZoomLabel');
+      var fsLabelEl = document.getElementById('pdfFullscreenLabel');
+
+      var pdfDoc = null;
+      var totalPages = 70;
+      var currentPage = 1;
+      var zoomFactor = 1.0;
+      var basePageAspect = 1.4142; // A4 fallback até carregar pág 1
+      var pageSlots = [];
+      var renderedOrder = []; // LRU de números de páginas com canvas ativo
+      var renderTasks = {};
+      var renderObserver = null;
+      var lastViewportWidth = 0;
+      var resizeTimer = null;
+
+      if (window.pdfjsLib) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      }
+
+      // Proteções anti-cópia / anti-salvamento de imagem / anti-impressão
+      shellEl.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+      shellEl.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+      });
+
+      window.addEventListener('keydown', function(e) {
+        var key = (e.key || '').toLowerCase();
+        if ((e.ctrlKey || e.metaKey) && (key === 's' || key === 'p')) {
+          e.preventDefault();
+          return false;
+        }
+        if (e.key === 'Escape') {
+          if (shellEl.classList.contains('is-fullscreen')) {
+            window.togglePdfFullscreen();
+          } else if (document.getElementById('pressModal').classList.contains('active')) {
+            closePressModal();
+          }
+        }
+      });
+
+      function computeSlotDimensions() {
+        var availWidth = Math.max(280, viewportEl.clientWidth - 36);
+        var isFs = shellEl.classList.contains('is-fullscreen');
+        var maxBaseWidth = isFs ? 960 : 850;
+        var fitWidth = Math.min(availWidth, maxBaseWidth);
+        var targetWidth = Math.round(fitWidth * zoomFactor);
+        var targetHeight = Math.round(targetWidth * basePageAspect);
+        return { width: targetWidth, height: targetHeight };
+      }
+
+      function updateToolbarState(pageNum) {
+        currentPage = Math.max(1, Math.min(totalPages, pageNum));
+        if (document.activeElement !== pageInputEl) {
+          pageInputEl.value = currentPage;
+        }
+        prevBtnEl.disabled = (currentPage <= 1);
+        nextBtnEl.disabled = (currentPage >= totalPages);
+        zoomLabelEl.textContent = Math.round(zoomFactor * 100) + '%';
+
+        // Destacar capítulo correspondente
+        var activeChapter = 1;
+        for (var i = 0; i < CHAPTER_STOPS.length; i++) {
+          if (currentPage >= CHAPTER_STOPS[i]) {
+            activeChapter = CHAPTER_STOPS[i];
+          }
+        }
+        var pills = document.querySelectorAll('.pdf-chapter-pill');
+        for (var j = 0; j < pills.length; j++) {
+          var pillPage = parseInt(pills[j].getAttribute('data-page'), 10);
+          if (pillPage === activeChapter) {
+            pills[j].classList.add('active');
+          } else {
+            pills[j].classList.remove('active');
+          }
+        }
+      }
+
+      function evictExcessCanvases(protectedPage) {
+        while (renderedOrder.length > MAX_ACTIVE_CANVASES) {
+          var candidateIdx = -1;
+          for (var i = 0; i < renderedOrder.length; i++) {
+            var p = renderedOrder[i];
+            if (Math.abs(p - currentPage) > 3 && p !== protectedPage) {
+              candidateIdx = i;
+              break;
+            }
+          }
+          if (candidateIdx === -1) {
+            candidateIdx = 0;
+          }
+          var evictPage = renderedOrder.splice(candidateIdx, 1)[0];
+          var slotObj = pageSlots[evictPage - 1];
+          if (slotObj && slotObj.canvas) {
+            slotObj.canvas.width = 1;
+            slotObj.canvas.height = 1;
+            if (slotObj.canvas.parentNode) {
+              slotObj.canvas.parentNode.removeChild(slotObj.canvas);
+            }
+            slotObj.canvas = null;
+            slotObj.renderedWidth = 0;
+            if (slotObj.annotLayer) {
+              slotObj.annotLayer.innerHTML = '';
+            }
+            slotObj.placeholder.style.display = 'flex';
+          }
+        }
+      }
+
+      function touchLRU(pageNum) {
+        var idx = renderedOrder.indexOf(pageNum);
+        if (idx !== -1) {
+          renderedOrder.splice(idx, 1);
+        }
+        renderedOrder.push(pageNum);
+      }
+
+      function resolveAndJumpToDest(dest) {
+        if (!pdfDoc || !dest) return;
+        var destPromise = (typeof dest === 'string') ? pdfDoc.getDestination(dest) : Promise.resolve(dest);
+        destPromise.then(function(explicitDest) {
+          if (!explicitDest || !explicitDest[0]) return;
+          var ref = explicitDest[0];
+          if (typeof ref === 'number') {
+            window.goToPdfPage(ref + 1);
+          } else {
+            pdfDoc.getPageIndex(ref).then(function(pageIdx) {
+              window.goToPdfPage(pageIdx + 1);
+            }).catch(function() {});
+          }
+        }).catch(function() {});
+      }
+
+      function buildAnnotationOverlays(page, viewport, slotObj) {
+        if (!slotObj.annotLayer) return;
+        slotObj.annotLayer.innerHTML = '';
+        page.getAnnotations().then(function(annotations) {
+          if (!slotObj.canvas) return;
+          for (var i = 0; i < annotations.length; i++) {
+            var annot = annotations[i];
+            if (annot.subtype !== 'Link' || !annot.rect) continue;
+            if (!annot.url && !annot.dest) continue;
+
+            var rect = viewport.convertToViewportRectangle(annot.rect);
+            var x1 = Math.min(rect[0], rect[2]);
+            var y1 = Math.min(rect[1], rect[3]);
+            var w = Math.abs(rect[2] - rect[0]);
+            var h = Math.abs(rect[3] - rect[1]);
+
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'pdf-link-overlay';
+            btn.style.left = ((x1 / viewport.width) * 100).toFixed(3) + '%';
+            btn.style.top = ((y1 / viewport.height) * 100).toFixed(3) + '%';
+            btn.style.width = ((w / viewport.width) * 100).toFixed(3) + '%';
+            btn.style.height = ((h / viewport.height) * 100).toFixed(3) + '%';
+
+            if (annot.url) {
+              (function(externalUrl) {
+                btn.title = 'Abrir fonte oficial verificada em nova aba';
+                btn.setAttribute('aria-label', 'Abrir referência externa');
+                btn.addEventListener('click', function(ev) {
+                  ev.stopPropagation();
+                  window.open(externalUrl, '_blank', 'noopener,noreferrer');
+                });
+              })(annot.url);
+            } else if (annot.dest) {
+              (function(internalDest) {
+                btn.title = 'Ir para seção correspondente no dossiê';
+                btn.setAttribute('aria-label', 'Ir para seção do dossiê');
+                btn.addEventListener('click', function(ev) {
+                  ev.stopPropagation();
+                  resolveAndJumpToDest(internalDest);
+                });
+              })(annot.dest);
+            }
+            slotObj.annotLayer.appendChild(btn);
+          }
+        }).catch(function() {});
+      }
+
+      function renderPdfPage(pageNum) {
+        if (!pdfDoc) return;
+        var slotObj = pageSlots[pageNum - 1];
+        if (!slotObj) return;
+
+        var dims = computeSlotDimensions();
+        if (slotObj.canvas && Math.abs(slotObj.renderedWidth - dims.width) < 4) {
+          touchLRU(pageNum);
+          return;
+        }
+        if (renderTasks[pageNum]) {
+          return;
+        }
+
+        renderTasks[pageNum] = true;
+        pdfDoc.getPage(pageNum).then(function(page) {
+          var unscaled = page.getViewport({ scale: 1 });
+          var cssScale = dims.width / unscaled.width;
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          // Limita largura máxima em pixels físicos para 2000px (estabilidade em iOS Safari)
+          if (dims.width * dpr > 2000) {
+            dpr = 2000 / dims.width;
+          }
+          var renderViewport = page.getViewport({ scale: cssScale * dpr });
+          var cssViewport = page.getViewport({ scale: cssScale });
+
+          var canvas = document.createElement('canvas');
+          canvas.width = Math.round(renderViewport.width);
+          canvas.height = Math.round(renderViewport.height);
+          var ctx = canvas.getContext('2d', { alpha: false });
+
+          return page.render({
+            canvasContext: ctx,
+            viewport: renderViewport
+          }).promise.then(function() {
+            if (slotObj.canvas && slotObj.canvas.parentNode) {
+              slotObj.canvas.parentNode.removeChild(slotObj.canvas);
+            }
+            slotObj.canvas = canvas;
+            slotObj.renderedWidth = dims.width;
+            slotObj.el.insertBefore(canvas, slotObj.shield);
+            slotObj.placeholder.style.display = 'none';
+
+            touchLRU(pageNum);
+            evictExcessCanvases(pageNum);
+            buildAnnotationOverlays(page, cssViewport, slotObj);
+          });
+        }).catch(function() {}).finally(function() {
+          delete renderTasks[pageNum];
+        });
+      }
+
+      function applySlotSizesAndRefresh(preservePage) {
+        if (!pageSlots.length) return;
+        var dims = computeSlotDimensions();
+        for (var i = 0; i < pageSlots.length; i++) {
+          var s = pageSlots[i];
+          s.el.style.width = dims.width + 'px';
+          s.el.style.height = dims.height + 'px';
+          if (s.canvas && Math.abs(s.renderedWidth - dims.width) >= 4) {
+            s.canvas.width = 1;
+            s.canvas.height = 1;
+            if (s.canvas.parentNode) {
+              s.canvas.parentNode.removeChild(s.canvas);
+            }
+            s.canvas = null;
+            s.renderedWidth = 0;
+            s.annotLayer.innerHTML = '';
+            s.placeholder.style.display = 'flex';
+          }
+        }
+        renderedOrder = renderedOrder.filter(function(p) {
+          return pageSlots[p - 1] && pageSlots[p - 1].canvas !== null;
+        });
+
+        if (preservePage) {
+          var targetSlot = pageSlots[preservePage - 1];
+          if (targetSlot) {
+            viewportEl.scrollTop = targetSlot.el.offsetTop - 16;
+          }
+        }
+
+        // Re-render página atual e vizinhas imediatas
+        var startP = Math.max(1, currentPage - 1);
+        var endP = Math.min(totalPages, currentPage + 2);
+        for (var p = startP; p <= endP; p++) {
+          renderPdfPage(p);
+        }
+      }
+
+      function setupObservers() {
+        if (renderObserver) {
+          renderObserver.disconnect();
+        }
+        renderObserver = new IntersectionObserver(function(entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              var pNum = parseInt(entries[i].target.getAttribute('data-page-num'), 10);
+              if (pNum) {
+                renderPdfPage(pNum);
+              }
+            }
+          }
+        }, {
+          root: viewportEl,
+          rootMargin: '1200px 0px',
+          threshold: 0.01
+        });
+
+        for (var i = 0; i < pageSlots.length; i++) {
+          renderObserver.observe(pageSlots[i].el);
+        }
+
+        // Atualiza contador de página durante a rolagem
+        var scrollTicking = false;
+        viewportEl.addEventListener('scroll', function() {
+          if (scrollTicking) return;
+          scrollTicking = true;
+          window.requestAnimationFrame(function() {
+            scrollTicking = false;
+            if (!pageSlots.length) return;
+            var centerY = viewportEl.scrollTop + (viewportEl.clientHeight * 0.38);
+            var bestPage = currentPage;
+            var minDist = Infinity;
+            for (var i = 0; i < pageSlots.length; i++) {
+              var el = pageSlots[i].el;
+              var mid = el.offsetTop + (el.offsetHeight * 0.5);
+              var dist = Math.abs(mid - centerY);
+              if (dist < minDist) {
+                minDist = dist;
+                bestPage = i + 1;
+              }
+            }
+            if (bestPage !== currentPage) {
+              updateToolbarState(bestPage);
+            }
+          });
+        }, { passive: true });
+      }
+
+      function initReader() {
+        if (!window.pdfjsLib) {
+          loadingEl.innerHTML = '<div style="color:#f87171;font-weight:700;">Não foi possível inicializar o motor de leitura. Recarregue a página.</div>';
+          return;
+        }
+
+        fetch(PDF_URL, { cache: 'no-cache' })
+          .then(function(resp) {
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            return resp.arrayBuffer();
+          })
+          .then(function(buffer) {
+            return window.pdfjsLib.getDocument({ data: buffer }).promise;
+          })
+          .then(function(doc) {
+            pdfDoc = doc;
+            totalPages = doc.numPages;
+            totalPagesEl.textContent = totalPages;
+            pageInputEl.max = totalPages;
+            return doc.getPage(1);
+          })
+          .then(function(firstPage) {
+            var vp = firstPage.getViewport({ scale: 1 });
+            basePageAspect = vp.height / vp.width;
+            lastViewportWidth = viewportEl.clientWidth;
+
+            loadingEl.style.display = 'none';
+            trackEl.style.display = 'flex';
+            trackEl.innerHTML = '';
+            pageSlots = [];
+
+            var dims = computeSlotDimensions();
+            var frag = document.createDocumentFragment();
+
+            for (var p = 1; p <= totalPages; p++) {
+              var slot = document.createElement('div');
+              slot.className = 'pdf-page-slot';
+              slot.setAttribute('data-page-num', p);
+              slot.style.width = dims.width + 'px';
+              slot.style.height = dims.height + 'px';
+
+              var ph = document.createElement('div');
+              ph.className = 'pdf-page-placeholder';
+              ph.innerHTML = '<div class="pdf-spinner" style="width:26px;height:26px;border-width:2px;"></div><span>Página ' + p + ' de ' + totalPages + '</span>';
+
+              var shield = document.createElement('div');
+              shield.className = 'pdf-canvas-shield';
+
+              var annotLayer = document.createElement('div');
+              annotLayer.className = 'pdf-annot-layer';
+
+              var badge = document.createElement('div');
+              badge.className = 'pdf-page-num-pill';
+              badge.textContent = p + ' / ' + totalPages;
+
+              slot.appendChild(ph);
+              slot.appendChild(shield);
+              slot.appendChild(annotLayer);
+              slot.appendChild(badge);
+              frag.appendChild(slot);
+
+              pageSlots.push({
+                pageNum: p,
+                el: slot,
+                placeholder: ph,
+                shield: shield,
+                annotLayer: annotLayer,
+                canvas: null,
+                renderedWidth: 0
+              });
+            }
+
+            trackEl.appendChild(frag);
+            updateToolbarState(1);
+            setupObservers();
+            renderPdfPage(1);
+            renderPdfPage(2);
+          })
+          .catch(function() {
+            loadingEl.innerHTML = '<div style="color:#f87171;font-weight:700;">Erro ao carregar o dossiê online. Verifique sua conexão e atualize a página.</div>';
+          });
+      }
+
+      // Controles Públicos da Toolbar
+      window.goToPdfPage = function(pageNum) {
+        if (!pageSlots.length) return;
+        var target = Math.max(1, Math.min(totalPages, parseInt(pageNum, 10) || 1));
+        var slotObj = pageSlots[target - 1];
+        if (!slotObj) return;
+        updateToolbarState(target);
+        renderPdfPage(target);
+        if (target + 1 <= totalPages) renderPdfPage(target + 1);
+        viewportEl.scrollTo({
+          top: Math.max(0, slotObj.el.offsetTop - 12),
+          behavior: 'smooth'
+        });
+      };
+
+      window.stepPdfPage = function(delta) {
+        window.goToPdfPage(currentPage + delta);
+      };
+
+      window.changePdfZoom = function(delta) {
+        var nextZoom = Math.max(0.7, Math.min(1.9, Math.round((zoomFactor + delta) * 100) / 100));
+        if (nextZoom === zoomFactor) return;
+        zoomFactor = nextZoom;
+        updateToolbarState(currentPage);
+        applySlotSizesAndRefresh(currentPage);
+      };
+
+      window.resetPdfZoom = function() {
+        if (zoomFactor === 1.0) return;
+        zoomFactor = 1.0;
+        updateToolbarState(currentPage);
+        applySlotSizesAndRefresh(currentPage);
+      };
+
+      window.togglePdfFullscreen = function() {
+        var entering = !shellEl.classList.contains('is-fullscreen');
+        var keepPage = currentPage;
+        if (entering) {
+          shellEl.classList.add('is-fullscreen');
+          fsLabelEl.textContent = 'Sair da tela cheia';
+        } else {
+          shellEl.classList.remove('is-fullscreen');
+          fsLabelEl.textContent = 'Tela cheia';
+        }
+        syncBodyScrollLock();
+        window.setTimeout(function() {
+          lastViewportWidth = viewportEl.clientWidth;
+          applySlotSizesAndRefresh(keepPage);
+        }, 60);
+      };
+
+      pageInputEl.addEventListener('change', function() {
+        window.goToPdfPage(this.value);
+      });
+      pageInputEl.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          this.blur();
+          window.goToPdfPage(this.value);
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (!pageSlots.length) return;
+        var newW = viewportEl.clientWidth;
+        if (Math.abs(newW - lastViewportWidth) <= 24) return;
+        lastViewportWidth = newW;
+        clearTimeout(resizeTimer);
+        var keepPage = currentPage;
+        resizeTimer = setTimeout(function() {
+          applySlotSizesAndRefresh(keepPage);
+        }, 180);
+      });
+
+      initReader();
+    })();
   </script>
 </body>
 </html>

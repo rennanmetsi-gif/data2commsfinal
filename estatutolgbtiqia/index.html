@@ -254,13 +254,19 @@
       font-weight: 700;
     }
 
-    /* Pilares Visuais no Hero (Quebra a parede de texto) */
+    /* Pilares Visuais no Hero (Grade 3x2 equilibrada e escaneável) */
     .hero-pillars-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       max-width: 1080px;
       margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .hero-pillar-card {
@@ -893,11 +899,44 @@
     }
 
     .eixo-clean-card p {
-      font-size: 0.93rem;
-      color: #475569;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 0.9rem;
+    }
+
+    .eixo-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.35rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
       flex-grow: 1;
+    }
+
+    .eixo-points li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.87rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .eixo-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--eixo-dot, #2563eb);
+    }
+
+    .eixo-points li strong {
+      color: #0f172a;
+      font-weight: 700;
     }
 
     .eixo-laws {
@@ -1510,12 +1549,12 @@
       </h1>
 
       <div class="hero-lead-box">
-        <p style="font-size: 1.22rem; line-height: 1.6; color: #334155;">
-          Casamento civil, punição à violência e acesso à saúde não são concessões temporárias: precisam virar <strong>lei definitiva aprovada pelo Congresso Nacional</strong> para proteger mais de 19 milhões de brasileiras e brasileiros.
+        <p style="font-size: 1.2rem; line-height: 1.62; color: #334155;">
+          Casamento civil, proteção patrimonial, acesso à saúde, direitos de pessoas trans, não binárias e intersexo e punição rigorosa ao LGBTQIAPN+cídio, ao lesbocídio e ao transfeminicídio não podem depender de decisões temporárias: precisam virar <strong>lei definitiva aprovada pelo Congresso Nacional e unificada em um Estatuto</strong> para proteger mais de 19 milhões de pessoas brasileiras.
         </p>
       </div>
 
-      <!-- Pilares Visuais em Cards Rápidos (Escaneabilidade Instantânea) -->
+      <!-- Pilares Visuais em Cards Rápidos (Escaneabilidade Instantânea 3x2) -->
       <div class="hero-pillars-grid">
         <div class="hero-pillar-card">
           <div class="pillar-icon" style="background: #fff1f2; color: #e11d48;">
@@ -1523,7 +1562,7 @@
           </div>
           <div class="pillar-text">
             Casamento civil
-            <span>Código Civil, herança & adoção</span>
+            <span>Código Civil, proteção patrimonial e adoção</span>
           </div>
         </div>
 
@@ -1533,7 +1572,7 @@
           </div>
           <div class="pillar-text">
             Crime de LGBTQIAPN+fobia
-            <span>Código Penal & fim da cura gay</span>
+            <span>Código Penal, LGBTQIAPN+cídio e fim da conversão sexual e de gênero</span>
           </div>
         </div>
 
@@ -1543,7 +1582,7 @@
           </div>
           <div class="pillar-text">
             Saúde integral no SUS
-            <span>Prevenção & transição em lei</span>
+            <span>Prevenção, Processo Transexualizador e capacitação profissional em lei</span>
           </div>
         </div>
 
@@ -1563,7 +1602,17 @@
           </div>
           <div class="pillar-text">
             Apoio contra a expulsão
-            <span>Abrigo & combate ao bullying</span>
+            <span>Abrigo, Lei Maria da Penha e combate ao bullying</span>
+          </div>
+        </div>
+
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #ecfeff; color: #0891b2;">
+            <i data-lucide="database" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Identidade e Censo no IBGE
+            <span>Nome social sem nome civil e pesquisa oficial de gênero e orientação</span>
           </div>
         </div>
       </div>
@@ -1599,9 +1648,9 @@
     <div class="container">
       <div class="section-intro">
         <span class="section-tag">Diagnóstico demográfico e letalidade</span>
-        <h2 class="section-title">O paradoxo brasileiro: milhões de cidadãos subcontados e letalidade extrema</h2>
+        <h2 class="section-title">O paradoxo brasileiro: milhões de pessoas subcontadas e letalidade extrema</h2>
         <p class="section-subtitle">
-          Contraste empírico entre a subnotificação nos levantamentos estatais e os levantamentos científicos epidemiológicos da Nature e observatórios independentes da sociedade civil.
+          Contraste empírico entre a subnotificação nos levantamentos estatais e as pesquisas científicas epidemiológicas da Nature e de observatórios independentes — evidenciando a urgência de obrigar o IBGE, por lei, a pesquisar identidade de gênero, orientação sexual e intersexualidade no Censo.
         </p>
       </div>
 
@@ -1610,8 +1659,8 @@
         <!-- Card 1: População LGBTQIAPN+ -->
         <div class="stat-card-white" style="--card-accent: #2563eb;">
           <span class="stat-badge-category" style="--badge-color: #2563eb;">População LGBTQIAPN+</span>
-          <div class="stat-big">19 Milhões</div>
-          <div class="stat-headline">12% dos adultos no Brasil</div>
+          <div class="stat-big">19 milhões</div>
+          <div class="stat-headline">12% das pessoas adultas no Brasil</div>
           
           <div class="mini-infographic-wrap">
             <div class="ratio-silhouettes">
@@ -1624,29 +1673,29 @@
               <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
               <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
             </div>
-            <div class="ratio-caption">1 em cada 8 adultos no país é LGBTQIAPN+</div>
+            <div class="ratio-caption">1 em cada 8 pessoas adultas no país é LGBTQIAPN+</div>
           </div>
 
           <div class="stat-text">
-            Pesquisa probabilística representativa nacional da população adulta. Entre as pessoas assexuais mapeadas, 93,5% são mulheres historicamente submetidas à invisibilidade.
+            Pesquisa probabilística representativa nacional das pessoas adultas brasileiras. Entre as pessoas assexuais mapeadas, 93,5% são mulheres historicamente submetidas à invisibilidade.
           </div>
           <div class="stat-source-box">Nature Scientific Reports (Unesp/USP/Datafolha, 2022)</div>
         </div>
 
-        <!-- Card 2: Trans & Não Binários -->
+        <!-- Card 2: Pessoas Trans e Não Binárias -->
         <div class="stat-card-white" style="--card-accent: #9333ea;">
-          <span class="stat-badge-category" style="--badge-color: #9333ea;">Trans & Não Binários</span>
-          <div class="stat-big">~3 Milhões</div>
-          <div class="stat-headline">1,88% dos adultos brasileiros</div>
+          <span class="stat-badge-category" style="--badge-color: #9333ea;">Pessoas Trans e Não Binárias</span>
+          <div class="stat-big">~3 milhões</div>
+          <div class="stat-headline">1,88% das pessoas adultas brasileiras</div>
 
           <div class="mini-infographic-wrap">
             <div class="segmented-bar-wrap">
-              <div class="seg-nb" title="1,88 milhão não binárias"></div>
-              <div class="seg-trans" title="1,09 milhão trans"></div>
+              <div class="seg-nb" title="1,88 milhão de pessoas não binárias"></div>
+              <div class="seg-trans" title="1,09 milhão de pessoas trans"></div>
             </div>
             <div class="segmented-legend">
-              <span style="color: #9333ea;">1,88M Não binários (63%)</span>
-              <span style="color: #e11d48;">1,09M Trans (37%)</span>
+              <span style="color: #9333ea;">1,88 mi não binárias (63%)</span>
+              <span style="color: #e11d48;">1,09 mi trans (37%)</span>
             </div>
           </div>
 
@@ -1679,13 +1728,13 @@
         <!-- Card 4: Assassinatos de Pessoas Trans -->
         <div class="stat-card-white" style="--card-accent: #e11d48;">
           <span class="stat-badge-category" style="--badge-color: #e11d48;">Assassinatos de Pessoas Trans</span>
-          <div class="stat-big">18º Ano</div>
-          <div class="stat-headline">Líder global em assassinatos</div>
+          <div class="stat-big">18º ano</div>
+          <div class="stat-headline">País mais letal do mundo</div>
 
           <div class="mini-infographic-wrap">
             <div class="profile-tags-wrap">
-              <div class="profile-tag-item"><div class="dot"></div> Maioria jovem (até 35 anos)</div>
-              <div class="profile-tag-item"><div class="dot"></div> Perfil marcadamente negro e periférico</div>
+              <div class="profile-tag-item"><div class="dot"></div> Maioria jovem (pessoas de até 35 anos)</div>
+              <div class="profile-tag-item"><div class="dot"></div> Maioria de pessoas negras e periféricas</div>
             </div>
           </div>
 
@@ -1699,16 +1748,16 @@
       <!-- Infográfico Visual de Barras -->
       <div class="infographic-box">
         <div class="infographic-header">
-          <h3>Dimensionamento demográfico: Subnotificação do Estado vs. Evidência Científica (% de adultos)</h3>
-          <p>Contraste direto entre a omissão censitária governamental na PNS de 2019 e a amostragem epidemiológica publicada na <em>Scientific Reports</em> da Nature.</p>
+          <h3>Dimensionamento demográfico: subestimação do Estado vs. evidência científica (% de pessoas adultas)</h3>
+          <p>Contraste direto entre a omissão censitária governamental na PNS de 2019 e a amostragem epidemiológica de pessoas adultas publicada na <em>Scientific Reports</em> da Nature.</p>
         </div>
 
         <div class="chart-bars-list">
           <!-- Barra 1 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              População Adulta LGBTQIAPN+ Total
-              <small>Evidência Científica • Unesp / USP / Datafolha (Nature)</small>
+              População adulta LGBTQIAPN+ total
+              <small>Evidência científica • Unesp / USP / Datafolha (Nature)</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 100%; background: linear-gradient(90deg, #2563eb, #9333ea);"></div>
@@ -1719,8 +1768,8 @@
           <!-- Barra 2 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              Omissão por medo ou estigma (Não souberam responder)
-              <small>Subnotificação Estatal • IBGE, Pesquisa Nacional de Saúde</small>
+              Omissão por medo ou estigma (pessoas que não responderam)
+              <small>Subnotificação estatal • IBGE, Pesquisa Nacional de Saúde</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 28.3%; background: #64748b;"></div>
@@ -1731,8 +1780,8 @@
           <!-- Barra 3 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              Autodeclarados ao Estado em ambiente domiciliar
-              <small>Dado Oficial Mínimo • IBGE, Pesquisa Nacional de Saúde</small>
+              Pessoas autodeclaradas ao Estado em ambiente domiciliar
+              <small>Dado oficial mínimo • IBGE, Pesquisa Nacional de Saúde</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 15.8%; background: #0891b2;"></div>
@@ -1743,8 +1792,8 @@
           <!-- Barra 4 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              Variação Intersexo ao Nascer (Limite Superior)
-              <small>Parâmetro Internacional • Alto Comissariado da ONU (ACNUDH)</small>
+              Pessoas com variação intersexo ao nascer (limite superior)
+              <small>Parâmetro internacional • Alto Comissariado da ONU (ACNUDH)</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 14.1%; background: #ea580c;"></div>
@@ -1755,8 +1804,8 @@
           <!-- Barra 5 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              Pessoas Não Binárias
-              <small>Evidência Científica • Unesp / USP (Nature)</small>
+              Pessoas não binárias
+              <small>Evidência científica • Unesp / USP (Nature)</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 9.9%; background: #9333ea;"></div>
@@ -1767,8 +1816,8 @@
           <!-- Barra 6 -->
           <div class="chart-bar-item">
             <div class="chart-bar-label">
-              Pessoas Transgênero
-              <small>Evidência Científica • Unesp / USP (Nature)</small>
+              Pessoas transgênero
+              <small>Evidência científica • Unesp / USP (Nature)</small>
             </div>
             <div class="chart-track">
               <div class="chart-progress" style="width: 5.75%; background: #e11d48;"></div>
@@ -1780,7 +1829,7 @@
         <!-- Segundo Bloco do Gráfico: Letalidade Violenta Monitorada -->
         <div style="border-top: 1px solid #e2e8f0; margin-top: 2rem; padding-top: 1.8rem;">
           <h4 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 0.35rem;">
-            Letalidade Violenta Monitorada pela Sociedade Civil (Vítimas Anuais, 2024–2025)
+            Letalidade violenta monitorada pela sociedade civil (vítimas anuais, 2024–2025)
           </h4>
           <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 1.5rem;">
             Registros apurados a partir da imprensa e observatórios independentes diante da ausência de estatística oficial unificada na segurança pública.
@@ -1789,7 +1838,7 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Mortes Violentas LGBTQIAPN+</span>
+                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Mortes violentas LGBTQIAPN+</span>
                 <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">GGB</span>
               </div>
               <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
@@ -1803,7 +1852,7 @@
 
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Assassinatos de Pessoas Trans</span>
+                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Assassinatos de pessoas trans</span>
                 <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">ANTRA</span>
               </div>
               <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
@@ -1827,7 +1876,7 @@
         <span class="section-tag" style="color: #38bdf8;">A fragilidade da jurisprudência</span>
         <h2 class="section-title">A ilusão de termos direitos garantidos por lei</h2>
         <p class="section-subtitle">
-          Quase todas as conquistas fundamentais da população LGBTQIAPN+ dependem de interpretações judiciais ou de normas administrativas vulneráveis a revogações políticas.
+          Quase todas as conquistas fundamentais das pessoas LGBTQIAPN+ dependem de interpretações judiciais ou de normas administrativas vulneráveis a revogações políticas.
         </p>
       </div>
 
@@ -1838,7 +1887,7 @@
             <i data-lucide="heart-handshake"></i>
             <div>
               <h4>Casamento civil e família</h4>
-              <p>Patrimônio, sucessão e adoção</p>
+              <p>Proteção patrimonial, sucessão e adoção</p>
             </div>
           </div>
           <div class="box-precario">
@@ -1847,7 +1896,7 @@
           </div>
           <div class="box-estatuto">
             <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Lei formal no Código Civil</span>
-            <p>Atualiza os arts. 1.514 e 1.723 para "duas pessoas", blindando partilha de bens, herança, pensão por morte, licenças parentais e adoção contra qualquer manobra parlamentar.</p>
+            <p>Atualiza os arts. 1.514, 1.517, 1.565 e 1.723 para "duas pessoas", blindando proteção patrimonial, meação, herança, pensão por morte, licenças parentais, dupla filiação e adoção.</p>
           </div>
         </div>
 
@@ -1857,16 +1906,16 @@
             <i data-lucide="gavel"></i>
             <div>
               <h4>Enfrentamento à violência</h4>
-              <p>Crimes de ódio e "cura gay"</p>
+              <p>LGBTQIAPN+cídio e terapias de conversão</p>
             </div>
           </div>
           <div class="box-precario">
             <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Analogia pelo STF (ADO 26)</span>
-            <p>Não existe tipo penal próprio no Código Penal. A punição depende de analogia judicial à Lei de Racismo, sem qualificadoras específicas e com omissão de dados no SINESP.</p>
+            <p>Não existe tipo penal próprio no Código Penal. A punição depende de analogia judicial à Lei de Racismo, sem qualificadoras letais específicas e com omissão de dados no SINESP.</p>
           </div>
           <div class="box-estatuto">
             <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Tipos próprios no Código Penal</span>
-            <p>Tipificação autônoma no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e dados padronizados na segurança.</p>
+            <p>Crime próprio de LGBTQIAPN+fobia, crimes hediondos de LGBTQIAPN+cídio, lesbocídio e transfeminicídio, criminalização de terapias de conversão sexual e de gênero e dados obrigatórios no SINESP.</p>
           </div>
         </div>
 
@@ -1876,16 +1925,16 @@
             <i data-lucide="stethoscope"></i>
             <div>
               <h4>Saúde integral no SUS</h4>
-              <p>Atenção básica, prevenção e dignidade</p>
+              <p>Prevenção, Processo Transexualizador e formação</p>
             </div>
           </div>
           <div class="box-precario">
             <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Portarias e resoluções frágeis</span>
-            <p>Atenção à saúde regida por atos infralegais revogáveis, carência de capacitação profissional obrigatória nas diretrizes curriculares e barreiras recorrentes em atendimentos.</p>
+            <p>Atenção à saúde regida por atos infralegais revogáveis (como a Resolução CFM 2.427/2025), carência de capacitação profissional obrigatória e barreiras recorrentes em atendimentos.</p>
           </div>
           <div class="box-estatuto">
             <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Lei Orgânica da Saúde (8.080)</span>
-            <p>Garante em lei a política de saúde integral no SUS com dotação orçamentária, estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, Processo Transexualizador em lei e punição à violência institucional.</p>
+            <p>Garante em lei a saúde integral no SUS com orçamento próprio, estratégias de prevenção combinada e profilaxias sustentadas em evidências atualizadas, Processo Transexualizador e capacitação profissional obrigatória.</p>
           </div>
         </div>
 
@@ -1894,17 +1943,17 @@
           <div class="matrix-title-col">
             <i data-lucide="shield"></i>
             <div>
-              <h4>Juventude e pessoas intersexo</h4>
-              <p>Escola, abrigo e integridade física</p>
+              <h4>Juventude, identidade e intersexo</h4>
+              <p>Nome social, escola, abrigo e integridade física</p>
             </div>
           </div>
           <div class="box-precario">
             <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Desamparo legislativo</span>
-            <p>Bullying discriminatório sem qualificadora penal na Lei 14.811/24, jovens expulsos de casa sem moradia emergencial e mutilação genital em pessoas intersexo sem consentimento.</p>
+            <p>Exposição forçada do nome civil em documentos, bullying sem qualificadora na Lei 14.811/24, pessoas jovens expulsas de casa sem abrigo e mutilação genital em pessoas intersexo sem consentimento.</p>
           </div>
           <div class="box-estatuto">
             <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Tutela legal integral</span>
-            <p>Punição severa ao bullying na LDB e Código Penal, acolhimento para quem é expulso de casa pela família e proibição legal expressa da mutilação genital em pessoas intersexo sem consentimento.</p>
+            <p>Nome social com exclusão do nome civil nos documentos, punição e indenização contra o bullying escolar, acolhimento a pessoas expulsas do lar e proibição da mutilação genital em pessoas intersexo sem consentimento.</p>
           </div>
         </div>
       </div>
@@ -1915,58 +1964,75 @@
   <section id="eixos" class="section-eixos">
     <div class="container">
       <div class="section-intro">
-        <span class="section-tag">Matriz normativa completa</span>
+        <span class="section-tag">Matriz normativa completa e atualizada</span>
         <h2 class="section-title">Os 9 eixos estruturantes do Estatuto Nacional</h2>
         <p class="section-subtitle">
-          Elaborados com rigor técnico conforme a Lei Complementar nº 95/1998 para contemplar todas as dimensões de vida, dignidade e cidadania da população LGBTQIAPN+.
+          Elaborados conforme a Lei Complementar nº 95/1998 para unificar e blindar em lei federal ordinária todas as frentes civis, penais, sociais e registrais das pessoas LGBTQIAPN+.
         </p>
       </div>
 
       <div class="eixos-grid-layout">
         <!-- Eixo 1 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #e11d48;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 01</span>
             <div class="eixo-icon-box" style="--eixo-bg: #fff1f2; --eixo-color: #e11d48;">
               <i data-lucide="heart-handshake"></i>
             </div>
           </div>
-          <h3>Casamento civil, família e sucessões</h3>
-          <p>Reconhecimento expresso do casamento e da união estável entre duas pessoas no Código Civil. Igualdade total em partilha de bens, herança, pensão por morte no INSS, licença parental e registro direto de dupla filiação em cartório.</p>
+          <h3>Casamento civil, proteção patrimonial, famílias e adoção</h3>
+          <p>Altera os arts. 1.514, 1.517, 1.565 e 1.723 do Código Civil para consagrar o casamento e a união estável entre duas pessoas, independentemente de orientação sexual, identidade de gênero ou características sexuais.</p>
+          <ul class="eixo-points">
+            <li><strong>Proteção patrimonial e previdenciária:</strong> igualdade plena em regime de bens, meação, herança, direito real de habitação, planos de saúde e pensão por morte no INSS e em regimes próprios.</li>
+            <li><strong>Parentalidade e filiação em cartório:</strong> licença parental integral (inclusive para pessoa não gestante e pessoas trans gestantes) e registro direto de dupla filiação e multiparentalidade, inclusive na reprodução assistida.</li>
+            <li><strong>Adoção blindada:</strong> proíbe no ECA qualquer discriminação na habilitação e adoção e pune recusas ou atrasos de cartórios e agentes públicos.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Código Civil</span>
-            <span class="law-badge-item">Previdência Social</span>
+            <span class="law-badge-item">Previdência (INSS)</span>
+            <span class="law-badge-item">CLT</span>
             <span class="law-badge-item">ECA</span>
           </div>
         </div>
 
         <!-- Eixo 2 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #2563eb;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 02</span>
             <div class="eixo-icon-box" style="--eixo-bg: #eff6ff; --eixo-color: #2563eb;">
               <i data-lucide="shield"></i>
             </div>
           </div>
-          <h3>Direito penal e segurança pública</h3>
-          <p>Tipificação autônoma dos crimes de LGBTQIAPN+fobia no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e preenchimento obrigatório de campos de diversidade no SINESP.</p>
+          <h3>Enfrentamento ao LGBTQIAPN+cídio, direito penal e segurança</h3>
+          <p>Supera a dependência de analogia judicial ao criar tipos penais próprios contra a violência motivada por orientação sexual, identidade ou expressão de gênero e intersexualidade.</p>
+          <ul class="eixo-points">
+            <li><strong>Crimes hediondos de ódio:</strong> tipifica e inclui na Lei de Crimes Hediondos o <strong>LGBTQIAPN+cídio, o transfeminicídio e o lesbocídio</strong>, além de majorante para o <strong>estupro corretivo</strong> e o induzimento ao suicídio.</li>
+            <li><strong>Fim das terapias de conversão:</strong> criminaliza (equiparando à tortura, com reclusão e cassação de registro ou alvará) qualquer prática de conversão de orientação sexual ou de identidade de gênero.</li>
+            <li><strong>Dados policiais e custódia digna:</strong> campos obrigatórios de identidade de gênero, orientação sexual e nome social nos B.O.s e no SINESP, delegacias especializadas e alocação segura com continuidade hormonal na Lei de Execução Penal.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Código Penal</span>
             <span class="law-badge-item">Crimes Hediondos</span>
-            <span class="law-badge-item">SINESP</span>
+            <span class="law-badge-item">Lei 7.716/1989</span>
+            <span class="law-badge-item">SINESP &amp; LEP</span>
           </div>
         </div>
 
         <!-- Eixo 3 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #16a34a;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 03</span>
             <div class="eixo-icon-box" style="--eixo-bg: #f0fdf4; --eixo-color: #16a34a;">
               <i data-lucide="stethoscope"></i>
             </div>
           </div>
-          <h3>Saúde integral no SUS para toda a comunidade</h3>
-          <p>Garantia em lei da Política Nacional de Saúde Integral LGBTQIAPN+, universalização de estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, atenção integral a toda a comunidade, capacitação curricular obrigatória e respeito ao Processo Transexualizador no SUS em lei federal.</p>
+          <h3>Saúde integral no SUS, prevenção e capacitação profissional</h3>
+          <p>Inscreve na Lei Orgânica da Saúde (Lei 8.080/1990) a Política Nacional de Saúde Integral LGBTQIAPN+, protocolo unificado de acolhimento e o Processo Transexualizador em lei federal.</p>
+          <ul class="eixo-points">
+            <li><strong>Processo Transexualizador blindado em lei:</strong> orçamento próprio, metas de redução de filas e critérios definidos por evidências científicas internacionais, anulando restrições infralegais como a Resolução CFM 2.427/2025.</li>
+            <li><strong>Prevenção sustentada em evidências:</strong> universalização na atenção básica de estratégias de prevenção combinada, autotestagem e profilaxias biomédicas sustentadas em evidências científicas atualizadas.</li>
+            <li><strong>Treinamento profissional obrigatório:</strong> formação curricular nos cursos da saúde, capacitação permanente das equipes do SUS, despatologização da assexualidade e sanção à violência institucional.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei 8.080/1990</span>
             <span class="law-badge-item">Diretrizes Curriculares</span>
@@ -1975,101 +2041,134 @@
         </div>
 
         <!-- Eixo 4 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #ca8a04;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 04</span>
             <div class="eixo-icon-box" style="--eixo-bg: #fefce8; --eixo-color: #ca8a04;">
               <i data-lucide="graduation-cap"></i>
             </div>
           </div>
-          <h3>Educação e enfrentamento ao bullying escolar</h3>
-          <p>Classificação da LGBTQIAPN+fobia como falta disciplinar grave na LDB, punição ao bullying presencial no Código Penal, responsabilidade civil objetiva de instituições omissas e criação de índices anuais de clima escolar nas secretarias.</p>
+          <h3>Educação inclusiva, crime de bullying e reparação civil</h3>
+          <p>Articula proteção pedagógica, responsabilização penal de pessoas adultas imputáveis e reparação indenizatória integral diante da ineficácia de 86% das respostas escolares atuais.</p>
+          <ul class="eixo-points">
+            <li><strong>Reforma do art. 146-A do Código Penal:</strong> retira a brecha "sem motivação evidente" da Lei 14.811/2024 e pune com reclusão o bullying presencial e virtual por LGBTQIAPN+fobia, agravado na omissão dolosa da direção (aplicando-se medidas pedagógicas do ECA a adolescentes).</li>
+            <li><strong>Bullying como infração civil indenizável:</strong> responsabilidade objetiva da rede pública ou privada, dano moral presumido, custeio de tratamento psicológico/psiquiátrico e ata notarial gratuita para provas digitais.</li>
+            <li><strong>Clima escolar na LDB:</strong> protocolo obrigatório de notificação às Secretarias e Conselhos Tutelares, índice anual de violência escolar e garantia do nome social estudantil.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">LDB</span>
-            <span class="law-badge-item">Código Penal</span>
-            <span class="law-badge-item">Código Civil</span>
+            <span class="law-badge-item">Código Penal (Art. 146-A)</span>
+            <span class="law-badge-item">Código Civil &amp; CPC</span>
           </div>
         </div>
 
         <!-- Eixo 5 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #e11d48;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 05</span>
             <div class="eixo-icon-box" style="--eixo-bg: #fff1f2; --eixo-color: #e11d48;">
               <i data-lucide="home"></i>
             </div>
           </div>
-          <h3>Proteção social e combate à expulsão do lar</h3>
-          <p>Enquadramento da expulsão familiar de vulneráveis como violência doméstica (Lei Maria da Penha e ECA), criação de auxílio de moradia emergencial e cofinanciamento federal permanente para casas de acolhimento em todas as capitais.</p>
+          <h3>Proteção social, Lei Maria da Penha, abrigo e fim da expulsão</h3>
+          <p>Enfrenta a violência doméstica, a rejeição familiar e o desamparo habitacional que atingem desproporcionalmente pessoas jovens e vulnerabilizadas da comunidade.</p>
+          <ul class="eixo-points">
+            <li><strong>Lei Maria da Penha expressa em lei:</strong> assegura proteção integral a mulheres trans, travestis, pessoas não binárias vulnerabilizadas e relações homoafetivas, enquadrando a expulsão do lar por LGBTQIAPN+fobia como violência doméstica sujeita a medidas protetivas e alimentos.</li>
+            <li><strong>Auxílio e moradia emergencial:</strong> institui benefício emergencial e aluguel social prioritário na Lei Orgânica da Assistência Social para pessoas expulsas de casa ou em situação de rua.</li>
+            <li><strong>Casas de acolhimento:</strong> cria cofinanciamento federal permanente para abrigos especializados em todas as capitais e regiões metropolitanas.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei Maria da Penha</span>
             <span class="law-badge-item">ECA</span>
-            <span class="law-badge-item">Proteção Social</span>
+            <span class="law-badge-item">Lei 8.742/1993</span>
           </div>
         </div>
 
         <!-- Eixo 6 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #0891b2;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 06</span>
             <div class="eixo-icon-box" style="--eixo-bg: #ecfeff; --eixo-color: #0891b2;">
               <i data-lucide="user-check"></i>
             </div>
           </div>
-          <h3>Identidade civil, registros e nome social</h3>
-          <p>Inscrição em lei do direito à retificação gratuita de prenome e gênero em cartório sem laudos ou cirurgias, reconhecimento do marcador não binário em documentos nacionais e obrigatoriedade do nome social nos setores público e privado.</p>
+          <h3>Identidade civil, nome social e exclusão do nome civil</h3>
+          <p>Codifica a autodeterminação de gênero em lei federal, eliminando constrangimentos documentais e barreiras financeiras ou judiciais nos cartórios e órgãos de identificação.</p>
+          <ul class="eixo-points">
+            <li><strong>Nome social com exclusão do nome civil:</strong> obrigatoriedade nacional nos setores público e privado com <strong>exclusão da exibição do nome civil (nome de registro) e do sexo de nascimento na face da Carteira de Identidade Nacional (CIN), crachás, chamadas escolares, prontuários e cadastros</strong>, mantendo vínculo apenas interno e sigiloso pelo CPF.</li>
+            <li><strong>Retificação gratuita e sigilosa:</strong> alteração extrajudicial gratuita de prenome e gênero em cartório (estendida a diplomas e certidões, sem laudos, cirurgias ou ação judicial).</li>
+            <li><strong>Marcador não binário:</strong> reconhecimento legal uniforme da identidade não binária nos registros civis e documentos nacionais.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei 6.015/1973</span>
-            <span class="law-badge-item">Identidade Nacional</span>
+            <span class="law-badge-item">Identidade Nacional (CIN)</span>
+            <span class="law-badge-item">Lei do Nome Social</span>
           </div>
         </div>
 
         <!-- Eixo 7 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #ea580c;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 07</span>
             <div class="eixo-icon-box" style="--eixo-bg: #fff7ed; --eixo-color: #ea580c;">
               <i data-lucide="shield-check"></i>
             </div>
           </div>
-          <h3>Proteção a pessoas intersexo e fim da mutilação genital</h3>
-          <p>Proibição em lei federal de cirurgias genitais, procedimentos esterilizadores e intervenções corporais em pessoas intersexo sem o seu consentimento prévio, livre e esclarecido, além de opção de registro de nascimento protegido em lei.</p>
+          <h3>Proteção integral a pessoas intersexo e fim da mutilação genital</h3>
+          <p>Garante em lei federal a integridade corporal, a autonomia e o cuidado ético não patologizante para pessoas nascidas com variações nas características sexuais.</p>
+          <ul class="eixo-points">
+            <li><strong>Proibição penal da mutilação sem consentimento:</strong> proíbe e tipifica como lesão corporal gravíssima (com cassação de registro profissional) cirurgias genitais, esterilizações e intervenções irreversíveis em pessoas intersexo sem consentimento prévio, livre e esclarecido (salvo estrito risco vital atestado por junta médica).</li>
+            <li><strong>Registro civil protegido:</strong> direito em lei ao registro de nascimento sem imposição binária forçada e designação posterior gratuita, sem laudo, cirurgia ou ação judicial.</li>
+            <li><strong>Atenção no SUS e prontuário:</strong> acolhimento multiprofissional não patologizante e acesso imprescritível ao prontuário médico.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Código Penal</span>
-            <span class="law-badge-item">Registros Públicos</span>
-            <span class="law-badge-item">Direitos Humanos</span>
+            <span class="law-badge-item">Lei 6.015/1973</span>
+            <span class="law-badge-item">SUS</span>
           </div>
         </div>
 
         <!-- Eixo 8 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #2563eb;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 08</span>
             <div class="eixo-icon-box" style="--eixo-bg: #eff6ff; --eixo-color: #2563eb;">
               <i data-lucide="briefcase"></i>
             </div>
           </div>
-          <h3>Trabalho, renda e inclusão produtiva</h3>
-          <p>Ações afirmativas para inserção laboral de pessoas vulnerabilizadas da comunidade, margem de preferência na Lei de Licitações para empresas com políticas ativas de diversidade e programas de formação e qualificação com bolsas.</p>
+          <h3>Trabalho digno, ações afirmativas e inclusão produtiva</h3>
+          <p>Combate a exclusão estrutural do mercado formal de trabalho por meio de cotas legais, estímulos em contratações públicas e formação remunerada.</p>
+          <ul class="eixo-points">
+            <li><strong>Cotas em concursos e universidades:</strong> reserva legal de vagas para pessoas trans, travestis, não binárias e intersexo nos concursos públicos federais e nas universidades e institutos federais.</li>
+            <li><strong>Preferência em licitações:</strong> critérios de incentivo e desempate na Lei 14.133/2021 para empresas com programas efetivos de contratação, equidade e permanência de pessoas LGBTQIAPN+ vulnerabilizadas.</li>
+            <li><strong>Qualificação com bolsa:</strong> programas nacionais de elevação de escolaridade e capacitação técnica acompanhados de bolsa-auxílio mensal de permanência.</li>
+          </ul>
           <div class="eixo-laws">
+            <span class="law-badge-item">Concursos &amp; Universidades</span>
             <span class="law-badge-item">Lei de Licitações</span>
-            <span class="law-badge-item">Serviço Público</span>
+            <span class="law-badge-item">Trabalho &amp; Renda</span>
           </div>
         </div>
 
         <!-- Eixo 9 -->
-        <div class="eixo-clean-card">
+        <div class="eixo-clean-card" style="--eixo-dot: #9333ea;">
           <div class="eixo-top-bar">
             <span class="eixo-pill">Eixo 09</span>
             <div class="eixo-icon-box" style="--eixo-bg: #faf5ff; --eixo-color: #9333ea;">
               <i data-lucide="database"></i>
             </div>
           </div>
-          <h3>Dados oficiais no Censo e governança</h3>
-          <p>Obrigatoriedade por lei federal da inclusão de perguntas sobre orientação sexual e identidade de gênero no Censo do IBGE, criação do Fundo Nacional LGBTQIAPN+ e cláusula de blindagem contra retrocessos por portarias.</p>
+          <h3>Censo oficial no IBGE, financiamento e vedação ao retrocesso</h3>
+          <p>Encerra o apagamento estatístico estatal e institui governança permanente com orçamento protegido contra revogações administrativas.</p>
+          <ul class="eixo-points">
+            <li><strong>Pesquisa obrigatória no IBGE:</strong> altera a Lei 5.534/1968 para obrigar a inclusão de identidade de gênero, orientação sexual e características sexuais (intersexo) no Censo Demográfico e nas pesquisas domiciliares e de saúde.</li>
+            <li><strong>Sistema e Fundo Nacional em lei:</strong> cria o Sistema Nacional de Direitos LGBTQIAPN+, com Conselho Nacional paritário permanente e Fundo Nacional próprio.</li>
+            <li><strong>Blindagem normativa:</strong> cláusula expressa de vedação ao retrocesso que invalida portarias, decretos ou resoluções contrárias ao Estatuto.</li>
+          </ul>
           <div class="eixo-laws">
             <span class="law-badge-item">Lei do IBGE</span>
-            <span class="law-badge-item">Orçamento Público</span>
+            <span class="law-badge-item">Fundo Nacional</span>
+            <span class="law-badge-item">Vedação ao Retrocesso</span>
           </div>
         </div>
       </div>
@@ -2222,8 +2321,8 @@
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0;">
           <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 1rem;">Dados e Fontes Verificadas para Matérias:</h4>
           <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: #475569;">
-            <li><strong>População:</strong> 12% dos adultos brasileiros identificam-se como LGBTQIAPN+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
-            <li><strong>Pessoas trans e não binárias:</strong> 1,88% dos adultos (~3 milhões de pessoas) — <em>Nature Scientific Reports (2021)</em>.</li>
+            <li><strong>População:</strong> 12% das pessoas adultas brasileiras identificam-se como LGBTQIAPN+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
+            <li><strong>Pessoas trans e não binárias:</strong> 1,88% das pessoas adultas brasileiras (~3 milhões de pessoas) — <em>Nature Scientific Reports (2021)</em>.</li>
             <li><strong>Letalidade:</strong> 257 mortes violentas em 2025 (uma a cada 34h) — <em>Observatório GGB (2025)</em>.</li>
             <li><strong>Assassinatos:</strong> Brasil segue pelo 18º ano consecutivo como o mais letal para pessoas trans — <em>Dossiê ANTRA (2026)</em>.</li>
           </ul>

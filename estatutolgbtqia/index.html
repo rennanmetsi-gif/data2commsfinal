@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3ZTDYFHLT');
+  </script>
   <title>Estatuto Nacional dos Direitos LGBTQIAPN+ | Apoie no Senado Federal (e-Cidadania)</title>
 
   <meta name="description" content="Apoie no Portal e-Cidadania do Senado Federal a criação do Estatuto Nacional dos Direitos LGBTQIAPN+ em lei ordinária: casamento civil, saúde integral no SUS, proteção a pessoas intersexo, nome social, Censo no IBGE e criminalização do LGBTQIAPN+cídio. Leia o dossiê oficial de 70 páginas.">
@@ -2326,6 +2335,22 @@
           } else if (document.getElementById('pressModal').classList.contains('active')) {
             closePressModal();
           }
+        }
+      });
+
+      // Eventos GA4 (cliques de apoio no Senado e leitura do Dossiê)
+      document.addEventListener('click', function(e) {
+        if (typeof window.gtag !== 'function') return;
+        var voteLink = e.target.closest('a[href*="senado.leg.br/ecidadania"]');
+        if (voteLink) {
+          var placement = voteLink.classList.contains('btn-header-vote') ? 'header' :
+                          voteLink.classList.contains('floating-cta') ? 'floating_cta' :
+                          voteLink.classList.contains('btn-lg-primary') ? 'hero_primary' : 'footer';
+          window.gtag('event', 'senado_vote_click', {
+            site_area: 'estatuto_lgbtqiapn',
+            button_placement: placement,
+            host_domain: window.location.hostname
+          });
         }
       });
     })();

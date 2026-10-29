@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatuto Nacional dos Direitos LGBTQIA+ | História LGBTQIA+</title>
+  
+  <meta name="description" content="Mobilização popular oficial por 20.000 assinaturas no Senado Federal pelo Estatuto Nacional dos Direitos LGBTQIA+: casamento civil, saúde no SUS e tipificação penal.">
+  <link rel="canonical" href="https://acervolula.com.br/estatutolgbtiqia/">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://acervolula.com.br/estatutolgbtiqia/">
+  <meta property="og:title" content="Estatuto Nacional dos Direitos LGBTQIA+ | História LGBTQIA+">
+  <meta property="og:description" content="Exigimos o Estatuto LGBTQIA+ em lei federal: casamento civil, saúde no SUS, criminalização da LGBTQIAfobia e proteção contra a expulsão do lar.">
+  <meta property="og:image" content="https://acervolula.com.br/estatutolgbtiqia/logo_light.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Estatuto Nacional dos Direitos LGBTQIA+">
+  <meta name="twitter:description" content="Mobilização popular no Senado Federal por 20.000 apoios para aprovação do Estatuto LGBTQIA+ em lei ordinária.">
+  <meta name="twitter:image" content="https://acervolula.com.br/estatutolgbtiqia/logo_light.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-body: #f8fafc;
+      --bg-white: #ffffff;
+      --bg-slate: #0b1120;
+      --border-color: #e2e8f0;
+      --border-dark: #1e293b;
+      
+      --text-dark: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-soft: #94a3b8;
+      
+      --blue-action: #2563eb;
+      --blue-action-hover: #1d4ed8;
+      
+      --red: #e11d48;
+      --orange: #ea580c;
+      --yellow: #ca8a04;
+      --green: #16a34a;
+      --cyan: #0891b2;
+      --blue: #2563eb;
+      --purple: #9333ea;
+      
+      --pride-line: linear-gradient(90deg, #e11d48, #ea580c, #ca8a04, #16a34a, #0891b2, #2563eb, #9333ea);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.25;
+    }
+
+    /* Top Strip */
+    .top-strip {
+      height: 5px;
+      background: var(--pride-line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 5px;
+      z-index: 900;
+      padding: 0.85rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #334155;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue-action);
+    }
+
+    .btn-header-vote {
+      background: var(--blue-action);
+      color: #ffffff !important;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-header-vote:hover {
+      background: var(--blue-action-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Botão Flutuante (Floating CTA) */
+    .floating-cta {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 800;
+      background: var(--blue-action);
+      color: #ffffff;
+      padding: 0.95rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 2px solid #ffffff;
+    }
+
+    .floating-cta:hover {
+      background: var(--blue-action-hover);
+      transform: scale(1.04);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.55);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HERO SECTION REESTRUTURADO */
+    .hero-section {
+      background: #ffffff;
+      padding: 4.5rem 0 4rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 0.45rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge .ping {
+      width: 8px;
+      height: 8px;
+      background: var(--blue-action);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #0f172a;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.35rem;
+      max-width: 980px;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(120deg, #2563eb 0%, #9333ea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead-box {
+      max-width: 880px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-lead-box p {
+      font-size: 1.15rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .hero-lead-box strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* Pilares Visuais no Hero (Quebra a parede de texto) */
+    .hero-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 1rem;
+      max-width: 1080px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-pillar-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.95rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .hero-pillar-card:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-pillar-card .pillar-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: var(--blue-action);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-pillar-card .pillar-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.3;
+    }
+
+    .hero-pillar-card .pillar-text span {
+      display: block;
+      font-size: 0.76rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-lg-primary {
+      background: var(--blue-action);
+      color: #ffffff;
+      padding: 1.1rem 2.2rem;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-lg-primary:hover {
+      background: var(--blue-action-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-lg-secondary {
+      background: #ffffff;
+      color: #0f172a;
+      border: 2px solid #cbd5e1;
+      padding: 1.1rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+    }
+
+    .btn-lg-secondary:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    /* Meta de Apoios (Painel Hero) */
+    .goal-box {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.8rem 2.2rem;
+      max-width: 720px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .goal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+
+    .goal-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .goal-target {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .goal-track {
+      height: 14px;
+      background: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+    }
+
+    .goal-fill {
+      height: 100%;
+      width: 15%;
+      background: var(--pride-line);
+      border-radius: 9999px;
+    }
+
+    .goal-desc {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    /* Seções Gerais */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-intro {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blue-action);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 820px;
+      line-height: 1.6;
+    }
+
+    /* BLOCO 1: O PARADOXO BRASILEIRO (Baseado na Página 12 do Dossiê) */
+    .section-dados {
+      background: var(--bg-body);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stats-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card-white {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stat-card-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card-white::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--card-accent, var(--blue-action));
+    }
+
+    .stat-badge-category {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--badge-color, #64748b);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .stat-big {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-headline {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .stat-text {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    /* Micro-infográficos nos Cards de Estatísticas */
+    .mini-infographic-wrap {
+      margin: 0.5rem 0 1rem;
+      padding: 0.85rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+    }
+
+    .ratio-silhouettes {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+
+    .ratio-dot {
+      flex: 1;
+      height: 26px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .ratio-dot.active-pride {
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+    }
+
+    .ratio-caption {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .segmented-bar-wrap {
+      display: flex;
+      height: 14px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .segmented-bar-wrap .seg-nb {
+      width: 63.3%;
+      background: #9333ea;
+    }
+
+    .segmented-bar-wrap .seg-trans {
+      width: 36.7%;
+      background: #e11d48;
+    }
+
+    .segmented-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .breakdown-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .breakdown-chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .breakdown-chip.danger {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      color: #e11d48;
+    }
+
+    .profile-tags-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .profile-tag-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .profile-tag-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e11d48;
+      flex-shrink: 0;
+    }
+
+    .stat-source-box {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Gráfico Comparativo Visual (Idêntico ao Gráfico da Página 12) */
+    .infographic-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .infographic-header {
+      margin-bottom: 2rem;
+    }
+
+    .infographic-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    .infographic-header p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .chart-bars-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .chart-bar-item {
+      display: grid;
+      grid-template-columns: 260px 1fr 70px;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .chart-bar-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .chart-bar-label small {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .chart-track {
+      height: 22px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .chart-progress {
+      height: 100%;
+      background: var(--bar-color, #2563eb);
+      border-radius: 6px;
+      transition: width 1s ease;
+    }
+
+    .chart-bar-val {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-align: right;
+    }
+
+    /* BLOCO 2: MATRIZ DE VULNERABILIDADE (Escura de Contraste) */
+    .section-contraste-escura {
+      background: var(--bg-slate);
+      color: #ffffff;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .section-contraste-escura .section-title {
+      color: #ffffff;
+    }
+
+    .section-contraste-escura .section-subtitle {
+      color: #94a3b8;
+    }
+
+    .matrix-wrapper {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+
+    .matrix-row-item {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr;
+      padding: 1.8rem 2rem;
+      border-bottom: 1px solid #334155;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .matrix-row-item:last-child {
+      border-bottom: none;
+    }
+
+    .matrix-title-col {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .matrix-title-col i {
+      color: #38bdf8;
+      margin-top: 3px;
+    }
+
+    .matrix-title-col h4 {
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .matrix-title-col p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .box-precario {
+      background: rgba(225, 29, 72, 0.1);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+
+    .box-precario .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #fda4af;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .box-precario p {
+      font-size: 0.88rem;
+      color: #fecdd3;
+      line-height: 1.5;
+    }
+
+    .box-estatuto {
+      background: rgba(22, 163, 74, 0.12);
+      border: 1px solid rgba(22, 163, 74, 0.35);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+
+    .box-estatuto .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #86efac;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .box-estatuto p {
+      font-size: 0.88rem;
+      color: #bbf7d0;
+      line-height: 1.5;
+    }
+
+    /* BLOCO 3: OS 9 EIXOS ESTRUTURANTES (Claro) */
+    .section-eixos {
+      background: #ffffff;
+    }
+
+    .eixos-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .eixo-clean-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s;
+    }
+
+    .eixo-clean-card:hover {
+      border-color: #94a3b8;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    .eixo-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .eixo-pill {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .eixo-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--eixo-bg, #eff6ff);
+      color: var(--eixo-color, var(--blue-action));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eixo-clean-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .eixo-clean-card p {
+      font-size: 0.93rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .eixo-laws {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1rem;
+    }
+
+    .law-badge-item {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* BLOCO 4: SEÇÃO DOSSIÊ (Escura) */
+    .section-dossie {
+      background: var(--bg-slate);
+      color: #ffffff;
+      border-top: 1px solid #334155;
+    }
+
+    .dossie-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .dossie-left h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .dossie-left p.lead-explanation {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .dossie-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.95rem;
+      color: #e2e8f0;
+    }
+
+    .feature-item i {
+      color: #38bdf8;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .dossie-download-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .dossie-file-tag {
+      background: #020617;
+      border: 1px solid #334155;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin: 1.5rem 0;
+    }
+
+    /* Modal de Imprensa */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-window {
+      background: #ffffff;
+      border-radius: 18px;
+      max-width: 750px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #475569;
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 4rem 0 3rem;
+      border-top: 1px solid #1e293b;
+      font-size: 0.92rem;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-btn-link {
+      color: #ffffff;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 600;
+      background: none;
+      border: none;
+      font-size: 0.92rem;
+    }
+
+    .footer-btn-link:hover {
+      color: #38bdf8;
+    }
+
+    /* Responsivo */
+    @media (max-width: 850px) {
+      .matrix-row-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .dossie-grid {
+        grid-template-columns: 1fr;
+      }
+      .dossie-features {
+        grid-template-columns: 1fr;
+      }
+      .chart-bar-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .chart-bar-val {
+        text-align: left;
+      }
+      .hero-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .floating-cta {
+        bottom: 15px;
+        right: 15px;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra do Orgulho -->
+  <div class="top-strip"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-link">
+        <img src="logo_light.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="#dados">Dados reais</a>
+        <a href="#vulnerabilidade">A ilusão da lei</a>
+        <a href="#eixos">Os 9 eixos</a>
+        <a href="#dossie">Dossiê oficial</a>
+        <button onclick="openPressModal()" class="footer-btn-link" style="color: #334155; text-decoration: none;">Área de imprensa</button>
+      </nav>
+
+      <a href="https://www12.senado.leg.br/ecidadania/principalideia" target="_blank" class="btn-header-vote">
+        <i data-lucide="vote" style="width: 17px; height: 17px;"></i> Apoiar no Senado
+      </a>
+    </div>
+  </header>
+
+  <!-- Botão Flutuante Permanente -->
+  <a href="https://www12.senado.leg.br/ecidadania/principalideia" target="_blank" class="floating-cta">
+    <i data-lucide="check-circle-2" style="width: 20px; height: 20px;"></i>
+    <span>Votar no Senado pelo Gov.br</span>
+  </a>
+
+  <!-- HERO SECTION REESTRUTURADO -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="ping"></span>
+        Ideia Legislativa em tramitação oficial no Senado Federal
+      </div>
+
+      <h1 class="hero-title">
+        Nossos direitos não podem depender de decisões provisórias.<br>
+        Exigimos o <span class="highlight">Estatuto LGBTQIA+</span> em lei federal.
+      </h1>
+
+      <div class="hero-lead-box">
+        <p style="font-size: 1.22rem; line-height: 1.6; color: #334155;">
+          Casamento civil, punição à violência e acesso à saúde não são concessões temporárias: precisam virar <strong>lei definitiva aprovada pelo Congresso Nacional</strong> para proteger mais de 19 milhões de brasileiras e brasileiros.
+        </p>
+      </div>
+
+      <!-- Pilares Visuais em Cards Rápidos (Escaneabilidade Instantânea) -->
+      <div class="hero-pillars-grid">
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #fff1f2; color: #e11d48;">
+            <i data-lucide="heart" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Casamento civil
+            <span>Código Civil, herança & adoção</span>
+          </div>
+        </div>
+
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #eff6ff; color: #2563eb;">
+            <i data-lucide="gavel" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Crime de LGBTQIAfobia
+            <span>Código Penal & fim da cura gay</span>
+          </div>
+        </div>
+
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #f0fdf4; color: #16a34a;">
+            <i data-lucide="stethoscope" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Saúde integral no SUS
+            <span>Prevenção & transição em lei</span>
+          </div>
+        </div>
+
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #fff7ed; color: #ea580c;">
+            <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Pessoas intersexo
+            <span>Fim da mutilação genital sem consentimento</span>
+          </div>
+        </div>
+
+        <div class="hero-pillar-card">
+          <div class="pillar-icon" style="background: #faf5ff; color: #9333ea;">
+            <i data-lucide="home" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="pillar-text">
+            Apoio contra a expulsão
+            <span>Abrigo & combate ao bullying</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="https://www12.senado.leg.br/ecidadania/principalideia" target="_blank" class="btn-lg-primary">
+          <i data-lucide="vote"></i> Assinar a proposta no Senado (Gov.br)
+        </a>
+        <a href="#dossie" class="btn-lg-secondary">
+          <i data-lucide="file-text"></i> Conhecer o dossiê de 42 páginas
+        </a>
+      </div>
+
+      <!-- Termômetro de Apoios -->
+      <div class="goal-box">
+        <div class="goal-top">
+          <span class="goal-label">Meta regimental do Senado Federal</span>
+          <span class="goal-target">20.000 apoios</span>
+        </div>
+        <div class="goal-track">
+          <div class="goal-fill"></div>
+        </div>
+        <div class="goal-desc">
+          <span>Ao atingir 20 mil apoios, a proposta vira formalmente um <strong>Projeto de Lei</strong> na CDH</span>
+          <span>Prazo: 4 meses</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1: O PARADOXO BRASILEIRO (Fiel à Página 12 do Dossiê Técnico) -->
+  <section id="dados" class="section-dados">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-tag">Diagnóstico demográfico e letalidade</span>
+        <h2 class="section-title">O paradoxo brasileiro: milhões de cidadãos subcontados e letalidade extrema</h2>
+        <p class="section-subtitle">
+          Contraste empírico entre a subnotificação nos levantamentos estatais e os levantamentos científicos epidemiológicos da Nature e observatórios independentes da sociedade civil.
+        </p>
+      </div>
+
+      <!-- 4 Cards Superiores (Idênticos ao topo da Página 12 com Micro-infográficos) -->
+      <div class="stats-layout">
+        <!-- Card 1: População LGBTQIA+ -->
+        <div class="stat-card-white" style="--card-accent: #2563eb;">
+          <span class="stat-badge-category" style="--badge-color: #2563eb;">População LGBTQIA+</span>
+          <div class="stat-big">19 Milhões</div>
+          <div class="stat-headline">12% dos adultos no Brasil</div>
+          
+          <div class="mini-infographic-wrap">
+            <div class="ratio-silhouettes">
+              <div class="ratio-dot active-pride"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+              <div class="ratio-dot"><i data-lucide="user" style="width: 14px; height: 14px;"></i></div>
+            </div>
+            <div class="ratio-caption">1 em cada 8 adultos no país é LGBTQIA+</div>
+          </div>
+
+          <div class="stat-text">
+            Pesquisa probabilística representativa nacional da população adulta. Entre as pessoas assexuais mapeadas, 93,5% são mulheres historicamente submetidas à invisibilidade.
+          </div>
+          <div class="stat-source-box">Nature Scientific Reports (Unesp/USP/Datafolha, 2022)</div>
+        </div>
+
+        <!-- Card 2: Trans & Não Binários -->
+        <div class="stat-card-white" style="--card-accent: #9333ea;">
+          <span class="stat-badge-category" style="--badge-color: #9333ea;">Trans & Não Binários</span>
+          <div class="stat-big">~3 Milhões</div>
+          <div class="stat-headline">1,88% dos adultos brasileiros</div>
+
+          <div class="mini-infographic-wrap">
+            <div class="segmented-bar-wrap">
+              <div class="seg-nb" title="1,88 milhão não binárias"></div>
+              <div class="seg-trans" title="1,09 milhão trans"></div>
+            </div>
+            <div class="segmented-legend">
+              <span style="color: #9333ea;">1,88M Não binários (63%)</span>
+              <span style="color: #e11d48;">1,09M Trans (37%)</span>
+            </div>
+          </div>
+
+          <div class="stat-text">
+            Cerca de 1,09 milhão de pessoas trans (0,69%) e 1,88 milhão de pessoas não binárias (1,19%) distribuídas de forma homogênea pelas cinco macrorregiões do país.
+          </div>
+          <div class="stat-source-box">Nature Scientific Reports (Spizzirri et al., 2021)</div>
+        </div>
+
+        <!-- Card 3: Mortes Violentas LGBTQIA+ -->
+        <div class="stat-card-white" style="--card-accent: #ea580c;">
+          <span class="stat-badge-category" style="--badge-color: #ea580c;">Mortes Violentas LGBTQIA+</span>
+          <div class="stat-big">1 a cada 34h</div>
+          <div class="stat-headline">257 mortes violentas em 2025</div>
+
+          <div class="mini-infographic-wrap">
+            <div class="breakdown-chips">
+              <span class="breakdown-chip danger"><i data-lucide="alert-octagon" style="width: 12px; height: 12px;"></i> 204 homicídios</span>
+              <span class="breakdown-chip"><i data-lucide="heart-crack" style="width: 12px; height: 12px;"></i> 20 suicídios</span>
+              <span class="breakdown-chip"><i data-lucide="shield-alert" style="width: 12px; height: 12px;"></i> 17 latrocínios</span>
+            </div>
+          </div>
+
+          <div class="stat-text">
+            Dados apurados por observatórios da sociedade civil a partir do monitoramento da imprensa, em razão da ausência de padronização oficial no SINESP.
+          </div>
+          <div class="stat-source-box">Observatório Grupo Gay da Bahia (GGB, 2025)</div>
+        </div>
+
+        <!-- Card 4: Assassinatos de Pessoas Trans -->
+        <div class="stat-card-white" style="--card-accent: #e11d48;">
+          <span class="stat-badge-category" style="--badge-color: #e11d48;">Assassinatos de Pessoas Trans</span>
+          <div class="stat-big">18º Ano</div>
+          <div class="stat-headline">Líder global em assassinatos</div>
+
+          <div class="mini-infographic-wrap">
+            <div class="profile-tags-wrap">
+              <div class="profile-tag-item"><div class="dot"></div> Maioria jovem (até 35 anos)</div>
+              <div class="profile-tag-item"><div class="dot"></div> Perfil marcadamente negro e periférico</div>
+            </div>
+          </div>
+
+          <div class="stat-text">
+            Pelo 18º ano consecutivo, o Brasil permanece como o país mais letal do mundo para pessoas trans e travestis, com grave subnotificação estatal de denúncias.
+          </div>
+          <div class="stat-source-box">Dossiê ANTRA (Janeiro de 2026)</div>
+        </div>
+      </div>
+
+      <!-- Infográfico Visual de Barras (Baseado na Página 12 do Dossiê) -->
+      <div class="infographic-box">
+        <div class="infographic-header">
+          <h3>Dimensionamento demográfico: Subnotificação do Estado vs. Evidência Científica (% de adultos)</h3>
+          <p>Contraste direto entre a omissão censitária governamental na PNS de 2019 e a amostragem epidemiológica publicada na <em>Scientific Reports</em> da Nature.</p>
+        </div>
+
+        <div class="chart-bars-list">
+          <!-- Barra 1 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              População Adulta LGBTQIA+ Total
+              <small>Evidência Científica • Unesp / USP / Datafolha (Nature)</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 100%; background: linear-gradient(90deg, #2563eb, #9333ea);"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #2563eb;">12,0%</div>
+          </div>
+
+          <!-- Barra 2 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              Omissão por medo ou estigma (Não souberam responder)
+              <small>Subnotificação Estatal • IBGE, Pesquisa Nacional de Saúde</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 28.3%; background: #64748b;"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #64748b;">3,40%</div>
+          </div>
+
+          <!-- Barra 3 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              Autodeclarados ao Estado em ambiente domiciliar
+              <small>Dado Oficial Mínimo • IBGE, Pesquisa Nacional de Saúde</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 15.8%; background: #0891b2;"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #0891b2;">1,90%</div>
+          </div>
+
+          <!-- Barra 4 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              Variação Intersexo ao Nascer (Limite Superior)
+              <small>Parâmetro Internacional • Alto Comissariado da ONU (ACNUDH)</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 14.1%; background: #ea580c;"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #ea580c;">1,70%</div>
+          </div>
+
+          <!-- Barra 5 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              Pessoas Não Binárias
+              <small>Evidência Científica • Unesp / USP (Nature)</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 9.9%; background: #9333ea;"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #9333ea;">1,19%</div>
+          </div>
+
+          <!-- Barra 6 -->
+          <div class="chart-bar-item">
+            <div class="chart-bar-label">
+              Pessoas Transgênero
+              <small>Evidência Científica • Unesp / USP (Nature)</small>
+            </div>
+            <div class="chart-track">
+              <div class="chart-progress" style="width: 5.75%; background: #e11d48;"></div>
+            </div>
+            <div class="chart-bar-val" style="color: #e11d48;">0,69%</div>
+          </div>
+        </div>
+
+        <!-- Segundo Bloco do Gráfico da Página 12: Letalidade Violenta Monitorada -->
+        <div style="border-top: 1px solid #e2e8f0; margin-top: 2rem; padding-top: 1.8rem;">
+          <h4 style="font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 0.35rem;">
+            Letalidade Violenta Monitorada pela Sociedade Civil (Vítimas Anuais, 2024–2025)
+          </h4>
+          <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 1.5rem;">
+            Registros apurados a partir da imprensa e observatórios independentes diante da ausência de estatística oficial unificada na segurança pública.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Mortes Violentas LGBTQIA+</span>
+                <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">GGB</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.8rem; font-weight: 800; color: #ea580c;">257</span>
+                <span style="font-size: 0.85rem; color: #64748b;">em 2025 (vs. 291 em 2024)</span>
+              </div>
+              <p style="font-size: 0.8rem; color: #475569; line-height: 1.4;">
+                Média de <strong>1 morte violenta a cada 34 horas</strong> em território nacional.
+              </p>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="font-weight: 700; font-size: 0.92rem; color: #0f172a;">Assassinatos de Pessoas Trans</span>
+                <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; background: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">ANTRA</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.8rem; font-weight: 800; color: #e11d48;">80</span>
+                <span style="font-size: 0.85rem; color: #64748b;">em 2025 (vs. 122 em 2024)</span>
+              </div>
+              <p style="font-size: 0.8rem; color: #475569; line-height: 1.4;">
+                ANTRA alerta para forte subnotificação e aumento expressivo de <strong>tentativas de homicídio</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: A VULNERABILIDADE DOS DIREITOS (Seção Escura de Contraste) -->
+  <section id="vulnerabilidade" class="section-contraste-escura">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-tag" style="color: #38bdf8;">A fragilidade da jurisprudência</span>
+        <h2 class="section-title">A ilusão de termos direitos garantidos por lei</h2>
+        <p class="section-subtitle">
+          Quase todas as conquistas fundamentais da população LGBTQIA+ dependem de interpretações judiciais ou de normas administrativas vulneráveis a revogações políticas.
+        </p>
+      </div>
+
+      <div class="matrix-wrapper">
+        <!-- Linha 1: Casamento Civil -->
+        <div class="matrix-row-item">
+          <div class="matrix-title-col">
+            <i data-lucide="heart-handshake"></i>
+            <div>
+              <h4>Casamento civil e família</h4>
+              <p>Patrimônio, sucessão e adoção</p>
+            </div>
+          </div>
+          <div class="box-precario">
+            <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> STF (ADI 4277) / CNJ nº 175</span>
+            <p>O Código Civil ainda diz "homem e mulher". A Comissão de Família da Câmara já aprovou o PL 5167/2009 para tentar proibir e anular o casamento homoafetivo na lei escrita.</p>
+          </div>
+          <div class="box-estatuto">
+            <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Lei formal no Código Civil</span>
+            <p>Atualiza os arts. 1.514 e 1.723 para "duas pessoas", blindando partilha de bens, herança, pensão por morte, licenças parentais e adoção contra qualquer manobra parlamentar.</p>
+          </div>
+        </div>
+
+        <!-- Linha 2: Criminalização -->
+        <div class="matrix-row-item">
+          <div class="matrix-title-col">
+            <i data-lucide="gavel"></i>
+            <div>
+              <h4>Enfrentamento à violência</h4>
+              <p>Crimes de ódio e "cura gay"</p>
+            </div>
+          </div>
+          <div class="box-precario">
+            <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Analogia pelo STF (ADO 26)</span>
+            <p>Não existe tipo penal próprio no Código Penal. A punição depende de analogia judicial à Lei de Racismo, sem qualificadoras específicas e com omissão de dados no SINESP.</p>
+          </div>
+          <div class="box-estatuto">
+            <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Tipos próprios no Código Penal</span>
+            <p>Tipificação autônoma no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e dados padronizados na segurança.</p>
+          </div>
+        </div>
+
+        <!-- Linha 3: Saúde Integral -->
+        <div class="matrix-row-item">
+          <div class="matrix-title-col">
+            <i data-lucide="stethoscope"></i>
+            <div>
+              <h4>Saúde integral no SUS</h4>
+              <p>Atenção básica, prevenção e dignidade</p>
+            </div>
+          </div>
+          <div class="box-precario">
+            <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Portarias e resoluções frágeis</span>
+            <p>Atenção à saúde regida por atos infralegais revogáveis, carência de capacitação profissional obrigatória nas diretrizes curriculares e barreiras recorrentes em atendimentos.</p>
+          </div>
+          <div class="box-estatuto">
+            <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Lei Orgânica da Saúde (8.080)</span>
+            <p>Garante em lei a política de saúde integral no SUS com dotação orçamentária, estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, Processo Transexualizador em lei e punição à violência institucional.</p>
+          </div>
+        </div>
+
+        <!-- Linha 4: Juventude e Integridade -->
+        <div class="matrix-row-item">
+          <div class="matrix-title-col">
+            <i data-lucide="shield"></i>
+            <div>
+              <h4>Juventude e pessoas intersexo</h4>
+              <p>Escola, abrigo e integridade física</p>
+            </div>
+          </div>
+          <div class="box-precario">
+            <span class="badge"><i data-lucide="alert-circle" style="width: 14px;"></i> Desamparo legislativo</span>
+            <p>Bullying discriminatório sem qualificadora penal na Lei 14.811/24, jovens expulsos de casa sem moradia emergencial e mutilação genital em pessoas intersexo sem consentimento.</p>
+          </div>
+          <div class="box-estatuto">
+            <span class="badge"><i data-lucide="check" style="width: 14px;"></i> Tutela legal integral</span>
+            <p>Punição severa ao bullying na LDB e Código Penal, acolhimento para quem é expulso de casa pela família e proibição legal expressa da mutilação genital em pessoas intersexo sem consentimento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: OS 9 EIXOS ESTRUTURANTES (Seção Clara com Cards Iconográficos) -->
+  <section id="eixos" class="section-eixos">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-tag">Matriz normativa completa</span>
+        <h2 class="section-title">Os 9 eixos estruturantes do Estatuto Nacional</h2>
+        <p class="section-subtitle">
+          Elaborados com rigor técnico conforme a Lei Complementar nº 95/1998 para contemplar todas as dimensões de vida, dignidade e cidadania da população LGBTQIA+.
+        </p>
+      </div>
+
+      <div class="eixos-grid-layout">
+        <!-- Eixo 1 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 01</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #fff1f2; --eixo-color: #e11d48;">
+              <i data-lucide="heart-handshake"></i>
+            </div>
+          </div>
+          <h3>Casamento civil, família e sucessões</h3>
+          <p>Reconhecimento expresso do casamento e da união estável entre duas pessoas no Código Civil. Igualdade total em partilha de bens, herança, pensão por morte no INSS, licença parental e registro direto de dupla filiação em cartório.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Código Civil</span>
+            <span class="law-badge-item">Previdência Social</span>
+            <span class="law-badge-item">ECA</span>
+          </div>
+        </div>
+
+        <!-- Eixo 2 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 02</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #eff6ff; --eixo-color: #2563eb;">
+              <i data-lucide="shield"></i>
+            </div>
+          </div>
+          <h3>Direito penal e segurança pública</h3>
+          <p>Tipificação autônoma dos crimes de LGBTQIA+fobia no Código Penal, qualificadoras de lesbocídio e transfeminicídio, criminalização de terapias de conversão com reclusão e preenchimento obrigatório de campos de diversidade no SINESP.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Código Penal</span>
+            <span class="law-badge-item">Crimes Hediondos</span>
+            <span class="law-badge-item">SINESP</span>
+          </div>
+        </div>
+
+        <!-- Eixo 3 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 03</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #f0fdf4; --eixo-color: #16a34a;">
+              <i data-lucide="stethoscope"></i>
+            </div>
+          </div>
+          <h3>Saúde integral no SUS para toda a comunidade</h3>
+          <p>Garantia em lei da Política Nacional de Saúde Integral LGBTQIA+, universalização de estratégias de prevenção combinada e profilaxias biomédicas sustentadas em evidências científicas atualizadas, atenção integral a toda a comunidade, capacitação curricular obrigatória e respeito ao Processo Transexualizador no SUS em lei federal.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Lei 8.080/1990</span>
+            <span class="law-badge-item">Diretrizes Curriculares</span>
+            <span class="law-badge-item">SUS</span>
+          </div>
+        </div>
+
+        <!-- Eixo 4 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 04</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #fefce8; --eixo-color: #ca8a04;">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+          </div>
+          <h3>Educação e enfrentamento ao bullying escolar</h3>
+          <p>Classificação da LGBTQIA+fobia como falta disciplinar grave na LDB, punição ao bullying presencial no Código Penal, responsabilidade civil objetiva de instituições omissas e criação de índices anuais de clima escolar nas secretarias.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">LDB</span>
+            <span class="law-badge-item">Código Penal</span>
+            <span class="law-badge-item">Código Civil</span>
+          </div>
+        </div>
+
+        <!-- Eixo 5 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 05</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #fff1f2; --eixo-color: #e11d48;">
+              <i data-lucide="home"></i>
+            </div>
+          </div>
+          <h3>Proteção social e combate à expulsão do lar</h3>
+          <p>Enquadramento da expulsão familiar de vulneráveis como violência doméstica (Lei Maria da Penha e ECA), criação de auxílio de moradia emergencial e cofinanciamento federal permanente para casas de acolhimento em todas as capitais.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Lei Maria da Penha</span>
+            <span class="law-badge-item">ECA</span>
+            <span class="law-badge-item">Proteção Social</span>
+          </div>
+        </div>
+
+        <!-- Eixo 6 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 06</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #ecfeff; --eixo-color: #0891b2;">
+              <i data-lucide="user-check"></i>
+            </div>
+          </div>
+          <h3>Identidade civil, registros e nome social</h3>
+          <p>Inscrição em lei do direito à retificação gratuita de prenome e gênero em cartório sem laudos ou cirurgias, reconhecimento do marcador não binário em documentos nacionais e obrigatoriedade do nome social nos setores público e privado.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Lei 6.015/1973</span>
+            <span class="law-badge-item">Identidade Nacional</span>
+          </div>
+        </div>
+
+        <!-- Eixo 7 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 07</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #fff7ed; --eixo-color: #ea580c;">
+              <i data-lucide="shield-check"></i>
+            </div>
+          </div>
+          <h3>Proteção a pessoas intersexo e fim da mutilação genital</h3>
+          <p>Proibição em lei federal de cirurgias genitais, procedimentos esterilizadores e intervenções corporais em pessoas intersexo sem o seu consentimento prévio, livre e esclarecido, além de opção de registro de nascimento protegido em lei.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Código Penal</span>
+            <span class="law-badge-item">Registros Públicos</span>
+            <span class="law-badge-item">Direitos Humanos</span>
+          </div>
+        </div>
+
+        <!-- Eixo 8 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 08</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #eff6ff; --eixo-color: #2563eb;">
+              <i data-lucide="briefcase"></i>
+            </div>
+          </div>
+          <h3>Trabalho, renda e inclusão produtiva</h3>
+          <p>Ações afirmativas para inserção laboral de pessoas vulnerabilizadas da comunidade, margem de preferência na Lei de Licitações para empresas com políticas ativas de diversidade e programas de formação e qualificação com bolsas.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Lei de Licitações</span>
+            <span class="law-badge-item">Serviço Público</span>
+          </div>
+        </div>
+
+        <!-- Eixo 9 -->
+        <div class="eixo-clean-card">
+          <div class="eixo-top-bar">
+            <span class="eixo-pill">Eixo 09</span>
+            <div class="eixo-icon-box" style="--eixo-bg: #faf5ff; --eixo-color: #9333ea;">
+              <i data-lucide="database"></i>
+            </div>
+          </div>
+          <h3>Dados oficiais no Censo e governança</h3>
+          <p>Obrigatoriedade por lei federal da inclusão de perguntas sobre orientação sexual e identidade de gênero no Censo do IBGE, criação do Fundo Nacional LGBTQIA+ e cláusula de blindagem contra retrocessos por portarias.</p>
+          <div class="eixo-laws">
+            <span class="law-badge-item">Lei do IBGE</span>
+            <span class="law-badge-item">Orçamento Público</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: O DOSSIÊ DE 42 PÁGINAS (Seção Escura) -->
+  <section id="dossie" class="section-dossie">
+    <div class="container">
+      <div class="dossie-grid">
+        <div class="dossie-left">
+          <span class="section-tag" style="color: #38bdf8;">Transparência e fundamentação</span>
+          <h2>O dossiê legislativo com mais de 40 páginas</h2>
+          <p class="lead-explanation">
+            O formulário do Senado Federal impõe um limite de 700 caracteres no cadastro inicial da proposta. Por essa razão, publicamos aqui o <strong>mesmo Dossiê Técnico-Legislativo</strong> que será protocolado e anexado aos autos da Comissão de Direitos Humanos assim que atingirmos os 20.000 apoios.
+          </p>
+
+          <div class="dossie-features">
+            <div class="feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Articulação dogmática completa dos 9 eixos</span>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Controle de convencionalidade da Corte IDH (OC-24/17)</span>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Dados epidemiológicos da Nature Scientific Reports</span>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Minuta de articulado de lei pronta para tramitação</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="dossie-estatuto-lgbtqia.pdf" download="dossie-estatuto-lgbtqia.pdf" target="_blank" class="btn-lg-primary" style="background: #38bdf8; color: #0f172a; font-weight: 800;">
+              <i data-lucide="download"></i> Baixar o dossiê completo (PDF)
+            </a>
+            <button onclick="openPressModal()" class="btn-lg-secondary" style="background: #1e293b; color: #ffffff; border-color: #334155;">
+              <i data-lucide="newspaper"></i> Acessar área de imprensa
+            </button>
+          </div>
+        </div>
+
+        <div class="dossie-download-card">
+          <div style="width: 68px; height: 68px; border-radius: 50%; background: rgba(56, 189, 248, 0.1); color: #38bdf8; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+            <i data-lucide="file-check-2" style="width: 36px; height: 36px;"></i>
+          </div>
+          <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 0.4rem;">Frente pelo Estatuto Nacional</h3>
+          <p style="color: #94a3b8; font-size: 0.92rem;">Iniciativa e autoria técnica: projeto História LGBTQIA+</p>
+          <div class="dossie-file-tag">
+            DOSSIE_TECNICO_LEGISLATIVO_42P.PDF
+          </div>
+          <p style="font-size: 0.85rem; color: #64748b;">Documento oficial para comunicadores, juristas e parlamentares.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: ÁREA DE IMPRENSA & PRESS RELEASE -->
+  <div id="pressModal" class="modal-backdrop">
+    <div class="modal-window">
+      <button class="modal-close" onclick="closePressModal()"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
+        <span style="font-size: 0.8rem; font-weight: 800; color: var(--blue-action); text-transform: uppercase; letter-spacing: 0.1em;">Press Kit Oficial</span>
+        <h2 style="font-size: 1.8rem; color: #0f172a; margin-top: 0.25rem;">Informações para jornalistas e comunicadores</h2>
+      </div>
+
+      <div style="font-size: 0.95rem; color: #334155; line-height: 1.7;">
+        <p style="margin-bottom: 1rem;">
+          <strong>Sugestão de Pauta:</strong> Mobilização popular protocola no Senado Federal proposta de criação do Estatuto Nacional dos Direitos LGBTQIA+ com dossiê técnico de mais de 40 páginas.
+        </p>
+        <p style="margin-bottom: 1rem;">
+          <strong>Resumo da Pauta:</strong> Ao contrário da percepção comum de que o casamento civil e a criminalização da LGBTQIAfobia são direitos pacificados em lei, o ordenamento jurídico brasileiro mantém tais garantias sob a vulnerabilidade de entendimentos do STF e do CNJ. A iniciativa popular do projeto <em>História LGBTQIA+</em> busca 20.000 assinaturas no Portal e-Cidadania para obrigar o Senado a tramitar o Estatuto em lei federal ordinária.
+        </p>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0;">
+          <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 1rem;">Dados e Fontes Verificadas para Matérias:</h4>
+          <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: #475569;">
+            <li><strong>População:</strong> 12% dos adultos brasileiros identificam-se como LGBTQIA+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
+            <li><strong>Pessoas trans e não binárias:</strong> 1,88% dos adultos (~3 milhões de pessoas) — <em>Nature Scientific Reports (2021)</em>.</li>
+            <li><strong>Letalidade:</strong> 257 mortes violentas em 2025 (uma a cada 34h) — <em>Observatório GGB (2025)</em>.</li>
+            <li><strong>Assassinatos:</strong> Brasil segue pelo 18º ano consecutivo como o mais letal para pessoas trans — <em>Dossiê ANTRA (2026)</em>.</li>
+          </ul>
+        </div>
+
+        <p style="margin-bottom: 1rem;">
+          <strong>Contatos para Entrevistas e Agendamentos:</strong><br>
+          E-mail: imprensa@historialgbtqia.org.br<br>
+          Canal oficial: @historialgbtqia_
+        </p>
+      </div>
+
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button onclick="closePressModal()" class="btn-lg-secondary" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-flex">
+        <a href="#" class="brand-link">
+          <img src="logo_light.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
+        </a>
+
+        <div class="footer-actions">
+          <button onclick="openPressModal()" class="footer-btn-link">Área de imprensa & Press release</button>
+          <a href="#dossie" class="footer-btn-link">Dossiê 42 páginas</a>
+          <a href="https://www12.senado.leg.br/ecidadania/principalideia" target="_blank" class="footer-btn-link" style="color: #38bdf8;">Votar no Senado</a>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid #1e293b; margin-top: 2rem; padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem;">
+        <div>Frente pelo Estatuto Nacional dos Direitos LGBTQIA+ • Iniciativa popular e cidadã</div>
+        <div>Canal oficial da autoria: <strong>@historialgbtqia_</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function openPressModal() {
+      document.getElementById('pressModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePressModal() {
+      document.getElementById('pressModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Fechar ao clicar fora
+    document.getElementById('pressModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePressModal();
+      }
+    });
+  </script>
+</body>
+</html>

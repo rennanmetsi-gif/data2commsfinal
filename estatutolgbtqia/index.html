@@ -1313,6 +1313,92 @@
       background: #e2e8f0;
     }
 
+    /* Formulário de Especialistas (integrado ao Google Sheets Data2Comms) */
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .spec-form-group {
+      margin-bottom: 1.15rem;
+    }
+    .spec-form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .spec-form-control {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.92rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      background: #f8fafc;
+      color: #0f172a;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .spec-form-control:focus {
+      outline: none;
+      border-color: var(--blue-action);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .spec-form-submit {
+      width: 100%;
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.95rem 1.5rem;
+      border-radius: 9px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .spec-form-submit:hover:not(:disabled) {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+    .spec-form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .spec-form-alert {
+      padding: 1rem 1.25rem;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-top: 1.15rem;
+      display: none;
+    }
+    .spec-form-alert.success {
+      display: block;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .spec-form-alert.error {
+      display: block;
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
     /* Footer */
     footer {
       background: #020617;
@@ -2113,6 +2199,9 @@
           <button type="button" onclick="togglePdfFullscreen()" class="btn-lg-primary" style="background: #38bdf8; color: #0f172a; font-weight: 800; border: none; cursor: pointer;">
             <i data-lucide="maximize-2"></i> Abrir leitor em tela cheia
           </button>
+          <button type="button" onclick="openSpecialistModal()" class="btn-lg-secondary" style="background: #0f172a; color: #ffffff; border-color: #334155; cursor: pointer;">
+            <i data-lucide="file-pen-line"></i> Sou especialista e quero contribuir
+          </button>
           <button type="button" onclick="openPressModal()" class="btn-lg-secondary" style="background: #1e293b; color: #ffffff; border-color: #334155; cursor: pointer;">
             <i data-lucide="newspaper"></i> Acessar área de imprensa
           </button>
@@ -2170,6 +2259,81 @@
     </div>
   </section>
 
+  <!-- MODAL: CONTRIBUIÇÃO DE ESPECIALISTAS (INTEGRADO AO GOOGLE SHEETS DATA2COMMS) -->
+  <div id="specialistModal" class="modal-backdrop">
+    <div class="modal-window">
+      <button class="modal-close" onclick="closeSpecialistModal()"><i data-lucide="x"></i></button>
+
+      <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
+        <span style="font-size: 0.8rem; font-weight: 800; color: var(--blue-action); text-transform: uppercase; letter-spacing: 0.1em;">Revisão Técnica Colaborativa</span>
+        <h2 style="font-size: 1.8rem; color: #0f172a; margin-top: 0.25rem;">Contribuir ou sugerir melhorias no Dossiê</h2>
+        <p style="font-size: 0.92rem; color: #64748b; margin-top: 0.4rem; line-height: 1.5;">
+          Canal aberto para acadêmicas(os), juristas, profissionais de saúde e organizações enviarem pareceres, correções técnicas, atualizações normativas ou novas referências científicas.
+        </p>
+      </div>
+
+      <form id="specialistForm" name="specialistForm">
+        <!-- Campo oculto para o Google Sheets receber o texto consolidado com eventual referência de página/eixo -->
+        <input type="hidden" name="desafio" id="specDesafioFinal">
+
+        <div class="form-grid-2">
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specNome">Nome completo *</label>
+            <input type="text" id="specNome" name="nome" required class="spec-form-control" placeholder="Ex.: Dra. Helena Costa">
+          </div>
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specEmail">E-mail para contato *</label>
+            <input type="email" id="specEmail" name="email" required class="spec-form-control" placeholder="nome@instituicao.org.br">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specEmpresa">Instituição / Universidade / Organização *</label>
+            <input type="text" id="specEmpresa" name="empresa" required class="spec-form-control" placeholder="Ex.: USP, Fiocruz, OAB, Defensoria...">
+          </div>
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specCargo">Área de atuação / Especialidade</label>
+            <input type="text" id="specCargo" name="cargo" class="spec-form-control" placeholder="Ex.: Direito Constitucional, Saúde Coletiva...">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specServico">Tipo de contribuição *</label>
+            <select id="specServico" name="servico" required class="spec-form-control">
+              <option value="[Estatuto LGBTQIAPN+] Correção técnica ou jurídica no Dossiê">Correção técnica ou jurídica no Dossiê</option>
+              <option value="[Estatuto LGBTQIAPN+] Sugestão legislativa ou aprimoramento redacional">Sugestão legislativa ou aprimoramento redacional</option>
+              <option value="[Estatuto LGBTQIAPN+] Atualização de PL ou jurisprudência recente">Atualização de PL ou jurisprudência recente</option>
+              <option value="[Estatuto LGBTQIAPN+] Inclusão de referência científica (ABNT)">Inclusão de referência científica (ABNT)</option>
+              <option value="[Estatuto LGBTQIAPN+] Outra contribuição especializada">Outra contribuição especializada</option>
+            </select>
+          </div>
+          <div class="spec-form-group">
+            <label class="spec-form-label" for="specTelefone">WhatsApp / Telefone</label>
+            <input type="tel" id="specTelefone" name="telefone" class="spec-form-control" placeholder="(11) 99999-9999">
+          </div>
+        </div>
+
+        <div class="spec-form-group">
+          <label class="spec-form-label" for="specRefDossie">Página ou Eixo de referência no Dossiê (opcional)</label>
+          <input type="text" id="specRefDossie" class="spec-form-control" placeholder="Ex.: Eixo 02 / Página 39">
+        </div>
+
+        <div class="spec-form-group">
+          <label class="spec-form-label" for="specTextoParecer">Detalhamento do parecer, correção ou sugestão *</label>
+          <textarea id="specTextoParecer" rows="4" required class="spec-form-control" style="resize: vertical;" placeholder="Descreva o ponto técnico identificado, a justificativa e os links ou referências normativas/científicas correspondentes..."></textarea>
+        </div>
+
+        <button type="submit" id="btn-specialist-submit" class="spec-form-submit">
+          <i data-lucide="send" style="width: 17px; height: 17px;"></i> Enviar contribuição
+        </button>
+
+        <div id="msg-specialist" class="spec-form-alert"></div>
+      </form>
+    </div>
+  </div>
+
   <!-- MODAL: ÁREA DE IMPRENSA & PRESS RELEASE -->
   <div id="pressModal" class="modal-backdrop">
     <div class="modal-window">
@@ -2220,7 +2384,8 @@
         </a>
 
         <div class="footer-actions">
-          <button onclick="openPressModal()" class="footer-btn-link">Área de imprensa &amp; Press release</button>
+          <button type="button" onclick="openSpecialistModal()" class="footer-btn-link">Sou especialista e quero contribuir</button>
+          <button type="button" onclick="openPressModal()" class="footer-btn-link">Área de imprensa &amp; Press release</button>
           <a href="#dossie" class="footer-btn-link">Dossiê 70 páginas</a>
           <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer" class="footer-btn-link" style="color: #38bdf8;">Votar no Senado</a>
         </div>
@@ -2238,8 +2403,10 @@
 
     function syncBodyScrollLock() {
       var modalOpen = document.getElementById('pressModal').classList.contains('active');
+      var specModalEl = document.getElementById('specialistModal');
+      var specOpen = specModalEl ? specModalEl.classList.contains('active') : false;
       var fsOpen = document.getElementById('dossieReaderShell').classList.contains('is-fullscreen');
-      document.body.style.overflow = (modalOpen || fsOpen) ? 'hidden' : 'auto';
+      document.body.style.overflow = (modalOpen || specOpen || fsOpen) ? 'hidden' : 'auto';
     }
 
     function openPressModal() {
@@ -2252,9 +2419,37 @@
       syncBodyScrollLock();
     }
 
+    function openSpecialistModal() {
+      var m = document.getElementById('specialistModal');
+      if (m) {
+        m.classList.add('active');
+        syncBodyScrollLock();
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'specialist_modal_open', {
+            site_area: 'estatuto_lgbtqiapn',
+            host_domain: window.location.hostname
+          });
+        }
+      }
+    }
+
+    function closeSpecialistModal() {
+      var m = document.getElementById('specialistModal');
+      if (m) {
+        m.classList.remove('active');
+        syncBodyScrollLock();
+      }
+    }
+
     document.getElementById('pressModal').addEventListener('click', function(e) {
       if (e.target === this) {
         closePressModal();
+      }
+    });
+
+    document.getElementById('specialistModal')?.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeSpecialistModal();
       }
     });
 
@@ -2332,25 +2527,111 @@
         if (e.key === 'Escape') {
           if (shellEl.classList.contains('is-fullscreen')) {
             window.togglePdfFullscreen();
+          } else if (document.getElementById('specialistModal')?.classList.contains('active')) {
+            closeSpecialistModal();
           } else if (document.getElementById('pressModal').classList.contains('active')) {
             closePressModal();
           }
         }
       });
 
-      // Eventos GA4 (cliques de apoio no Senado e leitura do Dossiê)
+      // Integração do Formulário de Especialistas com o endpoint Apps Script da Data2Comms
+      var specialistScriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
+      var specForm = document.getElementById('specialistForm');
+      var specBtn = document.getElementById('btn-specialist-submit');
+      var specMsg = document.getElementById('msg-specialist');
+
+      if (specForm) {
+        specForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var originalBtnHtml = specBtn.innerHTML;
+          specBtn.innerHTML = 'Enviando contribuição...';
+          specBtn.disabled = true;
+          specMsg.className = 'spec-form-alert';
+          specMsg.style.display = 'none';
+
+          var refDossie = (document.getElementById('specRefDossie')?.value || '').trim();
+          var textoParecer = (document.getElementById('specTextoParecer')?.value || '').trim();
+          var desafioFinal = refDossie ? ('[Ref: ' + refDossie + ']\n' + textoParecer) : textoParecer;
+          document.getElementById('specDesafioFinal').value = desafioFinal;
+
+          var formData = new FormData(specForm);
+
+          fetch(specialistScriptURL, { method: 'POST', body: formData })
+            .then(function(res) {
+              specBtn.innerHTML = 'Contribuição Enviada!';
+              specMsg.className = 'spec-form-alert success';
+              specMsg.innerHTML = '<strong>Contribuição registrada com sucesso!</strong> Seu parecer foi encaminhado à equipe técnica. Muito obrigado por colaborar com o Dossiê.';
+              specMsg.style.display = 'block';
+              specForm.reset();
+              if (typeof lucide !== 'undefined') lucide.createIcons();
+
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'specialist_form_submit', {
+                  site_area: 'estatuto_lgbtqiapn',
+                  host_domain: window.location.hostname
+                });
+              }
+
+              setTimeout(function() {
+                specBtn.innerHTML = originalBtnHtml;
+                specBtn.disabled = false;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+              }, 6000);
+            })
+            .catch(function(err) {
+              console.error('Erro no envio da contribuição:', err);
+              specBtn.innerHTML = originalBtnHtml;
+              specBtn.disabled = false;
+              specMsg.className = 'spec-form-alert error';
+              specMsg.innerHTML = 'Houve uma instabilidade temporária ao enviar. Por favor, tente novamente em instantes.';
+              specMsg.style.display = 'block';
+              if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+        });
+      }
+
+      // Eventos GA4 (cliques de apoio no Senado e visualização do Dossiê)
       document.addEventListener('click', function(e) {
         if (typeof window.gtag !== 'function') return;
+
+        // 1. Botões de apoiar no Senado Federal
         var voteLink = e.target.closest('a[href*="senado.leg.br/ecidadania"]');
         if (voteLink) {
           var placement = voteLink.classList.contains('btn-header-vote') ? 'header' :
                           voteLink.classList.contains('floating-cta') ? 'floating_cta' :
-                          voteLink.classList.contains('btn-lg-primary') ? 'hero_primary' : 'footer';
+                          voteLink.classList.contains('btn-lg-primary') ? 'hero_primary' :
+                          voteLink.classList.contains('footer-btn-link') ? 'footer' : 'outros';
+          var vText = (voteLink.innerText || voteLink.textContent || '').trim().replace(/\s+/g, ' ');
           window.gtag('event', 'senado_vote_click', {
             site_area: 'estatuto_lgbtqiapn',
             button_placement: placement,
+            link_text: vText,
+            destination_url: voteLink.href,
             host_domain: window.location.hostname
           });
+          return;
+        }
+
+        // 2. Botões para conferir o Dossiê
+        var dossieLink = e.target.closest('a[href="#dossie"], #pdfFullscreenBtn, button[onclick*="togglePdfFullscreen"], .chapter-btn');
+        if (dossieLink) {
+          var dPlacement = dossieLink.classList.contains('btn-lg-secondary') ? 'hero_secondary' :
+                           dossieLink.classList.contains('footer-btn-link') ? 'footer' :
+                           dossieLink.closest('header') ? 'header_nav' :
+                           dossieLink.classList.contains('chapter-btn') ? 'chapter_pill' :
+                           (dossieLink.id === 'pdfFullscreenBtn' || (dossieLink.getAttribute('onclick') || '').indexOf('togglePdfFullscreen') !== -1) ? 'reader_fullscreen' : 'dossie_link';
+
+          var dText = (dossieLink.innerText || dossieLink.textContent || '').trim().replace(/\s+/g, ' ');
+          var pageNum = dossieLink.getAttribute('data-page') || '';
+          window.gtag('event', 'dossie_click', {
+            site_area: 'estatuto_lgbtqiapn',
+            button_placement: dPlacement,
+            link_text: dText,
+            target_page: pageNum,
+            host_domain: window.location.hostname
+          });
+          return;
         }
       });
     })();

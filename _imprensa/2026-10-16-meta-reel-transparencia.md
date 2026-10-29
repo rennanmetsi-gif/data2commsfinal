@@ -132,7 +132,7 @@ contact_email: "rennanmetsi@data2comms.com.br"
 
 <h2><strong>Contato para imprensa</strong></h2>
 
-<p><strong>Rennan Metsi<br></strong>Pesquisa e Relações Públicas | Data2Comms<br>E-mail: <a href="mailto:rennanmetsi@data2comms.com.br">rennanmetsi@data2comms.com.br</a><br>Site: <a href="https://data2comms.com.br/home-antiga">https://data2comms.com.br/home-antiga</a></p>
+<p><strong>Rennan Metsi<br></strong>Pesquisa e Relações Públicas | Data2Comms<br>E-mail: <a href="mailto:rennanmetsi@data2comms.com.br">rennanmetsi@data2comms.com.br</a><br>Site: <a href="https://data2comms.com.br/">https://data2comms.com.br/</a></p>
 
 <p><strong>Material complementar:</strong> Solicite o dossiê de evidências com capturas de tela, fotografias, registros de desempenho do Instagram Insights, notificações de penalidades e reversões, além de dois vídeos que documentam tentativas frustradas de interação realizadas por seguidores do perfil.</p>
 

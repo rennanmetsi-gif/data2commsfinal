@@ -6,7 +6,7 @@ Revisado em **17/10/2026**, confrontando código, histórico Git e conversas loc
 
 - **A fonte única é este repositório, `rennanmetsi-gif/data2commsfinal`, branch `main`.** Ele serve ao Acervo e ao site institucional. Uma mudança aqui pode afetar os dois domínios.
 - **`rennanmetsi-gif/acervolula-site` contém somente a automação de deploy.** Não copie o site para lá nem edite páginas nesse repositório.
-- A home atual é o **Acervo Lula**, inclusive no domínio Data2Comms. A home institucional está em `/home-antiga/`. Não restaurar a agência na raiz por engano.
+- A home na raiz (`/`) é o **site institucional da Data2Comms**. O Acervo Lula possui deploy dedicado em `acervolula.com.br` (publicado via workflow em `acervolula-site`). A rota legada `/home-antiga/` redireciona para a raiz.
 - O site é **Jekyll + HTML/CSS/JavaScript**, sem aplicação Node ou banco de eventos conectado à agenda. O formulário envia ao Google Apps Script; publicar um ato continua sendo uma etapa editorial separada.
 - Há vários clones locais e cópias antigas em `work/`. Identifique o remoto, confira alterações locais e atualize a branch antes de trabalhar. Data da pasta e “memória” de conversa não provam que a cópia está atualizada.
 - Preserve dados de produção: não publique atos fictícios, não apague linhas da planilha para testar, não inclua credenciais nem exportações de submissões no Git.
@@ -23,7 +23,8 @@ Revisado em **17/10/2026**, confrontando código, histórico Git e conversas loc
 | `acervo-notificacoes-sw.js` | Service worker de notificações, sem cache offline implementado |
 | `acervo-manifest.webmanifest` | Manifesto para instalação/abertura como aplicativo |
 | `assets/images/acervo-lula-og.jpg` | Preview social do Acervo, declarado como 1200 × 630 |
-| `home-antiga.html`, `_includes/header.html`, `_includes/footer.html` | Página e navegação institucionais |
+| `index.html`, `_includes/header.html`, `_includes/footer.html` | Página e navegação institucionais |
+| `home-antiga.html` | Redirecionamento legado para a home da agência |
 | `_imprensa/`, `_layouts/press.html`, `imprensa.html` | Área de imprensa da agência; permanece ativa |
 | `_config.yml`, `Gemfile`, `CNAME`, `robots.txt` | Jekyll, dependências e configuração do domínio de origem |
 | `_data/agenda-removidos-2026-10-12.json` | Registro histórico de remoções; não é a base ativa da agenda |

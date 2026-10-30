@@ -182,7 +182,7 @@
       width: 100%;
     }
 
-    /* Header */
+        /* Header */
     header {
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(12px);
@@ -190,25 +190,28 @@
       position: sticky;
       top: 5px;
       z-index: 900;
-      padding: 0.85rem 1.5rem;
+      padding: 0.65rem 1.15rem;
     }
 
     .nav-container {
-      max-width: 1200px;
+      max-width: 1360px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.6rem;
     }
 
     .brand-link {
       display: flex;
       align-items: center;
       text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .brand-logo-img {
-      height: 44px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -216,35 +219,49 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: clamp(0.35rem, 0.9vw, 1.15rem);
+      flex-wrap: nowrap;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .nav-links button {
       color: #334155;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.84rem;
       transition: color 0.2s;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.2rem 0.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links button:hover {
       color: var(--blue-action);
     }
 
     .btn-header-vote {
       background: var(--blue-action);
       color: #ffffff !important;
-      padding: 0.7rem 1.4rem;
+      padding: 0.55rem 0.95rem;
       border-radius: 8px;
       font-weight: 700;
+      font-size: 0.84rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       text-decoration: none;
       transition: all 0.2s;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .btn-header-vote:hover {
@@ -1620,8 +1637,23 @@
       }
     }
 
+    
+    @media (max-width: 1120px) {
+      .nav-links {
+        gap: 0.55rem;
+      }
+      .nav-links a,
+      .nav-links button {
+        font-size: 0.81rem;
+      }
+      .btn-header-vote {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.81rem;
+      }
+    }
+
     /* Responsivo */
-    @media (max-width: 850px) {
+    @media (max-width: 960px) {
       .matrix-row-item {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1705,7 +1737,7 @@
   <!-- Barra do Orgulho -->
   <div class="top-strip"></div>
 
-  <!-- Header -->
+    <!-- Header -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand-link">
@@ -1713,17 +1745,17 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#dados">Dados reais</a>
+        <a href="#dados">Dados</a>
         <a href="#vulnerabilidade">A ilusão da lei</a>
         <a href="#eixos">Os 9 eixos</a>
-        <a href="dossie/">Dossiê oficial</a>
-        <a href="enxoval/" class="nav-link" target="_blank" rel="noopener noreferrer" style="color: #38bdf8 !important; font-weight: 700 !important; display: inline-flex; align-items: center; gap: 0.35rem;"><i data-lucide="package" style="width: 14px; height: 14px;"></i> Baixe o Enxoval</a>
+        <a href="dossie/">Dossiê</a>
+        <a href="enxoval/" class="nav-link" target="_blank" rel="noopener noreferrer" style="color: #0284c7 !important; font-weight: 700 !important; display: inline-flex; align-items: center; gap: 0.35rem;"><i data-lucide="package" style="width: 14px; height: 14px;"></i> Baixar Enxoval</a>
         <a href="pressione/" class="nav-pressure-btn"><i data-lucide="mail" style="width: 14px; height: 14px;"></i> Pressione Parlamentares</a>
-        <button onclick="openPressModal()" class="footer-btn-link" style="color: #334155; text-decoration: none;">Área de imprensa</button>
+        <button onclick="openPressModal()" class="footer-btn-link" style="color: #475569; text-decoration: none;">Imprensa</button>
       </nav>
 
       <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer" class="btn-header-vote">
-        <i data-lucide="vote" style="width: 17px; height: 17px;"></i> Apoiar no Senado
+        <i data-lucide="vote" style="width: 16px; height: 16px;"></i> Apoiar no Senado
       </a>
     </div>
   </header>

@@ -2,23 +2,23 @@
 title: "Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+"
 date: "2026-10-30 11:30:00 -03:00"
 category: "Release à imprensa"
-image: "/assets/press/estatuto-lgbtqia-preview.png"
-image_alt: "Estatuto LGBTQIA+ — Dossiê técnico-científico e mobilização no Senado Federal"
+image: "/assets/press/brasil-lgbt-orgulho.jpg"
+image_alt: "Bandeiras e mobilização pelo Estatuto LGBTQIA+ em frente ao Congresso Nacional em Brasília"
 social_title: "Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+"
 social_description: "Articulação reúne juristas, especialistas em saúde e organizações da sociedade civil em um documento técnico de 70 páginas para blindar 19 milhões de brasileiros em lei federal definitiva contra retrocessos no STF, no Executivo e no Parlamento."
 description: "Articulação reúne juristas, especialistas em saúde e organizações da sociedade civil em um documento técnico de 70 páginas para blindar 19 milhões de brasileiros em lei federal definitiva contra retrocessos no STF, no Executivo e no Parlamento."
 excerpt: "Articulação reúne juristas, especialistas em saúde e organizações da sociedade civil em um documento técnico de 70 páginas para blindar 19 milhões de brasileiros em lei federal definitiva contra retrocessos no STF, no Executivo e no Parlamento."
 download_docx: "/assets/press/2026-10-30-release-estatuto-lgbtqia.docx"
-secondary_cta_url: "/estatutolgbtqia/dossie-oficial.pdf"
-secondary_cta_label: "Acessar dossiê técnico (PDF)"
+secondary_cta_url: "https://estatutolgbtqia.com.br/dossie/"
+secondary_cta_label: "Acessar dossiê no leitor online"
 secondary_cta_external: true
-download_note: "Dossiê técnico e anteprojeto de lei de 70 páginas disponível na íntegra para download e consulta online."
+download_note: "Dossiê técnico e anteprojeto de lei de 70 páginas disponível na íntegra para leitura online interativa."
 contact_email: "rennanmetsi@data2comms.com.br"
 ---
 
 <p><strong>SÃO PAULO e BRASÍLIA — </strong>Impulsionada por mais de 35 mil assinaturas validadas na plataforma e-Cidadania do Senado Federal, uma coalizão nacional formada por juristas, epidemiologistas e especialistas em saúde coletiva e segurança pública lançou uma ofensiva legislativa para exigir a votação e aprovação do Estatuto Nacional dos Direitos da População LGBTQIA+. Com a expressiva adesão popular, o movimento já superou em mais de 75% a meta regimental de 20 mil apoios exigida pela Casa, garantindo que o texto passe a tramitar formalmente como Sugestão Legislativa (SUG) perante a Comissão de Direitos Humanos e Legislação Participativa (CDH) do Senado.</p>
 
-<p>A mobilização chega ao Congresso Nacional respaldada por um dossiê técnico-científico e jurídico de 70 páginas — disponível na íntegra no portal oficial da campanha, em <a href="https://estatutolgbtqiamais.com.br" target="_blank" rel="noopener noreferrer"><strong>estatutolgbtqiamais.com.br</strong></a> e para <a href="/estatutolgbtqia/dossie-oficial.pdf" target="_blank" rel="noopener noreferrer">download direto em PDF</a> —, desenhado para converter garantias civis hoje precárias em lei ordinária definitiva. A iniciativa ganha força tática no Parlamento após a pauta registrar avanços expressivos na Câmara dos Deputados e no Senado Federal. Diante da dispersão de projetos de lei avulsos, o Estatuto propõe consolidar em um único microssistema legal todas as salvaguardas em direito de família, segurança pública, saúde, educação e trabalho.</p>
+<p>A mobilização chega ao Congresso Nacional respaldada por um dossiê técnico-científico e jurídico de 70 páginas — disponível na íntegra no portal oficial da campanha, em <a href="https://estatutolgbtqiamais.com.br" target="_blank" rel="noopener noreferrer"><strong>estatutolgbtqiamais.com.br</strong></a> e no <a href="https://estatutolgbtqia.com.br/dossie/" target="_blank" rel="noopener noreferrer"><strong>leitor online oficial do documento</strong></a> —, desenhado para converter garantias civis hoje precárias em lei ordinária definitiva. A iniciativa ganha força tática no Parlamento após a pauta registrar avanços expressivos na Câmara dos Deputados e no Senado Federal. Diante da dispersão de projetos de lei avulsos, o Estatuto propõe consolidar em um único microssistema legal todas as salvaguardas em direito de família, segurança pública, saúde, educação e trabalho.</p>
 
 <p>O pilar demográfico da proposta baseia-se no maior levantamento de diversidade sexual e de gênero já conduzido na América Latina, realizado por pesquisadores da Unesp e da USP com amostragem de campo do Instituto Datafolha e publicado na prestigiada revista científica <a href="https://doi.org/10.1038/s41598-022-15103-y" target="_blank" rel="noopener noreferrer"><em>Nature Scientific Reports</em></a>. O estudo atesta que 12% da população adulta do país — cerca de 19 milhões de cidadãos, ou um em cada oito brasileiros adultos — pertence à comunidade LGBTQIA+. Desse total, quase 3 milhões de adultos (1,88%) são pessoas transgênero ou não binárias distribuídas de maneira uniforme por todas as macrorregiões brasileiras, e 93,5% das pessoas assexuais identificadas são mulheres historicamente submetidas à invisibilidade clínica. Na avaliação dos especialistas, um contingente de 19 milhões de cidadãos exige um marco legislativo próprio e robusto, a exemplo do que já ocorre com o Estatuto da Criança e do Adolescente, o Estatuto da Pessoa Idosa e o Estatuto da Igualdade Racial.</p>
 
@@ -81,7 +81,7 @@ contact_email: "rennanmetsi@data2comms.com.br"
     <p class="font-mono text-xs uppercase tracking-widest text-ink/70 mb-4 pb-2 border-b border-ink/20">Sala de imprensa & documentos de apoio para a reportagem</p>
     <ul class="space-y-3 font-sans text-sm md:text-base">
         <li><strong>Portal Oficial da Mobilização:</strong> <a href="https://estatutolgbtqiamais.com.br" target="_blank" rel="noopener noreferrer">estatutolgbtqiamais.com.br</a></li>
-        <li><strong>Dossiê Técnico-Científico e Jurídico (70 págs. / íntegra em PDF):</strong> <a href="/estatutolgbtqia/dossie-oficial.pdf" target="_blank" rel="noopener noreferrer">Acesse o Dossiê Completo (PDF)</a></li>
+        <li><strong>Dossiê Técnico-Científico e Jurídico (70 págs. / Leitor Online):</strong> <a href="https://estatutolgbtqia.com.br/dossie/" target="_blank" rel="noopener noreferrer">Acesse no Leitor Online Oficial</a></li>
         <li><strong>Petição Oficial e Apoio no Senado:</strong> <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer">Portal e-Cidadania / Ideia Legislativa do Estatuto nº 252.656</a></li>
         <li><strong>Estudo Populacional Nature Scientific Reports (Unesp/USP/Datafolha):</strong> <a href="https://doi.org/10.1038/s41598-022-15103-y" target="_blank" rel="noopener noreferrer">Artigo na Nature Scientific Reports</a></li>
         <li><strong>Estatísticas do Registro Civil (IBGE):</strong> <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9110-estatisticas-do-registro-civil.html" target="_blank" rel="noopener noreferrer">Dados Oficiais de Casamentos Civis</a></li>
@@ -95,7 +95,7 @@ contact_email: "rennanmetsi@data2comms.com.br"
 
 <ul class="press-sources">
     <li><a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer">SENADO FEDERAL. Ideia Legislativa nº 252.656: Estatuto Nacional dos Direitos da População LGBTQIA+. Portal e-Cidadania, 2026.</a></li>
-    <li><a href="/estatutolgbtqia/dossie-oficial.pdf" target="_blank" rel="noopener noreferrer">FRENTE NACIONAL PELO ESTATUTO LGBTQIA+. Dossiê Técnico-Científico e Anteprojeto de Lei do Estatuto Nacional dos Direitos da População LGBTQIA+. 70 p., 2026.</a></li>
+    <li><a href="https://estatutolgbtqia.com.br/dossie/" target="_blank" rel="noopener noreferrer">FRENTE NACIONAL PELO ESTATUTO LGBTQIA+. Dossiê Técnico-Científico e Anteprojeto de Lei do Estatuto Nacional dos Direitos da População LGBTQIA+. 70 p., 2026. Disponível no leitor online em: https://estatutolgbtqia.com.br/dossie/.</a></li>
     <li><a href="https://doi.org/10.1038/s41598-022-15103-y" target="_blank" rel="noopener noreferrer">SPIZZIRRI, G. et al. Proportion of ALGBT adult Brazilians, sociodemographic characteristics, and self-reported violence. Scientific Reports (Nature), v. 12, n. 11176, 2022.</a></li>
     <li><a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9110-estatisticas-do-registro-civil.html" target="_blank" rel="noopener noreferrer">IBGE. Estatísticas do Registro Civil 2024: Casamentos civis entre pessoas do mesmo sexo no Brasil. Rio de Janeiro: IBGE, 2025.</a></li>
     <li><a href="https://antrabrasil.org/" target="_blank" rel="noopener noreferrer">ANTRA. Dossiê dos assassinatos e da violência contra pessoas trans brasileiras em 2024 e 2025. Associação Nacional de Travestis e Transexuais, 2025/2026.</a></li>
@@ -117,6 +117,6 @@ Site: <a href="https://data2comms.com.br/">https://data2comms.com.br/</a></p>
 
 <p><strong>Rennan Metsi:</strong> Graduado em Comunicação Social pela PUC-Campinas, pós-graduado em Produção e Curadoria de Conteúdo pela Belas Artes, editor do Estatuto Nacional dos Direitos da População LGBTQIA+, representante e ativista da Woodhull Freedom Foundation na América Latina — <em>(Pautas: pesquisa e evidências científicas em estudos LGBTQIA+; levantamento demográfico da Nature Scientific Reports [Unesp/USP/Datafolha]; enfrentamento ao apagamento estatístico)</em></p>
 
-<p><strong>Material complementar:</strong> Acesse o dossiê oficial de 70 páginas com a íntegra da proposta legislativa, tabelas demográficas e justificativa constitucional, ou solicite porta-vozes e dados adicionais pelo canal de imprensa.</p>
+<p><strong>Material complementar:</strong> Acesse o dossiê oficial de 70 páginas diretamente no <a href="https://estatutolgbtqia.com.br/dossie/" target="_blank" rel="noopener noreferrer"><strong>leitor online oficial</strong></a>, com a íntegra da proposta legislativa, tabelas demográficas e justificativa constitucional, ou solicite porta-vozes e dados adicionais pelo canal de imprensa.</p>
 
 <p><a class="press-request" href="mailto:rennanmetsi@data2comms.com.br?subject=Solicita%C3%A7%C3%A3o%20de%20pauta%20%E2%80%94%20Estatuto%20LGBTQIA%2B">Solicitar entrevista ou dados adicionais por e-mail</a></p>

@@ -2666,36 +2666,62 @@
 
   <!-- MODAL: ÁREA DE IMPRENSA & PRESS RELEASE -->
   <div id="pressModal" class="modal-backdrop">
-    <div class="modal-window">
+    <div class="modal-window" style="max-width: 680px; max-height: 90vh; overflow-y: auto;">
       <button class="modal-close" onclick="closePressModal()"><i data-lucide="x"></i></button>
 
       <div style="margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
         <span style="font-size: 0.8rem; font-weight: 800; color: var(--blue-action); text-transform: uppercase; letter-spacing: 0.1em;">Press Kit Oficial</span>
-        <h2 style="font-size: 1.8rem; color: #0f172a; margin-top: 0.25rem;">Informações para jornalistas e comunicadores</h2>
+        <h2 style="font-size: 1.65rem; color: #0f172a; margin-top: 0.25rem; line-height: 1.25;">Informações para jornalistas e comunicadores</h2>
       </div>
 
       <div style="font-size: 0.95rem; color: #334155; line-height: 1.7;">
         <p style="margin-bottom: 1rem;">
-          <strong>Sugestão de Pauta:</strong> Mobilização popular protocola no Senado Federal proposta de criação do Estatuto Nacional dos Direitos LGBTQIAPN+ com dossiê técnico completo de 70 páginas.
+          <strong>Sugestão de Pauta:</strong> Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê técnico de 70 páginas e exige aprovação do Estatuto LGBTQIA+.
         </p>
-        <p style="margin-bottom: 1rem;">
-          <strong>Resumo da Pauta:</strong> Ao contrário da percepção comum de que o casamento civil e a criminalização da LGBTQIAPN+fobia são direitos pacificados em lei, o ordenamento jurídico brasileiro mantém tais garantias sob a vulnerabilidade de entendimentos do STF e do CNJ. A iniciativa popular do projeto <em>História LGBTQIA+</em> busca 20.000 assinaturas no Portal e-Cidadania para obrigar o Senado a tramitar o Estatuto em lei federal ordinária.
+        <p style="margin-bottom: 1.25rem;">
+          <strong>Resumo da Pauta:</strong> Impulsionada por mais de 35 mil assinaturas validadas na plataforma e-Cidadania do Senado Federal (superando 40 mil apoios nos últimos dias), a mobilização já superou em mais de 75% a meta regimental de 20 mil apoios exigida pela Casa, garantindo que o texto passe a tramitar formalmente como Sugestão Legislativa (SUG) perante a Comissão de Direitos Humanos e Legislação Participativa (CDH) do Senado. A iniciativa é respaldada por um documento técnico de 70 páginas para blindar 19 milhões de cidadãos em lei federal definitiva contra retrocessos no STF, no Executivo e no Parlamento.
         </p>
 
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem;">
+          <a href="https://data2comms.com.br/imprensa/2026-10-30-estatuto-lgbtqia-senado/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; background: #0f172a; color: #ffffff; text-decoration: none; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.88rem; font-weight: 700;">
+            <i data-lucide="newspaper" style="width: 16px; height: 16px; color: #38bdf8;"></i> Ler release completo na Data2Comms
+          </a>
+          <a href="https://data2comms.com.br/assets/press/2026-10-30-release-estatuto-lgbtqia.docx" download style="display: inline-flex; align-items: center; gap: 0.4rem; background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; text-decoration: none; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.88rem; font-weight: 700;">
+            <i data-lucide="download" style="width: 16px; height: 16px;"></i> Baixar release em Word (.docx)
+          </a>
+          <a href="#dossie" onclick="closePressModal()" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); color: #0284c7; border: 1px solid rgba(56, 189, 248, 0.4); text-decoration: none; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.88rem; font-weight: 700;">
+            <i data-lucide="book-open" style="width: 16px; height: 16px;"></i> Abrir leitor online do dossiê (70 págs.)
+          </a>
+        </div>
+
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0;">
-          <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 1rem;">Dados e Fontes Verificadas para Matérias:</h4>
-          <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: #475569;">
-            <li><strong>População:</strong> 12% das pessoas adultas brasileiras identificam-se como LGBTQIAPN+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
-            <li><strong>Pessoas trans e não binárias:</strong> 1,88% das pessoas adultas brasileiras (~3 milhões de pessoas) — <em>Nature Scientific Reports (2021)</em>.</li>
-            <li><strong>Letalidade:</strong> 257 mortes violentas em 2025 (uma a cada 34h) — <em>Observatório GGB (2025)</em>.</li>
-            <li><strong>Assassinatos:</strong> Brasil segue pelo 18º ano consecutivo como o mais letal para pessoas trans — <em>Dossiê ANTRA (2026)</em>.</li>
+          <h4 style="color: #0f172a; margin-bottom: 0.65rem; font-size: 0.98rem;">Dados e Fontes Verificadas para Matérias:</h4>
+          <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: #475569; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li><strong>Adesão no Senado:</strong> Mais de 40 mil assinaturas validadas no e-Cidadania (meta regimental superada em mais de 75%), tramitando como SUG na CDH do Senado — <em>Senado Federal (Ideia nº 252.656)</em>.</li>
+            <li><strong>População:</strong> 12% dos adultos brasileiros pertencem à comunidade LGBTQIA+ (19 milhões) — <em>Nature Scientific Reports / Unesp e USP (2022)</em>.</li>
+            <li><strong>Pessoas trans e não binárias:</strong> 1,88% dos adultos brasileiros (~3 milhões de pessoas distribuídas por todas as macrorregiões) — <em>Nature Scientific Reports (2021)</em>.</li>
+            <li><strong>Casamentos Homoafetivos:</strong> Recorde de 12.187 casamentos entre pessoas do mesmo sexo em 2024 (+8,8%, 64,6% entre mulheres) sob risco de anulação pelo PL 5.167/2009 — <em>IBGE (2025)</em>.</li>
+            <li><strong>Letalidade:</strong> 257 mortes violentas em 2025 (uma a cada 34h) e 291 em 2024 — <em>Observatório GGB (2025)</em>.</li>
+            <li><strong>Assassinatos:</strong> Brasil segue pelo 18º ano consecutivo como o mais letal para pessoas trans (122 em 2024 e 80 em 2025) — <em>Dossiê ANTRA (2026)</em>.</li>
+            <li><strong>Bullying Escolar:</strong> 86% dos estudantes consideram ineficazes as medidas escolares e 60% dos jovens trans já pensaram em evadir a escola — <em>Aliança Nacional LGBTI+ / Instituto Unibanco / Plano CDE (2024)</em>.</li>
           </ul>
         </div>
 
-        <p style="margin-bottom: 1rem;">
-          <strong>Contatos para Entrevistas e Agendamentos:</strong><br>
-          E-mail: imprensa@historialgbtqia.org.br<br>
-          Canal oficial: @historialgbtqia_
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem;">
+          <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 0.98rem;">Fontes Disponíveis para Entrevistas:</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 0.6rem; color: #475569;">
+            <strong>Mariana Serrano:</strong> Doutoranda em Filosofia do Direito pela PUC-SP, Mestra em Direito do Trabalho (PUC-SP), advogada especialista em Direito das Famílias e População LGBTQIA+, sócia da Claro &amp; Serrano Advocacia — <em>(Pautas: Código Civil, PL 5.167/2009, ADO 26, STF e constitucionalidade da proposta)</em>
+          </p>
+          <p style="font-size: 0.88rem; margin-bottom: 0; color: #475569;">
+            <strong>Rennan Metsi:</strong> Graduado em Comunicação (PUC-Campinas), pós-graduado pela Belas Artes, editor do Estatuto e ativista da Woodhull Freedom Foundation na América Latina — <em>(Pautas: dados demográficos da Nature Scientific Reports [Unesp/USP/Datafolha], evidências científicas e enfrentamento ao apagamento estatístico)</em>
+          </p>
+        </div>
+
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+          <strong>Atendimento à Imprensa:</strong> Data2Comms — Rennan Metsi<br>
+          Telefone / WhatsApp: <a href="https://wa.me/5511976628211" target="_blank" rel="noopener noreferrer" style="color: #0284c7; font-weight: 600;">(11) 97662-8211</a><br>
+          E-mails: <a href="mailto:rennanmetsi@data2comms.com.br" style="color: #0284c7;">rennanmetsi@data2comms.com.br</a> | <a href="mailto:imprensa@historialgbtqia.org.br" style="color: #0284c7;">imprensa@historialgbtqia.org.br</a><br>
+          Canal oficial: <strong>@historialgbtqia_</strong>
         </p>
       </div>
 
@@ -2861,6 +2887,7 @@
     function openPressModal() {
       document.getElementById('pressModal').classList.add('active');
       syncBodyScrollLock();
+      if (window.lucide) { lucide.createIcons(); }
     }
 
     function closePressModal() {

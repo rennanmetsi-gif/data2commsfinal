@@ -72,9 +72,15 @@
                 {% if page.download_docx %}
                 <div class="flex flex-wrap gap-3 mt-8 text-sm">
                     <a href="{{ site.baseurl }}{{ page.download_docx }}" download class="bg-ink text-paper px-5 py-4 hover:bg-acidLime hover:text-ink transition-colors">Baixar release em Word (.docx)</a>
+                    {% if page.secondary_cta_url %}
+                    <a href="{{ page.secondary_cta_url }}" {% if page.secondary_cta_external %}target="_blank" rel="noopener noreferrer"{% endif %} class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">{{ page.secondary_cta_label | default: "Acessar dossiê completo (PDF)" }}</a>
+                    {% elsif page.request_subject %}
+                    <a href="mailto:{{ page.contact_email }}?subject={{ page.request_subject | url_encode }}" class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">{{ page.request_label | default: "Solicitar dossiê por e-mail" }}</a>
+                    {% else %}
                     <a href="mailto:{{ page.contact_email }}?subject=Solicita%C3%A7%C3%A3o%20de%20dossi%C3%AA%20%E2%80%94%20Meta" class="border border-ink px-5 py-4 hover:bg-acidLime transition-colors">Solicitar dossiê por e-mail</a>
+                    {% endif %}
                 </div>
-                <p class="text-sm mt-4">Dossiê de evidências disponível somente mediante solicitação por e-mail.</p>
+                <p class="text-sm mt-4">{{ page.download_note | default: "Dossiê de evidências disponível somente mediante solicitação por e-mail." }}</p>
                 {% endif %}
                 </div>
             </header>

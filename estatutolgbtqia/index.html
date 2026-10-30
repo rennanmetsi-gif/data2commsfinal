@@ -1665,6 +1665,39 @@
         font-size: 0.82rem;
       }
     }
+
+    .btn-lg-purple {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: #ffffff;
+      padding: 1.1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 2px solid #7c3aed;
+      font-family: inherit;
+    }
+    .btn-lg-purple:hover {
+      background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.55);
+    }
+    .nav-pressure-btn {
+      color: #7c3aed !important;
+      font-weight: 700 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .nav-pressure-btn:hover {
+      color: #6d28d9 !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1683,7 +1716,9 @@
         <a href="#dados">Dados reais</a>
         <a href="#vulnerabilidade">A ilusão da lei</a>
         <a href="#eixos">Os 9 eixos</a>
-        <a href="#dossie">Dossiê oficial</a>
+        <a href="dossie/">Dossiê oficial</a>
+        <a href="enxoval/" class="nav-link" target="_blank" rel="noopener noreferrer" style="color: #38bdf8 !important; font-weight: 700 !important; display: inline-flex; align-items: center; gap: 0.35rem;"><i data-lucide="package" style="width: 14px; height: 14px;"></i> Baixe o Enxoval</a>
+        <a href="pressione/" class="nav-pressure-btn"><i data-lucide="mail" style="width: 14px; height: 14px;"></i> Pressione Parlamentares</a>
         <button onclick="openPressModal()" class="footer-btn-link" style="color: #334155; text-decoration: none;">Área de imprensa</button>
       </nav>
 
@@ -1729,6 +1764,9 @@
         </a>
         <a href="#dossie" class="btn-lg-secondary">
           <i data-lucide="book-open"></i> Ler o dossiê de 70 páginas
+        </a>
+        <a href="pressione/" class="btn-lg-purple">
+          <i data-lucide="mail"></i> Pressione Parlamentares
         </a>
       </div>
 
@@ -2439,6 +2477,27 @@
     </div>
   </section>
 
+  <!-- BANNER CONVITE: PRESSIONE O CONGRESSO -->
+  <section class="container" style="margin: 3.5rem auto 4.5rem;">
+    <div style="background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); border: 2px solid #7c3aed; border-radius: 1.5rem; padding: 2.5rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 14px 35px rgba(124, 58, 237, 0.25);">
+      <div style="max-width: 680px;">
+        <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(124, 58, 237, 0.2); color: #c084fc; border: 1px solid rgba(124, 58, 237, 0.4); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem;">
+          Área de Mobilização & Pressão Popular
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.85rem; color: #ffffff; line-height: 1.25; margin-bottom: 0.6rem;">
+          Convoque Deputadas, Deputados e Senadores
+        </h3>
+        <p style="font-size: 1rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+          Acesse nossa central exclusiva para selecionar os 31 parlamentares mapeados e disparar o e-mail oficial com argumentos técnicos robustos e o link direto para o dossiê oficial de 70 páginas aos gabinetes.
+        </p>
+      </div>
+      <a href="pressione/" class="btn-lg-purple" style="white-space: nowrap;">
+        <i data-lucide="mail"></i>
+        <span>Acessar Central de Pressão</span>
+      </a>
+    </div>
+  </section>
+
   <!-- MODAL: COMPARTILHAMENTO DA PROPOSTA -->
   <div id="shareModal" class="modal-backdrop">
     <div class="modal-window" style="max-width: 640px;">
@@ -2640,14 +2699,17 @@
   <script>
     lucide.createIcons();
 
+
     function syncBodyScrollLock() {
       var modalOpen = document.getElementById('pressModal').classList.contains('active');
       var specModalEl = document.getElementById('specialistModal');
       var specOpen = specModalEl ? specModalEl.classList.contains('active') : false;
       var shareModalEl = document.getElementById('shareModal');
       var shareOpen = shareModalEl ? shareModalEl.classList.contains('active') : false;
+      var pressureModalEl = document.getElementById('pressureModal');
+      var pressureOpen = pressureModalEl ? pressureModalEl.classList.contains('active') : false;
       var fsOpen = document.getElementById('dossieReaderShell').classList.contains('is-fullscreen');
-      document.body.style.overflow = (modalOpen || specOpen || shareOpen || fsOpen) ? 'hidden' : 'auto';
+      document.body.style.overflow = (modalOpen || specOpen || shareOpen || pressureOpen || fsOpen) ? 'hidden' : 'auto';
     }
 
     function openShareModal() {
@@ -2882,6 +2944,8 @@
         if (e.key === 'Escape') {
           if (shellEl.classList.contains('is-fullscreen')) {
             window.togglePdfFullscreen();
+          } else if (document.getElementById('pressureModal')?.classList.contains('active')) {
+            closePressureModal();
           } else if (document.getElementById('shareModal')?.classList.contains('active')) {
             closeShareModal();
           } else if (document.getElementById('specialistModal')?.classList.contains('active')) {

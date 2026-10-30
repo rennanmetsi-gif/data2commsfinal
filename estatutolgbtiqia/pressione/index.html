@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Forçar HTTPS imediato contra caches antigos -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3ZTDYFHLT');
+  </script>
+
+  <title>Pressione Parlamentares no Congresso | Estatuto Nacional dos Direitos LGBTQIAPN+</title>
+  <meta name="description" content="Envie e-mail oficial aos gabinetes de deputadas, deputados e senadores progressistas para apoiarem o Estatuto Nacional dos Direitos LGBTQIAPN+ na Comissão de Direitos Humanos do Senado. Baixe o enxoval oficial de campanha.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1120">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pressione o Congresso Nacional | Estatuto LGBTQIAPN+">
+  <meta property="og:description" content="Cobrança direta aos gabinetes parlamentares e enxoval oficial de divulgação para a aprovação do Estatuto LGBTQIAPN+ no Senado Federal.">
+  <meta property="og:image" content="https://estatutolgbtqia.com.br/og-preview.jpg?v=3">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-heading: 'Outfit', system-ui, sans-serif;
+      --bg-dark: #0b1120;
+      --bg-card: #0f172a;
+      --border-dark: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --blue-action: #2563eb;
+      --blue-hover: #1d4ed8;
+      --purple-accent: #9333ea;
+      --emerald-accent: #059669;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    .top-strip {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #E40303 0%, #FF8C00 16.6%, #FFED00 33.3%, #008026 50%, #24408E 66.6%, #732982 83.3%, #FFAFC8 100%);
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+    .nav-link.active {
+      color: #38bdf8;
+    }
+    .btn-header-vote {
+      background: linear-gradient(135deg, var(--blue-action) 0%, var(--blue-hover) 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.55rem 1.1rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-header-vote:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    /* Hero */
+    .hero-pressione {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 1rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 820px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Main Container */
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 6rem;
+    }
+
+    /* Card Enxoval */
+    .section-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid #334155;
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .enxoval-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35rem;
+      margin-bottom: 2rem;
+    }
+    .art-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 0.95rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .art-card:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+    }
+    .art-thumb-wrapper {
+      position: relative;
+      background: #020617;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .art-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .art-body {
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .art-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+    .art-dims {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .btn-download-art {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background: #334155;
+      color: #f1f5f9;
+      padding: 0.6rem 0.95rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-download-art:hover {
+      background: #475569;
+    }
+    .btn-download-zip {
+      background: linear-gradient(135deg, var(--blue-action) 0%, var(--blue-hover) 100%);
+      color: #ffffff;
+      padding: 0.75rem 1.35rem;
+      border-radius: 0.6rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+    }
+    .btn-download-zip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+    }
+
+    .caption-box {
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      border-radius: 0.95rem;
+      padding: 1.35rem;
+    }
+    .caption-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .caption-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .caption-text {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      white-space: pre-line;
+      max-height: 130px;
+      overflow-y: auto;
+      background: #0b1120;
+      padding: 0.95rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-dark);
+      margin-bottom: 0.85rem;
+      font-family: inherit;
+    }
+
+    /* Bloco Parlamentares */
+    .control-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .filters-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      align-items: center;
+    }
+    .filter-chip {
+      background: #1e293b;
+      color: var(--text-muted);
+      border: 1px solid #334155;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .filter-chip:hover {
+      background: #334155;
+      color: #f8fafc;
+    }
+    .filter-chip.active {
+      background: var(--blue-action);
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+    .search-input {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #f8fafc;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      min-width: 200px;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #38bdf8;
+    }
+
+    .selection-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .selected-badge {
+      background: var(--emerald-accent);
+      color: #ffffff;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+    .btn-action-small {
+      background: transparent;
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-action-small:hover {
+      background: #334155;
+    }
+
+    .parls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 0.4rem;
+    }
+    .parl-card {
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 1rem;
+      padding: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+    .parl-card:hover {
+      transform: translateY(-2px);
+      border-color: #64748b;
+    }
+    .parl-card.selected {
+      border-color: #3b82f6;
+      background: #172554;
+      box-shadow: 0 0 0 1px #3b82f6, 0 8px 20px rgba(37, 99, 235, 0.2);
+    }
+    .parl-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #475569;
+      flex-shrink: 0;
+      background: #0f172a;
+    }
+    .parl-card.selected .parl-avatar {
+      border-color: #60a5fa;
+    }
+    .parl-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .parl-nome {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.2rem;
+    }
+    .parl-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+    .parl-party {
+      background: #0f172a;
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.3rem;
+      border: 1px solid var(--border-dark);
+    }
+    .parl-role {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .parl-tag-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.1rem 0.45rem;
+      border-radius: 9999px;
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.35);
+    }
+    .parl-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: transparent;
+      transition: all 0.15s ease;
+    }
+    .parl-card.selected .parl-check {
+      background: var(--blue-action);
+      border-color: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Bloco E-mail Pronto */
+    .email-builder-card {
+      background: #0f172a;
+      border: 2px solid #2563eb;
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.2);
+    }
+    .email-field-group {
+      margin-bottom: 1.5rem;
+    }
+    .field-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.45rem;
+    }
+    .field-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-copy-chip {
+      background: #1e293b;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-copy-chip:hover {
+      background: #334155;
+    }
+    .email-textarea {
+      width: 100%;
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      border-radius: 0.6rem;
+      color: #f8fafc;
+      padding: 0.85rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .email-input {
+      width: 100%;
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      border-radius: 0.6rem;
+      color: #f8fafc;
+      padding: 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      font-family: inherit;
+    }
+
+    .email-actions-bar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-dark);
+    }
+    .btn-trigger-mail {
+      flex: 1;
+      min-width: 280px;
+      background: linear-gradient(135deg, var(--blue-action) 0%, var(--blue-hover) 100%);
+      color: #ffffff;
+      padding: 1rem 1.75rem;
+      border-radius: 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-trigger-mail:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.5);
+    }
+    .btn-copy-all {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-copy-all:hover {
+      background: #334155;
+    }
+
+    /* Toast */
+    .toast-feedback {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #059669;
+      color: #ffffff;
+      padding: 0.85rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .toast-feedback.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .enxoval-grid {
+        grid-template-columns: 1fr;
+      }
+      .parls-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .email-actions-bar {
+        flex-direction: column;
+      }
+      .btn-trigger-mail, .btn-copy-all {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://estatutolgbtqia.com.br/pressione/">
+</head>
+<body>
+  <div class="top-strip"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="../" class="brand-link" title="Voltar para a página principal">
+        <img src="../logo_light.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="../" class="nav-link">Início / Proposta</a>
+        <a href="../dossie/" class="nav-link">Dossiê Oficial (70 págs)</a>
+        <a href="../enxoval/" class="nav-link">Baixe o Enxoval</a>
+        <a href="index.html" class="nav-link active">Pressione Parlamentares</a>
+      </nav>
+
+      <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer" class="btn-header-vote">
+        <i data-lucide="vote" style="width: 16px; height: 16px;"></i>
+        Apoiar no Senado (Gov.br)
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-pressione">
+    <span class="hero-badge">
+      <i data-lucide="megaphone" style="width: 14px; height: 14px;"></i>
+      Central de Mobilização & Pressão Popular
+    </span>
+    <h1 class="hero-title">Pressione Deputadas, Deputados e Senadores</h1>
+    <p class="hero-desc">
+      Além de votar na consulta pública do Senado pelo Gov.br, convoque as lideranças do Congresso Nacional para apadrinharem a tramitação do Estatuto na Comissão de Direitos Humanos (CDH) e compartilharem os materiais de campanha com suas bases.
+    </p>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <main class="content-container">
+
+    <!-- BANNER DE ATALHO PARA O ENXOVAL -->
+    <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 1rem; padding: 1.25rem 1.75rem; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <i data-lucide="package" style="color: #38bdf8; width: 22px; height: 22px;"></i>
+        <div>
+          <strong style="color: #f8fafc; font-size: 0.95rem;">Procurando o Enxoval de Divulgação para redes sociais?</strong>
+          <span style="display: block; color: #94a3b8; font-size: 0.85rem;">Baixe as artes oficiais para Feed, Stories e copie legendas prontas em nossa página exclusiva de materiais.</span>
+        </div>
+      </div>
+      <a href="../enxoval/" class="btn-download-art" style="background: #1e293b; border: 1px solid #334155; white-space: nowrap;">
+        <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+        Acessar Kit de Divulgação
+      </a>
+    </div>
+
+    <!-- SEÇÃO 2: SELEÇÃO DE PARLAMENTARES -->
+    <section id="parlamentares" class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <i data-lucide="users" style="color: #60a5fa;"></i>
+            Selecione quem pressionar no Congresso Nacional
+          </h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Clique nos rostos para marcar ou desmarcar. O e-mail e a lista de destinatários abaixo se atualizam em tempo real.
+          </p>
+        </div>
+
+        <div class="selection-meta">
+          <span id="selectedCounterBadge" class="selected-badge">31 selecionados</span>
+          <button type="button" class="btn-action-small" onclick="selectAll()">Selecionar todos</button>
+          <button type="button" class="btn-action-small" onclick="deselectAll()">Limpar</button>
+        </div>
+      </div>
+
+      <!-- Linha de Controles & Busca -->
+      <div class="control-row">
+        <div class="filters-group">
+          <button type="button" class="filter-chip active" onclick="applyCategoryFilter('all', this)">Todos (31)</button>
+          <button type="button" class="filter-chip" onclick="applyCategoryFilter('lgbtqia', this)">🏳️‍🌈 Bancada LGBTQIA+ (4)</button>
+          <button type="button" class="filter-chip" onclick="applyCategoryFilter('senador', this)">🏛️ Senadores da República (8)</button>
+          <button type="button" class="filter-chip" onclick="applyCategoryFilter('deputado', this)">👥 Deputadas e Deputados (19)</button>
+        </div>
+
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nome, partido ou UF..." oninput="handleSearch(this.value)">
+      </div>
+
+      <!-- Grid de Cards de Parlamentares -->
+      <div id="parlsGrid" class="parls-grid">
+        <!-- Renderizado dinamicamente -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: PAINEL DO E-MAIL OFICIAL DE PRESSÃO -->
+    <section class="email-builder-card">
+      <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-dark); padding-bottom: 1rem;">
+        <span style="font-size: 0.8rem; font-weight: 800; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em;">
+          Rascunho Oficial Pronto para Envio
+        </span>
+        <h2 style="font-size: 1.75rem; color: #ffffff; margin-top: 0.25rem; font-family: var(--font-heading);">
+          Mensagem de Mobilização aos Gabinetes
+        </h2>
+        <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 0.35rem;">
+          Os e-mails abaixo estão configurados em <strong>Cópia Oculta (CCO)</strong> para proteger a sua privacidade e evitar o envio em grupo entre gabinetes.
+        </p>
+      </div>
+
+      <!-- Campo 1: Destinatários CCO -->
+      <div class="email-field-group">
+        <div class="field-header">
+          <label class="field-label">
+            1. Destinatários em Cópia Oculta (CCO) (<span id="emailsCount">31</span> gabinetes)
+          </label>
+          <button type="button" class="btn-copy-chip" onclick="copyBccList(this)">
+            <i data-lucide="copy" style="width: 13px; height: 13px;"></i> Copiar E-mails (CCO)
+          </button>
+        </div>
+        <textarea id="bccField" readonly class="email-textarea" style="height: 72px; font-family: monospace; font-size: 0.82rem;"></textarea>
+      </div>
+
+      <!-- Campo 2: Assunto -->
+      <div class="email-field-group">
+        <div class="field-header">
+          <label class="field-label">2. Assunto da Mensagem</label>
+          <button type="button" class="btn-copy-chip" onclick="copySubjectText(this)">
+            <i data-lucide="copy" style="width: 13px; height: 13px;"></i> Copiar Assunto
+          </button>
+        </div>
+        <input type="text" id="subjectField" readonly class="email-input" value="URGENTE: Apoio e Adoção Legislativa ao Estatuto Nacional dos Direitos LGBTQIAPN+ (Ideia nº 252656)">
+      </div>
+
+      <!-- Campo 3: Corpo da Mensagem -->
+      <div class="email-field-group">
+        <div class="field-header">
+          <label class="field-label">3. Corpo da Mensagem Oficial</label>
+          <button type="button" class="btn-copy-chip" onclick="copyBodyText(this)">
+            <i data-lucide="copy" style="width: 13px; height: 13px;"></i> Copiar Mensagem
+          </button>
+        </div>
+        <textarea id="bodyField" readonly class="email-textarea" style="height: 240px;"></textarea>
+      </div>
+
+      <!-- Ações de Envio -->
+      <div class="email-actions-bar">
+        <a id="btnMailto" href="#" class="btn-trigger-mail">
+          <i data-lucide="mail"></i>
+          <span>Abrir no meu aplicativo de e-mail (Gmail / Outlook / Apple Mail)</span>
+        </a>
+
+        <button type="button" class="btn-copy-all" onclick="copyEverything(this)">
+          <i data-lucide="copy"></i>
+          <span>Copiar Tudo de uma Vez</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toastNotification" class="toast-feedback"></div>
+
+  <script>
+    var PARLS = [{"id": "erika-hilton", "nome": "Erika Hilton", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "SP", "email": "dep.erikahilton@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220645.jpg", "categoria": "lgbtqia", "destaque": true, "tag": "Bancada LGBTQIA+"}, {"id": "duda-salabert", "nome": "Duda Salabert", "cargo": "Deputada Federal", "partido": "PDT", "uf": "MG", "email": "dep.dudasalabert@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220623.jpg", "categoria": "lgbtqia", "destaque": true, "tag": "Bancada LGBTQIA+"}, {"id": "daiana-santos", "nome": "Daiana Santos", "cargo": "Deputada Federal", "partido": "PCdoB", "uf": "RS", "email": "dep.daianasantos@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220555.jpg", "categoria": "lgbtqia", "destaque": true, "tag": "Bancada LGBTQIA+"}, {"id": "fabiano-contarato", "nome": "Fabiano Contarato", "cargo": "Senador da República", "partido": "PT", "uf": "ES", "email": "sen.fabianocontarato@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5953.jpg", "categoria": "lgbtqia", "destaque": true, "tag": "Bancada LGBTQIA+ • Senado"}, {"id": "paulo-paim", "nome": "Paulo Paim", "cargo": "Senador da República", "partido": "PT", "uf": "RS", "email": "sen.paulopaim@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg", "categoria": "senador", "destaque": true, "tag": "Senado • Pres. CDH"}, {"id": "humberto-costa", "nome": "Humberto Costa", "cargo": "Senador da República", "partido": "PT", "uf": "PE", "email": "sen.humbertocosta@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg", "categoria": "senador", "destaque": true, "tag": "Senado Federal"}, {"id": "teresa-leitao", "nome": "Teresa Leitão", "cargo": "Senadora da República", "partido": "PT", "uf": "PE", "email": "sen.teresaleitao@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6338.jpg", "categoria": "senador", "destaque": false, "tag": "Senado Federal"}, {"id": "randolfe-rodrigues", "nome": "Randolfe Rodrigues", "cargo": "Senador da República", "partido": "PT", "uf": "AP", "email": "sen.randolferodrigues@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg", "categoria": "senador", "destaque": true, "tag": "Senado • Líder do Governo"}, {"id": "eliziane-gama", "nome": "Eliziane Gama", "cargo": "Senadora da República", "partido": "PSD", "uf": "MA", "email": "sen.elizianegama@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg", "categoria": "senador", "destaque": false, "tag": "Senado Federal"}, {"id": "jaques-wagner", "nome": "Jaques Wagner", "cargo": "Senador da República", "partido": "PT", "uf": "BA", "email": "sen.jaqueswagner@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador581.jpg", "categoria": "senador", "destaque": false, "tag": "Senado Federal"}, {"id": "rogerio-carvalho", "nome": "Rogério Carvalho", "cargo": "Senador da República", "partido": "PT", "uf": "SE", "email": "sen.rogeriocarvalho@senado.leg.br", "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5352.jpg", "categoria": "senador", "destaque": false, "tag": "Senado Federal"}, {"id": "pastor-henrique-vieira", "nome": "Pastor Henrique Vieira", "cargo": "Deputado Federal", "partido": "PSOL", "uf": "RJ", "email": "dep.pastorhenriquevieira@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220615.jpg", "categoria": "deputado", "destaque": true, "tag": "Câmara dos Deputados"}, {"id": "samia-bomfim", "nome": "Sâmia Bomfim", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "SP", "email": "dep.samiabomfim@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/204535.jpg", "categoria": "deputado", "destaque": true, "tag": "Câmara dos Deputados"}, {"id": "taliria-petrone", "nome": "Talíria Petrone", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "RJ", "email": "dep.taliriapetrone@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/204464.jpg", "categoria": "deputado", "destaque": true, "tag": "Câmara dos Deputados"}, {"id": "celia-xakriaba", "nome": "Célia Xakriabá", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "MG", "email": "dep.celiaxakriaba@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/206018.jpg", "categoria": "deputado", "destaque": true, "tag": "Bancada Indígena • PSOL"}, {"id": "tarcisio-motta", "nome": "Tarcísio Motta", "cargo": "Deputado Federal", "partido": "PSOL", "uf": "RJ", "email": "dep.tarcisiomotta@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220598.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "chico-alencar", "nome": "Chico Alencar", "cargo": "Deputado Federal", "partido": "PSOL", "uf": "RJ", "email": "dep.chicoalencar@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/74171.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "fernanda-melchionna", "nome": "Fernanda Melchionna", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "RS", "email": "dep.fernandamelchionna@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/204407.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "glauber-braga", "nome": "Glauber Braga", "cargo": "Deputado Federal", "partido": "PSOL", "uf": "RJ", "email": "dep.glauberbraga@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/152605.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "luiza-erundina", "nome": "Luiza Erundina", "cargo": "Deputada Federal", "partido": "PSOL", "uf": "SP", "email": "dep.luizaerundina@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/74784.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "dandara", "nome": "Dandara Tonantzin", "cargo": "Deputada Federal", "partido": "PT", "uf": "MG", "email": "dep.dandara@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220629.jpg", "categoria": "deputado", "destaque": true, "tag": "Câmara dos Deputados"}, {"id": "camila-jara", "nome": "Camila Jara", "cargo": "Deputada Federal", "partido": "PT", "uf": "MS", "email": "dep.camilajara@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/220548.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "maria-do-rosario", "nome": "Maria do Rosário", "cargo": "Deputada Federal", "partido": "PT", "uf": "RS", "email": "dep.mariadorosario@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/74398.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "natalia-bonavides", "nome": "Natália Bonavides", "cargo": "Deputada Federal", "partido": "PT", "uf": "RN", "email": "dep.nataliabonavides@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/204453.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "benedita-da-silva", "nome": "Benedita da Silva", "cargo": "Deputada Federal", "partido": "PT", "uf": "RJ", "email": "dep.beneditadasilva@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/73701.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "gleisi-hoffmann", "nome": "Gleisi Hoffmann", "cargo": "Deputada Federal", "partido": "PT", "uf": "PR", "email": "dep.gleisihoffmann@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/107283.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "lindbergh-farias", "nome": "Lindbergh Farias", "cargo": "Deputado Federal", "partido": "PT", "uf": "RJ", "email": "dep.lindberghfarias@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/74858.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "erika-kokay", "nome": "Erika Kokay", "cargo": "Deputada Federal", "partido": "PT", "uf": "DF", "email": "dep.erikakokay@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/160575.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "jandira-feghali", "nome": "Jandira Feghali", "cargo": "Deputada Federal", "partido": "PCdoB", "uf": "RJ", "email": "dep.jandirafeghali@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/74848.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "orlando-silva", "nome": "Orlando Silva", "cargo": "Deputado Federal", "partido": "PCdoB", "uf": "SP", "email": "dep.orlandosilva@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/178987.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}, {"id": "tulio-gadelha", "nome": "Túlio Gadêlha", "cargo": "Deputado Federal", "partido": "REDE", "uf": "PE", "email": "dep.tuliogadelha@camara.leg.br", "foto": "https://www.camara.leg.br/internet/deputado/bandep/157130.jpg", "categoria": "deputado", "destaque": false, "tag": "Câmara dos Deputados"}];
+    var selectedIds = new Set(PARLS.map(function(p) { return p.id; }));
+    var activeCategory = 'all';
+    var searchQuery = '';
+
+    var DOSSIE_URL = window.location.origin.includes('localhost')
+      ? window.location.origin + '/dossie/'
+      : 'https://estatutolgbtqia.com.br/dossie/';
+
+    var SENADO_URL = 'https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656';
+
+    function buildEmailBody() {
+      return "Prezada(o) Parlamentar e Equipe de Gabinete,\n\n" +
+        "Dirijo-me a este mandato para solicitar o compromisso formal e o apoio público de Vossa Excelência à tramitação da Ideia Legislativa nº 252656 no Portal e-Cidadania do Senado Federal, que propõe a criação do ESTATUTO NACIONAL DOS DIREITOS LGBTQIAPN+.\n\n" +
+        "Hoje, conquistas fundamentais da população LGBTQIAPN+ no Brasil — como o casamento civil igualitário, a criminalização do LGBTQIAPN+cídio, o respeito ao nome social e o acesso à saúde integral no SUS — ainda não estão consolidadas em lei federal ordinária. Dependem unicamente de jurisprudências provisórias do STF, sob constante ameaça de retrocessos legislativos no Congresso.\n\n" +
+        "Nossa meta imediata é alcançar os 20.000 apoios populares de cidadãs e cidadãos no Senado para que a proposta passe a tramitar formalmente como Proposição Legislativa na Comissão de Direitos Humanos e Legislação Participativa (CDH).\n\n" +
+        "Preparamos também um Dossiê Técnico-Legislativo de 70 páginas para auxiliar no processo, garantindo máxima robustez e evidência empírica e jurídica. Ele foi produzido por diversos profissionais e especialistas para respaldar a tomada de decisão no Congresso e comprovar a viabilidade técnica de cada um dos 9 eixos estruturantes da lei ordinária.\n\n" +
+        "Você pode acessar diretamente a visualização oficial e exclusiva do dossiê no link:\n" +
+        DOSSIE_URL + "\n\n" +
+        "Convocamos este mandato comprometido com a dignidade e a democracia a:\n\n" +
+        "1. Declarar apoio público e divulgar ativamente a consulta oficial no Senado com suas bases eleitorais:\n" +
+        "   " + SENADO_URL + "\n\n" +
+        "2. Assumir o compromisso de apadrinhar o texto e atuar como relator(a) na Comissão de Direitos Humanos (CDH) do Senado e na Câmara dos Deputados, transformando a ideia em Projeto de Lei Federal;\n\n" +
+        "3. Analisar o Dossiê Técnico de 70 páginas com as evidências dos 9 eixos:\n" +
+        "   " + DOSSIE_URL + "\n\n" +
+        "A cidadania plena não pode ser provisória. Contamos com a sua coragem política e liderança para que a vida e a dignidade da população LGBTQIAPN+ sejam finalmente asseguradas em lei federal.\n\n" +
+        "Atenciosamente,\n" +
+        "[Seu Nome Completo]\n" +
+        "[Eleitor(a) / Coletivo / Organização]\n" +
+        "[Cidade / UF]";
+    }
+
+    function renderGrid() {
+      var container = document.getElementById('parlsGrid');
+      if (!container) return;
+
+      var filtered = PARLS.filter(function(p) {
+        // Category check
+        var matchCat = true;
+        if (activeCategory === 'lgbtqia') matchCat = (p.categoria === 'lgbtqia');
+        else if (activeCategory === 'senador') matchCat = (p.categoria === 'senador' || p.cargo.includes('Senad'));
+        else if (activeCategory === 'deputado') matchCat = (p.categoria === 'deputado' || p.cargo.includes('Deputad'));
+
+        // Search check
+        var matchSearch = true;
+        if (searchQuery.trim().length > 0) {
+          var q = searchQuery.toLowerCase();
+          matchSearch = p.nome.toLowerCase().includes(q) ||
+                        p.partido.toLowerCase().includes(q) ||
+                        p.uf.toLowerCase().includes(q) ||
+                        p.cargo.toLowerCase().includes(q);
+        }
+
+        return matchCat && matchSearch;
+      });
+
+      var html = '';
+      filtered.forEach(function(p) {
+        var isSelected = selectedIds.has(p.id);
+        var cardClass = isSelected ? 'parl-card selected' : 'parl-card';
+        html += '<div class="' + cardClass + '" onclick="toggleCard(\'' + p.id + '\')">';
+        html += '  <img src="' + p.foto + '" alt="' + p.nome + '" class="parl-avatar" loading="lazy" onerror="this.src=\'../favicon-32x32.png\'">';
+        html += '  <div class="parl-info">';
+        html += '    <div class="parl-nome">' + p.nome + '</div>';
+        html += '    <div class="parl-meta">';
+        html += '      <span class="parl-party">' + p.partido + '/' + p.uf + '</span>';
+        html += '      <span class="parl-role">' + p.cargo + '</span>';
+        html += '    </div>';
+        if (p.tag) {
+          html += '    <span class="parl-tag-badge">' + p.tag + '</span>';
+        }
+        html += '  </div>';
+        html += '  <div class="parl-check">';
+        if (isSelected) {
+          html += '    <i data-lucide="check" style="width: 14px; height: 14px;"></i>';
+        }
+        html += '  </div>';
+        html += '</div>';
+      });
+
+      if (filtered.length === 0) {
+        html = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #94a3b8;">Nenhum parlamentar encontrado para esta busca.</div>';
+      }
+
+      container.innerHTML = html;
+      lucide.createIcons();
+      syncEmailBuilder();
+    }
+
+    function toggleCard(id) {
+      if (selectedIds.has(id)) {
+        selectedIds.delete(id);
+      } else {
+        selectedIds.add(id);
+      }
+      renderGrid();
+    }
+
+    function selectAll() {
+      PARLS.forEach(function(p) { selectedIds.add(p.id); });
+      renderGrid();
+    }
+
+    function deselectAll() {
+      selectedIds.clear();
+      renderGrid();
+    }
+
+    function applyCategoryFilter(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.filter-chip').forEach(function(b) { b.classList.remove('active'); });
+      if (btn) btn.classList.add('active');
+      renderGrid();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val || '';
+      renderGrid();
+    }
+
+    function syncEmailBuilder() {
+      var badge = document.getElementById('selectedCounterBadge');
+      if (badge) {
+        badge.textContent = selectedIds.size + ' selecionado' + (selectedIds.size === 1 ? '' : 's');
+      }
+
+      var selectedList = PARLS.filter(function(p) { return selectedIds.has(p.id); });
+      var emails = selectedList.map(function(p) { return p.email; }).join(", ");
+
+      document.getElementById('bccField').value = emails;
+      document.getElementById('emailsCount').textContent = selectedList.length;
+
+      var body = buildEmailBody();
+      document.getElementById('bodyField').value = body;
+
+      // Montar mailto link
+      var sub = encodeURIComponent(document.getElementById('subjectField').value);
+      var bcc = encodeURIComponent(emails);
+      var encodedBody = encodeURIComponent(body);
+      var mailto = "mailto:?bcc=" + bcc + "&subject=" + sub + "&body=" + encodedBody;
+      document.getElementById('btnMailto').setAttribute('href', mailto);
+    }
+
+    function showToast(msg) {
+      var toast = document.getElementById('toastNotification');
+      if (toast) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(function() {
+          toast.classList.remove('show');
+        }, 2200);
+      }
+    }
+
+    function copyBccList(btn) {
+      var text = document.getElementById('bccField').value;
+      if (!text) {
+        showToast("Selecione pelo menos um parlamentar.");
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function() {
+        showToast("E-mails em CCO copiados!");
+      });
+    }
+
+    function copySubjectText(btn) {
+      var text = document.getElementById('subjectField').value;
+      navigator.clipboard.writeText(text).then(function() {
+        showToast("Assunto copiado com sucesso!");
+      });
+    }
+
+    function copyBodyText(btn) {
+      var text = document.getElementById('bodyField').value;
+      navigator.clipboard.writeText(text).then(function() {
+        showToast("Corpo da mensagem copiado!");
+      });
+    }
+
+    function copyEverything(btn) {
+      var bcc = document.getElementById('bccField').value;
+      var sub = document.getElementById('subjectField').value;
+      var body = document.getElementById('bodyField').value;
+      var pack = "DESTINATÁRIOS EM CÓPIA OCULTA (CCO):\n" + bcc + "\n\nASSUNTO:\n" + sub + "\n\nMENSAGEM:\n" + body;
+
+      navigator.clipboard.writeText(pack).then(function() {
+        showToast("Pacote completo copiado com sucesso!");
+      });
+    }
+
+    function copyCaptionText(btn) {
+      var text = document.getElementById('campaignCaptionText').innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        showToast("Legenda de mobilização copiada!");
+      });
+    }
+
+    // Iniciar na carga da página
+    document.addEventListener('DOMContentLoaded', function() {
+      renderGrid();
+    });
+  </script>
+</body>
+</html>

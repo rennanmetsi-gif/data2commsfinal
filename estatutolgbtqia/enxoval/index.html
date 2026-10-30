@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Forçar HTTPS imediato contra caches antigos -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3ZTDYFHLT');
+  </script>
+
+  <title>Kit de Divulgação & Enxoval Oficial | Estatuto Nacional dos Direitos LGBTQIAPN+</title>
+  <meta name="description" content="Baixe o enxoval oficial de campanha do Estatuto LGBTQIAPN+: artes em alta resolução para Feed, Stories e WhatsApp, pacote .ZIP e legendas prontas para mobilizar os 20.000 votos no Senado Federal.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1120">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Baixe o Enxoval de Divulgação Oficial | Estatuto LGBTQIAPN+">
+  <meta property="og:description" content="Artes oficiais, cards para Feed e Stories, pacote completo .ZIP e legendas prontas para mobilização popular no Senado.">
+  <meta property="og:image" content="https://estatutolgbtqia.com.br/og-preview.jpg?v=3">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-heading: 'Outfit', system-ui, sans-serif;
+      --bg-dark: #0b1120;
+      --bg-card: #0f172a;
+      --border-dark: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --blue-action: #2563eb;
+      --blue-hover: #1d4ed8;
+      --purple-accent: #7c3aed;
+      --emerald-accent: #059669;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    .top-strip {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #E40303 0%, #FF8C00 16.6%, #FFED00 33.3%, #008026 50%, #24408E 66.6%, #732982 83.3%, #FFAFC8 100%);
+    }
+
+    /* Header */
+    header {
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }}
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+    .nav-link.active {
+      color: #38bdf8;
+    }
+    .btn-header-vote {
+      background: linear-gradient(135deg, var(--blue-action) 0%, var(--blue-hover) 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.55rem 1.1rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-header-vote:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    /* Hero */
+    .hero-enxoval {
+      padding: 4.5rem 1.5rem 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 1rem;
+    }
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 820px;
+      margin: 0 auto 2.25rem;
+    }
+
+    .btn-main-zip {
+      background: linear-gradient(135deg, var(--blue-action) 0%, var(--blue-hover) 100%);
+      color: #ffffff;
+      padding: 1.1rem 2.2rem;
+      border-radius: 9999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-main-zip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.55);
+    }
+
+    /* Container */
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 6rem;
+    }
+
+    .section-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid #334155;
+      border-radius: 1.25rem;
+      padding: 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    /* Grid de Artes */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .art-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .art-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+    }
+    .art-preview-wrapper {
+      position: relative;
+      background: #020617;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .art-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .art-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .art-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+    .art-dims {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.15rem;
+    }
+    .btn-download-art {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #334155;
+      color: #f1f5f9;
+      padding: 0.7rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-download-art:hover {
+      background: #475569;
+    }
+
+    /* Legendas */
+    .caption-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .caption-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .caption-target-badge {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .btn-copy-chip {
+      background: #0f172a;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      padding: 0.4rem 0.85rem;
+      border-radius: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-copy-chip:hover {
+      background: #334155;
+      color: #38bdf8;
+    }
+    .caption-pre {
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      padding: 1rem;
+      border-radius: 0.6rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      white-space: pre-line;
+      font-family: inherit;
+    }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .step-box {
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.35rem;
+    }
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Toast */
+    .toast-feedback {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #059669;
+      color: #ffffff;
+      padding: 0.85rem 1.6rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .toast-feedback.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .art-grid {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://estatutolgbtqia.com.br/enxoval/">
+</head>
+<body>
+  <div class="top-strip"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="../" class="brand-link" title="Voltar para a página principal">
+        <img src="../logo_light.svg" alt="HISTÓRIA LGBTQIA+" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <a href="../" class="nav-link">Início / Proposta</a>
+        <a href="../dossie/" class="nav-link">Dossiê Oficial (70 págs)</a>
+        <a href="index.html" class="nav-link active">Baixe o Enxoval</a>
+        <a href="../pressione/" class="nav-link">Pressione Parlamentares</a>
+      </nav>
+
+      <a href="https://www12.senado.leg.br/ecidadania/visualizacaoideia?id=252656" target="_blank" rel="noopener noreferrer" class="btn-header-vote">
+        <i data-lucide="vote" style="width: 16px; height: 16px;"></i>
+        Apoiar no Senado (Gov.br)
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-enxoval">
+    <span class="hero-badge">
+      <i data-lucide="package" style="width: 14px; height: 14px;"></i>
+      Enxoval Oficial de Campanha & Redes Sociais
+    </span>
+    <h1 class="hero-title">Kit de Divulgação do Estatuto LGBTQIAPN+</h1>
+    <p class="hero-desc">
+      Baixe os materiais gráficos oficiais em alta resolução, copie as legendas prontas e ajude a alcançar os 20.000 votos necessários no Senado Federal para que o Estatuto vire lei ordinária definitiva.
+    </p>
+
+    <a href="enxoval-estatuto-lgbtqia.zip" download class="btn-main-zip">
+      <i data-lucide="download"></i>
+      <span>Baixar Enxoval Completo (.ZIP)</span>
+    </a>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <main class="content-container">
+
+    <!-- SEÇÃO 1: ARTES INDIVIDUAIS PARA DOWNLOAD -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <i data-lucide="image" style="color: #38bdf8;"></i>
+            Artes Oficiais para Download
+          </h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Imagens prontas para publicação no feed, stories e grupos de mensagens.
+          </p>
+        </div>
+      </div>
+
+      <div class="art-grid">
+        <!-- Card 1: Feed -->
+        <div class="art-card">
+          <div class="art-preview-wrapper">
+            <img src="card-feed-instagram-1080x1080.png" alt="Card para Feed Instagram" class="art-img">
+          </div>
+          <div class="art-body">
+            <div>
+              <div class="art-name">Card para Feed (Instagram / WhatsApp)</div>
+              <div class="art-dims">Formato quadrado • 1080 × 1080 px (PNG)</div>
+            </div>
+            <a href="card-feed-instagram-1080x1080.png" download class="btn-download-art">
+              <i data-lucide="download" style="width: 15px; height: 15px;"></i> Baixar arte (PNG)
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Stories -->
+        <div class="art-card">
+          <div class="art-preview-wrapper" style="aspect-ratio: 9/16; max-height: 230px;">
+            <img src="card-stories-whatsapp-1080x1920.png" alt="Card para Stories" class="art-img" style="object-position: top;">
+          </div>
+          <div class="art-body">
+            <div>
+              <div class="art-name">Card para Stories / Status</div>
+              <div class="art-dims">Formato vertical • 1080 × 1920 px (PNG)</div>
+            </div>
+            <a href="card-stories-whatsapp-1080x1920.png" download class="btn-download-art">
+              <i data-lucide="download" style="width: 15px; height: 15px;"></i> Baixar arte (PNG)
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Banner 9 Eixos -->
+        <div class="art-card">
+          <div class="art-preview-wrapper">
+            <img src="card-eixos-banner-1200x630.png" alt="Card Resumo dos 9 Eixos" class="art-img">
+          </div>
+          <div class="art-body">
+            <div>
+              <div class="art-name">Card Resumo dos 9 Eixos da Lei</div>
+              <div class="art-dims">Formato horizontal • 1200 × 630 px (PNG)</div>
+            </div>
+            <a href="card-eixos-banner-1200x630.png" download class="btn-download-art">
+              <i data-lucide="download" style="width: 15px; height: 15px;"></i> Baixar arte (PNG)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: BANCO DE LEGENDAS E TEXTOS PRONTOS -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <i data-lucide="file-text" style="color: #a855f7;"></i>
+            Banco de Legendas e Textos Prontos
+          </h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Textos formatados com argumentos sólidos, links e hashtags para copiar e colar com 1 clique.
+          </p>
+        </div>
+      </div>
+
+      <!-- Legenda 1: Instagram / Facebook -->
+      <div class="caption-card">
+        <div class="caption-card-header">
+          <span class="caption-target-badge">Instagram • Facebook • LinkedIn</span>
+          <button type="button" class="btn-copy-chip" onclick="copySnippet('cap1')">
+            <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Copiar Legenda
+          </button>
+        </div>
+        <div class="caption-pre" id="cap1">🚨 NOSSOS DIREITOS NÃO PODEM MAIS DEPENDER DE DECISÕES PROVISÓRIAS! 🏳️‍🌈🏳️‍⚧️
+
+Você sabia que o casamento civil igualitário, o uso do nome social e a proteção contra a discriminação no Brasil NÃO são leis federais votadas no Congresso? São apenas decisões judiciais provisórias que podem cair a qualquer momento diante de novas pressões.
+
+Está no ar no Senado Federal a proposta para aprovar o ESTATUTO NACIONAL DOS DIREITOS LGBTQIAPN+ em lei ordinária definitiva!
+
+🎯 Precisamos de 20.000 votos no Portal e-Cidadania para que o Senado seja obrigado a pautar e votar a proposta na Comissão de Direitos Humanos!
+
+👉 Vote agora com seu login Gov.br e leia o Dossiê Técnico de 70 páginas:
+https://estatutolgbtqia.com.br/
+
+Ajude a espalhar esta convocação! Pressione seus deputados e senadores! ✊
+#EstatutoLGBTQIAPN #VoteNoSenado #HistoriaLGBTQIA #DireitosHumanos #ECidadania #CongressoNacional</div>
+      </div>
+
+      <!-- Legenda 2: X / Twitter -->
+      <div class="caption-card">
+        <div class="caption-card-header">
+          <span class="caption-target-badge">X (antigo Twitter) • Threads</span>
+          <button type="button" class="btn-copy-chip" onclick="copySnippet('cap2')">
+            <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Copiar Post Curto
+          </button>
+        </div>
+        <div class="caption-pre" id="cap2">Nossos direitos não podem ser provisórios! Apoie a criação do Estatuto Nacional dos Direitos LGBTQIAPN+ em lei federal definitiva.
+
+Faltam poucos apoios para bater a meta de 20 mil votos no Senado e pautar na CDH!
+
+Vote com seu Gov.br e leia o Dossiê de 70 págs:
+https://estatutolgbtqia.com.br/ 🏳️‍🌈</div>
+      </div>
+
+      <!-- Legenda 3: WhatsApp e Telegram -->
+      <div class="caption-card">
+        <div class="caption-card-header">
+          <span class="caption-target-badge">Grupos de WhatsApp • Telegram</span>
+          <button type="button" class="btn-copy-chip" onclick="copySnippet('cap3')">
+            <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Copiar Mensagem
+          </button>
+        </div>
+        <div class="caption-pre" id="cap3">🚨 *Mobilização Urgente no Senado Federal!*
+
+Gente, está no ar a consulta pública oficial do Senado para transformar os direitos LGBTQIAPN+ em *lei federal permanente* (casamento civil, saúde no SUS, combate ao LGBTQIAPN+cídio e direitos de pessoas intersexo).
+
+Hoje tudo depende de decisões provisórias da Justiça. Precisamos de *20.000 votos* no portal do Senado para que a proposta seja pautada obrigatoriamente.
+
+Leva menos de 1 minuto para votar com o login Gov.br:
+👉 https://estatutolgbtqia.com.br/
+
+Eles prepararam também um Dossiê Técnico de 70 páginas com todas as evidências. Repassem nos grupos de vocês! 🙏🏳️‍🌈</div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: COMO AJUDAR A MOBILIZAR -->
+    <section class="section-card" style="margin-bottom: 0;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <i data-lucide="check-circle-2" style="color: #10b981;"></i>
+            3 Passos para Impulsionar a Campanha
+          </h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Cada voto e compartilhamento aproxima o Estatuto de ser pautado no Congresso.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-number">01</div>
+          <div class="step-title">Vote no Portal e-Cidadania</div>
+          <div class="step-desc">
+            Entre na consulta com sua conta Gov.br e apoie a Ideia Legislativa nº 252656. O processo é oficial e gratuito.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">02</div>
+          <div class="step-title">Publique o Enxoval</div>
+          <div class="step-desc">
+            Baixe as artes acima e poste no seu Feed ou Stories marcando parlamentares, amigos e entidades da sociedade civil.
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">03</div>
+          <div class="step-title">Pressione Gabinetes</div>
+          <div class="step-desc">
+            Acesse nossa Central de Pressão para enviar o e-mail oficial aos 31 deputados e senadores progressistas mapeados.
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="../pressione/" class="btn-main-zip" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);">
+          <i data-lucide="mail"></i>
+          <span>Ir para a Central de Pressão aos Parlamentares</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toastNotification" class="toast-feedback"></div>
+
+  <script>
+    lucide.createIcons();
+
+    function showToast(msg) {
+      var toast = document.getElementById('toastNotification');
+      if (toast) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(function() {
+          toast.classList.remove('show');
+        }, 2200);
+      }
+    }
+
+    function copySnippet(elementId) {
+      var text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        showToast("Texto copiado para a área de transferência!");
+      });
+    }
+  </script>
+</body>
+</html>

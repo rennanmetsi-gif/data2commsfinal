@@ -3,7 +3,25 @@
   <url>
     <loc>https://acervolula.com.br/estatutolgbtiqia/</loc>
     <lastmod>2026-10-29</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://acervolula.com.br/estatutolgbtiqia/pressione/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://acervolula.com.br/estatutolgbtiqia/enxoval/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://acervolula.com.br/estatutolgbtiqia/dossie/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

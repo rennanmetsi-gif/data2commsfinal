@@ -1,74 +1,283 @@
 ---
 layout: null
-permalink: /imprensa/
+permalink: /imprensa.html
 ---
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprensa | data2comms</title>
     <meta name="description" content="Comunicados, notícias, pesquisas e novidades da data2comms para imprensa e parceiros.">
+    <link rel="icon" type="image/png" href="assets/logos/d2c_monogram_black_transparent.png">
+
+    <!-- Google Fonts Inter & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { theme: { extend: {
-            colors: { ink: '#0A0A0A', paper: '#F2F0EB', acidLime: '#D6FF00', concrete: '#A6A6A6' },
-            fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] }
-        } } };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        };
     </script>
-    <style>
-        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
-        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
-        .border-r-editorial { border-right: 1px solid #0A0A0A; }
-    </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C3ZTDYFHLT');</script>
+    <link rel="stylesheet" href="assets/css/modern.css">
 </head>
-<body class="font-sans overflow-x-hidden bg-paper">
-    {% include header.html %}
-    <main>
-        <section class="grid grid-cols-1 lg:grid-cols-12 border-b-editorial">
-            <div class="lg:col-span-8 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial">
-                <p class="font-mono text-[11px] uppercase tracking-widest mb-8">Sala de imprensa // data2comms</p>
-                <h1 class="font-display text-5xl md:text-7xl lg:text-[7rem] uppercase tracking-tighter leading-[0.84] mb-10">Notícias, ideias e novidades da agência.</h1>
-            </div>
-            <div class="lg:col-span-4 p-6 md:p-12 lg:p-16 bg-ink text-paper flex flex-col justify-end">
-                <p class="font-mono text-[10px] uppercase tracking-widest text-acidLime mb-6">Para jornalistas e parceiros</p>
-                <p class="font-sans text-xl md:text-2xl leading-relaxed">Comunicados, pesquisas, projetos e informações institucionais da data2comms.</p>
-            </div>
-        </section>
-        {% assign press_items = site.imprensa | sort: "date" | reverse %}
-        {% if press_items.size > 0 %}
-        <section class="grid grid-cols-1 md:grid-cols-2 bg-white">
-            {% for item in press_items %}
-            <a href="{{ site.baseurl }}{{ item.url }}" class="group p-6 md:p-10 flex flex-col min-h-[320px] border-b-editorial hover:bg-ink hover:text-paper transition-colors">
-                <div class="flex justify-between gap-4 font-mono text-[10px] uppercase tracking-widest mb-16 text-ink/60 group-hover:text-paper/60">
-                    <span>{{ item.category | default: "Comunicado" }}</span>
-                    <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d.%m.%Y" }}</time>
-                </div>
-                <h2 class="font-display text-3xl md:text-4xl uppercase tracking-tighter leading-none mb-6 group-hover:text-acidLime">{{ item.title }}</h2>
-                <p class="font-sans text-base leading-relaxed opacity-80 mt-auto">{{ item.excerpt | strip_html }}</p>
-                <span class="font-mono text-[10px] uppercase tracking-widest mt-8 border-t border-current pt-4">Ler comunicado &#8594;</span>
+<body class="bg-[#F8F9FA] text-[#0A0A0A] font-sans antialiased">
+    
+    <!-- Floating Pill Navigation (Black Logo on Transparent/Light Background) -->
+    <div class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-6xl mx-auto">
+        <header class="floating-nav rounded-full px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logos/logo_black.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
             </a>
-            {% endfor %}
-        </section>
-        {% else %}
-        <section class="grid grid-cols-1 lg:grid-cols-2 border-b-editorial bg-white">
-            <div class="p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial">
-                <p class="font-mono text-[10px] uppercase tracking-widest text-concrete mb-6">Arquivo em atualização</p>
-                <h2 class="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9]">Em breve, novidades da agência.</h2>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider">
+                <a href="index.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Início</a>
+                <a href="imprensa.html" class="text-[#0A0A0A] font-bold border-b-2 border-[#D6FF00] pb-1">Sala de imprensa</a>
+                <a href="servicos.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Serviços</a>
+                <a href="clientes.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Clientes</a>
+                <a href="sobre.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Sobre nós</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="contato.html" class="btn-dark text-xs py-2.5 px-5">
+                    Fale conosco
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-toggle" aria-label="Abrir menu" class="md:hidden p-2 rounded-full text-zinc-700 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
-            <div class="p-6 md:p-12 lg:p-16 flex flex-col justify-center">
-                <p class="text-lg leading-relaxed mb-8">Este espaço reúne comunicados, pesquisas, projetos e notícias da data2comms.</p>
-                <a href="{{ site.baseurl }}/contato.html#fale-conosco" class="self-start bg-ink text-paper px-6 py-4 font-mono text-[11px] uppercase tracking-widest hover:bg-acidLime hover:text-ink transition-colors">Fale com a data2comms</a>
+        </header>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 rounded-3xl bg-white border border-zinc-200 shadow-xl space-y-4 text-sm font-semibold uppercase tracking-wider">
+            <a href="index.html" class="block py-2 text-zinc-800 hover:text-black">Início</a>
+            <a href="imprensa.html" class="block py-2 text-zinc-800 hover:text-black">Sala de imprensa</a>
+            <a href="servicos.html" class="block py-2 text-zinc-800 hover:text-black">Serviços</a>
+            <a href="clientes.html" class="block py-2 text-zinc-800 hover:text-black">Clientes</a>
+            <a href="sobre.html" class="block py-2 text-zinc-800 hover:text-black">Sobre nós</a>
+            <a href="contato.html" class="block py-2 text-black font-bold text-[#2A5BFF]">Fale conosco &rarr;</a>
+        </div>
+    </div>
+    
+
+    <main class="pt-28">
+        
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="max-w-3xl mb-14 space-y-4">
+            <span class="pill-tag">Sala de imprensa</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0A0A0A] tracking-tight">
+                Notícias, ideias e novidades da agência.
+            </h1>
+            <p class="text-lg text-zinc-600 leading-relaxed font-normal">
+                Comunicados, pesquisas, projetos e informações institucionais da data2comms para imprensa e parceiros.
+            </p>
+        </div>
+
+        <div class="space-y-8">
+            
+        <article class="bento-card p-8 md:p-10 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 pb-4">
+                <span class="text-xs font-medium text-zinc-500">30 de outubro de 2026</span>
+                <span class="pill-tag text-[11px]">Comunicado oficial à imprensa</span>
             </div>
-        </section>
-        {% endif %}
+
+            <div class="space-y-3">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-[#0A0A0A] tracking-tight">
+                    <a href="imprensa-estatuto-lgbtqia.html" class="hover:text-[#2A5BFF] transition-colors">Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+</a>
+                </h2>
+                <p class="text-base text-zinc-600 leading-relaxed font-normal">
+                    Articulação reúne juristas, especialistas em saúde e organizações da sociedade civil em um documento técnico de 70 páginas para blindar 19 milhões de brasileiros em lei federal definitiva contra retrocessos no STF, no Executivo e no Parlamento.
+                </p>
+            </div>
+
+            <div class="pt-4 flex flex-wrap items-center gap-3">
+                <a href="imprensa-estatuto-lgbtqia.html" class="btn-dark text-xs py-2.5 px-5">
+                    Ler comunicado na íntegra
+                </a>
+                <a href="assets/press/2026-10-30-release-estatuto-lgbtqia.docx" download class="btn-outline text-xs py-2.5 px-5 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                    Baixar release (.docx)
+                </a>
+                <a href="https://estatutolgbtqia.com.br/dossie/" target="_blank" rel="noopener" class="btn-outline text-xs py-2.5 px-5 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                    Acessar dossiê no leitor online
+                </a>
+            </div>
+        </article>
+        
+        <article class="bento-card p-8 md:p-10 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 pb-4">
+                <span class="text-xs font-medium text-zinc-500">16 de outubro de 2026</span>
+                <span class="pill-tag text-[11px]">Comunicado oficial à imprensa</span>
+            </div>
+
+            <div class="space-y-3">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-[#0A0A0A] tracking-tight">
+                    <a href="imprensa-meta-reel.html" class="hover:text-[#2A5BFF] transition-colors">Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais</a>
+                </h2>
+                <p class="text-base text-zinc-600 leading-relaxed font-normal">
+                    Publicação divulgava o Acervo Lula, iniciativa popular e independente de apoio à candidatura de Lula e oposição a Flávio Bolsonaro (PL), sem vínculo com a campanha oficial. Vídeo ultrapassava 400 mil visualizações quando foi removido; penalidades foram revertidas após recursos, sem esclarecimentos sobre os motivos que levaram à sua aplicação.
+                </p>
+            </div>
+
+            <div class="pt-4 flex flex-wrap items-center gap-3">
+                <a href="imprensa-meta-reel.html" class="btn-dark text-xs py-2.5 px-5">
+                    Ler comunicado na íntegra
+                </a>
+                <a href="assets/press/2026-10-16-release-meta.docx" download class="btn-outline text-xs py-2.5 px-5 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                    Baixar release (.docx)
+                </a>
+                <a href="mailto:rennanmetsi@data2comms.com.br?subject=Solicita%C3%A7%C3%A3o%20de%20dossi%C3%AA%20%E2%80%94%20Meta" target="_blank" rel="noopener" class="btn-outline text-xs py-2.5 px-5 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                    Solicitar dossiê de evidências por e-mail
+                </a>
+            </div>
+        </article>
+        
+        </div>
+
+        <!-- Press Contact Box -->
+        <div class="bento-card p-8 md:p-10 mt-16 bg-white border-zinc-200">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-8 space-y-2">
+                    <span class="pill-tag">Atendimento à imprensa</span>
+                    <h2 class="text-2xl font-bold text-[#0A0A0A]">Precisa de fontes, dados ou entrevistas?</h2>
+                    <p class="text-sm text-zinc-600 leading-relaxed">
+                        Nossa equipe atende jornalistas com dados consolidados, porta-vozes temáticos e recortes regionais de pesquisas em regime prioritário.
+                    </p>
+                </div>
+                <div class="md:col-span-4 flex flex-col gap-2">
+                    <a href="mailto:rennanmetsi@data2comms.com.br" class="btn-dark text-xs py-3.5 px-6 text-center flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                        rennanmetsi@data2comms.com.br
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     </main>
-    {% include footer.html %}
+
+    
+    <!-- Total Black Footer Block with White Transparent Wordmark -->
+    <footer class="bg-[#0A0A0A] text-white pt-20 pb-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+                <div class="md:col-span-5 space-y-6">
+                    <a href="index.html" class="inline-block">
+                        <img src="assets/logos/logo_white.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
+                    </a>
+                    <p class="text-sm text-zinc-400 leading-relaxed max-w-sm">
+                        Colocamos dados em movimento. Relações públicas, mobilização digital, malha de grupos e assessoria de imprensa com lastro analítico.
+                    </p>
+                    <div class="pt-2 text-xs text-[#D6FF00] tracking-wider uppercase font-semibold flex items-center">
+                        <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        São Paulo, SP &bull; Atuação nacional
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Navegação</p>
+                    <ul class="space-y-2.5 text-xs font-medium text-zinc-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="imprensa.html" class="hover:text-white transition-colors">Sala de imprensa</a></li>
+                        <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="clientes.html" class="hover:text-white transition-colors">Clientes</a></li>
+                        <li><a href="sobre.html" class="hover:text-white transition-colors">Sobre nós</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition-colors">Fale conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Contato direto</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Para projetos, parcerias e atendimento a pautas de imprensa:
+                    </p>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <span class="block text-[10px] uppercase tracking-widest text-zinc-400 mb-1">E-mail oficial</span>
+                        <a href="mailto:rennanmetsi@data2comms.com.br" class="text-sm font-bold text-white hover:text-[#D6FF00] transition-colors flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-[#D6FF00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            rennanmetsi@data2comms.com.br
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+                <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-3 text-[11px] text-[#D6FF00] font-medium">
+                    <span>Dados em movimento</span>
+                    <span>&bull;</span>
+                    <span>Mobilização com evidência</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
+
+    // Integração oficial com a planilha de leads via Google Apps Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
+    
+    function attachFormHandler(formId, btnId, msgId) {
+        const form = document.getElementById(formId);
+        const btn = document.getElementById(btnId);
+        const msg = document.getElementById(msgId);
+        if (form && btn && msg) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const originalText = btn.textContent;
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        btn.textContent = 'Mensagem enviada com sucesso';
+                        btn.classList.remove('btn-dark');
+                        btn.classList.add('btn-acid');
+                        msg.classList.remove('hidden');
+                        form.reset();
+
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            btn.classList.remove('btn-acid');
+                            btn.classList.add('btn-dark');
+                        }, 6000);
+                    })
+                    .catch(error => {
+                        console.error('Erro no envio:', error);
+                        btn.textContent = 'Mensagem enviada';
+                        msg.classList.remove('hidden');
+                        form.reset();
+                        btn.disabled = false;
+                    });
+            });
+        }
+    }
+
+    attachFormHandler('contactForm', 'btn-contact', 'msg-contact');
+    attachFormHandler('serviceForm', 'btn-service-contact', 'msg-service-contact');
+    </script>
 </body>
 </html>

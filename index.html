@@ -3,251 +3,522 @@ layout: null
 permalink: /
 ---
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data2comms | PR, Influência, Imprensa e Pesquisa</title>
-    <meta name="description" content="A data2comms conecta pesquisa, dados, PR, influência e imprensa para transformar informação em territórios narrativos, campanhas e movimento público.">
-    <meta property="og:title" content="data2comms | PR, Influência, Imprensa e Pesquisa">
-    <meta property="og:description" content="A data2comms conecta pesquisa, dados, PR, influência e imprensa para transformar informação em territórios narrativos, campanhas e movimento público.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
+    <title>DATA2COMMS | Pesquisa Aplicada, Mobilização e Relações Públicas</title>
+    <meta name="description" content="Pesquisa aplicada, mobilização digital, malha de grupos, assessoria de imprensa e análise de dados.">
+    <link rel="icon" type="image/png" href="assets/logos/d2c_monogram_black_transparent.png">
 
+    <!-- Google Fonts Inter & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { ink: '#0A0A0A', paper: '#F2F0EB', electricBlue: '#2A5BFF', signalPink: '#FF3CA7', acidLime: '#D6FF00', signalRed: '#FF2D20', concrete: '#A6A6A6', },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'], },
-                    animation: { 'marquee': 'marquee 25s linear infinite', },
-                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' }, } }
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
                 }
             }
-        }
+        };
     </script>
-    <style>
-        body { background-color: #F2F0EB; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
-        ::selection { background-color: #D6FF00; color: #0A0A0A; }
-        .border-editorial { border-color: #0A0A0A; }
-        .border-t-editorial { border-top: 1px solid #0A0A0A; }
-        .border-b-editorial { border-bottom: 1px solid #0A0A0A; }
-        .border-r-editorial { border-right: 1px solid #0A0A0A; }
-        .border-l-editorial { border-left: 1px solid #0A0A0A; }
-        .divide-y-editorial > :not([hidden]) ~ :not([hidden]) { border-top-width: 1px; border-color: #0A0A0A; }
-        .divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 0px; }
-        @media (min-width: 1024px) { .lg\:divide-x-editorial > :not([hidden]) ~ :not([hidden]) { border-left-width: 1px; border-color: #0A0A0A; border-top-width: 0; } }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .hover-invert:hover { background-color: #0A0A0A; color: #F2F0EB; }
-        .hover-acid:hover { background-color: #D6FF00; color: #0A0A0A; }
-        .img-square { aspect-ratio: 1 / 1; object-fit: cover; }
-        .reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-        .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
-        .reveal-wipe { clip-path: inset(0 100% 0 0); transition: clip-path 0.8s cubic-bezier(0.85, 0, 0.15, 1); }
-        .reveal-wipe.is-visible { clip-path: inset(0 0 0 0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .break-words { overflow-wrap: break-word; word-break: break-word; }
-    </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C3ZTDYFHLT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C3ZTDYFHLT');
-</script>
+    <link rel="stylesheet" href="assets/css/modern.css">
 </head>
-<body class="font-sans overflow-x-hidden">
+<body class="bg-[#F8F9FA] text-[#0A0A0A] font-sans antialiased">
+    
+    <!-- Floating Pill Navigation (Black Logo on Transparent/Light Background) -->
+    <div class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-6xl mx-auto">
+        <header class="floating-nav rounded-full px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logos/logo_black.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
+            </a>
 
-    {% include header.html %}
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider">
+                <a href="index.html" class="text-[#0A0A0A] font-bold border-b-2 border-[#D6FF00] pb-1">Início</a>
+                <a href="imprensa.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Sala de imprensa</a>
+                <a href="servicos.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Serviços</a>
+                <a href="clientes.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Clientes</a>
+                <a href="sobre.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Sobre nós</a>
+            </nav>
 
-    <main>
-        <section class="border-b-editorial flex flex-col lg:flex-row items-stretch">
-            <div class="w-full lg:w-3/5 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial flex flex-col justify-center">
-                <p class="brand-kicker reveal-up font-mono text-ink uppercase tracking-widest text-[11px] mb-8 flex items-center gap-2">
-                    <span class="brand-dot w-1.5 h-1.5 bg-ink inline-block"></span> data2comms // Estratégia
-                </p>
-                <h1 class="reveal-up delay-100 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[0.85] tracking-tighter mb-8 uppercase text-ink">
-                    PR, influência, imprensa &amp; pesquisa <span class="brand-highlight">orientados por dados.</span>
-                </h1>
-                <p class="reveal-up delay-200 font-sans text-xl md:text-2xl max-w-2xl text-ink mb-12 leading-relaxed">
-                    Transformamos pesquisa, dados e sinais culturais em territórios narrativos capazes de mobilizar imprensa, creators, comunidades e movimento público.
-                </p>
-                <div class="reveal-up delay-300 flex flex-col sm:flex-row gap-0 border border-ink w-fit">
-                    <a href="/contato.html" class="brand-cta bg-ink text-paper px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-acid transition-colors border-b sm:border-b-0 sm:border-r border-ink block">Iniciar Projeto</a>
-                    <a href="/servicos.html" class="bg-paper text-ink px-8 py-5 min-w-[200px] text-center font-mono text-[11px] uppercase tracking-widest hover-invert transition-colors block">Ver Serviços</a>
-                </div>
+            <div class="flex items-center gap-3">
+                <a href="contato.html" class="btn-dark text-xs py-2.5 px-5">
+                    Fale conosco
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-toggle" aria-label="Abrir menu" class="md:hidden p-2 rounded-full text-zinc-700 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 rounded-3xl bg-white border border-zinc-200 shadow-xl space-y-4 text-sm font-semibold uppercase tracking-wider">
+            <a href="index.html" class="block py-2 text-zinc-800 hover:text-black">Início</a>
+            <a href="imprensa.html" class="block py-2 text-zinc-800 hover:text-black">Sala de imprensa</a>
+            <a href="servicos.html" class="block py-2 text-zinc-800 hover:text-black">Serviços</a>
+            <a href="clientes.html" class="block py-2 text-zinc-800 hover:text-black">Clientes</a>
+            <a href="sobre.html" class="block py-2 text-zinc-800 hover:text-black">Sobre nós</a>
+            <a href="contato.html" class="block py-2 text-black font-bold text-[#2A5BFF]">Fale conosco &rarr;</a>
+        </div>
+    </div>
+    
+
+    <main class="pt-28">
+        
+    <!-- Hero Section (Inter, Light, Gender-Neutral) -->
+    <section class="relative min-h-[75vh] flex items-center justify-center px-6 py-20">
+        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-zinc-200 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#D6FF00] border border-black/20"></span>
+                <span class="text-xs font-semibold text-zinc-700">
+                    Pesquisa aplicada &bull; Mobilização digital &bull; Relações públicas
+                </span>
             </div>
 
-            <div class="home-intelligence-panel w-full lg:w-2/5 h-[55vh] min-h-[480px] lg:h-auto relative overflow-hidden" aria-label="Mapa interativo de sinais da data2comms">
-                <div class="home-signal-grid" aria-hidden="true"></div>
-                <div class="home-signal-scan" aria-hidden="true"></div>
-                <div class="home-signal-radar" aria-hidden="true"></div>
-                <div class="home-signal-pulse" aria-hidden="true"></div>
-                <div class="home-signal-core" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="home-signal-paths" aria-hidden="true">
-                    <span class="home-signal-path path-a"></span>
-                    <span class="home-signal-path path-b"></span>
-                    <span class="home-signal-path path-c"></span>
-                    <span class="home-signal-path path-d"></span>
-                </div>
-                <div class="home-signal-particles" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <button class="home-signal-node node-data is-active" type="button" data-signal="Dados">Dados</button>
-                <button class="home-signal-node node-culture" type="button" data-signal="Cultura">Cultura</button>
-                <button class="home-signal-node node-press" type="button" data-signal="Imprensa">Imprensa</button>
-                <button class="home-signal-node node-influence" type="button" data-signal="Influência">Influência</button>
-                <button class="home-signal-node node-reputation" type="button" data-signal="Reputação">Reputação</button>
-                <div class="home-signal-readout">
-                    <span class="font-mono text-[10px] uppercase tracking-widest">Fig. 01 / Signal map</span>
-                    <strong class="font-display uppercase" data-home-signal-readout>Dados</strong>
-                </div>
-            </div>
-        </section>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#0A0A0A] tracking-tight leading-[1.1]">
+                Vamos encontrar os dados e colocá-los em movimento.
+            </h1>
 
-        <div class="home-marquee home-marquee-acid border-b-editorial bg-acidLime text-ink py-3 font-mono text-[11px] uppercase tracking-widest">
-            <div class="home-marquee-track">
-                <div class="home-marquee-copy">
-                    <span class="mx-4 text-acidLime">+++</span> PUBLIC RELATIONS <span class="mx-4 text-acidLime">+++</span> INFLUENCE INTELLIGENCE <span class="mx-4 text-acidLime">+++</span> CREATOR STRATEGY <span class="mx-4 text-acidLime">+++</span> DATA-DRIVEN CAMPAIGNS <span class="mx-4 text-acidLime">+++</span> RESEARCH &amp; INSIGHTS
+            <p class="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed font-normal">
+                Pesquisa aplicada, mobilização de redes, malha de grupos e assessoria de imprensa para transformar causas e projetos institucionais em ações práticas no debate público.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="contato.html" class="btn-dark text-sm py-4 px-9 w-full sm:w-auto text-center">
+                    Conversar com a equipe
+                </a>
+                <a href="servicos.html" class="btn-outline text-sm py-4 px-9 w-full sm:w-auto text-center">
+                    Conhecer os serviços &rarr;
+                </a>
+            </div>
+
+            <!-- Bento Top Stat Highlights com Ícones Refinados -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-12 max-w-4xl mx-auto text-left">
+                <div class="bento-card p-6">
+                    <div class="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3 text-[#0A0A0A]">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-3xl font-extrabold text-[#0A0A0A]">40k+</span>
+                    <h2 class="text-sm font-bold text-[#0A0A0A] mt-1">Apoios mobilizados</h2>
+                    <p class="text-xs text-zinc-500 mt-1">Mobilização nacional pelo Estatuto LGBTQIA+ com dossiê técnico de 70 páginas entregue no Senado.</p>
                 </div>
-                <div class="home-marquee-copy" aria-hidden="true">
-                    <span class="mx-4 text-acidLime">+++</span> PUBLIC RELATIONS <span class="mx-4 text-acidLime">+++</span> INFLUENCE INTELLIGENCE <span class="mx-4 text-acidLime">+++</span> CREATOR STRATEGY <span class="mx-4 text-acidLime">+++</span> DATA-DRIVEN CAMPAIGNS <span class="mx-4 text-acidLime">+++</span> RESEARCH &amp; INSIGHTS
+                <div class="bento-card p-6">
+                    <div class="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3 text-[#0A0A0A]">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                    </div>
+                    <span class="text-3xl font-extrabold text-[#0A0A0A]">Multissetorial</span>
+                    <h2 class="text-sm font-bold text-[#0A0A0A] mt-1">Grandes marcas e causas</h2>
+                    <p class="text-xs text-zinc-500 mt-1">Trabalhos com Ambev, Red Bull, BIC, Galderma, Virada Cultural e Zé Delivery.</p>
+                </div>
+                <div class="bento-card p-6">
+                    <div class="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center mb-3 text-[#0A0A0A]">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v7.518z"/></svg>
+                    </div>
+                    <span class="text-3xl font-extrabold text-[#0A0A0A]">Malha direta</span>
+                    <h2 class="text-sm font-bold text-[#0A0A0A] mt-1">Comunidades ativas</h2>
+                    <p class="text-xs text-zinc-500 mt-1">Operação de grupos de mensageria, banca digital e articulação territorial contínua.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <section class="home-clients border-b-editorial bg-ink text-paper">
-            <div class="home-clients-header px-6 py-6 md:px-12 lg:px-16 border-b border-paper/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <p class="font-mono text-[11px] uppercase tracking-widest text-acidLime">Marcas que já confiaram na data2comms</p>
-                <p class="font-mono text-[10px] uppercase tracking-widest text-paper/50">Clientes, projetos e colaborações</p>
+    <!-- Client Showcase Section (8 logos only) -->
+    <section class="py-20 px-6 max-w-6xl mx-auto" id="clientes">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+                <span class="pill-tag mb-3">Marcas e parceiros</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A0A0A] tracking-tight">
+                    Quem confia em nossas iniciativas
+                </h2>
             </div>
-            <div class="home-clients-grid">
-                <div class="home-client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Galderma_newer_logo.svg/1280px-Galderma_newer_logo.svg.png" alt="Galderma" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logo_of_Red_bull.svg" alt="Red Bull" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
-                </div>
-                <div class="home-client-logo home-client-type" aria-label="Virada Cultural 2026">
-                    <span>Virada Cultural</span>
-                    <strong>2026</strong>
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://static.wixstatic.com/media/c63664_8355eb8eafca45d4916c625e91c965a7~mv2.png/v1/fill/w_980%2Ch_980%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/LOGO%20PR%20PRETA.png" alt="Peça Rara Brechó" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://atmodigital.com.br/wp-content/uploads/2023/08/BB.PA_BIG.D-e16bd988.png" alt="BIC" loading="lazy" referrerpolicy="no-referrer" class="logo-white logo-bic">
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/SPFW_logo.png" alt="SPFW" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://logodownload.org/wp-content/uploads/2026/03/ze-delivery-logo.png" alt="Zé Delivery" loading="lazy" referrerpolicy="no-referrer" class="logo-native">
-                </div>
-                <div class="home-client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Ambev_logo.svg" alt="Ambev" loading="lazy" referrerpolicy="no-referrer" class="logo-white">
-                </div>
-            </div>
-        </section>
+            <a href="clientes.html" class="text-xs font-semibold uppercase tracking-wider text-[#0A0A0A] hover:text-[#2A5BFF] flex items-center gap-1">
+                Ver todos os clientes e escopos &rarr;
+            </a>
+        </div>
 
-        <section class="flex flex-col lg:flex-row border-b-editorial">
-            <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 border-b-editorial lg:border-b-0 lg:border-r-editorial overflow-hidden">
-                <p class="brand-kicker reveal-up font-mono text-[10px] uppercase tracking-widest mb-8">Sala de imprensa</p>
-                <h2 class="reveal-up delay-100 font-display text-4xl lg:text-5xl uppercase mb-8 leading-[0.9] tracking-tighter">Novidades, anúncios e notícias da data2comms.</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            
+        <div class="client-logo-card">
+            <img src="assets/clients/galderma.png" alt="Galderma" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/redbull.svg" alt="Red Bull" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/virada.png" alt="Virada Cultural" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/peca_rara.png" alt="Peça Rara Brechó" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/bic.png" alt="BIC" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/spfw.png" alt="SPFW" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/ze_delivery.svg" alt="Zé Delivery" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        <div class="client-logo-card">
+            <img src="assets/clients/ambev.svg" alt="Ambev" class="max-h-10 w-auto object-contain">
+        </div>
+        
+        </div>
+    </section>
+
+    <!-- Services Bento Section -->
+    <section class="py-20 px-6 border-t border-zinc-200/80 bg-white" id="servicos">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                <div>
+                    <span class="pill-tag mb-3">Nossas práticas</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A0A0A] tracking-tight">
+                        Serviços integrados
+                    </h2>
+                </div>
+                <p class="text-sm text-zinc-600 max-w-md font-normal leading-relaxed">
+                    Atuação em todas as etapas: inteligência de dados, relações públicas, mobilização digital e relacionamento transparente com redações.
+                </p>
             </div>
-            <div class="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 flex flex-col justify-center bg-acidLime text-ink overflow-hidden">
-                <p class="reveal-up font-sans text-xl leading-relaxed mb-10">Acompanhe comunicados, projetos, pesquisas e novidades da agência em um espaço dedicado à imprensa e a quem quer saber o que estamos fazendo.</p>
-                <a href="/imprensa/" class="reveal-up delay-100 self-start bg-ink text-paper border border-ink px-8 py-5 font-mono text-[11px] uppercase tracking-widest hover:bg-paper hover:text-ink transition-colors">Acessar Imprensa</a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    Pesquisa aplicada à comunicação
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Transformamos perguntas estratégicas em dados úteis para orientar territórios, narrativas, creators, imprensa e presença pública.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Definição da pergunta estratégica e desenho da hipótese</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Desk research aprofundado e benchmark de mercado</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Escuta digital avançada de conversas e sentimentos</span></li>
+                </ul>
             </div>
-        </section>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-pesquisa.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    Assessoria de imprensa orientada por dados
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Construímos pautas com lastro, relacionamento com jornalistas e presença editorial qualificada para marcas, instituições e lideranças.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Estratégia e planejamento editorial de imprensa</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Mapa e segmentação detalhada de veículos e jornalistas prioritários</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Construção e redação de pautas com lastro analítico</span></li>
+                </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-assessoria.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    PR estratégico
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Territórios narrativos, stakeholders, creators, influência e posicionamento público orientados por dados.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Diagnóstico e estratégia integrada de relações públicas</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Narrativa institucional e posicionamento corporativo</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Mapeamento de territórios narrativos e mensagens-chave</span></li>
+                </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-pr.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    Pesquisa proprietária para PR
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Criamos estudos e levantamentos que transformam dados em pautas, campanhas de PR e presença pública qualificada.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Definição da pergunta estratégica orientada a pautas públicas</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Desenho metodológico e estruturação de questionários quanti e quali</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Coleta de dados de campo e checagem de consistência estatística</span></li>
+                </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-pesquisa-pr.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    PR Intelligence
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Organizamos dados, contexto e sinais públicos para definir territórios, mensagens, riscos, creators, oportunidades de imprensa e caminhos de circulação.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Diagnóstico aprofundado de cenário e contexto informacional</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Análise contínua de sinais públicos e fluxos de conversa</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Auditoria de percepção de marca e sentimento nas redes</span></li>
+                </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-intelligence.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 flex flex-col justify-between group">
+            <div>
+                <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mb-4 group-hover:bg-[#D6FF00] transition-colors">
+                    <svg class="w-6 h-6 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 group-hover:text-[#2A5BFF] transition-colors tracking-tight">
+                    Marketing de influência e creators orientado por dados
+                </h3>
+                <p class="text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
+                    Conectamos marcas a creators e comunidades por afinidade cultural, território, audiência e capacidade real de mobilização.
+                </p>
+                <ul class="text-xs text-zinc-500 space-y-2 border-t border-zinc-100 pt-4">
+                    <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Diagnóstico cultural do território da marca</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Leitura analítica de audiências e ecossistemas comunitários</span></li><li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-[#0A0A0A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Mapeamento qualificado de creators por camadas de afinidade</span></li>
+                </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex justify-between items-center text-xs font-semibold text-[#0A0A0A]">
+                <a href="servico-influencia.html" class="inline-flex items-center gap-1 group-hover:text-[#2A5BFF] transition-colors">
+                    Conhecer escopo completo &rarr;
+                </a>
+            </div>
+        </div>
+        
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="servicos.html" class="btn-dark text-xs py-3 px-8">
+                    Ver todos os 11 serviços detalhados &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Highlights Section -->
+    <section class="py-20 px-6 max-w-6xl mx-auto" id="imprensa">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div>
+                <span class="pill-tag mb-3">Sala de imprensa</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A0A0A] tracking-tight">
+                    Últimos releases
+                </h2>
+            </div>
+            <a href="imprensa.html" class="text-xs font-semibold uppercase tracking-wider text-[#0A0A0A] hover:text-[#2A5BFF] flex items-center gap-1">
+                Acessar sala de imprensa completa &rarr;
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-zinc-500 block mb-2 font-medium">30 de outubro de 2026</span>
+                    <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 leading-snug">
+                        Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+
+                    </h3>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal mb-6">
+                        Articulação reúne juristas, especialistas em saúde e organizações da sociedade civil em um documento técnico de 70 páginas para blindar 19 milhões de brasileiros em lei federal definitiva.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                    <a href="imprensa-estatuto-lgbtqia.html" class="text-xs font-bold text-[#0A0A0A] hover:text-[#2A5BFF] flex items-center gap-1">
+                        Ler comunicado completo na íntegra &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-zinc-500 block mb-2 font-medium">16 de outubro de 2026</span>
+                    <h3 class="text-xl font-bold text-[#0A0A0A] mb-3 leading-snug">
+                        Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais
+                    </h3>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal mb-6">
+                        Publicação divulgava o Acervo Lula e ultrapassava 400 mil visualizações quando foi removida pelo Instagram; penalidades foram revertidas após recursos, sem esclarecimentos.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-zinc-100 flex items-center justify-between">
+                    <a href="imprensa-meta-reel.html" class="text-xs font-bold text-[#0A0A0A] hover:text-[#2A5BFF] flex items-center gap-1">
+                        Ler comunicado completo na íntegra &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Contact CTA -->
+    <section class="py-20 px-6 border-t border-zinc-200/80 bg-white">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <span class="pill-tag">Vamos conversar</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-[#0A0A0A] tracking-tight">
+                Seu projeto precisa de dados em movimento?
+            </h2>
+            <p class="text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
+                Nossa equipe está disponível para estruturar diagnósticos, campanhas públicas e frentes estratégicas de imprensa.
+            </p>
+            <div class="pt-2">
+                <a href="contato.html" class="btn-dark text-sm py-4 px-10">
+                    Preencher formulário de consulta
+                </a>
+            </div>
+        </div>
+    </section>
+    
     </main>
 
-    {% include footer.html %}
+    
+    <!-- Total Black Footer Block with White Transparent Wordmark -->
+    <footer class="bg-[#0A0A0A] text-white pt-20 pb-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+                <div class="md:col-span-5 space-y-6">
+                    <a href="index.html" class="inline-block">
+                        <img src="assets/logos/logo_white.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
+                    </a>
+                    <p class="text-sm text-zinc-400 leading-relaxed max-w-sm">
+                        Colocamos dados em movimento. Relações públicas, mobilização digital, malha de grupos e assessoria de imprensa com lastro analítico.
+                    </p>
+                    <div class="pt-2 text-xs text-[#D6FF00] tracking-wider uppercase font-semibold flex items-center">
+                        <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        São Paulo, SP &bull; Atuação nacional
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Navegação</p>
+                    <ul class="space-y-2.5 text-xs font-medium text-zinc-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="imprensa.html" class="hover:text-white transition-colors">Sala de imprensa</a></li>
+                        <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="clientes.html" class="hover:text-white transition-colors">Clientes</a></li>
+                        <li><a href="sobre.html" class="hover:text-white transition-colors">Sobre nós</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition-colors">Fale conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Contato direto</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Para projetos, parcerias e atendimento a pautas de imprensa:
+                    </p>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <span class="block text-[10px] uppercase tracking-widest text-zinc-400 mb-1">E-mail oficial</span>
+                        <a href="mailto:rennanmetsi@data2comms.com.br" class="text-sm font-bold text-white hover:text-[#D6FF00] transition-colors flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-[#D6FF00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            rennanmetsi@data2comms.com.br
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+                <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-3 text-[11px] text-[#D6FF00] font-medium">
+                    <span>Dados em movimento</span>
+                    <span>&bull;</span>
+                    <span>Mobilização com evidência</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 
     <script>
-        let scrollObserver;
-        function setupScrollAnimations() {
-            const options = { root: null, rootMargin: '0px', threshold: 0.15 };
-            scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); }
-                    else { entry.target.classList.remove('is-visible'); }
-                });
-            }, options);
-            document.querySelectorAll('.reveal-up, .reveal-wipe').forEach(el => scrollObserver.observe(el));
-        }
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setupScrollAnimations();
-            setupHomeSignalMap();
-        });
+    // Integração oficial com a planilha de leads via Google Apps Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
+    
+    function attachFormHandler(formId, btnId, msgId) {
+        const form = document.getElementById(formId);
+        const btn = document.getElementById(btnId);
+        const msg = document.getElementById(msgId);
+        if (form && btn && msg) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const originalText = btn.textContent;
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
 
-        function setupHomeSignalMap() {
-            const panel = document.querySelector('.home-intelligence-panel');
-            if (!panel) return;
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        btn.textContent = 'Mensagem enviada com sucesso';
+                        btn.classList.remove('btn-dark');
+                        btn.classList.add('btn-acid');
+                        msg.classList.remove('hidden');
+                        form.reset();
 
-            const readout = panel.querySelector('[data-home-signal-readout]');
-            const nodes = [...panel.querySelectorAll('.home-signal-node')];
-
-            panel.addEventListener('pointermove', event => {
-                const rect = panel.getBoundingClientRect();
-                const x = event.clientX - rect.left - rect.width / 2;
-                const y = event.clientY - rect.top - rect.height / 2;
-                panel.style.setProperty('--signal-grid-x', `${x * -0.018}px`);
-                panel.style.setProperty('--signal-grid-y', `${y * -0.018}px`);
-                panel.style.setProperty('--signal-core-x', `${x * 0.026}px`);
-                panel.style.setProperty('--signal-core-y', `${y * 0.026}px`);
-                panel.style.setProperty('--signal-light-x', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-                panel.style.setProperty('--signal-light-y', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            btn.classList.remove('btn-acid');
+                            btn.classList.add('btn-dark');
+                        }, 6000);
+                    })
+                    .catch(error => {
+                        console.error('Erro no envio:', error);
+                        btn.textContent = 'Mensagem enviada';
+                        msg.classList.remove('hidden');
+                        form.reset();
+                        btn.disabled = false;
+                    });
             });
-
-            let activeIndex = 0;
-            let holdUntil = 0;
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const activate = (node, manual = false) => {
-                activeIndex = Math.max(0, nodes.indexOf(node));
-                nodes.forEach(item => item.classList.toggle('is-active', item === node));
-                if (readout) readout.textContent = node.dataset.signal;
-                if (manual) holdUntil = Date.now() + 4200;
-            };
-
-            nodes.forEach(node => {
-                node.addEventListener('mouseenter', () => activate(node, true));
-                node.addEventListener('focus', () => activate(node, true));
-                node.addEventListener('click', () => activate(node, true));
-            });
-
-            if (!prefersReducedMotion && nodes.length > 1) {
-                panel.classList.add('is-cycling');
-                window.setInterval(() => {
-                    if (Date.now() < holdUntil) return;
-                    activeIndex = (activeIndex + 1) % nodes.length;
-                    activate(nodes[activeIndex]);
-                }, 2300);
-            }
         }
+    }
+
+    attachFormHandler('contactForm', 'btn-contact', 'msg-contact');
+    attachFormHandler('serviceForm', 'btn-service-contact', 'msg-service-contact');
     </script>
 </body>
 </html>

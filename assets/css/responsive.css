@@ -929,3 +929,14 @@ textarea:focus-visible {
  .site-menu-cta{grid-column:1/-1}
  .site-brandbar-tagline{white-space:normal}
 }
+
+/* Utilitários Globais de Logos de Clientes */
+.logo-white {
+    filter: grayscale(1) brightness(0) invert(1) !important;
+}
+.logo-native {
+    filter: grayscale(1) contrast(1.08) !important;
+}
+.logo-bic {
+    max-height: 2.8rem !important;
+}

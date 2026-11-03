@@ -1,0 +1,392 @@
+---
+layout: null
+permalink: /clientes.html
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcas e Clientes | DATA2COMMS</title>
+    <meta name="description" content="Conheça as marcas, corporações e projetos institucionais que atuam com a data2comms.">
+    <link rel="icon" type="image/png" href="assets/logos/d2c_monogram_black_transparent.png">
+
+    <!-- Google Fonts Inter & Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/modern.css">
+</head>
+<body class="bg-[#F8F9FA] text-[#0A0A0A] font-sans antialiased">
+    
+    <!-- Floating Pill Navigation (Black Logo on Transparent/Light Background) -->
+    <div class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-6xl mx-auto">
+        <header class="floating-nav rounded-full px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logos/logo_black.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider">
+                <a href="index.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Início</a>
+                <a href="imprensa.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Sala de imprensa</a>
+                <a href="servicos.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Serviços</a>
+                <a href="clientes.html" class="text-[#0A0A0A] font-bold border-b-2 border-[#D6FF00] pb-1">Clientes</a>
+                <a href="sobre.html" class="text-zinc-600 hover:text-[#0A0A0A] transition-colors pb-1">Sobre nós</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="contato.html" class="btn-dark text-xs py-2.5 px-5">
+                    Fale conosco
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-toggle" aria-label="Abrir menu" class="md:hidden p-2 rounded-full text-zinc-700 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 p-6 rounded-3xl bg-white border border-zinc-200 shadow-xl space-y-4 text-sm font-semibold uppercase tracking-wider">
+            <a href="index.html" class="block py-2 text-zinc-800 hover:text-black">Início</a>
+            <a href="imprensa.html" class="block py-2 text-zinc-800 hover:text-black">Sala de imprensa</a>
+            <a href="servicos.html" class="block py-2 text-zinc-800 hover:text-black">Serviços</a>
+            <a href="clientes.html" class="block py-2 text-zinc-800 hover:text-black">Clientes</a>
+            <a href="sobre.html" class="block py-2 text-zinc-800 hover:text-black">Sobre nós</a>
+            <a href="contato.html" class="block py-2 text-black font-bold text-[#2A5BFF]">Fale conosco &rarr;</a>
+        </div>
+    </div>
+    
+
+    <main class="pt-28">
+        
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="max-w-3xl mb-14 space-y-4">
+            <span class="pill-tag">Marcas e parceiros</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0A0A0A] tracking-tight">
+                Quem confia em nossas iniciativas
+            </h1>
+            <p class="text-lg text-zinc-600 leading-relaxed font-normal">
+                Atuamos ao lado de grandes marcas, iniciativas públicas e organizações da sociedade civil unindo dados, relações públicas e mobilização coletiva.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/galderma.png" alt="Galderma" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Saúde e dermatologia global</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Galderma</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Inteligência de dados, relações públicas e mapeamento de percepção setorial.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/redbull.svg" alt="Red Bull" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Cultura, esportes e projetos especiais</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Red Bull</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Articulação de imprensa, creators e amplificação de iniciativas proprietárias.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/virada.png" alt="Virada Cultural" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Mobilização pública e grandes eventos urbanos</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Virada Cultural</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Estratégia de movimento público, relações com a mídia e ocupação de territórios da cidade.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/peca_rara.png" alt="Peça Rara Brechó" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Moda circular e varejo nacional</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Peça Rara Brechó</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Campanhas de reposicionamento com dados, PR e articulação de pautas econômicas e sustentabilidade.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/bic.png" alt="BIC" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Bens de consumo e educação</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">BIC</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Pesquisa aplicada, inteligência de conversas e relacionamento com formadores de opinião.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/spfw.png" alt="SPFW" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Moda, criatividade e cultura contemporânea</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">SPFW</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Comunicação estratégica de dados, sustentabilidade e reverberação na imprensa especializada.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/ze_delivery.svg" alt="Zé Delivery" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Tecnologia, logística e conveniência</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Zé Delivery</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Estratégias de PR, dados sobre ocasiões de consumo e presença espontânea em conversas do cotidiano.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        <div class="bento-card p-8 md:p-10 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-6 pb-6 border-b border-zinc-100">
+                    <div class="h-12 flex items-center">
+                        <img src="assets/clients/ambev.svg" alt="Ambev" class="max-h-10 w-auto object-contain">
+                    </div>
+                    <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Bebidas e iniciativas corporativas</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#0A0A0A] mb-3">Ambev</h2>
+                <p class="text-sm text-zinc-600 leading-relaxed font-normal">
+                    Projetos integrados de dados, monitoramento analítico e conexões culturais de alto impacto.
+                </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs font-medium text-zinc-500">
+                <svg class="w-4 h-4 text-[#0A0A0A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Parceria institucional contínua</span>
+            </div>
+        </div>
+        
+        </div>
+
+        <!-- Casos Práticos de Impacto -->
+        <div class="mt-20 space-y-8">
+            <h2 class="text-3xl font-extrabold text-[#0A0A0A] tracking-tight">Casos práticos de impacto</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bento-card p-8">
+                    <span class="pill-tag mb-4">Sociedade civil</span>
+                    <h3 class="text-xl font-bold text-[#0A0A0A] mb-2">Estatuto LGBTQIA+</h3>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal mb-4">
+                        Mais de 40 mil adesões no Senado Federal através de mobilização nacional, elaboração de dossiê técnico de 70 páginas e reverberação na grande imprensa.
+                    </p>
+                    <a href="imprensa-estatuto-lgbtqia.html" class="text-xs font-semibold text-[#0A0A0A] hover:text-[#2A5BFF] flex items-center gap-1">
+                        Ler release e dossiê &rarr;
+                    </a>
+                </div>
+
+                <div class="bento-card p-8">
+                    <span class="pill-tag mb-4">Cidade &amp; cultura</span>
+                    <h3 class="text-xl font-bold text-[#0A0A0A] mb-2">Virada Cultural</h3>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal mb-4">
+                        Comunicação de movimento público para grandes multidões nas ruas de São Paulo, integrando difusão na imprensa, redes e serviços municipais.
+                    </p>
+                    <span class="text-xs font-medium text-zinc-400">Mobilização territorial</span>
+                </div>
+
+                <div class="bento-card p-8">
+                    <span class="pill-tag mb-4">Grandes corporações</span>
+                    <h3 class="text-xl font-bold text-[#0A0A0A] mb-2">Ambev &amp; Red Bull</h3>
+                    <p class="text-sm text-zinc-600 leading-relaxed font-normal mb-4">
+                        Mapeamento analítico de conversas, inteligência reputacional e projetos de alto engajamento cultural e presença em grandes veículos.
+                    </p>
+                    <span class="text-xs font-medium text-zinc-400">Inteligência de mercado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    </main>
+
+    
+    <!-- Total Black Footer Block with White Transparent Wordmark -->
+    <footer class="bg-[#0A0A0A] text-white pt-20 pb-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+                <div class="md:col-span-5 space-y-6">
+                    <a href="index.html" class="inline-block">
+                        <img src="assets/logos/logo_white.png" alt="data2comms" class="h-6 sm:h-7 w-auto object-contain">
+                    </a>
+                    <p class="text-sm text-zinc-400 leading-relaxed max-w-sm">
+                        Colocamos dados em movimento. Relações públicas, mobilização digital, malha de grupos e assessoria de imprensa com lastro analítico.
+                    </p>
+                    <div class="pt-2 text-xs text-[#D6FF00] tracking-wider uppercase font-semibold flex items-center">
+                        <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        São Paulo, SP &bull; Atuação nacional
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Navegação</p>
+                    <ul class="space-y-2.5 text-xs font-medium text-zinc-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="imprensa.html" class="hover:text-white transition-colors">Sala de imprensa</a></li>
+                        <li><a href="servicos.html" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="clientes.html" class="hover:text-white transition-colors">Clientes</a></li>
+                        <li><a href="sobre.html" class="hover:text-white transition-colors">Sobre nós</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition-colors">Fale conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <p class="text-xs uppercase tracking-widest text-[#D6FF00] font-bold">Contato direto</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Para projetos, parcerias e atendimento a pautas de imprensa:
+                    </p>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <span class="block text-[10px] uppercase tracking-widest text-zinc-400 mb-1">E-mail oficial</span>
+                        <a href="mailto:rennanmetsi@data2comms.com.br" class="text-sm font-bold text-white hover:text-[#D6FF00] transition-colors flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-[#D6FF00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            rennanmetsi@data2comms.com.br
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500 gap-4">
+                <p>&copy; 2026 data2comms. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-3 text-[11px] text-[#D6FF00] font-medium">
+                    <span>Dados em movimento</span>
+                    <span>&bull;</span>
+                    <span>Mobilização com evidência</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
+
+    // Integração oficial com a planilha de leads via Google Apps Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
+    
+    function attachFormHandler(formId, btnId, msgId) {
+        const form = document.getElementById(formId);
+        const btn = document.getElementById(btnId);
+        const msg = document.getElementById(msgId);
+        if (form && btn && msg) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const originalText = btn.textContent;
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        btn.textContent = 'Mensagem enviada com sucesso';
+                        btn.classList.remove('btn-dark');
+                        btn.classList.add('btn-acid');
+                        msg.classList.remove('hidden');
+                        form.reset();
+
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            btn.classList.remove('btn-acid');
+                            btn.classList.add('btn-dark');
+                        }, 6000);
+                    })
+                    .catch(error => {
+                        console.error('Erro no envio:', error);
+                        btn.textContent = 'Mensagem enviada';
+                        msg.classList.remove('hidden');
+                        form.reset();
+                        btn.disabled = false;
+                    });
+            });
+        }
+    }
+
+    attachFormHandler('contactForm', 'btn-contact', 'msg-contact');
+    attachFormHandler('serviceForm', 'btn-service-contact', 'msg-service-contact');
+    </script>
+</body>
+</html>

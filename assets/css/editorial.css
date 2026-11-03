@@ -1,0 +1,234 @@
+/* Data2Comms — Design System Institucional & Editorial */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --canvas: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-raised: #F4F3EF;
+  --ink: #11161F;
+  --ink-secondary: #4A5568;
+  --ink-tertiary: #718096;
+  --border-subtle: #E8E6E1;
+  --border-medium: #D1CEC7;
+  --accent-navy: #1E3A8A;
+  --accent-cobalt: #2563EB;
+  --accent-warm: #B45309;
+  --accent-stone: #EFECE6;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-editorial {
+  font-family: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Subtle elevation and cards */
+.card-editorial {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-editorial:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-medium);
+  box-shadow: 0 12px 30px -10px rgba(17, 22, 31, 0.07);
+}
+
+/* Navigation glass effect */
+.nav-backdrop {
+  background-color: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Typography treatments */
+.lead-quote {
+  border-left: 2px solid var(--accent-navy);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: var(--ink-secondary);
+}
+
+/* Article reader styling */
+.article-body {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: #1F2937;
+}
+
+.article-body p {
+  margin-bottom: 1.75rem;
+}
+
+.article-body h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.article-body h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--accent-navy);
+  padding: 1.25rem 0 1.25rem 2rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+  font-size: 1.45rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--surface-raised);
+  border-radius: 0 8px 8px 0;
+}
+
+.article-body ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+}
+
+.article-body a {
+  color: var(--accent-cobalt);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.article-body a:hover {
+  color: var(--accent-navy);
+}
+
+/* Reading Progress Bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent-cobalt);
+  z-index: 100;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Category Pill */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background-color: var(--accent-stone);
+  color: var(--ink-secondary);
+  transition: all 0.2s ease;
+}
+
+.category-pill:hover, .category-pill.active {
+  background-color: var(--ink);
+  color: var(--canvas);
+}
+
+/* Form inputs */
+.editorial-input {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.editorial-input:focus {
+  outline: none;
+  border-color: var(--accent-cobalt);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background-color: #FFFFFF;
+}
+
+/* Custom button styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ink);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1F2937;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-medium);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--surface-raised);
+  border-color: var(--ink);
+}

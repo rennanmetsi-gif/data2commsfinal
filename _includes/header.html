@@ -17,7 +17,7 @@
     <div class="site-brandbar">
         <div class="site-brandbar-inner">
             <a href="{{ site.baseurl }}/" class="site-logo-link" aria-label="Voltar para a página inicial da data2comms">
-                <img src="https://static.wixstatic.com/media/f6a031_2ad983ecbe5d41b693f68eaa53be598e~mv2.png/v1/fill/w_580,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/khbjb.png" alt="data2comms Logo">
+                <img src="/assets/logos/logo_white.png" alt="data2comms Logo">
             </a>
             <span class="site-brandbar-tagline">
                 Estratégia de PR, influência, imprensa e dados.
@@ -30,7 +30,8 @@
         <div class="site-navigation-inner">
             <nav class="site-menu-rail" aria-label="Navegação do site">
                 <a href="{{ site.baseurl }}/" class="site-menu-item site-menu-main {% if current_url == '/' or current_url == '/index.html' %}is-active{% endif %}">Início</a>
-                <a href="{{ site.baseurl }}/imprensa/" class="site-menu-item site-menu-main {% if current_url == '/imprensa/' %}is-active{% endif %}">Imprensa</a>
+                <a href="{{ site.baseurl }}/imprensa.html" class="site-menu-item site-menu-main">Imprensa</a>
+                <a href="{{ site.baseurl }}/clientes.html" class="site-menu-item site-menu-main">Clientes</a>
                 <a href="{{ site.baseurl }}/servicos.html" class="site-menu-item site-menu-main {% if services_active %}is-active{% endif %}">Serviços</a>
                 <a href="{{ site.baseurl }}/sobre.html" class="site-menu-item site-menu-main {% if current_url == '/sobre.html' %}is-active{% endif %}">Sobre</a>
                 <a href="{{ site.baseurl }}/contato.html" class="site-menu-item site-menu-cta {% if current_url == '/contato.html' %}is-active{% endif %}">Fale com a data2comms</a>

@@ -1,0 +1,43 @@
+<a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+<div class="header-wrap">
+  <header class="site-header" role="banner">
+    <a href="/" class="brand-link" aria-label="data2comms — Página inicial">
+      <picture>
+        <source srcset="/assets/opt/logo-black.webp" type="image/webp">
+        <img src="/assets/opt/logo-black.png" alt="data2comms" width="178" height="25" class="brand-logo" decoding="async">
+      </picture>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="/" class="nav-link{% if page.nav_active == 'home' %} is-active{% endif %}">Início</a>
+      <a href="/servicos.html" class="nav-link{% if page.nav_active == 'servicos' %} is-active{% endif %}">Serviços</a>
+      <a href="/clientes.html" class="nav-link{% if page.nav_active == 'clientes' %} is-active{% endif %}">Clientes</a>
+      <a href="/observatorio.html" class="nav-link{% if page.nav_active == 'observatorio' %} is-active{% endif %}">Observatório</a>
+      <a href="/imprensa.html" class="nav-link{% if page.nav_active == 'imprensa' %} is-active{% endif %}">Imprensa</a>
+      <a href="/sobre.html" class="nav-link{% if page.nav_active == 'sobre' %} is-active{% endif %}">Sobre</a>
+    </nav>
+
+    <a href="/contato.html" class="btn btn-dark btn-sm header-cta">Fale conosco</a>
+
+    <button id="mobile-menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir menu de navegação">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h10"/>
+      </svg>
+    </button>
+  </header>
+
+  <nav id="mobile-drawer" class="mobile-drawer" aria-label="Navegação móvel">
+    <div class="mobile-nav-list">
+      <a href="/" class="mobile-nav-link{% if page.nav_active == 'home' %} is-active{% endif %}">Início</a>
+      <a href="/servicos.html" class="mobile-nav-link{% if page.nav_active == 'servicos' %} is-active{% endif %}">Serviços</a>
+      <a href="/clientes.html" class="mobile-nav-link{% if page.nav_active == 'clientes' %} is-active{% endif %}">Clientes</a>
+      <a href="/observatorio.html" class="mobile-nav-link{% if page.nav_active == 'observatorio' %} is-active{% endif %}">Observatório</a>
+      <a href="/imprensa.html" class="mobile-nav-link{% if page.nav_active == 'imprensa' %} is-active{% endif %}">Sala de imprensa</a>
+      <a href="/sobre.html" class="mobile-nav-link{% if page.nav_active == 'sobre' %} is-active{% endif %}">Sobre</a>
+    </div>
+    <div class="mobile-drawer-cta">
+      <a href="/contato.html" class="btn btn-dark btn-full">Fale conosco</a>
+    </div>
+  </nav>
+</div>

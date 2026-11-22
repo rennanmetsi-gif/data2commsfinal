@@ -1,0 +1,49 @@
+<div class="card sticky-desktop">
+  <span class="kicker-neutral mb-2">Solicitar diagnóstico</span>
+  <h2 class="h3-card mb-1">Conte seu desafio</h2>
+  <p class="body-sm mb-3">
+    Retornamos com uma primeira leitura estratégica sobre o melhor caminho para sua marca, instituição ou causa.
+  </p>
+
+  <form data-lead-form class="form-stack" novalidate>
+    <input type="hidden" name="servico" value="{{ include.service_slug }}">
+
+    <div>
+      <label for="svc-nome" class="field-label">Nome completo *</label>
+      <input id="svc-nome" type="text" name="nome" required autocomplete="name" class="field-input" placeholder="Seu nome">
+    </div>
+
+    <div>
+      <label for="svc-empresa" class="field-label">Empresa ou organização *</label>
+      <input id="svc-empresa" type="text" name="empresa" required autocomplete="organization" class="field-input" placeholder="Nome da marca ou instituição">
+    </div>
+
+    <div>
+      <label for="svc-email" class="field-label">E-mail corporativo *</label>
+      <input id="svc-email" type="email" name="email" required autocomplete="email" class="field-input" placeholder="nome@organizacao.com.br">
+    </div>
+
+    <div>
+      <label for="svc-telefone" class="field-label">Telefone ou WhatsApp</label>
+      <input id="svc-telefone" type="tel" name="telefone" autocomplete="tel" class="field-input" placeholder="(11) 99999-9999">
+    </div>
+
+    <div>
+      <label for="svc-desafio" class="field-label">Qual é a pauta ou desafio hoje? *</label>
+      <textarea id="svc-desafio" name="desafio" rows="4" required class="field-input" placeholder="Conte brevemente o contexto, os objetivos e os públicos prioritários."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-dark btn-full">Solicitar conversa inicial</button>
+
+    <p class="lgpd-note">
+      Seus dados são usados exclusivamente para responder à sua solicitação, conforme nossa <a href="/privacidade.html">Política de Privacidade</a>.
+    </p>
+
+    <div data-form-success class="form-feedback form-feedback-success" role="status" aria-live="polite">
+      <strong>Solicitação enviada com sucesso.</strong> Analisaremos o contexto enviado e retornaremos o contato em breve.
+    </div>
+    <div data-form-error class="form-feedback form-feedback-error" role="alert">
+      Não foi possível enviar pelo formulário agora. Escreva diretamente para <a href="mailto:rennanmetsi@data2comms.com.br" style="text-decoration: underline;">rennanmetsi@data2comms.com.br</a>.
+    </div>
+  </form>
+</div>

@@ -15,4 +15,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://www.data2comms.com.br/sitemap.xml
+Sitemap: https://data2comms.com.br/sitemap.xml

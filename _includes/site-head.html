@@ -1,0 +1,43 @@
+{%- assign canonical_path = page.url | replace: 'index.html', '' -%}
+{%- assign canonical_url = site.url | append: canonical_path -%}
+{%- assign page_title = page.seo_title | default: page.title -%}
+{%- assign page_desc = page.description | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+{%- assign raw_img = page.og_image | default: page.image | default: '/assets/images/og-data2comms.png' -%}
+{%- if raw_img contains 'http://' or raw_img contains 'https://' -%}
+  {%- assign og_img_url = raw_img -%}
+{%- else -%}
+  {%- assign og_img_url = site.url | append: raw_img -%}
+{%- endif -%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc | escape }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/logos/d2c_monogram_black_transparent.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="data2comms">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ page.social_title | default: page_title | escape }}">
+<meta property="og:description" content="{{ page.social_description | default: page_desc | escape }}">
+<meta property="og:image" content="{{ og_img_url }}">
+<meta property="og:image:alt" content="{{ page.image_alt | default: 'data2comms — PR, comunicação, advocacy e causas orientados por dados' | escape }}">
+{% if page.og_type == 'article' and page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.social_title | default: page_title | escape }}">
+<meta name="twitter:description" content="{{ page.social_description | default: page_desc | escape }}">
+<meta name="twitter:image" content="{{ og_img_url }}">
+
+<!-- Fonts & Styles (Zero Runtime CDN Compiler) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261122">

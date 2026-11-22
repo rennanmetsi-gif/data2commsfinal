@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  {% include site-head.html %}
+  {% if page.extra_head %}{{ page.extra_head }}{% endif %}
+</head>
+<body>
+  {% if page.reading_progress %}<div id="reading-progress" class="reading-progress" aria-hidden="true"></div>{% endif %}
+  {% include site-header.html %}
+  <main id="conteudo-principal">
+    {{ content }}
+  </main>
+  {% include site-footer.html %}
+</body>
+</html>

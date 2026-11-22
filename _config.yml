@@ -1,9 +1,13 @@
 title: data2comms
-description: Agência de PR, influência, imprensa, pesquisa e inteligência cultural.
-url: https://www.data2comms.com.br
+description: "PR, comunicação, advocacy e causas orientados por dados. Pesquisa aplicada, imprensa, leitura cultural e mobilização."
+url: https://data2comms.com.br
 baseurl: ""
-permalink: /post/:title/
+lang: pt-BR
+permalink: /observatorio/:slug/
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 future: true
 timezone: America/Sao_Paulo
 
@@ -21,26 +25,33 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-      type: "blog"
-    values:
-      layout: "blog"
+      nav_active: "observatorio"
   - scope:
       path: ""
       type: "imprensa"
     values:
       layout: "press"
+      nav_active: "imprensa"
+  - scope:
+      path: "estatutolgbtiqia"
+    values:
+      sitemap: false
+  - scope:
+      path: "estatutolgbtqia"
+    values:
+      sitemap: false
+  - scope:
+      path: "admin"
+    values:
+      sitemap: false
 
 exclude:
-  - _posts
+  - _backups
   - _blog
-  - editorial.html
-  - blog.html
+  - assets/posts
   - blog-legado.html
   - publicacoes.html
   - artigo-achismo-corporativo.html
-  - metodo.html
   - legado-metodo-data-search.html
   - legado-metodo-analise-massa.html
   - legado-metodo-earned-media.html
@@ -54,6 +65,3 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-
-plugins:
-  - jekyll-sitemap

@@ -6,63 +6,55 @@ seo_title: "Sala de Imprensa | data2comms — Dossiês, releases e apurações"
 description: "Comunicados oficiais, dossiês técnicos, apurações jornalísticas e atendimento direto a redações pela equipe da data2comms."
 ---
 
-<section class="hero-section" style="padding-bottom: 2.5rem;">
-  <div class="container">
-    <div class="max-w-3xl">
-      <span class="kicker mb-3">
-        <span class="kicker-dot" aria-hidden="true"></span>
-        Sala de imprensa
-      </span>
-      <h1 class="h1-page">Dossiês, apurações e comunicados oficiais.</h1>
-      <p class="lead mt-3">
-        Materiais com lastro documental, fontes verificáveis e arquivos em Word prontos para redações, colunistas e produtores.
-      </p>
-    </div>
+<section class="hero" style="padding-bottom: 2.5rem;">
+  <div class="wrap">
+    <h1 class="t-h1 max-860">Sala de imprensa</h1>
+    <p class="t-lead mt-2 max-700">
+      Dossiês técnicos, apurações documentais e comunicados oficiais com fontes verificáveis e arquivos em Word para redações.
+    </p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 0.5rem;">
-  <div class="container">
-    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="sec-tight bg-white rule-top">
+  <div class="wrap">
+    <div class="press-wire" style="border-top: 0;">
       {% assign releases = site.imprensa | sort: 'date' | reverse %}
       {% for item in releases %}
-      <article class="card card-hover" style="padding: clamp(1.5rem, 3.5vw, 2.5rem);">
-        <div class="editorial-meta">
-          <span class="editorial-cat">{% if item.category and item.category != "" %}{{ item.category }}{% else %}Apuração &amp; Dossiê{% endif %}</span>
-          <span aria-hidden="true">•</span>
-          <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
-        </div>
-
-        <h2 class="h2-section" style="font-size: clamp(1.45rem, 2.5vw, 2rem); margin-bottom: 0.85rem;">
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        </h2>
-
-        <p class="body-sm max-w-3xl" style="margin: 0 0 1.5rem; font-size: 1rem;">
-          {{ item.description }}
-        </p>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-          <a href="{{ item.url }}" class="btn btn-dark">Ler na íntegra</a>
-          {% if item.download_docx %}
-          <a href="{{ item.download_docx }}" download class="btn btn-outline">Baixar em Word (.docx)</a>
-          {% endif %}
-          {% if item.secondary_cta_url %}
-          <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
-          {% endif %}
+      <article class="press-row" style="grid-template-columns: 1fr;">
+        <div class="grid-2" style="grid-template-columns: 1fr; gap: 0.75rem;">
+          <time class="press-date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
+          <h2 class="t-h2" style="font-size: clamp(1.5rem, 2.6vw, 2.15rem);">
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          </h2>
+          <p class="t-body max-860">{{ item.description }}</p>
+          <div class="press-actions">
+            <a href="{{ item.url }}" class="btn btn-primary">Ler na íntegra</a>
+            {% if item.download_docx %}
+            <a href="{{ item.download_docx }}" download class="btn btn-ghost">Baixar em Word (.docx)</a>
+            {% endif %}
+            {% if item.secondary_cta_url %}
+            <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-ghost">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
+            {% endif %}
+          </div>
         </div>
       </article>
       {% endfor %}
     </div>
+  </div>
+</section>
 
-    <aside class="dark-band dark-band-grid-bg mt-6" style="border-radius: var(--radius-lg); padding: clamp(2rem, 4vw, 3rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
-      <div class="max-w-2xl">
-        <span class="kicker-acid mb-2">Atendimento à imprensa</span>
-        <h2 class="h3-card" style="color: #FFFFFF; font-size: 1.65rem; margin-bottom: 0.5rem;">Precisa de fontes, dados ou entrevistas?</h2>
-        <p style="color: var(--ink-muted-on-dark); margin: 0;">
+<section class="sec rule-top">
+  <div class="wrap">
+    <div class="manifesto-grid" style="align-items: center;">
+      <div>
+        <h2 class="t-h2">Precisa de fontes, dados ou entrevistas?</h2>
+        <p class="t-lead mt-2 max-700">
           Atendemos jornalistas com dados consolidados, porta-vozes temáticos e recortes de pesquisas em regime prioritário.
         </p>
       </div>
-      <a href="mailto:rennanmetsi@data2comms.com.br" class="btn btn-acid">rennanmetsi@data2comms.com.br</a>
-    </aside>
+      <div class="hero-cta-row">
+        <a href="mailto:rennanmetsi@data2comms.com.br" class="btn btn-primary">rennanmetsi@data2comms.com.br</a>
+      </div>
+    </div>
   </div>
 </section>

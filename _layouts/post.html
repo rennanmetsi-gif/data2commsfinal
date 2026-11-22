@@ -34,8 +34,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20261122">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261122b">
 
   <script type="application/ld+json">
   {
@@ -85,22 +85,21 @@
 
   <main id="conteudo-principal">
     <article>
-      <header class="article-header">
-        <div class="container-narrow">
-          <a href="/observatorio.html" class="text-link mb-2" style="color: var(--ink-muted);">← Voltar ao Observatório</a>
+      <header class="article-top">
+        <div class="wrap-reading">
+          <a href="/observatorio.html" class="back-link">← Voltar ao Observatório</a>
 
-          <div class="editorial-meta mt-1">
-            <span class="editorial-cat">{{ page.category | default: 'Observatório' }}</span>
-            <span aria-hidden="true">•</span>
-            {% if page.read_time %}<span>{{ page.read_time }}</span><span aria-hidden="true">•</span>{% endif %}
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
-          </div>
-
-          <h1 class="h1-page">{{ page.title }}</h1>
+          <h1 class="t-h1">{{ page.title }}</h1>
 
           {% if page.summary %}
-          <p class="lead mt-3">{{ page.summary }}</p>
+          <p class="t-lead mt-3">{{ page.summary }}</p>
           {% endif %}
+
+          <div class="story-meta mt-3" style="padding-top: 1rem; border-top: 1px solid var(--rule);">
+            <span class="story-cat">{{ page.category | default: 'Observatório' }}</span>
+            <span aria-hidden="true">·</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+          </div>
 
           {% if page.image %}
           <figure class="article-cover">
@@ -110,66 +109,48 @@
         </div>
       </header>
 
-      <div class="container-narrow" style="padding-bottom: 4.5rem;">
+      <div class="wrap-reading" style="padding-bottom: 5rem;">
         <div class="prose">
           {{ content }}
         </div>
 
-        <!-- Contextual Agency CTA -->
-        <aside class="dark-band dark-band-grid-bg" style="border-radius: var(--radius-lg); padding: 2.25rem; margin-top: 3.5rem;">
-          <span class="kicker-acid mb-2">Pesquisa, PR &amp; Advocacy</span>
-          <h2 class="h3-card" style="color: #FFFFFF; font-size: clamp(1.35rem, 2.4vw, 1.75rem); margin-bottom: 0.75rem;">
-            Quer transformar leitura cultural e dados em pauta real para sua marca ou causa?
-          </h2>
-          <p style="color: var(--ink-muted-on-dark); font-size: 0.95rem; margin: 0 0 1.5rem; max-width: 580px;">
-            A data2comms combina pesquisa aplicada, relações públicas, imprensa e mobilização para tirar temas relevantes do discurso e colocá-los no debate público.
+        <aside style="margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--ink);">
+          <h2 class="t-h3 mb-1">Quer levar esse nível de leitura para a sua pauta?</h2>
+          <p class="t-body mb-3">
+            A data2comms combina pesquisa aplicada, relações públicas, advocacy e mobilização para marcas, instituições e causas.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-            <a href="/contato.html" class="btn btn-acid">Conversar sobre um projeto</a>
-            <a href="/servicos.html" class="btn btn-outline-dark">Conhecer os serviços →</a>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;">
+            <a href="/contato.html" class="btn btn-primary">Conversar com a equipe</a>
+            <a href="/servicos.html" class="u-link">Ver serviços →</a>
           </div>
         </aside>
       </div>
     </article>
 
-    <!-- Related Essays -->
-    <section class="section" style="border-top: 1px solid var(--border); background: var(--bg-surface);">
-      <div class="container">
-        <div class="section-header section-header-row">
-          <div>
-            <span class="kicker-neutral mb-2">Continue lendo</span>
-            <h2 class="h2-section">Outros estudos do Observatório</h2>
-          </div>
-          <a href="/observatorio.html" class="text-link">Ver todos os estudos →</a>
+    <section class="sec bg-white rule-top">
+      <div class="wrap">
+        <div class="sec-head sec-head-row">
+          <h2 class="t-h2">Outros estudos</h2>
+          <a href="/observatorio.html" class="u-link">Ver todos →</a>
         </div>
 
-        <div class="grid-3">
+        <div class="story-grid">
           {% assign shown = 0 %}
           {% for post in site.posts %}
             {% if post.url != page.url and shown < 3 %}
               {% assign shown = shown | plus: 1 %}
-              <article class="editorial-card">
+              <article class="story-card">
                 {% if post.image %}
-                <a href="{{ post.url }}" class="editorial-thumb" aria-label="{{ post.title | escape }}">
+                <a href="{{ post.url }}" class="story-img" aria-label="{{ post.title | escape }}">
                   <img src="{{ post.image }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
                 </a>
                 {% endif %}
-                <div class="editorial-body">
-                  <div>
-                    <div class="editorial-meta">
-                      <span class="editorial-cat">{{ post.category }}</span>
-                      {% if post.read_time %}<span aria-hidden="true">•</span><span>{{ post.read_time }}</span>{% endif %}
-                    </div>
-                    <h3 class="editorial-title">
-                      <a href="{{ post.url }}">{{ post.title }}</a>
-                    </h3>
-                    {% if post.summary %}
-                    <p class="editorial-summary">{{ post.summary }}</p>
-                    {% endif %}
+                <div>
+                  <div class="story-meta">
+                    <span class="story-cat">{{ post.category }}</span>
                   </div>
-                  <div class="card-foot">
-                    <a href="{{ post.url }}" class="text-link">Ler estudo completo →</a>
-                  </div>
+                  <h3 class="story-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                  {% if post.summary %}<p class="t-body">{{ post.summary }}</p>{% endif %}
                 </div>
               </article>
             {% endif %}

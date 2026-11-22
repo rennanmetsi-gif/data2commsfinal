@@ -1,8 +1,8 @@
-/* data2comms — Core Interactive Scripts (Menu, Forms, Observatório Filter, Reading Progress) */
+/* data2comms — Core Interactive Scripts */
 (function () {
   'use strict';
 
-  // 1. Accessible Mobile Navigation Drawer
+  // Mobile menu drawer
   const menuBtn = document.getElementById('mobile-menu-toggle');
   const drawer = document.getElementById('mobile-drawer');
   if (menuBtn && drawer) {
@@ -10,11 +10,13 @@
       drawer.classList.remove('is-open');
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.setAttribute('aria-label', 'Abrir menu de navegação');
+      menuBtn.textContent = 'Menu';
     };
     menuBtn.addEventListener('click', () => {
       const open = drawer.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       menuBtn.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+      menuBtn.textContent = open ? 'Fechar' : 'Menu';
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
@@ -27,7 +29,7 @@
     });
   }
 
-  // 2. Reading Progress Bar (Articles & Press Releases)
+  // Reading progress bar
   const progressBar = document.getElementById('reading-progress');
   if (progressBar) {
     const updateProgress = () => {
@@ -40,7 +42,7 @@
     updateProgress();
   }
 
-  // 3. Lead Form Handler (Google Apps Script with genuine error verification)
+  // Lead form handler (Google Apps Script)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
   document.querySelectorAll('form[data-lead-form]').forEach((form) => {
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -65,17 +67,13 @@
         if (!res.ok && res.type !== 'opaque') {
           throw new Error('HTTP ' + res.status);
         }
-        submitBtn.textContent = 'Mensagem enviada';
-        submitBtn.classList.remove('btn-dark');
-        submitBtn.classList.add('btn-acid');
+        submitBtn.textContent = 'Enviado';
         if (okBox) okBox.classList.add('is-visible');
         form.reset();
 
         setTimeout(() => {
           submitBtn.textContent = originalLabel;
           submitBtn.disabled = false;
-          submitBtn.classList.remove('btn-acid');
-          submitBtn.classList.add('btn-dark');
         }, 6000);
       } catch (err) {
         console.error('Erro ao enviar formulário:', err);
@@ -86,7 +84,7 @@
     });
   });
 
-  // 4. Observatório Category Filter
+  // Observatório category filter
   const filterButtons = document.querySelectorAll('[data-filter-cat]');
   const filterCards = document.querySelectorAll('[data-card-cat]');
   const countEl = document.getElementById('observatorio-count');
@@ -106,7 +104,7 @@
           if (match) visible += 1;
         });
         if (countEl) {
-          countEl.textContent = visible + (visible === 1 ? ' estudo publicado' : ' estudos publicados');
+          countEl.textContent = visible + (visible === 1 ? ' estudo' : ' estudos');
         }
       });
     });

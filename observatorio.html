@@ -2,63 +2,49 @@
 permalink: /observatorio.html
 layout: default
 nav_active: observatorio
-seo_title: "Observatório data2comms | Estudos sobre cultura, dados, consumo e reputação"
+seo_title: "Observatório | data2comms — Estudos sobre cultura, dados, consumo e reputação"
 description: "Ensaios analíticos e estudos da data2comms sobre cultura, consumo, sustentabilidade, saúde, beleza, algoritmos e economia da influência."
 ---
 
-<section class="hero-section" style="padding-bottom: 2.5rem;">
-  <div class="container">
-    <div class="max-w-3xl">
-      <span class="kicker mb-3">
-        <span class="kicker-dot" aria-hidden="true"></span>
-        Observatório data2comms
-      </span>
-      <h1 class="h1-page">Leituras culturais, dados e sinais públicos.</h1>
-      <p class="lead mt-3">
-        Ensaios e análises proprietárias sobre como cultura, tecnologia, consumo e regimes de prova redefinem a reputação de marcas, instituições e causas.
-      </p>
-    </div>
+<section class="hero" style="padding-bottom: 2.5rem;">
+  <div class="wrap">
+    <h1 class="t-h1 max-860">Observatório</h1>
+    <p class="t-lead mt-2 max-700">
+      Ensaios e estudos autorais sobre como cultura, tecnologia, consumo e regimes de prova redefinem a reputação de marcas, instituições e causas.
+    </p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 0.5rem;">
-  <div class="container">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem;">
-      <div class="filter-bar" role="group" aria-label="Filtrar estudos por tema" style="margin-bottom: 0;">
-        <button type="button" class="filter-btn is-active" data-filter-cat="all" aria-pressed="true">Todos</button>
-        <button type="button" class="filter-btn" data-filter-cat="comportamento" aria-pressed="false">Comportamento</button>
-        <button type="button" class="filter-btn" data-filter-cat="tecnologia" aria-pressed="false">Tecnologia</button>
-        <button type="button" class="filter-btn" data-filter-cat="saude" aria-pressed="false">Saúde</button>
-        <button type="button" class="filter-btn" data-filter-cat="beleza" aria-pressed="false">Beleza</button>
-        <button type="button" class="filter-btn" data-filter-cat="moda" aria-pressed="false">Moda</button>
+<section class="sec-tight bg-white rule-top">
+  <div class="wrap">
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem;">
+      <div class="filter-tabs" role="group" aria-label="Filtrar estudos por tema" style="flex: 1;">
+        <button type="button" class="filter-tab is-active" data-filter-cat="all" aria-pressed="true">Todos</button>
+        <button type="button" class="filter-tab" data-filter-cat="comportamento" aria-pressed="false">Comportamento</button>
+        <button type="button" class="filter-tab" data-filter-cat="tecnologia" aria-pressed="false">Tecnologia</button>
+        <button type="button" class="filter-tab" data-filter-cat="saude" aria-pressed="false">Saúde</button>
+        <button type="button" class="filter-tab" data-filter-cat="beleza" aria-pressed="false">Beleza</button>
+        <button type="button" class="filter-tab" data-filter-cat="moda" aria-pressed="false">Moda</button>
       </div>
-      <span id="observatorio-count" class="mono" style="font-size: 0.78rem; color: var(--ink-muted);">{{ site.posts | size }} estudos publicados</span>
+      <span id="observatorio-count" class="t-meta" style="padding-bottom: 1rem;">{{ site.posts | size }} estudos</span>
     </div>
 
-    <div class="grid-3">
+    <div class="story-grid">
       {% for post in site.posts %}
-      <article class="editorial-card" data-card-cat="{{ post.category | downcase }}">
+      <article class="story-card" data-card-cat="{{ post.category | downcase }}">
         {% if post.image %}
-        <a href="{{ post.url }}" class="editorial-thumb" aria-label="{{ post.title | escape }}">
+        <a href="{{ post.url }}" class="story-img" aria-label="{{ post.title | escape }}">
           <img src="{{ post.image }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
         </a>
         {% endif %}
-        <div class="editorial-body">
-          <div>
-            <div class="editorial-meta">
-              <span class="editorial-cat">{{ post.category }}</span>
-              {% if post.read_time %}<span aria-hidden="true">•</span><span>{{ post.read_time }}</span>{% endif %}
-            </div>
-            <h2 class="editorial-title">
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </h2>
-            {% if post.summary %}
-            <p class="editorial-summary">{{ post.summary }}</p>
-            {% endif %}
+        <div>
+          <div class="story-meta">
+            <span class="story-cat">{{ post.category }}</span>
           </div>
-          <div class="card-foot">
-            <a href="{{ post.url }}" class="text-link">Ler estudo completo →</a>
-          </div>
+          <h2 class="story-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          {% if post.summary %}
+          <p class="t-body" style="font-size: 0.92rem;">{{ post.summary }}</p>
+          {% endif %}
         </div>
       </article>
       {% endfor %}

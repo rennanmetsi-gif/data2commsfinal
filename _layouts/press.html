@@ -36,8 +36,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20261122">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261122b">
 
   <script type="application/ld+json">
   {
@@ -87,36 +87,34 @@
 
   <main id="conteudo-principal">
     <article>
-      <header class="article-header">
-        <div class="container-narrow">
-          <a href="/imprensa.html" class="text-link mb-2" style="color: var(--ink-muted);">← Voltar para sala de imprensa</a>
+      <header class="article-top">
+        <div class="wrap-reading">
+          <a href="/imprensa.html" class="back-link">← Voltar para sala de imprensa</a>
 
-          <div class="editorial-meta mt-1">
-            <span class="editorial-cat">{% if page.category and page.category != "" %}{{ page.category }}{% else %}Sala de imprensa{% endif %}</span>
-            <span aria-hidden="true">•</span>
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
-          </div>
-
-          <h1 class="h1-page">{{ page.title }}</h1>
+          <h1 class="t-h1">{{ page.title }}</h1>
 
           {% if page.description %}
-          <p class="lead mt-3">{{ page.description }}</p>
+          <p class="t-lead mt-3">{{ page.description }}</p>
           {% endif %}
 
-          <div class="article-actions">
+          <div class="story-meta mt-3" style="padding-top: 1rem; border-top: 1px solid var(--rule);">
+            <time datetime="{{ page.date | date_to_xmlschema }}">Publicado em {{ page.date | date: "%d/%m/%Y" }}</time>
+          </div>
+
+          <div class="press-actions">
             {% if page.download_docx %}
-            <a href="{{ page.download_docx }}" download class="btn btn-dark">Baixar material em Word (.docx)</a>
+            <a href="{{ page.download_docx }}" download class="btn btn-primary">Baixar material em Word (.docx)</a>
             {% endif %}
             {% if page.secondary_cta_url %}
-            <a href="{{ page.secondary_cta_url }}"{% if page.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline">{{ page.secondary_cta_label | default: 'Acessar material complementar' }}</a>
+            <a href="{{ page.secondary_cta_url }}"{% if page.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-ghost">{{ page.secondary_cta_label | default: 'Material complementar' }}</a>
             {% endif %}
             {% unless page.secondary_cta_url contains 'mailto:' %}
-            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}?subject=Pauta%20de%20imprensa:%20{{ page.title | uri_escape }}" class="btn btn-outline">Falar com a redação</a>
+            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}?subject=Pauta%20de%20imprensa:%20{{ page.title | uri_escape }}" class="btn btn-ghost">Falar com a redação</a>
             {% endunless %}
           </div>
 
           {% if page.download_note %}
-          <p class="body-sm mt-2" style="color: var(--ink-muted); font-size: 0.85rem;">{{ page.download_note }}</p>
+          <p class="t-meta mt-2">{{ page.download_note }}</p>
           {% endif %}
 
           {% if page.image %}
@@ -127,21 +125,19 @@
         </div>
       </header>
 
-      <div class="container-narrow" style="padding-bottom: 4.5rem;">
+      <div class="wrap-reading" style="padding-bottom: 5rem;">
         <div class="prose">
           {{ content }}
         </div>
 
-        <!-- Press Desk Box -->
-        <aside class="card mt-6" style="background: var(--bg-surface);">
-          <span class="kicker-neutral mb-2">Atendimento à imprensa</span>
-          <h2 class="h3-card mb-1">Precisa de fontes, dados ou entrevistas?</h2>
-          <p class="body-sm mb-3">
+        <aside style="margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--ink);">
+          <h2 class="t-h3 mb-1">Atendimento à imprensa</h2>
+          <p class="t-body mb-3">
             Atendemos jornalistas, colunistas e produtores com acesso aos dados completos, documentos de referência e indicação de porta-vozes.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}" class="btn btn-dark">{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}</a>
-            <a href="/imprensa.html" class="btn btn-outline">Ver todos os releases →</a>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;">
+            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}" class="btn btn-primary">{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}</a>
+            <a href="/imprensa.html" class="u-link">Ver todos os comunicados →</a>
           </div>
         </aside>
       </div>

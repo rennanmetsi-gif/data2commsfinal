@@ -3,7 +3,6 @@ description: "PR, comunicação, advocacy e causas orientados por dados. Pesquis
 url: https://data2comms.com.br
 baseurl: ""
 lang: pt-BR
-permalink: /observatorio/:slug/
 markdown: kramdown
 kramdown:
   input: GFM
@@ -26,6 +25,7 @@ defaults:
     values:
       layout: "post"
       nav_active: "observatorio"
+      permalink: "/observatorio/:slug/"
   - scope:
       path: ""
       type: "imprensa"

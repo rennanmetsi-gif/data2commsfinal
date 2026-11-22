@@ -2,40 +2,41 @@
 permalink: /imprensa.html
 layout: default
 nav_active: imprensa
-seo_title: "Sala de Imprensa | data2comms — Dossiês, releases e apurações"
+seo_title: "Sala de Imprensa | data2comms"
 description: "Comunicados oficiais, dossiês técnicos, apurações jornalísticas e atendimento direto a redações pela equipe da data2comms."
 ---
 
-<section class="hero" style="padding-bottom: 2.5rem;">
+<section class="page-hero">
   <div class="wrap">
     <h1 class="t-h1 max-860">Sala de imprensa</h1>
-    <p class="t-lead mt-2 max-700">
+    <p class="t-lead t-muted-dark mt-3 max-700">
       Dossiês técnicos, apurações documentais e comunicados oficiais com fontes verificáveis e arquivos em Word para redações.
     </p>
   </div>
 </section>
 
-<section class="sec-tight bg-white rule-top">
+<section class="sec block-gray">
   <div class="wrap">
-    <div class="press-wire" style="border-top: 0;">
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
       {% assign releases = site.imprensa | sort: 'date' | reverse %}
       {% for item in releases %}
-      <article class="press-row" style="grid-template-columns: 1fr;">
-        <div class="grid-2" style="grid-template-columns: 1fr; gap: 0.75rem;">
-          <time class="press-date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
-          <h2 class="t-h2" style="font-size: clamp(1.5rem, 2.6vw, 2.15rem);">
-            <a href="{{ item.url }}">{{ item.title }}</a>
-          </h2>
-          <p class="t-body max-860">{{ item.description }}</p>
-          <div class="press-actions">
-            <a href="{{ item.url }}" class="btn btn-primary">Ler na íntegra</a>
-            {% if item.download_docx %}
-            <a href="{{ item.download_docx }}" download class="btn btn-ghost">Baixar em Word (.docx)</a>
-            {% endif %}
-            {% if item.secondary_cta_url %}
-            <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-ghost">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
-            {% endif %}
-          </div>
+      <article class="surface-card" style="padding: clamp(1.75rem, 3.5vw, 2.5rem);">
+        <time class="t-body t-muted-light" style="font-size: 0.85rem; font-weight: 500;" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
+
+        <h2 class="t-h2" style="font-size: clamp(1.45rem, 2.5vw, 2rem);">
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </h2>
+
+        <p class="t-body t-muted-light max-860">{{ item.description }}</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;">
+          <a href="{{ item.url }}" class="btn btn-dark">Ler na íntegra</a>
+          {% if item.download_docx %}
+          <a href="{{ item.download_docx }}" download class="btn btn-outline-light">Baixar em Word (.docx)</a>
+          {% endif %}
+          {% if item.secondary_cta_url %}
+          <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline-light">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
@@ -43,17 +44,17 @@ description: "Comunicados oficiais, dossiês técnicos, apurações jornalístic
   </div>
 </section>
 
-<section class="sec rule-top">
+<section class="sec-compact block-green">
   <div class="wrap">
-    <div class="manifesto-grid" style="align-items: center;">
+    <div class="green-manifesto-grid" style="align-items: center;">
       <div>
         <h2 class="t-h2">Precisa de fontes, dados ou entrevistas?</h2>
-        <p class="t-lead mt-2 max-700">
+        <p class="t-body mt-2 max-700" style="color: var(--g-950);">
           Atendemos jornalistas com dados consolidados, porta-vozes temáticos e recortes de pesquisas em regime prioritário.
         </p>
       </div>
-      <div class="hero-cta-row">
-        <a href="mailto:rennanmetsi@data2comms.com.br" class="btn btn-primary">rennanmetsi@data2comms.com.br</a>
+      <div class="hero-actions">
+        <a href="mailto:rennanmetsi@data2comms.com.br" class="btn btn-dark">rennanmetsi@data2comms.com.br</a>
       </div>
     </div>
   </div>

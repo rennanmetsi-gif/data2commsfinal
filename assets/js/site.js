@@ -29,7 +29,28 @@
     });
   }
 
-  // Reading progress bar
+  // Interactive Services Explorer (Home)
+  const svcTabs = document.querySelectorAll('[data-svc-tab]');
+  const svcPanels = document.querySelectorAll('[data-svc-panel]');
+  if (svcTabs.length && svcPanels.length) {
+    const activate = (id) => {
+      svcTabs.forEach((btn) => {
+        const active = btn.getAttribute('data-svc-tab') === id;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      svcPanels.forEach((panel) => {
+        const active = panel.getAttribute('data-svc-panel') === id;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    };
+    svcTabs.forEach((btn) => {
+      btn.addEventListener('click', () => activate(btn.getAttribute('data-svc-tab')));
+    });
+  }
+
+  // Reading progress bar (Press Releases)
   const progressBar = document.getElementById('reading-progress');
   if (progressBar) {
     const updateProgress = () => {
@@ -83,30 +104,4 @@
       }
     });
   });
-
-  // Observatório category filter
-  const filterButtons = document.querySelectorAll('[data-filter-cat]');
-  const filterCards = document.querySelectorAll('[data-card-cat]');
-  const countEl = document.getElementById('observatorio-count');
-
-  if (filterButtons.length && filterCards.length) {
-    filterButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const cat = btn.getAttribute('data-filter-cat');
-        filterButtons.forEach((b) => {
-          b.classList.toggle('is-active', b === btn);
-          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-        });
-        let visible = 0;
-        filterCards.forEach((card) => {
-          const match = cat === 'all' || card.getAttribute('data-card-cat') === cat;
-          card.style.display = match ? '' : 'none';
-          if (match) visible += 1;
-        });
-        if (countEl) {
-          countEl.textContent = visible + (visible === 1 ? ' estudo' : ' estudos');
-        }
-      });
-    });
-  }
 })();

@@ -1,8 +1,8 @@
-# data2comms — Contexto Completo (AI & GEO)
+# data2comms: Contexto Completo (AI & GEO)
 
 Canonical site: https://data2comms.com.br/
 Language: pt-BR
-Location: São Paulo, SP — Atuação nacional (Brasil)
+Location: São Paulo, SP
 Official email: rennanmetsi@data2comms.com.br
 Last updated: 2026-11-22
 
@@ -10,56 +10,36 @@ Last updated: 2026-11-22
 
 A data2comms opera na interseção entre relações públicas (PR), comunicação, advocacy e causas orientados por dados.
 
-A premissa central da agência é direta:
+Premissa central:
 "Dados sem mobilização são relatórios engavetados. Mobilização sem evidência é ruído sem sustentação."
 
-A agência trabalha ao lado de marcas, eventos culturais, instituições e coalizões da sociedade civil que precisam transformar pautas reais — da sustentabilidade e moda circular à mobilização urbana e direitos civis — em autoridade, cobertura editorial qualificada e movimento público.
+A agência trabalha ao lado de marcas, eventos culturais, instituições e coalizões da sociedade civil que precisam transformar pautas reais, da sustentabilidade e moda circular à mobilização de rua e direitos civis, em autoridade, cobertura editorial qualificada e movimento público.
 
 ## Marcas e Projetos no Portfólio
 
-Entre marcas, eventos e iniciativas que já atuaram com a data2comms estão: Galderma, Red Bull, Virada Cultural, Peça Rara Brechó, BIC, SPFW, Zé Delivery, Ambev e frentes públicas de advocacy como a mobilização nacional pelo Estatuto LGBTQIA+ (mais de 40 mil apoios no Senado e dossiê técnico de 70 páginas).
+Entre marcas, eventos e iniciativas que já atuaram com a data2comms estão: Galderma, Red Bull, Virada Cultural, Peça Rara Brechó, BIC, SPFW, Zé Delivery, Ambev e frentes públicas de advocacy como a mobilização pelo Estatuto LGBTQIA+ (mais de 40 mil apoios no Senado e dossiê técnico de 70 páginas).
 
-## Arquitetura de Serviços (5 Pilares)
+## Arquitetura de Serviços
 
-1. Pesquisa Aplicada & Inteligência de Dados — https://data2comms.com.br/servicos/pesquisa-inteligencia/
-   Pesquisas proprietárias quanti/quali desenhadas para PR, PR Intelligence, monitoramento de sinais públicos, desk research, estudos setoriais e matrizes de risco reputacional.
+- Pesquisa Aplicada e Inteligência de Dados: https://data2comms.com.br/servicos/pesquisa-inteligencia/
+  Pesquisas proprietárias quanti e quali desenhadas para PR, PR Intelligence, monitoramento de sinais públicos, desk research, estudos setoriais e matrizes de risco reputacional.
 
-2. PR Estratégico, Imprensa & Porta-Vozes — https://data2comms.com.br/servicos/pr-imprensa/
-   Estratégia integrada de relações públicas, assessoria de imprensa baseada em evidências, relacionamento com redações e stakeholders, gestão de crise e media training prático.
+- PR Estratégico, Imprensa e Porta-Vozes: https://data2comms.com.br/servicos/pr-imprensa/
+  Estratégia integrada de relações públicas, assessoria de imprensa baseada em evidências, relacionamento com redações e stakeholders, gestão de crise e media training prático.
 
-3. Advocacy, Causas & Políticas Públicas — https://data2comms.com.br/servicos/advocacy-causas/
-   Dossiês técnicos, monitoramento de conjuntura e risco regulatório, articulação de coalizões, plataformas de causa para marcas e estruturação de programas públicos e editais.
+- Advocacy, Causas e Políticas Públicas: https://data2comms.com.br/servicos/advocacy-causas/
+  Dossiês técnicos, monitoramento de conjuntura e risco regulatório, articulação de coalizões, plataformas de causa para marcas e estruturação de programas públicos e editais.
 
-4. Mobilização Digital, Rua & Comunidades — https://data2comms.com.br/servicos/mobilizacao-comunidades/
-   Governança de malhas de mensageria (WhatsApp/grupos), bancas digitais, enxovais de distribuição orgânica e mobilização territorial em grandes eventos e campanhas.
+- Mobilização Digital, Rua e Comunidades: https://data2comms.com.br/servicos/mobilizacao-comunidades/
+  Governança de malhas de mensageria (WhatsApp e grupos), bancas digitais, enxovais de distribuição orgânica e mobilização territorial em grandes eventos e campanhas.
 
-5. Influência, Creators & Campanhas Culturais — https://data2comms.com.br/servicos/influencia-campanhas/
-   Diagnóstico cultural, seleção de creators por afinidade temática e legitimidade comunitária, avaliação preventiva de risco e campanhas integradas data-driven.
-
-## Observatório data2comms (Estudos Publicados)
-
-Hub principal: https://data2comms.com.br/observatorio.html
-
-- A auditoria do manifesto: o regime de prova para alegações ambientais na indústria de alimentos — https://data2comms.com.br/observatorio/auditoria-manifesto-claims-ambientais-alimentos/
-- Consumo popular não é consumo simples: o que R$ 300 bilhões nas favelas revelam sobre inteligência cultural — https://data2comms.com.br/observatorio/consumo-popular-inteligencia-cultural/
-- O colapso do antes e depois: a crise da evidência visual no mercado de saúde e beleza — https://data2comms.com.br/observatorio/colapso-antes-depois-evidencia-visual-estetica/
-- A cultura GLP-1: como um hormônio sintético está reorganizando categorias inteiras de consumo — https://data2comms.com.br/observatorio/cultura-glp1-reorganizacao-consumo/
-- O conflito de capital na economia da influência: a cobrança por conversão em uma mídia de confiança — https://data2comms.com.br/observatorio/conflito-capital-economia-influencia/
-- O algoritmo e a perda do gosto pessoal: quando a curadoria se torna invisível — https://data2comms.com.br/observatorio/algoritmo-perda-gosto-pessoal/
-- Biohacking popularizado: o corpo virou painel de controle — https://data2comms.com.br/observatorio/biohacking-popularizado-corpo-painel-controle/
-- Moda, luxo e beleza: o corpo como mídia e território simbólico — https://data2comms.com.br/observatorio/corpo-como-midia-territorio-reputacional/
-- O eu digital pós-morte: a privatização da memória e a ilusão do legado nas redes sociais — https://data2comms.com.br/observatorio/eu-digital-pos-morte/
-- IA, concentração de capital e a volta do analógico — https://data2comms.com.br/observatorio/ia-concentracao-capital-volta-analogico/
-- O império da simplificação na indústria de alimentos — https://data2comms.com.br/observatorio/imperio-simplificacao-clean-label/
-- Luxo no Brasil não é classe A — https://data2comms.com.br/observatorio/luxo-no-brasil-nao-e-classe-a/
-- O som da comunidade: como a música redefiniu a distribuição cultural e a economia da atenção — https://data2comms.com.br/observatorio/musica-comunidade-economia-atencao/
-- O pequeno prazer em tempos de inflação — https://data2comms.com.br/observatorio/pequeno-prazer-tempos-inflacao/
-- Quiet luxury depois do hype — https://data2comms.com.br/observatorio/quiet-luxury-depois-do-hype/
+- Influência, Creators e Campanhas Culturais: https://data2comms.com.br/servicos/influencia-campanhas/
+  Diagnóstico cultural, seleção de creators por afinidade temática e legitimidade comunitária, avaliação preventiva de risco e campanhas integradas data-driven.
 
 ## Sala de Imprensa (Dossiês e Releases)
 
 Hub principal: https://data2comms.com.br/imprensa.html
 
-- Como Harry Potter financia programas e projetos antitrans: da assinatura de streaming aos tribunais — https://data2comms.com.br/imprensa/2026-11-17-harry-potter-financiamento-antitrans/
-- Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+ — https://data2comms.com.br/imprensa/2026-10-30-estatuto-lgbtqia-senado/
-- Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais — https://data2comms.com.br/imprensa/2026-10-16-meta-reel-transparencia/
+- Como Harry Potter financia programas e projetos antitrans: da assinatura de streaming aos tribunais: https://data2comms.com.br/imprensa/2026-11-17-harry-potter-financiamento-antitrans/
+- Com mais de 40 mil assinaturas no Senado, coalizão nacional lança dossiê e exige aprovação do Estatuto LGBTQIA+: https://data2comms.com.br/imprensa/2026-10-30-estatuto-lgbtqia-senado/
+- Meta removeu vídeo e bloqueou mensagens de perfil LGBTQIA+ durante o segundo turno das eleições presidenciais: https://data2comms.com.br/imprensa/2026-10-16-meta-reel-transparencia/

@@ -2,20 +2,19 @@
 
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
-    <a href="/" class="brand-link" aria-label="data2comms — Página inicial">
+    <a href="/" class="brand-link" aria-label="data2comms">
       <picture>
-        <source srcset="/assets/opt/logo-black.webp" type="image/webp">
-        <img src="/assets/opt/logo-black.png" alt="data2comms" width="171" height="24" class="brand-logo" decoding="async">
+        <source srcset="/assets/opt/logo-white.webp" type="image/webp">
+        <img src="/assets/opt/logo-white.png" alt="data2comms" width="171" height="24" class="brand-logo" decoding="async">
       </picture>
     </a>
 
     <nav class="desktop-nav" aria-label="Navegação principal">
       <a href="/servicos.html" class="nav-link{% if page.nav_active == 'servicos' %} is-active{% endif %}">Serviços</a>
       <a href="/clientes.html" class="nav-link{% if page.nav_active == 'clientes' %} is-active{% endif %}">Clientes</a>
-      <a href="/observatorio.html" class="nav-link{% if page.nav_active == 'observatorio' %} is-active{% endif %}">Observatório</a>
       <a href="/imprensa.html" class="nav-link{% if page.nav_active == 'imprensa' %} is-active{% endif %}">Imprensa</a>
       <a href="/sobre.html" class="nav-link{% if page.nav_active == 'sobre' %} is-active{% endif %}">Sobre</a>
-      <a href="/contato.html" class="nav-link nav-contact{% if page.nav_active == 'contato' %} is-active{% endif %}">Contato</a>
+      <a href="/contato.html" class="nav-cta">Contato</a>
     </nav>
 
     <button id="mobile-menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir menu de navegação">
@@ -28,10 +27,9 @@
       <a href="/" class="mobile-nav-link">Início</a>
       <a href="/servicos.html" class="mobile-nav-link">Serviços</a>
       <a href="/clientes.html" class="mobile-nav-link">Clientes</a>
-      <a href="/observatorio.html" class="mobile-nav-link">Observatório</a>
-      <a href="/imprensa.html" class="mobile-nav-link">Sala de imprensa</a>
+      <a href="/imprensa.html" class="mobile-nav-link">Imprensa</a>
       <a href="/sobre.html" class="mobile-nav-link">Sobre</a>
-      <a href="/contato.html" class="mobile-nav-link">Contato</a>
+      <a href="/contato.html" class="mobile-nav-link" style="color: var(--green); font-weight: 600;">Contato</a>
     </div>
   </nav>
 </header>

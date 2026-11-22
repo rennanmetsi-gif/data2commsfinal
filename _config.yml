@@ -1,5 +1,5 @@
 title: data2comms
-description: "PR, comunicação, advocacy e causas orientados por dados. Pesquisa aplicada, imprensa, leitura cultural e mobilização."
+description: "PR, comunicação, advocacy e causas orientados por dados. Pesquisa aplicada, imprensa e mobilização em São Paulo."
 url: https://data2comms.com.br
 baseurl: ""
 lang: pt-BR
@@ -19,13 +19,6 @@ collections:
     permalink: /imprensa/:name/
 
 defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      nav_active: "observatorio"
-      permalink: "/observatorio/:slug/"
   - scope:
       path: ""
       type: "imprensa"
@@ -48,7 +41,9 @@ defaults:
 exclude:
   - _backups
   - _blog
+  - _posts
   - assets/posts
+  - observatorio.html
   - blog-legado.html
   - publicacoes.html
   - artigo-achismo-corporativo.html

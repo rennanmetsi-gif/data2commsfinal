@@ -16,8 +16,10 @@
   <meta name="description" content="{{ press_desc | escape }}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="{{ canonical_url }}">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/logos/d2c_monogram_black_transparent.png">
+  <link rel="icon" href="/favicon.ico?v=20261122c" sizes="any">
+  <link rel="icon" href="/favicon.svg?v=20261122c" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20261122c">
+  <meta name="theme-color" content="#151618">
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="pt_BR">
@@ -36,8 +38,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20261122b">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261122c">
 
   <script type="application/ld+json">
   {
@@ -75,7 +77,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://data2comms.com.br/" },
-      { "@type": "ListItem", "position": 2, "name": "Sala de imprensa", "item": "https://data2comms.com.br/imprensa.html" },
+      { "@type": "ListItem", "position": 2, "name": "Imprensa", "item": "https://data2comms.com.br/imprensa.html" },
       { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": {{ canonical_url | jsonify }} }
     ]
   }
@@ -87,59 +89,61 @@
 
   <main id="conteudo-principal">
     <article>
-      <header class="article-top">
+      <header class="page-hero">
         <div class="wrap-reading">
-          <a href="/imprensa.html" class="back-link">← Voltar para sala de imprensa</a>
+          <a href="/imprensa.html" class="back-link-dark">← Voltar para imprensa</a>
 
           <h1 class="t-h1">{{ page.title }}</h1>
 
           {% if page.description %}
-          <p class="t-lead mt-3">{{ page.description }}</p>
+          <p class="t-lead t-muted-dark mt-3">{{ page.description }}</p>
           {% endif %}
 
-          <div class="story-meta mt-3" style="padding-top: 1rem; border-top: 1px solid var(--rule);">
-            <time datetime="{{ page.date | date_to_xmlschema }}">Publicado em {{ page.date | date: "%d/%m/%Y" }}</time>
-          </div>
+          <p class="t-body t-muted-dark mt-2" style="font-size: 0.85rem;">
+            Publicado em <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+          </p>
 
-          <div class="press-actions">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem;">
             {% if page.download_docx %}
-            <a href="{{ page.download_docx }}" download class="btn btn-primary">Baixar material em Word (.docx)</a>
+            <a href="{{ page.download_docx }}" download class="btn btn-green">Baixar em Word (.docx)</a>
             {% endif %}
             {% if page.secondary_cta_url %}
-            <a href="{{ page.secondary_cta_url }}"{% if page.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-ghost">{{ page.secondary_cta_label | default: 'Material complementar' }}</a>
+            <a href="{{ page.secondary_cta_url }}"{% if page.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline-dark">{{ page.secondary_cta_label | default: 'Material complementar' }}</a>
             {% endif %}
             {% unless page.secondary_cta_url contains 'mailto:' %}
-            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}?subject=Pauta%20de%20imprensa:%20{{ page.title | uri_escape }}" class="btn btn-ghost">Falar com a redação</a>
+            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}?subject=Pauta%20de%20imprensa:%20{{ page.title | uri_escape }}" class="btn btn-outline-dark">Falar com a redação</a>
             {% endunless %}
           </div>
 
           {% if page.download_note %}
-          <p class="t-meta mt-2">{{ page.download_note }}</p>
-          {% endif %}
-
-          {% if page.image %}
-          <figure class="article-cover">
-            <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title | escape }}" loading="eager" decoding="async">
-          </figure>
+          <p class="t-body t-muted-dark mt-2" style="font-size: 0.84rem;">{{ page.download_note }}</p>
           {% endif %}
         </div>
       </header>
 
-      <div class="wrap-reading" style="padding-bottom: 5rem;">
-        <div class="prose">
-          {{ content }}
-        </div>
+      <div class="block-white sec-compact">
+        <div class="wrap-reading">
+          {% if page.image %}
+          <figure class="article-cover" style="margin: 0 0 2.5rem;">
+            <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title | escape }}" loading="eager" decoding="async">
+          </figure>
+          {% endif %}
 
-        <aside style="margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--ink);">
-          <h2 class="t-h3 mb-1">Atendimento à imprensa</h2>
-          <p class="t-body mb-3">
-            Atendemos jornalistas, colunistas e produtores com acesso aos dados completos, documentos de referência e indicação de porta-vozes.
-          </p>
-          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;">
-            <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}" class="btn btn-primary">{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}</a>
-            <a href="/imprensa.html" class="u-link">Ver todos os comunicados →</a>
+          <div class="prose">
+            {{ content }}
           </div>
-        </aside>
+
+          <aside class="block-gray" style="border-radius: var(--radius-md); padding: 2rem; margin-top: 3.5rem;">
+            <h2 class="t-h3 mb-1">Atendimento à imprensa</h2>
+            <p class="t-body t-muted-light mb-3">
+              Atendemos jornalistas, colunistas e produtores com acesso aos dados completos, documentos de referência e indicação de porta-vozes.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+              <a href="mailto:{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}" class="btn btn-dark">{{ page.contact_email | default: 'rennanmetsi@data2comms.com.br' }}</a>
+              <a href="/imprensa.html" class="btn btn-outline-light">Todos os comunicados</a>
+            </div>
+          </aside>
+        </div>
       </div>
     </article>
   </main>

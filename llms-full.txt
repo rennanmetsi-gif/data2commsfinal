@@ -17,23 +17,23 @@ A agência trabalha ao lado de marcas, eventos culturais, instituições e coali
 
 ## Marcas e Projetos no Portfólio
 
-Entre marcas, eventos e iniciativas que já atuaram com a data2comms estão: Galderma, Red Bull, Virada Cultural, Peça Rara Brechó, BIC, SPFW, Zé Delivery, Ambev e frentes públicas de advocacy como a mobilização pelo Estatuto LGBTQIA+ (mais de 40 mil apoios no Senado e dossiê técnico de 70 páginas).
+Entre marcas, eventos e iniciativas que já atuaram com a data2comms estão: Galderma, Red Bull, Virada Cultural, Peça Rara Brechó, BIC, SPFW, Zé Delivery, Ambev e frentes públicas de advocacy como a mobilização pelo Estatuto LGBTQIA+ (60 mil assinaturas no Senado e dossiê técnico de 70 páginas).
 
-## Arquitetura de Serviços
+## Arquitetura de serviços
 
-- Pesquisa Aplicada e Inteligência de Dados: https://data2comms.com.br/servicos/pesquisa-inteligencia/
+- Pesquisa aplicada e inteligência de dados: https://data2comms.com.br/servicos/pesquisa-inteligencia/
   Pesquisas proprietárias quanti e quali desenhadas para PR, PR Intelligence, monitoramento de sinais públicos, desk research, estudos setoriais e matrizes de risco reputacional.
 
-- PR Estratégico, Imprensa e Porta-Vozes: https://data2comms.com.br/servicos/pr-imprensa/
+- PR estratégico, imprensa e porta-vozes: https://data2comms.com.br/servicos/pr-imprensa/
   Estratégia integrada de relações públicas, assessoria de imprensa baseada em evidências, relacionamento com redações e stakeholders, gestão de crise e media training prático.
 
-- Advocacy, Causas e Políticas Públicas: https://data2comms.com.br/servicos/advocacy-causas/
+- Advocacy, causas e políticas públicas: https://data2comms.com.br/servicos/advocacy-causas/
   Dossiês técnicos, monitoramento de conjuntura e risco regulatório, articulação de coalizões, plataformas de causa para marcas e estruturação de programas públicos e editais.
 
-- Mobilização Digital, Rua e Comunidades: https://data2comms.com.br/servicos/mobilizacao-comunidades/
+- Mobilização digital, rua e comunidades: https://data2comms.com.br/servicos/mobilizacao-comunidades/
   Governança de malhas de mensageria (WhatsApp e grupos), bancas digitais, enxovais de distribuição orgânica e mobilização territorial em grandes eventos e campanhas.
 
-- Influência, Creators e Campanhas Culturais: https://data2comms.com.br/servicos/influencia-campanhas/
+- Influência, creators e campanhas culturais: https://data2comms.com.br/servicos/influencia-campanhas/
   Diagnóstico cultural, seleção de creators por afinidade temática e legitimidade comunitária, avaliação preventiva de risco e campanhas integradas data-driven.
 
 ## Sala de Imprensa (Dossiês e Releases)

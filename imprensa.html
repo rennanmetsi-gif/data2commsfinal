@@ -2,40 +2,40 @@
 permalink: /imprensa.html
 layout: default
 nav_active: imprensa
-seo_title: "Sala de Imprensa | data2comms"
+seo_title: "Sala de imprensa | data2comms"
 description: "Comunicados oficiais, dossiês técnicos, apurações jornalísticas e atendimento direto a redações pela equipe da data2comms."
 ---
 
-<section class="page-hero">
+<section class="page-hero-light">
   <div class="wrap">
-    <h1 class="t-h1 max-860">Sala de imprensa</h1>
-    <p class="t-lead t-muted-dark mt-3 max-700">
+    <h1 class="t-h1 max-860" data-reveal>Sala de imprensa</h1>
+    <p class="t-lead mt-3 max-700" data-reveal data-reveal-delay="1">
       Dossiês técnicos, apurações documentais e comunicados oficiais com fontes verificáveis e arquivos em Word para redações.
     </p>
   </div>
 </section>
 
-<section class="sec block-gray">
+<section class="sec bg-gray">
   <div class="wrap">
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
       {% assign releases = site.imprensa | sort: 'date' | reverse %}
       {% for item in releases %}
-      <article class="surface-card" style="padding: clamp(1.75rem, 3.5vw, 2.5rem);">
-        <time class="t-body t-muted-light" style="font-size: 0.85rem; font-weight: 500;" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
+      <article class="card-light" style="padding: clamp(1.75rem, 3.5vw, 2.5rem);" data-reveal>
+        <time class="t-body" style="font-size: 0.85rem; font-weight: 500;" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%d/%m/%Y" }}</time>
 
         <h2 class="t-h2" style="font-size: clamp(1.45rem, 2.5vw, 2rem);">
           <a href="{{ item.url }}">{{ item.title }}</a>
         </h2>
 
-        <p class="t-body t-muted-light max-860">{{ item.description }}</p>
+        <p class="t-body max-860">{{ item.description }}</p>
 
         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;">
           <a href="{{ item.url }}" class="btn btn-dark">Ler na íntegra</a>
           {% if item.download_docx %}
-          <a href="{{ item.download_docx }}" download class="btn btn-outline-light">Baixar em Word (.docx)</a>
+          <a href="{{ item.download_docx }}" download class="btn btn-outline">Baixar em Word (.docx)</a>
           {% endif %}
           {% if item.secondary_cta_url %}
-          <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline-light">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
+          <a href="{{ item.secondary_cta_url }}"{% if item.secondary_cta_external %} target="_blank" rel="noopener noreferrer"{% endif %} class="btn btn-outline">{{ item.secondary_cta_label | default: 'Material complementar' }}</a>
           {% endif %}
         </div>
       </article>
@@ -44,12 +44,12 @@ description: "Comunicados oficiais, dossiês técnicos, apurações jornalístic
   </div>
 </section>
 
-<section class="sec-compact block-green">
+<section class="sec-compact bg-green">
   <div class="wrap">
-    <div class="green-manifesto-grid" style="align-items: center;">
+    <div class="manifesto-grid" style="align-items: center;" data-reveal>
       <div>
         <h2 class="t-h2">Precisa de fontes, dados ou entrevistas?</h2>
-        <p class="t-body mt-2 max-700" style="color: var(--g-950);">
+        <p class="t-body mt-2 max-700" style="color: var(--ink);">
           Atendemos jornalistas com dados consolidados, porta-vozes temáticos e recortes de pesquisas em regime prioritário.
         </p>
       </div>

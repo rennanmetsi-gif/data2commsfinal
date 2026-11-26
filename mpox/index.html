@@ -4,10 +4,10 @@ layout: default
 nav_active: mpox
 reading_progress: true
 og_type: article
-date: 2026-11-26 15:00:00 -0300
-seo_title: "Dossiê Mpox (2022 a 2026): Transparência e Planejamento no SUS | História LGBTI+ e data2comms"
+date: 2026-11-26 16:25:00 -0300
+seo_title: "Dossiê Mpox (2022 a 2026): Transparência, Ciência e Planejamento no SUS | História LGBTI+ e data2comms"
 social_title: "Dossiê Mpox: subsídio coletivo ao MPF, MS/CNS e ONU"
-description: "Dossiê técnico-jurídico da História LGBTI+ junto à data2comms, organizações da sociedade civil e cidadãos sobre a resposta à mpox no Brasil (2022 a 2026), com assinatura aberta para subsídio ao MPF, Ministério da Saúde, CNS e Relatorias Especiais da ONU."
+description: "Dossiê técnico-jurídico aprofundado da História LGBTI+ junto à data2comms, organizações da sociedade civil, pesquisadores e cidadãos sobre a resposta à mpox no Brasil (2022 a 2026), com assinatura aberta e canal de revisão colaborativa."
 extra_head: |
   <style>
     .mpox-presenters {
@@ -15,14 +15,26 @@ extra_head: |
       font-weight: 500;
       color: var(--gray-600);
       margin: 0 0 1rem;
-      max-width: 820px;
+      max-width: 860px;
+      line-height: 1.55;
     }
     .mpox-presenters strong { color: var(--ink); }
+    .mpox-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      color: var(--gray-600);
+    }
+    .mpox-meta-bar strong { color: var(--ink); }
     .mpox-kpi-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
-      margin-top: 2.5rem;
+      margin-top: 2.25rem;
     }
     @media (min-width: 640px) {
       .mpox-kpi-grid { grid-template-columns: repeat(2, 1fr); }
@@ -38,7 +50,7 @@ extra_head: |
       box-shadow: var(--shadow-xs);
     }
     .mpox-kpi-val {
-      font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+      font-size: clamp(1.75rem, 2.5vw, 2.2rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.05;
@@ -53,7 +65,7 @@ extra_head: |
     }
     .mpox-kpi-label {
       font-size: 0.84rem;
-      line-height: 1.45;
+      line-height: 1.48;
       color: var(--gray-600);
       margin: 0;
     }
@@ -61,7 +73,7 @@ extra_head: |
       position: sticky;
       top: 76px;
       z-index: 95;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
@@ -69,7 +81,7 @@ extra_head: |
     .mpox-subnav-inner {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       overflow-x: auto;
       padding: 0.7rem 0;
       scrollbar-width: none;
@@ -79,11 +91,11 @@ extra_head: |
       display: inline-flex;
       align-items: center;
       white-space: nowrap;
-      padding: 0.48rem 0.85rem;
+      padding: 0.46rem 0.82rem;
       border-radius: var(--r-sm);
       border: 1px solid var(--line);
       background: var(--paper);
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       font-weight: 500;
       color: var(--gray-600);
       transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
@@ -94,7 +106,6 @@ extra_head: |
       border-color: var(--line-strong);
     }
     .mpox-pill-cta {
-      margin-left: auto;
       background: var(--green);
       border-color: var(--ink);
       color: var(--ink);
@@ -105,7 +116,7 @@ extra_head: |
       color: var(--white);
     }
     .mpox-section {
-      padding: 4rem 0;
+      padding: 4.25rem 0;
       border-bottom: 1px solid var(--line);
       scroll-margin-top: 138px;
     }
@@ -114,7 +125,7 @@ extra_head: |
       border: 1px solid var(--line);
       border-radius: var(--r-md);
       padding: 1.5rem;
-      margin: 1.75rem 0;
+      margin: 2rem 0;
     }
     .mpox-chart-head {
       display: flex;
@@ -139,44 +150,52 @@ extra_head: |
       color: var(--ink);
     }
     .mpox-chart-foot {
-      font-size: 0.8rem;
+      font-size: 0.81rem;
       color: var(--gray-600);
-      margin: 0.85rem 0 0;
-      line-height: 1.5;
+      margin: 0.9rem 0 0;
+      line-height: 1.55;
     }
     .mpox-callout {
       background: var(--paper);
       border-left: 4px solid var(--ink);
       border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      padding: 1.25rem 1.4rem;
-      margin: 1.5rem 0;
+      padding: 1.3rem 1.45rem;
+      margin: 1.75rem 0;
+      font-size: 0.95rem;
+      line-height: 1.68;
+      color: #202328;
     }
     .mpox-callout-accent {
       background: #F6FDE2;
       border-left: 4px solid var(--ink);
     }
     .mpox-callout strong { color: var(--ink); }
+    .mpox-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
     .mpox-data-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
       font-size: 0.9rem;
       border-top: 2px solid var(--ink);
+      background: var(--white);
     }
     .mpox-data-table th, .mpox-data-table td {
       text-align: left;
-      padding: 0.8rem 0.9rem 0.8rem 0;
+      padding: 0.85rem 1rem 0.85rem 0.5rem;
       border-bottom: 1px solid var(--line);
       vertical-align: top;
       color: var(--gray-600);
+      line-height: 1.55;
     }
     .mpox-data-table th {
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--ink);
+      background: var(--paper);
     }
     .mpox-data-table td strong { color: var(--ink); }
-    .mpox-table-wrap { overflow-x: auto; }
     .mpox-dots-grid {
       display: flex;
       flex-wrap: wrap;
@@ -207,20 +226,29 @@ extra_head: |
       align-items: center;
       gap: 0.45rem;
     }
-    .mpox-request-grid {
+    .mpox-grid-2 {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
     @media (min-width: 860px) {
-      .mpox-request-grid { grid-template-columns: repeat(2, 1fr); }
+      .mpox-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .mpox-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+    @media (min-width: 860px) {
+      .mpox-grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
     .mpox-req-card {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--r-md);
-      padding: 1.6rem;
+      padding: 1.65rem;
       box-shadow: var(--shadow-xs);
     }
     .mpox-req-dest {
@@ -230,16 +258,38 @@ extra_head: |
       margin: 0 0 0.45rem;
     }
     .mpox-req-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       margin-bottom: 0.75rem;
+      line-height: 1.3;
     }
+    .mpox-req-card p {
+      font-size: 0.91rem;
+      line-height: 1.62;
+      color: var(--gray-600);
+      margin: 0 0 0.75rem;
+    }
+    .mpox-req-card p:last-child { margin-bottom: 0; }
     .mpox-req-card ul {
       margin: 0;
       padding-left: 1.15rem;
       font-size: 0.91rem;
       color: var(--gray-600);
     }
-    .mpox-req-card li { margin-bottom: 0.5rem; line-height: 1.55; }
+    .mpox-req-card li { margin-bottom: 0.55rem; line-height: 1.58; }
+    .mpox-rebuttal-q {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.6rem;
+      line-height: 1.4;
+    }
+    .mpox-rebuttal-a {
+      font-size: 0.91rem;
+      line-height: 1.65;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    .mpox-rebuttal-a strong { color: var(--ink); }
     .mpox-details {
       margin-top: 1.75rem;
       background: var(--white);
@@ -258,10 +308,12 @@ extra_head: |
       padding-top: 1rem;
       border-top: 1px solid var(--line);
       font-size: 0.91rem;
-      line-height: 1.65;
+      line-height: 1.68;
       color: var(--gray-600);
     }
-    /* Signature Tabs & Receipt */
+    .mpox-details-body p { margin: 0 0 1rem; }
+    .mpox-details-body p:last-child { margin-bottom: 0; }
+    /* Signature & Review Forms */
     .sign-tabs {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -293,7 +345,7 @@ extra_head: |
       align-items: flex-start;
       gap: 0.65rem;
       font-size: 0.84rem;
-      line-height: 1.5;
+      line-height: 1.52;
       color: var(--gray-600);
       cursor: pointer;
     }
@@ -333,19 +385,19 @@ extra_head: |
     .mpox-ref-list {
       list-style: decimal;
       padding-left: 1.35rem;
-      margin: 0.75rem 0 1.75rem;
+      margin: 0.75rem 0 1.85rem;
       font-size: 0.9rem;
       line-height: 1.65;
       color: var(--gray-600);
     }
-    .mpox-ref-list li { margin-bottom: 0.55rem; }
+    .mpox-ref-list li { margin-bottom: 0.6rem; }
     .mpox-ref-list strong { color: var(--ink); }
     .hidden-fields { display: none; }
     @media print {
-      .site-header, .site-footer, .mpox-subnav, .reading-progress, #assinar, .no-print { display: none !important; }
-      body { background: #fff !important; color: #000 !important; font-size: 11pt; }
-      .page-hero-light, .mpox-section { padding: 1.25rem 0 !important; border-color: #ccc !important; }
-      .mpox-chart-card, .mpox-req-card, .mpox-kpi { box-shadow: none !important; break-inside: avoid; }
+      .site-header, .site-footer, .mpox-subnav, .reading-progress, #assinar, #sugerir-edicao, .no-print { display: none !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 10.5pt; }
+      .page-hero-light, .mpox-section { padding: 1.15rem 0 !important; border-color: #ccc !important; }
+      .mpox-chart-card, .mpox-req-card, .mpox-kpi, .mpox-callout { box-shadow: none !important; break-inside: avoid; }
     }
   </style>
 ---
@@ -353,21 +405,27 @@ extra_head: |
 <section class="page-hero-light">
   <div class="wrap">
     <p class="mpox-presenters" data-reveal>
-      Novembro de 2026 • A <strong>História LGBTI+</strong> junto à <strong>data2comms</strong>, organizações da sociedade civil, pesquisadores e cidadãos apresentam:
+      <strong>História LGBTI+</strong> junto à <strong>data2comms</strong>, organizações da sociedade civil, pesquisadores e cidadãos apresentam este dossiê técnico-jurídico aberto para corroboração e revisão colaborativa.
     </p>
 
     <h1 class="t-h1 max-860" data-reveal data-reveal-delay="1">
-      Mpox no Brasil (2022 a 2026): evidências, gargalos e pedidos formais por um <span class="hl-sweep">plano transparente</span> de 2027 em diante.
+      Mpox no Brasil (2022 a 2026): evidências, responsabilidades e pedidos formais por um <span class="hl-sweep">plano transparente</span> de 2027 em diante.
     </h1>
 
     <p class="t-lead mt-3 max-860" data-reveal data-reveal-delay="2">
-      Consolidamos cinco anos de séries epidemiológicas, portarias federais, resoluções da Anvisa, dados do Painel PrEP, economia do Complexo Industrial da Saúde e referências da OMS para subsidiar o <strong>Inquérito Civil em curso no Ministério Público Federal (MPF)</strong>, protocolar pedidos de acesso à informação no <strong>Ministério da Saúde</strong>, pautar o <strong>CNS</strong> e a <strong>CNAIDS</strong>, acionar a <strong>DPU</strong> e enviar comunicação formal às <strong>Relatorias Especiais da ONU (ACNUDH)</strong>.
+      Análise interdisciplinar construída a partir de cinco anos de séries epidemiológicas, portarias federais, resoluções da Anvisa, dados do Painel PrEP, estudos de efetividade vacinal, economia política do monopólio farmacêutico e normas de direitos humanos. O documento fundamenta o envio de subsídios ao <strong>Inquérito Civil em curso no Ministério Público Federal (MPF)</strong> e à <strong>PFDC</strong>, pedidos de acesso à informação via <strong>LAI ao Ministério da Saúde</strong>, requerimento de pauta ao <strong>CNS</strong> e à <strong>CNAIDS</strong>, ofício à <strong>DPU</strong> e comunicação formal às <strong>Relatorias Especiais da ONU (ACNUDH)</strong>.
     </p>
 
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem;" class="no-print" data-reveal data-reveal-delay="3">
       <a href="#assinar" class="btn btn-dark">Assinar e corroborar o dossiê</a>
-      <a href="#cenario" class="btn btn-outline">Ler o dossiê completo</a>
+      <a href="#sugerir-edicao" class="btn btn-outline">Sugerir edição ou revisão técnica</a>
       <button type="button" onclick="window.print()" class="btn btn-outline">Imprimir ou salvar em PDF</button>
+    </div>
+
+    <div class="mpox-meta-bar" data-reveal data-reveal-delay="3">
+      <span><strong>Versão:</strong> 1.0 (em consulta e revisão aberta antes do protocolo final)</span>
+      <span><strong>Atualização:</strong> 26 de novembro de 2026</span>
+      <span><strong>Escopo:</strong> Subsídio MPF, LAI/MS, CNS/CNAIDS, DPU e Procedimentos Especiais da ONU</span>
     </div>
 
     <div class="mpox-kpi-grid" data-reveal data-reveal-delay="3">
@@ -391,69 +449,87 @@ extra_head: |
   </div>
 </section>
 
-<nav class="mpox-subnav no-print" aria-label="Seções do dossiê">
+<nav class="mpox-subnav no-print" aria-label="Navegação do dossiê">
   <div class="wrap">
     <div class="mpox-subnav-inner">
-      <a href="#cenario" class="mpox-pill">Epidemiologia</a>
-      <a href="#monopolio" class="mpox-pill">Desigualdade e monopólio</a>
-      <a href="#gargalos" class="mpox-pill">Contas no SUS</a>
+      <a href="#escopo" class="mpox-pill">Premissas e método</a>
+      <a href="#epidemiologia" class="mpox-pill">Epidemiologia e genômica</a>
+      <a href="#desigualdade" class="mpox-pill">Norte-Sul e monopólio</a>
+      <a href="#sus-logistica" class="mpox-pill">Anvisa, estoque e MPF</a>
       <a href="#prevencao" class="mpox-pill">Prevenção combinada e noite</a>
       <a href="#governanca" class="mpox-pill">Governança e vacina nacional</a>
-      <a href="#pedidos" class="mpox-pill">Pedidos (MPF, MS e ONU)</a>
+      <a href="#contrapontos" class="mpox-pill">Blindagem e contrapontos</a>
+      <a href="#pedidos" class="mpox-pill">Pedidos formais</a>
       <a href="#referencias" class="mpox-pill">Referências</a>
+      <a href="#sugerir-edicao" class="mpox-pill">Sugerir edição</a>
       <a href="#assinar" class="mpox-pill mpox-pill-cta">Assinar agora</a>
     </div>
   </div>
 </nav>
 
-<!-- SEÇÃO 1: EPIDEMIOLOGIA -->
-<section id="cenario" class="mpox-section bg-white">
+<!-- 0. PREMISSAS, POSICIONAMENTO E METODOLOGIA -->
+<section id="escopo" class="mpox-section bg-white">
   <div class="wrap-reading">
-    <h2 class="t-h2">A mpox manteve transmissão contínua no Brasil desde 2022 e acelerou no fim de 2026</h2>
+    <h2 class="t-h2">Premissas metodológicas e demarcação do objeto deste dossiê</h2>
 
     <div class="prose mt-3">
       <p>
-        Após o pico inicial da emergência global em 2022, quando o Brasil registrou cerca de <strong>10.821 casos</strong>, o vírus deixou o centro do noticiário, mas nunca interrompeu a circulação autóctone no território nacional. A série temporal consolidada pela Secretaria de Vigilância em Saúde e Ambiente (SVSA/MS) e pelas secretarias estaduais demonstra continuidade de transmissão em todos os anos subsequentes: <strong>847 casos em 2023</strong>, <strong>1.989 em 2024</strong>, entre <strong>1.075 e 1.119 em 2025</strong> e <strong>mais de 1.500 registros preliminares até o final de novembro de 2026</strong>, com um óbito confirmado no município do Rio de Janeiro em paciente com imunossupressão grave.
+        Este documento parte de quatro compromissos explícitos que blindam a discussão contra usos oportunistas, pânico moral ou desinformação: <strong>defesa integral do Sistema Único de Saúde (SUS)</strong>, <strong>respeito irrestrito à evidência científica e à segurança vacinal</strong>, <strong>separação honesta entre gargalos externos de mercado e responsabilidades internas de gestão</strong>, e <strong>recusa de soluções simplistas</strong>.
       </p>
       <p>
-        Mesmo antes do fechamento das últimas semanas epidemiológicas de 2026 e sujeito ao atraso habitual de encerramento laboratorial, o ano já registra <strong>variação percentual interanual positiva de cerca de 39% sobre 2025</strong>. No recorte do segundo semestre (Semanas Epidemiológicas 40 a 48), a transmissão acelerou de forma concentrada em capitais com maior capacidade diagnóstica: São Paulo (acima de 500 casos no ano), Rio de Janeiro (cerca de 430 casos) e Ceará (entre 180 e 200 casos, com foco em Fortaleza), enquanto estados com menor acesso a testagem molecular enfrentam risco adicional de subnotificação.
+        Não estamos prescrevendo uma rota tecnológica única, tampouco defendendo vacinação universal em massa da população brasileira ou o atropelamento de protocolos clínicos da Anvisa. A tese central deste dossiê é objetiva: passados quase cinco anos desde a emergência global de 2022, a mpox consolidou <strong>transmissão autóctone contínua no Brasil</strong>, com períodos recorrentes de aceleração. Mesmo diante da concentração produtiva internacional, o Estado brasileiro deve à população e às comunidades mais afetadas <strong>transparência ativa de dados</strong>, <strong>avaliação formal de rotina focalizada na CONITEC</strong>, <strong>planejamento plurianual para 2027 em diante</strong>, <strong>comunicação pública territorial livre de estigma</strong> e <strong>governança participativa permanente</strong>.
+      </p>
+      <p>
+        <strong>Nota sobre metodologia e abertura à revisão por pares:</strong> todos os dados, normas jurídicas e indicadores financeiros aqui apresentados foram checados diretamente em fontes primárias oficiais até <strong>26 de novembro de 2026</strong> (SVSA/MS, DPNI, DATHI, SES-SP, SES-RJ, SESA-CE, Instituto Adolfo Lutz, Diário Oficial da União/Conass, Anvisa, MPF, OMS, OPAS, CDC, UKHSA/NHS, IBGE, ONS e literatura indexada em periódicos científicos). Por tratar-se de uma <strong>Versão 1.0 em consulta pública</strong> antes do protocolo definitivo, mantemos ao final desta página um <a href="#sugerir-edicao">canal aberto de revisão colaborativa</a> para que epidemiologistas, profissionais de sala de vacina, juristas, gestores e movimentos territoriais possam enviar correções, atualizações ou dados locais.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 1. EPIDEMIOLOGIA, EFETIVIDADE VACINAL E GENÔMICA -->
+<section id="epidemiologia" class="mpox-section bg-paper">
+  <div class="wrap-reading">
+    <h2 class="t-h2">Vigilância epidemiológica, efetividade real da vacina e circulação genômica no Brasil (2022 a 2026)</h2>
+
+    <div class="prose mt-3">
+      <p>
+        Após o pico inicial da primeira emergência global em 2022, quando o Brasil contabilizou aproximadamente <strong>10.821 casos</strong>, o tema perdeu espaço na cobertura diária da imprensa, gerando a percepção equivocada de que o vírus teria sido eliminado do país. A série temporal consolidada pela Secretaria de Vigilância em Saúde e Ambiente (SVSA/MS) e pelas secretarias estaduais demonstra, ao contrário, <strong>transmissão sustentada ininterrupta em todos os anos subsequentes</strong>: <strong>847 registros em 2023</strong>, <strong>1.989 em 2024</strong>, entre <strong>1.075 e 1.119 em 2025</strong> e <strong>mais de 1.500 registros preliminares até o final de novembro de 2026</strong> (entre confirmados e prováveis), além de <strong>1 óbito confirmado no município do Rio de Janeiro</strong> em paciente com imunossupressão avançada.
+      </p>
+      <p>
+        Mesmo antes do encerramento das últimas semanas epidemiológicas de 2026 e ainda sob atraso natural de digitação e conclusão laboratorial, o acumulado do ano já representa <strong>variação percentual interanual positiva de cerca de 39% sobre 2025</strong>. A distribuição geográfica observada em novembro de 2026 evidencia concentração expressiva em grandes centros urbanos com maior rede de diagnóstico molecular: <strong>São Paulo</strong> ultrapassou 500 registros no ano, o <strong>Rio de Janeiro</strong> soma cerca de 430 casos e o <strong>Ceará</strong> registrou uma das acelerações mais rápidas do segundo semestre (entre 180 e 200 casos no ano, concentrados sobretudo em Fortaleza), acompanhados por ocorrências em Minas Gerais, Bahia, Distrito Federal e demais unidades federativas. Fora dos grandes polos, o acesso desigual a exames PCR e o medo do estigma nos serviços locais elevam o risco de subnotificação silenciosa.
       </p>
     </div>
 
-    <div class="mpox-chart-card">
+    <div class="mpox-chart-card" style="background: var(--white);">
       <div class="mpox-chart-head">
-        <h3 class="mpox-chart-title">Série temporal de casos de mpox no Brasil (2023 a nov/2026)</h3>
-        <span class="mpox-chart-badge">+39% em 2026* vs. 2025</span>
+        <h3 class="mpox-chart-title">Série temporal de casos de mpox no Brasil (2023 a novembro de 2026)</h3>
+        <span class="mpox-chart-badge">+39% em 2026* sobre 2025</span>
       </div>
       <svg viewBox="0 0 640 235" width="100%" role="img" aria-label="Gráfico de barras de casos de mpox no Brasil: 847 em 2023, 1.989 em 2024, cerca de 1.100 em 2025 e mais de 1.500 em dados preliminares até novembro de 2026">
         <rect x="0" y="0" width="640" height="235" fill="transparent"/>
-        <rect x="16" y="10" width="235" height="26" rx="6" fill="#ECEEE9"/>
+        <rect x="16" y="10" width="252" height="26" rx="6" fill="#ECEEE9"/>
         <text x="26" y="27" font-family="Inter, sans-serif" font-size="11.5" font-weight="600" fill="#17191C">Pico inicial em 2022: 10.821 casos (fora de escala)</text>
         <line x1="20" y1="195" x2="620" y2="195" stroke="#17191C" stroke-width="1.5"/>
 
-        <!-- 2023: 847 -->
         <rect x="65" y="138" width="90" height="57" rx="6" fill="#CBD5E1"/>
         <text x="110" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">847</text>
         <text x="110" y="216" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="600" fill="#525760">2023</text>
 
-        <!-- 2024: 1989 -->
         <rect x="205" y="61" width="90" height="134" rx="6" fill="#94A3B8"/>
         <text x="250" y="53" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">1.989</text>
         <text x="250" y="216" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="600" fill="#525760">2024</text>
 
-        <!-- 2025: ~1100 -->
         <rect x="345" y="121" width="90" height="74" rx="6" fill="#94A3B8"/>
         <text x="390" y="113" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">~1.100</text>
         <text x="390" y="216" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="600" fill="#525760">2025</text>
 
-        <!-- 2026*: >1500 -->
         <rect x="485" y="92" width="90" height="103" rx="6" fill="#17191C"/>
         <rect x="485" y="92" width="90" height="10" rx="3" fill="#CCFF00"/>
         <text x="530" y="83" text-anchor="middle" font-family="Inter, sans-serif" font-size="13.5" font-weight="800" fill="#17191C">&gt;1.500*</text>
         <text x="530" y="216" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#17191C">2026* (até nov)</text>
       </svg>
       <p class="mpox-chart-foot">
-        *Dados preliminares sujeitos a atualização e encerramento laboratorial (SVSA/MS, SES-SP, SES-RJ e SESA-CE, nov/2026). A exclusão de 2022 da escala linear evita distorção visual das barras de transmissão endêmica entre 2023 e 2026.
+        *Dados preliminares sujeitos a atualização e encerramento laboratorial (SVSA/MS, SES-SP, SES-RJ e SESA-CE, nov/2026). A separação do pico pandêmico de 2022 da escala linear evita distorção visual das barras de circulação endêmica de 2023 a 2026.
       </p>
     </div>
 
@@ -484,129 +560,201 @@ extra_head: |
             <td><strong>Novembro de 2026 (parcial)</strong></td>
             <td>120 casos</td>
             <td>24 dias (até 24/11)</td>
-            <td><strong>5,0 casos/dia</strong> (salto superior a 7x frente a setembro)</td>
+            <td><strong>5,0 casos/dia</strong> (mais de 7x a taxa diária de setembro)</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="mpox-callout">
-      <strong>Nota técnica sobre vigilância genômica (Clado Ib e Clado IIb):</strong> o Instituto Adolfo Lutz (SP) e laboratórios de referência detectaram expansão do <strong>Clado Ib</strong> dividindo espaço com o <strong>Clado IIb</strong> em amostras sequenciadas no segundo semestre de 2026. Este dossiê rejeita abordagens alarmistas: até o momento, os dados clínicos observados no Brasil indicam <strong>perfil clínico e de gravidade semelhante ao já conhecido</strong>, com quadros graves e letalidade concentrados em pessoas com imunossupressão avançada. O dado reforça a necessidade de vigilância contínua e proteção vacinal prévia, sem pânico moral.
+    <div class="prose">
+      <h3>Por que compras reativas no pico falham: janela imunológica e efetividade de 1 vs. 2 doses</h3>
+      <p>
+        Estudos observacionais de referência publicados no <em>New England Journal of Medicine</em> (Deputy, Dalton et al., 2023 — base nacional Epic Cosmos, incluindo pacientes imunossuprimidos) e no <em>MMWR</em> do CDC (Dalton et al., 2023 — estudo caso-controle multijurisdicional em serviços de saúde sexual) demonstram dois dados cruciais para o planejamento público:
+      </p>
+      <ul>
+        <li><strong>Esquema completo (2 doses, intervalo de 28 dias):</strong> efetividade real estimada entre <strong>66,0% (NEJM) e 86% (CDC MMWR)</strong> na prevenção da doença clinicamente atendida;</li>
+        <li><strong>Dose única (1 dose):</strong> proteção substancialmente menor, entre <strong>35,8% (NEJM) e 75% (CDC MMWR)</strong>.</li>
+      </ul>
+      <p>
+        Como a resposta imune plena exige duas doses separadas por 28 dias somadas a cerca de 14 dias após a segunda aplicação (<strong>aproximadamente 42 dias desde a primeira dose</strong>), depender de compras emergenciais apenas quando a curva já acelerou em outubro ou novembro é, por definição imunológica, tardio para conter a onda em curso. O mesmo vale para a <strong>vacinação pós-exposição (PEP vacinal)</strong>, cuja eficácia depende de aplicação preferencial em até 4 dias (limite de até 14 dias) após o contato — algo inviabilizado quando faltam estoques locais, como o próprio Ministério Público Federal ressaltou ao abrir inquérito após a suspensão da vacinação no Distrito Federal em 3 de novembro de 2026.
+      </p>
+    </div>
+
+    <div class="mpox-callout" style="background: var(--white);">
+      <strong>Vigilância genômica sem alarmismo (Clado Ib e Clado IIb):</strong> o Instituto Adolfo Lutz (SP) e laboratórios de referência identificaram expansão relevante do <strong>Clado Ib</strong> ao lado do <strong>Clado IIb</strong> em amostras sequenciadas no segundo semestre de 2026, quando em 2025 sua participação era estatisticamente residual. É indispensável manter rigor metodológico: a vigilância genômica analisa uma fração amostral dos casos (com cobertura desigual entre estados) e, até o momento, os dados clínicos brasileiros mostram <strong>gravidade e letalidade semelhantes às do Clado IIb</strong>, concentradas em pacientes com imunossupressão grave. O achado não autoriza pânico midiático nem estigmatização, mas elimina qualquer justificativa para manter a resposta em modo de improviso episódico.
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO 2: DESIGUALDADE GLOBAL E MONOPÓLIO -->
-<section id="monopolio" class="mpox-section bg-paper">
+<!-- 2. DESIGUALDADE NORTE-SUL E MONOPÓLIO -->
+<section id="desigualdade" class="mpox-section bg-white">
   <div class="wrap-reading">
-    <h2 class="t-h2">No Norte Global, a vacina virou rotina. Na América Latina, segue sob escassez estrutural.</h2>
+    <h2 class="t-h2">Desigualdade Norte-Sul e a anatomia do monopólio estrutural da Bavarian Nordic</h2>
 
     <div class="prose mt-3">
       <p>
-        Uma análise séria e honesta precisa separar com precisão <strong>responsabilidades externas do monopólio farmacêutico</strong> e <strong>lacunas internas de planejamento estatal</strong>. O Brasil e a América Latina enfrentam uma assimetria estrutural profunda no acesso à vacina MVA-BN (comercializada como <em>Jynneos</em> ou <em>Imvanex</em>). Enquanto os Estados Unidos apoiaram-se em estoques estratégicos de biodefesa pré-pagos ao longo de duas décadas (<em>Project BioShield</em> / BARDA) para aplicar <strong>mais de 1,2 milhão de doses</strong>, e a Inglaterra firmou contratos plurianuais em moeda forte para superar <strong>165 mil doses aplicadas</strong> (101 mil primeiras doses e 63 mil segundas doses) e transformar a vacinação em <strong>programa nacional de rotina no NHS em agosto de 2025</strong>, toda a América Latina acumulou cerca de <strong>50 mil esquemas completos via OPAS</strong> até 2025.
+        Qualquer crítica justa à gestão brasileira precisa reconhecer o terreno desigual do mercado internacional de imunobiológicos. A diferença brutal de cobertura vacinal entre o Norte Global e a América Latina não decorre de uma suposta incapacidade do PNI brasileiro — historicamente um dos maiores e mais respeitados programas públicos de vacinação do mundo —, mas da interseção entre <strong>assimetria fiscal/geopolítica</strong>, <strong>concentração fabril privada</strong> e <strong>ausência de coordenação plurianual de demanda na região</strong>.
       </p>
       <p>
-        No Brasil, desde o início da imunização em março de 2023 até novembro de 2026, foram aplicadas cerca de <strong>41.200 doses acumuladas</strong> (em um esquema primário que exige duas doses com intervalo de 28 dias). Ajustando o indicador pelo denominador populacional (IBGE ~212,6 milhões vs. ONS Inglaterra ~57 milhões), a Inglaterra aplicou aproximadamente <strong>290 doses por 100 mil habitantes</strong> contra cerca de <strong>19 doses por 100 mil habitantes no Brasil</strong>: uma defasagem proporcional de cerca de <strong>15 vezes</strong>.
+        Os <strong>Estados Unidos</strong> aplicaram <strong>mais de 1,2 milhão de doses</strong> apoiando-se em estoques estratégicos de biodefesa pré-pagos ao longo de duas décadas sob o <em>Project BioShield</em> (NIH/BARDA). A <strong>Inglaterra</strong> ultrapassou <strong>165 mil doses aplicadas</strong> (101 mil primeiras doses e 63 mil segundas doses — taxa de completude de ~62%) mediante contratos bilaterais plurianuais em moeda forte e, em <strong>agosto de 2025</strong>, incorporou a vacina como <strong>programa nacional de rotina</strong> nos serviços de saúde sexual do NHS. Na outra ponta, toda a <strong>América Latina</strong> somou cerca de <strong>50 mil esquemas completos via OPAS</strong> até 2025. No <strong>Brasil</strong>, desde o início da aplicação em março de 2023 até novembro de 2026, foram registradas cerca de <strong>41.200 doses acumuladas</strong>. Normalizando pela população (IBGE ~212,6 milhões vs. ONS Inglaterra ~57 milhões), a Inglaterra aplicou cerca de <strong>290 doses por 100 mil habitantes</strong> contra <strong>~19 por 100 mil no Brasil</strong> — defasagem proporcional próxima de <strong>15 vezes</strong>.
       </p>
     </div>
 
-    <div class="mpox-chart-card" style="background: var(--white);">
+    <div class="mpox-chart-card">
       <div class="mpox-chart-head">
-        <h3 class="mpox-chart-title">Doses aplicadas por 100 mil habitantes (Inglaterra vs. Brasil)</h3>
-        <span class="mpox-chart-badge">Defasagem proporcional de ~15x</span>
+        <h3 class="mpox-chart-title">Desigualdade proporcional de acesso: doses aplicadas por 100 mil habitantes</h3>
+        <span class="mpox-chart-badge">Defasagem per capita de ~15x</span>
       </div>
       <svg viewBox="0 0 640 155" width="100%" role="img" aria-label="Comparativo proporcional: Inglaterra cerca de 290 doses por 100 mil habitantes versus Brasil cerca de 19 doses por 100 mil habitantes">
-        <!-- Inglaterra -->
-        <text x="10" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">Inglaterra (NHS England)</text>
+        <text x="10" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">Inglaterra (UKHSA / NHS England)</text>
         <text x="630" y="30" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#525760">Rotina desde ago/2025 • &gt;165 mil doses</text>
         <rect x="10" y="40" width="530" height="24" rx="5" fill="#17191C"/>
         <text x="550" y="57" font-family="Inter, sans-serif" font-size="13.5" font-weight="800" fill="#17191C">~290 / 100 mil</text>
 
-        <!-- Brasil -->
-        <text x="10" y="102" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">Brasil (SUS)</text>
+        <text x="10" y="102" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17191C">Brasil (SUS / PNI)</text>
         <text x="630" y="102" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#525760">Lotes pontuais desde mar/2023 • ~41,2 mil doses</text>
         <rect x="10" y="112" width="530" height="24" rx="5" fill="#ECEEE9"/>
         <rect x="10" y="112" width="36" height="24" rx="5" fill="#CCFF00" stroke="#17191C" stroke-width="1.5"/>
         <text x="58" y="129" font-family="Inter, sans-serif" font-size="13.5" font-weight="800" fill="#17191C">~19 / 100 mil</text>
       </svg>
       <p class="mpox-chart-foot">
-        Contexto regional e global: Estados Unidos (&gt;1,2 milhão de doses, CDC) | América Latina (~50 mil esquemas completos via OPAS até 2025). Fontes: UKHSA/NHS England (2025), Painel Mpox/MS (nov/2026), IBGE e ONS.
+        Referências internacionais: EUA (&gt;1,2 milhão de doses, CDC) e América Latina (~50 mil esquemas completos via OPAS até 2025). Fontes: UKHSA/NHS England (2025), Painel Mpox/MS (nov/2026), IBGE e ONS.
       </p>
     </div>
 
     <div class="prose">
-      <h3>Anatomia do monopólio estrutural da Bavarian Nordic</h3>
+      <h3>Por que o monopólio da MVA-BN não se resolve com "quebra de patente" simples</h3>
       <p>
-        Embora existam outras vacinas contra ortopoxvírus no mundo (como a ACAM2000, replicante, e a LC16m8, da japonesa KM Biologics, minimamente replicante e listada em uso emergencial pela OMS em novembro de 2024), ambas possuem contraindicação ou restrições severas para pessoas com imunossupressão grave. A <strong>MVA-BN</strong>, fabricada exclusivamente pela dinamarquesa <strong>Bavarian Nordic A/S</strong>, permanece hoje a <strong>única vacina não replicante contra mpox pré-qualificada pela OMS (setembro de 2024) e segura para pessoas vivendo com HIV em imunossupressão avançada</strong>.
+        Para evitar simplificações que enfraquecem a incidência pública, é necessário descrever o monopólio da dinamarquesa <strong>Bavarian Nordic A/S</strong> com rigor jurídico e industrial:
       </p>
+      <ul>
+        <li><strong>Única vacina segura para imunossuprimidos graves:</strong> embora existam outras vacinas contra ortopoxvírus (como a ACAM2000, replicante, e a LC16m8 da japonesa KM Biologics, minimamente replicante e incluída na lista EUL da OMS em novembro de 2024), ambas são contraindicadas ou fortemente restritas para pessoas com imunossupressão avançada. A <strong>MVA-BN (Jynneos/Imvanex)</strong>, pré-qualificada pela OMS em 13 de setembro de 2024, é a única vacina não replicante de 3ª geração com perfil amplo de segurança para PVHA imunossuprimidas.</li>
+        <li><strong>Monopólio estrutural composto (além da patente primária):</strong> depósitos originais da cepa MVA-BN do início dos anos 2000 (como o depósito brasileiro BRPI0115533) já venceram ou sofreram o limite de prazo fixado pelo STF na <strong>ADI 5529/2021</strong>. A barreira atual combina <strong>patentes secundárias</strong> de processo/formulação, <strong>segredo industrial biológico</strong> (cultivo em fibroblastos de embrião de galinha e domínio de biorreatores), plantas certificadas em BPF e proteção de dados regulatórios (art. 39.3 do TRIPS). No Brasil, o <strong>Veto nº 48/2021</strong> à Lei nº 14.200/2021 (mantido pelo Congresso) retirou a obrigatoriedade de repasse de <em>know-how</em> e material biológico em licenças compulsórias — tornando uma quebra de patente isolada no INPI insuficiente para produzir uma vacina viral sem transferência tecnológica ou desenvolvimento autônomo.</li>
+        <li><strong>Risco socializado, controle concentrado e preços elevados:</strong> conforme relatório da <em>Public Citizen</em> (2024), a Bavarian Nordic recebeu <strong>mais de US$ 2,3 bilhões</strong> em financiamentos de P&amp;D (NIH/BARDA) e contratos governamentais de biodefesa dos EUA desde 2003. Ainda assim, o preço contratual de referência da UNICEF ficou em <strong>US$ 65 por dose</strong> (chegando a até <strong>US$ 100</strong> no mercado comercial), acima do estimado em compras volumosas norte-americanas (~US$ 55).</li>
+        <li><strong>Capacidade fabril e demanda previsível:</strong> diante da crise africana do Clado Ib, a Bavarian Nordic anunciou expansão fabril para até <strong>10 milhões de doses até o fim de 2025</strong> e abriu tratativas de envase local (<em>fill-and-finish</em>) com o <strong>Africa CDC</strong> e o <strong>Mecanismo de Acesso e Alocação (AAM)</strong> da OMS/Gavi/UNICEF/CEPI. Na América Latina, porém, o acesso continuou fragmentado em compras pontuais e sem transparência pública de preços no Fundo Rotatório da OPAS.</li>
+      </ul>
       <p>
-        Diferentemente de medicamentos químicos pequenos (onde o licenciamento compulsório resolve o preço rapidamente), esse monopólio não depende apenas de patentes primárias (cujos depósitos iniciais do começo dos anos 2000 já expiraram ou sofreram o corte da ADI 5529/STF). Trata-se de um <strong>monopólio estrutural composto</strong> por patentes secundárias de processo e formulação, segredo industrial biológico (linhagens celulares e biorreatores), plantas certificadas e domínio regulatório, somado ao veto legislativo brasileiro (Veto nº 48/2021 na Lei nº 14.200/2021) à obrigatoriedade de repasse de <em>know-how</em> em licenças compulsórias. Segundo levantamento da <em>Public Citizen</em> (2024), a empresa beneficiou-se de <strong>mais de US$ 2,3 bilhões</strong> em P&amp;D e compras garantidas de biodefesa dos Estados Unidos desde 2003, mas mantém preços em torno de <strong>US$ 65 por dose para a UNICEF</strong> e até <strong>US$ 100 no mercado comercial</strong>, sem sequer protocolar pedido de registro sanitário definitivo no Brasil.
+        *(Nota de rigor financeiro: este dossiê <strong>evita propositalmente</strong> usar a margem EBITDA consolidada da Bavarian Nordic no 3º trimestre de 2026 — 34,4% — como prova de lucro exclusivo na mpox, pois o balanço corporativo da empresa indica que 63,4% da receita trimestral veio de vacinas comerciais de viagem e apenas 33,6% de preparação pública. A crítica de economia política sustenta-se integralmente nos fatos diretamente ligados à mpox: financiamento público norte-americano de US$ 2,3 bi, preço unitário elevado de US$ 65 a US$ 100, ausência de registro no Brasil e concentração produtiva na Europa.)*
       </p>
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO 3: GARGALOS INTERNOS E CONTAS NO SUS -->
-<section id="gargalos" class="mpox-section bg-white">
+<!-- 3. MARCO REGULATÓRIO, LOGÍSTICA E INQUÉRITO DO MPF -->
+<section id="sus-logistica" class="mpox-section bg-paper">
   <div class="wrap-reading">
-    <h2 class="t-h2">O que o Estado brasileiro fez e as contas que ainda precisam ficar transparentes</h2>
+    <h2 class="t-h2">Marco regulatório da Anvisa, gargalos logísticos no SUS e o Inquérito Civil do MPF</h2>
 
     <div class="prose mt-3">
+      <h3>Evolução normativa na Anvisa: por que o país opera em excepcionalidade permanente</h3>
       <p>
-        O reconhecimento do gargalo global não dispensa o escrutínio transparente sobre a gestão interna. O Ministério da Saúde realizou aquisições via Fundo Rotatório da OPAS (<strong>47 mil doses em 2023</strong>, <strong>25 mil em 2024</strong> e <strong>25 mil anunciadas em novembro de 2026</strong>), publicou em novembro de 2026 a <strong>Nota Técnica Conjunta nº 403/2026-DPNI/SVSA/MS</strong> adotando a aplicação <strong>intradérmica (0,1 mL, até 5 doses por frasco)</strong> para usuários de PrEP e profissionais de laboratório sem imunodeficiência (mantendo a via subcutânea de 0,5 mL para PVHA imunossuprimidas) e incluiu a vacina nacional da UFMG/Fiocruz no programa PDIL.
+        É juridicamente incorreto atribuir à Anvisa a ausência de registro definitivo da vacina no país. Nos termos do <strong>art. 12 da Lei nº 6.360/1976</strong>, o pedido de registro sanitário é ato de iniciativa voluntária da empresa fabricante ou detentora com Autorização de Funcionamento (AFE) no Brasil — e a Bavarian Nordic nunca protocolou pedido de registro comercial no país. Para viabilizar o acesso pelo SUS sem travar a proteção da população, a Anvisa adotou autorizações excepcionais rigorosas, exigindo aprovação prévia por autoridades de referência (OMS, FDA, EMA, MHRA, PMDA ou Health Canada) e liberação de lotes pelo <strong>INCQS/Fiocruz</strong>:
       </p>
+    </div>
+
+    <div class="mpox-table-wrap">
+      <table class="mpox-data-table">
+        <thead>
+          <tr>
+            <th>Norma / Ato</th>
+            <th>Período</th>
+            <th>Status jurídico atual (Nov/2026)</th>
+            <th>Alcance prático</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>RDC Anvisa nº 747/2022</strong></td>
+            <td>Ago/2022 a Jul/2024</td>
+            <td><strong>Revogada</strong> (jul/2024)</td>
+            <td>Criou a primeira dispensa emergencial de registro durante o surto global de 2022.</td>
+          </tr>
+          <tr>
+            <td><strong>RDC Anvisa nº 892/2024</strong></td>
+            <td>Ago/2024 a Set/2025</td>
+            <td><strong>Vigência cessada</strong> (art. 25)</td>
+            <td>Reeditou a dispensa temporária na 2ª ESPII; perdeu vigência automática quando a OMS encerrou a ESPII em 05/09/2025.</td>
+          </tr>
+          <tr>
+            <td><strong>Lei nº 9.782/1999 (art. 8º, § 5º) + RDC nº 203/2017 (art. 3º, III)</strong></td>
+            <td>Permanente</td>
+            <td><strong>Vigente</strong></td>
+            <td>Regra permanente para importação excepcional pelo MS de imunobiológicos sem registro via Fundo Rotatório da OPAS.</td>
+          </tr>
+          <tr>
+            <td><strong>Nota Técnica Conjunta nº 403/2026-DPNI/SVSA/MS</strong></td>
+            <td>Nov/2026</td>
+            <td><strong>Vigente</strong> (ato orientador)</td>
+            <td>Autoriza via <strong>intradérmica (0,1 mL, até 5 doses/frasco)</strong> para PrEP e técnicos de lab imunocompetentes; mantém <strong>subcutânea (0,5 mL)</strong> para PVHA imunossuprimidas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <h3>Escala da demanda prioritária, cadeia de frio e o hiato de ~30,8 mil doses</h3>
       <p>
-        No campo regulatório, como a fabricante dinamarquesa nunca protocolou pedido de registro definitivo no país (iniciativa voluntária prevista no art. 12 da Lei nº 6.360/1976), a importação pelo SUS ocorreu sob autorizações excepcionais da Anvisa. A <strong>RDC nº 747/2022</strong> foi revogada em julho de 2024 e sucedida pela <strong>RDC nº 892/2024</strong>, cuja vigência cessou automaticamente pelo seu art. 25 quando a OMS encerrou a 2ª Emergência de Saúde Pública de Importância Internacional (ESPII) em <strong>5 de setembro de 2025</strong>. Fora de ESPII vigente, o amparo permanente para importação excepcional pelo MS via OPAS é o <strong>art. 8º, § 5º, da Lei nº 9.782/1999</strong>, regulamentado pela <strong>RDC Anvisa nº 203/2017 (art. 3º, III)</strong>, com validação de segurança já aprovada por OMS, FDA e EMA e controle de qualidade pelo INCQS/Fiocruz. Trata-se de imunizante plenamente seguro, mas dependente de um regime de excepcionalidade contínua.
+        O Ministério da Saúde realizou compras via OPAS de <strong>47 mil doses em 2023</strong>, <strong>25 mil em 2024</strong> e <strong>25 mil anunciadas em novembro de 2026</strong> (totalizando 97 mil doses adquiridas em quatro anos). Contudo, dois descompassos estruturais permanecem sem resposta pública transparente:
       </p>
+      <ol>
+        <li><strong>Descompasso frente à população-alvo já eleita pelo SUS:</strong> segundo o <strong>Painel PrEP oficial do Ministério da Saúde (2025/2026)</strong>, o SUS acompanha cerca de <strong>166,1 mil usuários ativos de PrEP</strong> (dos quais 76,6% a 78,6% são homens gays e outros HSH, 7,3% a 7,6% mulheres cis e 2,6% a 3% mulheres trans e travestis), além do contingente de pessoas vivendo com HIV com baixa contagem de células CD4. Mesmo com o fracionamento intradérmico da NT nº 403/2026 — cujo rendimento prático frequentemente fica em 3 a 4 doses por frasco devido ao volume morto de seringas, necessidade de treinamento de sala de vacina e <strong>validade de poucas horas (8h em 2 a 8 °C) após a perfuração do frasco</strong> —, lotes pontuais de 25 mil doses (que geraram remessas locais restritas, como 1.000 doses ao Estado de São Paulo e 600 doses à capital entre 23 e 25/11/2026) ficam estruturalmente aquém da demanda prioritária nacional.</li>
+        <li><strong>O hiato físico não explicado entre 2023–2024 e 2026:</strong> entre as <strong>72 mil doses adquiridas até 2024</strong> e as cerca de <strong>41,2 mil doses aplicadas até novembro de 2026</strong> (32,2 mil entre mar/2023 e dez/2024 + cerca de 12,2 mil aplicadas em 2026 das 15,6 mil distribuídas no ano, segundo informes da pasta), existe uma diferença aproximada de <strong>30,8 mil doses</strong>. Como o imunizante exige congelamento profundo a <strong>-20 °C</strong> e expira em <strong>28 dias após descongelamento (2 a 8 °C)</strong>, a ausência de um painel aberto de estoques, perdas físicas e taxa de completude D1/D2 impede a sociedade de distinguir entre doses vencidas, saldo estocado no CENADI/estados e eventual atraso de registro estadual na RNDS.</li>
+      </ol>
     </div>
 
     <div class="mpox-callout mpox-callout-accent">
-      <strong>Dois números oficiais que expõem o déficit de planejamento e transparência:</strong><br>
-      <strong>1) Escala da demanda elegível:</strong> segundo o Painel PrEP oficial do Ministério da Saúde (2025/2026), o SUS acompanha cerca de <strong>166,1 mil usuários ativos de PrEP</strong> (76% a 78% homens gays e outros HSH), sem contabilizar as pessoas vivendo com HIV com imunossupressão elegíveis. Lotes emergenciais pontuais de 25 mil doses ficam estruturalmente distantes da demanda real do próprio público já priorizado pelo SUS.<br>
-      <strong>2) O hiato de ~30,8 mil doses e o Inquérito Civil do MPF:</strong> o Brasil já havia adquirido <strong>72 mil doses entre 2023 e 2024</strong>, mas aplicou cerca de <strong>41,2 mil doses até novembro de 2026</strong>. A vacina exige congelamento a <strong>-20 °C</strong>, vence em <strong>28 dias após descongelar (2 a 8 °C)</strong> e em poucas horas após perfurado o frasco para uso multidose intradérmico. Sem painel federal aberto de estoques, perdas físicas e cobertura desagregada entre 1ª dose (D1) e 2ª dose (D2), a sociedade desconhece quanto venceu, quanto está em estoque e quantos esquemas foram concluídos. Em <strong>novembro de 2026</strong>, após a suspensão temporária da vacinação no Distrito Federal por falta de doses (03/11/2026), a Procuradoria da República no Acre (proc. <strong>Lucas Costa Almeida Dias</strong>) instaurou <strong>Inquérito Civil no MPF</strong> exigindo esse balanço completo da SVSA/MS.
+      <strong>O Inquérito Civil do Ministério Público Federal (novembro de 2026):</strong> em decorrência de relatos de desabastecimento e da suspensão temporária da vacinação no Distrito Federal em <strong>3 de novembro de 2026</strong> por falta de doses, a Procuradoria da República no Acre (procurador da República <strong>Lucas Costa Almeida Dias</strong>) instaurou <strong>Inquérito Civil no MPF</strong> para apurar possível omissão na aquisição e distribuição de vacinas contra mpox aos estados e ao DF. O MPF expediu ofícios à SVSA exigindo detalhamento de doses adquiridas, distribuídas, aplicadas, em estoque, prazos de validade e critérios técnicos de repartição federativa. Este dossiê foi desenhado para <strong>corroborar e ampliar tecnicamente</strong> esse procedimento com evidência nacional, jurídica e comunitária.
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO 4: PREVENÇÃO COMBINADA, COMUNICAÇÃO E ECONOMIA NOTURNA -->
-<section id="prevencao" class="mpox-section bg-paper">
+<!-- 4. PREVENÇÃO COMBINADA, COMUNICAÇÃO E ECONOMIA NOTURNA -->
+<section id="prevencao" class="mpox-section bg-white">
   <div class="wrap-reading">
-    <h2 class="t-h2">Só orientação na ponta já falhou. Sem cobertura prévia, o estigma e o prejuízo recaem sobre a comunidade.</h2>
+    <h2 class="t-h2">Prevenção combinada, vazio de comunicação pública e impacto sobre a cena cultural</h2>
 
     <div class="prose mt-3">
-      <h3>Por que terceirizar a prevenção apenas ao comportamento individual falha</h3>
+      <h3>Por que terceirizar a prevenção apenas ao comportamento individual na ponta falha</h3>
       <p>
-        Este dossiê <strong>não propõe vacinação universal em massa da população brasileira</strong>. A reivindicação está estritamente alinhada ao consenso técnico internacional atualizado: <strong>vacinação pré-exposição focalizada e contínua</strong> para grupos em situação de maior exposição (usuários de PrEP, gays, bissexuais e outros HSH com redes de exposição ampliada, pessoas trans em vulnerabilidade e PVHA imunossuprimidas), modelo adotado como rotina pelo <strong>NHS England / UKHSA (agosto de 2025)</strong>, pelos protocolos do <strong>CDC (EUA)</strong> e pelas diretrizes do <strong>WHO Strategic Framework for Mpox (2024 a 2027)</strong>.
+        Uma objeção recorrente no debate clínico afirma que, por se tratar de agravo com cerca de 1.500 notificações anuais e baixa letalidade geral, bastaria reforçar a "orientação comportamental na ponta" sem estruturar programa contínuo de imunização focalizada. Essa posição contraria tanto o consenso internacional recente quanto a própria doutrina científica do SUS:
+      </p>
+      <ul>
+        <li><strong>Consenso internacional de rotina focalizada:</strong> o NHS England/UKHSA (agosto de 2025), o CDC norte-americano, os Países Baixos e o <em>WHO Strategic Framework for Mpox (2024–2027)</em> não recomendam vacinação universal da população geral, mas consolidaram a <strong>vacinação pré-exposição focalizada de rotina</strong> nos serviços de saúde sexual para redes de maior exposição (HSH com múltiplas parcerias ou frequência a espaços de sociabilidade sexual, usuários de PrEP, pessoas trans em vulnerabilidade ampliada e PVHA imunossuprimidas).</li>
+        <li><strong>Fundamento oficial do SUS — Prevenção Combinada:</strong> o manual <em>Prevenção Combinada do HIV: bases conceituais para profissionais, trabalhadores(as) e gestores(as) de saúde</em>, publicado pelo próprio <strong>Ministério da Saúde (2017)</strong>, e o quadro conceitual de <strong>vulnerabilidade individual, social e programática</strong> (José Ricardo Ayres, Vera Paiva, Richard Parker e UNAIDS) demonstram que estratégias puramente comportamentais fracassam quando o Estado não oferece o eixo <strong>biomédico</strong> (vacina, testagem rápida, PrEP) nem enfrenta as barreiras <strong>estruturais</strong> (estigma, acesso desigual a exames e afastamento laboral no isolamento).</li>
+      </ul>
+
+      <h3>Vazio de comunicação pública federal, sobrecarga local e proteção ao art. 220 da CF/88</h3>
+      <p>
+        Em <strong>27 de outubro de 2026</strong>, o Ministério da Saúde publicou a <strong>Portaria GM/MS nº 12.301/2026</strong>, instituindo a Política Nacional de Informação e Saúde Digital (PNISD), voltada à infraestrutura de dados e RNDS. Em contraste, as propostas aprovadas pela <strong>17ª Conferência Nacional de Saúde (Resolução CNS nº 719/2023)</strong> para estruturar uma <strong>Política Nacional de Comunicação Pública do SUS</strong> seguem sem regulamentação federal.
       </p>
       <p>
-        Diante de argumentos que sugerem dispensar a vacinação focalizada e concentrar esforços apenas em "orientação comportamental na ponta", a própria ciência da saúde coletiva e a política oficial do SUS fornecem a resposta metodológica: o manual <em>Prevenção Combinada do HIV: bases conceituais</em> do <strong>Ministério da Saúde (2017)</strong>, ancorado no conceito de <strong>vulnerabilidade programática</strong> de José Ricardo Ayres e nas diretrizes do <strong>UNAIDS</strong>, demonstra há décadas que intervenções exclusivamente comportamentais fracassam quando não vêm acompanhadas de acesso regular a insumos biomédicos (vacina, testagem, PrEP) e suporte estrutural livre de discriminação.
+        Na ausência de campanhas federais territoriais e permanentes, a orientação acaba recaindo sobre serviços públicos estaduais e municipais sobrecarregados — como CTAs, SAEs, ambulatórios trans e o CRT DST/Aids de São Paulo, que não dispõem de orçamento federal de mídia de massa — e sobre coletivos comunitários e divulgadores científicos independentes. Esse vazio facilita a circulação de desinformação em plataformas digitais e coberturas sensacionalistas que reativam estigmas históricos contra pessoas LGBTQIA+ e afastam pessoas sintomáticas do teste e do cuidado (Sousa, Sousa e Fronteira, <em>Revista Brasileira de Enfermagem</em>, 2022). *(Ressalva constitucional expressa: este dossiê defende integralmente a liberdade de imprensa assegurada no art. 220 da CF/88 e na ADPF 130/STF, propondo transparência ativa e comunicação pública estatal qualificada — nunca censura editorial.)*
       </p>
 
-      <h3>O vácuo de comunicação pública federal e o dano do estigma</h3>
+      <h3>Externalidade econômica regressiva sobre a cena cultural e trabalhadores informais</h3>
       <p>
-        Em 27 de outubro de 2026, o Ministério da Saúde editou a <strong>Portaria GM/MS nº 12.301/2026</strong>, instituindo a Política Nacional de Informação e Saúde Digital (PNISD). Contudo, as propostas aprovadas pela <strong>17ª Conferência Nacional de Saúde (Resolução CNS nº 719/2023)</strong> para estruturar uma Política Nacional de Comunicação Pública do SUS seguem sem regulamentação federal. Na ponta, serviços públicos locais como CTAs, SAEs e CRTs (a exemplo do CRT DST/Aids-SP), coletivos comunitários e divulgadores científicos independentes tentam suprir o vácuo sem verba federal de campanha de massa, enquanto a desinformação em plataformas digitais e coberturas sensacionalistas reativam estigmas que afastam pessoas do diagnóstico precoce e do cuidado (Sousa et al., <em>Revista Brasileira de Enfermagem</em>, 2022).
-      </p>
-
-      <h3>Externalidade regressiva na cena cultural e nos trabalhadores da noite</h3>
-      <p>
-        A ausência de cobertura vacinal preventiva acumulada entre 2024 e 2026 e de comunicação de risco antecipada transferiu o custo econômico da contenção para agentes privados e trabalhadores informais. Na aceleração de novembro de 2026, espaços culturais LGBTQIA+ agiram com responsabilidade sanitária por conta própria: em São Paulo, a <strong>Festa Kevin</strong> adiou sua edição de 14 de novembro; no Rio de Janeiro, o <strong>Dédalos Rio</strong> suspendeu atividades entre 9 e 19 de novembro. O ônus imediato recaiu sobre a renda de <strong>DJs, artistas, produtores, bartenders, seguranças, equipes de limpeza, caixa, técnica de som e trabalhadores informais</strong> sem rede de proteção. Espaços culturais e de sociabilidade LGBTQIA+ não são vilões epidemiológicos: são parceiros estratégicos de acolhimento, testagem e informação quando o Estado planeja junto com a comunidade.
+        Quando o Estado não constrói cobertura vacinal prévia entre 2024 e 2026 nem promove comunicação antecipada de risco, o custo econômico da contenção durante acelerações é privatizado e transferido de forma regressiva para microprodutores culturais e trabalhadores autônomos. Em novembro de 2026, espaços LGBTQIA+ agiram com responsabilidade sanitária voluntária: em São Paulo, a <strong>Festa Kevin</strong> adiou a edição de 14 de novembro; no Rio de Janeiro, o <strong>Dédalos Rio</strong> suspendeu atividades entre 9 e 19 de novembro. O impacto financeiro atingiu diretamente <strong>DJs, artistas e performers, produtores, bartenders, seguranças, equipes de limpeza, caixa, técnicos de som e luz e ambulantes</strong>, categorias marcadas por alta informalidade e sem seguro-renda para diárias canceladas. Espaços culturais e de sociabilidade LGBTQIA+ não são responsáveis pelo surto: são parceiros estratégicos de acolhimento, testagem e prevenção quando incluídos no planejamento público.
       </p>
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO 5: GOVERNANÇA E VACINA NACIONAL -->
-<section id="governanca" class="mpox-section bg-white">
+<!-- 5. GOVERNANÇA, VACINA NACIONAL E ESTRATÉGIA DE PORTFÓLIO -->
+<section id="governanca" class="mpox-section bg-paper">
   <div class="wrap-reading">
-    <h2 class="t-h2">Governança permanente, respeito ao prazo da ciência e transparência orçamentária</h2>
+    <h2 class="t-h2">Governança participativa, vacina nacional e estratégia em três horizontes (2027+)</h2>
 
     <div class="prose mt-3">
+      <h3>Limites estruturais do COE-Mpox frente ao controle social do SUS</h3>
       <p>
-        A <strong>Portaria GM/MS nº 5.192, de 14 de agosto de 2024</strong>, instituiu o Centro de Operações de Emergências em Saúde Pública para Mpox (<strong>COE-Mpox</strong>) com <strong>25 membros titulares</strong> (Art. 2º, incisos I a XV): <strong>18 representantes internos do Ministério da Saúde</strong> e <strong>7 de órgãos parceiros</strong> (Anvisa, Fiocruz, Conass, Conasems, OPAS e apenas 1 vaga do Conselho Nacional de Saúde). Por seu Art. 4º, § 1º, o COE não é colegiado deliberativo (não há votação) e pode ser desativado pela SVSA (Art. 1º, parágrafo único). Redes comunitárias LGBTQIA+, movimentos de pessoas vivendo com HIV, coletivos periféricos e trabalhadores da ponta não dispõem de assentos fixos, participando apenas como convidados ocasionais pelo § 5º.
+        A <strong>Portaria GM/MS nº 5.192, de 14 de agosto de 2024</strong>, instituiu o Centro de Operações de Emergências em Saúde Pública para Mpox (<strong>COE-Mpox</strong>) com <strong>25 membros titulares</strong> (Art. 2º, incisos I a XV): <strong>18 representantes internos do Ministério da Saúde</strong> (Secretaria-Executiva, ASCOM, 8 departamentos da SVSA, 2 SAPS, 2 SAES, SESAI, SECTICS, SGTES e SEIDIGI) e <strong>7 representantes externos</strong> (1 Anvisa, 2 Fiocruz, 1 Conass, 1 Conasems, 1 OPAS e apenas <strong>1 vaga do Conselho Nacional de Saúde — inciso XII</strong>).
+      </p>
+      <p>
+        Juridicamente, pelo <strong>Art. 4º, § 1º</strong> da portaria, o COE não possui quórum de votação por não ser colegiado deliberativo (é uma sala técnico-operacional de resposta temporária, desativável pela SVSA pelo Art. 1º, parágrafo único). O déficit institucional real não é "falta de voto no COE", mas o fato de que <strong>redes comunitárias LGBTQIA+, movimentos de pessoas vivendo com HIV/PrEP, coletivos periféricos e trabalhadores da ponta não possuem assento permanente</strong> na formulação contínua da política de mpox, entrando apenas como convidados pontuais (§ 5º). Em novembro de 2026, nota pública do <strong>GT Saúde da População LGBTI+ da Abrasco</strong> reforçou essa cobrança, exigindo também o preenchimento obrigatório das variáveis de <strong>orientação sexual e identidade de gênero</strong> nos sistemas de informação do SUS.
       </p>
     </div>
 
-    <div class="mpox-chart-card">
+    <div class="mpox-chart-card" style="background: var(--white);">
       <div class="mpox-chart-head">
         <h3 class="mpox-chart-title">Composição formal do COE-Mpox (Portaria GM/MS nº 5.192/2024)</h3>
         <span class="mpox-chart-badge">25 titulares • 0 vagas diretas para redes comunitárias</span>
@@ -623,96 +771,157 @@ extra_head: |
         <span class="mpox-legend-item"><span class="mpox-dot mpox-dot-ms" style="width:12px;height:12px;"></span> 18 Ministério da Saúde</span>
         <span class="mpox-legend-item"><span class="mpox-dot mpox-dot-ext" style="width:12px;height:12px;"></span> 6 Órgãos técnicos (Anvisa, Fiocruz, Conass, Conasems, OPAS)</span>
         <span class="mpox-legend-item"><span class="mpox-dot mpox-dot-cns" style="width:12px;height:12px;"></span> 1 Conselho Nacional de Saúde (CNS)</span>
-        <span class="mpox-legend-item"><span class="mpox-dot mpox-dot-zero" style="width:12px;height:12px;"></span> Redes LGBTQIA+, de HIV e ponta: apenas convidadas pontuais (§ 5º)</span>
+        <span class="mpox-legend-item"><span class="mpox-dot mpox-dot-zero" style="width:12px;height:12px;"></span> Redes LGBTQIA+, de HIV e serviços da ponta: convidadas pontuais (§ 5º)</span>
       </div>
       <p class="mpox-chart-foot">
-        Em novembro de 2026, nota pública do GT Saúde da População LGBTI+ da Abrasco reforçou a exigência de participação social contínua, transparência de estoques e preenchimento obrigatório das variáveis de orientação sexual e identidade de gênero nos sistemas do SUS.
+        A história da resposta brasileira ao HIV — acesso universal à TARV nos anos 1990 (Lei nº 9.313/1996) e incorporação de PEP e PrEP no SUS — demonstra que políticas eficazes nascem quando populações vulnerabilizadas ocupam conselhos e comissões permanentes, como CNS e CNAIDS (Galvão, 2000; Terto Jr., 2002; Grangeiro et al., 2009).
       </p>
     </div>
 
     <div class="prose">
+      <h3>Vacina brasileira (UFMG / Fiocruz), portfólio global e o orçamento real do PNI</h3>
       <p>
-        A memória institucional do SUS comprova que conquistas como o acesso universal à terapia antirretroviral nos anos 1990 (Lei nº 9.313/1996) e a incorporação da PEP e da PrEP ganharam escala porque pessoas vivendo com HIV, travestis, pessoas trans, LGBs, movimentos negros e pesquisadores ocuparam espaços científicos e conselhos públicos (Galvão, 2000; Terto Jr., 2002; Grangeiro et al., 2009).
+        A candidata nacional baseada em plataforma MVA não replicante, desenvolvida pelo <strong>CTVacinas/UFMG</strong> em parceria com <strong>Bio-Manguinhos/Fiocruz</strong>, concluiu estudos pré-clínicos (BPL) e prepara o dossiê de desenvolvimento clínico (DDCM) para submissão de Fase 1 à Anvisa. Este dossiê adota total realismo científico: <strong>ensaios clínicos de Fases 1, 2 e 3 (ou estudos de imunogenicidade comparativa / <em>immunobridging</em>), certificação de lote em Boas Práticas de Fabricação (BPF), registro sanitário e incorporação levam anos — a vacina nacional não resolverá 2027 nem 2028</strong>.
       </p>
+      <p>
+        Ao mesmo tempo, é preciso dar transparência ao orçamento anunciado: o pacote de <strong>R$ 161,5 milhões</strong> do <strong>PDIL (Portaria GM/MS nº 4.473/2024)</strong> contempla <strong>múltiplos projetos</strong> do CNVacinas/CTVacinas (vacinas contra malária, Chagas, Covid nasal, plataformas de testes rápidos e mpox), somando-se aos R$ 80 milhões (MCTI/Finep, recursos do FNDCT com vedação legal ao contingenciamento pela LC nº 177/2021, + Governo de Minas Gerais) voltados à infraestrutura do centro. Sem detalhar quanto está carimbado, empenhado e liquidado para o lote clínico BPF da mpox — e sem planejamento de financiamento para Fases 2 e 3 —, o país arrisca acumular atrasos puramente administrativos em TEDs e disputas de linha fabril.
+      </p>
+      <p>
+        Por isso, em vez de apostar tudo em uma única rota tecnológica, o Estado precisa apresentar transparência sobre uma <strong>estratégia integrada em três horizontes</strong>:
+      </p>
+    </div>
 
-      <h3>Vacina brasileira (UFMG / Fiocruz) e realismo de prazos vs. orçamento</h3>
-      <p>
-        A candidata vacinal nacional desenvolvida pelo <strong>CTVacinas/UFMG</strong> em parceria com <strong>Bio-Manguinhos/Fiocruz</strong> (plataforma MVA não replicante) concluiu a etapa pré-clínica (BPL) e prepara o dossiê de desenvolvimento clínico (DDCM) para submissão de Fase 1 à Anvisa. Este dossiê trata os prazos científicos com total honestidade: <strong>mesmo com financiamento integral, uma vacina em pré-Fase 1 leva anos para cumprir fases clínicas, produção em Boas Práticas de Fabricação (BPF), registro e incorporação no SUS — ela não resolve 2027 nem 2028</strong>.
-      </p>
-      <p>
-        O que cabe ao Estado no presente é transparência e previsibilidade orçamentária: o pacote de <strong>R$ 161,5 milhões</strong> anunciado no âmbito do <strong>PDIL (Portaria GM/MS nº 4.473/2024)</strong> é <strong>rateado entre múltiplos projetos</strong> do CNVacinas/CTVacinas (incluindo malária, doença de Chagas, testes rápidos, Covid nasal e mpox), somando-se aos R$ 80 milhões (MCTI/Finep + MG) de infraestrutura. É indispensável tornar pública a parcela efetivamente carimbada, empenhada e liquidada para o lote clínico BPF da mpox, evitando atrasos puramente administrativos em Termos de Execução Descentralizada (TEDs).
-      </p>
-      <p>
-        Em paralelo, para o horizonte imediato de <strong>2027 e 2028</strong>, a transição de compras emergenciais picadas para um <strong>programa focalizado contínuo</strong> passa pela avaliação formal de eficácia, custo-efetividade e impacto orçamentário pela <strong>CONITEC (Lei nº 12.401/2011)</strong>. Considerando o orçamento anual de aquisição e distribuição de imunobiológicos do PNI (na faixa de <strong>R$ 7,2 bilhões a R$ 10,3 bilhões</strong> em 2025 e 2026), proteger de forma planejada os públicos prioritários elegíveis representa <strong>uma fração mínima (inferior a 1%) do orçamento anual de vacinas do SUS</strong>.
-      </p>
+    <div class="mpox-grid-3">
+      <div class="mpox-req-card">
+        <p class="mpox-req-dest">Curto prazo (2027 e 2028)</p>
+        <h3>Rotina focalizada via CONITEC e compras plurianuais</h3>
+        <p>Avaliação formal na <strong>CONITEC (Lei nº 12.401/2011)</strong> para programa focalizado contínuo em grupos elegíveis (PrEP + PVHA imunossuprimidas). Frente ao orçamento anual de imunobiológicos do PNI (<strong>R$ 7,2 bilhões a R$ 10,3 bilhões</strong> em 2025–2026), essa proteção focalizada representa <strong>menos de 1% do orçamento anual de vacinas do SUS</strong>, viabilizada por compras plurianuais planejadas via OPAS e painel aberto de estoques/D1-D2.</p>
+      </div>
+      <div class="mpox-req-card">
+        <p class="mpox-req-dest">Médio prazo (2028 a 2030)</p>
+        <h3>Articulação regional e diversificação tecnológica</h3>
+        <p>Atuação coordenada via OPAS/Mercosul por transparência de preços, registro definitivo no Brasil e acordos de envase local (<em>fill-and-finish</em>), acompanhando ativamente o pipeline global de nova geração — como as candidatas de mRNA <strong>BNT166a (BioNTech/CEPI</strong>, com dados de Fase 1/2 publicados na <em>Lancet Infectious Diseases</em> em set/2026 e Fase 2 na África) e <strong>mRNA-1769 (Moderna</strong>, em Fase 2 após dados na <em>Cell</em>).</p>
+      </div>
+      <div class="mpox-req-card">
+        <p class="mpox-req-dest">Longo prazo (Soberania CEIS)</p>
+        <h3>Desenvolvimento nacional auditado por marcos</h3>
+        <p>Transparência pública de execução orçamentária (valores carimbados, empenhados e liquidados no PDIL e FNDCT) e cronograma verificável do lote clínico BPF e das etapas regulatórias da vacina <strong>CTVacinas/UFMG + Bio-Manguinhos/Fiocruz</strong>, respeitando o tempo científico e os riscos inerentes à pesquisa clínica.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SEÇÃO 6: PEDIDOS FORMAIS -->
-<section id="pedidos" class="mpox-section bg-paper">
+<!-- 6. BLINDAGEM TÉCNICA: MATRIZ DE CONTRAPONTOS -->
+<section id="contrapontos" class="mpox-section bg-white">
   <div class="wrap">
     <div class="max-860">
-      <h2 class="t-h2">O que este dossiê leva ao MPF, ao Ministério da Saúde, ao CNS, à DPU e à ONU</h2>
+      <h2 class="t-h2">Blindagem técnica: respostas diretas às 6 objeções mais fortes ao dossiê</h2>
       <p class="t-lead mt-2">
-        Para evitar arquivamentos procedimentais, os pedidos foram separados de acordo com a competência legal de cada instância: registros já existentes seguem via <strong>Lei de Acesso à Informação (LAI)</strong>; providências de política pública e governança seguem por <strong>petição coletiva</strong>, <strong>subsídios ao Inquérito Civil do MPF</strong> e <strong>comunicação às Relatorias Especiais da ONU</strong>.
+        Antes de ir a público, este texto foi submetido a revisão crítica sob as lentes da epidemiologia do SUS, do direito sanitário, da economia política, do controle social e do jornalismo de dados. Abaixo respondemos frontalmente às principais críticas que técnicos, economistas ou juristas poderiam levantar.
       </p>
     </div>
 
-    <div class="mpox-request-grid">
+    <div class="mpox-grid-2">
       <div class="mpox-req-card">
-        <p class="mpox-req-dest">Ministério Público Federal (PR/AC e PFDC)</p>
+        <p class="mpox-rebuttal-q">1. "Com cerca de 1.500 casos e 1 óbito por ano, não seria irracional desviar verba de dengue ou tuberculose para vacinar contra mpox?"</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> Ninguém propõe vacinação universal da população inteira. A cobrança é por avaliação técnica formal na <strong>CONITEC</strong> para imunização focalizada nos públicos de maior exposição (PrEP e PVHA imunossuprimidas), cujo custo anual equivale a uma fração mínima (&lt;1%) do orçamento de imunobiológicos do PNI (R$ 7,2 bi a R$ 10,3 bi) e evita surtos recorrentes, internações evitáveis de imunossuprimidos e custos reativos de vigilância.</p>
+      </div>
+
+      <div class="mpox-req-card">
+        <p class="mpox-rebuttal-q">2. "Não dá para comprar o que o único fabricante do mundo não entrega no prazo."</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> Reconhecemos expressamente o monopólio estrutural da Bavarian Nordic. Porém, a fabricante expandiu sua capacidade para até 10 milhões de doses até o fim de 2025 e manteve entregas contínuas a países com contratos plurianuais. Além disso, a escassez externa <strong>não explica o hiato interno de ~30,8 mil doses</strong> entre as 72 mil compradas em 2023–2024 e as 41,2 mil aplicadas até nov/2026.</p>
+      </div>
+
+      <div class="mpox-req-card">
+        <p class="mpox-rebuttal-q">3. "Por que citar a Anvisa se ela não pode registrar a vacina sem pedido da farmacêutica?"</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> O dossiê <strong>não acusa a Anvisa</strong>. Deixamos explícito que o registro depende de iniciativa da fabricante (Lei nº 6.360/1976) e que as autorizações excepcionais da agência (hoje amparadas na RDC nº 203/2017 com controle do INCQS/Fiocruz) foram justamente o instrumento que garantiu segurança e acesso. O alerta é sobre a vulnerabilidade de operar indefinidamente em regime de exceção sem planejamento plurianual.</p>
+      </div>
+
+      <div class="mpox-req-card">
+        <p class="mpox-rebuttal-q">4. "Injetar dinheiro não encurta ensaios clínicos da vacina da UFMG e da Fiocruz."</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> Exatamente por isso o dossiê afirma com clareza que a vacina nacional (pré-Fase 1) <strong>não resolverá 2027 nem 2028</strong>. Transparência orçamentária e fluxo previsível de empenhos/TEDs não servem para atropelar a ciência, mas para eliminar atrasos puramente burocráticos na produção do lote clínico BPF.</p>
+      </div>
+
+      <div class="mpox-req-card">
+        <p class="mpox-rebuttal-q">5. "Infectologistas dizem que basta reforçar orientação comportamental e prevenção na ponta."</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> O próprio manual oficial de <strong>Prevenção Combinada do Ministério da Saúde (2017)</strong>, o UNAIDS e os dados reais de efetividade da MVA-BN (66% a 86% com 2 doses em <em>NEJM</em> e <em>CDC MMWR</em>) provam que orientação comportamental isolada falha sem insumo biomédico contínuo. É por isso que Inglaterra, EUA e diretrizes da OMS institucionalizaram rotina focalizada para grupos de maior exposição.</p>
+      </div>
+
+      <div class="mpox-req-card">
+        <p class="mpox-rebuttal-q">6. "Cobrar transparência e acionar MPF/ONU não enfraquece o SUS nem alimenta narrativas antivacina?"</p>
+        <p class="mpox-rebuttal-a"><strong>Resposta:</strong> Pelo contrário. O texto reafirma integralmente a segurança da vacina MVA-BN e defende o fortalecimento do SUS e da pesquisa pública brasileira. Controle social (Lei nº 8.142/1990), transparência ativa (LAI) e cooperação com o MPF e as Relatorias da ONU ampliam a força institucional do próprio Ministério da Saúde para defender orçamento e enfrentar monopólios globais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PEDIDOS FORMAIS SEPARADOS POR COMPETÊNCIA -->
+<section id="pedidos" class="mpox-section bg-paper">
+  <div class="wrap">
+    <div class="max-860">
+      <h2 class="t-h2">Encaminhamentos formais separados por competência jurídica</h2>
+      <p class="t-lead mt-2">
+        Para evitar indeferimentos por erro de canal (como cobrar promessas políticas futuras via LAI ou exigir voto em colegiado operacional), cada bloco abaixo segue o instrumento jurídico adequado ao órgão destinatário.
+      </p>
+    </div>
+
+    <div class="mpox-grid-2">
+      <div class="mpox-req-card">
+        <p class="mpox-req-dest">Ministério Público Federal (PR/AC e PFDC • art. 129, III, CF/88)</p>
         <h3>Subsídios ao Inquérito Civil em curso</h3>
         <ul>
-          <li>Juntada deste dossiê técnico e da lista de organizações e cidadãos signatários ao Inquérito Civil instaurado em novembro de 2026 (Procuradoria da República no Acre) e envio de cópia à Procuradoria Federal dos Direitos do Cidadão (PFDC/MPF).</li>
-          <li>Ampliação do escopo probatório para apurar o balanço nacional completo (2023 a 2026) entre doses adquiridas (97 mil no total), distribuídas, aplicadas (D1 e D2), estocadas e perdidas por validade em cadeia de frio.</li>
-          <li>Requisição de esclarecimentos sobre a desproporção entre lotes pontuais (25 mil doses) e o universo de 166,1 mil usuários ativos de PrEP mais PVHA imunossuprimidas, incluindo desigualdades regionais fora do Sudeste.</li>
+          <li>Juntada deste dossiê técnico e do anexo consolidado de organizações e cidadãos signatários ao Inquérito Civil instaurado em novembro de 2026 na Procuradoria da República no Acre (proc. Lucas Costa Almeida Dias), com remessa de cópia à Procuradoria Federal dos Direitos do Cidadão (PFDC/MPF).</li>
+          <li>Requisição de balanço nacional auditável (março de 2023 a novembro de 2026) conciliando 97 mil doses adquiridas via OPAS, quantitativo distribuído por UF, doses aplicadas desagregadas em D1 e D2, saldo em estoque e perdas físicas na cadeia de frio (-20 °C / 28 dias / frasco aberto em uso intradérmico).</li>
+          <li>Apuração da desproporção entre lotes pontuais de 25 mil doses e o denominador oficial de 166,1 mil usuários ativos de PrEP somados às PVHA imunossuprimidas, incluindo disparidades de acesso e testagem fora do eixo Sul-Sudeste.</li>
         </ul>
       </div>
 
       <div class="mpox-req-card">
-        <p class="mpox-req-dest">Ministério da Saúde via Fala.BR (Lei nº 12.527/2011)</p>
-        <h3>Pedidos de acesso à informação sobre registros existentes</h3>
+        <p class="mpox-req-dest">Ministério da Saúde via Fala.BR (Lei nº 12.527/2011 — LAI)</p>
+        <h3>Acesso exclusivo a registros e documentos públicos já existentes</h3>
         <ul>
-          <li>Planilha consolidada e desagregada por UF com quantitativo de doses adquiridas via OPAS, distribuídas, aplicadas (D1 e D2), em estoque central/estadual e descartadas por vencimento entre março de 2023 e novembro de 2026.</li>
-          <li>Cópia dos ofícios, notas técnicas e processos administrativos referentes à previsão de aquisição via Fundo Rotatório da OPAS e eventual previsão orçamentária na PLOA/LOA 2027.</li>
-          <li>Detalhamento dos Termos de Execução Descentralizada (TEDs) e contratos do PDIL (Portaria GM/MS nº 4.473/2024) destinados especificamente à vacina de mpox (CTVacinas/UFMG e Bio-Manguinhos/Fiocruz), com valores carimbados, empenhados, liquidados e cronograma físico-financeiro do lote clínico BPF.</li>
+          <li>Planilha consolidada e desagregada por estado e público prioritário com doses adquiridas, distribuídas, aplicadas (D1 e D2), estocadas e descartadas por vencimento ou perda técnica entre 2023 e novembro de 2026.</li>
+          <li>Cópia de ofícios, notas técnicas, estimativas de demanda e processos SEI relativos às compras via Fundo Rotatório da OPAS e eventual previsão orçamentária para mpox na PLOA/LOA 2027 (respeitados sigilos comerciais legais, com acesso às partes públicas na forma do art. 7º, § 2º, da LAI).</li>
+          <li>Cópia dos Termos de Execução Descentralizada (TEDs), contratos e extratos de empenho e liquidação do pacote PDIL (Portaria GM/MS nº 4.473/2024) destinados especificamente à candidata vacinal de mpox (CTVacinas/UFMG e Bio-Manguinhos/Fiocruz), com cronograma físico-financeiro do lote clínico BPF.</li>
         </ul>
       </div>
 
       <div class="mpox-req-card">
-        <p class="mpox-req-dest">Ministério da Saúde, CNS, CNAIDS e DPU (Art. 5º, XXXIV, CF/88)</p>
-        <h3>Petição coletiva de governança e planejamento para 2027 em diante</h3>
+        <p class="mpox-req-dest">Ministério da Saúde, CNS, CNAIDS e DPU (art. 5º, XXXIV, CF/88)</p>
+        <h3>Petição coletiva de governança, CONITEC e comunicação pública</h3>
         <ul>
-          <li>Instauração de avaliação técnica formal na <strong>CONITEC (Lei nº 12.401/2011)</strong> para programa focalizado contínuo de vacinação pré-exposição e compras plurianuais planejadas via OPAS/Mercosul, além de tratativas por registro definitivo e diversificação tecnológica.</li>
-          <li>Publicação de painel federal aberto de estoques, cobertura D1/D2 e inclusão obrigatória das variáveis de <strong>orientação sexual e identidade de gênero</strong> na vigilância da mpox (em consonância com a Nota Pública da Abrasco).</li>
-          <li>Campanhas federais contínuas e territoriais de Prevenção Combinada livres de estigma (em diálogo com a Resolução CNS nº 719/2023) e criação de <strong>comissão multidisciplinar permanente</strong> articulada ao CNS e à CNAIDS com assento direto para redes LGBTQIA+, de HIV/PrEP, serviços da ponta e trabalhadores da cultura.</li>
+          <li>Instauração de avaliação técnica formal na <strong>CONITEC (Lei nº 12.401/2011)</strong> sobre incorporação de programa focalizado contínuo de vacinação pré-exposição e estratégia plurianual de compras via OPAS/Mercosul, acompanhada de monitoramento do pipeline global de nova geração (mRNA).</li>
+          <li>Publicação de painel federal aberto de estoques, perdas e completude D1/D2, além da inclusão obrigatória das variáveis de <strong>orientação sexual e identidade de gênero</strong> nas fichas e painéis de vigilância (alinhado à Nota Pública da Abrasco).</li>
+          <li>Regulamentação de campanhas federais contínuas de Prevenção Combinada livres de estigma (em diálogo com a Resolução CNS nº 719/2023) e instituição de <strong>comissão multidisciplinar permanente</strong> articulada ao CNS e à CNAIDS com representação direta de redes LGBTQIA+, movimentos de HIV/PrEP, serviços da ponta e trabalhadores da cena cultural.</li>
         </ul>
       </div>
 
       <div class="mpox-req-card">
-        <p class="mpox-req-dest">ACNUDH / ONU (Procedimentos Especiais)</p>
+        <p class="mpox-req-dest">ONU / ACNUDH (Procedimentos Especiais • spsubmission.ohchr.org)</p>
         <h3>Comunicação formal às Relatorias Especiais da ONU</h3>
         <ul>
-          <li>Envio de comunicação formal (<em>General Information / Policy Concern</em>) via portal oficial <code>spsubmission.ohchr.org</code> direcionada conjuntamente à <strong>Relatoria Especial sobre o Direito à Saúde</strong> e ao <strong>Especialista Independente sobre Orientação Sexual e Identidade de Gênero (IE SOGI)</strong>.</li>
-          <li>Documentação da barreira estrutural imposta pelo monopólio único da MVA-BN no Sul Global (preços de US$ 65 a US$ 100 apesar de &gt;US$ 2,3 bi em financiamento e compras públicas nos EUA, sem registro definitivo no Brasil), articulando recomendações internacionais por equidade de acesso, transferência de tecnologia e transparência sanitária.</li>
-          <li>Fundamentação complementar nos parâmetros interamericanos de transparência, acesso a vacinas e combate à desinformação (Resolução CIDH nº 1/2021, aplicada por analogia, e art. 10 do Protocolo de San Salvador).</li>
+          <li>Submissão formal (<em>General Information / Policy Concern</em>) direcionada conjuntamente à <strong>Relatoria Especial sobre o Direito à Saúde</strong> e ao <strong>Especialista Independente sobre Orientação Sexual e Identidade de Gênero (IE SOGI)</strong>.</li>
+          <li>Documentação da barreira estrutural no Sul Global gerada pelo monopólio único da MVA-BN (preços de US$ 65 a US$ 100 após &gt;US$ 2,3 bilhões em financiamento e compras públicas nos EUA, sem registro definitivo no Brasil), somada às lacunas domésticas de transparência e participação social.</li>
+          <li>Referencial normativo complementar nos parâmetros interamericanos de equidade vacinal, transparência e não discriminação (Resolução CIDH nº 1/2021, aplicada por analogia, e art. 10 do Protocolo de San Salvador), reservando eventual solicitação de audiência pública temática à CIDH caso persistam falhas após as vias domésticas.</li>
         </ul>
       </div>
     </div>
 
     <details class="mpox-details">
-      <summary>Ler resumo executivo em inglês pronto para submissão às Relatorias Especiais da ONU (OHCHR Special Procedures)</summary>
+      <summary>Ler versão integral em inglês pronta para submissão às Relatorias Especiais da ONU (OHCHR Special Procedures)</summary>
       <div class="mpox-details-body">
-        <p><strong>Subject:</strong> Structural inequities in mpox vaccine access, public transparency gaps, and community participation in Brazil (2022–2026) — Civil Society Submission to the Special Rapporteur on the Right to Health and the Independent Expert on SOGI.</p>
-        <p><strong>Executive Summary:</strong> Presented jointly by História LGBTI+, data2comms, Brazilian civil society organizations, researchers, and citizens, this submission documents persistent structural barriers affecting populations disproportionately exposed to mpox in Brazil, particularly gay, bisexual, and other men who have sex with men (GBMSM), transgender people, and immunocompromised people living with HIV (PLWH). Between 2022 and November 2026, Brazil recorded continuous autochthonous transmission (10,821 cases in 2022; 847 in 2023; 1,989 in 2024; ~1,100 in 2025; and over 1,500 preliminary cases in 2026, a +39% year-on-year increase with co-circulation of Clade Ib and Clade IIb). Despite a documented eligible base exceeding 166,100 active HIV PrEP users in the public health system (SUS) plus immunocompromised PLWH, Brazil administered only ~41,200 cumulative doses since March 2023 (~19 doses per 100,000 inhabitants), representing a 15-fold per capita disparity compared to England (~290 per 100,000; &gt;165,000 doses and routine NHS vaccination since August 2025).</p>
-        <p>This disparity reflects two interlocking dimensions: (1) an external structural monopoly over the only WHO-prequalified non-replicating vaccine safe for severely immunocompromised individuals (MVA-BN, manufactured exclusively by Bavarian Nordic A/S, backed by over US$ 2.3 billion in US public R&amp;D and biodefense procurement since 2003, yet priced at US$ 65–100/dose without commercial registration in Brazil); and (2) domestic governance and transparency deficits, including an unexplained gap between 72,000 doses procured in 2023–2024 and ~41,200 administered (currently under a Federal Public Prosecutor's Office civil inquiry opened in November 2026), lack of disaggregated stock and sexual orientation/gender identity surveillance data, absence of permanent community seats in mpox response governance, and lack of public budgetary earmarking transparency for Brazil's domestic UFMG/Fiocruz MVA candidate vaccine. Signatories respectfully request thematic monitoring and dialogue with both the Brazilian State and global stakeholders to advance equitable multi-year vaccine access, transparent domestic planning from 2027 onward, anti-stigma public health communication, and formal civil society participation.</p>
+        <p><strong>Title:</strong> Structural Inequities in Mpox Vaccine Access, Public Data Transparency Deficits, and Community Participation in Brazil (2022–2026) — Joint Civil Society Submission to the UN Special Rapporteur on the Right to Physical and Mental Health and the UN Independent Expert on Protection against Violence and Discrimination based on Sexual Orientation and Gender Identity (IE SOGI).</p>
+        <p><strong>Submitting Coalitions:</strong> História LGBTI+, data2comms, partner Brazilian civil society organizations, public health researchers, cultural workers, and individual citizens (full verified signatory annex attached upon final filing).</p>
+        <p><strong>1. Epidemiological Context &amp; Disproportionate Impact:</strong> Following 10,821 confirmed cases during the 2022 global emergency, Brazil experienced uninterrupted autochthonous mpox transmission: 847 cases in 2023, 1,989 in 2024, approximately 1,075–1,119 in 2025, and over 1,500 preliminary cases through late November 2026 (a ~39% year-on-year increase), including one confirmed death in Rio de Janeiro in a severely immunocompromised patient. During Epidemiological Weeks 40–48 of 2026, normalized daily incidence in São Paulo capital surged more than sevenfold (from 0.7/day in September to 2.6/day in October and 5.0/day in the first 24 days of November), alongside sharp increases in Rio de Janeiro (~430 cases) and Ceará (~190 cases). Genomic surveillance by Instituto Adolfo Lutz documented co-circulation and expansion of Clade Ib alongside Clade IIb (with similar clinical severity observed in Brazil to date). Consistent with landmark real-world studies (Deputy et al., <em>NEJM</em> 2023; Dalton et al., <em>CDC MMWR</em> 2023), full protection requires a two-dose MVA-BN regimen (66%–86% effectiveness vs. 35.8%–75% after one dose) taking ~42 days from D1, rendering reactive emergency procurement structurally ineffective during active surges.</p>
+        <p><strong>2. Global Monopoly Barrier &amp; Per Capita Access Gap:</strong> Brazil administered approximately 41,200 cumulative doses since March 2023 (~19 doses per 100,000 inhabitants), compared to over 165,000 doses in England (~290 per 100,000 — a 15-fold per capita disparity, with routine NHS pre-exposure vaccination launched in August 2025) and over 1.2 million doses in the United States, while all of Latin America reached roughly 50,000 completed schedules via PAHO through 2025. MVA-BN (manufactured solely by Bavarian Nordic A/S) remains the only WHO-prequalified non-replicating vaccine safe for severely immunocompromised people living with HIV (as LC16m8 is contraindicated in severe immunosuppression). Despite benefiting from over US$ 2.3 billion in US public R&amp;D and biodefense procurement since 2003 (Public Citizen, 2024), secondary process patents, biological trade secrets, and concentrated production sustain reference prices of US$ 65 (UNICEF) to US$ 100 commercially, without permanent regulatory registration filed in Brazil.</p>
+        <p><strong>3. Domestic Governance, Transparency &amp; Human Rights Gaps:</strong> While recognizing Brazilian public health purchases via PAHO (47k in 2023, 25k in 2024, and 25k announced in November 2026), intradermal dose-sparing guidance (Technical Note 403/2026), and public R&amp;D investments in the UFMG/Fiocruz national MVA candidate (pre-Phase 1, funded inside a shared R$ 161.5M PDIL package), critical accountability gaps persist: (a) severe supply mismatch against more than 166,100 active HIV PrEP users in SUS plus immunocompromised PLWH; (b) an unexplained ~30,800-dose gap between 72,000 doses procured in 2023–2024 and ~41,200 administered (currently under Federal Public Prosecutor's Office Civil Inquiry opened in November 2026 following stockouts in the Federal District); (c) absence of open stock/D1–D2 dashboards and mandatory sexual orientation and gender identity variables in surveillance (as demanded by Abrasco in November 2026); (d) absence of permanent community representation in the 25-seat temporary COE-Mpox (Ordinance 5.192/2024); and (e) lack of sustained anti-stigma federal public health communication, shifting containment costs regressively onto LGBTQIA+ cultural venues and informal nightlife workers.</p>
+        <p><strong>4. Requested Mandate Actions:</strong> Signatories respectfully request that the Special Rapporteur on the Right to Health and the Independent Expert on SOGI engage in constructive dialogue and thematic monitoring with both the Brazilian State and relevant international/corporate stakeholders to encourage: (i) transparent accounting of vaccine stocks, losses, and D1/D2 completion; (ii) formal CONITEC health technology assessment and multi-year procurement planning from 2027 onward alongside regional Global South technology-transfer/diversification strategies; (iii) transparent earmarked execution of domestic R&amp;D funding; (iv) anti-stigma combination-prevention communication; and (v) a permanent multidisciplinary advisory body with direct representation of affected communities.</p>
       </div>
     </details>
   </div>
 </section>
 
-<!-- SEÇÃO DE ASSINATURA NATIVA NO SITE -->
+<!-- 8. ÁREA DE ASSINATURA NATIVA NO SITE -->
 <section id="assinar" class="mpox-section bg-gray">
   <div class="wrap">
     <div class="split-layout split-contact">
@@ -724,13 +933,13 @@ extra_head: |
 
         <ul class="clean-list">
           <li><strong>Sem precisar sair para o gov.br:</strong> para subsídios coletivos da sociedade civil, a assinatura eletrônica registrada com nome completo, e-mail válido, cidade/UF, carimbo de data/hora e declaração expressa de consentimento LGPD possui plena legitimidade política e documental.</li>
-          <li><strong>Coautoria para organizações e coletivos:</strong> ONGs, redes de HIV/Aids, coletivos LGBTQIA+, movimentos periféricos, produtores culturais e núcleos acadêmicos podem assinar e enviar sugestões técnicas de aprimoramento antes do protocolo final.</li>
-          <li><strong>Privacidade e prestação de contas:</strong> seu e-mail e WhatsApp nunca serão divulgados publicamente; servem exclusivamente para validação das adesões e envio posterior dos números oficiais de protocolo e das respostas recebidas.</li>
+          <li><strong>Coautoria de organizações e coletivos:</strong> ONGs, redes de HIV/Aids, coletivos LGBTQIA+, movimentos periféricos, produtores culturais e núcleos de pesquisa podem aderir com ou sem CNPJ.</li>
+          <li><strong>Privacidade e prestação de contas:</strong> e-mail e WhatsApp nunca serão divulgados publicamente; servem exclusivamente para validação das adesões e envio posterior dos números oficiais de protocolo e das respostas recebidas.</li>
         </ul>
 
         <div style="padding-top: 1rem; border-top: 1px solid var(--line);">
           <p class="t-body" style="font-size: 0.86rem;"><strong>Proponentes iniciais:</strong> História LGBTI+ e data2comms.</p>
-          <p class="t-body mt-1" style="font-size: 0.86rem;">Dúvidas institucionais ou envio de nota técnica anexa: <a href="mailto:rennanmetsi@data2comms.com.br" class="footer-email" style="font-size: 0.92rem; min-height: auto; margin-top: 0;">rennanmetsi@data2comms.com.br</a></p>
+          <p class="t-body mt-1" style="font-size: 0.86rem;">Quer corrigir um dado ou enviar relato territorial? Use a <a href="#sugerir-edicao" style="text-decoration: underline; color: var(--ink); font-weight: 600;">área de revisão aberta logo abaixo</a>.</p>
         </div>
       </div>
 
@@ -746,7 +955,6 @@ extra_head: |
         <form id="mpoxSignForm" class="form-stack" novalidate>
           <input type="hidden" id="mpox-mode" value="pf">
 
-          <!-- Campos exclusivos de Organização -->
           <div id="org-fields" class="hidden-fields form-stack">
             <div>
               <label for="m-org-nome" class="field-label">Nome da Organização, Coletivo ou Núcleo de Pesquisa *</label>
@@ -764,7 +972,6 @@ extra_head: |
             </div>
           </div>
 
-          <!-- Campos comuns -->
           <div>
             <label for="m-nome" id="label-nome" class="field-label">Nome completo *</label>
             <input id="m-nome" type="text" required autocomplete="name" class="field-input" placeholder="Seu nome completo">
@@ -792,11 +999,6 @@ extra_head: |
             </div>
           </div>
 
-          <div id="org-sugestao-wrap" class="hidden-fields">
-            <label for="m-sugestao" class="field-label">Sugestão de ajuste, dado territorial ou contribuição técnica à minuta (opcional)</label>
-            <textarea id="m-sugestao" rows="3" class="field-input" placeholder="Caso deseje sugerir ajustes ou relatar a situação de estoques/testagem no seu estado ou município antes do protocolo."></textarea>
-          </div>
-
           <label class="sign-check-row">
             <input id="m-consent" type="checkbox" required>
             <span>Declaro meu apoio ao <strong>Dossiê Mpox (2022 a 2026)</strong> e autorizo a inclusão do meu nome (e/ou nome da organização representada) e cidade/UF no anexo público de signatários encaminhado ao MPF, ao Ministério da Saúde, ao CNS/CNAIDS, à DPU e às Relatorias Especiais da ONU, ciente de que e-mail e telefone serão mantidos sob sigilo conforme a LGPD e a <a href="/privacidade.html" style="text-decoration: underline; color: var(--ink);">Política de privacidade</a>.</span>
@@ -811,7 +1013,7 @@ extra_head: |
             <p class="t-body mt-1" id="receipt-summary" style="color: var(--ink-soft); font-size: 0.9rem;"></p>
             <div class="sign-receipt-code" id="receipt-code"></div>
             <p class="t-body" style="font-size: 0.84rem;">
-              Sua adesão foi gravada na base oficial de corroboração do dossiê. Ajude a ampliar a pressão compartilhando este link com sua rede e com organizações parceiras:
+              Sua adesão foi gravada na base oficial de corroboração do dossiê. Compartilhe com sua rede e com organizações parceiras:
             </p>
             <div class="sign-share-row">
               <button type="button" id="btn-copy-link" class="btn btn-dark" style="min-height: 40px; padding: 0 1rem; font-size: 0.84rem;">Copiar link do dossiê</button>
@@ -824,47 +1026,157 @@ extra_head: |
   </div>
 </section>
 
-<!-- SEÇÃO 7: REFERÊNCIAS COMPLETAS -->
+<!-- 9. ÁREA DEDICADA PARA SUGESTÃO DE EDIÇÕES E REVISÃO COLABORATIVA -->
+<section id="sugerir-edicao" class="mpox-section bg-paper">
+  <div class="wrap">
+    <div class="split-layout split-contact">
+      <div class="card-light">
+        <h2 class="t-h2">Revisão colaborativa: sugira edições, correções ou dados locais</h2>
+        <p class="t-body">
+          Um dossiê que mira o MPF, o Ministério da Saúde e a ONU precisa permanecer aberto ao escrutínio da comunidade científica, jurídica e dos territórios. Este espaço é dedicado exclusivamente a quem deseja <strong>aprimorar o texto antes do protocolo definitivo</strong>.
+        </p>
+
+        <ul class="clean-list">
+          <li><strong>Pesquisadores e profissionais do SUS:</strong> envie correções epidemiológicas, notas técnicas estaduais/municipais recentes, dados de sala de vacina ou novas referências bibliográficas.</li>
+          <li><strong>Juristas e defensores de direitos humanos:</strong> sugira aperfeiçoamentos nos pedidos de LAI, na representação ao MPF/PFDC ou na comunicação às Relatorias da ONU.</li>
+          <li><strong>Territórios e ponta (sigilo opcional):</strong> trabalhadores de CTAs, SAEs, UBSs, coletivos periféricos ou da cena cultural podem relatar desabastecimentos ou barreiras locais escolhendo manter o nome em sigilo total.</li>
+        </ul>
+
+        <p class="t-body" style="padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.86rem;">
+          Todas as edições incorporadas serão registradas no histórico de versões do documento antes do protocolo final.
+        </p>
+      </div>
+
+      <div class="form-box">
+        <h3 class="t-h3 mb-1">Enviar sugestão de edição ao dossiê</h3>
+        <p class="t-body mb-3">Indique a seção correspondente e descreva o ajuste ou a fonte sugerida.</p>
+
+        <form id="mpoxEditForm" class="form-stack" novalidate>
+          <div class="form-row-2">
+            <div>
+              <label for="e-secao" class="field-label">Seção do dossiê *</label>
+              <select id="e-secao" required class="field-input" style="cursor: pointer;">
+                <option value="">Selecione a seção...</option>
+                <option value="Premissas e metodologia">Premissas e metodologia</option>
+                <option value="Epidemiologia, efetividade e genômica">Epidemiologia, efetividade e genômica</option>
+                <option value="Desigualdade Norte-Sul e monopólio">Desigualdade Norte-Sul e monopólio</option>
+                <option value="Anvisa, logística, estoques e MPF">Anvisa, logística, estoques e MPF</option>
+                <option value="Prevenção combinada, comunicação e cena noturna">Prevenção combinada, comunicação e cena noturna</option>
+                <option value="Governança, vacina nacional e portfólio">Governança, vacina nacional e portfólio</option>
+                <option value="Blindagem e contrapontos">Blindagem e contrapontos</option>
+                <option value="Pedidos formais (MPF, LAI, MS/CNS, ONU)">Pedidos formais (MPF, LAI, MS/CNS, ONU)</option>
+                <option value="Referências e fontes">Referências e fontes</option>
+                <option value="Outro / Proposta geral">Outro / Proposta geral</option>
+              </select>
+            </div>
+            <div>
+              <label for="e-tipo" class="field-label">Tipo de contribuição *</label>
+              <select id="e-tipo" required class="field-input" style="cursor: pointer;">
+                <option value="">Selecione o tipo...</option>
+                <option value="Correção factual, estatística ou técnica">Correção factual, estatística ou técnica</option>
+                <option value="Atualização jurídica ou normativa">Atualização jurídica ou normativa</option>
+                <option value="Relato territorial (estoque, testagem ou serviço local)">Relato territorial (estoque, testagem ou serviço local)</option>
+                <option value="Nova referência científica ou documento oficial">Nova referência científica ou documento oficial</option>
+                <option value="Sugestão de redação nos pedidos formais">Sugestão de redação nos pedidos formais</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div>
+              <label for="e-nome" class="field-label">Seu nome *</label>
+              <input id="e-nome" type="text" required class="field-input" placeholder="Nome completo">
+            </div>
+            <div>
+              <label for="e-email" class="field-label">E-mail para retorno *</label>
+              <input id="e-email" type="email" required class="field-input" placeholder="nome@instituicao.org.br">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div>
+              <label for="e-vinculo" class="field-label">Instituição, área técnica ou território (opcional)</label>
+              <input id="e-vinculo" type="text" class="field-input" placeholder="Ex.: Fiocruz, CTA Fortaleza, OAB, Coletivo...">
+            </div>
+            <div>
+              <label for="e-fonte" class="field-label">Link da fonte ou documento de apoio (opcional)</label>
+              <input id="e-fonte" type="url" class="field-input" placeholder="https://...">
+            </div>
+          </div>
+
+          <div>
+            <label for="e-texto" class="field-label">Sugestão de edição, correção ou relato *</label>
+            <textarea id="e-texto" rows="4" required class="field-input" placeholder="Descreva com objetividade o trecho a ajustar, o dado complementar ou o contexto do seu estado/município."></textarea>
+          </div>
+
+          <label class="sign-check-row">
+            <input id="e-sigilo" type="checkbox">
+            <span><strong>Desejo manter meu nome em sigilo:</strong> utilize minha contribuição apenas para revisão técnica/editorial sem crédito nominal público.</span>
+          </label>
+
+          <button type="submit" id="btn-mpox-edit" class="btn btn-dark btn-full">Enviar sugestão de edição</button>
+
+          <div id="mpox-edit-error" class="form-feedback form-feedback-error" role="alert"></div>
+
+          <div id="mpox-edit-receipt" class="sign-receipt" role="status" aria-live="polite">
+            <strong style="font-size: 1rem; color: var(--ink);">Sugestão de edição recebida.</strong>
+            <p class="t-body mt-1" id="edit-receipt-summary" style="color: var(--ink-soft); font-size: 0.9rem;"></p>
+            <div class="sign-receipt-code" id="edit-receipt-code"></div>
+            <p class="t-body" style="font-size: 0.84rem;">
+              Nossa equipe técnica analisará a contribuição e atualizará o histórico de versões do dossiê antes do protocolo oficial.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. REFERÊNCIAS COMPLETAS -->
 <section id="referencias" class="mpox-section bg-white" style="border-bottom: 0;">
   <div class="wrap-reading">
-    <h2 class="t-h2">Referências verificadas deste dossiê</h2>
+    <h2 class="t-h2">Referências oficiais, legislação e bibliografia verificada</h2>
 
-    <h3 class="t-h3 mt-4">1. Vigilância Epidemiológica, Imunização e Genômica</h3>
+    <h3 class="t-h3 mt-4">Vigilância epidemiológica, efetividade vacinal e genômica</h3>
     <ol class="mpox-ref-list">
       <li><strong>Ministério da Saúde / SVSA.</strong> Painel de Monitoramento da Mpox, Boletins Epidemiológicos e Rede Nacional de Dados em Saúde (RNDS), séries históricas 2022 a novembro de 2026.</li>
       <li><strong>Ministério da Saúde / DATHI / SVSA.</strong> Painel de Monitoramento da Profilaxia Pré-Exposição ao HIV (PrEP), 2025/2026 (~166,1 mil usuários ativos no SUS).</li>
-      <li><strong>Ministério da Saúde / DPNI / SVSA.</strong> Nota Técnica Conjunta nº 403/2026-DPNI/SVSA/MS (atualização de indicações e adoção da via intradérmica 0,1 mL para imunocompetentes elegíveis, mantendo 0,5 mL subcutâneo para PVHA imunossuprimidas).</li>
-      <li><strong>Secretaria de Estado da Saúde de São Paulo (SES-SP), SMS-SP e Instituto Adolfo Lutz (IAL).</strong> Monitoramento de casos na capital paulista (Semanas Epidemiológicas 40 a 48), remessa de 1.000 doses ao estado (600 à capital) em 23 a 25/11/2026 e vigilância genômica (expansão do Clado Ib junto ao Clado IIb).</li>
-      <li><strong>SES-RJ e SESA-CE.</strong> Boletins estaduais de vigilância de mpox (novembro de 2026), incluindo registro de óbito em paciente imunossuprimido no Rio de Janeiro e aceleração de casos em Fortaleza/CE.</li>
-      <li><strong>UK Health Security Agency (UKHSA) / NHS England.</strong> Mpox vaccination data (&gt;165 mil doses aplicadas; 101 mil D1 e 63 mil D2) e lançamento do programa nacional de vacinação pré-exposição de rotina em serviços de saúde sexual (agosto de 2025).</li>
+      <li><strong>Ministério da Saúde / DPNI / SVSA.</strong> Nota Técnica Conjunta nº 403/2026-DPNI/SVSA/MS (indicações prioritárias e adoção da via intradérmica 0,1 mL para imunocompetentes elegíveis, mantendo 0,5 mL subcutâneo para PVHA imunossuprimidas).</li>
+      <li><strong>Secretaria de Estado da Saúde de São Paulo (SES-SP), SMS-SP e Instituto Adolfo Lutz (IAL).</strong> Monitoramento por Semanas Epidemiológicas (SE 40 a 48), remessa de 1.000 doses ao estado (600 doses à capital) em 23 a 25/11/2026 e vigilância genômica (expansão do Clado Ib ao lado do Clado IIb).</li>
+      <li><strong>SES-RJ e SESA-CE.</strong> Boletins estaduais de vigilância de mpox (novembro de 2026), incluindo registro de 1 óbito em paciente imunossuprimido no Rio de Janeiro e aceleração de casos em Fortaleza/CE.</li>
+      <li><strong>Deputy, N. P.; Deckert, J.; Chard, A. N.; Dalton, A. F. et al. (2023).</strong> Vaccine Effectiveness of JYNNEOS against Mpox Disease in the United States. <em>New England Journal of Medicine (NEJM)</em>, 388:2434-2443 (efetividade de 66,0% com 2 doses vs. 35,8% com 1 dose).</li>
+      <li><strong>Dalton, A. F. et al. (2023).</strong> Estimated Effectiveness of JYNNEOS Vaccine in Preventing Mpox: A Multijurisdictional Case-Control Study — United States. <em>CDC Morbidity and Mortality Weekly Report (MMWR)</em>, 72(20):553-558 (efetividade de 86% com 2 doses vs. 75% com 1 dose).</li>
+      <li><strong>UK Health Security Agency (UKHSA) / NHS England.</strong> Mpox vaccination data (&gt;165 mil doses aplicadas: 101 mil D1 e 63 mil D2) e lançamento do programa nacional de vacinação pré-exposição de rotina em serviços de saúde sexual (agosto de 2025).</li>
       <li><strong>Centers for Disease Control and Prevention (CDC / EUA).</strong> JYNNEOS Vaccine Administration Data (&gt;1,2 milhão de doses) e diretrizes de vacinação pré-exposição focalizada.</li>
       <li><strong>IBGE e Office for National Statistics (ONS / Reino Unido).</strong> Estimativas populacionais de referência (Brasil ~212,6 milhões; Inglaterra ~57 milhões) para normalização proporcional por 100 mil habitantes.</li>
     </ol>
 
-    <h3 class="t-h3 mt-3">2. Legislação, Portarias, Atos Regulatórios e Controle Externo</h3>
+    <h3 class="t-h3 mt-3">Legislação, portarias, regulação sanitária e controle externo</h3>
     <ol class="mpox-ref-list">
-      <li><strong>Constituição da República Federativa do Brasil (1988).</strong> Art. 5º, XXXIV (direito de petição), arts. 127 e 129, III (Ministério Público), art. 134 (Defensoria Pública), arts. 196 e 198 (direito à saúde e participação da comunidade) e art. 220 (liberdade de imprensa).</li>
-      <li><strong>Lei nº 8.080/1990, Lei nº 8.142/1990, Lei nº 12.401/2011 (CONITEC) e Lei nº 12.527/2011 (LAI / Decreto nº 7.724/2012).</strong> Arcabouço jurídico do SUS, controle social, incorporação de tecnologias e acesso à informação pública.</li>
-      <li><strong>Anvisa.</strong> Lei nº 9.782/1999 (art. 8º, § 5º), RDC nº 203/2017 (art. 3º, III, importação excepcional permanente de imunobiológicos do PNI via OPAS), histórico das normas emergenciais RDC nº 747/2022 (revogada em jul/2024) e RDC nº 892/2024 (vigência cessada pelo art. 25 após o fim da 2ª ESPII pela OMS em 05/09/2025).</li>
+      <li><strong>Constituição da República Federativa do Brasil (1988).</strong> Art. 5º, XXXIV (direito de petição), arts. 127 e 129, III (Ministério Público), art. 134 (Defensoria Pública), arts. 196 e 198 (direito à saúde e participação social) e art. 220 (liberdade de imprensa; ADPF 130/STF).</li>
+      <li><strong>Lei nº 6.360/1976 (art. 12), Lei nº 8.080/1990, Lei nº 8.142/1990, Lei nº 9.313/1996, Lei nº 12.401/2011 (CONITEC) e Lei nº 12.527/2011 (LAI / Decreto nº 7.724/2012 / Súmula CMRI nº 6/2015).</strong> Arcabouço jurídico do SUS, controle social, registro sanitário, incorporação tecnológica e transparência pública.</li>
+      <li><strong>Lei nº 9.279/1996 (LPI), ADI 5529/STF (2021) e Lei nº 14.200/2021 (Veto nº 48/2021).</strong> Regime de patentes e limites práticos da licença compulsória para vacinas biológicas sem transferência de <em>know-how</em>.</li>
+      <li><strong>Anvisa.</strong> Lei nº 9.782/1999 (art. 8º, § 5º), RDC nº 203/2017 (art. 3º, III — importação excepcional permanente de imunobiológicos do PNI via OPAS), histórico das normas emergenciais RDC nº 747/2022 (revogada em jul/2024) e RDC nº 892/2024 (vigência cessada pelo art. 25 com o encerramento da 2ª ESPII em 05/09/2025).</li>
       <li><strong>Ministério da Saúde.</strong> Portaria GM/MS nº 5.192, de 14 de agosto de 2024 (DOU / Conass) — institui o COE-Mpox com 25 titulares (18 MS + 7 externos, incluindo 1 vaga do CNS), Art. 2º, § 5º (convidados pontuais) e Art. 4º, § 1º (ausência de votação por não ser colegiado deliberativo).</li>
-      <li><strong>Ministério da Saúde.</strong> Portaria GM/MS nº 4.473, de 20 de junho de 2024 (institui o Programa de Desenvolvimento e Inovação Local — PDIL) e Portaria GM/MS nº 12.301, de 27 de outubro de 2026 (institui a PNISD — saúde digital).</li>
+      <li><strong>Ministério da Saúde.</strong> Portaria GM/MS nº 4.473, de 20 de junho de 2024 (PDIL); Portaria GM/MS nº 12.301, de 27 de outubro de 2026 (PNISD); Lei Complementar nº 177/2021 (vedação ao contingenciamento do FNDCT) e execução orçamentária do PNI (2025–2026).</li>
       <li><strong>Conselho Nacional de Saúde (CNS).</strong> Resolução CNS nº 719, de 17 de agosto de 2023 (consolida diretrizes, propostas e moções da 17ª Conferência Nacional de Saúde, incluindo propostas para uma Política Nacional de Comunicação Pública do SUS).</li>
-      <li><strong>Ministério Público Federal (MPF / Procuradoria da República no Acre).</strong> Inquérito Civil instaurado em novembro de 2026 (proc. Lucas Costa Almeida Dias) apurando aquisições, distribuição, validade de estoques e critérios de vacinação contra mpox após desabastecimento no Distrito Federal (03/11/2026).</li>
+      <li><strong>Ministério Público Federal (MPF / Procuradoria da República no Acre).</strong> Inquérito Civil instaurado em novembro de 2026 (proc. Lucas Costa Almeida Dias) apurando aquisições, distribuição, validade de estoques e critérios de vacinação contra mpox após suspensão no Distrito Federal (03/11/2026).</li>
     </ol>
 
-    <h3 class="t-h3 mt-3">3. Economia Política da Saúde, Propriedade Intelectual e Organismos Internacionais</h3>
+    <h3 class="t-h3 mt-3">Economia política da saúde, pipeline vacinal e organismos internacionais</h3>
     <ol class="mpox-ref-list">
-      <li><strong>Organização Mundial da Saúde (OMS).</strong> <em>Strategic Framework for Enhancing Prevention and Control of Mpox (2024–2027)</em>; Pré-qualificação da vacina MVA-BN (13/09/2024); Listagem EUL da LC16m8 com contraindicação a imunossuprimidos (19/11/2024); Encerramento da 2ª ESPII (05/09/2025).</li>
+      <li><strong>Organização Mundial da Saúde (OMS).</strong> <em>Strategic Framework for Enhancing Prevention and Control of Mpox (2024–2027)</em>; Pré-qualificação da MVA-BN (13/09/2024); Listagem EUL da LC16m8 com contraindicação a imunossuprimidos (19/11/2024); Encerramento da 2ª ESPII (05/09/2025); Access and Allocation Mechanism (AAM / Africa CDC / Gavi / UNICEF / CEPI).</li>
       <li><strong>Organização Pan-Americana da Saúde (OPAS).</strong> Dados regionais do Fundo Rotatório para acesso à vacina MVA-BN (~50 mil esquemas completos na América Latina até 2025).</li>
-      <li><strong>Public Citizen (2024) e UNICEF Supply Division (2025/2026).</strong> Levantamento sobre fomento e contratos públicos dos EUA à Bavarian Nordic (&gt;US$ 2,3 bilhões desde 2003) e preços referenciais da MVA-BN (~US$ 65/dose UNICEF a até US$ 100 no mercado comercial).</li>
+      <li><strong>Public Citizen (2024), UNICEF Supply Division (2025/2026) e Bavarian Nordic A/S (2025/2026).</strong> Levantamento sobre fomento e contratos públicos dos EUA (&gt;US$ 2,3 bilhões desde 2003), preços referenciais (~US$ 65 UNICEF a US$ 100 comercial), expansão fabril anunciada (até 10 milhões de doses até 2025) e demonstrações financeiras Q3 2026.</li>
       <li><strong>CTVacinas/UFMG, Bio-Manguinhos/Fiocruz e MCTI/Finep (2025/2026).</strong> Desenvolvimento da candidata vacinal nacional MVA contra mpox (pré-clínico concluído, preparo de DDCM para Fase 1), pacote compartilhado de R$ 161,5 milhões no PDIL e R$ 80 milhões no CNVacinas.</li>
+      <li><strong>Pipeline global de nova geração (mRNA):</strong> BioNTech/CEPI <strong>BNT166a</strong> (resultados de Fase 1/2 publicados em <em>The Lancet Infectious Diseases</em>, set/2026; Fase 2 <code>NCT07379580</code> na África) e Moderna <strong>mRNA-1769</strong> (dados pré-clínicos na <em>Cell</em>; ensaio Fase 1/2 <code>NCT05995275</code> e avanço para Fase 2).</li>
       <li><strong>Comissão Interamericana de Direitos Humanos (CIDH / OEA) e ACNUDH / ONU.</strong> Resolução CIDH nº 1/2021 (parâmetros interamericanos de transparência, vacinas e direitos humanos, aplicada por analogia); Protocolo de San Salvador (art. 10); Procedimentos Especiais da ONU (Relatoria Especial sobre o Direito à Saúde e Especialista Independente SOGI).</li>
     </ol>
 
-    <h3 class="t-h3 mt-3">4. Saúde Coletiva, Prevenção Combinada, Estigma e Cena Cultural</h3>
+    <h3 class="t-h3 mt-3">Saúde coletiva, prevenção combinada, estigma e cena cultural</h3>
     <ol class="mpox-ref-list">
       <li><strong>Abrasco / GT Saúde da População LGBTI+.</strong> Nota Pública sobre o recrudescimento da mpox no Brasil (novembro de 2026), cobrando ampliação vacinal, transparência de estoques, controle social e inclusão obrigatória de orientação sexual e identidade de gênero nos sistemas do SUS.</li>
-      <li><strong>Ministério da Saúde (2017).</strong> <em>Prevenção Combinada do HIV: bases conceituais para profissionais, trabalhadores(as) e gestores(as) de saúde</em>. Brasília: MS; e referenciais de vulnerabilidade programática de <strong>Ayres, J. R. C. M.</strong> (<em>Ciência &amp; Saúde Coletiva</em>) e <strong>UNAIDS</strong>.</li>
+      <li><strong>Ministério da Saúde (2017).</strong> <em>Prevenção Combinada do HIV: bases conceituais para profissionais, trabalhadores(as) e gestores(as) de saúde</em>. Brasília: MS; e referenciais teóricos de vulnerabilidade programática de <strong>Ayres, J. R. C. M.</strong> (<em>Ciência &amp; Saúde Coletiva</em>), <strong>Parker, R.</strong> (ABIA) e <strong>UNAIDS</strong>.</li>
       <li><strong>Sousa, A. F. L.; Sousa, A. R.; Fronteira, I. (2022).</strong> Monkeypox: between precision public health and stigma risk. <em>Revista Brasileira de Enfermagem (REBEn)</em>, v. 75, n. 5.</li>
       <li><strong>Galvão, J. (2000).</strong> <em>AIDS no Brasil: a agenda de construção de uma epidemia</em> (São Paulo: ABIA / Editora 34); <strong>Terto Jr., V. (2002).</strong> <em>Horizontes Antropológicos</em>, ano 8, n. 17; <strong>Grangeiro, A.; Silva, L. L.; Teixeira, P. R. (2009).</strong> Resposta à aids no Brasil: contribuições dos movimentos sociais e da reforma sanitária. <em>Revista Panamericana de Salud Pública</em>.</li>
       <li><strong>Comunicados públicos da cena cultural (novembro de 2026).</strong> Adiamento preventivo da Festa Kevin (14/11/2026, SP / Shotgun) e suspensão temporária do Dédalos Rio (9 a 19/11/2026, RJ / Tempo Real RJ).</li>
@@ -877,11 +1189,16 @@ extra_head: |
   'use strict';
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw-Yea5JRZ8dYQOLKEmd3inKh98mMWs_s8K7woc2_-jd_IkH27g9NAf6vGg0vM6NXKNEw/exec';
 
+  function generateCode(prefix) {
+    const rand = Math.random().toString(36).substring(2, 8).toUpperCase();
+    return prefix + '-' + rand;
+  }
+
+  // 1. Formulário de Assinatura (PF / Organização)
   const tabPf = document.getElementById('tab-pf');
   const tabOrg = document.getElementById('tab-org');
   const modeInput = document.getElementById('mpox-mode');
   const orgFields = document.getElementById('org-fields');
-  const orgSugestaoWrap = document.getElementById('org-sugestao-wrap');
   const pfAtuacaoWrap = document.getElementById('pf-atuacao-wrap');
   const labelNome = document.getElementById('label-nome');
   const inputOrgNome = document.getElementById('m-org-nome');
@@ -896,7 +1213,6 @@ extra_head: |
     tabOrg.setAttribute('aria-selected', String(isOrg));
 
     orgFields.classList.toggle('hidden-fields', !isOrg);
-    orgSugestaoWrap.classList.toggle('hidden-fields', !isOrg);
     pfAtuacaoWrap.classList.toggle('hidden-fields', isOrg);
 
     inputOrgNome.required = isOrg;
@@ -907,29 +1223,19 @@ extra_head: |
   tabPf.addEventListener('click', () => setMode('pf'));
   tabOrg.addEventListener('click', () => setMode('org'));
 
-  const form = document.getElementById('mpoxSignForm');
-  const btn = document.getElementById('btn-mpox-sign');
-  const errBox = document.getElementById('mpox-error');
-  const receiptBox = document.getElementById('mpox-receipt');
+  const signForm = document.getElementById('mpoxSignForm');
+  const signBtn = document.getElementById('btn-mpox-sign');
+  const signErr = document.getElementById('mpox-error');
+  const signReceipt = document.getElementById('mpox-receipt');
   const receiptSummary = document.getElementById('receipt-summary');
   const receiptCodeEl = document.getElementById('receipt-code');
   const btnCopy = document.getElementById('btn-copy-link');
   const btnWa = document.getElementById('btn-share-wa');
 
-  function generateCode() {
-    const rand = Math.random().toString(36).substring(2, 8).toUpperCase();
-    return 'D2C-MPOX-2026-' + rand;
-  }
-
-  function showError(msg) {
-    errBox.textContent = msg;
-    errBox.classList.add('is-visible');
-  }
-
-  form.addEventListener('submit', async (e) => {
+  signForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    errBox.classList.remove('is-visible');
-    receiptBox.classList.remove('is-visible');
+    signErr.classList.remove('is-visible');
+    signReceipt.classList.remove('is-visible');
 
     const isOrg = modeInput.value === 'org';
     const nome = document.getElementById('m-nome').value.trim();
@@ -940,27 +1246,30 @@ extra_head: |
     const orgNome = inputOrgNome.value.trim();
     const orgCnpj = document.getElementById('m-org-cnpj').value.trim();
     const orgCargo = inputOrgCargo.value.trim();
-    const sugestao = document.getElementById('m-sugestao').value.trim();
     const consent = document.getElementById('m-consent').checked;
 
     if (isOrg && (!orgNome || !orgCargo)) {
-      showError('Preencha o nome da organização/coletivo e o cargo da pessoa responsável.');
+      signErr.textContent = 'Preencha o nome da organização/coletivo e o cargo da pessoa responsável.';
+      signErr.classList.add('is-visible');
       return;
     }
     if (!nome || !email || !cidade) {
-      showError('Preencha nome completo, e-mail válido e cidade/UF.');
+      signErr.textContent = 'Preencha nome completo, e-mail válido e cidade/UF.';
+      signErr.classList.add('is-visible');
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError('Informe um endereço de e-mail válido.');
+      signErr.textContent = 'Informe um endereço de e-mail válido.';
+      signErr.classList.add('is-visible');
       return;
     }
     if (!consent) {
-      showError('Marque a declaração de apoio e consentimento LGPD para concluir a assinatura.');
+      signErr.textContent = 'Marque a declaração de apoio e consentimento LGPD para concluir a assinatura.';
+      signErr.classList.add('is-visible');
       return;
     }
 
-    const receiptCode = generateCode();
+    const receiptCode = generateCode('D2C-MPOX-2026');
     const nowIso = new Date().toISOString();
     const nowBr = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
@@ -977,16 +1286,15 @@ extra_head: |
       'TIPO: ' + (isOrg ? 'Organizacao / Coletivo / Pesquisa' : 'Pessoa Fisica'),
       'CIDADE_UF: ' + cidade,
       isOrg ? ('CNPJ: ' + (orgCnpj || 'Coletivo sem CNPJ / Nao informado')) : ('ATUACAO: ' + (atuacao || 'Nao informada')),
-      sugestao ? ('SUGESTAO_MINUTA: ' + sugestao) : 'SUGESTAO_MINUTA: Sem ajustes adicionais',
       'CONSENTIMENTO_LGPD: SIM (autorizada inclusao de nome/organizacao e cidade/UF no anexo ao MPF, MS/CNS, DPU e ONU)',
       'DATA_HORA_UTC: ' + nowIso,
       'PAGINA: ' + window.location.href
     ].join('\n');
     payload.append('desafio', auditLines);
 
-    const origText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Registrando assinatura...';
+    const origText = signBtn.textContent;
+    signBtn.disabled = true;
+    signBtn.textContent = 'Registrando assinatura...';
 
     try {
       const res = await fetch(SCRIPT_URL, { method: 'POST', body: payload });
@@ -995,26 +1303,27 @@ extra_head: |
       }
 
       const displayWho = isOrg ? (orgNome + ' (representada por ' + nome + ')') : nome;
-      receiptSummary.textContent = displayWho + ' — ' + cidade + ' • Registrado em ' + nowBr + '.';
+      receiptSummary.textContent = displayWho + ' (' + cidade + ') • Registrado em ' + nowBr + '.';
       receiptCodeEl.textContent = 'Protocolo de adesão: ' + receiptCode;
-      receiptBox.classList.add('is-visible');
+      signReceipt.classList.add('is-visible');
 
       const shareUrl = 'https://data2comms.com.br/mpox/';
       const waText = encodeURIComponent('Acabei de assinar o Dossiê Mpox (2022 a 2026) da História LGBTI+ e data2comms, que será levado como subsídio ao inquérito do MPF, ao Ministério da Saúde/CNS e às Relatorias da ONU. Leia e assine também: ' + shareUrl);
       btnWa.href = 'https://wa.me/?text=' + waText;
 
-      form.reset();
+      signForm.reset();
       setMode(isOrg ? 'org' : 'pf');
-      btn.textContent = 'Assinatura registrada';
+      signBtn.textContent = 'Assinatura registrada';
       setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = origText;
+        signBtn.disabled = false;
+        signBtn.textContent = origText;
       }, 5000);
     } catch (err) {
       console.error('Erro ao registrar assinatura:', err);
-      btn.disabled = false;
-      btn.textContent = origText;
-      showError('Não foi possível registrar agora por instabilidade de rede. Tente novamente em instantes ou envie sua adesão para rennanmetsi@data2comms.com.br.');
+      signBtn.disabled = false;
+      signBtn.textContent = origText;
+      signErr.textContent = 'Não foi possível registrar agora por instabilidade de rede. Tente novamente ou escreva para rennanmetsi@data2comms.com.br.';
+      signErr.classList.add('is-visible');
     }
   });
 
@@ -1030,5 +1339,90 @@ extra_head: |
       }
     });
   }
+
+  // 2. Formulário Dedicado de Sugestão de Edição / Revisão Colaborativa
+  const editForm = document.getElementById('mpoxEditForm');
+  const editBtn = document.getElementById('btn-mpox-edit');
+  const editErr = document.getElementById('mpox-edit-error');
+  const editReceipt = document.getElementById('mpox-edit-receipt');
+  const editSummary = document.getElementById('edit-receipt-summary');
+  const editCodeEl = document.getElementById('edit-receipt-code');
+
+  editForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    editErr.classList.remove('is-visible');
+    editReceipt.classList.remove('is-visible');
+
+    const secao = document.getElementById('e-secao').value.trim();
+    const tipo = document.getElementById('e-tipo').value.trim();
+    const nome = document.getElementById('e-nome').value.trim();
+    const email = document.getElementById('e-email').value.trim();
+    const vinculo = document.getElementById('e-vinculo').value.trim();
+    const fonte = document.getElementById('e-fonte').value.trim();
+    const texto = document.getElementById('e-texto').value.trim();
+    const sigilo = document.getElementById('e-sigilo').checked;
+
+    if (!secao || !tipo || !nome || !email || !texto) {
+      editErr.textContent = 'Preencha seção, tipo de contribuição, nome, e-mail e o texto da sua sugestão.';
+      editErr.classList.add('is-visible');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      editErr.textContent = 'Informe um endereço de e-mail válido.';
+      editErr.classList.add('is-visible');
+      return;
+    }
+
+    const revCode = generateCode('D2C-MPOX-REV');
+    const nowIso = new Date().toISOString();
+    const nowBr = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+
+    const payload = new FormData();
+    payload.append('nome', nome);
+    payload.append('email', email);
+    payload.append('telefone', 'Revisao tecnica');
+    payload.append('empresa', vinculo || 'Revisor(a) independente');
+    payload.append('cargo', tipo + ' | ' + secao);
+    payload.append('servico', '[Dossie Mpox] Sugestao de Edicao / Revisao Tecnica');
+
+    const revLines = [
+      'CODIGO_REVISAO: ' + revCode,
+      'SECAO: ' + secao,
+      'TIPO_CONTRIBUICAO: ' + tipo,
+      'SIGILO_SOLICITADO: ' + (sigilo ? 'SIM (nao creditar nominalmente)' : 'NAO (pode creditar se incorporada)'),
+      'LINK_FONTE: ' + (fonte || 'Nao informado'),
+      'TEXTO_SUGESTAO:\n' + texto,
+      'DATA_HORA_UTC: ' + nowIso,
+      'PAGINA: ' + window.location.href
+    ].join('\n');
+    payload.append('desafio', revLines);
+
+    const origText = editBtn.textContent;
+    editBtn.disabled = true;
+    editBtn.textContent = 'Enviando sugestão...';
+
+    try {
+      const res = await fetch(SCRIPT_URL, { method: 'POST', body: payload });
+      if (!res.ok && res.type !== 'opaque') {
+        throw new Error('HTTP ' + res.status);
+      }
+
+      editSummary.textContent = 'Contribuição para "' + secao + '" enviada em ' + nowBr + (sigilo ? ' (com sigilo nominal solicitado).' : '.');
+      editCodeEl.textContent = 'Protocolo de revisão: ' + revCode;
+      editReceipt.classList.add('is-visible');
+      editForm.reset();
+      editBtn.textContent = 'Sugestão enviada';
+      setTimeout(() => {
+        editBtn.disabled = false;
+        editBtn.textContent = origText;
+      }, 5000);
+    } catch (err) {
+      console.error('Erro ao enviar sugestão:', err);
+      editBtn.disabled = false;
+      editBtn.textContent = origText;
+      editErr.textContent = 'Não foi possível enviar sua sugestão agora. Tente novamente ou encaminhe para rennanmetsi@data2comms.com.br.';
+      editErr.classList.add('is-visible');
+    }
+  });
 })();
 </script>
